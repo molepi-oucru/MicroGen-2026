@@ -1,0 +1,19 @@
+---
+title: "1.3 From raw sequencing data to assemblies"
+author: "Si-Nguyen Mai"
+date: "yyyy-mm-dd"
+---
+
+⛏️ Under construction ... 
+
+# FASTQ files
+
+⛏️ Under construction ... 
+
+# Reads Quality 
+
+⛏️ Under construction ... 
+
+# Assembly
+
+⛏️ Under construction ... 

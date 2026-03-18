@@ -1,0 +1,68 @@
+---
+title: "Beginner Course on Microbial Genomics: Applications & Research"
+---
+
+A bioinformatics workshop organised by the [Molecular Epidemiology Group](https://www.oucru.org/research/molecular-epidemiology) at Oxford University Clinical Research Unit in May, 2026.
+
+This workshop is a part of the [KLEB-CASAVA](https://www.oucru.org/project/kleb-casava/) project, funded by the UKRI.
+
+It aims to provide bioinformatics skills for Vietnamese clinicians or researchers working on bacterial infectious diseases with no to little experience analysing whole-genome sequencing data. The major goal is to enhance the local human capacity in genomic epidemiology and surveillance.
+
+# Programme
+
+::: panel-tabset
+## Day 0
+### Pack your backpack
+[Slides]() | [Practical Guides](day-0/instructions/index.qmd) | [Data]()
+
+**0.1 Commands & Environments**
+
+**0.2 Setup your workspace**
+
+## Day 1
+### Meet the genomes
+[Slides]() | [Practical Guides](day-1/instructions/index.qmd) | [Data]()
+
+**1.1 Whole-genome sequencing - What? & Why?** 
+
+**1.2 A complete genome - How it look like?** 
+
+**1.3 Going backward - From raw sequencing data to assemblies** 
+
+## Day 2
+### Inspect the genomes
+[Slides]() | [Practical Guides](day-2/instructions/index.qmd) | [Data]()
+
+**2.1 Analyse the assemblies**
+
+**2.2 Long-read sequencing & Hybrid assemblies**
+
+**2.3 Locate & compare genes** 
+
+## Day 3
+### Phylogenetics - Relationships between genomes
+[Slides]() | [Practical Guides](day-3/instructions/index.qmd) | [Data]()
+
+**3.1 Read mapping & SNP alignment**
+
+**3.2 Phylogenetic tree inference**
+
+## Day 4
+### Meta-genomes
+[Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data]()
+:::
+
+# Instructors
+
+-   Dr. Pham Thanh Duy (Duy), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
+
+-   Dr. Chung The Hao (Hao), Saw Swee Hock School of Public Health, National University of Singapore
+
+-   Mai Thu Si Nguyen (Nguyen), Oxford University Clinical Research Unit
+
+-   Nguyen Pham Nhu Quynh (Quynh), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
+
+-   Ton Ngoc Minh Quan (Quan), Oxford University Clinical Research Unit
+
+# Organizations
+
