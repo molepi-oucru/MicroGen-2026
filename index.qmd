@@ -1,12 +1,12 @@
 ---
-title: "Beginner Course on Microbial Genomics: Applications & Research"
+title: "Beginner Course on Microbial Genomics:<br>Applications & Research"
 ---
 
 A bioinformatics workshop organised by the [Molecular Epidemiology Group](https://www.oucru.org/research/molecular-epidemiology) at Oxford University Clinical Research Unit in May, 2026.
 
 This workshop is a part of the [KLEB-CASAVA](https://www.oucru.org/project/kleb-casava/) project, funded by the UKRI.
 
-It aims to provide bioinformatics skills for Vietnamese clinicians or researchers working on bacterial infectious diseases with no to little experience analysing whole-genome sequencing data. The major goal is to enhance the local human capacity in genomic epidemiology and surveillance.
+Aiming to enhance the local capacity in genomic epidemiology and surveillance, the workshop provides essential bioinformatics skills for Vietnamese clinicians and researchers, whose work focuses on bacterial infectious diseases, but have little to no experience in analysing whole-genome sequencing data. 
 
 # Programme
 
@@ -54,15 +54,99 @@ It aims to provide bioinformatics skills for Vietnamese clinicians or researcher
 
 # Instructors
 
--   Dr. Pham Thanh Duy (Duy), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
+::: {layout-ncol=3}
 
--   Dr. Chung The Hao (Hao), Saw Swee Hock School of Public Health, National University of Singapore
+::: {.organiser-card}
+![](website-assets/images/DuyPT.png){.profile-pic}
 
--   Mai Thu Si Nguyen (Nguyen), Oxford University Clinical Research Unit
+**Dr. Pham Thanh Duy** <br>
+*Head of Molecular Epidemiology Group* <br>
+Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
 
--   Nguyen Pham Nhu Quynh (Quynh), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
+::: {.organiser-links}
+[{{< fa globe >}}](https://your-site.com)
+[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+:::
+:::
 
--   Ton Ngoc Minh Quan (Quan), Oxford University Clinical Research Unit
+::: {.organiser-card}
+![](website-assets/images/HaoCT.png){.profile-pic}
 
-# Organizations
+**Dr. Chung The Hao** <br>
+*Senior Postdoc Fellow* <br>
+Saw Swee Hock School of Public Health, National University of Singapore
+
+::: {.organiser-links}
+
+[{{< fa brands github >}}](https://github.com/username)
+[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+:::
+:::
+
+::: {.organiser-card}
+![](website-assets/images/NguyenMTS.png){.profile-pic}
+
+**Mai Thu Si Nguyen** <br>
+*Research Assistant* <br>
+Oxford University Clinical Research Unit
+
+::: {.organiser-links}
+
+[{{< fa brands github >}}](https://github.com/username)
+[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+:::
+:::
+
+::: {.organiser-card}
+![](website-assets/images/QuynhNPN.png){.profile-pic}
+
+**Nguyen Pham Nhu Quynh** <br>
+*PhD Student* <br>
+Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
+
+::: {.organiser-links}
+
+[{{< fa brands github >}}](https://github.com/username)
+[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+:::
+:::
+
+::: {.organiser-card}
+![](website-assets/images/QuanTNM.png){.profile-pic}
+
+**Ton Ngoc Minh Quan** <br>
+*Research Assistant* <br>
+Oxford University Clinical Research Unit
+
+::: {.organiser-links}
+
+[{{< fa brands github >}}](https://github.com/username)
+[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+:::
+:::
+
+:::
+
+
+# Acknowledgement
+
+::: {.logo-flex-container}
+
+::: {.funder-card}
+![](website-assets/images/UKRI.png){}
+:::
+
+::: {.funder-card}
+![](website-assets/images/wellcome-logo-black.png)
+:::
+
+::: {.funder-card}
+![](website-assets/images/UOX-logo.jpg)
+:::
+:::
 

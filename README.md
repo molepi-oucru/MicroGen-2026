@@ -4,7 +4,7 @@ A bioinformatics workshop organised by the [Molecular Epidemiology Group](https:
 
 This workshop is a part of the [KLEB-CASAVA](https://www.oucru.org/project/kleb-casava/) project, funded by the UKRI.
 
-It aims to provide bioinformatics skills for Vietnamese clinicians or researchers working on bacterial infectious diseases with no to little experience analysing whole-genome sequencing data. The major goal is to enhance the local human capacity in genomic epidemiology and surveillance.  
+Aiming to enhance the local capacity in genomic epidemiology and surveillance, the workshop provides essential bioinformatics skills for Vietnamese clinicians and researchers, whose work focuses on bacterial infectious diseases, but have little to no experience in analysing whole-genome sequencing data. 
 
 **Instructors:**
   - Dr. Pham Thanh Duy (Duy), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
@@ -13,7 +13,6 @@ It aims to provide bioinformatics skills for Vietnamese clinicians or researcher
   - Nguyen Pham Nhu Quynh (Quynh), Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
   - Ton Ngoc Minh Quan (Quan), Oxford University Clinical Research Unit
 
----
 ## Navigating
 
 The materials are organised by day of the workshop, following the program below.
@@ -24,7 +23,6 @@ Within each day, there are three directories:
 - `materials` : Input files required to work on practicals; and corresponding expected outputs
 - `slides` : lecture slides
 
----
 ## Lectures & Credits
 
 ### Day 0: Pack your backpack
@@ -52,7 +50,7 @@ Within each day, there are three directories:
 ### Day 4: Meta-genomes
 Hao, Quan
 
----
+
 ## Datasets
 
 Public datasets that have been used for practicals along the course:

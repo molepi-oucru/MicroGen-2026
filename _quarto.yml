@@ -7,8 +7,10 @@ execute:
 website:
   title: "MicroGen 2026"
   page-navigation: true
+  back-to-top-navigation: true
   navbar:
-    left:
+    logo: "website-assets/images/KLEB-CASAVA.png"
+    right:
       - text: "Practical Guides"
         menu:
           - text: 'Day 0'
@@ -25,14 +27,19 @@ website:
         menu:
           - text: 'Day 0'
             href: day-0/slides/MicroGen2026_Day0.pdf
+            target: '_blank'
           - text: 'Day 1'
             href: day-1/slides/MicroGen2026_Day1.pdf
+            target: '_blank'
           - text: 'Day 2'
             href: day-2/slides/MicroGen2026_Day2.pdf
+            target: '_blank'
           - text: 'Day 3'
             href: day-3/slides/MicroGen2026_Day3.pdf
+            target: '_blank'
           - text: 'Day 4'
             href: day-4/slides/MicroGen2026_Day4.pdf
+            target: '_blank'
     tools:
         - icon: github
           href: https://github.com/molepi-oucru/MicroGen-2026
@@ -40,7 +47,7 @@ website:
     - id: practical-guides
       title: "Practical Guides"
       contents:
-        - section: "Guide"
+        - section: "Practical Guides"
           contents:
             - text: "Day 0"
               href: day-0/instructions/index.qmd
@@ -63,13 +70,14 @@ website:
                 - day-3/instructions/phylotree.qmd
             - text: "Day 4"
               href: day-4/instructions/index.qmd
-        
-
 
 format:
   html:
     theme: cosmo
     css: website-assets/styles.css
+    extensions:
+      - quarto-ext/fontawesome
+    link-external-newwindow: true
     toc: true
     code-copy: true
     code-block-bg: true

@@ -1,1 +1,89 @@
 /* css styles */
+
+/* 1. Increase the overall Navbar container height */
+.navbar {
+    min-height: 68px; /* Adjust this to your preferred height */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* 2. Remove the height limit on the 'Brand' (Logo + Title) wrapper */
+.navbar-brand {
+    height: 65px !important; /* Should be slightly less than the navbar height */
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* 3. Force the Logos to scale up */
+.navbar-logo, 
+.navbar-logo-extra {
+    height: 60px !important; /* This is the actual visible size of your logos */
+    width: auto !important;
+    max-height: none !important; /* Quarto often sets max-height: 2rem, we must kill that */
+    margin-right: 15px !important;
+}
+
+.navbar-title, 
+.navbar-title-text {
+  font-size: 1.7rem !important; /* Adjust this (e.g., 1.5rem to 2.2rem) */
+  /* font-weight: 700;  */
+  /* color: #24292f;    */
+  /* margin-left: 10px; */
+}
+
+/* Circular profile pictures */
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+  }
+  
+.organiser-card {
+    text-align: center;
+    padding: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    opacity: 0.7;
+    transition: transform 0.2s;
+}
+
+.organiser-card:hover {
+    transform: translateY(-5px);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.organiser-links {
+font-size: 1.4rem;
+margin-top: 10px;
+}
+
+.organiser-links a {
+margin: 0 8px;
+color: #495057;
+text-decoration: none;
+}
+
+.organiser-links a:hover {
+color: #007bff;
+}
+
+.logo-flex-container {
+    display: flex;
+    flex-wrap: wrap;        /* Allows wrapping on small screens */
+    justify-content: left; /* Align the whole group */
+    align-items: center;     /* Vertically centers logos of different shapes */
+    gap: 20px;               /* CONTROL SPACING HERE: decrease this for tighter fit */
+    margin: 2rem 0;
+}
+
+.funder-card img {
+    height: 70px !important; /* Set your desired uniform height */
+    width: auto !important;   /* Maintain aspect ratio */
+    object-fit: contain;      /* Ensure the logo fits without cropping */
+    display: block;
+    margin: 0 auto;           /* Center them horizontally */
+}

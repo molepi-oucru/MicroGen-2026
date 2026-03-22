@@ -50,5 +50,8 @@ rsconnect/
 
 /.quarto/
 /_site/
-
+/_extensions/
 **/*.quarto_ipynb
+
+/website-assets/images/
+*/instructions/images/

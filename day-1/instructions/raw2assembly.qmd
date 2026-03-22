@@ -1,6 +1,6 @@
 ---
 title: "1.3 From raw sequencing data to assemblies"
-author: "Si-Nguyen Mai"
+author: "Nguyen MTS"
 date: "yyyy-mm-dd"
 ---
 
