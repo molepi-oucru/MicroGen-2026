@@ -25,16 +25,16 @@ Within each day, there are three directories:
 
 ## Lectures & Credits
 
-### Day 0: Pack your backpack
+### Day 0: Pack your backpack (Pre-Workshop)
 
-- **0.1 Commands & Environments** - Nguyen, Quan
-- **0.2 Setup your workspace** - Quan
+- **0.1 Setup computing workspace - VSCode and SSH connection** - Quan
+- **0.2 Linux & command lines** - Nguyen
 
 ### Day 1: Meet the genomes
 
 - **1.1 Whole-genome sequencing - What? & Why?** - Hao, Quynh
 - **1.2 A complete genome - How it look like?** - Duy
-- **1.3 Going backward - From raw sequencing data to assemblies** - Nguyen
+- **1.3 From raw sequencing data to assemblies** - Nguyen
 
 ### Day 2: Inspect the genomes
 
