@@ -24,7 +24,7 @@ Our work-flow will comprise the following main processes:
 
 This module will guide you through the first 2 processes.
 
-We hope you will enjoy the flow. Now, let's begin!
+We hope you will enjoy the *flow*. Now, let's begin!
 
 # Data directory
 
@@ -33,7 +33,7 @@ If you have completed Day-0, you probably have downloaded the dataset in the las
 -   `/data/raw_shortread`: Short-read data from Illumina - our focus today.
 -   `/data/raw_longread`: Long-read data (Oxford Nanopore) - we will study in module 2.2.
 
-We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file PRJNA1260529.metadata.tsv.
+We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file `PRJNA1260529.metadata.tsv`.
 
 Let's take a look at the files in the `raw_shortread` directory:
 
@@ -53,6 +53,7 @@ You shall see a directory structure that looks like this:
 ```
 
 Try to answer the following questions:
+
 - How many files are there?
 - What are the sizes of these files?
 - What do the file names tell you?
@@ -119,6 +120,21 @@ CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGG
 +SRR33475255.3 VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295
 *CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC
 ```
+
+Can you tell how many reads are there in this example output? And what are their IDs, base sequences, and lengths?
+
+::: {.callout-note collapse="false"}
+## Challenge
+
+Count the number of forward and reverse reads of sample `AMB201Kp` in a **single command-line**.
+
+*Hint: Use `grep` command to catch only the sequence ID lines (starting with `@`)*
+
+Correct output:
+
+- `_1` forward reads: 190784
+- `_2` reverse reads: 226861
+:::
 
 # Reads Quality Control (QC)
 
