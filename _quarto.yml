@@ -81,6 +81,8 @@ format:
     toc: true
     code-copy: true
     code-block-bg: true
+    # code-overflow: wrap
+    code-line-numbers: true
     smooth-scroll: true
     anchor-sections: true
 
