@@ -128,12 +128,9 @@ Can you tell how many reads are there in this example output? And what are their
 
 Count the number of forward and reverse reads of sample `AMB201Kp` in a **single command-line**.
 
-*Hint: Use `grep` command to catch only the sequence ID lines (starting with `@`)*
+*Hint: Use `zgrep` (`grep` for gzipped files) to catch only the sequence ID lines (starting with `@`)*
 
-Correct output:
-
-- `_1` forward reads: 190784
-- `_2` reverse reads: 226861
+Correct output: forward = reverse = 617,535 reads
 :::
 
 # Reads Quality Control (QC)
