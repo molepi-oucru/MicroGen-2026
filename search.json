@@ -139,7 +139,43 @@
     "href": "day-1/instructions/raw2assembly.html",
     "title": "1.3 From raw sequencing data to assemblies",
     "section": "",
-    "text": "⛏️ Under construction …\n\nFASTQ files\n⛏️ Under construction …\n\n\nReads Quality\n⛏️ Under construction …\n\n\nAssembly\n⛏️ Under construction …\n\n\n\n\n Back to top",
+    "text": "From now until the end of Day-3, we will work with a real-world dataset: a nosocomial K. pneumoniae outbreak in Italy.\nThe dataset is under the BioProject ID: PRJNA1260529, acompanied by the publication of Captani et al, Euro Surveill, 2026. It describes an outbreak of multidrug-resistant and carbapenemase-producing K. pneumoniae ST147 in the sub-intensive care unit (S-ICU) of a tertiary care hospital in Italy between mid-February and early March 2025. NDM-producing K. pneumoniae isolates were sequenced using both Illumina short-read and Oxford Nanopore long-read technologies. The sequencing data helped illuminating the transmission dynamics of the outbreak and the genomic features of the isolates.\nUsing this dataset, we will learn how to transform “raw” sequencing data into “intepretable” genomes, and get a practical experience with a typical workflow in genomic epidemiology in the context of infectious disease outbreaks.\nOur work-flow will comprise the following main processes:\n\nQuality assessment (and improvement) of raw sequencing data\nGenome assembly\nSpecies identification and MLST typing\nAMR gene profiling\nGenome annotation\nGene variation analysis\nPhylogenetic analysis\n\nThis module will guide you through the first 2 processes.\nWe hope you will enjoy the flow. Now, let’s begin!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.3 From raw sequencing data to assemblies"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/raw2assembly.html#multiqc-report",
+    "href": "day-1/instructions/raw2assembly.html#multiqc-report",
+    "title": "1.3 From raw sequencing data to assemblies",
+    "section": "MultiQC report",
+    "text": "MultiQC report\nNow you can open the file multiqc_shortread/multiqc_report.html in your browser to view the report. Or in the VSCode, right click on the file and select “Open Preview”.\nLet’s go through the report and answer the following questions:\n\nWhat was the coverage?\nWhat is the overall quality of the raw reads?\nAre there any adapter contamination?\nAre there any issues with the sequencing?\n\n\n\n\n\n\n\nImportantMaking decision\n\n\n\n\n\nBased on the MultiQC report, do you want to improve the raw reads quality?\nIf yes, what specific modification to the raw reads would you like to perform? If no, then why?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.3 From raw sequencing data to assemblies"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/raw2assembly.html#improve-reads-quality-for-assembly",
+    "href": "day-1/instructions/raw2assembly.html#improve-reads-quality-for-assembly",
+    "title": "1.3 From raw sequencing data to assemblies",
+    "section": "Improve reads quality for assembly",
+    "text": "Improve reads quality for assembly\nTrimming and adapter removal can be done with FASTP or Trimmomatic\nExample command-lines:",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.3 From raw sequencing data to assemblies"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/raw2assembly.html#is-my-isolate-really-a-k.-pneumoniae",
+    "href": "day-1/instructions/raw2assembly.html#is-my-isolate-really-a-k.-pneumoniae",
+    "title": "1.3 From raw sequencing data to assemblies",
+    "section": "Is my isolate really a K. pneumoniae?",
+    "text": "Is my isolate really a K. pneumoniae?\nSpecies check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.\nSYLPH_DB=\"sylph-db/gtdb-r220-c200-dbv1.syldb\"\nsylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv",
     "crumbs": [
       "Practical Guides",
       "Day 1",

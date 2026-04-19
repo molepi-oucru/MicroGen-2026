@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nguyen MTS">
+<meta name="dcterms.date" content="2026-05-12">
 
 <title>1.3 From raw sequencing data to assemblies – MicroGen 2026</title>
 <style>
@@ -23,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -292,9 +328,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fastq-files" id="toc-fastq-files" class="nav-link active" data-scroll-target="#fastq-files">FASTQ files</a></li>
-  <li><a href="#reads-quality" id="toc-reads-quality" class="nav-link" data-scroll-target="#reads-quality">Reads Quality</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-directory" id="toc-data-directory" class="nav-link" data-scroll-target="#data-directory">Data directory</a></li>
+  <li><a href="#fastq-files" id="toc-fastq-files" class="nav-link" data-scroll-target="#fastq-files">FASTQ files</a></li>
+  <li><a href="#reads-quality-control-qc" id="toc-reads-quality-control-qc" class="nav-link" data-scroll-target="#reads-quality-control-qc">Reads Quality Control (QC)</a>
+  <ul class="collapse">
+  <li><a href="#multiqc-report" id="toc-multiqc-report" class="nav-link" data-scroll-target="#multiqc-report">MultiQC report</a></li>
+  </ul></li>
   <li><a href="#assembly" id="toc-assembly" class="nav-link" data-scroll-target="#assembly">Assembly</a></li>
+  <li><a href="#self-exploration" id="toc-self-exploration" class="nav-link" data-scroll-target="#self-exploration">Self-Exploration</a>
+  <ul class="collapse">
+  <li><a href="#improve-reads-quality-for-assembly" id="toc-improve-reads-quality-for-assembly" class="nav-link" data-scroll-target="#improve-reads-quality-for-assembly">Improve reads quality for assembly</a></li>
+  <li><a href="#is-my-isolate-really-a-k.-pneumoniae" id="toc-is-my-isolate-really-a-k.-pneumoniae" class="nav-link" data-scroll-target="#is-my-isolate-really-a-k.-pneumoniae">Is my isolate really a <em>K. pneumoniae</em>?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -320,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">May 12, 2026</p>
     </div>
   </div>
   
@@ -332,20 +378,193 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>⛏️ Under construction …</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>From now until the end of Day-3, we will work with a real-world dataset: a nosocomial <em>K. pneumoniae</em> outbreak in Italy.</p>
+<p>The dataset is under the BioProject ID: <strong><em>PRJNA1260529</em></strong>, acompanied by the publication of <a href="https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457">Captani <em>et al</em>, Euro Surveill, 2026</a>. It describes an outbreak of multidrug-resistant and carbapenemase-producing <em>K. pneumoniae</em> ST147 in the sub-intensive care unit (S-ICU) of a tertiary care hospital in Italy between mid-February and early March 2025. NDM-producing <em>K. pneumoniae</em> isolates were sequenced using both Illumina short-read and Oxford Nanopore long-read technologies. The sequencing data helped illuminating the transmission dynamics of the outbreak and the genomic features of the isolates.</p>
+<p>Using this dataset, we will learn how to transform “raw” sequencing data into “intepretable” genomes, and get a practical experience with a typical workflow in genomic epidemiology in the context of infectious disease outbreaks.</p>
+<p>Our work-flow will comprise the following main processes:</p>
+<ol type="1">
+<li>Quality assessment (and improvement) of raw sequencing data</li>
+<li>Genome assembly</li>
+<li>Species identification and MLST typing</li>
+<li>AMR gene profiling</li>
+<li>Genome annotation</li>
+<li>Gene variation analysis</li>
+<li>Phylogenetic analysis</li>
+</ol>
+<p>This module will guide you through the first 2 processes.</p>
+<p>We hope you will enjoy the flow. Now, let’s begin!</p>
+</section>
+<section id="data-directory" class="level1">
+<h1>Data directory</h1>
+<p>If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven’t, no worries, we’ve got you covered! The data is pre-loaded on your instance under these directories:</p>
+<ul>
+<li><code>/data/raw_shortread</code>: Short-read data from Illumina - our focus today.</li>
+<li><code>/data/raw_longread</code>: Long-read data (Oxford Nanopore) - we will study in module 2.2.</li>
+</ul>
+<p>We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file PRJNA1260529.metadata.tsv.</p>
+<p>Let’s take a look at the files in the <code>raw_shortread</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_shortread/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You shall see a directory structure that looks like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> raw_shortread </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_1.fastq.gz </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_2.fastq.gz </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_1.fastq.gz </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_2.fastq.gz </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ... </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Try to answer the following questions: - How many files are there? - What are the sizes of these files? - What do the file names tell you?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Check if the files are truly corresponding to short-read sequencing data, but not the long-read, using command-lines.</p>
+<p><em>Hint: Use the metadata file. Loop (recursively run) through the forward read files to get the sample names.</em></p>
+<details>
+<summary>
+Code
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">metadata</span><span class="op">=</span><span class="st">"path-to-metadata-file"</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>_1.fastq.gz<span class="kw">;</span> <span class="cf">do</span> <span class="co"># start of the loop</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">sample</span><span class="op">=</span><span class="va">${file</span><span class="op">%%</span>_<span class="pp">*</span><span class="va">}</span><span class="kw">;</span> <span class="co"># split the filename by the character "_" and get the first part - the sample name</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add your code to search for the sample and get its sequencing tech in the metadata file</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="co"># end of the loop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</div>
+</div>
+</section>
 <section id="fastq-files" class="level1">
 <h1>FASTQ files</h1>
-<p>⛏️ Under construction …</p>
+<p>Raw sequencing data is stored in FASTQ format. The filename usually ends with <code>.fastq</code> (or <code>.fq</code>), or <code>.fastq.gz</code> (or <code>.fq.gz</code>) if they are compressed.</p>
+<p>For paired-end short-reads, each sample has two files: one for forward reads (<code>_1</code>) and one for reverse reads (<code>_2</code>).</p>
+<p>In our dataset, the files are named as <code>{sample-name}_1.fastq.gz</code> and <code>{sample-name}_2.fastq.gz</code> for forward and reverse reads, respectively.</p>
+<p>Each FASTQ file contains four lines for every single read:</p>
+<ul>
+<li><strong>Sequence ID</strong>: The “name” of the read (starts with <code>@</code>)</li>
+<li><strong>The DNA sequence</strong>: The actual A, T, C, and G bases.</li>
+<li><strong>Separator</strong>: Usually just a <code>+</code> sign or <code>+</code> followed by the sequence ID.</li>
+<li><strong>Quality Scores</strong>: Symbols representing how confident the sequencing machine is about each base (Phred scores).</li>
+</ul>
+<p>Let’s try printing out the first 12 lines of one of the FASTQ files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> raw_shortread/925Kp_1.fastq.gz <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n12</span><span class="kw">;</span> <span class="co"># zcat is cat for gzipped files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The output should look like below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">@SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">AAGTACCTCAACGGCCATTCCGATGTCGTCGCCGGCCTGGCGGTGGTTGGCGATAACTCCGGGCTCGCGGAAAAGCTTGGCTATCTGCAGAATGCGGTAGGCGGCGTGCTTGACCCGTTCAGCAGCTTCCTGACGCTGCGCGGCATCCGTACCCTGGCGCTGCGGATGGAGCGCCACAGCGCGAACGCGCTGCAGCTCGCCGAATGGCTGGAACAGCAGCCGGAAGTGGAGCGAGTCTGGTTTCCCTGGCTGGCCTCGCACCCGCATCATCAGCTGGCGCGCCAGCAAATGGCCCTGCCCG</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">+SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="ex">CCCCCC*CCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5C5CCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*CCCCCCCCCCC5CCCCCCCC5CCCCC5CCCCCCC5CCCCCCCCCCCCCCC*CCCCCCCCCCCCCC5*CCCC5CCCCCC5CCCC*CCCCCCCCCCCCCCCCCCCCCC*CCC*C5CCCCCCCCCCCC*CCCCCCCCCCCC5CCCCCCCCC*CC*CCC55*5CC55*5C*C555C5CCC5C**</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">@SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="ex">ATGTTGACCTGTAAGAACGAAAACACTGTTCTTTCCTGTGTGTCTTCCATTTCTTAGAACAACGTGCATATCTATTCTTGCATTTAAAGTCGCTTCGTCAATCCCCTATATTTCTAGGCGGGTATCTTTTAATGCAGATGGGAATACTCATCTCATAAACAGTGAATAATTATAAAGATGAAATCACACGGTTCTATTT</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="ex">+SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="ex">*CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCC*CCCCC5CCC*5CCCCCCC5CCCCCCC5CCC*C55CCCCC5</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="ex">@SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="ex">CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGGGTTCATGTGCAGCTCCATCAGCAAAAGGGGATGATAAGTTTATCACCACCGACTATTTGCAACAGTGCCCATCTCCGGGTTTATTATATTCGGGCGCATTTGCGCGCGGCAGCTGCTGACTGTTCAGTCTATGTACGCGGAGCCGTTCATGGAAATATTCGCGCAGGTGTTCAGGCTGTTCCCGTTCAACAAGTTCCGGCACGACGGGCTTGTTC</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="ex">+SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="ex">*CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="reads-quality" class="level1">
-<h1>Reads Quality</h1>
-<p>⛏️ Under construction …</p>
+<section id="reads-quality-control-qc" class="level1">
+<h1>Reads Quality Control (QC)</h1>
+<p>We shouldn’t trust our data blindly. We will use <strong>FastQC</strong> to generate a report on things like base quality and adapter contamination.</p>
+<p>Since we have many samples, we will then use <strong>MultiQC</strong> to summarize all outputs from <strong>FastQC</strong> into a single, interactive HTML report for all samples.</p>
+<p>The following command-lines call the two programs on our short-read data:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">in_dir</span><span class="op">=</span><span class="st">"raw_shortread/"</span> <span class="co"># directory for input FASTQ files</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="va">fastqc_outdir</span><span class="op">=</span><span class="st">"fastqc_shortread/"</span> <span class="co"># directory for FastQC outputs</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$fastqc_outdir</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="va">multiqc_outdir</span><span class="op">=</span><span class="st">"multiqc_shortread/"</span> <span class="co"># directory for MultiQC output</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$multiqc_outdir</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># activate the environment with fastqc &amp; multiqc installed</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">conda</span> activate multiqc </span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="va">nthreads</span><span class="op">=</span>5 <span class="co"># allows analysing 5 samples in parallel</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="co"># run fastqc on all fastq files</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="ex">fastqc</span> <span class="at">-o</span> <span class="va">$fastqc_outdir</span> <span class="at">-t</span> <span class="va">$nthreads</span> <span class="va">$in_dir</span>/<span class="pp">*</span>.fastq.gz </span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co"># run multiqc on all fastqc outputs</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="ex">multiqc</span> <span class="at">--interactive</span> <span class="at">--force</span> <span class="at">-o</span> <span class="va">$multiqc_outdir</span> <span class="va">$fastqc_outdir</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="multiqc-report" class="level2">
+<h2 class="anchored" data-anchor-id="multiqc-report">MultiQC report</h2>
+<p>Now you can open the file <code>multiqc_shortread/multiqc_report.html</code> in your browser to view the report. Or in the VSCode, right click on the file and select “Open Preview”.</p>
+<p>Let’s go through the report and answer the following questions:</p>
+<ul>
+<li>What was the coverage?</li>
+<li>What is the overall quality of the raw reads?</li>
+<li>Are there any adapter contamination?</li>
+<li>Are there any issues with the sequencing?</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Making decision
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Based on the MultiQC report, do you want to improve the raw reads quality?</p>
+<p>If yes, what specific modification to the raw reads would you like to perform? If no, then why?</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="assembly" class="level1">
 <h1>Assembly</h1>
-<p>⛏️ Under construction …</p>
+<p>Assembly is the process of building the full genome by finding overlaps between short reads. We will use <strong>Unicycler</strong>, which is highly regarded for bacterial assembly because it acts as an optimizer for the <strong>SPAdes</strong> assembler.</p>
+<p>The syntax for a command that run <code>unicycler</code> on a single sample with paired-end reads is as follows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">unicycler</span> <span class="at">-1</span> <span class="va">$forward</span> <span class="at">-2</span> <span class="va">$reverse</span> <span class="at">-o</span> <span class="va">$outdir</span> <span class="at">--threads</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>where</p>
+<ul>
+<li><code>-1</code> is the forward read file</li>
+<li><code>-2</code> is the reverse read file</li>
+<li><code>-o</code> is the output directory</li>
+<li><code>--threads</code> is the number of threads to use, higher number of threads will speed up the assembly process but will also consume more computing resources.</li>
+</ul>
+<p>To do the assembly for our batch of 12 samples in a time-efficient manner, we will automate this using <code>GNU Parallel</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># create a directory for assembly output</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">mkdir</span> <span class="at">-p</span> unicycler_shortread</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># create a tsv file with sample names and their corresponding fastq files</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="cf">while</span> <span class="bu">read</span> <span class="at">-r</span> <span class="va">sample</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="va">${sample}</span><span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_1.fastq.gz<span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_2.fastq.gz <span class="op">&gt;&gt;</span> samples_shortread.tsv<span class="kw">;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">grep</span> <span class="st">"Illumina MiSeq"</span> PRJNA1260529.metadata.tsv <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f28</span><span class="op">)</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co"># run unicycler on 6 samples at a time</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="ex">conda</span> activate unicycler</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="ex">parallel</span> <span class="at">-j</span> 6 <span class="at">--colsep</span> <span class="st">"\t"</span> unicycler <span class="at">-1</span> {2} <span class="at">-2</span> {3} <span class="at">-o</span> unicycler_shortread/{1} <span class="at">--threads</span> 4 :::: samples_shortread.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="self-exploration" class="level1">
+<h1>Self-Exploration</h1>
+<section id="improve-reads-quality-for-assembly" class="level2">
+<h2 class="anchored" data-anchor-id="improve-reads-quality-for-assembly">Improve reads quality for assembly</h2>
+<p>Trimming and adapter removal can be done with FASTP or Trimmomatic</p>
+<p>Example command-lines:</p>
+</section>
+<section id="is-my-isolate-really-a-k.-pneumoniae" class="level2">
+<h2 class="anchored" data-anchor-id="is-my-isolate-really-a-k.-pneumoniae">Is my isolate really a <em>K. pneumoniae</em>?</h2>
+<p>Species check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="va">SYLPH_DB</span><span class="op">=</span><span class="st">"sylph-db/gtdb-r220-c200-dbv1.syldb"</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">sylph</span> profile <span class="va">$SYLPH_DB</span> <span class="at">-1</span> raw_shortread/<span class="pp">*</span>_1.fastq.gz <span class="at">-2</span> raw_shortread/<span class="pp">*</span>_2.fastq.gz <span class="at">-o</span> sylph_shortread.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
