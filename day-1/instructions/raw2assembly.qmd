@@ -6,88 +6,201 @@ date: "2026-05-12"
 
 # Introduction
 
-From this module to the end of Day-3, we will work on a public dataset of a nosocomial *K. pneumoniae* outbreak in Italy.
+From now until the end of Day-3, we will work with a real-world dataset: a nosocomial *K. pneumoniae* outbreak in Italy.
 
-The dataset is under the BioProject ID: PRJNA1260529, with the publication by Captani et al, 2026 (https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457).
+The dataset is under the BioProject ID: **_PRJNA1260529_**, acompanied by the publication of [Captani *et al*, Euro Surveill, 2026](https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457). It describes an outbreak of multidrug-resistant and carbapenemase-producing *K. pneumoniae* ST147 in the sub-intensive care unit (S-ICU) of a tertiary care hospital in Italy between mid-February and early March 2025. NDM-producing *K. pneumoniae* isolates were sequenced using both Illumina short-read and Oxford Nanopore long-read technologies. The sequencing data helped illuminating the transmission dynamics of the outbreak and the genomic features of the isolates.
 
-We will learn how to conduct analyses to obtain annotated genomes, with genes and their locations, as what we have explored in the previous module, from raw sequencing data.
+Using this dataset, we will learn how to transform "raw" sequencing data into "intepretable" genomes, and get a practical experience with a typical workflow in genomic epidemiology in the context of infectious disease outbreaks.
 
-Our workflow will comprise
+Our work-flow will comprise the following main processes:
+
+1.  Quality assessment (and improvement) of raw sequencing data
+2.  Genome assembly
+3.  Species identification and MLST typing
+4.  AMR gene profiling
+5.  Genome annotation
+6.  Gene variation analysis
+7.  Phylogenetic analysis
+
+This module will guide you through the first 2 processes.
+
+We hope you will enjoy the flow. Now, let's begin!
 
 # Data directory
 
-If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven't, no worries, you got we covered! The data is available in your instance, under the directories `/data/raw_shortread` and `/data/raw_longread`.
+If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven't, no worries, we’ve got you covered! The data is pre-loaded on your instance under these directories:
 
-We will first focus on the short-read sequencing data. Long-read sequencing and how to analyse their output will be introduced in module 2.2.
+-   `/data/raw_shortread`: Short-read data from Illumina - our focus today.
+-   `/data/raw_longread`: Long-read data (Oxford Nanopore) - we will study in module 2.2.
 
-```         
+We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file PRJNA1260529.metadata.tsv.
+
+Let's take a look at the files in the `raw_shortread` directory:
+
+``` {.bash code-line-numbers="false"}
+ls raw_shortread/
+```
+
+You shall see a directory structure that looks like this:
+
+``` {.bash code-line-numbers="false"}
 ├── raw_shortread 
-
 │   ├── 925Kp_1.fastq.gz 
-
 │   ├── 925Kp_2.fastq.gz 
-
 │   ├── 930Kp_1.fastq.gz 
-
 │   ├── 930Kp_2.fastq.gz 
-
 │   ├── ... 
 ```
 
+Try to answer the following questions:
+- How many files are there?
+- What are the sizes of these files?
+- What do the file names tell you?
+
+::: {.callout-note collapse="false"}
+## Challenge
+
+Check if the files are truly corresponding to short-read sequencing data, but not the long-read, using command-lines.
+
+*Hint: Use the metadata file. Loop (recursively run) through the forward read files to get the sample names.*
+
+<details>
+
+<summary>Code</summary>
+
+``` {.bash code-line-numbers="false"}
+metadata="path-to-metadata-file" 
+for file in *_1.fastq.gz; do # start of the loop
+
+    sample=${file%%_*}; # split the filename by the character "_" and get the first part - the sample name
+    
+    # add your code to search for the sample and get its sequencing tech in the metadata file
+
+done # end of the loop
+```
+
+</details>
+:::
+
 # FASTQ files
 
-Raw sequencing data are stored in FASTQ format, usually with tail `.fastq` or `.fq` in their filenames, or `.fastq.gz` / `.fq.gz` if they are compressed.
+Raw sequencing data is stored in FASTQ format. The filename usually ends with `.fastq` (or `.fq`), or `.fastq.gz` (or `.fq.gz`) if they are compressed.
 
-For paired-end short-reads, each sample or isolate will have 2 FASTQ files - one for forward, and one for reverse reads. In our dataset, the files are named as `{sampleID}_1.fastq.gz` and `{sampleID}_2.fastq.gz` for forward and reverse reads, respectively.
+For paired-end short-reads, each sample has two files: one for forward reads (`_1`) and one for reverse reads (`_2`).
 
-Each short-read FASTQ file contains the following information: - ... - ... - ...
+In our dataset, the files are named as `{sample-name}_1.fastq.gz` and `{sample-name}_2.fastq.gz` for forward and reverse reads, respectively.
 
-# Reads Quality
+Each FASTQ file contains four lines for every single read:
 
-Measuring the quality of the raw read files can be conducted with FastQC, and the reports from it can be synthesized by MultiQC.
+- **Sequence ID**: The "name" of the read (starts with `@`)
+- **The DNA sequence**: The actual A, T, C, and G bases.
+- **Separator**: Usually just a `+` sign or `+` followed by the sequence ID.
+- **Quality Scores**: Symbols representing how confident the sequencing machine is about each base (Phred scores).
+
+Let's try printing out the first 12 lines of one of the FASTQ files:
+
+``` {.bash code-line-numbers="false"}
+zcat raw_shortread/925Kp_1.fastq.gz | head -n12; # zcat is cat for gzipped files
+```
+
+The output should look like below:
+
+```bash
+@SRR33475255.1 VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301
+AAGTACCTCAACGGCCATTCCGATGTCGTCGCCGGCCTGGCGGTGGTTGGCGATAACTCCGGGCTCGCGGAAAAGCTTGGCTATCTGCAGAATGCGGTAGGCGGCGTGCTTGACCCGTTCAGCAGCTTCCTGACGCTGCGCGGCATCCGTACCCTGGCGCTGCGGATGGAGCGCCACAGCGCGAACGCGCTGCAGCTCGCCGAATGGCTGGAACAGCAGCCGGAAGTGGAGCGAGTCTGGTTTCCCTGGCTGGCCTCGCACCCGCATCATCAGCTGGCGCGCCAGCAAATGGCCCTGCCCG
++SRR33475255.1 VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301
+CCCCCC*CCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5C5CCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*CCCCCCCCCCC5CCCCCCCC5CCCCC5CCCCCCC5CCCCCCCCCCCCCCC*CCCCCCCCCCCCCC5*CCCC5CCCCCC5CCCC*CCCCCCCCCCCCCCCCCCCCCC*CCC*C5CCCCCCCCCCCC*CCCCCCCCCCCC5CCCCCCCCC*CC*CCC55*5CC55*5C*C555C5CCC5C**
+@SRR33475255.2 VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199
+ATGTTGACCTGTAAGAACGAAAACACTGTTCTTTCCTGTGTGTCTTCCATTTCTTAGAACAACGTGCATATCTATTCTTGCATTTAAAGTCGCTTCGTCAATCCCCTATATTTCTAGGCGGGTATCTTTTAATGCAGATGGGAATACTCATCTCATAAACAGTGAATAATTATAAAGATGAAATCACACGGTTCTATTT
++SRR33475255.2 VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199
+*CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCC*CCCCC5CCC*5CCCCCCC5CCCCCCC5CCC*C55CCCCC5
+@SRR33475255.3 VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295
+CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGGGTTCATGTGCAGCTCCATCAGCAAAAGGGGATGATAAGTTTATCACCACCGACTATTTGCAACAGTGCCCATCTCCGGGTTTATTATATTCGGGCGCATTTGCGCGCGGCAGCTGCTGACTGTTCAGTCTATGTACGCGGAGCCGTTCATGGAAATATTCGCGCAGGTGTTCAGGCTGTTCCCGTTCAACAAGTTCCGGCACGACGGGCTTGTTC
++SRR33475255.3 VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295
+*CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC
+```
+
+# Reads Quality Control (QC)
+
+We shouldn't trust our data blindly. We will use **FastQC** to generate a report on things like base quality and adapter contamination. 
+
+Since we have many samples, we will then use **MultiQC** to summarize all outputs from **FastQC** into a single, interactive HTML report for all samples.
 
 The following command-lines call the two programs on our short-read data:
 
 ``` bash
-in_dir="raw_shortread/"
-fastqc_outdir="fastqc_shortread/"
+in_dir="raw_shortread/" # directory for input FASTQ files
+
+fastqc_outdir="fastqc_shortread/" # directory for FastQC outputs
 mkdir -p $fastqc_outdir
-multiqc_outdir="multiqc_shortread/"
+
+multiqc_outdir="multiqc_shortread/" # directory for MultiQC output
 mkdir -p $multiqc_outdir
 
-conda activate multiqc
-nthreads=5
-fastqc -o $fastqc_outdir -t $nthreads $in_dir/*.fastq.gz
-multiqc --interactive --force -o $multiqc_outdir $fastqc_outdir
+# activate the environment with fastqc & multiqc installed
+conda activate multiqc 
+
+nthreads=5 # allows analysing 5 samples in parallel
+
+# run fastqc on all fastq files
+fastqc -o $fastqc_outdir -t $nthreads $in_dir/*.fastq.gz 
+
+# run multiqc on all fastqc outputs
+multiqc --interactive --force -o $multiqc_outdir $fastqc_outdir 
 ```
+
+## MultiQC report
+
+Now you can open the file `multiqc_shortread/multiqc_report.html` in your browser to view the report. Or in the VSCode, right click on the file and select "Open Preview".
+
+Let's go through the report and answer the following questions:
+
+- What was the coverage?
+- What is the overall quality of the raw reads?
+- Are there any adapter contamination?
+- Are there any issues with the sequencing?
+
+::: {.callout-important collapse="false"}
+## Making decision
+Based on the MultiQC report, do you want to improve the raw reads quality? 
+
+If yes, what specific modification to the raw reads would you like to perform? If no, then why?
+:::
 
 # Assembly
 
-``` bash
-parent_outdir="unicycler_shortread"
-mkdir -p $parent_outdir
+Assembly is the process of building the full genome by finding overlaps between short reads. We will use **Unicycler**, which is highly regarded for bacterial assembly because it acts as an optimizer for the **SPAdes** assembler.
 
-assembly(){
-    local sample="$1";
-    local forward="$2";
-    local reverse="$3";
-    local parent_outdir="$4";
-    local outdir="${parent_outdir}/${sample}";
+The syntax for a command that run `unicycler` on a single sample with paired-end reads is as follows:
 
-    unicycler -1 $forward -2 $reverse -o $outdir --threads 4;
-}
-export -f assembly
-
-conda activate tormes-1.3.0;
-
-while read -r sample; do
-    echo -e ${sample}"\t"raw_shortread/${sample}_1.fastq.gz"\t"raw_shortread/${sample}_2.fastq.gz >> samples_shortread.txt;
-done < <(grep "Illumina MiSeq" PRJNA1260529.metadata.tsv | cut -f28)
-
-parallel -j 5 --colsep "\t" assembly {1} {2} {3} $parent_outdir :::: samples_shortread.txt
+``` {.bash code-line-numbers="false"}
+unicycler -1 $forward -2 $reverse -o $outdir --threads 4
 ```
 
-# Self-Explore
+where
+
+- `-1` is the forward read file
+- `-2` is the reverse read file
+- `-o` is the output directory
+- `--threads` is the number of threads to use, higher number of threads will speed up the assembly process but will also consume more computing resources.
+
+To do the assembly for our batch of 12 samples in a time-efficient manner, we will automate this using `GNU Parallel`.
+
+``` bash
+# create a directory for assembly output
+mkdir -p unicycler_shortread
+
+# create a tsv file with sample names and their corresponding fastq files
+while read -r sample; do
+    echo -e ${sample}"\t"raw_shortread/${sample}_1.fastq.gz"\t"raw_shortread/${sample}_2.fastq.gz >> samples_shortread.tsv;
+done < <(grep "Illumina MiSeq" PRJNA1260529.metadata.tsv | cut -f28)
+
+# run unicycler on 6 samples at a time
+conda activate unicycler
+parallel -j 6 --colsep "\t" unicycler -1 {2} -2 {3} -o unicycler_shortread/{1} --threads 4 :::: samples_shortread.tsv
+```
+
+# Self-Exploration
 
 ## Improve reads quality for assembly
 
@@ -95,7 +208,7 @@ Trimming and adapter removal can be done with FASTP or Trimmomatic
 
 Example command-lines:
 
-## Is my isolate really a K. pneumoniae?
+## Is my isolate really a *K. pneumoniae*?
 
 Species check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.
 
