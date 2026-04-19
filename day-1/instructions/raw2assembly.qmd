@@ -1,19 +1,105 @@
 ---
 title: "1.3 From raw sequencing data to assemblies"
 author: "Nguyen MTS"
-date: "yyyy-mm-dd"
+date: "2026-05-12"
 ---
 
-⛏️ Under construction ... 
+# Introduction
+
+From this module to the end of Day-3, we will work on a public dataset of a nosocomial *K. pneumoniae* outbreak in Italy.
+
+The dataset is under the BioProject ID: PRJNA1260529, with the publication by Captani et al, 2026 (https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457).
+
+We will learn how to conduct analyses to obtain annotated genomes, with genes and their locations, as what we have explored in the previous module, from raw sequencing data.
+
+Our workflow will comprise
+
+# Data directory
+
+If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven't, no worries, you got we covered! The data is available in your instance, under the directories `/data/raw_shortread` and `/data/raw_longread`.
+
+We will first focus on the short-read sequencing data. Long-read sequencing and how to analyse their output will be introduced in module 2.2.
+
+```         
+├── raw_shortread 
+
+│   ├── 925Kp_1.fastq.gz 
+
+│   ├── 925Kp_2.fastq.gz 
+
+│   ├── 930Kp_1.fastq.gz 
+
+│   ├── 930Kp_2.fastq.gz 
+
+│   ├── ... 
+```
 
 # FASTQ files
 
-⛏️ Under construction ... 
+Raw sequencing data are stored in FASTQ format, usually with tail `.fastq` or `.fq` in their filenames, or `.fastq.gz` / `.fq.gz` if they are compressed.
 
-# Reads Quality 
+For paired-end short-reads, each sample or isolate will have 2 FASTQ files - one for forward, and one for reverse reads. In our dataset, the files are named as `{sampleID}_1.fastq.gz` and `{sampleID}_2.fastq.gz` for forward and reverse reads, respectively.
 
-⛏️ Under construction ... 
+Each short-read FASTQ file contains the following information: - ... - ... - ...
+
+# Reads Quality
+
+Measuring the quality of the raw read files can be conducted with FastQC, and the reports from it can be synthesized by MultiQC.
+
+The following command-lines call the two programs on our short-read data:
+
+``` bash
+in_dir="raw_shortread/"
+fastqc_outdir="fastqc_shortread/"
+mkdir -p $fastqc_outdir
+multiqc_outdir="multiqc_shortread/"
+mkdir -p $multiqc_outdir
+
+conda activate multiqc
+nthreads=5
+fastqc -o $fastqc_outdir -t $nthreads $in_dir/*.fastq.gz
+multiqc --interactive --force -o $multiqc_outdir $fastqc_outdir
+```
 
 # Assembly
 
-⛏️ Under construction ... 
+``` bash
+parent_outdir="unicycler_shortread"
+mkdir -p $parent_outdir
+
+assembly(){
+    local sample="$1";
+    local forward="$2";
+    local reverse="$3";
+    local parent_outdir="$4";
+    local outdir="${parent_outdir}/${sample}";
+
+    unicycler -1 $forward -2 $reverse -o $outdir --threads 4;
+}
+export -f assembly
+
+conda activate tormes-1.3.0;
+
+while read -r sample; do
+    echo -e ${sample}"\t"raw_shortread/${sample}_1.fastq.gz"\t"raw_shortread/${sample}_2.fastq.gz >> samples_shortread.txt;
+done < <(grep "Illumina MiSeq" PRJNA1260529.metadata.tsv | cut -f28)
+
+parallel -j 5 --colsep "\t" assembly {1} {2} {3} $parent_outdir :::: samples_shortread.txt
+```
+
+# Self-Explore
+
+## Improve reads quality for assembly
+
+Trimming and adapter removal can be done with FASTP or Trimmomatic
+
+Example command-lines:
+
+## Is my isolate really a K. pneumoniae?
+
+Species check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.
+
+``` bash
+SYLPH_DB="sylph-db/gtdb-r220-c200-dbv1.syldb"
+sylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv
+```
