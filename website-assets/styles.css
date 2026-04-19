@@ -44,15 +44,15 @@
 .organiser-card {
     text-align: center;
     padding: 20px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+    /* filter: grayscale(100%); */
+    /* transition: filter 0.3s ease; */
     opacity: 0.7;
     transition: transform 0.2s;
 }
 
 .organiser-card:hover {
     transform: translateY(-5px);
-    filter: grayscale(0%);
+    /* filter: grayscale(0%); */
     opacity: 1;
 }
 
