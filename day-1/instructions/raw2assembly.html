@@ -394,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Phylogenetic analysis</li>
 </ol>
 <p>This module will guide you through the first 2 processes.</p>
-<p>We hope you will enjoy the flow. Now, let’s begin!</p>
+<p>We hope you will enjoy the <em>flow</em>. Now, let’s begin!</p>
 </section>
 <section id="data-directory" class="level1">
 <h1>Data directory</h1>
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>/data/raw_shortread</code>: Short-read data from Illumina - our focus today.</li>
 <li><code>/data/raw_longread</code>: Long-read data (Oxford Nanopore) - we will study in module 2.2.</li>
 </ul>
-<p>We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file PRJNA1260529.metadata.tsv.</p>
+<p>We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file <code>PRJNA1260529.metadata.tsv</code>.</p>
 <p>Let’s take a look at the files in the <code>raw_shortread</code> directory:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_shortread/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You shall see a directory structure that looks like this:</p>
@@ -413,7 +413,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_1.fastq.gz </span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_2.fastq.gz </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ... </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Try to answer the following questions: - How many files are there? - What are the sizes of these files? - What do the file names tell you?</p>
+<p>Try to answer the following questions:</p>
+<ul>
+<li>How many files are there?</li>
+<li>What are the sizes of these files?</li>
+<li>What do the file names tell you?</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -472,6 +477,29 @@ Code
 <span id="cb5-10"><a href="#cb5-10"></a><span class="ex">CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGGGTTCATGTGCAGCTCCATCAGCAAAAGGGGATGATAAGTTTATCACCACCGACTATTTGCAACAGTGCCCATCTCCGGGTTTATTATATTCGGGCGCATTTGCGCGCGGCAGCTGCTGACTGTTCAGTCTATGTACGCGGAGCCGTTCATGGAAATATTCGCGCAGGTGTTCAGGCTGTTCCCGTTCAACAAGTTCCGGCACGACGGGCTTGTTC</span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="ex">+SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
 <span id="cb5-12"><a href="#cb5-12"></a><span class="ex">*CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Can you tell how many reads are there in this example output? And what are their IDs, base sequences, and lengths?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Count the number of forward and reverse reads of sample <code>AMB201Kp</code> in a <strong>single command-line</strong>.</p>
+<p><em>Hint: Use <code>grep</code> command to catch only the sequence ID lines (starting with <code>@</code>)</em></p>
+<p>Correct output:</p>
+<ul>
+<li><code>_1</code> forward reads: 190784</li>
+<li><code>_2</code> reverse reads: 226861</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="reads-quality-control-qc" class="level1">
 <h1>Reads Quality Control (QC)</h1>
@@ -507,7 +535,7 @@ Code
 <li>Are there any issues with the sequencing?</li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -516,7 +544,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Based on the MultiQC report, do you want to improve the raw reads quality?</p>
 <p>If yes, what specific modification to the raw reads would you like to perform? If no, then why?</p>
