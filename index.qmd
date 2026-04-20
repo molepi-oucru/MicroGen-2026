@@ -13,42 +13,47 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ::: panel-tabset
 ## Day 0
 ### Pack your backpack
+*Setting up your computational environment and getting comfortable with the Linux environment and command lines.*
 [Slides]() | [Practical Guides](day-0/instructions/index.qmd) | [Data]()
 
-**0.1 Commands & Environments**
+**Module 0.1: Setup your workspace**
 
-**0.2 Setup your workspace**
+**Module 0.2: Commands & Environments**
 
 ## Day 1
 ### Meet the genomes
+*Introduction to whole-genome sequencing and genome assembly.*
 [Slides]() | [Practical Guides](day-1/instructions/index.qmd) | [Data]()
 
-**1.1 Whole-genome sequencing - What? & Why?** 
+**Module 1.1: Whole-genome sequencing - What? & Why?** 
 
-**1.2 A complete genome - How it look like?** 
+**Module 1.2: A complete genome - How it look like?** 
 
-**1.3 Going backward - From raw sequencing data to assemblies** 
+**Module 1.3: From raw sequencing data to assemblies** 
 
 ## Day 2
 ### Inspect the genomes
+*Assembly and gene-level analysis. Long-read sequencing.*
 [Slides]() | [Practical Guides](day-2/instructions/index.qmd) | [Data]()
 
-**2.1 Analyse the assemblies**
+**Module 2.1: Analyse the assemblies**
 
-**2.2 Long-read sequencing & Hybrid assemblies**
+**Module 2.2: Long-read sequencing & Hybrid assemblies**
 
-**2.3 Locate & compare genes** 
+**Module 2.3: Locate & compare genes** 
 
 ## Day 3
 ### Phylogenetics - Relationships between genomes
+*Core SNP and phylogenetic analysis.*
 [Slides]() | [Practical Guides](day-3/instructions/index.qmd) | [Data]()
 
-**3.1 Read mapping & SNP alignment**
+**Module 3.1: Read mapping & SNP alignment**
 
-**3.2 Phylogenetic tree inference**
+**Module 3.2: Phylogenetic tree inference**
 
 ## Day 4
 ### Meta-genomes
+*Metagenomics in pathogen detection.*
 [Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data]()
 :::
 

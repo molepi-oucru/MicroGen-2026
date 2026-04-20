@@ -51,6 +51,9 @@ website:
           contents:
             - text: "Day 0"
               href: day-0/instructions/index.qmd
+              contents:
+                - day-0/instructions/setup-environment.qmd
+                - day-0/instructions/linux-basics.qmd
             - section: "Day 1"
               href: day-1/instructions/index.qmd
               contents:
