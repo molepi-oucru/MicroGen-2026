@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../day-1/instructions/index.html" rel="next">
+<link href="../../day-0/instructions/setup-environment.html" rel="next">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -187,12 +187,29 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-0/instructions/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Day 0</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Day 0</span></a>
+  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.1 Setup your workspace</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/linux-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.2 Commands &amp; Environments</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../day-1/instructions/index.html" class="sidebar-item-text sidebar-link">
@@ -287,8 +304,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#what-to-expect" id="toc-what-to-expect" class="nav-link" data-scroll-target="#what-to-expect">What to expect</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#how-to-use-this-guide" id="toc-how-to-use-this-guide" class="nav-link" data-scroll-target="#how-to-use-this-guide">How to use this guide</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -324,9 +352,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>⛏️ Under construction …</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Welcome to the <strong>MicroGen 2026</strong> workshop! This workshop is designed to equip you with the essential computational skills needed for microbial genomics and bioinformatics. Over the next four days, we will journey from the basics of the Linux computing environment to advanced phylogenetic analysis and metagenomics, while also applying our learning to real-world study cases in infectious diseases.</p>
+<section id="what-to-expect" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-expect">What to expect</h2>
+<ul>
+<li><strong>Day 0</strong>: Setting up your computational environment and getting comfortable with the Linux environment and command lines.</li>
+<li><strong>Day 1</strong>: Introduction to whole-genome sequencing and genome assembly.</li>
+<li><strong>Day 2</strong>: Assembly and gene-level analysis. Long-read sequencing.</li>
+<li><strong>Day 3</strong>: Core SNP and phylogenetic analysis.</li>
+<li><strong>Day 4</strong>: Metagenomics in pathogen detection.</li>
+</ul>
+</section>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>This workshop is suitable for participants with little to no prior experience in bioinformatics. However, a basic understanding of clinical microbiology and molecular biology will be beneficial. No prior programming experience is required, as we will start from the fundamentals.</p>
+</section>
+<section id="how-to-use-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-this-guide">How to use this guide</h2>
+<p>Each day is divided into several modules, each focusing on a specific topic. Each module includes:</p>
+<ul>
+<li><strong>Introduction</strong>: A brief overview of the topic.</li>
+<li><strong>Guided analyses</strong>: Practical tasks to analyse specific real-world datasets.</li>
+<li><strong>Code blocks</strong>: Commands and scripts to run the analyses.</li>
+<li><strong>Challenges</strong>: Optional advanced tasks to sharpen your skills.</li>
+<li><strong>Self exploration</strong>: Suggestions for further exploration of more advanced analysis techniques and tools.</li>
+</ul>
+<p>We encourage you to try the challenges and self exploration sections. Be confident to ask questions and help each other. The goal is to learn by doing!</p>
+<p>Let’s get started with Day 0!</p>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -738,8 +796,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-1/instructions/index.html" class="pagination-link" aria-label="Day 1">
-        <span class="nav-page-text">Day 1</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-0/instructions/setup-environment.html" class="pagination-link" aria-label="0.1 Setup your workspace">
+        <span class="nav-page-text">0.1 Setup your workspace</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
