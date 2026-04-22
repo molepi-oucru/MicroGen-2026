@@ -1,0 +1,35 @@
+---
+title: "The Guide"
+# author: "Nguyen MTS"
+---
+
+Welcome to the **MicroGen 2026** workshop! 
+
+This workshop is designed to equip you with the essential computational skills needed for microbial genomics and bioinformatics. 
+
+Over the next four days, we will journey from the basics of the Linux computing environment to advanced phylogenetic analysis and metagenomics, while also applying our learning to real-world study cases in infectious diseases.
+
+## What to expect
+
+- **Day 0 - Pre-workshop**: Setting up your computational environment and getting comfortable with the Linux environment and command lines.
+- **Day 1**: Introduction to whole-genome sequencing and genome assembly.
+- **Day 2**: Assembly and gene-level analysis. Long-read sequencing.
+- **Day 3**: Core SNP and phylogenetic analysis.
+- **Day 4**: Metagenomics in pathogen detection.
+
+## Prerequisites
+
+This workshop is suitable for participants with little to no prior experience in bioinformatics. However, a basic understanding of clinical microbiology and molecular biology will be beneficial. No prior programming experience is required, as we will start from the fundamentals.
+
+## How to use this guide
+
+Each day is divided into several modules, each focusing on a specific topic. Each module includes:
+
+- **Introduction**: A brief overview of the topic.
+- **Guided analyses**: Practical tasks to analyse specific real-world datasets.
+- **Code blocks**: Commands and scripts to run the analyses.
+- **Challenges**: Optional advanced tasks to sharpen your skills.
+- **Self exploration**: Suggestions for further exploration of more advanced analysis techniques and tools.
+
+We encourage you to try the challenges and self exploration sections. Be confident to ask questions and help each other. The goal is to learn by doing!
+

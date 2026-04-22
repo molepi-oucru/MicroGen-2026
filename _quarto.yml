@@ -13,8 +13,9 @@ website:
     right:
       - text: "Practical Guides"
         menu:
-          - text: 'Day 0'
-            href: day-0/instructions/index.qmd
+          - text: 'Day 0 - Pre-Workshop'
+            # href: day-0/instructions/index.qmd
+            href: guides.qmd
           - text: 'Day 1'
             href: day-1/instructions/index.qmd
           - text: 'Day 2'
@@ -48,9 +49,10 @@ website:
       title: "Practical Guides"
       contents:
         - section: "Practical Guides"
+          href: guides.qmd
           contents:
-            - text: "Day 0"
-              href: day-0/instructions/index.qmd
+            - section: "Day 0 - Pre-Workshop"
+              # href: day-0/instructions/index.qmd
               contents:
                 - day-0/instructions/setup-environment.qmd
                 - day-0/instructions/linux-basics.qmd
@@ -71,7 +73,7 @@ website:
               contents:
                 - day-3/instructions/mapping.qmd
                 - day-3/instructions/phylotree.qmd
-            - text: "Day 4"
+            - section: "Day 4"
               href: day-4/instructions/index.qmd
 
 format:
