@@ -90,7 +90,7 @@
     "text": "Back to top",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.1 Setup your workspace"
     ]
   },
@@ -160,7 +160,7 @@
     "text": "Welcome to the command line! For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit. Most bioinformatics tools don’t have a graphical user interface (GUI) with buttons and menus; instead, they are controlled by typing commands.\n\n\nYou might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.\n\n\n\n\nThe Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.\n\n\n\n\nYou don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!\n\n\n\n\nThink of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).\n\n\n\nA command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -172,7 +172,7 @@
     "text": "You might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -184,7 +184,7 @@
     "text": "The Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -196,7 +196,7 @@
     "text": "You don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -208,7 +208,7 @@
     "text": "Think of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -220,7 +220,7 @@
     "text": "A command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -232,7 +232,7 @@
     "text": "Anatomy of a File Name\nIn Windows, the file extension (.docx, .exe) tells the system what the file is. In Linux, extensions are mostly for humans. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.\nYou can name a file anything: - genome.fasta (Helpful) - lunch_list.banhmi (Valid) * data_source.nuocmam (Valid)\nHowever, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -244,7 +244,7 @@
     "text": "Types of Files in Genomics\n\nText Files: Plain text you can read. Examples: .fasta, .fastq, .csv, .sh.\nCompressed Files: To save space, we often zip files. Common extensions: .gz, .zip, .tar.gz. Most Linux tools can “peek” inside .gz files without unzipping them.\nBinary Files: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, .bam or .bcf files).",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -256,7 +256,7 @@
     "text": "Managing Files and Directories\n\nmkdir: Create a new directory (which is just a special type of file!).\n\nmkdir raw_reads\n\ncp: Copy files or directories.\n\ncp source.txt destination.txt\n\nmv: Move or rename files.\n\nmv old_name.txt new_name.txt\n\nrm: Remove (delete) files. Be careful! There is no “Trash”.\n\nrm -r folder_name: Recursively delete a directory.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -268,7 +268,7 @@
     "text": "Peeking into File Contents\nWe rarely open huge genomics files in editors. We use these instead:\n\ncat: Print the whole file (only for small files!).\nhead: Show the first few lines.\ntail: Show the last few lines.\nless: The “gold standard” for viewing large files. Use arrows to scroll, / to search, and q to quit.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -280,7 +280,7 @@
     "text": "Searching and Filtering\n\ngrep: Search for a pattern (e.g., grep \"sequence_ABC\" all_sequences.fasta).\nwc -l: Count the number of lines.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -292,7 +292,7 @@
     "text": "Access Permissions\nEvery file has metadata that defines who can do what with it. Run ls -l to see these.\n\nr: Read\nw: Write\nx: Execute (run as a program)\n\nThese are divided into User (owner), Group, and Others.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -304,7 +304,7 @@
     "text": "chmod: Changing Permissions\nTo make a script executable: chmod +x my_analysis_script.sh",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -316,7 +316,7 @@
     "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple tools.\nExample: Count how many sequences are in a FASTA file. FASTA headers start with &gt;. We can find all lines starting with &gt; and count them: grep \"^&gt;\" genome.fasta | wc -l",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -328,7 +328,7 @@
     "text": "Standard Input, Output, and Error\n\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\nRedirection:\n\n&gt;: Save output to a file (overwrites).\n&gt;&gt;: Append output to a file (adds to the end).\n2&gt;: Redirect error messages to a file.\n\n\nExample: Save the list of files to a text file. ls -lh &gt; file_list.txt",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -340,7 +340,7 @@
     "text": "Variables\nVariables store information for later use. In scripts, we often store filenames in variables. MY_SAMPLE=\"Sample_A1\" echo $MY_SAMPLE",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -352,7 +352,7 @@
     "text": "Remote Computing: Connecting to a Server\nIn bioinformatics, your laptop is often not powerful enough to process thousands of genomes. Instead, we use high-performance computers (HPC) or cloud servers. We connect to these using SSH (Secure Shell).\nssh username@server-ip-address\nOnce you are logged in, you are using the Linux environment of that remote computer!",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -364,7 +364,7 @@
     "text": "Software Environments: Conda & Mamba\nDifferent bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use Conda (or the faster version, Mamba) to create isolated “bubbles” or environments.\n\nmamba create -n assembly_env shovill spades: Create an environment for assembly.\nmamba activate assembly_env: Enter the bubble.\nmamba deactivate: Leave the bubble.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -376,7 +376,7 @@
     "text": "tmux & screen\nBioinformatics jobs often take hours or days to run. If your internet disconnects, the job might die. tmux allows you to run “sessions” that keep going even if you log out.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -388,7 +388,7 @@
     "text": "Loops\nAutomate tasks across hundreds of samples. for file in *.fastq; do echo \"Processing $file...\"; done",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -400,7 +400,7 @@
     "text": "find\nFind files based on name, size, or modification date. find . -name \"*.vcf\" -size +10M",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -412,7 +412,7 @@
     "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.",
     "crumbs": [
       "Practical Guides",
-      "Day 0",
+      "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
     ]
   },
@@ -504,7 +504,7 @@
     "href": "index.html",
     "title": "Beginner Course on Microbial Genomics:Applications & Research",
     "section": "",
-    "text": "A bioinformatics workshop organised by the Molecular Epidemiology Group at Oxford University Clinical Research Unit in May, 2026.\nThis workshop is a part of the KLEB-CASAVA project, funded by the UKRI.\nAiming to enhance the local capacity in genomic epidemiology and surveillance, the workshop provides essential bioinformatics skills for Vietnamese clinicians and researchers, whose work focuses on bacterial infectious diseases, but have little to no experience in analysing whole-genome sequencing data.\n\nProgramme\n\nDay 0Day 1Day 2Day 3Day 4\n\n\n\nPack your backpack\nSetting up your computational environment and getting comfortable with the Linux environment and command lines. Slides | Practical Guides | Data\nModule 0.1: Setup your workspace\nModule 0.2: Commands & Environments\n\n\n\n\nMeet the genomes\nIntroduction to whole-genome sequencing and genome assembly. Slides | Practical Guides | Data\nModule 1.1: Whole-genome sequencing - What? & Why?\nModule 1.2: A complete genome - How it look like?\nModule 1.3: From raw sequencing data to assemblies\n\n\n\n\nInspect the genomes\nAssembly and gene-level analysis. Long-read sequencing. Slides | Practical Guides | Data\nModule 2.1: Analyse the assemblies\nModule 2.2: Long-read sequencing & Hybrid assemblies\nModule 2.3: Locate & compare genes\n\n\n\n\nPhylogenetics - Relationships between genomes\nCore SNP and phylogenetic analysis. Slides | Practical Guides | Data\nModule 3.1: Read mapping & SNP alignment\nModule 3.2: Phylogenetic tree inference\n\n\n\n\nMeta-genomes\nMetagenomics in pathogen detection. Slides | Practical Guides | Data\n\n\n\n\n\n\nInstructors\n\n\n\n\nDr. Pham Thanh Duy  Head of Molecular Epidemiology Group  Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University\n\n  \n\n\n\n\nDr. Chung The Hao  Senior Postdoc Fellow  Saw Swee Hock School of Public Health, National University of Singapore\n\n  \n\n\n\n\nMai Thu Si Nguyen  Research Assistant  Oxford University Clinical Research Unit\n\n  \n\n\n\n\n\n\nNguyen Pham Nhu Quynh  PhD Student  Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University\n\n  \n\n\n\n\nTon Ngoc Minh Quan  Research Assistant  Oxford University Clinical Research Unit\n\n  \n\n\n\n\n\n\nAcknowledgement\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "A bioinformatics workshop organised by the Molecular Epidemiology Group at Oxford University Clinical Research Unit in May, 2026.\nThis workshop is a part of the KLEB-CASAVA project, funded by the UKRI.\nAiming to enhance the local capacity in genomic epidemiology and surveillance, the workshop provides essential bioinformatics skills for Vietnamese clinicians and researchers, whose work focuses on bacterial infectious diseases, but have little to no experience in analysing whole-genome sequencing data.\n\nProgramme\n\nDay 0Day 1Day 2Day 3Day 4\n\n\n\nPack your backpack\nSetting up your computational environment and getting comfortable with the Linux environment and command lines.\nSlides | Practical Guides | Data\nModule 0.1: Setup your workspace\nModule 0.2: Commands & Environments\n\n\n\n\nMeet the genomes\nIntroduction to whole-genome sequencing and genome assembly.\nSlides | Practical Guides | Data\nModule 1.1: Whole-genome sequencing - What? & Why?\nModule 1.2: A complete genome - How it look like?\nModule 1.3: From raw sequencing data to assemblies\n\n\n\n\nInspect the genomes\nAssembly and gene-level analysis. Long-read sequencing.\nSlides | Practical Guides | Data\nModule 2.1: Analyse the assemblies\nModule 2.2: Long-read sequencing & Hybrid assemblies\nModule 2.3: Locate & compare genes\n\n\n\n\nPhylogenetics - Relationships between genomes\nCore SNP and phylogenetic analysis. Slides | Practical Guides | Data\nModule 3.1: Read mapping & SNP alignment\nModule 3.2: Phylogenetic tree inference\n\n\n\n\nMeta-genomes\nMetagenomics in pathogen detection.\nSlides | Practical Guides | Data\n\n\n\n\n\n\nInstructors\n\n\n\n\nDr. Pham Thanh Duy  Head of Molecular Epidemiology Group  Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University\n\n  \n\n\n\n\nDr. Chung The Hao  Senior Postdoc Fellow  Saw Swee Hock School of Public Health, National University of Singapore\n\n  \n\n\n\n\nMai Thu Si Nguyen  Research Assistant  Oxford University Clinical Research Unit\n\n  \n\n\n\n\n\n\nNguyen Pham Nhu Quynh  PhD Student  Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University\n\n  \n\n\n\n\nTon Ngoc Minh Quan  Research Assistant  Oxford University Clinical Research Unit\n\n  \n\n\n\n\n\n\nAcknowledgement\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "day-3/instructions/phylotree.html",
