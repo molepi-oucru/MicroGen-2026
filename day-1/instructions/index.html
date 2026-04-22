@@ -9,7 +9,7 @@
 <meta name="author" content="Duy PT, Hao CT, Quynh NPN, Nguyen MTS">
 <meta name="dcterms.date" content="2026-05-12">
 
-<title>Day 1: Meet the genomes – MicroGen 2026</title>
+<title>Day 1: Meet the Genomes – MicroGen 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -281,13 +281,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Read Mapping</span></a>
+ <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Phylogenetic tree</span></a>
+ <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
   </div>
 </li>
       </ul>
@@ -305,15 +305,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#whole-genome-sequencing---what-why" id="toc-whole-genome-sequencing---what-why" class="nav-link" data-scroll-target="#whole-genome-sequencing---what-why">1.1 Whole-genome sequencing - What &amp; Why</a></li>
+  <li><a href="#studying-public-genomes" id="toc-studying-public-genomes" class="nav-link" data-scroll-target="#studying-public-genomes">1.2 Studying Public Genomes</a></li>
+  <li><a href="#from-raw-data-to-assembly" id="toc-from-raw-data-to-assembly" class="nav-link" data-scroll-target="#from-raw-data-to-assembly">1.3 From Raw Data to Assembly</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-1/instructions/index.html">Day 1</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Day 1: Meet the genomes</h1>
+<h1 class="title">Day 1: Meet the Genomes</h1>
 </div>
 
 
@@ -342,9 +354,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>⛏️ Under construction …</p>
+<p>Welcome to the first core day of our workshop! Having established our technical foundation with Linux in <a href="https://nguyenmts.github.io/MicroGen-2026/day-0/instructions/linux-basics.qmd">Day 0</a>, we now transition into the heart of bacterial genomics. Today’s journey, <strong>“Meet the Genomes”</strong>, is designed to take you from a theoretical understanding of Whole-Genome Sequencing (WGS), to the practical reality of generating high-quality bacterial assemblies from raw data.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Modern microbiology is being revolutionized by genomic data. We will explore how these digital sequences translate into actionable public health insights — from tracking hospital outbreaks to monitoring the global spread of antimicrobial resistance.</p>
+<p>The day is structured into three modules:</p>
+<section id="whole-genome-sequencing---what-why" class="level2">
+<h2 class="anchored" data-anchor-id="whole-genome-sequencing---what-why"><a href="../../day-1/instructions/introduction.html">1.1 Whole-genome sequencing - What &amp; Why</a></h2>
+<p>We begin with the “what” and “why” of WGS. This module covers the fundamental concepts of sequencing technologies and their critical applications in: * <strong>Clinical Microbiology:</strong> Enhancing diagnostic speed and precision. * <strong>Outbreak Investigation:</strong> Inferring the transmission dynamics from the genomic relationships between the isolates. * <strong>AMR Surveillance:</strong> Identifying the genetic determinants of drug resistance. * <strong>Case Study Introduction:</strong> We will introduce the real-world <em>Klebsiella pneumoniae</em> dataset from a recent hospital outbreak that will serve as our primary study material.</p>
+</section>
+<section id="studying-public-genomes" class="level2">
+<h2 class="anchored" data-anchor-id="studying-public-genomes"><a href="../../day-1/instructions/genome-view.html">1.2 Studying Public Genomes</a></h2>
+<p>Genomic epidemiology relies heavily on comparative analysis. In this module, you will learn to navigate the vast archives of public genomic data: * <strong>NCBI Resources:</strong> Searching for and retrieving reference genomes. * <strong>Genome Visualization:</strong> Hands-on training with <strong>Artemis</strong> — a powerful tool for browsing through bacterial genomes, inspecting gene regions, and understanding genomic features.</p>
+</section>
+<section id="from-raw-data-to-assembly" class="level2">
+<h2 class="anchored" data-anchor-id="from-raw-data-to-assembly"><a href="../../day-1/instructions/raw2assembly.html">1.3 From Raw Data to Assembly</a></h2>
+<p>At the end of the day, we’ll put theory into practice. Using an <em>K. pneumoniae</em> outbreak dataset, you will learn the essential bioinformatic pipeline to process raw short-read sequencing data: * <strong>Quality Control (QC):</strong> Identifying issues in raw sequencing reads using <strong>FastQC</strong> and <strong>MultiQC</strong>. * <strong>De novo Assembly:</strong> Using <strong>Unicycler</strong> to reconstruct full genomes from short-read sequences.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of today, you will be able to: 1. Explain the utility of WGS in clinical and public health microbiology. 2. Retrieve and visualize bacterial genomes from public databases. 3. Perform quality control on raw sequencing data. 4. Generate bacterial genome assemblies using state-of-the-art bioinformatic tools.</p>
+<hr>
+<p><strong>Let’s begin our journey into the bacterial genome!</strong></p>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

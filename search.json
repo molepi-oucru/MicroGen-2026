@@ -4,7 +4,19 @@
     "href": "day-1/instructions/introduction.html",
     "title": "1.1 Whole-genome sequencing - What & Why",
     "section": "",
-    "text": "⛏️ Under construction …\n\n\n\n Back to top",
+    "text": "Whole-genome sequencing (WGS) is a laboratory technique used to determine the complete DNA sequence of an organism’s genome. Unlike traditional methods that target specific genes, WGS sequences every part of the genome, providing a comprehensive view of the organism’s genetic makeup.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.1 Whole-genome sequencing - What & Why"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/introduction.html#klebsiella-pneumoniae-outbreak-in-an-italian-hospital",
+    "href": "day-1/instructions/introduction.html#klebsiella-pneumoniae-outbreak-in-an-italian-hospital",
+    "title": "1.1 Whole-genome sequencing - What & Why",
+    "section": "Klebsiella pneumoniae Outbreak in an Italian Hospital",
+    "text": "Klebsiella pneumoniae Outbreak in an Italian Hospital",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -16,7 +28,7 @@
     "href": "day-1/instructions/genome-view.html",
     "title": "1.2 A complete genome - How it look like?",
     "section": "",
-    "text": "⛏️ Under construction …\n\n\n\n Back to top",
+    "text": "To learn about how a complete genome looks like, we will use the following resources:\n\nNCBI Resources: NCBI\nArtemis Genome Browser: Artemis\n\n\nOpen the Artemis\n\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -26,13 +38,13 @@
   {
     "objectID": "day-3/instructions/mapping.html",
     "href": "day-3/instructions/mapping.html",
-    "title": "Read Mapping",
+    "title": "3.1 Read mapping & SNP alignment",
     "section": "",
     "text": "Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 3",
-      "Read Mapping"
+      "3.1 Read mapping & SNP alignment"
     ]
   },
   {
@@ -40,7 +52,7 @@
     "href": "day-3/instructions/index.html",
     "title": "Day 3: Phylogenetics - Relationships between genomes",
     "section": "",
-    "text": "⛏️ Under construction …\n\n\n\n Back to top",
+    "text": "At this stage, we’re gonna learn how to compare and infer the evolutionary relationships between the outbreak’s isolates from their short-read sequencing data. These analyses will enable us to answer questions, such as:\n\nAre the outbreak isolates related to each other?\nHow many transmission events occurred during the outbreak?\nWhat is the direction of transmission?\nHow does the outbreak spread in the hospital?\nHow does the pathogen evolve during the outbreak?\nWhat could be the origin of the outbreak?\n\nWe will journey through the following topics:\n\nGenome mapping: How to map sequencing reads of the outbreak’s isolates to a reference genome.\nSNP calling & alignment: How to identify single-nucleotide polymorphisms (SNPs) among the outbreak’s isolates.\nPhylogenetic tree inference: How to infer evolutionary relationships between the outbreak’s isolates.\n\nNow, let’s begin!\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 3"
@@ -142,7 +154,7 @@
     "href": "day-0/instructions/linux-basics.html",
     "title": "0.2 Commands & Environments",
     "section": "",
-    "text": "Back to top",
+    "text": "Welcome to the command line! For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit. Most bioinformatics tools don’t have a graphical user interface (GUI) with buttons and menus; instead, they are controlled by typing commands.\n\n\nYou might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.\n\n\n\n\nThe Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.\n\n\n\n\nYou don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!\n\n\n\n\nThink of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).\n\n\n\nA command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
     "crumbs": [
       "Practical Guides",
       "Day 0",
@@ -150,11 +162,323 @@
     ]
   },
   {
-    "objectID": "day-2/instructions/gene-alignment.html",
-    "href": "day-2/instructions/gene-alignment.html",
-    "title": "2.3 Locate & compare genes",
+    "objectID": "day-0/instructions/linux-basics.html#why-linux-for-genomics",
+    "href": "day-0/instructions/linux-basics.html#why-linux-for-genomics",
+    "title": "0.2 Commands & Environments",
     "section": "",
-    "text": "Back to top",
+    "text": "You might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#the-terminal",
+    "href": "day-0/instructions/linux-basics.html#the-terminal",
+    "title": "0.2 Commands & Environments",
+    "section": "",
+    "text": "The Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#getting-help",
+    "href": "day-0/instructions/linux-basics.html#getting-help",
+    "title": "0.2 Commands & Environments",
+    "section": "",
+    "text": "You don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#the-file-system",
+    "href": "day-0/instructions/linux-basics.html#the-file-system",
+    "title": "0.2 Commands & Environments",
+    "section": "",
+    "text": "Think of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#the-command-line",
+    "href": "day-0/instructions/linux-basics.html#the-command-line",
+    "title": "0.2 Commands & Environments",
+    "section": "",
+    "text": "A command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#anatomy-of-a-file-name",
+    "href": "day-0/instructions/linux-basics.html#anatomy-of-a-file-name",
+    "title": "0.2 Commands & Environments",
+    "section": "Anatomy of a File Name",
+    "text": "Anatomy of a File Name\nIn Windows, the file extension (.docx, .exe) tells the system what the file is. In Linux, extensions are mostly for humans. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.\nYou can name a file anything: - genome.fasta (Helpful) - lunch_list.banhmi (Valid) * data_source.nuocmam (Valid)\nHowever, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#types-of-files-in-genomics",
+    "href": "day-0/instructions/linux-basics.html#types-of-files-in-genomics",
+    "title": "0.2 Commands & Environments",
+    "section": "Types of Files in Genomics",
+    "text": "Types of Files in Genomics\n\nText Files: Plain text you can read. Examples: .fasta, .fastq, .csv, .sh.\nCompressed Files: To save space, we often zip files. Common extensions: .gz, .zip, .tar.gz. Most Linux tools can “peek” inside .gz files without unzipping them.\nBinary Files: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, .bam or .bcf files).",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#managing-files-and-directories",
+    "href": "day-0/instructions/linux-basics.html#managing-files-and-directories",
+    "title": "0.2 Commands & Environments",
+    "section": "Managing Files and Directories",
+    "text": "Managing Files and Directories\n\nmkdir: Create a new directory (which is just a special type of file!).\n\nmkdir raw_reads\n\ncp: Copy files or directories.\n\ncp source.txt destination.txt\n\nmv: Move or rename files.\n\nmv old_name.txt new_name.txt\n\nrm: Remove (delete) files. Be careful! There is no “Trash”.\n\nrm -r folder_name: Recursively delete a directory.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#peeking-into-file-contents",
+    "href": "day-0/instructions/linux-basics.html#peeking-into-file-contents",
+    "title": "0.2 Commands & Environments",
+    "section": "Peeking into File Contents",
+    "text": "Peeking into File Contents\nWe rarely open huge genomics files in editors. We use these instead:\n\ncat: Print the whole file (only for small files!).\nhead: Show the first few lines.\ntail: Show the last few lines.\nless: The “gold standard” for viewing large files. Use arrows to scroll, / to search, and q to quit.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#searching-and-filtering",
+    "href": "day-0/instructions/linux-basics.html#searching-and-filtering",
+    "title": "0.2 Commands & Environments",
+    "section": "Searching and Filtering",
+    "text": "Searching and Filtering\n\ngrep: Search for a pattern (e.g., grep \"sequence_ABC\" all_sequences.fasta).\nwc -l: Count the number of lines.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#access-permissions",
+    "href": "day-0/instructions/linux-basics.html#access-permissions",
+    "title": "0.2 Commands & Environments",
+    "section": "Access Permissions",
+    "text": "Access Permissions\nEvery file has metadata that defines who can do what with it. Run ls -l to see these.\n\nr: Read\nw: Write\nx: Execute (run as a program)\n\nThese are divided into User (owner), Group, and Others.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#chmod-changing-permissions",
+    "href": "day-0/instructions/linux-basics.html#chmod-changing-permissions",
+    "title": "0.2 Commands & Environments",
+    "section": "chmod: Changing Permissions",
+    "text": "chmod: Changing Permissions\nTo make a script executable: chmod +x my_analysis_script.sh",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#pipes",
+    "href": "day-0/instructions/linux-basics.html#pipes",
+    "title": "0.2 Commands & Environments",
+    "section": "Pipes (|)",
+    "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple tools.\nExample: Count how many sequences are in a FASTA file. FASTA headers start with &gt;. We can find all lines starting with &gt; and count them: grep \"^&gt;\" genome.fasta | wc -l",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#standard-input-output-and-error",
+    "href": "day-0/instructions/linux-basics.html#standard-input-output-and-error",
+    "title": "0.2 Commands & Environments",
+    "section": "Standard Input, Output, and Error",
+    "text": "Standard Input, Output, and Error\n\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\nRedirection:\n\n&gt;: Save output to a file (overwrites).\n&gt;&gt;: Append output to a file (adds to the end).\n2&gt;: Redirect error messages to a file.\n\n\nExample: Save the list of files to a text file. ls -lh &gt; file_list.txt",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#variables",
+    "href": "day-0/instructions/linux-basics.html#variables",
+    "title": "0.2 Commands & Environments",
+    "section": "Variables",
+    "text": "Variables\nVariables store information for later use. In scripts, we often store filenames in variables. MY_SAMPLE=\"Sample_A1\" echo $MY_SAMPLE",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#remote-computing-connecting-to-a-server",
+    "href": "day-0/instructions/linux-basics.html#remote-computing-connecting-to-a-server",
+    "title": "0.2 Commands & Environments",
+    "section": "Remote Computing: Connecting to a Server",
+    "text": "Remote Computing: Connecting to a Server\nIn bioinformatics, your laptop is often not powerful enough to process thousands of genomes. Instead, we use high-performance computers (HPC) or cloud servers. We connect to these using SSH (Secure Shell).\nssh username@server-ip-address\nOnce you are logged in, you are using the Linux environment of that remote computer!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#software-environments-conda-mamba",
+    "href": "day-0/instructions/linux-basics.html#software-environments-conda-mamba",
+    "title": "0.2 Commands & Environments",
+    "section": "Software Environments: Conda & Mamba",
+    "text": "Software Environments: Conda & Mamba\nDifferent bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use Conda (or the faster version, Mamba) to create isolated “bubbles” or environments.\n\nmamba create -n assembly_env shovill spades: Create an environment for assembly.\nmamba activate assembly_env: Enter the bubble.\nmamba deactivate: Leave the bubble.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#tmux-screen",
+    "href": "day-0/instructions/linux-basics.html#tmux-screen",
+    "title": "0.2 Commands & Environments",
+    "section": "tmux & screen",
+    "text": "tmux & screen\nBioinformatics jobs often take hours or days to run. If your internet disconnects, the job might die. tmux allows you to run “sessions” that keep going even if you log out.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#loops",
+    "href": "day-0/instructions/linux-basics.html#loops",
+    "title": "0.2 Commands & Environments",
+    "section": "Loops",
+    "text": "Loops\nAutomate tasks across hundreds of samples. for file in *.fastq; do echo \"Processing $file...\"; done",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#find",
+    "href": "day-0/instructions/linux-basics.html#find",
+    "title": "0.2 Commands & Environments",
+    "section": "find",
+    "text": "find\nFind files based on name, size, or modification date. find . -name \"*.vcf\" -size +10M",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#gnu-parallel",
+    "href": "day-0/instructions/linux-basics.html#gnu-parallel",
+    "title": "0.2 Commands & Environments",
+    "section": "GNU parallel",
+    "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#gene-annotation",
+    "href": "day-2/instructions/gene-alignment.html#gene-annotation",
+    "title": "2.3 Locate & compare genes",
+    "section": "Gene annotation",
+    "text": "Gene annotation",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#search-extract",
+    "href": "day-2/instructions/gene-alignment.html#search-extract",
+    "title": "2.3 Locate & compare genes",
+    "section": "Search & Extract",
+    "text": "Search & Extract",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#scale-up",
+    "href": "day-2/instructions/gene-alignment.html#scale-up",
+    "title": "2.3 Locate & compare genes",
+    "section": "Scale-up",
+    "text": "Scale-up",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#why-align-genes",
+    "href": "day-2/instructions/gene-alignment.html#why-align-genes",
+    "title": "2.3 Locate & compare genes",
+    "section": "Why align genes?",
+    "text": "Why align genes?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#aligning-gyra-genes",
+    "href": "day-2/instructions/gene-alignment.html#aligning-gyra-genes",
+    "title": "2.3 Locate & compare genes",
+    "section": "Aligning gyrA genes",
+    "text": "Aligning gyrA genes",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#visualizing-alignments-with-seaview",
+    "href": "day-2/instructions/gene-alignment.html#visualizing-alignments-with-seaview",
+    "title": "2.3 Locate & compare genes",
+    "section": "Visualizing alignments with Seaview",
+    "text": "Visualizing alignments with Seaview\n\nDNA sequence alignment\n\n\nProtein sequence alignment",
     "crumbs": [
       "Practical Guides",
       "Day 2",
@@ -166,7 +490,7 @@
     "href": "day-2/instructions/index.html",
     "title": "Day 2: Inspect the genomes",
     "section": "",
-    "text": "⛏️ Under construction …\n\n\n\n Back to top",
+    "text": "Following Day 1, on this day, we’re gonna learn how to analyse the genome assemblies to investigate the genomic features of the outbreak’s isolates, such as their multi-locus sequence type (MLST), antimicrobial resistance genes, virulence factors, and other genomic features.\nWe will journey through the following topics:\n\nAssembly quality control: How to assess the quality of the de novo assemblies.\nSpecies identification and MLST typing: How to identify the species and strain of bacteria.\nAMR gene profiling: How to identify antimicrobial resistance genes.\nLong-read sequencing & Hybrid assembly: How to use long-read sequencing data to improve genome assembly.\nGenome annotation: How to annotate the genome with functional information.\nGene variation analysis: How to identify gene variations between isolates.\n\nNow, let’s get started!\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 2"
@@ -182,13 +506,13 @@
   {
     "objectID": "day-3/instructions/phylotree.html",
     "href": "day-3/instructions/phylotree.html",
-    "title": "Phylogenetic tree",
+    "title": "3.2 Phylogenetic tree inference",
     "section": "",
     "text": "Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 3",
-      "Phylogenetic tree"
+      "3.2 Phylogenetic tree inference"
     ]
   },
   {
@@ -242,9 +566,53 @@
   {
     "objectID": "day-1/instructions/index.html",
     "href": "day-1/instructions/index.html",
-    "title": "Day 1: Meet the genomes",
+    "title": "Day 1: Meet the Genomes",
     "section": "",
-    "text": "⛏️ Under construction …\n\n\n\n Back to top",
+    "text": "Welcome to the first core day of our workshop! Having established our technical foundation with Linux in Day 0, we now transition into the heart of bacterial genomics. Today’s journey, “Meet the Genomes”, is designed to take you from a theoretical understanding of Whole-Genome Sequencing (WGS), to the practical reality of generating high-quality bacterial assemblies from raw data.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/index.html#whole-genome-sequencing---what-why",
+    "href": "day-1/instructions/index.html#whole-genome-sequencing---what-why",
+    "title": "Day 1: Meet the Genomes",
+    "section": "1.1 Whole-genome sequencing - What & Why",
+    "text": "1.1 Whole-genome sequencing - What & Why\nWe begin with the “what” and “why” of WGS. This module covers the fundamental concepts of sequencing technologies and their critical applications in: * Clinical Microbiology: Enhancing diagnostic speed and precision. * Outbreak Investigation: Inferring the transmission dynamics from the genomic relationships between the isolates. * AMR Surveillance: Identifying the genetic determinants of drug resistance. * Case Study Introduction: We will introduce the real-world Klebsiella pneumoniae dataset from a recent hospital outbreak that will serve as our primary study material.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/index.html#studying-public-genomes",
+    "href": "day-1/instructions/index.html#studying-public-genomes",
+    "title": "Day 1: Meet the Genomes",
+    "section": "1.2 Studying Public Genomes",
+    "text": "1.2 Studying Public Genomes\nGenomic epidemiology relies heavily on comparative analysis. In this module, you will learn to navigate the vast archives of public genomic data: * NCBI Resources: Searching for and retrieving reference genomes. * Genome Visualization: Hands-on training with Artemis — a powerful tool for browsing through bacterial genomes, inspecting gene regions, and understanding genomic features.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/index.html#from-raw-data-to-assembly",
+    "href": "day-1/instructions/index.html#from-raw-data-to-assembly",
+    "title": "Day 1: Meet the Genomes",
+    "section": "1.3 From Raw Data to Assembly",
+    "text": "1.3 From Raw Data to Assembly\nAt the end of the day, we’ll put theory into practice. Using an K. pneumoniae outbreak dataset, you will learn the essential bioinformatic pipeline to process raw short-read sequencing data: * Quality Control (QC): Identifying issues in raw sequencing reads using FastQC and MultiQC. * De novo Assembly: Using Unicycler to reconstruct full genomes from short-read sequences.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/index.html#learning-objectives",
+    "href": "day-1/instructions/index.html#learning-objectives",
+    "title": "Day 1: Meet the Genomes",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of today, you will be able to: 1. Explain the utility of WGS in clinical and public health microbiology. 2. Retrieve and visualize bacterial genomes from public databases. 3. Perform quality control on raw sequencing data. 4. Generate bacterial genome assemblies using state-of-the-art bioinformatic tools.\n\nLet’s begin our journey into the bacterial genome!",
     "crumbs": [
       "Practical Guides",
       "Day 1"
