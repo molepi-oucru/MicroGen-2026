@@ -99,39 +99,47 @@
     "href": "day-0/instructions/index.html",
     "title": "Day 0: Pack your backpack",
     "section": "",
-    "text": "The purpose of this pre-workshop day is to prepare\n\n\n\n Back to top",
-    "crumbs": [
-      "Practical Guides",
-      "Day 0"
-    ]
+    "text": "The purpose of this pre-workshop day is to prepare\n\n\n\n Back to top"
   },
   {
     "objectID": "guides.html",
     "href": "guides.html",
     "title": "The Guide",
     "section": "",
-    "text": "Welcome to the MicroGen 2026 workshop!\nThis workshop is designed to equip you with the essential computational skills needed for microbial genomics and bioinformatics.\nOver the next four days, we will journey from the basics of the Linux computing environment to advanced phylogenetic analysis and metagenomics, while also applying our learning to real-world study cases in infectious diseases."
+    "text": "Welcome to the MicroGen 2026 workshop!\nThis workshop is designed to equip you with the essential computational skills needed for microbial genomics and bioinformatics.\nOver the next four days, we will journey from the basics of the Linux computing environment to advanced phylogenetic analysis and metagenomics, while also applying our learning to real-world study cases in infectious diseases.",
+    "crumbs": [
+      "Practical Guides"
+    ]
   },
   {
     "objectID": "guides.html#what-to-expect",
     "href": "guides.html#what-to-expect",
     "title": "The Guide",
     "section": "What to expect",
-    "text": "What to expect\n\nDay 0 - Pre-workshop: Setting up your computational environment and getting comfortable with the Linux environment and command lines.\nDay 1: Introduction to whole-genome sequencing and genome assembly.\nDay 2: Assembly and gene-level analysis. Long-read sequencing.\nDay 3: Core SNP and phylogenetic analysis.\nDay 4: Metagenomics in pathogen detection."
+    "text": "What to expect\n\nDay 0 - Pre-workshop: Setting up your computational environment and getting comfortable with the Linux environment and command lines.\nDay 1: Introduction to whole-genome sequencing and genome assembly.\nDay 2: Assembly and gene-level analysis. Long-read sequencing.\nDay 3: Core SNP and phylogenetic analysis.\nDay 4: Metagenomics in pathogen detection.",
+    "crumbs": [
+      "Practical Guides"
+    ]
   },
   {
     "objectID": "guides.html#prerequisites",
     "href": "guides.html#prerequisites",
     "title": "The Guide",
     "section": "Prerequisites",
-    "text": "Prerequisites\nThis workshop is suitable for participants with little to no prior experience in bioinformatics. However, a basic understanding of clinical microbiology and molecular biology will be beneficial. No prior programming experience is required, as we will start from the fundamentals."
+    "text": "Prerequisites\nThis workshop is suitable for participants with little to no prior experience in bioinformatics. However, a basic understanding of clinical microbiology and molecular biology will be beneficial. No prior programming experience is required, as we will start from the fundamentals.",
+    "crumbs": [
+      "Practical Guides"
+    ]
   },
   {
     "objectID": "guides.html#how-to-use-this-guide",
     "href": "guides.html#how-to-use-this-guide",
     "title": "The Guide",
     "section": "How to use this guide",
-    "text": "How to use this guide\nEach day is divided into several modules, each focusing on a specific topic. Each module includes:\n\nIntroduction: A brief overview of the topic.\nGuided analyses: Practical tasks to analyse specific real-world datasets.\nCode blocks: Commands and scripts to run the analyses.\nChallenges: Optional advanced tasks to sharpen your skills.\nSelf exploration: Suggestions for further exploration of more advanced analysis techniques and tools.\n\nWe encourage you to try the challenges and self exploration sections. Be confident to ask questions and help each other. The goal is to learn by doing!"
+    "text": "How to use this guide\nEach day is divided into several modules, each focusing on a specific topic. Each module includes:\n\nIntroduction: A brief overview of the topic.\nGuided analyses: Practical tasks to analyse specific real-world datasets.\nCode blocks: Commands and scripts to run the analyses.\nChallenges: Optional advanced tasks to sharpen your skills.\nSelf exploration: Suggestions for further exploration of more advanced analysis techniques and tools.\n\nWe encourage you to try the challenges and self exploration sections. Be confident to ask questions and help each other. The goal is to learn by doing!",
+    "crumbs": [
+      "Practical Guides"
+    ]
   },
   {
     "objectID": "day-4/instructions/index.html",
