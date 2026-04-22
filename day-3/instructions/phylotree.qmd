@@ -1,6 +1,7 @@
 ---
-title: "Phylogenetic tree"
-author: "Your Name"
-date: "yyyy-mm-dd"
+title: "3.2 Phylogenetic tree inference"
+author: "Hao CT"
+date: "2026-05-14"
 ---
+
 

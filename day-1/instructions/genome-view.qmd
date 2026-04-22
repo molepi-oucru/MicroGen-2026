@@ -1,7 +1,15 @@
 ---
 title: "1.2 A complete genome - How it look like?"
-author: "Your Name"
-date: "yyyy-mm-dd"
+author: "Duy PT"
+date: "2026-05-12"
 ---
 
-⛏️ Under construction ... 
+To learn about how a complete genome looks like, we will use the following resources:
+
+1. **NCBI Resources**: [NCBI](https://www.ncbi.nlm.nih.gov/)
+2. **Artemis Genome Browser**: [Artemis](https://sanger-pathogens.github.io/Artemis/Artemis/)
+
+
+# Open the Artemis
+
+

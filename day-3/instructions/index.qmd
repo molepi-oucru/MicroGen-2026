@@ -4,4 +4,19 @@ author: "Hao CT"
 date: "2026-05-14"
 ---
 
-⛏️ Under construction ... 
+At this stage, we're gonna learn how to compare and infer the evolutionary relationships between the outbreak's isolates from their short-read sequencing data. These analyses will enable us to answer questions, such as:
+
+- Are the outbreak isolates related to each other?
+- How many transmission events occurred during the outbreak?
+- What is the direction of transmission?
+- How does the outbreak spread in the hospital?
+- How does the pathogen evolve during the outbreak?
+- What could be the origin of the outbreak?
+
+We will journey through the following topics:
+
+1. **Genome mapping**: How to map sequencing reads of the outbreak's isolates to a reference genome.
+2. **SNP calling & alignment**: How to identify single-nucleotide polymorphisms (SNPs) among the outbreak's isolates.
+3. **Phylogenetic tree inference**: How to infer evolutionary relationships between the outbreak's isolates.
+
+Now, let's begin!

@@ -1,5 +1,5 @@
 ---
-title: "Read Mapping"
-author: "Your Name"
-date: "yyyy-mm-dd"
+title: "3.1 Read mapping & SNP alignment"
+author: "Hao CT"
+date: "2026-05-14"
 ---

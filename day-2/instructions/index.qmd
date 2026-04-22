@@ -4,4 +4,15 @@ author: "Quynh NPN, Nguyen MTS, Quan TNM"
 date: "2026-05-13"
 ---
 
-⛏️ Under construction ... 
+Following Day 1, on this day, we're gonna learn how to analyse the genome assemblies to investigate the genomic features of the outbreak's isolates, such as their multi-locus sequence type (MLST), antimicrobial resistance genes, virulence factors, and other genomic features.
+
+We will journey through the following topics:
+
+1. **Assembly quality control**: How to assess the quality of the *de novo* assemblies.
+2. **Species identification and MLST typing**: How to identify the species and strain of bacteria.
+3. **AMR gene profiling**: How to identify antimicrobial resistance genes.
+4. **Long-read sequencing & Hybrid assembly**: How to use long-read sequencing data to improve genome assembly.
+5. **Genome annotation**: How to annotate the genome with functional information.
+6. **Gene variation analysis**: How to identify gene variations between isolates.
+
+Now, let's get started!

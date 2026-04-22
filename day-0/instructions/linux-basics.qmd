@@ -3,3 +3,206 @@ title: "0.2 Commands & Environments"
 author: "Nguyen MTS"
 date: "2026-05-11"
 ---
+
+# Commanding a Computer
+
+Welcome to the command line! For many, the "black screen" of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician's toolkit. Most bioinformatics tools don't have a graphical user interface (GUI) with buttons and menus; instead, they are controlled by typing commands.
+
+## Why Linux for Genomics?
+
+You might wonder why we aren't using Windows or macOS "Apps" for this. There are three main reasons:
+
+1.  **Big Data**: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.
+2.  **Automation**: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.
+3.  **Reproducibility**: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.
+
+## The Terminal
+
+The **Terminal** (or console) is your window into the operating system. It provides a **Shell**, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is `bash` or `zsh`.
+
+- **The Prompt**: Usually looks like `user@computer:~$`. The `$` indicates that the shell is waiting for your input.
+- **Case Sensitivity**: Linux is case-sensitive. `File.txt` and `file.txt` are two different files.
+
+## Getting Help
+
+You don't need to memorize every command. Here is how to find out what a command does:
+
+- `command --help`: Most tools have a built-in help menu (e.g., `ls --help`).
+- `man command`: Opens the "manual" page (e.g., `man ls`). Press `q` to exit.
+- **Search & AI**: Google, Stack Overflow, and AI tools are your friends when you get stuck!
+
+## The File System
+
+Think of the Linux file system as a giant tree.
+- **Root (`/`)**: The base of the entire system.
+- **Home Directory (`~`)**: Your personal space where you have full control.
+- **Path**: The "address" of a file or folder.
+    - **Absolute Path**: Starts from the root (e.g., `/home/user/data/sample.fastq`).
+    - **Relative Path**: Starts from where you currently are (e.g., `data/sample.fastq`).
+
+## The Command Line
+
+A command usually follows this structure:
+`command [options] [arguments]`
+
+Example: `ls -l Documents/`
+- `ls` is the command (list files).
+- `-l` is an option (long format).
+- `Documents/` is the argument (the folder to look into).
+
+### Basic Navigational Commands
+
+- `pwd` (Print Working Directory): "Where am I?"
+- `ls`: "What's in here?"
+    - `ls -F`: Adds a `/` to directories.
+    - `ls -l`: Shows detailed information (permissions, size, etc.).
+    - `ls -h`: Human-readable sizes (KB, MB, GB).
+- `cd`: "Go somewhere else."
+    - `cd ..`: Move up one level.
+    - `cd ~`: Go back home.
+
+# In Linux, Everything is a File
+
+One of the most powerful concepts in Linux is that **everything is a file**. Whether it’s a text document, a directory, a hardware device (like your mouse or hard drive), or even a process—Linux treats them all as files. This allows us to use the same set of tools to interact with almost everything in the system.
+
+## Anatomy of a File Name
+
+In Windows, the file extension (`.docx`, `.exe`) tells the system what the file is. In Linux, **extensions are mostly for humans**. 
+Linux determines what a file is by looking at its content (specifically "magic bytes" at the beginning), not its name.
+
+You can name a file anything:
+- `genome.fasta` (Helpful)
+- `lunch_list.banhmi` (Valid)
+* `data_source.nuocmam` (Valid)
+
+However, we usually keep standard extensions so we don't confuse ourselves or our colleagues!
+
+## Types of Files in Genomics
+
+1.  **Text Files**: Plain text you can read. Examples: `.fasta`, `.fastq`, `.csv`, `.sh`.
+2.  **Compressed Files**: To save space, we often zip files. Common extensions: `.gz`, `.zip`, `.tar.gz`. Most Linux tools can "peek" inside `.gz` files without unzipping them.
+3.  **Binary Files**: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, `.bam` or `.bcf` files).
+
+## Managing Files and Directories
+
+- `mkdir`: Create a new directory (which is just a special type of file!).
+    - `mkdir raw_reads`
+- `cp`: Copy files or directories.
+    - `cp source.txt destination.txt`
+- `mv`: Move or rename files.
+    - `mv old_name.txt new_name.txt`
+- `rm`: Remove (delete) files. **Be careful! There is no "Trash".**
+    - `rm -r folder_name`: Recursively delete a directory.
+
+## Peeking into File Contents
+
+We rarely open huge genomics files in editors. We use these instead:
+
+- `cat`: Print the whole file (only for small files!).
+- `head`: Show the first few lines.
+- `tail`: Show the last few lines.
+- `less`: The "gold standard" for viewing large files. Use arrows to scroll, `/` to search, and `q` to quit.
+
+## Searching and Filtering
+
+- `grep`: Search for a pattern (e.g., `grep "sequence_ABC" all_sequences.fasta`).
+- `wc -l`: Count the number of lines.
+
+## Access Permissions
+
+Every file has metadata that defines who can do what with it. Run `ls -l` to see these.
+
+- `r`: Read
+- `w`: Write
+- `x`: Execute (run as a program)
+
+These are divided into **User** (owner), **Group**, and **Others**.
+
+## `chmod`: Changing Permissions
+
+To make a script executable:
+`chmod +x my_analysis_script.sh`
+
+# The Power of Connectivity
+
+A file is rarely used in isolation. We often want to pass data between files and tools.
+
+## Pipes (`|`)
+
+The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple tools.
+
+**Example**: Count how many sequences are in a FASTA file.
+FASTA headers start with `>`. We can find all lines starting with `>` and count them:
+`grep "^>" genome.fasta | wc -l`
+
+## Standard Input, Output, and Error
+
+- **Standard Out (stdout)**: Where the command sends its regular results (the screen).
+- **Standard Error (stderr)**: Where the command sends error messages.
+- **Redirection**:
+    - `>`: Save output to a file (overwrites).
+    - `>>`: Append output to a file (adds to the end).
+    - `2>`: Redirect error messages to a file.
+
+Example: Save the list of files to a text file.
+`ls -lh > file_list.txt`
+
+## Variables
+
+Variables store information for later use. In scripts, we often store filenames in variables.
+`MY_SAMPLE="Sample_A1"`
+`echo $MY_SAMPLE`
+
+# Working in Different Environments
+
+## Remote Computing: Connecting to a Server
+
+In bioinformatics, your laptop is often not powerful enough to process thousands of genomes. Instead, we use high-performance computers (HPC) or cloud servers. We connect to these using **SSH** (Secure Shell).
+
+`ssh username@server-ip-address`
+
+Once you are logged in, you are using the Linux environment of that remote computer!
+
+## Software Environments: Conda & Mamba
+
+Different bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use **Conda** (or the faster version, **Mamba**) to create isolated "bubbles" or environments.
+
+- `mamba create -n assembly_env shovill spades`: Create an environment for assembly.
+- `mamba activate assembly_env`: Enter the bubble.
+- `mamba deactivate`: Leave the bubble.
+
+# Practical Challenges
+
+Let's put your skills to the test with some genomics-inspired tasks.
+
+### Challenge 1: Exploring the Directory
+1. Navigate to the `day-0/data/` directory.
+2. List all files and find out which one is the largest.
+3. Create a new directory called `results`.
+
+### Challenge 2: Counting Sequences
+1. We have a file called `ebola_virus.fasta`. 
+2. Use `grep` and `wc` to count how many sequences are in this file.
+3. Redirect the count into a new file called `sequence_count.txt`.
+
+### Challenge 3: Extracting Information
+1. Use `head` to look at the first 10 entries of `metadata.csv`.
+2. Find all entries in `metadata.csv` that belong to the year "2024".
+
+# Self Exploration
+
+Once you are comfortable with the basics, these tools will make your life much easier:
+
+## `tmux` & `screen`
+Bioinformatics jobs often take hours or days to run. If your internet disconnects, the job might die. `tmux` allows you to run "sessions" that keep going even if you log out.
+
+## Loops
+Automate tasks across hundreds of samples.
+`for file in *.fastq; do echo "Processing $file..."; done`
+
+## `find`
+Find files based on name, size, or modification date.
+`find . -name "*.vcf" -size +10M`
+
+## GNU parallel
+Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.

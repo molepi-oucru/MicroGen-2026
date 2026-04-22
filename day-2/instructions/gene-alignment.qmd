@@ -1,5 +1,27 @@
 ---
 title: "2.3 Locate & compare genes"
-author: "Your Name"
-date: "yyyy-mm-dd"
+author: "Nguyen MTS"
+date: "2026-05-13"
 ---
+
+# *gyrA* mutations in fluoroquinolone-resistant *K. pneumoniae*
+
+# Extract genes from assemblies
+
+## Gene annotation
+
+## Search & Extract
+
+## Scale-up
+
+# Gene alignment
+
+## Why align genes?
+
+## Aligning *gyrA* genes
+
+## Visualizing alignments with Seaview
+
+### DNA sequence alignment
+
+### Protein sequence alignment

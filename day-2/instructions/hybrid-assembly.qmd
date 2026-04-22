@@ -1,5 +1,5 @@
 ---
 title: "2.2 Long-read sequencing & Hybrid assemblies"
-author: "Your Name"
-date: "yyyy-mm-dd"
+author: "Quynh NPN"
+date: "2026-05-13"
 ---
