@@ -52,7 +52,7 @@ website:
           href: guides.qmd
           contents:
             - section: "Day 0 - Pre-Workshop"
-              # href: day-0/instructions/index.qmd
+              href: day-0/instructions/index.qmd
               contents:
                 - day-0/instructions/setup-environment.qmd
                 - day-0/instructions/linux-basics.qmd
