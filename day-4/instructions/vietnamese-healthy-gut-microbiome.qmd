@@ -475,9 +475,7 @@ The answer should match the wording in `Usage.md`, not just a minimal manifest t
 
 # Workshop config: `microgen2026.config`
 
-The workshop pipeline run below uses:
-
-`D:\OUCRU\workshop\microgen2026.config`
+The workshop pipeline run below uses: `microgen2026.config`
 
 Current config content:
 
