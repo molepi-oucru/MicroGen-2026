@@ -52,9 +52,19 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 **Module 3.2: Phylogenetic tree inference**
 
 ## Day 4
-### Meta-genomes
-*Metagenomics in pathogen detection.*
+### Metagenomics
+*Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.*
 [Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data]()
+
+**Module 4.1: Clinical foundations & AMR surveillance: workflow setup**
+
+**Module 4.2: Clinical foundations & AMR surveillance: taxonomy analysis**
+
+**Module 4.3: Clinical foundations & AMR surveillance: AMR analysis and summary**
+
+**Module 4.4: Actionable diagnostics & clinical reasoning: case simulation**
+
+**Module 4.5: Actionable diagnostics & clinical reasoning: signal analysis**
 :::
 
 # Instructors
@@ -129,8 +139,8 @@ Oxford University Clinical Research Unit
 
 ::: {.organiser-links}
 
-[{{< fa brands github >}}](https://github.com/username)
-[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
+[{{< fa brands github >}}](https://github.com/tnmquann)
+[{{< fa brands linkedin >}}](https://www.linkedin.com/in/tnmquann/)
 [{{< fa brands orcid >}}](https://orcid.org/0000-0000)
 :::
 :::

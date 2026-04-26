@@ -47,12 +47,21 @@ Within each day, there are three directories:
 - **3.1 Read mapping & SNP alignment** - Hao
 - **3.2 Phylogenetic tree inference** - Hao
 
-### Day 4: Meta-genomes
-Hao, Quan
+### Day 4: Metagenomics
+
+- **4.1 Clinical foundations & AMR surveillance: workflow setup** - Quan, Hao
+- **4.2 Clinical foundations & AMR surveillance: taxonomy analysis** - Hao, Quan
+- **4.3 Clinical foundations & AMR surveillance: AMR analysis and summary** - Hao, Quan
+- **4.4 Actionable diagnostics & clinical reasoning: case simulation** - Quan, Hao
+- **4.5 Actionable diagnostics & clinical reasoning: signal analysis** - Quan, Hao
+
+Day 4 introduces read-based metagenomic analysis for two teaching scenarios: a six-sample Vietnamese healthy gut microbiome / AMR surveillance re-analysis, and a clinical case study focused on actionable diagnosis. The web lessons are split into smaller pages to reduce load time. Backup analysis files are provided in `day-4/materials/` so participants can continue the interpretation exercises even if they cannot complete a live run during the workshop.
 
 
 ## Datasets
 
 Public datasets that have been used for practicals along the course:
 - Capitani *et al*,  Hospital outbreak sustained by Klebsiella pneumoniae sequence type 147 co-producing NDM-1 and OXA-48, Rome, Italy, February to March 2025: molecular tracing and control measures. Euro Surveill. 2026;31(10):pii=2500457. https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457. BioProject ID: PRJNA1260529.
+- Pereira-Dias *et al*, The Gut Microbiome of Healthy Vietnamese Adults and Children Is a Major Reservoir for Resistance Genes Against Critical Antimicrobials. *Journal of Infectious Diseases*. 2021;224(S7):S840-S847. https://doi.org/10.1093/infdis/jiab398.
+- Wilson *et al*, Actionable Diagnosis of Neuroleptospirosis by Next-Generation Sequencing. *New England Journal of Medicine*. 2014;370:2408-2417. https://doi.org/10.1056/NEJMoa1401268. BioProject ID: PRJNA234452.
 
