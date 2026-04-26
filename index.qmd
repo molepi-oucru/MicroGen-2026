@@ -14,6 +14,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ## Day 0
 ### Pack your backpack
 *Setting up your computational environment and getting comfortable with the Linux environment and command lines.*
+
 [Slides]() | [Practical Guides](day-0/instructions/index.qmd) | [Data]()
 
 **Module 0.1: Setup your workspace**
@@ -23,6 +24,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ## Day 1
 ### Meet the genomes
 *Introduction to whole-genome sequencing and genome assembly.*
+
 [Slides]() | [Practical Guides](day-1/instructions/index.qmd) | [Data]()
 
 **Module 1.1: Whole-genome sequencing - What? & Why?** 
@@ -34,6 +36,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ## Day 2
 ### Inspect the genomes
 *Assembly and gene-level analysis. Long-read sequencing.*
+
 [Slides]() | [Practical Guides](day-2/instructions/index.qmd) | [Data]()
 
 **Module 2.1: Analyse the assemblies**
@@ -45,6 +48,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ## Day 3
 ### Phylogenetics - Relationships between genomes
 *Core SNP and phylogenetic analysis.*
+
 [Slides]() | [Practical Guides](day-3/instructions/index.qmd) | [Data]()
 
 **Module 3.1: Read mapping & SNP alignment**
@@ -53,8 +57,9 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 ## Day 4
 ### Metagenomics
-*Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.*
-[Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data]()
+Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.
+
+[Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data](https://github.com/molepi-oucru/MicroGen-2026/tree/main/day-4/materials)
 
 **Module 4.1: Clinical foundations & AMR surveillance: workflow setup**
 
@@ -79,9 +84,9 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
 
 ::: {.organiser-links}
-[Website](https://your-site.com)
-[LinkedIn](https://linkedin.com/in/username)
-[ORCID](https://orcid.org/0000-0000)
+<a href="https://github.com/username" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+<a href="https://linkedin.com/in/username" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://orcid.org/0000-0000" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
 :::
 :::
 
@@ -94,9 +99,9 @@ Saw Swee Hock School of Public Health, National University of Singapore
 
 ::: {.organiser-links}
 
-[GitHub](https://github.com/username)
-[LinkedIn](https://linkedin.com/in/username)
-[ORCID](https://orcid.org/0000-0000)
+<a href="https://github.com/username" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+<a href="https://linkedin.com/in/username" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://orcid.org/0000-0000" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
 :::
 :::
 
@@ -109,9 +114,9 @@ Oxford University Clinical Research Unit
 
 ::: {.organiser-links}
 
-[GitHub](https://github.com/username)
-[LinkedIn](https://linkedin.com/in/username)
-[ORCID](https://orcid.org/0000-0000)
+<a href="https://github.com/username" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+<a href="https://linkedin.com/in/username" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://orcid.org/0000-0000" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
 :::
 :::
 
@@ -124,9 +129,9 @@ Center for Tropical Medicine and Global Health, Nuffield Department of Clinical 
 
 ::: {.organiser-links}
 
-[GitHub](https://github.com/username)
-[LinkedIn](https://linkedin.com/in/username)
-[ORCID](https://orcid.org/0000-0000)
+<a href="https://github.com/username" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+<a href="https://linkedin.com/in/username" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://orcid.org/0000-0000" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
 :::
 :::
 
@@ -139,9 +144,9 @@ Oxford University Clinical Research Unit
 
 ::: {.organiser-links}
 
-[GitHub](https://github.com/tnmquann)
-[LinkedIn](https://www.linkedin.com/in/tnmquann/)
-[ORCID](https://orcid.org/0000-0000)
+<a href="https://github.com/tnmquann" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+<a href="https://www.linkedin.com/in/tnmquann/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+<a href="https://orcid.org/0000-0000" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
 :::
 :::
 
