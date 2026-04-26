@@ -1,6 +1,6 @@
 ---
 title: "Day 4: Metagenomics"
-author: "Hao CT, Quan TNM"
+author: "Minh-Quan Ton-Ngoc, Hao Chung The"
 date: "2026-05-15"
 ---
 
