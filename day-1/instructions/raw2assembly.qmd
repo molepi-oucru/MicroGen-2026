@@ -8,7 +8,7 @@ date: "2026-05-12"
 
 From now until the end of Day-3, we will work with a real-world dataset: a nosocomial *K. pneumoniae* outbreak in Italy.
 
-The dataset is under the BioProject ID: ***PRJNA1260529***, acompanied by the publication of [Captani *et al*, Euro Surveill, 2026](https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457). It describes an outbreak of multidrug-resistant and carbapenemase-producing *K. pneumoniae* ST147 in the sub-intensive care unit (S-ICU) of a tertiary care hospital in Italy between mid-February and early March 2025. NDM-producing *K. pneumoniae* isolates were sequenced using both Illumina short-read and Oxford Nanopore long-read technologies. The sequencing data helped illuminating the transmission dynamics of the outbreak and the genomic features of the isolates.
+The dataset is under the BioProject ID: **_PRJNA1260529_**, acompanied by the publication of [Captani *et al*, Euro Surveill, 2026](https://doi.org/10.2807/1560-7917.ES.2026.31.10.2500457). It describes an outbreak of multidrug-resistant and carbapenemase-producing *K. pneumoniae* ST147 in the sub-intensive care unit (S-ICU) of a tertiary care hospital in Italy between mid-February and early March 2025. NDM-producing *K. pneumoniae* isolates were sequenced using both Illumina short-read and Oxford Nanopore long-read technologies. The sequencing data helped illuminating the transmission dynamics of the outbreak and the genomic features of the isolates.
 
 Using this dataset, we will learn how to transform "raw" sequencing data into "intepretable" genomes, and get a practical experience with a typical workflow in genomic epidemiology in the context of infectious disease outbreaks.
 
@@ -54,9 +54,9 @@ You shall see a directory structure that looks like this:
 
 Try to answer the following questions:
 
--   How many files are there?
--   What are the sizes of these files?
--   What do the file names tell you?
+- How many files are there?
+- What are the sizes of these files?
+- What do the file names tell you?
 
 ::: {.callout-note collapse="false"}
 ## Challenge
@@ -93,10 +93,10 @@ In our dataset, the files are named as `{sample-name}_1.fastq.gz` and `{sample-n
 
 Each FASTQ file contains four lines for every single read:
 
--   **Sequence ID**: The "name" of the read (starts with `@`)
--   **The DNA sequence**: The actual A, T, C, and G bases.
--   **Separator**: Usually just a `+` sign or `+` followed by the sequence ID.
--   **Quality Scores**: Symbols representing how confident the sequencing machine is about each base (Phred scores).
+- **Sequence ID**: The "name" of the read (starts with `@`)
+- **The DNA sequence**: The actual A, T, C, and G bases.
+- **Separator**: Usually just a `+` sign or `+` followed by the sequence ID.
+- **Quality Scores**: Symbols representing how confident the sequencing machine is about each base (Phred scores).
 
 Let's try printing out the first 12 lines of one of the FASTQ files:
 
@@ -106,7 +106,7 @@ zcat raw_shortread/925Kp_1.fastq.gz | head -n12; # zcat is cat for gzipped files
 
 The output should look like below:
 
-``` bash
+```bash
 @SRR33475255.1 VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301
 AAGTACCTCAACGGCCATTCCGATGTCGTCGCCGGCCTGGCGGTGGTTGGCGATAACTCCGGGCTCGCGGAAAAGCTTGGCTATCTGCAGAATGCGGTAGGCGGCGTGCTTGACCCGTTCAGCAGCTTCCTGACGCTGCGCGGCATCCGTACCCTGGCGCTGCGGATGGAGCGCCACAGCGCGAACGCGCTGCAGCTCGCCGAATGGCTGGAACAGCAGCCGGAAGTGGAGCGAGTCTGGTTTCCCTGGCTGGCCTCGCACCCGCATCATCAGCTGGCGCGCCAGCAAATGGCCCTGCCCG
 +SRR33475255.1 VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301
@@ -135,7 +135,7 @@ Correct output: forward = reverse = 617,535 reads
 
 # Reads Quality Control (QC)
 
-We shouldn't trust our data blindly. We will use **FastQC** to generate a report on things like base quality and adapter contamination.
+We shouldn't trust our data blindly. We will use **FastQC** to generate a report on things like base quality and adapter contamination. 
 
 Since we have many samples, we will then use **MultiQC** to summarize all outputs from **FastQC** into a single, interactive HTML report for all samples.
 
@@ -168,15 +168,14 @@ Now you can open the file `multiqc_shortread/multiqc_report.html` in your browse
 
 Let's go through the report and answer the following questions:
 
--   What was the coverage?
--   What is the overall quality of the raw reads?
--   Are there any adapter contamination?
--   Are there any issues with the sequencing?
+- What was the coverage?
+- What is the overall quality of the raw reads?
+- Are there any adapter contamination?
+- Are there any issues with the sequencing?
 
 ::: {.callout-important collapse="false"}
 ## Making decision
-
-Based on the MultiQC report, do you want to improve the raw reads quality?
+Based on the MultiQC report, do you want to improve the raw reads quality? 
 
 If yes, what specific modification to the raw reads would you like to perform? If no, then why?
 :::
@@ -193,10 +192,10 @@ unicycler -1 $forward -2 $reverse -o $outdir --threads 4
 
 where
 
--   `-1` is the forward read file
--   `-2` is the reverse read file
--   `-o` is the output directory
--   `--threads` is the number of threads to use, higher number of threads will speed up the assembly process but will also consume more computing resources.
+- `-1` is the forward read file
+- `-2` is the reverse read file
+- `-o` is the output directory
+- `--threads` is the number of threads to use, higher number of threads will speed up the assembly process but will also consume more computing resources.
 
 To do the assembly for our batch of 12 samples in a time-efficient manner, we will automate this using `GNU Parallel`.
 
