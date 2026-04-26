@@ -1,0 +1,2415 @@
+---
+title: "Clinical Foundations & AMR Surveillance"
+subtitle: "Six-sample Vietnamese healthy gut microbiome demonstration re-analysis adapted from Pereira-Dias et al. (2021)"
+author: "Minh-Quan Ton-Ngoc, Hao Chung The"
+date: "2026-05-15"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+    self-contained: true
+    smooth-scroll: true
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{=html}
+<style>
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.analysis-note {
+  background: #eef6ff;
+  border-left: 4px solid #1f78b4;
+  padding: 0.95rem 1.1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.result-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.debrief-box {
+  background: #f7f7fb;
+  border: 1px solid #d9dee3;
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.mcq {
+  border: 1px solid #d9dee3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0 1.25rem 0;
+  background: #ffffff;
+}
+.mcq .question {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.mcq label {
+  display: block;
+  margin: 0.35rem 0;
+}
+.mcq button {
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #cfd4da;
+  border-radius: 0.35rem;
+  background: #f8f9fa;
+  color: #212529;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: none;
+  cursor: pointer;
+}
+.mcq button:hover,
+.mcq button:focus {
+  background: #eef1f4;
+  border-color: #adb5bd;
+}
+.mcq .feedback {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.35rem;
+  display: none;
+}
+.mcq .feedback.correct {
+  display: block;
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+.mcq .feedback.incorrect {
+  display: block;
+  background: #fdecea;
+  color: #8a1c1c;
+}
+.next-step {
+  margin-top: 0.75rem;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+summary {
+  font-weight: 600;
+}
+code, pre, pre code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+p code, li code, td code {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.sidebar nav[role="doc-toc"],
+.sidebar nav[role="doc-toc"] a,
+#TOC,
+#TOC a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+</style>
+
+<script>
+const mcqFeedbackGut = {
+  mcq_scope: {
+    A: "That would overstate what six samples can support. The notebook is deliberately framed as a workflow exercise, not a definitive cohort-level replication.",
+    B: "Correct. The notebook is meant to teach a compact end-to-end workflow and support cautious directional comparison, not reproduce the entire paper.",
+    C: "The workshop absolutely does use real biological data and real outputs. The point is not to avoid biology, but to scale the exercise to something teachable.",
+    D: "The paper already exists, so the workshop does not need to repeat every methodological choice exactly. It needs to be explicit about where the teaching workflow differs."
+  },
+  mcq_setup: {
+    A: "A browser is helpful for ENA and HTML reports, but it is not the core requirement that makes the pipeline runnable.",
+    B: "Correct. Nextflow needs Java, and the workflow also needs a way to resolve tool environments such as Conda or Apptainer.",
+    C: "R is important later for exploratory analysis, but the pipeline itself starts well before the R section.",
+    D: "The workshop databases are already prepared. Learners do not need to rebuild them to get started."
+  },
+  mcq_csv: {
+    A: "This is too minimal for the documented samplesheet format. The current wiki expects the short-read columns and a placeholder long-read column.",
+    B: "Correct. The documented CSV uses `sample_id,run_id,group,short_reads_1,short_reads_2,long_reads`, with `run_id` optional and `long_reads` left blank here.",
+    C: "These column names are close to what some pipelines use, but they do not match the format described in the current metaflow wiki.",
+    D: "A TSV can be useful in other contexts, but the documented input here is a CSV samplesheet."
+  },
+  mcq_config: {
+    A: "Those settings matter, but they are already prepared for the workshop and are not the first things learners should edit.",
+    B: "Correct. `input` and `outdir` are the two essential path variables learners are expected to adjust before launching the Vietnamese healthy gut microbiome run.",
+    C: "Resource settings can be tuned later if needed, but most learners should not begin there.",
+    D: "ARG settings are relevant, but the pipeline will not even know what to process if `input` and `outdir` are wrong."
+  },
+  mcq_ena: {
+    A: "The parent study accession is useful context, but it does not itself give you the paired FASTQ URLs you need for sample download.",
+    B: "Correct. `fastq_ftp` is the field that exposes the paired download links, while `sample_title` helps you match the correct workshop samples.",
+    C: "Coverage and insert size can be interesting later, but they are not the key fields for collecting the raw FASTQ files in this exercise.",
+    D: "The publication title helps you orient yourself, but it is not how you recover the read files."
+  },
+  mcq_outputs: {
+    A: "That would hide an important teaching point. The difference between classified-only and with-unclassified views is part of the interpretation lesson.",
+    B: "Correct. The two tables answer slightly different questions: one keeps the uncertainty visible, while the other describes composition conditional on classified signal.",
+    C: "The issue is not raw speed. The main reason is interpretability and transparency about unclassified signal.",
+    D: "The AMR outputs are useful, but they are not the reason for generating both taxonomy tables."
+  },
+  mcq_unclassified: {
+    A: "That would be too strong. A large unclassified fraction means the named taxa summarize only the classified part of the sample, not the whole metagenome.",
+    B: "Correct. Once the unclassified fraction is large, the classified-only table is best read as composition conditional on what the database could label.",
+    C: "The problem is not solved by removing rows alone. Removing unclassified rows changes the meaning of the remaining relative abundances.",
+    D: "High unclassified signal does not invalidate every downstream step, but it does require more careful wording and comparison."
+  }
+};
+
+function checkMCQGut(id, correctValue) {
+  const box = document.getElementById(id);
+  const selected = box.querySelector('input[type="radio"]:checked');
+  const feedback = box.querySelector('.feedback');
+  if (!selected) {
+    feedback.className = 'feedback incorrect';
+    feedback.style.display = 'block';
+    feedback.innerHTML = 'Please choose one answer before checking.';
+    return;
+  }
+  const isCorrect = selected.value === correctValue;
+  feedback.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
+  feedback.innerHTML = mcqFeedbackGut[id][selected.value];
+  feedback.style.display = 'block';
+}
+
+function resetMCQGut(id) {
+  const box = document.getElementById(id);
+  box.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+  const feedback = box.querySelector('.feedback');
+  feedback.style.display = 'none';
+  feedback.innerHTML = '';
+}
+</script>
+```
+
+# How to use this notebook
+
+::: {.callout-note collapse="false"}
+## Learning objectives
+
+By the end of this notebook, learners should be able to:
+
+-   explain why the Vietnamese healthy gut microbiome exercise is framed as a **6-sample demonstration re-analysis** rather than a full replication study,
+-   retrieve paired-end FASTQ files for the selected samples from ENA,
+-   prepare a simple sample CSV and configure `metaflow` for a workshop run,
+-   process the raw `metaflow` outputs into taxonomy, phyloseq, taxburst, and AMR-ready files,
+-   and interpret a compact R-based exploratory analysis with appropriate caution.
+:::
+
+::: {.callout-important collapse="false"}
+## Suggested workshop flow
+
+-   Start with the orientation and setup sections so learners understand the purpose of the exercise before any commands are run.
+-   Work through the pipeline steps in order: download reads, prepare the input CSV, run `metaflow`, and process the output files.
+-   Only then move into the R analysis, where the emphasis shifts from file handling to interpretation.
+-   Use the reflection prompts and collapsible hints if some participants move more quickly than others.
+:::
+
+::: {.callout-tip collapse="false"}
+## Why this format works well for doctors and researchers
+
+This notebook is designed to be **self-guided and practical**. It lets learners move from:
+
+-   a clear study question,
+-   to reproducible data retrieval,
+-   to pipeline execution,
+-   to analysis-ready objects,
+-   and finally to biological interpretation.
+
+That structure helps mixed-background groups stay oriented, even when some learners are new to command-line bioinformatics.
+:::
+
+# What this Vietnamese healthy gut microbiome exercise is
+
+::: analysis-note
+<p><strong>Exercise framing.</strong> This notebook uses <strong>6 selected samples</strong> from the 2021 study by Pereira-Dias et al. as a compact teaching dataset. The aim is to show how to go from raw shotgun metagenomic reads to interpretable taxonomic and AMR summaries in a way that is practical for workshop learners.</p>
+:::
+
+This is **not** a full replication of the original paper:
+
+-   The original study profiled **42 healthy Vietnamese participants**.
+-   The original data were paired-end Illumina shotgun metagenomes deposited in ENA under accessions **ERS1865478–ERS1865519**.
+-   The published paper performed broader age-stratified microbiome and AMR analyses than are possible in a 6-sample teaching subset.
+-   This notebook therefore focuses on **workflow demonstration, directional comparison, and cautious interpretation**.
+
+The paper used for this exercise is:
+
+> Pereira-Dias J, et al. *The Gut Microbiome of Healthy Vietnamese Adults and Children Is a Major Reservoir for Resistance Genes Against Critical Antimicrobials.* *Journal of Infectious Diseases*. 2021;224(S7):S840-S847.
+
+**Interpretive guardrails used throughout this notebook**
+
+-   This is a **6-sample demonstration re-analysis**; the original paper analyzed **42 individuals**.
+-   Taxonomic ecology in this notebook uses **`f_weighted_at_rank`** as the main abundance value.
+-   The taxonomy column **`unweighted_fraction` should not be assumed to sum to 100%**.
+-   The treatment of **unclassified reads materially changes interpretation**.
+-   The AMR workflow here is **`rgi-bwt` against CARD-like annotations**, not **SRST2 + ARGANNOT** as used in the paper.
+-   Therefore, taxonomic and AMR comparisons are **directional and exploratory**, not definitive replication claims.
+
+::::: {#mcq_scope .mcq}
+::: question
+Which statement best captures the purpose of this Vietnamese healthy gut microbiome notebook?
+:::
+
+<label><input type="radio" name="mcq_scope" value="A"> A. It is a full replication that should reproduce all published statistics from the original cohort</label> <label><input type="radio" name="mcq_scope" value="B"> B. It is a six-sample teaching notebook that demonstrates workflow and supports cautious directional comparison</label> <label><input type="radio" name="mcq_scope" value="C"> C. It is only a software tutorial and should avoid biological interpretation altogether</label> <label><input type="radio" name="mcq_scope" value="D"> D. It should exactly mirror every tool and database used in the original paper even if that makes the workshop impractical</label> <button onclick="checkMCQGut('mcq_scope','B')">Check answer</button> <button onclick="resetMCQGut('mcq_scope')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+Focus on the difference between a teaching re-analysis and a definitive replication study.
+
+</details>
+:::::
+
+# Metaflow overview
+
+`metaflow` is a modular Nextflow pipeline for Illumina short-read metagenomics. In workshop terms, it gives learners one practical route from paired-end FASTQ files to read-based taxonomic profiling, host-removal outputs, and AMR screening results without forcing them to build every step from scratch.
+
+::: {.callout-note}
+## Workflow diagram
+
+The source notebook included a local workflow diagram for `metaflow`. It is not embedded in the published repository because the Day 4 pages avoid committing local image assets. Use the `metaflow` wiki linked below for the current public workflow overview.
+:::
+
+::: manual-note
+<p><strong>Further reading.</strong> More detailed setup and usage notes for the pipeline are available in the <a href="https://github.com/tnmquann/metaflow/wiki">metaflow wiki</a>. This notebook keeps the workshop version shorter and more task-focused.</p>
+:::
+
+# Software and setup guidance
+
+## Software requirements
+
+For this workshop, learners mainly need:
+
+-   `git` to clone the pipeline,
+-   `nextflow` (version 25 or later recommended) to launch the workflow,
+-   a Java runtime compatible with Nextflow (the wiki recommends Java 16-22),
+-   and either `conda` or `apptainer` to provide software dependencies.
+
+If you are using the prepared workshop machine, these pieces may already be installed.
+
+## Hardware requirements
+
+Practical expectations for a small workshop run are:
+
+-   Linux, WSL, or a remote Linux server environment,
+-   reliable internet access for the initial FASTQ downloads,
+-   and enough free disk space for FASTQ files, Nextflow cache files, containers, and outputs.
+
+The broader installation guide is more conservative:
+
+-   at least **32 GB RAM** for MEGAHIT-based assembly,
+-   up to **128 GB RAM** if metaSPAdes is used,
+-   and roughly **256 GB disk** once databases, environments, caches, and outputs are included.
+
+For this six-sample workshop, storage pressure is often felt before CPU becomes the main bottleneck.
+
+## How to clone the repository
+
+``` bash
+cd /path/to/your/folder
+git clone https://github.com/tnmquann/metaflow.git
+cd metaflow
+```
+
+## Optional dependency setup
+
+These are concise workshop-style reminders rather than full installation manuals.
+
+### Nextflow
+
+``` bash
+curl -fsSL https://get.nextflow.io | bash
+chmod +x nextflow
+mv nextflow ~/bin/
+```
+
+### Java
+
+Install a recent Java runtime and confirm it works:
+
+``` bash
+java -version
+```
+
+### Conda
+
+If `conda` is not already available, install Miniconda or a similar lightweight distribution and then create or activate the workshop environment:
+
+``` bash
+conda activate microgen2026
+```
+
+### Apptainer
+
+If your site prefers containers instead of Conda environments, ensure `apptainer` is installed and available:
+
+``` bash
+apptainer --version
+```
+
+::::: {#mcq_setup .mcq}
+::: question
+Which setup combination is most central to launching the workshop pipeline successfully?
+:::
+
+<label><input type="radio" name="mcq_setup" value="A"> A. A web browser and a PDF reader</label> <label><input type="radio" name="mcq_setup" value="B"> B. Nextflow, a compatible Java runtime, and an environment system such as Conda or Apptainer</label> <label><input type="radio" name="mcq_setup" value="C"> C. RStudio and ggplot2 only</label> <label><input type="radio" name="mcq_setup" value="D"> D. A custom-built sourmash database created during the workshop from scratch</label> <button onclick="checkMCQGut('mcq_setup','B')">Check answer</button> <button onclick="resetMCQGut('mcq_setup')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+Think about what is required before any R analysis begins.
+
+</details>
+:::::
+
+## Database note
+
+`metaflow` depends on several prebuilt resources, especially for read-based analysis. In a normal installation, users must prepare these databases before running the pipeline. For this workshop, they have already been prepared to save time.
+
+Available workshop databases:
+
+-   sourmash (GTDB-reps-rs226, `ksize=31`, `scaled=1000`): `/database/gtdb/gtdb-rs226/gtdb-rs226-reps.k31.rocksdb`
+-   YACHT (GTDB-reps-rs226, `ksize=31`, ANI threshold `0.995`): `/database/gtdb/gtdb-rs226/gtdb-rs226-reps.k31_0.995_pretrained`
+-   sourmash taxonomy lineage: `/database/gtdb/gtdb-rs226/gtdb-rs226.lineages.sqldb`
+-   hostile (human-t2t-hla): `/datasets/human_genome/hostile`
+-   CARD database for `rgi_bwt`: `/database/rgi_db`
+
+::: result-card
+<p><strong>Workshop shortcut.</strong> Because these resources already exist, the practical job for learners is usually to point the config file to the correct prepared paths rather than building the databases from scratch.</p>
+:::
+
+## Practical cautions
+
+::: {.callout-warning collapse="false"}
+## Run-safety reminders
+
+-   If you plan to run jobs overnight, keep the session inside `screen` or `tmux`.
+-   `metaflow` writes cache files wherever the `nextflow run` command is launched, so start the run from a directory with enough storage.
+-   Do not reuse the same Nextflow cache folder or the same output folder for multiple active runs at the same time.
+:::
+
+# CSV input format for metaflow
+
+According to the current `Usage.md`, the documented samplesheet format for CSV input is:
+
+`sample_id,run_id,group,short_reads_1,short_reads_2,long_reads`
+
+For this workshop, you can think of that file as a **sample manifest**: one row per paired-end sample, with optional metadata columns that help the pipeline track multiple runs or groups.
+
+Practical requirements from the wiki:
+
+-   use a `.csv` file,
+-   include at least the short-read columns,
+-   keep `run_id` unique if one biological sample has more than one sequencing run,
+-   and leave `long_reads` blank for this short-read-only exercise.
+
+```         
+sample_id,run_id,group,short_reads_1,short_reads_2,long_reads
+ERR9904447,,0,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904447_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904447_2.fastq.gz,
+ERR9904449,,1,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904449_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904449_2.fastq.gz,
+ERR9904450,,1,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904450_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904450_2.fastq.gz,
+ERR9904452,,0,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904452_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904452_2.fastq.gz,
+ERR9904458,,1,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904458_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904458_2.fastq.gz,
+ERR9904480,,0,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904480_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904480_2.fastq.gz,
+```
+
+Column guide:
+
+-   `sample_id`: the sample identifier that should stay stable through the workflow; here we use the ENA run accession so downstream file matching stays simple
+-   `run_id`: optional run label; leave blank when each sample has only one run
+-   `group`: optional grouping label; simple numeric or text labels are fine for this workshop
+-   `short_reads_1`: full path to mate 1
+-   `short_reads_2`: full path to mate 2
+-   `long_reads`: left blank because this exercise uses Illumina paired-end short reads only
+
+::: manual-note
+<p><strong>Practical tip.</strong> Absolute paths are safest for workshop workstations. If you use relative paths, make sure they resolve correctly from the directory where the pipeline is launched.</p>
+:::
+
+::::: {#mcq_csv .mcq}
+::: question
+Which samplesheet format best matches the current metaflow wiki for this workshop?
+:::
+
+<label><input type="radio" name="mcq_csv" value="A"> A. `sample_name,read1,read2` only</label> <label><input type="radio" name="mcq_csv" value="B"> B. `sample_id,run_id,group,short_reads_1,short_reads_2,long_reads`</label> <label><input type="radio" name="mcq_csv" value="C"> C. `studycode,fastq_1,fastq_2,status`</label> <label><input type="radio" name="mcq_csv" value="D"> D. A tab-separated file with no header</label> <button onclick="checkMCQGut('mcq_csv','B')">Check answer</button> <button onclick="resetMCQGut('mcq_csv')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+The answer should match the wording in `Usage.md`, not just a minimal manifest that happens to work elsewhere.
+
+</details>
+:::::
+
+# Workshop config: `microgen2026.config`
+
+The workshop pipeline run below uses:
+
+`D:\OUCRU\workshop\microgen2026.config`
+
+Current config content:
+
+``` groovy
+params {
+    trace_report_suffix   = new java.util.Date().format('yyyy-MM-dd_HH-mm-ss')
+    enable_readbase = true
+    input = "day-4/materials/vietnamese-healthy-gut-microbiome"
+    input_format = "csv"
+    outdir = "day-4/materials/vietnamese-healthy-gut-microbiome/out"
+    hostile_reference = "/datasets/human_genome/hostile"
+    hostile_index = "human-t2t-hla"
+    sourmash_database = "/database/gtdb/gtdb-rs226/gtdb-rs226-reps.k31.rocksdb"
+    sourmash_ksize = 31
+    sourmash_taxonomy_csv = "/database/gtdb/gtdb-rs226/gtdb-rs226.lineages.sqldb"
+    yacht_database = "/database/gtdb/gtdb-rs226/gtdb-rs226-reps.k31_0.995_pretrained/gtdb-rs226-reps.k31_0.995_pretrained_config.json"
+    enable_rgi_bwt = true
+    rgi_preparecarddb_dir = "/database/rgi_db"
+    rgi_include_other_models = true
+    //enable_singlesketch = true
+}
+
+process {
+    cpus     = { 1 * task.attempt }
+    memory   = { 7.GB * task.attempt }
+    time     = { 4.h * task.attempt }
+
+    errorStrategy = { task.exitStatus in ((130..145) + [104, 134, 137, 139, 140, 143]) ? 'retry' : 'finish' }
+    maxRetries = 3
+    maxErrors = '-1'
+
+    withLabel: process_single {
+        cpus   = { 2 }
+        memory = { 7.GB * task.attempt }
+        time   = { 4.h * task.attempt }
+    }
+    withLabel: process_low {
+        cpus   = { 6 * task.attempt }
+        memory = { 12.GB * task.attempt }
+        time   = { 4.h * task.attempt }
+    }
+    withLabel: process_medium {
+        cpus   = { 12 * task.attempt }
+        memory = { 36.GB * task.attempt }
+        time   = { 8.h * task.attempt }
+    }
+    withLabel: process_high {
+        cpus   = { 24 * task.attempt }
+        memory = { 120.GB * task.attempt }
+        time   = { 24.h * task.attempt }
+    }
+    withLabel: process_long {
+        time = { 72.h * task.attempt }
+    }
+    withLabel: process_high_memory {
+        memory = { 120.GB * task.attempt }
+    }
+}
+
+trace {
+    enabled = true
+    file = "${params.outdir}/pipeline_info/trace_complete_${params.trace_report_suffix}_rawtrace.txt"
+    raw = true
+    fields = 'task_id,hash,native_id,process,tag,name,status,exit,attempt,submit,start,complete,duration,realtime,queue,cpus,memory,disk,time,cpu_model,hostname,%cpu,%mem,peak_rss,peak_vmem,rss,vmem,rchar,wchar,syscr,syscw,read_bytes,write_bytes,vol_ctxt,inv_ctxt,module,container,workdir,error_action'
+}
+
+timeline {
+    enabled = true
+    file = "${params.outdir}/pipeline_info/timeline_${params.trace_report_suffix}.html"
+}
+
+report {
+    enabled = true
+    file = "${params.outdir}/pipeline_info/report_${params.trace_report_suffix}.html"
+}
+```
+
+Key parameters that matter most for this exercise:
+
+-   `input`: points to the sample manifest. For this exercise, learners should edit it to the final path of `vietnamese_gut_sample.csv`.
+-   `outdir`: the base output directory for the run. For this exercise, set it to `/day-4/materials/vietnamese-healthy-gut-microbiome/out`.
+-   `enable_readbase`: switches on the read-based portion of the pipeline, which is central to this workshop.
+-   `hostile_reference` and `hostile_index`: control host-removal resources. Learners normally leave these alone unless their host database changes.
+-   `sourmash_database`, `sourmash_ksize`, and `sourmash_taxonomy_csv`: control read-based taxonomic profiling and lineage annotation.
+-   `yacht_database`: points to the prepared YACHT model configuration JSON inside the prebuilt workshop database directory.
+-   `enable_rgi_bwt`, `rgi_preparecarddb_dir`, and `rgi_include_other_models`: control the AMR screening step and the CARD resources used for it.
+-   `process { ... }`: sets CPU, memory, time, and retry behavior. Learners usually do not edit this section during a short workshop unless the execution environment is very constrained.
+
+::: manual-note
+<p><strong>Why use <code>-c</code> here?</strong> The broader metaflow usage notes prefer parameter files for portable runs, but this workshop intentionally uses a prepared Nextflow config because it already bundles the local database paths and resource defaults for the training environment.</p>
+:::
+
+::: debrief-box
+<p><strong>Required edits before the Vietnamese healthy gut microbiome run.</strong></p>
+
+<ul>
+
+<li>Change <code>input</code> to the path of <code>vietnamese_gut_sample.csv</code>.</li>
+
+<li>Change <code>outdir</code> to <code>/day-4/materials/vietnamese-healthy-gut-microbiome/out</code>.</li>
+
+</ul>
+:::
+
+::::: {#mcq_config .mcq}
+::: question
+Before running the workshop job, which config variables are the most important to update first?
+:::
+
+<label><input type="radio" name="mcq_config" value="A"> A. `sourmash_ksize` and `rgi_include_other_models`</label> <label><input type="radio" name="mcq_config" value="B"> B. `input` and `outdir`</label> <label><input type="radio" name="mcq_config" value="C"> C. `cpus` and `memory` in every process label</label> <label><input type="radio" name="mcq_config" value="D"> D. `trace_report_suffix` and `timeline.file`</label> <button onclick="checkMCQGut('mcq_config','B')">Check answer</button> <button onclick="resetMCQGut('mcq_config')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+Ask which settings tell the pipeline what to read and where to write.
+
+</details>
+:::::
+
+# Hands-on Vietnamese healthy gut microbiome practical exercise
+
+## Part 1: introduce the paper
+
+The workshop paper is a short, practical example for learning age-stratified gut metagenomics and AMR interpretation:
+
+-   Pereira-Dias J, et al. (2021), *Journal of Infectious Diseases*, [doi:10.1093/infdis/jiab398](https://doi.org/10.1093/infdis/jiab398)
+
+We use it here because it has a clear microbiome-plus-AMR question, paired-end ENA data, and a manageable six-sample subset for teaching. The goal is to demonstrate workflow and interpretation, not to recreate every result in the paper.
+
+## Part 2: retrieve the sequencing data
+
+Inside `/day-4/materials/vietnamese-healthy-gut-microbiome`, learners are given:
+
+-   `vietnamese_gut_sample_information.csv`
+
+The task is to find and download all samples whose identifiers appear in the `studycode` column.
+
+### Guided ENA retrieval exercise
+
+1.  Start from one study sample accession given in the paper, for example `ERS1865478`.
+2.  Visit `https://www.ebi.ac.uk/ena/browser/view/ERS1865478`.
+3.  Open the accession page and go to the **Data** section.
+4.  Click **Read Files: Show**.
+5.  Identify the **Study Accession** for the parent project.
+6.  Open that study accession page.
+7.  Click **Show Column Selection**.
+8.  Add the fields you need to recover the FASTQ download links.
+9.  The most important field is **`fastq_ftp`**.
+10. Also keep fields such as `sample_title`, `sample_accession`, and `run_accession` so you can map records back to the workshop metadata.
+11. Download the study report as TSV.
+12. In the TSV, use `sample_title` to match the `studycode` values listed in `vietnamese_gut_sample_information.csv`.
+13. Extract the paired-end FASTQ URLs for the six required samples.
+
+::: manual-note
+<p><strong>Why use <code>sample_title</code>?</strong> In this exercise, <code>sample_title</code> is the practical bridge between the ENA report and the workshop metadata because it corresponds to the <code>studycode</code> values that learners are asked to follow.</p>
+:::
+
+::::: {#mcq_ena .mcq}
+::: question
+When learners export the ENA study report, which field is the most important for recovering the paired FASTQ download links?
+:::
+
+<label><input type="radio" name="mcq_ena" value="A"> A. `study_accession`</label> <label><input type="radio" name="mcq_ena" value="B"> B. `fastq_ftp`</label> <label><input type="radio" name="mcq_ena" value="C"> C. `base_count`</label> <label><input type="radio" name="mcq_ena" value="D"> D. `scientific_name`</label> <button onclick="checkMCQGut('mcq_ena','B')">Check answer</button> <button onclick="resetMCQGut('mcq_ena')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+One field helps you identify the right samples, but another actually carries the FTP links you need to download.
+
+</details>
+:::::
+
+<details>
+
+<summary>Hint: example batch download script</summary>
+
+``` bash
+#!/bin/bash
+
+mkdir -p fastq && cd fastq || exit 1
+
+urls=(
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/007/ERR9904447/ERR9904447_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/007/ERR9904447/ERR9904447_2.fastq.gz"
+
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/002/ERR9904452/ERR9904452_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/002/ERR9904452/ERR9904452_2.fastq.gz"
+
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/000/ERR9904480/ERR9904480_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/000/ERR9904480/ERR9904480_2.fastq.gz"
+
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/009/ERR9904449/ERR9904449_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/009/ERR9904449/ERR9904449_2.fastq.gz"
+
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/000/ERR9904450/ERR9904450_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/000/ERR9904450/ERR9904450_2.fastq.gz"
+
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/008/ERR9904458/ERR9904458_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR990/008/ERR9904458/ERR9904458_2.fastq.gz"
+)
+
+for url in "${urls[@]}"; do
+    wget -c "$url"
+done
+```
+
+</details>
+
+For the remainder of this notebook, assume the paired-end FASTQ files have been downloaded into:
+
+`/day-4/materials/vietnamese-healthy-gut-microbiome/fastq`
+
+## Create the metaflow input CSV
+
+The input CSV tells `metaflow` exactly which samples, optional grouping fields, and FASTQ pairs should be processed together. It is the handoff between manual data retrieval and reproducible pipeline execution.
+
+Create:
+
+-   `vietnamese_gut_sample.csv`
+
+Example content:
+
+``` csv
+sample_id,run_id,group,short_reads_1,short_reads_2,long_reads
+ERR9904447,,adult,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904447_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904447_2.fastq.gz,
+ERR9904452,,adult,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904452_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904452_2.fastq.gz,
+ERR9904480,,child_24_59m,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904480_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904480_2.fastq.gz,
+ERR9904449,,child_0_23m,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904449_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904449_2.fastq.gz,
+ERR9904450,,child_0_23m,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904450_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904450_2.fastq.gz,
+ERR9904458,,child_0_23m,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904458_1.fastq.gz,/day-4/materials/vietnamese-healthy-gut-microbiome/fastq/ERR9904458_2.fastq.gz,
+```
+
+Column guide:
+
+-   `sample_id`: use a stable identifier, such as the ENA run accession, so downstream outputs stay easy to match
+-   `run_id`: leave blank when there is only one sequencing run per sample
+-   `group`: optional learner-friendly grouping label; here it helps keep the age strata visible during teaching
+-   `short_reads_1`: full path to mate 1
+-   `short_reads_2`: full path to mate 2
+-   `long_reads`: leave blank for this short-read-only workshop dataset
+
+Before launching the workflow, edit the config so that:
+
+-   `input` points to `vietnamese_gut_sample.csv`
+-   `outdir` points to `/day-4/materials/vietnamese-healthy-gut-microbiome/out`
+
+## Run the pipeline
+
+Launch the pipeline with:
+
+``` bash
+nextflow run /path/to/metaflow/main.nf -c /path/to/microgen2026.config -profile conda
+```
+
+Command breakdown:
+
+-   `nextflow run`: start the workflow
+-   `/path/to/metaflow/main.nf`: the main pipeline entry point
+-   `-c /path/to/microgen2026.config`: load the workshop config file
+-   `-profile conda`: resolve software dependencies through Conda
+
+<details>
+
+<summary>Worked solution for the workshop file layout</summary>
+
+``` bash
+cd /day-4/materials
+nextflow run /path/to/metaflow/main.nf \
+  -c /path/to/microgen2026.config \
+  -profile conda
+```
+
+</details>
+
+## Process the metaflow output into analysis-ready files
+
+After the pipeline finishes, the raw `metaflow` output is still not in the most convenient format for downstream teaching. In this workshop we post-process the merged read-based results into:
+
+-   taxonomy tables with and without unclassified rows,
+-   a phyloseq export directory,
+-   taxburst-ready split files,
+-   and a cleaned AMR file collection.
+
+The read-based result table is:
+
+-   `/day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv`
+
+The processing helper validated in the current workshop folder is:
+
+-   `/day-4/materials/process_metaflow_daa_microgen2026_20260415.py`
+
+If your teaching folder also provides a wrapper named `process_metagenomic_microgen2026.py`, you can substitute only the script filename; the command structure below stays the same.
+
+This matters because the live CLI supports `--output_format default`, `phyloseq`, and `taxburst`, and it has a few rules that differ slightly from the original draft instructions:
+
+-   `--remove_unclassified` is supported for `default` output,
+-   `taxburst` output already omits synthetic unclassified rows, so `--remove_unclassified` should not be combined with it,
+-   and `phyloseq` / `taxburst` outputs should write into an existing directory.
+
+Suggested workflow:
+
+``` bash
+conda activate microgen2026
+mkdir -p /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis
+
+python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+  --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
+  --input_format raw_metaflow \
+  --min_coverage 0.05 \
+  --output_format default \
+  --output /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis \
+  --remove_unclassified
+
+mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.processed_metaflow.csv \
+   /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_without_unclassified.csv
+
+python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+  --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
+  --input_format raw_metaflow \
+  --min_coverage 0.05 \
+  --output_format default \
+  --output /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis
+
+mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.processed_metaflow.csv \
+   /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_with_unclassified.csv
+
+python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+  --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
+  --input_format raw_metaflow \
+  --min_coverage 0.05 \
+  --output_format taxburst \
+  --output /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis
+
+mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.taxburst \
+   /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut.taxburst
+
+python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+  --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
+  --input_format raw_metaflow \
+  --min_coverage 0.05 \
+  --output_format phyloseq \
+  --output /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis
+
+mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.phyloseq \
+   /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut.phyloseq
+
+mkdir -p /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_amr
+find /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/rgi_bwt -name '*.gene_mapping_data.txt' \
+  -exec cp {} /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_amr/ \;
+```
+
+What each command is doing:
+
+-   the first run creates the **classified-only** table and renormalizes `f_weighted_at_rank`
+-   the second run keeps the **with-unclassified** version
+-   the third run creates a directory of **taxburst-ready split files**
+-   the fourth run writes a **phyloseq export directory**
+-   the final `find ... cp` step collects the per-sample `rgi_bwt` mapping tables into one AMR folder
+
+After this step, the analysis folder should contain:
+
+-   `vietnamese_gut.phyloseq`
+-   `vietnamese_gut.taxburst`
+-   `vietnamese_gut_amr`
+-   `vietnamese_gut_with_unclassified.csv`
+-   `vietnamese_gut_without_unclassified.csv`
+
+## Generate Krona-like taxburst HTML files
+
+Once the processed taxburst folder exists, move into it and render one HTML file per split table.
+
+``` bash
+conda activate microgen2026
+cd /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut.taxburst
+
+for file in *.taxburst.split.csv; do
+    sample_name="${file%.taxburst.split.csv}"
+    taxburst -F tax_annotate "$file" -o "${sample_name}.taxburst.split.html"
+done
+```
+
+Small logic hint:
+
+-   `*.taxburst.split.csv` matches each sample-level taxburst input file
+-   the loop strips the suffix to recover the sample name
+-   `taxburst` then writes a browsable HTML summary for that sample
+
+Those HTML files work as Krona-like views of sample relative abundance and are useful for quick qualitative inspection in class.
+
+::: result-card
+<p><strong>Catch-up option.</strong> If learners fall behind, precomputed outputs are already available in <code>/day-4/materials/vietnamese-healthy-gut-microbiome</code>, so the workshop can continue into the R analysis without waiting for every pipeline run to finish.</p>
+:::
+
+::::: {#mcq_outputs .mcq}
+::: question
+Why does the workflow deliberately produce both `vietnamese_gut_with_unclassified.csv` and `vietnamese_gut_without_unclassified.csv`?
+:::
+
+<label><input type="radio" name="mcq_outputs" value="A"> A. Because one of them is only a temporary file that can always be ignored</label> <label><input type="radio" name="mcq_outputs" value="B"> B. Because one keeps classification uncertainty visible, while the other supports classified-only ecological summaries</label> <label><input type="radio" name="mcq_outputs" value="C"> C. Because taxburst requires two copies of the same table</label> <label><input type="radio" name="mcq_outputs" value="D"> D. Because AMR normalization cannot be done unless both files exist</label> <button onclick="checkMCQGut('mcq_outputs','B')">Check answer</button> <button onclick="resetMCQGut('mcq_outputs')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+Think about what changes when you remove unclassified rows and renormalize the remaining abundances.
+
+</details>
+:::::
+
+# R-based exploratory analysis
+
+The sections below assume that the pipeline outputs above already exist. From this point onward, the notebook shifts from <strong>pipeline execution</strong> to <strong>exploratory interpretation</strong>.
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(ggplot2)
+library(ggrepel)
+library(phyloseq)
+library(vegan)
+library(patchwork)
+library(scales)
+library(data.table)
+library(broom)
+
+data_dir <- file.path("..", "materials", "vietnamese-healthy-gut-microbiome")
+
+group_palette <- c(
+  "Child 0-23 months" = "#D55E00",
+  "Child 24-59 months" = "#0072B2",
+  "Adult" = "#009E73"
+)
+
+group_shapes <- c(
+  "Child 0-23 months" = 16,
+  "Child 24-59 months" = 17,
+  "Adult" = 15
+)
+
+group_labels <- c(
+  "Child 0-23 months" = "Child\n(0-23 months)",
+  "Child 24-59 months" = "Child\n(24-59 months)",
+  "Adult" = "Adult"
+)
+
+group_labeller <- labeller(analysis_group = as_labeller(group_labels))
+
+my_color <- c(
+  "#4e79a7", "#f28e2b", "#59a14f", "#b6992d",
+  "#499894", "#e15759", "#b07aa1", "#9d7660"
+)
+
+make_fill_palette <- function(levels_vector, other_label = "Other") {
+  core_levels <- setdiff(levels_vector, other_label)
+  n_cols <- length(core_levels)
+  if (n_cols > length(my_color)) {
+    extra_cols <- scales::hue_pal()(n_cols - length(my_color))
+    core_cols <- c(my_color, extra_cols)
+  } else {
+    core_cols <- my_color[seq_len(n_cols)]
+  }
+  cols <- setNames(core_cols, core_levels)
+  if (other_label %in% levels_vector) {
+    cols[other_label] <- "grey85"
+  }
+  cols[levels_vector]
+}
+
+paper_amr_class_levels <- c(
+  "Aminoglycosides", "β-lactamases", "Fosfomycin", "Fluoroquinolones",
+  "Glycopeptides", "MLS", "Chloramphenicol", "Sulfonamides",
+  "Tetracyclines", "Trimethoprim", "Other"
+)
+
+map_paper_amr_class <- function(drug_class) {
+  case_when(
+    drug_class %in% c("aminoglycoside antibiotic") ~ "Aminoglycosides",
+    drug_class %in% c("cephalosporin", "penicillin beta-lactam", "carbapenem", "monobactam") ~ "β-lactamases",
+    drug_class %in% c("phosphonic acid antibiotic") ~ "Fosfomycin",
+    drug_class %in% c("fluoroquinolone antibiotic") ~ "Fluoroquinolones",
+    drug_class %in% c("glycopeptide antibiotic") ~ "Glycopeptides",
+    drug_class %in% c(
+      "macrolide antibiotic", "lincosamide antibiotic", "streptogramin antibiotic",
+      "streptogramin A antibiotic", "streptogramin B antibiotic"
+    ) ~ "MLS",
+    drug_class %in% c("phenicol antibiotic") ~ "Chloramphenicol",
+    drug_class %in% c("sulfonamide antibiotic") ~ "Sulfonamides",
+    drug_class %in% c("tetracycline antibiotic", "glycylcycline") ~ "Tetracyclines",
+    drug_class %in% c("diaminopyrimidine antibiotic") ~ "Trimethoprim",
+    TRUE ~ "Other"
+  )
+}
+
+theme_set(
+  theme_bw(base_size = 12) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title.position = "plot",
+      legend.position = "right"
+    )
+)
+
+fig_dir <- "figures"
+dir.create(fig_dir, showWarnings = FALSE)
+
+save_fig <- function(plot, filename, width = 9, height = 5.5, dpi = 300) {
+  ggsave(
+    filename = file.path(fig_dir, filename),
+    plot = plot,
+    width = width,
+    height = height,
+    dpi = dpi,
+    bg = "white"
+  )
+}
+
+parse_lineage <- function(df) {
+  df %>%
+    tidyr::separate(
+      col = lineage,
+      into = c("domain", "phylum", "class", "order", "family", "genus", "species"),
+      sep = ";",
+      fill = "right",
+      extra = "drop",
+      remove = FALSE
+    )
+}
+
+trim_sample_ids <- function(x) trimws(as.character(x))
+```
+
+**Code note**
+
+-   This setup chunk loads the R packages used throughout the notebook and defines a few helper objects.
+-   The notebook now uses **ggplot2 only** for plotting, to keep figure sizing predictable in the rendered output.
+-   For color, the stacked bar plots use a richer custom palette, while group-level plots still combine color and point shape so they remain readable on screen and when printed.
+-   The default ggplot2 theme is `theme_bw()`, so any plot built directly with ggplot2 follows the workshop style guide.
+
+# Context from the original paper
+
+Before looking at the 6 local samples, we extract the main analytical context from the published article and the local summary notes.
+
+**Paper-level findings that are reasonable to compare against in a workshop subset**
+
+-   The study analyzed **42 healthy Vietnamese participants** split into **0-23 months**, **2-5 years**, and **adults**.
+-   The paper reported a **clear age-related microbiome structure difference**, with children under 2 years showing a distinct gut community structure.
+-   **Alpha diversity** was lower in the youngest children than in older children and adults.
+-   **Beta diversity** showed broad overlap between older children and adults, while younger children were more distinct and more dispersed.
+-   The healthy gut resistome was described as a substantial AMR reservoir, with **tetracycline** and **MLS** resistance genes especially common.
+-   Genes highlighted in the paper included **ermB**, **lnuC**, **tetM**, **tetO**, **tetQ**, **tetW**, and **tet-32** as near-ubiquitous signals.
+-   The paper reported a higher AMR burden in the youngest children, and noted clinically important genes such as **blaCTX-M** and **mphA/mphD** in younger children.
+
+```{r}
+paper_context <- tibble::tibble(
+  theme = c(
+    "Age-related microbiome structure",
+    "Alpha diversity",
+    "Beta diversity",
+    "Broad AMR burden",
+    "AMR classes emphasized",
+    "AMR genes emphasized"
+  ),
+  published_finding = c(
+    "Children under 2 years had a distinct gut microbiome structure relative to older children and adults.",
+    "Youngest children had lower Shannon diversity; older children were closer to adults.",
+    "Bray-Curtis ordination showed young children dispersed away from the overlapping older-child and adult cloud.",
+    "Youngest children carried the greatest number of detected AMR genes.",
+    "Tetracycline and MLS resistance were nearly ubiquitous.",
+    "ermB, lnuC, tet-32, tetM, tetO, tetQ, tetW were common; blaCTX-M and mphA/mphD were highlighted as clinically important signals."
+  )
+)
+
+knitr::kable(paper_context, col.names = c("Theme", "Finding extracted from paper / summary"))
+```
+
+# Analysis-ready files used below
+
+The R analysis below assumes that the workflow and post-processing steps have already produced an analysis folder containing:
+
+-   Metadata for the 6 re-analyzed samples.
+-   Taxonomy tables with and without unclassified rows.
+-   A `vietnamese_gut.phyloseq` folder that contains `otu_table.csv`, `sample_data.csv`, and `tax_table.csv`.
+-   A `vietnamese_gut_amr` folder with one `rgi-bwt` gene mapping table per sample.
+-   The original paper PDF and a local summary file used only for context.
+
+```{r}
+base_dir <- "."
+
+paths <- tibble::tibble(
+  object = c(
+    "metadata",
+    "taxonomy_with_unclassified",
+    "taxonomy_without_unclassified",
+    "phyloseq_export_dir",
+    "amr_dir",
+    "local_summary_md"
+  ),
+  file_name = c(
+    "vietnamese_gut_sample_information.csv",
+    "vietnamese_gut_with_unclassified.csv",
+    "vietnamese_gut_without_unclassified.csv",
+    "vietnamese_gut.phyloseq",
+    "vietnamese_gut_amr",
+    "vietnamese_gut_summary.md"
+  )
+) %>%
+  mutate(
+  path = file.path(data_dir, file_name),
+  exists = file.exists(path) | dir.exists(path)
+)
+
+knitr::kable(paths)
+```
+
+# Metadata inspection
+
+## Load data
+
+**Code note**
+
+-   This chunk reads the local sample metadata and creates a simple `analysis_group` variable that we can use consistently in plots and summaries.
+-   The grouping is intentionally simple because the metadata for this workshop subset are limited.
+
+```{r}
+metadata <- read_csv(file.path(data_dir, "vietnamese_gut_sample_information.csv"), show_col_types = FALSE) %>%
+  mutate(
+    sample_name = trim_sample_ids(sample_name),
+    studycode = trim_sample_ids(studycode),
+    status = recode(status, "Children" = "Child", .default = status),
+    analysis_group = case_when(
+      status == "Adult" ~ "Adult",
+      age_month < 24 ~ "Child 0-23 months",
+      TRUE ~ "Child 24-59 months"
+    ),
+    analysis_group = factor(
+      analysis_group,
+      levels = c("Child 0-23 months", "Child 24-59 months", "Adult")
+    )
+  ) %>%
+  arrange(analysis_group, studycode)
+
+sample_order <- metadata %>%
+  arrange(analysis_group, studycode) %>%
+  pull(sample_name)
+
+studycode_order <- metadata %>%
+  arrange(analysis_group, studycode) %>%
+  pull(studycode)
+
+metadata
+```
+
+**Metadata notes**
+
+-   `status` is the most reliable top-level grouping variable in the local file.
+-   For children, `age_month` is usable as age in months.
+-   For adults, the `age_month` column appears to contain values such as 25, 32, and 59, which are much more plausible as adult ages in **years** than months.
+-   For that reason, this notebook uses `analysis_group` derived from `status` and child age thresholds, and uses the adult age values only as descriptive metadata.
+
+```{r}
+metadata_summary <- metadata %>%
+  count(status, analysis_group, name = "n_samples")
+
+knitr::kable(metadata_summary)
+```
+
+## Harmonize sample IDs across inputs
+
+**Code note**
+
+-   This chunk checks whether the same sample IDs are present in metadata, taxonomy tables, the exported phyloseq tables, and the AMR result files.
+-   Harmonizing IDs early helps avoid silent joins to the wrong sample later in the notebook.
+-   We keep `sample_name` for joins, but use `studycode` later for plotting because it is more compact on figure axes.
+
+```{r}
+tax_with <- read_csv(file.path(data_dir, "vietnamese_gut_with_unclassified.csv"), show_col_types = FALSE) %>%
+  mutate(sample_name = trim_sample_ids(sample_name))
+
+tax_without <- read_csv(file.path(data_dir, "vietnamese_gut_without_unclassified.csv"), show_col_types = FALSE) %>%
+  mutate(sample_name = trim_sample_ids(sample_name))
+
+phy_sample_data <- read_csv(file.path(data_dir, "vietnamese_gut.phyloseq", "sample_data.csv"), show_col_types = FALSE) %>%
+  mutate(sample_name = trim_sample_ids(sample_name))
+
+amr_files <- list.files(file.path(data_dir, "vietnamese_gut_amr"), pattern = "gene_mapping_data\\.txt$", full.names = TRUE)
+amr_file_samples <- sub("\\.gene_mapping_data\\.txt$", "", basename(amr_files))
+
+sample_harmonization <- tibble::tibble(
+  source = c("metadata", "taxonomy_with", "taxonomy_without", "phyloseq_export", "amr_files"),
+  n_unique_samples = c(
+    n_distinct(metadata$sample_name),
+    n_distinct(tax_with$sample_name),
+    n_distinct(tax_without$sample_name),
+    n_distinct(phy_sample_data$sample_name),
+    length(unique(amr_file_samples))
+  ),
+  sample_ids = c(
+    paste(sort(unique(metadata$sample_name)), collapse = ", "),
+    paste(sort(unique(tax_with$sample_name)), collapse = ", "),
+    paste(sort(unique(tax_without$sample_name)), collapse = ", "),
+    paste(sort(unique(phy_sample_data$sample_name)), collapse = ", "),
+    paste(sort(unique(amr_file_samples)), collapse = ", ")
+  )
+)
+
+knitr::kable(sample_harmonization)
+```
+
+All four sources contain the same six sample IDs, so harmonization is straightforward.
+
+## Inspect the exported phyloseq components
+
+```{r}
+phy_otu_export <- read_csv(file.path(data_dir, "vietnamese_gut.phyloseq", "otu_table.csv"), show_col_types = FALSE)
+phy_tax_export <- read_csv(file.path(data_dir, "vietnamese_gut.phyloseq", "tax_table.csv"), show_col_types = FALSE)
+
+phyloseq_export_status <- tibble::tibble(
+  file = c("sample_data.csv", "otu_table.csv", "tax_table.csv"),
+  rows = c(nrow(phy_sample_data), nrow(phy_otu_export), nrow(phy_tax_export)),
+  columns = c(ncol(phy_sample_data), ncol(phy_otu_export), ncol(phy_tax_export))
+)
+
+knitr::kable(phyloseq_export_status)
+```
+
+The `vietnamese_gut.phyloseq` path is not a serialized `.rds` phyloseq object. It is an export directory containing the component tables needed to reconstruct a phyloseq object.
+
+## Inspect the AMR folder layout
+
+```{r}
+amr_file_inventory <- tibble::tibble(
+  file = basename(amr_files),
+  sample_name = sub("\\.gene_mapping_data\\.txt$", "", basename(amr_files)),
+  size_bytes = file.info(amr_files)$size
+)
+
+knitr::kable(amr_file_inventory)
+```
+
+```{r}
+amr_example <- fread(amr_files[1], sep = "\t", data.table = FALSE)
+
+knitr::kable(head(amr_example, 8))
+```
+
+The AMR files are one table per sample and include:
+
+-   ARO term
+-   reference model metadata
+-   mapped read counts
+-   average coverage
+-   AMR gene family
+-   drug class
+-   resistance mechanism
+
+This is sufficient for descriptive gene-level and drug-class summaries.
+
+# Taxonomy analysis
+
+## Load data
+
+**Code note**
+
+-   Here we load the two taxonomy tables and split the `lineage` string into standard taxonomic ranks.
+-   We then join the taxonomy data back to the metadata so every row knows which sample and age group it belongs to.
+
+```{r}
+tax_with_parsed <- parse_lineage(tax_with) %>%
+  left_join(metadata, by = "sample_name")
+
+tax_without_parsed <- parse_lineage(tax_without) %>%
+  left_join(metadata, by = "sample_name")
+
+tax_structure_summary <- tibble::tibble(
+  table = c("with_unclassified", "without_unclassified"),
+  rows = c(nrow(tax_with_parsed), nrow(tax_without_parsed)),
+  unique_samples = c(n_distinct(tax_with_parsed$sample_name), n_distinct(tax_without_parsed$sample_name)),
+  unique_matches = c(n_distinct(tax_with_parsed$match_name), n_distinct(tax_without_parsed$match_name))
+)
+
+knitr::kable(tax_structure_summary)
+```
+
+## Inspect data structure
+
+```{r}
+taxonomy_numeric_checks <- bind_rows(
+  tax_with_parsed %>%
+    group_by(sample_name) %>%
+    summarise(
+      table = "with_unclassified",
+      f_weighted_sum = sum(f_weighted_at_rank, na.rm = TRUE),
+      unweighted_sum = sum(unweighted_fraction, na.rm = TRUE),
+      .groups = "drop"
+    ),
+  tax_without_parsed %>%
+    group_by(sample_name) %>%
+    summarise(
+      table = "without_unclassified",
+      f_weighted_sum = sum(f_weighted_at_rank, na.rm = TRUE),
+      unweighted_sum = sum(unweighted_fraction, na.rm = TRUE),
+      .groups = "drop"
+    )
+) %>%
+  arrange(table, sample_name)
+
+knitr::kable(taxonomy_numeric_checks, digits = 4)
+```
+
+Two points matter here:
+
+-   `f_weighted_at_rank` sums to approximately 1 within each sample in both taxonomy tables, so it is appropriate for abundance-based ecological summaries.
+-   `unweighted_fraction` does **not** behave like a standard compositional percentage and should not be interpreted as if it must sum to 1 or 100.
+
+## Compare with vs without unclassified
+
+**Code note**
+
+-   This section isolates the rows labelled `unclassified` in the full taxonomy table.
+-   The goal is to show workshop participants how much of each sample remains taxonomically unresolved before using the renormalized table for ecological summaries.
+
+```{r}
+unclassified_summary <- tax_with_parsed %>%
+  filter(tolower(lineage) == "unclassified") %>%
+  transmute(
+    sample_name,
+    analysis_group,
+    unclassified_f_weighted = f_weighted_at_rank,
+    unclassified_unweighted = unweighted_fraction
+  ) %>%
+  arrange(analysis_group, sample_name)
+
+knitr::kable(unclassified_summary, digits = 4)
+```
+
+```{r}
+unclassified_plot_data <- unclassified_summary %>%
+    pivot_longer(
+        cols = c(unclassified_f_weighted, unclassified_unweighted),
+        names_to = "metric",
+        values_to = "fraction"
+    ) %>%
+    mutate(
+        metric = recode(
+            metric,
+            unclassified_f_weighted = "f_weighted_at_rank",
+            unclassified_unweighted = "unweighted_fraction"
+        ),
+        fraction_percent = 100 * fraction,
+        studycode = factor(metadata$studycode[match(sample_name, metadata$sample_name)], levels = studycode_order)
+    )
+
+unclassified_segments <- unclassified_plot_data %>%
+    group_by(sample_name, studycode, analysis_group) %>%
+    summarise(
+        y_min = min(fraction_percent, na.rm = TRUE),
+        y_max = max(fraction_percent, na.rm = TRUE),
+        .groups = "drop"
+    ) %>%
+    mutate(studycode = factor(studycode, levels = studycode_order))
+
+unclassified_plot <- ggplot(unclassified_plot_data, aes(x = studycode, y = fraction_percent)) +
+    geom_segment(
+        data = unclassified_segments,
+        aes(x = studycode, xend = studycode, y = y_min, yend = y_max),
+        linewidth = 0.7,
+        color = "grey55"
+    ) +
+    geom_point(aes(fill = metric, shape = metric), size = 3.2, color = "black", stroke = 0.35) +
+    facet_wrap(~analysis_group, scales = "free_x", labeller = group_labeller) +
+    scale_y_continuous(
+        labels = label_percent(scale = 1, accuracy = 1),
+        limits = c(0, 100),
+        expand = expansion(mult = c(0, 0.02))
+    ) +
+    scale_fill_manual(values = c("f_weighted_at_rank" = "#4e79a7", "unweighted_fraction" = "#e15759")) +
+    scale_shape_manual(values = c("f_weighted_at_rank" = 21, "unweighted_fraction" = 24)) +
+    labs(
+        title = "Large unclassified fractions remain in all six samples",
+        # subtitle = "Within each sample, the two points are connected vertically to compare f_weighted_at_rank and unweighted_fraction directly",
+        x = "Study code",
+        y = "Fraction assigned to 'unclassified'",
+        fill = "Metric",
+        shape = "Metric"
+    ) +
+    theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(unclassified_plot, "taxonomy_unclassified_fraction.png", width = 8, height = 5)
+unclassified_plot
+```
+
+**Take-home note.** The gap between the two points for each sample shows how much the interpretation changes depending on whether we use the weighted classified fraction or the unweighted fraction.
+
+In this subset, the weighted unclassified fraction ranges from roughly **38% to 49%**. That is large enough that analyses using the table without unclassified rows should be interpreted as **composition conditional on classified signal**, not as a complete description of all reads.
+
+::::: {#mcq_unclassified .mcq}
+::: question
+When a sample has a large unclassified fraction, what is the safest way to read the classified-only composition table?
+:::
+
+<label><input type="radio" name="mcq_unclassified" value="A"> A. As a complete picture of the whole metagenome</label> <label><input type="radio" name="mcq_unclassified" value="B"> B. As the composition of the classified portion of the sample, not the entire DNA signal</label> <label><input type="radio" name="mcq_unclassified" value="C"> C. As a table that becomes automatically unbiased once unclassified rows are removed</label> <label><input type="radio" name="mcq_unclassified" value="D"> D. As a result that should always be discarded without further discussion</label> <button onclick="checkMCQGut('mcq_unclassified','B')">Check answer</button> <button onclick="resetMCQGut('mcq_unclassified')">Reset</button>
+
+::: feedback
+:::
+
+<details class="next-step">
+
+<summary>Hint</summary>
+
+Ask what information is lost when the database cannot confidently assign a large part of the sample.
+
+</details>
+:::::
+
+## Reconstruct a phyloseq object for the demonstration
+
+**Code note**
+
+-   This chunk converts the long-format taxonomy table into the three core pieces needed by `phyloseq`: an OTU table, a taxonomy table, and sample metadata.
+-   We do not need phyloseq for every step, but it is useful to show how these data could be reused in a standard microbiome workflow.
+
+```{r}
+otu_demo <- tax_without_parsed %>%
+  select(match_name, sample_name, f_weighted_at_rank) %>%
+  distinct() %>%
+  pivot_wider(names_from = sample_name, values_from = f_weighted_at_rank, values_fill = 0)
+
+tax_demo <- tax_without_parsed %>%
+  select(match_name, domain, phylum, class, order, family, genus, species) %>%
+  distinct()
+
+sample_demo <- metadata %>%
+  select(sample_name, studycode, status, age_month, analysis_group)
+
+otu_mat <- as.matrix(as.data.frame(otu_demo[, -1]))
+rownames(otu_mat) <- otu_demo$match_name
+
+tax_mat <- as.matrix(as.data.frame(tax_demo[, -1]))
+rownames(tax_mat) <- tax_demo$match_name
+
+sample_df <- as.data.frame(sample_demo)
+rownames(sample_df) <- sample_df$sample_name
+sample_df$sample_name <- NULL
+
+phy_demo <- phyloseq(
+  otu_table(otu_mat, taxa_are_rows = TRUE),
+  tax_table(tax_mat),
+  sample_data(sample_df)
+)
+
+tibble::tibble(
+  nsamples = nsamples(phy_demo),
+  ntaxa = ntaxa(phy_demo),
+  rank_names = paste(rank_names(phy_demo), collapse = ", ")
+)
+```
+
+This reconstructed object is convenient for workshop workflows, but the ecology below still uses the same underlying `f_weighted_at_rank` abundances from `vietnamese_gut_without_unclassified.csv`.
+
+## Composition plots
+
+### Phylum composition
+
+**Code note**
+
+-   We first rank phyla by their total abundance across all six samples.
+-   To keep the stacked bar plot readable, we keep the **top 10 phyla** and collapse the remainder into `Other`.
+-   The x-axis uses `studycode` rather than `sample_name`, which keeps the figure easier to read.
+-   Within each sample, the stack is ordered from **highest abundance at the bottom** to **lower abundance above**, with `Other` forced to the top.
+-   The stack order is controlled explicitly so the dominant phyla sit lower in each bar and `Other` remains at the top of each sample.
+
+```{r}
+top_phyla <- tax_without_parsed %>%
+  group_by(phylum) %>%
+  summarise(total_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(total_abundance)) %>%
+  slice_head(n = 10) %>%
+  pull(phylum)
+
+phylum_plot_data <- tax_without_parsed %>%
+  mutate(phylum_plot = if_else(phylum %in% top_phyla, phylum, "Other")) %>%
+  group_by(sample_name, studycode, analysis_group, phylum_plot) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(sample_name, studycode, analysis_group) %>%
+  mutate(stack_order = if_else(phylum_plot == "Other", -1, rank(rel_abundance, ties.method = "first"))) %>%
+  ungroup()
+
+phylum_levels <- phylum_plot_data %>%
+  group_by(phylum_plot) %>%
+  summarise(total_abundance = sum(rel_abundance), .groups = "drop") %>%
+  arrange(desc(total_abundance)) %>%
+  pull(phylum_plot)
+
+phylum_fill <- make_fill_palette(phylum_levels)
+
+phylum_plot_data <- phylum_plot_data %>%
+  mutate(
+    studycode = factor(studycode, levels = studycode_order),
+    phylum_plot = factor(phylum_plot, levels = phylum_levels)
+  )
+
+phylum_plot <- ggplot(phylum_plot_data, aes(x = studycode, y = rel_abundance, fill = phylum_plot, order = stack_order)) +
+  geom_col(width = 0.75, color = "grey15", linewidth = 0.15) +
+  facet_wrap(~ analysis_group, scales = "free_x", labeller = group_labeller) +
+  scale_y_continuous(
+    labels = percent_format(accuracy = 1),
+    limits = c(0, 1),
+    expand = expansion(mult = c(0, 0.02))
+  ) +
+  scale_fill_manual(values = phylum_fill, breaks = phylum_levels) +
+  labs(
+    title = "Phylum-level composition after removing unclassified rows",
+    subtitle = "Top 10 phyla by overall relative abundance; 'Other' is stacked on top within each sample",
+    x = "Study code",
+    y = "Relative abundance (f_weighted_at_rank)",
+    fill = "Phylum"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 20, hjust = 1),
+    legend.position = "right"
+  )
+
+save_fig(phylum_plot, "taxonomy_phylum_composition.png", width = 8, height = 5.5)
+phylum_plot
+```
+
+**Take-home note.** This phylum-level stacked bar plot gives the quickest visual summary of how the dominant classified signal shifts across the six samples.
+
+```{r}
+phylum_top10_by_sample <- tax_without_parsed %>%
+  group_by(studycode, analysis_group, phylum) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(studycode, analysis_group) %>%
+  arrange(desc(rel_abundance), .by_group = TRUE) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+phylum_top10_by_group <- tax_without_parsed %>%
+  group_by(studycode, analysis_group, phylum) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(analysis_group, phylum) %>%
+  summarise(mean_rel_abundance = mean(rel_abundance), .groups = "drop") %>%
+  group_by(analysis_group) %>%
+  arrange(desc(mean_rel_abundance), .by_group = TRUE) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+knitr::kable(phylum_top10_by_sample, digits = 4, caption = "Top 10 phyla by relative abundance within each sample")
+knitr::kable(phylum_top10_by_group, digits = 4, caption = "Top 10 phyla by mean relative abundance within each age group")
+```
+
+### Genus composition
+
+**Code note**
+
+-   A stacked bar plot at genus level is harder to read if we include too many genera.
+-   We therefore keep the **top 10 genera** across the dataset and collapse the rest into `Other`.
+-   This gives a sample-level overview that is more intuitive for workshop participants before moving to the genus heatmap.
+
+```{r}
+top_genera_bar <- tax_without_parsed %>%
+  filter(!is.na(genus), genus != "") %>%
+  group_by(genus) %>%
+  summarise(total_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(total_abundance)) %>%
+  slice_head(n = 10) %>%
+  pull(genus)
+
+genus_bar_plot_data <- tax_without_parsed %>%
+  mutate(genus_plot = if_else(!is.na(genus) & genus %in% top_genera_bar, genus, "Other")) %>%
+  group_by(sample_name, studycode, analysis_group, genus_plot) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(sample_name, studycode, analysis_group) %>%
+  mutate(stack_order = if_else(genus_plot == "Other", -1, rank(rel_abundance, ties.method = "first"))) %>%
+  ungroup()
+
+genus_levels <- genus_bar_plot_data %>%
+  group_by(genus_plot) %>%
+  summarise(total_abundance = sum(rel_abundance), .groups = "drop") %>%
+  arrange(desc(total_abundance)) %>%
+  pull(genus_plot)
+
+genus_fill <- make_fill_palette(genus_levels)
+
+genus_bar_plot_data <- genus_bar_plot_data %>%
+  mutate(
+    studycode = factor(studycode, levels = studycode_order),
+    genus_plot = factor(genus_plot, levels = genus_levels)
+  )
+
+genus_bar_plot <- ggplot(genus_bar_plot_data, aes(x = studycode, y = rel_abundance, fill = genus_plot, order = stack_order)) +
+  geom_col(width = 0.75, color = "grey15", linewidth = 0.15) +
+  facet_wrap(~ analysis_group, scales = "free_x", labeller = group_labeller) +
+  scale_y_continuous(
+    labels = percent_format(accuracy = 1),
+    limits = c(0, 1),
+    expand = expansion(mult = c(0, 0.02))
+  ) +
+  scale_fill_manual(values = genus_fill, breaks = genus_levels) +
+  labs(
+    title = "Genus-level composition after removing unclassified rows",
+    subtitle = "Top 10 genera by overall relative abundance; 'Other' is stacked on top within each sample",
+    x = "Study code",
+    y = "Relative abundance (f_weighted_at_rank)",
+    fill = "Genus"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 20, hjust = 1),
+    legend.position = "right"
+  )
+
+save_fig(genus_bar_plot, "taxonomy_genus_composition.png", width = 10, height = 6)
+genus_bar_plot
+```
+
+**Take-home note.** The genus-level stacked bar plot is more detailed than the phylum plot and helps show which named genera drive the broad taxonomic shifts.
+
+```{r}
+genus_top10_by_sample <- tax_without_parsed %>%
+  filter(!is.na(genus), genus != "") %>%
+  group_by(studycode, analysis_group, genus) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(studycode, analysis_group) %>%
+  arrange(desc(rel_abundance), .by_group = TRUE) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+genus_top10_by_group <- tax_without_parsed %>%
+  filter(!is.na(genus), genus != "") %>%
+  group_by(studycode, analysis_group, genus) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  group_by(analysis_group, genus) %>%
+  summarise(mean_rel_abundance = mean(rel_abundance), .groups = "drop") %>%
+  group_by(analysis_group) %>%
+  arrange(desc(mean_rel_abundance), .by_group = TRUE) %>%
+  slice_head(n = 10) %>%
+  ungroup()
+
+knitr::kable(genus_top10_by_sample, digits = 4, caption = "Top 10 genera by relative abundance within each sample")
+knitr::kable(genus_top10_by_group, digits = 4, caption = "Top 10 genera by mean relative abundance within each age group")
+```
+
+### Genus heatmap
+
+**Code note**
+
+-   The stacked bar plot above is good for overall composition, but it becomes hard to see smaller differences.
+-   This heatmap shows the same data in a matrix view, which makes it easier to spot sample-specific enrichment patterns.
+
+```{r}
+top_genera <- tax_without_parsed %>%
+  filter(!is.na(genus), genus != "") %>%
+  group_by(genus) %>%
+  summarise(total_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(total_abundance)) %>%
+  slice_head(n = 15) %>%
+  pull(genus)
+
+genus_plot_data <- tax_without_parsed %>%
+  filter(genus %in% top_genera) %>%
+  group_by(sample_name, studycode, analysis_group, genus) %>%
+  summarise(rel_abundance = sum(f_weighted_at_rank, na.rm = TRUE), .groups = "drop") %>%
+  mutate(
+    studycode = factor(studycode, levels = studycode_order),
+    genus = factor(genus, levels = rev(top_genera))
+  )
+
+genus_fill_max_raw <- max(genus_plot_data$rel_abundance, na.rm = TRUE)
+genus_fill_limit <- ((floor((100 * genus_fill_max_raw) / 10) + 1) * 10) / 100
+genus_fill_breaks <- seq(0, genus_fill_limit, by = 0.1)
+
+genus_plot <- ggplot(genus_plot_data, aes(x = studycode, y = genus, fill = rel_abundance)) +
+  geom_tile(color = "white", linewidth = 0.2) +
+  facet_wrap(~ analysis_group, scales = "free_x", labeller = group_labeller) +
+  scale_fill_gradient(
+    low = "grey95",
+    high = "#2C7FB8",
+    limits = c(0, genus_fill_limit),
+    breaks = genus_fill_breaks,
+    labels = percent_format(accuracy = 1)
+  ) +
+  labs(
+    title = "Top genera across the six re-analyzed samples",
+    x = "Study code",
+    y = "Genus",
+    fill = "Relative abundance"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(genus_plot, "taxonomy_genus_heatmap.png", width = 10, height = 6.5)
+genus_plot
+```
+
+**Take-home note.** The heatmap makes it easier to see sample-specific genus enrichment patterns that are harder to spot in the stacked bar plot.
+
+**Descriptive interpretation**
+
+-   The two youngest-child samples show more **Actinomycetota** than the adult samples, driven largely by **Bifidobacterium**.
+-   Adult samples are richer in the classic adult-associated **Bacillota + Bacteroidota** balance.
+-   The single older-child sample has a phylum profile that looks more adult-like than the two youngest samples, but a single sample is not enough to claim convergence.
+
+## Alpha diversity
+
+**Code note**
+
+-   Alpha diversity asks how diverse each sample is on its own.
+-   We use the Shannon index because it captures both richness and evenness and is familiar to many microbiome readers.
+
+```{r}
+alpha_diversity <- tax_without_parsed %>%
+  group_by(sample_name) %>%
+  summarise(
+    shannon = vegan::diversity(f_weighted_at_rank, index = "shannon"),
+    observed_taxa = n_distinct(match_name),
+    .groups = "drop"
+  ) %>%
+  left_join(metadata, by = "sample_name") %>%
+  arrange(analysis_group, studycode)
+
+knitr::kable(alpha_diversity, digits = 3)
+```
+
+```{r}
+alpha_jitter <- position_jitter(width = 0.06, height = 0, seed = 42)
+
+alpha_plot <- ggplot(alpha_diversity, aes(x = analysis_group, y = shannon, color = analysis_group)) +
+  geom_boxplot(width = 0.55, outlier.shape = NA, alpha = 0.2, linewidth = 0.4) +
+  geom_point(aes(shape = analysis_group), size = 3, position = alpha_jitter) +
+  ggrepel::geom_text_repel(
+    aes(label = studycode),
+    position = alpha_jitter,
+    size = 3,
+    show.legend = FALSE,
+    seed = 42,
+    box.padding = 0.35,
+    point.padding = 0.2,
+    min.segment.length = 0
+  ) +
+  scale_color_manual(values = group_palette, labels = group_labels) +
+  scale_shape_manual(values = group_shapes, labels = group_labels) +
+  scale_x_discrete(labels = group_labels) +
+  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  labs(
+    #title = "Adults show the highest Shannon diversity in this 6-sample subset",
+    x = "Analysis group",
+    y = "Shannon diversity",
+    color = "Group",
+    shape = "Group"
+  ) +
+  theme(legend.position = "none")
+
+save_fig(alpha_plot, "taxonomy_alpha_diversity.png", width = 5, height = 5)
+alpha_plot
+```
+
+**Take-home note.** In this subset, adult samples sit at the higher end of Shannon diversity, while the child samples are consistently lower.
+
+No formal groupwise alpha-diversity test is emphasized here. With group sizes of **2**, **1**, and **3**, a p-value would suggest more precision than the data can support.
+
+## Beta diversity / ordination
+
+**Code note**
+
+-   Beta diversity compares samples against one another rather than within a single sample.
+-   Here we build a species-by-sample matrix from `f_weighted_at_rank`, compute Bray-Curtis dissimilarity, and then use classical multidimensional scaling to visualize those distances.
+
+```{r}
+species_wide <- tax_without_parsed %>%
+    select(sample_name, match_name, f_weighted_at_rank) %>%
+    distinct() %>%
+    pivot_wider(names_from = match_name, values_from = f_weighted_at_rank, values_fill = 0) %>%
+    arrange(match(sample_name, sample_order))
+
+species_mat <- as.matrix(as.data.frame(species_wide[, -1]))
+rownames(species_mat) <- species_wide$sample_name
+
+bray_dist <- vegdist(species_mat, method = "euclidean")
+bray_cmd <- cmdscale(bray_dist, eig = TRUE, k = 2)
+
+beta_diversity <- tibble::tibble(
+    sample_name = rownames(bray_cmd$points),
+    Axis1 = bray_cmd$points[, 1],
+    Axis2 = bray_cmd$points[, 2]
+) %>%
+    left_join(metadata, by = "sample_name")
+
+positive_eig <- bray_cmd$eig[bray_cmd$eig > 0]
+axis1_var <- positive_eig[1] / sum(positive_eig)
+axis2_var <- positive_eig[2] / sum(positive_eig)
+
+pairwise_bray <- as.matrix(bray_dist) %>%
+    as.data.frame() %>%
+    tibble::rownames_to_column("sample_1") %>%
+    pivot_longer(-sample_1, names_to = "sample_2", values_to = "bray_curtis") %>%
+    filter(sample_1 < sample_2) %>%
+    left_join(metadata %>% select(sample_name, group_1 = analysis_group), by = c("sample_1" = "sample_name")) %>%
+    left_join(metadata %>% select(sample_name, group_2 = analysis_group), by = c("sample_2" = "sample_name")) %>%
+    left_join(metadata %>% select(sample_name, studycode_1 = studycode), by = c("sample_1" = "sample_name")) %>%
+    left_join(metadata %>% select(sample_name, studycode_2 = studycode), by = c("sample_2" = "sample_name")) %>%
+    select(studycode_1, studycode_2, group_1, group_2, bray_curtis) %>%
+    arrange(bray_curtis)
+
+knitr::kable(pairwise_bray, digits = 3)
+```
+
+```{r}
+beta_plot <- ggplot(beta_diversity, aes(x = Axis1, y = Axis2, color = analysis_group)) +
+  geom_point(aes(shape = analysis_group), size = 3) +
+  stat_ellipse(aes(group = analysis_group), linewidth = 0.6, linetype = 2, level = 0.8, show.legend = FALSE) +
+  ggrepel::geom_text_repel(
+    aes(label = studycode),
+    size = 3,
+    show.legend = FALSE,
+    seed = 42,
+    box.padding = 0.25,
+    point.padding = 0.25,
+    min.segment.length = 0
+  ) +
+  scale_color_manual(values = group_palette, labels = group_labels) +
+  scale_shape_manual(values = group_shapes, labels = group_labels) +
+  scale_x_continuous(expand = expansion(mult = c(0.05, 0.05))) +
+  scale_y_continuous(expand = expansion(mult = c(0.05, 0.05))) +
+  labs(
+    title = "Bray-Curtis ordination on species-level f_weighted_at_rank",
+    x = sprintf("Axis 1 (%.1f%% explained)", 100 * axis1_var),
+    y = sprintf("Axis 2 (%.1f%% explained)", 100 * axis2_var),
+    color = "Group",
+    shape = "Group"
+  )
+
+save_fig(beta_plot, "taxonomy_bray_curtis_ordination.png", width = 8.5, height = 5.8)
+beta_plot
+```
+
+**Take-home note.** The ordination shows that the adult samples group more tightly together, while the child samples are farther away from that adult cluster.
+
+## Taxonomy interpretation
+
+This subset is directionally consistent with the paper in some ways:
+
+-   The **adult samples cluster more closely to one another** than the two youngest-child samples.
+-   Adults also show the **highest Shannon diversity** in the subset.
+-   The two youngest-child samples are compositionally distinct, especially because of stronger **Actinomycetota / Bifidobacterium** signal and lower Shannon diversity.
+
+However, the subset does **not** fully recapitulate the paper's age gradient:
+
+-   There is only **one** older-child sample.
+-   That older-child sample has a more adult-like phylum balance than the younger-child samples, but it still remains Bray-Curtis-distant from the adults.
+-   Therefore, we can say the local data are **compatible with** the reported maturation trend, but this subset is too small to claim a clean replication.
+
+# AMR analysis
+
+## Inspect rgi-bwt outputs and harmonize sample IDs
+
+**Code note**
+
+-   This chunk reads all per-sample `rgi-bwt` result tables into one long table.
+-   It also converts the key AMR columns to numeric form and extracts a usable gene length from `Reference Length`.
+-   We then build **two normalized AMR datasets**:
+    1.  a version without a coverage filter
+    2.  a stricter version retaining only hits with `Average Percent Coverage ≥ 90`
+
+```{r}
+amr_raw <- lapply(amr_files, function(path) {
+  read_tsv(path, show_col_types = FALSE) %>%
+    mutate(
+      sample_name = sub("\\.gene_mapping_data\\.txt$", "", basename(path)),
+      sample_name = trim_sample_ids(sample_name)
+    )
+}) %>%
+  bind_rows() %>%
+  left_join(metadata, by = "sample_name") %>%
+  mutate(
+    `Completely Mapped Reads` = as.numeric(`Completely Mapped Reads`),
+    `All Mapped Reads` = as.numeric(`All Mapped Reads`),
+    `Average Percent Coverage` = as.numeric(`Average Percent Coverage`),
+    `Average Length Coverage (bp)` = as.numeric(`Average Length Coverage (bp)`),
+    reference_length_raw = as.character(`Reference Length`),
+    reference_length_bp = readr::parse_number(sub(";.*$", "", reference_length_raw))
+  )
+
+amr_base <- amr_raw %>%
+  filter(
+    !is.na(`Completely Mapped Reads`),
+    !is.na(reference_length_bp),
+    reference_length_bp > 0,
+    `Completely Mapped Reads` > 0
+  ) %>%
+  mutate(
+    rpk = `Completely Mapped Reads` / (reference_length_bp / 1000)
+  )
+
+amr_all <- amr_base %>%
+  group_by(sample_name) %>%
+  mutate(
+    retained_amr_reads = sum(`Completely Mapped Reads`, na.rm = TRUE),
+    retained_amr_reads_million = retained_amr_reads / 1e6,
+    rpkm = rpk / retained_amr_reads_million
+  ) %>%
+  ungroup() %>%
+  mutate(amr_case = "No coverage filter")
+
+amr_filtered <- amr_base %>%
+  filter(!is.na(`Average Percent Coverage`), `Average Percent Coverage` >= 90) %>%
+  group_by(sample_name) %>%
+  mutate(
+    retained_amr_reads = sum(`Completely Mapped Reads`, na.rm = TRUE),
+    retained_amr_reads_million = retained_amr_reads / 1e6,
+    rpkm = rpk / retained_amr_reads_million
+  ) %>%
+  ungroup() %>%
+  mutate(amr_case = "Average Percent Coverage ≥ 90")
+
+amr_cases <- bind_rows(amr_all, amr_filtered) %>%
+  mutate(
+    amr_case = factor(amr_case, levels = c("No coverage filter", "Average Percent Coverage ≥ 90"))
+  )
+
+amr_overview <- bind_rows(
+  amr_all %>%
+    summarise(
+      amr_case = "No coverage filter",
+      n_rows = n(),
+      n_samples = n_distinct(sample_name),
+      n_aro_terms = n_distinct(`ARO Term`)
+    ),
+  amr_filtered %>%
+    summarise(
+      amr_case = "Average Percent Coverage ≥ 90",
+      n_rows = n(),
+      n_samples = n_distinct(sample_name),
+      n_aro_terms = n_distinct(`ARO Term`)
+    )
+) %>%
+  ungroup()
+
+knitr::kable(amr_overview)
+```
+
+Before any downstream AMR summary, this notebook applies the same normalization logic in two different ways:
+
+-   compute **RPK** by normalizing **`Completely Mapped Reads`** by **`Reference Length`**
+-   compute **RPKM** by scaling RPK within each sample by the retained per-sample AMR read total
+-   compare results **with** and **without** the additional filter **`Average Percent Coverage ≥ 90`**
+
+In other words, the number of reads mapped to each gene (**RGI `Completely Mapped Reads`**) is normalized by the gene length (**RGI `Reference Length`**) to create a **Reads per kilobase of AMR gene (RPK)** metric. That RPK value is then converted to **RPKM** using the sample-specific total retained AMR reads.
+
+$$
+\mathrm{RPK}_i = \frac{C_i}{L_i / 1000}
+$$
+
+$$
+\mathrm{RPKM}_i = \frac{\mathrm{RPK}_i}{\left(\sum_{j=1}^{n} C_j\right) / 10^6}
+$$
+
+-   $C_i$: `Completely Mapped Reads` for AMR gene $i$
+-   $L_i$: `Reference Length` for AMR gene $i$, in base pairs
+-   $\sum_{j=1}^{n} C_j$: total `Completely Mapped Reads` across all retained AMR genes in the same sample
+-   $n$: number of retained AMR genes in that sample
+
+This makes it possible for workshop participants to compare the effect of the coverage threshold directly, instead of seeing only one filtered view.
+
+## Per-sample gene burden
+
+**Code note**
+
+-   This section summarizes both AMR cases at the sample level.
+-   The main idea is simple: count how many AMR hits remain per sample in each case, then compare their total normalized signal using `RPKM`.
+
+```{r}
+amr_sample_summary <- amr_cases %>%
+  group_by(amr_case, sample_name) %>%
+  summarise(
+    n_retained_aro_terms = n_distinct(`ARO Term`),
+    total_completely_mapped_reads = sum(`Completely Mapped Reads`, na.rm = TRUE),
+    total_rpk = sum(rpk, na.rm = TRUE),
+    total_rpkm = sum(rpkm, na.rm = TRUE),
+    median_rpkm = median(rpkm, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  left_join(metadata, by = "sample_name") %>%
+  arrange(amr_case, analysis_group, studycode)
+
+knitr::kable(amr_sample_summary, digits = 2)
+```
+
+```{r}
+amr_jitter <- position_jitter(width = 0.05, height = 0, seed = 42)
+
+amr_gene_count_plot <- ggplot(amr_sample_summary, aes(x = analysis_group, y = n_retained_aro_terms, color = analysis_group)) +
+  stat_summary(fun = median, geom = "crossbar", width = 0.5, color = "grey30") +
+  geom_point(aes(shape = analysis_group), size = 3, position = amr_jitter) +
+  ggrepel::geom_text_repel(
+    aes(label = studycode),
+    position = amr_jitter,
+    size = 3,
+    show.legend = FALSE,
+    seed = 42,
+    box.padding = 0.25,
+    point.padding = 0.2,
+    min.segment.length = 0
+  ) +
+  scale_color_manual(values = group_palette, labels = group_labels) +
+  scale_shape_manual(values = group_shapes, labels = group_labels) +
+  facet_wrap(~ amr_case, nrow = 1) +
+  scale_x_discrete(labels = group_labels) +
+  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  labs(
+    title = "AMR hit counts by sample under two filtering strategies",
+    x = "Analysis group",
+    y = "Number of retained ARO terms",
+    shape = "Group"
+  ) +
+  theme(legend.position = "none")
+
+amr_total_rpkm_plot <- ggplot(amr_sample_summary, aes(x = analysis_group, y = total_rpkm, color = analysis_group)) +
+  stat_summary(fun = median, geom = "crossbar", width = 0.5, color = "grey30") +
+  geom_point(aes(shape = analysis_group), size = 3, position = amr_jitter) +
+  ggrepel::geom_text_repel(
+    aes(label = studycode),
+    position = amr_jitter,
+    size = 3,
+    show.legend = FALSE,
+    seed = 42,
+    box.padding = 0.25,
+    point.padding = 0.2,
+    min.segment.length = 0
+  ) +
+  scale_color_manual(values = group_palette, labels = group_labels) +
+  scale_shape_manual(values = group_shapes, labels = group_labels) +
+  facet_wrap(~ amr_case, nrow = 1) +
+  scale_x_discrete(labels = group_labels) +
+  scale_y_continuous(labels = comma_format(), limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  labs(
+    title = "Total retained AMR signal after RPKM normalization",
+    x = "Analysis group",
+    y = "Summed RPKM",
+    shape = "Group"
+  ) +
+  theme(legend.position = "none")
+
+amr_burden_plot <- amr_gene_count_plot / amr_total_rpkm_plot
+save_fig(amr_burden_plot, "amr_burden_summary.png", width = 9, height = 9.5)
+amr_burden_plot
+```
+
+**Take-home note.** Comparing the top and bottom panels makes it easier to see that the strict coverage filter reduces both the number of retained hits and the apparent AMR burden.
+
+**Interpretation**
+
+-   Without the coverage filter, the AMR summary is broader and tends to preserve more of the signal that directionally resembles the paper.
+-   After applying **`Average Percent Coverage ≥ 90`**, the retained AMR set becomes much smaller and more conservative.
+-   The child samples still tend to show higher total AMR signal on average, but the difference becomes weaker after strict filtering, and the age pattern remains exploratory rather than definitive.
+
+## Gene-level summaries
+
+```{r}
+amr_gene_summary <- amr_cases %>%
+  group_by(amr_case, `ARO Term`) %>%
+  summarise(
+    n_samples = n_distinct(sample_name),
+    total_rpk = sum(rpk, na.rm = TRUE),
+    total_rpkm = sum(rpkm, na.rm = TRUE),
+    max_rpkm_in_one_sample = max(rpkm, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(amr_case, desc(n_samples), desc(total_rpkm))
+
+knitr::kable(amr_gene_summary %>% group_by(amr_case) %>% slice_head(n = 20), digits = 2)
+```
+
+The top gene list changes substantially after strict filtering. Several genes that are prominent without a coverage cutoff do not remain after the **Coverage ≥ 90** rule, so the workshop interpretation below compares both cases directly.
+
+```{r}
+paper_theme_genes <- c("ErmB", "lnuC", "tet(32)", "tet(M)", "tet(O)", "tet(Q)", "tet(W)", "mphA")
+detected_ctxm_variants <- sort(unique(amr_cases$`ARO Term`[grepl("CTX-M", amr_cases$`ARO Term`, ignore.case = TRUE)]))
+focus_gene_set <- unique(c(paper_theme_genes, detected_ctxm_variants))
+
+amr_focus_gene_table <- amr_cases %>%
+  filter(`ARO Term` %in% focus_gene_set) %>%
+  group_by(amr_case, sample_name, `ARO Term`) %>%
+  summarise(
+    rpk = sum(rpk, na.rm = TRUE),
+    rpkm = sum(rpkm, na.rm = TRUE),
+    max_coverage = max(`Average Percent Coverage`, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  complete(
+    amr_case = levels(amr_cases$amr_case),
+    sample_name = sample_order,
+    `ARO Term` = focus_gene_set,
+    fill = list(rpk = 0, rpkm = 0, max_coverage = NA_real_)
+  )
+
+focus_gene_order <- amr_focus_gene_table %>%
+  group_by(amr_case, `ARO Term`) %>%
+  summarise(total_rpkm = sum(rpkm, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = amr_case, values_from = total_rpkm, values_fill = 0) %>%
+  mutate(delta_rpkm = `No coverage filter` - `Average Percent Coverage ≥ 90`) %>%
+  arrange(desc(abs(delta_rpkm)), desc(`No coverage filter`), `ARO Term`) %>%
+  pull(`ARO Term`)
+
+amr_focus_gene_table <- amr_focus_gene_table %>%
+  left_join(metadata %>% select(sample_name, studycode, analysis_group), by = "sample_name") %>%
+  mutate(
+    studycode = factor(studycode, levels = studycode_order),
+    amr_case = factor(amr_case, levels = levels(amr_cases$amr_case)),
+    `ARO Term` = factor(`ARO Term`, levels = rev(focus_gene_order))
+  )
+
+gene_fill_max <- max(log10(amr_focus_gene_table$rpkm + 1), na.rm = TRUE)
+gene_fill_breaks <- pretty(c(0, gene_fill_max), n = 5)
+
+amr_focus_gene_plot <- ggplot(amr_focus_gene_table, aes(x = studycode, y = `ARO Term`, fill = log10(rpkm + 1))) +
+  geom_tile(color = "grey70", linewidth = 0.25) +
+  facet_grid(
+    amr_case ~ analysis_group,
+    scales = "free_x",
+    space = "free_x",
+    labeller = labeller(analysis_group = as_labeller(group_labels))
+  ) +
+  scale_fill_gradientn(
+    colours = c("grey99", "#FEE08B", "#F46D43", "#A50026"),
+    limits = c(0, gene_fill_max),
+    breaks = gene_fill_breaks
+  ) +
+  labs(
+    title = "Paper-themed AMR genes under both filtering strategies",
+    subtitle = "Rows share one color scale; pale bottom-row tiles indicate signals removed by the Coverage ≥ 90 filter",
+    x = "Study code",
+    y = "ARO term",
+    fill = "log10(RPKM + 1)"
+  ) +
+  theme(
+    #axis.text.x = element_text(angle = 0, hjust = 0),
+    axis.text.y = element_text(size = 8),
+    strip.background = element_rect(fill = "grey92", color = "black"),
+    strip.text = element_text(face = "bold"),
+    panel.spacing = grid::unit(0.5, "lines")
+  )
+
+save_fig(amr_focus_gene_plot, "amr_paper_theme_gene_heatmap.png", width = 10, height = 8)
+amr_focus_gene_plot
+```
+
+**Take-home note.** Because both rows use the same fill scale and the genes are ordered by how much signal is lost after filtering, the coverage effect is much easier to read at a glance.
+
+```{r}
+amr_focus_gene_summary <- amr_cases %>%
+  filter(`ARO Term` %in% focus_gene_set) %>%
+  group_by(amr_case, `ARO Term`) %>%
+  summarise(
+    n_samples = n_distinct(sample_name),
+    total_rpk = sum(rpk, na.rm = TRUE),
+    total_rpkm = sum(rpkm, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(amr_case, desc(n_samples), desc(total_rpkm))
+
+knitr::kable(amr_focus_gene_summary, digits = 2)
+```
+
+## Drug-class summaries
+
+```{r}
+present_paper_classes <- amr_cases %>%
+  select(`Drug Class`) %>%
+  separate_rows(`Drug Class`, sep = ";\\s*") %>%
+  mutate(paper_class = map_paper_amr_class(`Drug Class`)) %>%
+  distinct(paper_class) %>%
+  filter(!is.na(paper_class)) %>%
+  mutate(paper_class = factor(paper_class, levels = paper_amr_class_levels)) %>%
+  arrange(paper_class) %>%
+  pull(paper_class)
+
+amr_class_summary <- amr_cases %>%
+  select(amr_case, sample_name, studycode, analysis_group, `ARO Term`, `Drug Class`, rpk, rpkm) %>%
+  separate_rows(`Drug Class`, sep = ";\\s*") %>%
+  mutate(paper_class = map_paper_amr_class(`Drug Class`)) %>%
+  group_by(amr_case, sample_name, studycode, analysis_group, paper_class) %>%
+  summarise(
+    total_rpk = sum(rpk, na.rm = TRUE),
+    total_rpkm = sum(rpkm, na.rm = TRUE),
+    n_genes = n_distinct(`ARO Term`),
+    .groups = "drop"
+  ) %>%
+  complete(
+    amr_case = levels(amr_cases$amr_case),
+    sample_name = sample_order,
+    paper_class = present_paper_classes,
+    fill = list(total_rpk = 0, total_rpkm = 0, n_genes = 0)
+  ) %>%
+  left_join(metadata %>% select(sample_name, studycode, analysis_group), by = "sample_name") %>%
+  mutate(
+    studycode = coalesce(studycode.x, studycode.y),
+    analysis_group = coalesce(analysis_group.x, analysis_group.y)
+  ) %>%
+  select(-studycode.x, -studycode.y, -analysis_group.x, -analysis_group.y) %>%
+  mutate(amr_case = factor(amr_case, levels = levels(amr_cases$amr_case)))
+
+amr_class_order <- amr_class_summary %>%
+  group_by(amr_case, paper_class) %>%
+  summarise(total_rpkm = sum(total_rpkm, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = amr_case, values_from = total_rpkm, values_fill = 0) %>%
+  mutate(delta_rpkm = `No coverage filter` - `Average Percent Coverage ≥ 90`) %>%
+  arrange(desc(abs(delta_rpkm)), desc(`No coverage filter`), paper_class) %>%
+  pull(paper_class)
+
+amr_class_summary <- amr_class_summary %>%
+  mutate(
+    studycode = factor(studycode, levels = studycode_order),
+    paper_class = factor(paper_class, levels = rev(amr_class_order))
+  )
+
+class_fill_max <- max(log10(amr_class_summary$total_rpkm + 1), na.rm = TRUE)
+class_fill_breaks <- pretty(c(0, class_fill_max), n = 5)
+
+amr_class_plot <- ggplot(amr_class_summary, aes(x = studycode, y = paper_class, fill = log10(total_rpkm + 1))) +
+  geom_tile(color = "grey70", linewidth = 0.25) +
+  facet_grid(
+    amr_case ~ analysis_group,
+    scales = "free_x",
+    space = "free_x",
+    labeller = labeller(analysis_group = as_labeller(group_labels))
+  ) +
+  scale_fill_gradientn(
+    colours = c("grey99", "#D1E5F0", "#67A9CF", "#2166AC"),
+    limits = c(0, class_fill_max),
+    breaks = class_fill_breaks
+  ) +
+  labs(
+    title = "Paper-style AMR classes under both filtering strategies",
+    subtitle = "Rows share one color scale, so pale bottom-row tiles highlight class-level signal lost after strict filtering",
+    x = "Study code",
+    y = "Paper-style AMR class",
+    fill = "log10(RPKM + 1)"
+  ) +
+  theme(
+    #axis.text.x = element_text(angle = 45, hjust = 1),
+    strip.background = element_rect(fill = "grey92", color = "black"),
+    strip.text = element_text(face = "bold"),
+    panel.spacing = grid::unit(0.5, "lines")
+  )
+
+save_fig(amr_class_plot, "amr_drug_class_heatmap.png", width = 10, height = 7.5)
+amr_class_plot
+```
+
+**Take-home note.** Showing every class-sample combination, including zeros, makes the class-level difference between the no-filter and coverage-filter views much more explicit.
+
+Only the paper-style AMR classes that are actually present in this 6-sample re-analysis are shown here; classes absent from the current data are omitted to avoid implying that they were observed.
+
+```{r}
+amr_class_overall <- amr_class_summary %>%
+  group_by(amr_case, paper_class) %>%
+  summarise(
+    n_samples = n_distinct(sample_name),
+    total_rpk = sum(total_rpk),
+    total_rpkm = sum(total_rpkm),
+    .groups = "drop"
+  ) %>%
+  arrange(amr_case, desc(total_rpkm))
+
+knitr::kable(amr_class_overall, digits = 2)
+```
+
+## Clinically highlighted signals
+
+```{r}
+critical_hits <- amr_cases %>%
+  filter(grepl("CTX-M|mphA", `ARO Term`, ignore.case = TRUE)) %>%
+  select(amr_case, studycode, analysis_group, `ARO Term`, `Completely Mapped Reads`, `Average Percent Coverage`, rpk, rpkm, `Drug Class`) %>%
+  arrange(amr_case, `ARO Term`, desc(`Completely Mapped Reads`))
+
+knitr::kable(critical_hits, digits = 2)
+```
+
+**AMR interpretation**
+
+-   Without the coverage filter, the AMR profile is broader and closer to the kind of descriptive signal emphasized in the paper.
+-   Once **`Average Percent Coverage ≥ 90`** is imposed, the profile becomes much more conservative and several previously visible genes disappear.
+-   In the paper-style class grouping, **MLS** and **β-lactamase-related** signals remain prominent, but the balance between classes changes substantially between the two AMR cases.
+-   Among the highlighted genes, some signals remain only in the no-filter case, while the strict-filter case retains a much smaller subset, including only limited **CTX-M** signal and no retained `mphA`.
+-   This side-by-side comparison is useful for teaching how sensitive resistome interpretation can be to filtering choices.
+
+# Integrated exploratory notes
+
+The next plot is deliberately exploratory. It asks whether samples with lower taxonomic diversity also tend to show a larger AMR signal under the two AMR filtering strategies.
+
+```{r}
+integrated_summary <- alpha_diversity %>%
+  select(sample_name, studycode, analysis_group, shannon) %>%
+  left_join(amr_sample_summary %>% select(amr_case, sample_name, total_rpkm, n_retained_aro_terms), by = "sample_name")
+
+integrated_plot <- ggplot(integrated_summary, aes(x = shannon, y = total_rpkm, color = analysis_group, label = studycode)) +
+  geom_point(aes(shape = analysis_group), size = 3) +
+  ggrepel::geom_text_repel(
+    size = 3,
+    show.legend = FALSE,
+    seed = 42,
+    box.padding = 0.25,
+    point.padding = 0.25,
+    min.segment.length = 0
+  ) +
+  scale_color_manual(values = group_palette, labels = group_labels) +
+  scale_shape_manual(values = group_shapes, labels = group_labels) +
+  facet_wrap(~ amr_case, nrow = 1) +
+  scale_x_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  scale_y_continuous(labels = comma_format(), limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  labs(
+    title = "Exploratory view: AMR RPKM versus Shannon diversity",
+    x = "Shannon diversity",
+    y = "Summed AMR RPKM",
+    color = "Group",
+    shape = "Group"
+  )
+
+save_fig(integrated_plot, "integrated_amr_vs_alpha.png", width = 9, height = 5)
+integrated_plot
+```
+
+This plot suggests that the lower-diversity child samples also have relatively high retained AMR signal in both AMR summaries, but the strength of that pattern depends on the filter used. With only six samples, this should be treated as a **visual prompt for a larger follow-up analysis**, not as an inferred biological relationship.
+
+**Take-home note.** The relationship between diversity and AMR signal looks broadly similar in both AMR cases, but the apparent strength of the pattern depends on the filtering rule.
+
+# Comparison with the original paper
+
+```{r}
+comparison_table <- tibble::tibble(
+  theme = c(
+    "Age-related microbiome structure",
+    "Alpha diversity pattern",
+    "Beta diversity pattern",
+    "Broad AMR burden",
+    "Key AMR classes",
+    "Clinically highlighted genes"
+  ),
+  paper = c(
+    "Young children under 2 years were structurally distinct from older children and adults.",
+    "Youngest children had lower diversity; older children approached adult values.",
+    "Older children and adults overlapped more than younger children.",
+    "Youngest children had the highest median AMR gene burden.",
+    "Tetracycline and MLS signals were widespread.",
+    "blaCTX-M and mphA/mphD were emphasized in younger children."
+  ),
+  subset_reanalysis = c(
+    "The two youngest-child samples are distinct from the adult cluster; the single older-child sample is intermediate in phylum composition but not fully adult-like.",
+    "Adults have the highest Shannon values in this subset; all three child samples are lower.",
+    "Adults cluster closer to one another; child samples are more separated from the adults than adults are from each other.",
+    "Without the coverage filter, children still tend to show higher AMR signal on average; with the >= 90 filter that separation becomes weaker and the retained hit counts do not follow a clean age gradient.",
+    "Using paper-style class grouping, MLS and β-lactamase-related signals remain visible in both analyses, but the class balance changes substantially after strict filtering.",
+    "CTX-M and mphA-like signals are more visible without the coverage filter; only limited CTX-M signal remains after strict filtering, and mphA is not retained."
+  ),
+  take_home = c(
+    "Broad directional concordance, but only partial support because n is very small.",
+    "Directionally consistent with the paper.",
+    "Directionally consistent for adult clustering; weaker support for an older-child/adult overlap claim.",
+    "Suggestive but not a clean reproduction.",
+    "Concordance is stronger in the no-filter view and weaker in the strict-filter view.",
+    "Agreement for these clinically highlighted genes is highly filter-dependent."
+  )
+)
+
+knitr::kable(comparison_table)
+```
+
+## Quick summary in English
+
+**Findings that remain broadly similar to the original paper**
+
+-   On the **taxonomy** side, the adult samples in this 6-sample subset still show **higher alpha diversity** and **tighter clustering** than the younger-child samples.
+-   The two **children under 24 months** still look compositionally distinct from the adult cluster, which remains directionally consistent with the paper's main microbiome maturation result.
+-   The overall structure of the subset is therefore still compatible with the broad idea that younger gut microbiomes are less mature and more distinct than adult microbiomes.
+
+**Findings that differ, weaken, or only partially agree once AMR filtering is tightened**
+
+-   We still cannot fully evaluate the paper's “older children become more adult-like” pattern because this subset contains only **one child aged 24-59 months**.
+-   On the **beta-diversity** side, adults cluster more tightly, but the single older-child sample does not clearly overlap with the adult cluster the way the full paper suggested.
+-   In the AMR analysis, the no-filter view and the strict-filter view do not tell exactly the same story.
+-   Under the stricter workflow, many canonical paper-highlighted genes drop out, while a smaller set of higher-coverage hits remains.
+-   This means that AMR concordance with the paper is **stronger descriptively without the coverage filter** and **weaker but more conservative with the \>= 90 filter**.
+
+**Short take-home message**
+
+-   This 6-sample re-analysis still supports the paper at the **broad microbiome-structure level**.
+-   On the AMR side, agreement becomes **stronger in the no-filter descriptive view** and **weaker but more conservative** once the analysis is restricted to **high-coverage hits and RPKM-based summaries**.
+-   The comparison should therefore be read as a **workshop-oriented directional cross-check**, not as a full replication of the original paper.
+
+# Limitations
+
+This notebook should be read with several major limitations in mind:
+
+-   It is based on **only six re-analyzed samples**.
+-   The original paper analyzed **42 participants** and had more balanced age strata.
+-   The local metadata are sparse, and even the `age_month` field is ambiguous for adults.
+-   Taxonomic ecology here uses **`f_weighted_at_rank`**, not the paper's original Kraken2/Bracken abundance outputs.
+-   The unclassified fraction is large in every sample, so the "without unclassified" analyses describe only the classified component.
+-   The AMR workflow is **not directly equivalent** to the paper's SRST2 + ARGANNOT pipeline.
+-   The notebook compares two AMR views: one without a coverage filter and one with **`Average Percent Coverage ≥ 90`**. The stricter view is conservative and may remove biologically real but lower-coverage hits.
+-   The AMR normalization uses **`Completely Mapped Reads`**, **`Reference Length`**, and a sample-internal RPKM scaling based on retained AMR reads available in the local RGI tables.
+-   Because the local AMR tables do not include total metagenomic read counts, this RPKM calculation is an available-data approximation rather than a perfect reconstruction of the paper's SRST2-based RPKM framework.
+-   With group sizes of **2**, **1**, and **3**, formal inference is not the main point of the exercise.
+
+# Suggested next analyses
+
+If this workshop analysis were expanded into a more complete re-analysis, the next priorities would be:
+
+1.  Re-analyze a much larger subset, ideally recovering age groups closer to the original paper design.
+2.  Standardize metadata carefully, especially adult age, diet, household structure, and recent antimicrobial exposure.
+3.  Re-run taxonomic profiling with a workflow closer to the original study if strict replication is the goal.
+4.  Add a more principled AMR comparison layer, for example family-level harmonization between CARD and ARGANNOT outputs.
+5.  Investigate whether the strongest CTX-M detections remain after stricter filtering on coverage and breadth.
+6.  Explore organism-to-gene linkage methods if the training objective extends beyond simple resistome description.
+
+# Conclusion
+
+This 6-sample workshop re-analysis captures several of the paper's broad ideas. The taxonomy results remain directionally compatible with a more adult-like and more diverse microbiome in adults.
+
+At the same time, the subset does not cleanly reproduce every published AMR pattern, and the answer depends strongly on which AMR view is used. The **no-filter normalized view** preserves more of the broad descriptive signal that resembles the paper, whereas the **high-coverage view** is more conservative and retains a smaller subset of genes and class-level patterns. Because the sample count is tiny and the AMR detection workflow differs, these differences should be interpreted as a reminder about **workflow dependence, filtering sensitivity, and sampling uncertainty**, not as evidence that the original paper was wrong.
+
+The main workshop take-home is that this small re-analysis is useful for learning how to structure a metagenomic notebook, inspect taxonomy with and without unclassified signal, summarize AMR at gene and drug-class levels, and compare cautiously back to a published study. It is **not** sufficient for definitive biological conclusions.
+
+::: {.callout-tip}
+Continue to [Actionable Diagnostics & Clinical Reasoning](clinical-reasoning.qmd).
+:::

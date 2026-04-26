@@ -75,6 +75,9 @@ website:
                 - day-3/instructions/phylotree.qmd
             - section: "Day 4"
               href: day-4/instructions/index.qmd
+              contents:
+                - day-4/instructions/vietnamese-healthy-gut-microbiome.qmd
+                - day-4/instructions/clinical-reasoning.qmd
 
 format:
   html:

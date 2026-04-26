@@ -1,0 +1,2 @@
+organism_name,WGS_ID,relative_abundance,p_vals,actual_confidence_with_coverage,alt_confidence_mut_rate_with_coverage,file_name
+GCF_000313175.2 Leptospira santarosai serovar Shermani str. LT 821,SRR1145846,1.0,1.0 | 1.0,0.98824552212479 | 0.977536025242539,0.0106722841303917 | 0.0199081234166042,min_coverage0.05 | min_coverage0.01

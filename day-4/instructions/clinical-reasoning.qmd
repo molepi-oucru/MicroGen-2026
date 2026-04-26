@@ -1,0 +1,2085 @@
+---
+title: "Actionable Diagnostics & Clinical Reasoning"
+subtitle: "Progressive meningoencephalitis of unclear cause, adapted from Wilson et al. (2014)"
+author: "Minh-Quan Ton-Ngoc, Hao Chung The"
+date: "2026-05-15"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+    self-contained: true
+    smooth-scroll: true
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{=html}
+<style>
+.case-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.analysis-note {
+  background: #eef6ff;
+  border-left: 4px solid #1f78b4;
+  padding: 0.95rem 1.1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.result-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.debrief-box {
+  background: #f7f7fb;
+  border: 1px solid #d9dee3;
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.mcq {
+  border: 1px solid #d9dee3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0 1.25rem 0;
+  background: #ffffff;
+}
+.mcq .question {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.mcq label {
+  display: block;
+  margin: 0.35rem 0;
+}
+.mcq button {
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #cfd4da;
+  border-radius: 0.35rem;
+  background: #f8f9fa;
+  color: #212529;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: none;
+  cursor: pointer;
+}
+.mcq button:hover,
+.mcq button:focus {
+  background: #eef1f4;
+  border-color: #adb5bd;
+}
+.mcq .feedback {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.35rem;
+  display: none;
+}
+.mcq .feedback.correct {
+  display: block;
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+.mcq .feedback.incorrect {
+  display: block;
+  background: #fdecea;
+  color: #8a1c1c;
+}
+.next-step {
+  margin-top: 0.75rem;
+}
+.locked-box {
+  border: 2px dashed #adb5bd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+
+<script>
+function checkMCQ(id, correctValue, explanation) {
+  const box = document.getElementById(id);
+  const selected = box.querySelector('input[type="radio"]:checked');
+  const feedback = box.querySelector('.feedback');
+  if (!selected) {
+    feedback.className = 'feedback incorrect';
+    feedback.style.display = 'block';
+    feedback.innerHTML = 'Please choose one answer before checking.';
+    return;
+  }
+  if (selected.value === correctValue) {
+    feedback.className = 'feedback correct';
+    feedback.innerHTML = '<strong>Good choice.</strong> ' + explanation;
+  } else {
+    feedback.className = 'feedback incorrect';
+    feedback.innerHTML = '<strong>Not the best answer.</strong> ' + explanation;
+  }
+  feedback.style.display = 'block';
+}
+
+const mcqFeedback = {
+  mcq1: {
+    A: "This would not explain the prominent altered mental status, neck stiffness, photophobia, and seizure. Mild transaminitis can occur in systemic infection but is not the dominant syndrome.",
+    B: "Correct. Fever plus headache, meningism, altered mental status, and seizure is best summarized as an acute meningoencephalitic syndrome with systemic inflammation.",
+    C: "The seizure matters, but it is not isolated. The fever and meningeal signs make an infectious or inflammatory CNS process much more likely than primary epilepsy alone.",
+    D: "There is no evidence that liver disease is the primary process. The neurological and meningeal findings should drive the first diagnostic frame."
+  },
+  mcq2: {
+    A: "Negative targeted tests reduce the probability of the organisms tested, but they do not exclude all infections. Culture, PCR panels, and Xpert are incomplete screens.",
+    B: "A viral cause remains possible early, but the available PCR panel is negative and the low CSF glucose keeps TB, fungal, unusual bacterial, and inflammatory causes in play.",
+    C: "Correct. The first-line workup narrows the field but leaves a serious unexplained CNS infection or inflammation syndrome, which is an appropriate setting for hypothesis-free testing.",
+    D: "Autoimmune disease can remain in the differential, but the fever, CSF inflammation, and exposure context mean infection should not be abandoned."
+  },
+  mcq3: {
+    A: "A taxonomy label is not self-interpreting. In clinical metagenomics, the specimen type, strength of signal, background, controls, and clinical syndrome all matter.",
+    B: "Correct. The next step is to judge whether the sequencing result is coherent with the patient, the specimen, and the competing diagnoses.",
+    C: "The result should change the ranking of the differential. It does not prove everything alone, but it makes some explanations much more plausible than others.",
+    D: "Repeating the same low-yield path without updating the diagnostic frame misses the value of metagenomics, which is to narrow uncertainty and guide confirmatory action."
+  },
+  mcq4: {
+    A: "Metagenomics is most useful precisely when the diagnosis is not obvious and routine targeted testing has not resolved the case.",
+    B: "Metagenomics supports clinical reasoning; it does not replace specimen choice, differential diagnosis, confirmatory testing, or judgement about false positives.",
+    C: "Correct. In difficult CNS infection, metagenomics can help include a plausible pathogen and exclude less coherent paths more quickly, provided the signal is interpreted carefully.",
+    D: "Clinical metagenomics is now used for sterile-site and hospital diagnostic problems, although interpretation is more demanding than in many environmental applications."
+  }
+};
+
+function checkMCQDetailed(id, correctValue) {
+  const box = document.getElementById(id);
+  const selected = box.querySelector('input[type="radio"]:checked');
+  const feedback = box.querySelector('.feedback');
+  if (!selected) {
+    feedback.className = 'feedback incorrect';
+    feedback.style.display = 'block';
+    feedback.innerHTML = 'Please choose one answer before checking.';
+    return;
+  }
+  const isCorrect = selected.value === correctValue;
+  feedback.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
+  feedback.innerHTML = mcqFeedback[id][selected.value];
+  feedback.style.display = 'block';
+}
+
+function resetMCQ(id) {
+  const box = document.getElementById(id);
+  box.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+  const feedback = box.querySelector('.feedback');
+  feedback.style.display = 'none';
+  feedback.innerHTML = '';
+}
+</script>
+```
+
+# How to use this notebook
+
+::: {.callout-note collapse="false"}
+## Learning objectives
+
+**Explain why unbiased metagenomics is useful in a difficult CNS infection case.**
+
+In this case, that objective expands into the wider concept of **clinical metagenomics**:
+
+-   why unbiased sequencing can help when routine tests are unrevealing,
+-   how metagenomics supports clinical reasoning rather than replacing it,
+-   why sample type, host background, and classification uncertainty matter,
+-   and how to interpret both informative and non-informative results in a hospital setting.
+:::
+
+::: {.callout-important collapse="false"}
+## Suggested workshop flow
+
+-   Start with the **Diagnostic simulation activity** below.
+-   Use the admission record and manual like a real hospital case discussion.
+-   Ask learners to commit to an early differential diagnosis before they see the metagenomic result.
+-   Then move into the direct metagenomic output section and the deeper analytical interpretation.
+:::
+
+::: {.callout-tip collapse="false"}
+## Why this format works for doctors
+
+This notebook is designed to feel like a clinical reasoning exercise first and a bioinformatics notebook second. The goal is to let learners move from:
+
+-   syndrome recognition,
+-   to staged diagnostic refinement,
+-   to specimen-level metagenomic interpretation,
+-   to a final clinically defensible diagnosis.
+:::
+
+# Aim of this notebook
+
+This notebook is a **workshop-oriented clinical metagenomics re-analysis** built around the landmark paper:
+
+> Wilson MR, et al. *Actionable diagnosis of neuroleptospirosis by next-generation sequencing*. *N Engl J Med* 2014;370:2408-2417.
+
+This is **not** a full replication study. Instead, it is a guided self-study notebook for healthcare workers learning how clinical metagenomics can support difficult diagnostic decisions. The notebook:
+
+1.  reconstructs the diagnostic teaching context,
+2.  inspects the locally available re-analysis outputs,
+3.  shows which samples are informative and which are not,
+4.  makes the role of **unclassified signal** explicit,
+5.  compares the recreated results against the original paper,
+6.  and connects the sequencing outputs back to clinical reasoning in a realistic hospital workflow.
+
+## How this notebook fits the teaching package
+
+This notebook is designed as a **single self-guided teaching resource**. It does not separate student and instructor versions. Instead, it lets learners:
+
+-   read the clinical scenario,
+-   decide what information they need next,
+-   answer short questions before opening hints,
+-   reveal worked solutions only when needed,
+-   run or inspect metagenomic workflow outputs,
+-   and progressively connect sequencing evidence back to clinical reasoning.
+
+The final diagnosis is still delayed until after learners have worked through the clinical and metagenomic clues.
+
+## Interpretive guardrails used throughout
+
+-   This notebook uses the local files available in the workshop directory; it does **not** reconstruct the full original UCSF SURPI workflow.
+-   The supplied workshop export files `nejm_with_unclassified.csv`, `nejm_without_unclassified.csv`, and `nejm.phyloseq/` retain only **one sample** after strict post-filtering.
+-   The broader four-sample diagnostic set is therefore reconstructed here from the underlying per-sample taxonomic summaries in `../materials/clinical-reasoning/Readbased_Analysis/`.
+-   For abundance-based summaries, the main metric is **`f_weighted_at_rank`**.
+-   The value called **`unweighted_fraction`** is still useful, but it should **not** be treated as if it must behave like a conventional 100% compositional percentage after every filtering step.
+-   Diversity and ordination plots are shown only as **descriptive teaching visuals**. With four runs, they are not suitable for formal inference.
+-   AMR outputs are inspected because they are present, but they are **secondary** to the diagnostic question in this case.
+-   The final in-depth analytical material is retained near the end because it is most valuable for learners who want a research-style debrief after the clinical exercise.
+
+
+# Diagnostic simulation activity
+
+This front section functions as a realistic diagnostic simulation for clinicians. Work through it sequentially before opening the later metagenomic interpretation.
+
+## Admission record
+
+::: case-note
+<p><strong>Hospital:</strong> Tertiary referral hospital, Ho Chi Minh City</p>
+
+<p><strong>Department:</strong> Emergency Department → Intensive Care Unit</p>
+
+<p><strong>Patient:</strong> 14-year-old male</p>
+
+<p><strong>Reason for admission:</strong> Fever, severe headache, altered mental status, and one generalized seizure</p>
+:::
+
+### Background
+
+The patient has a known history of **X-linked agammaglobulinemia (XLA)** and receives regular intravenous immunoglobulin replacement. He has no previous history of central nervous system infection.
+
+### History of present illness
+
+He had been well until 6 days before admission, when he developed persistent fever, diffuse myalgia, and progressive frontal headache. He was initially treated at a district-level facility with supportive care and oral amoxicillin-clavulanate, without clear improvement.
+
+Over the 48 hours before transfer, the headache became severe and was associated with photophobia, lethargy, and reduced interaction with family. On the day of admission, he had a generalized tonic-clonic seizure lasting approximately 4 minutes, prompting urgent transfer.
+
+### Examination on arrival
+
+-   Temperature: 39.5°C
+-   Heart rate: 128/min
+-   Blood pressure: 105/65 mmHg
+-   Respiratory rate: 22/min
+-   SpO2: 97% on room air
+
+The patient is stuporous but withdraws to pain. Marked neck stiffness is present. Kernig and Brudzinski signs are positive. No petechiae, purpura, eschar, or visible jaundice are seen. Cardiorespiratory examination is otherwise unremarkable.
+
+### Initial laboratory results
+
+-   WBC: 16,500/µL, neutrophil predominant
+-   Hemoglobin: 13.2 g/dL
+-   Platelets: 115,000/µL
+-   CRP: elevated
+-   Creatinine: normal
+-   AST: mildly elevated
+-   ALT: mildly elevated
+-   Total bilirubin: normal
+
+### First discussion task
+
+Discuss with your group:
+
+1.  What syndromes are present at admission?
+2.  What are the most likely diagnostic categories at this stage?
+3.  What information would you request next from the manual?
+
+```{=html}
+<div class="mcq" id="mcq1">
+  <div class="question">Which summary best describes the admission syndrome?</div>
+  <label><input type="radio" name="mcq1" value="A"> A. Isolated hepatic infection with secondary dehydration</label>
+  <label><input type="radio" name="mcq1" value="B"> B. Acute meningoencephalitic syndrome with systemic inflammation</label>
+  <label><input type="radio" name="mcq1" value="C"> C. Pure focal epilepsy without evidence of infection</label>
+  <label><input type="radio" name="mcq1" value="D"> D. Primary autoimmune liver disease</label>
+  <button onclick="checkMCQDetailed('mcq1','B')">Check answer</button>
+  <button onclick="resetMCQ('mcq1')">Reset</button>
+  <div class="feedback"></div>
+  <details class="next-step"><summary>Hint</summary>Start by naming the syndrome before trying to name the pathogen.</details>
+</div>
+```
+
+## Manual: additional information on request
+
+::: manual-note
+<p><strong>How to use the manual:</strong> Open only the blocks your group believes are necessary. This preserves the diagnostic pacing of a real case conference.</p>
+:::
+
+::: {.callout-note collapse="true"}
+## Click to open: Additional epidemiologic history
+
+-   Lives in a peri-urban district in southern Vietnam
+-   No travel outside southern Vietnam in the last 6 months
+-   No known tuberculosis contact
+-   No known sick contacts
+-   No known animal bite
+-   Family recently cleaned a ground-floor storage area after heavy rain
+-   The patient occasionally played football on a waterlogged paved lot near home during the rainy season
+-   Minor skin abrasions on the feet were noted by the family at that time
+-   Rodents are commonly seen around the neighborhood and storage area
+:::
+
+::: {.callout-note collapse="true"}
+## Click to open: Early ICU management
+
+After admission, the patient had further seizures and was transferred to ICU. He was intubated for airway protection and started empirically on:
+
+-   intravenous meropenem
+-   intravenous vancomycin
+-   intravenous acyclovir
+-   antiseizure treatment
+:::
+
+::: {.callout-note collapse="true"}
+## Click to open: Cerebrospinal fluid results
+
+-   Appearance: clear, colorless
+-   Opening pressure: 240 mmH2O
+-   WBC: 380 cells/µL
+-   Differential: 88% lymphocytes, 12% neutrophils
+-   RBC: 0
+-   Protein: 1.4 g/L
+-   CSF glucose: 2.2 mmol/L
+-   Serum glucose at the same time: 5.5 mmol/L
+:::
+
+::: {.callout-note collapse="true"}
+## Click to open: Routine microbiology and molecular workup
+
+-   CSF Gram stain: no organisms seen
+-   CSF bacterial culture: no growth at 48 hours
+-   Blood cultures: no growth at 48 hours
+-   CSF GeneXpert MTB/RIF: negative
+-   CSF multiplex PCR panel: negative for HSV-1/2, VZV, enterovirus, CMV
+-   HIV test: negative
+:::
+
+:::: {.callout-note collapse="true"}
+## Click to open: Neuroimaging
+
+Initial CT head: no acute hemorrhage or mass lesion.
+
+MRI brain during ICU admission:
+
+-   patchy bilateral T2 hyperintensities in the basal ganglia and adjacent deep white matter
+-   basilar leptomeningeal thickening/enhancement
+-   no clear abscess
+
+The source notebook included a local copy of the Day 13 MRI figure. It is not embedded in the published repository because the Day 4 pages avoid committing local image assets. The relevant teaching point is that the MRI showed basal ganglia/deep white matter signal abnormality and basilar meningeal thickening.
+
+::: {.callout-tip collapse="true"}
+## Click to hint: How to read the MRI panels
+
+These images correspond to Panels A, B, and C from day 13 of the patient's third hospitalization.
+
+-   Panel A is an axial T2-weighted image showing persistent hyperintensities in the basal ganglia and deep frontal white matter.
+-   Panels B and C are sagittal and axial T2-weighted FLAIR images showing thickening in and around the basilar meninges.
+-   Together, these findings support a serious meningoencephalitic process with basilar meningeal involvement, which keeps diagnoses such as TB meningitis, fungal meningitis, unusual bacterial infection, and inflammatory disease in the differential before metagenomic results are available.
+:::
+::::
+
+::: {.callout-note collapse="true"}
+## Click to open: Early clinical course
+
+Despite broad empiric antimicrobial and antiviral therapy, the patient remained febrile and neurologically unstable. No targeted diagnosis was established from routine workup.
+:::
+
+::: {.callout-warning collapse="true"}
+## Click to open: Items not available in this scenario
+
+-   Japanese encephalitis serology: **Not performed in practice**
+-   Dengue IgM serology: **Not performed in practice**
+-   Leptospira serology / MAT: **Not performed in practice**
+-   Brain biopsy: **Not performed in practice**
+-   External reference-laboratory confirmatory PCR before mNGS: **Not performed in practice**
+:::
+
+```{=html}
+<div class="mcq" id="mcq2">
+  <div class="question">After reviewing CSF and routine microbiology, which statement is most appropriate?</div>
+  <label><input type="radio" name="mcq2" value="A"> A. The negative targeted workup excludes infectious causes</label>
+  <label><input type="radio" name="mcq2" value="B"> B. Viral encephalitis is proven and the differential is closed</label>
+  <label><input type="radio" name="mcq2" value="C"> C. The differential remains broad, and an unusual or difficult-to-detect infection is still plausible</label>
+  <label><input type="radio" name="mcq2" value="D"> D. The patient can only have a noninfectious autoimmune disorder</label>
+  <button onclick="checkMCQDetailed('mcq2','C')">Check answer</button>
+  <button onclick="resetMCQ('mcq2')">Reset</button>
+  <div class="feedback"></div>
+  <details class="next-step"><summary>Hint</summary>Ask whether the tests exclude all infection, or only the most common and directly tested causes.</details>
+</div>
+```
+
+## Before the pipeline result
+
+Write down:
+
+-   your top **three** diagnostic hypotheses,
+-   one diagnosis that has become less likely,
+-   and the single most important unanswered question in the case.
+
+::: {.callout-tip collapse="true"}
+## Optional prompt
+
+At this point, strong answers usually stay at the level of diagnostic categories or syndromic possibilities rather than jumping too early to one exact organism.
+:::
+
+# Generate the metagenomics outputs
+
+Before opening the pipeline result, pause and connect this case back to the earlier workshop sessions.
+
+You have already been taught how to use:
+
+-   `metaflow`,
+-   and the scripts that process output returned from `metaflow`.
+
+In this case, the goal is to retrieve shotgun metagenomics data from the original paper, run the read-based pipeline, process the returned outputs, and then interpret the result clinically.
+
+## Step 1: identify the study and sample files
+
+The study accession for this case is:
+
+``` text
+PRJNA234452
+```
+
+Only **paired-end reads** should be used for this exercise.
+
+### Active task
+
+Before opening the solution, decide how you would retrieve the correct FASTQ files.
+
+Write down:
+
+-   where you would look for the FASTQ URLs,
+-   how you would distinguish single-end from paired-end files,
+-   and how you would avoid accidentally downloading the wrong files.
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+Start from the study accession. Then look for a metadata field that stores FASTQ download URLs. The key practical clue is that paired-end files usually end with `_1.fastq.gz` and `_2.fastq.gz`.
+:::
+
+::: {.callout-note collapse="true"}
+## Click to open worked solution: two download approaches
+
+**Approach 1: use `kingfisher`, as taught on day 1**
+
+Use `kingfisher` to retrieve run accessions and FASTQ files for `PRJNA234452`. Keep only paired-end FASTQ files matching patterns such as:
+
+``` text
+*_1.fastq.gz
+*_2.fastq.gz
+```
+
+Do not use the single-end files for this exercise.
+
+**Approach 2: retrieve files manually from ENA, as taught on day 1**
+
+1.  Visit the ENA study page: <https://www.ebi.ac.uk/ena/browser/view/PRJNA234452>
+2.  Click **Show Column Selection**.
+3.  Select fields needed to retrieve FASTQ URLs.
+4.  The most important column is `fastq_ftp`.
+5.  Download the report in TSV format.
+6.  Open the TSV and inspect the FASTQ links.
+7.  Each sample has three links: the first is single-end, and the next two are paired-end reads.
+8.  Extract only the paired-end links.
+
+You can then use `wget` and a small shell script to download them.
+:::
+
+The four samples used in this notebook are:
+
+| Run accession | Description |
+|------------------------------------|------------------------------------|
+| `SRR1145846` | Illumina MiSeq paired end sequencing: Child with meningoencephalitis: untreated CSF |
+| `SRR1145847` | Illumina MiSeq paired end sequencing: Returning traveler with fever: serum (control) |
+| `SRR1145844` | Illumina MiSeq paired end sequencing: Child with meningoencephalitis, DNase-treated CSF |
+| `SRR1145845` | Illumina MiSeq paired end sequencing: Child with meningoencephalitis, serum |
+
+::: {.callout-note collapse="true"}
+## Click to open worked Unix download script
+
+```{bash, eval=FALSE}
+#!/bin/bash
+
+# Create output directory
+mkdir -p fastq && cd fastq || exit 1
+
+# Download files
+urls=(
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/006/SRR1145846/SRR1145846_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/007/SRR1145847/SRR1145847_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/004/SRR1145844/SRR1145844_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/005/SRR1145845/SRR1145845_1.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/006/SRR1145846/SRR1145846_2.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/007/SRR1145847/SRR1145847_2.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/004/SRR1145844/SRR1145844_2.fastq.gz"
+"ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR114/005/SRR1145845/SRR1145845_2.fastq.gz"
+)
+
+for url in "${urls[@]}"; do
+    wget -c "$url"
+done
+```
+:::
+
+### Optional Unix check
+
+After downloading, you should be able to confirm that each run has exactly two paired FASTQ files:
+
+```{bash, eval=FALSE}
+ls fastq/*_{1,2}.fastq.gz
+```
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+You should see eight files total: four `_1.fastq.gz` files and four `_2.fastq.gz` files.
+:::
+
+## Step 2: run the read-based pipeline
+
+After download, run `metaflow` using the config file:
+
+``` text
+microgen2026.config
+```
+
+The exact command may depend on the workshop environment, but the practical idea is:
+
+```{bash, eval=FALSE}
+nextflow run <metaflow_pipeline> -c microgen2026.config
+```
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+Open `microgen2026.config` before launching the run. Check whether `outdir` points to the folder where you want the NEJM case outputs to be written.
+:::
+
+## Step 3: process the `metaflow` outputs
+
+Next, process the returned outputs with:
+
+``` text
+process_metaflow_daa_microgen2026.py
+```
+
+This script organizes the read-based analysis results into teaching-friendly output files that can be loaded directly in R.
+
+```{bash, eval=FALSE}
+python process_metaflow_daa_microgen2026.py
+```
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+If the script cannot find the pipeline output, check whether the input path inside the script or command arguments match the `outdir` used by `metaflow`.
+:::
+
+## Step 4: expected processed outputs
+
+After successful processing, you should expect:
+
+-   phyloseq objects,
+-   taxburst objects,
+-   AMR results,
+-   a taxonomy classification table **with unclassified**,
+-   and a taxonomy classification table **without unclassified**.
+
+In this notebook, those downstream files are represented by:
+
+``` text
+nejm.phyloseq/
+nejm.taxburst/
+nejm.amr/
+nejm_with_unclassified.csv
+nejm_without_unclassified.csv
+nejm_sampleinformation.csv
+```
+
+## Step 5: backup path if pipeline execution fails
+
+If you cannot run the full pipeline during the workshop, you can continue the downstream exercise using the prepared backup files:
+
+``` text
+/day-4/materials/clinical-reasoning/Readbased_Analysis
+/day-4/materials/clinical-reasoning/nejm.phyloseq
+/day-4/materials/clinical-reasoning/nejm.amr
+/day-4/materials/clinical-reasoning/nejm_with_unclassified.csv
+/day-4/materials/clinical-reasoning/nejm_without_unclassified.csv
+/day-4/materials/clinical-reasoning/nejm_sampleinformation.csv
+```
+
+These backup files are acceptable for continuing the downstream analysis. The teaching objective is interpretation, not forcing every learner to solve an infrastructure problem.
+
+## Pipeline result release
+
+::: locked-box
+<p><strong>Open this section only after the pre-mNGS discussion.</strong></p>
+
+<p class="small-text">
+
+In a live workshop, this is the moment when the case moves from broad clinical uncertainty to specimen-level metagenomic narrowing.
+
+</p>
+:::
+
+:::: {.callout-important collapse="true"}
+## Click to open the metagenomic result card
+
+::: result-card
+<p><strong>Actionable specimen:</strong> untreated CSF</p>
+
+<p><strong>Top retained hit in the recreated workflow:</strong> <em>Leptospira santarosai</em></p>
+
+<p><strong>Immediate practical reading:</strong> the untreated CSF is the only specimen that yields a clinically coherent retained signal. The comparator CSF, serum, and control do not provide equally reliable organism-level evidence in this recreated analysis.</p>
+:::
+
+-   No alternative pathogen shows similarly coherent support in the strict retained-hit view.
+-   The full analytic debrief below will show that the untreated CSF still contains substantial unresolved signal, so the result should be interpreted as strong-but-not-perfect evidence rather than as a magically clean answer.
+::::
+
+```{=html}
+<div class="mcq" id="mcq3">
+  <div class="question">Once the metagenomic result is released, what is the most important next reasoning step?</div>
+  <label><input type="radio" name="mcq3" value="A"> A. Accept the species label automatically and ignore the clinical context</label>
+  <label><input type="radio" name="mcq3" value="B"> B. Ask whether the result best fits the syndrome, specimen type, and remaining differential diagnoses</label>
+  <label><input type="radio" name="mcq3" value="C"> C. Assume every earlier diagnosis remains equally likely</label>
+  <label><input type="radio" name="mcq3" value="D"> D. Repeat the same low-yield tests without changing the diagnostic frame</label>
+  <button onclick="checkMCQDetailed('mcq3','B')">Check answer</button>
+  <button onclick="resetMCQ('mcq3')">Reset</button>
+  <div class="feedback"></div>
+  <details class="next-step"><summary>Hint</summary>Do not stop at the taxonomy label. Reconnect the sequence result to the patient and the specimen.</details>
+</div>
+```
+
+## Immediate clinical synthesis
+
+Discuss with your group:
+
+1.  Which disease now best matches the admission context plus the untreated CSF result?
+2.  Which earlier alternatives become less likely?
+3.  Which specimens in this recreated workflow seem useful, and which seem non-informative?
+4.  What confirmatory or management-oriented next step would be most appropriate?
+
+```{=html}
+<div class="mcq" id="mcq4">
+  <div class="question">What is the main educational message of this case?</div>
+  <label><input type="radio" name="mcq4" value="A"> A. Metagenomics is useful only when the diagnosis is already obvious</label>
+  <label><input type="radio" name="mcq4" value="B"> B. Metagenomics replaces all clinical reasoning and all conventional testing</label>
+  <label><input type="radio" name="mcq4" value="C"> C. Metagenomics can accelerate both diagnostic inclusion and exclusion in difficult CNS infection cases</label>
+  <label><input type="radio" name="mcq4" value="D"> D. Metagenomics is mainly an environmental method and not useful for hospital care</label>
+  <button onclick="checkMCQDetailed('mcq4','C')">Check answer</button>
+  <button onclick="resetMCQ('mcq4')">Reset</button>
+  <div class="feedback"></div>
+  <details class="next-step"><summary>Hint</summary>Think about both halves of the workflow: what the result helps you include, and what it helps you rule out.</details>
+</div>
+```
+
+::: analysis-note
+<p><strong>Transition to analysis:</strong> The sections below provide the full reproducible debrief behind the simulation. They show how the local files were inspected, why only one specimen survives strict filtering, and why high unclassified signal forces a conservative clinical interpretation.</p>
+:::
+
+```{r setup}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(ggplot2)
+library(scales)
+library(patchwork)
+library(phyloseq)
+library(vegan)
+library(knitr)
+
+data_dir <- file.path("..", "materials", "clinical-reasoning")
+readbased_dir <- file.path(data_dir, "Readbased_Analysis")
+
+theme_set(
+  theme_bw(base_size = 12) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title.position = "plot",
+      legend.position = "right"
+    )
+)
+
+fig_dir <- "figures"
+dir.create(fig_dir, showWarnings = FALSE)
+
+save_fig <- function(plot, filename, width = 9, height = 5.5, dpi = 300, save_pdf = TRUE) {
+  png_path <- file.path(fig_dir, paste0(filename, ".png"))
+  ggsave(png_path, plot = plot, width = width, height = height, dpi = dpi, bg = "white")
+  if (isTRUE(save_pdf)) {
+    pdf_path <- file.path(fig_dir, paste0(filename, ".pdf"))
+    ggsave(pdf_path, plot = plot, width = width, height = height, bg = "white")
+  }
+}
+
+sample_role_levels <- c(
+  "Untreated CSF",
+  "DNase-treated CSF",
+  "Patient serum",
+  "Negative-control serum"
+)
+
+sample_role_palette <- c(
+  "Untreated CSF" = "#1b9e77",
+  "DNase-treated CSF" = "#7570b3",
+  "Patient serum" = "#d95f02",
+  "Negative-control serum" = "#666666"
+)
+
+signal_palette <- c(
+  "Unclassified" = "#bdbdbd",
+  "Leptospira santarosai" = "#1b9e77",
+  "Eukaryotic/host-associated" = "#80b1d3",
+  "Other classified" = "#fdb462"
+)
+
+rank_cols <- c("domain", "phylum", "class", "order", "family", "genus", "species")
+
+read_csv_char <- function(path) {
+  read_csv(path, show_col_types = FALSE, col_types = cols(.default = col_character()))
+}
+
+read_tsv_char <- function(path) {
+  read_tsv(path, show_col_types = FALSE, col_types = cols(.default = col_character()))
+}
+
+extract_last_taxon <- function(x) {
+  ifelse(grepl(";", x), sub("^.*;", "", x), x)
+}
+
+clean_taxon <- function(x) {
+  x <- gsub("^[a-z]__", "", x)
+  x[x == ""] <- NA_character_
+  x
+}
+
+parse_lineage <- function(df) {
+  df %>%
+    separate(
+      lineage,
+      into = rank_cols,
+      sep = ";",
+      fill = "right",
+      extra = "drop",
+      remove = FALSE
+    ) %>%
+    mutate(across(all_of(rank_cols), clean_taxon))
+}
+```
+
+# Clinical context and adaptation
+
+The original NEJM paper described a 14-year-old boy with severe combined immunodeficiency who had a prolonged, difficult-to-diagnose meningoencephalitic illness. Conventional testing remained unrevealing, and unbiased sequencing of CSF eventually identified *Leptospira*, leading to targeted therapy and clinical recovery.
+
+For this workshop, that story has been adapted into a **Vietnam-facing hospital teaching case**. The educational aim is not only to say "the pathogen was found," but to help healthcare workers reason through a more realistic diagnostic pathway:
+
+-   broad CNS infection differential at admission,
+-   staged release of clinical clues,
+-   sequencing as a tool for narrowing uncertainty,
+-   careful interpretation of which samples are and are not trustworthy,
+-   and final integration of sequencing with clinical management.
+
+This notebook now implements that staged pedagogy directly as a self-guided exercise, then continues into the reproducible analysis.
+
+# Available input files
+
+```{r paths}
+path_inventory <- tibble::tribble(
+  ~object, ~path, ~type,
+  "Paper summary notes", file.path(data_dir, "nejm_summary.md"), "file",
+  "Vietnam-adapted hypotheses", file.path(data_dir, "nejm_vnmese_hypotheses.md"), "file",
+  "Original facilitator template used as source context", file.path(data_dir, "instructor_case_metagenomics_leptospira.qmd"), "file",
+  "Original learner template used as source context", file.path(data_dir, "student_case_metagenomics_leptospira.qmd"), "file",
+  "Sample metadata", file.path(data_dir, "nejm_sampleinformation.csv"), "file",
+  "Workshop taxonomy export (with unclassified)", file.path(data_dir, "nejm_with_unclassified.csv"), "file",
+  "Workshop taxonomy export (without unclassified)", file.path(data_dir, "nejm_without_unclassified.csv"), "file",
+  "Workshop phyloseq export", file.path(data_dir, "nejm.phyloseq"), "dir",
+  "Workshop AMR folder", file.path(data_dir, "nejm.amr"), "dir",
+  "Previous Day 4 lesson notebook", "vietnamese-healthy-gut-microbiome.qmd", "file",
+  "Underlying read-based outputs", readbased_dir, "dir"
+) %>%
+  mutate(
+    exists = if_else(type == "dir", dir.exists(path), file.exists(path))
+  )
+
+kable(path_inventory)
+```
+
+All required context files were available when this notebook was assembled, and all main analysis inputs are present locally.
+
+# Load metadata and inspect the proposed sample set
+
+```{r metadata}
+metadata <- read_csv(file.path(data_dir, "nejm_sampleinformation.csv"), show_col_types = FALSE) %>%
+  mutate(
+    sample_name = run_accession,
+    sample_role = case_when(
+      grepl("untreated CSF", experiment_title, ignore.case = TRUE) ~ "Untreated CSF",
+      grepl("DNase-treated CSF", experiment_title, ignore.case = TRUE) ~ "DNase-treated CSF",
+      grepl("control", experiment_title, ignore.case = TRUE) ~ "Negative-control serum",
+      grepl("serum", experiment_title, ignore.case = TRUE) ~ "Patient serum",
+      TRUE ~ sample_name
+    ),
+    sample_role = factor(sample_role, levels = sample_role_levels),
+    patient_status = if_else(grepl("control", experiment_title, ignore.case = TRUE), "Control", "Patient"),
+    approx_total_reads = if_else(library_layout == "PAIRED", 2L * read_count, read_count),
+    clinical_use = case_when(
+      sample_role == "Untreated CSF" ~ "Primary diagnostic CNS specimen",
+      sample_role == "DNase-treated CSF" ~ "Comparator CNS specimen after DNase treatment",
+      sample_role == "Patient serum" ~ "Systemic comparator specimen",
+      sample_role == "Negative-control serum" ~ "Negative control for background/context",
+      TRUE ~ "Unspecified"
+    )
+  ) %>%
+  arrange(sample_role)
+
+sample_labels <- setNames(
+  paste0(as.character(metadata$sample_role), "\n", metadata$sample_name),
+  metadata$sample_name
+)
+
+metadata %>%
+  select(sample_name, sample_role, patient_status, read_count, approx_total_reads, clinical_use, experiment_title)
+```
+
+**Initial metadata interpretation**
+
+-   The local re-analysis clearly targets **four runs**:
+    -   untreated CSF,
+    -   DNase-treated CSF,
+    -   patient serum,
+    -   and a negative-control serum.
+-   This matches the logic of the original paper, where CSF was the key specimen and serum/control provided context.
+-   The local `read_count` values are notably smaller than the multi-million read counts reported in the paper, especially for the untreated CSF and control serum. Whether these reflect SRA spots, processed subsets, or downsampled inputs, they are an important clue that the recreated workflow is **not operating on exactly the same data volume** as the paper.
+
+# Part A: quick interpretation from direct final results
+
+This first interpretation layer uses the direct final results from:
+
+``` text
+../materials/clinical-reasoning/Readbased_Analysis/Sourmash-YACHT/final_results/final_results
+```
+
+This is the easier, more obvious layer of interpretation. Before running the code, predict what you expect to see:
+
+-   Will all four samples produce a confident pathogen-level result?
+-   Which specimen should be most diagnostically useful for CNS infection?
+-   Would serum be expected to show the same pathogen signal?
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+For a CNS infection, CSF is usually more informative than serum. Also remember that a negative control is not expected to produce a disease-causing pathogen signal.
+:::
+
+## Inspect the direct final result files
+
+```{r direct-final-files}
+direct_final_dir <- file.path(
+  readbased_dir, "Sourmash-YACHT",
+  "final_results", "final_results"
+)
+
+direct_final_files <- tibble(
+  file = list.files(direct_final_dir, full.names = FALSE),
+  path = file.path(direct_final_dir, file),
+  size_bytes = file.info(path)$size
+)
+
+kable(direct_final_files)
+```
+
+This code follows the same practical style as the previous Vietnamese healthy gut microbiome notebook: first check what files exist, then load the smallest interpretable summary table, then only move to deeper analysis if the first result is incomplete or confusing.
+
+```{r direct-final-results}
+direct_with <- read_csv_char(file.path(direct_final_dir, "merged_sourmash_yacht.csv")) %>%
+  mutate(
+    sample_name = WGS_ID,
+    relative_abundance = as.numeric(relative_abundance),
+    f_orig_query = as.numeric(f_orig_query),
+    total_weighted_hashes = as.numeric(total_weighted_hashes),
+    organism_name = coalesce(organism_name, "unclassified")
+  ) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name")
+
+direct_remove_unclassified <- read_csv_char(file.path(direct_final_dir, "merged_sourmash_yacht_removeuncl_mincoverage0.05.csv")) %>%
+  mutate(
+    sample_name = WGS_ID,
+    organism_name = coalesce(organism_name, "No retained organism")
+  ) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name")
+
+kable(
+  direct_with %>%
+    select(sample_name, sample_role, organism_name, lineage, relative_abundance, f_orig_query, total_weighted_hashes, file_name),
+  digits = 4
+)
+```
+
+### Learner checkpoint
+
+Before opening the interpretation, answer:
+
+1.  How many samples show a meaningful retained organism-level result?
+2.  Which organism is detected?
+3.  Does this match the pathogen described in the original paper?
+
+::: {.callout-note collapse="true"}
+## Click to reveal interpretation
+
+The direct final result is very simple:
+
+-   Only **one sample** yields a meaningful pathogen-level result.
+-   The informative sample is the **untreated CSF** (`SRR1145846`).
+-   The retained organism is ***Leptospira santarosai***.
+-   This matches the final pathogen interpretation of the original paper.
+
+This is the clearest direct result layer. It gives learners the main diagnostic message quickly, before they explore why the other samples are weak or non-informative.
+:::
+
+```{r direct-retained-hit-table}
+kable(
+  direct_remove_unclassified %>%
+    select(sample_name, sample_role, organism_name, file_name),
+  digits = 4
+)
+```
+
+## Brief AMR inspection at the direct-result stage
+
+AMR analysis is available from the processed `rgi-bwt` outputs, but the key question is whether it changes this clinical diagnosis.
+
+```{r direct-amr-brief}
+amr_files <- list.files(file.path(data_dir, "nejm.amr"), pattern = "gene_mapping_data[.]txt$", full.names = TRUE)
+
+read_amr_brief <- function(path) {
+  read_tsv_char(path) %>%
+    mutate(
+      sample_name = sub("[.]gene_mapping_data[.]txt$", "", basename(path)),
+      `Completely Mapped Reads` = as.numeric(`Completely Mapped Reads`),
+      `Average Percent Coverage` = as.numeric(`Average Percent Coverage`)
+    )
+}
+
+amr_brief <- bind_rows(lapply(amr_files, read_amr_brief)) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name")
+
+amr_brief_summary <- amr_brief %>%
+  group_by(sample_name, sample_role) %>%
+  summarise(
+    n_amr_hits = n(),
+    total_completely_mapped_reads = sum(`Completely Mapped Reads`, na.rm = TRUE),
+    max_average_percent_coverage = max(`Average Percent Coverage`, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(sample_role)
+
+kable(amr_brief_summary, digits = 2)
+```
+
+::: {.callout-note collapse="true"}
+## Click to reveal AMR interpretation
+
+The AMR output does **not** materially change the diagnosis in this case.
+
+The AMR calls are sparse, low-coverage, and not central to recognizing neuroleptospirosis. They are useful as a demonstration that clinical metagenomic pipelines can return AMR-related outputs, but here they are mainly illustrative rather than clinically decisive.
+:::
+
+# Part B: deeper interpretation using processed analysis tables
+
+The quick result above is enough to identify the most likely pathogen. The deeper analysis below asks harder questions:
+
+-   Why does only one sample survive the strict retained-hit layer?
+-   Why are unclassified reads so prominent?
+-   Why might the recreated workflow look different from the original paper?
+-   When should a sample be interpreted as **non-informative** rather than forced into a diagnosis?
+
+Before opening interpretations in this section, try to predict what the table or figure should show.
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+The important comparison is not only "which taxon is present?" It is also "how much of each sample is unresolved, and does the taxon survive conservative filtering?"
+:::
+
+## Inspect the supplied workshop exports
+
+```{r supplied-exports}
+strict_with <- read_csv_char(file.path(data_dir, "nejm_with_unclassified.csv")) %>%
+  mutate(
+    sample_name = as.character(sample_name),
+    unweighted_fraction = as.numeric(unweighted_fraction),
+    f_weighted_at_rank = as.numeric(f_weighted_at_rank),
+    bp_match_at_rank = as.numeric(bp_match_at_rank),
+    total_weighted_hashes = as.numeric(total_weighted_hashes),
+    source = "supplied_with_unclassified"
+  )
+
+strict_without <- read_csv_char(file.path(data_dir, "nejm_without_unclassified.csv")) %>%
+  mutate(
+    sample_name = as.character(sample_name),
+    unweighted_fraction = as.numeric(unweighted_fraction),
+    f_weighted_at_rank = as.numeric(f_weighted_at_rank),
+    bp_match_at_rank = as.numeric(bp_match_at_rank),
+    total_weighted_hashes = as.numeric(total_weighted_hashes),
+    source = "supplied_without_unclassified"
+  )
+
+phy_sample_data <- read_csv_char(file.path(data_dir, "nejm.phyloseq", "sample_data.csv"))
+phy_otu_export <- read_csv_char(file.path(data_dir, "nejm.phyloseq", "otu_table.csv"))
+phy_tax_export <- read_csv_char(file.path(data_dir, "nejm.phyloseq", "tax_table.csv"))
+
+export_inventory <- tibble::tribble(
+  ~source, ~n_rows, ~n_unique_samples, ~sample_ids,
+  "Metadata", nrow(metadata), n_distinct(metadata$sample_name), paste(metadata$sample_name, collapse = ", "),
+  "Supplied with_unclassified", nrow(strict_with), n_distinct(strict_with$sample_name), paste(unique(strict_with$sample_name), collapse = ", "),
+  "Supplied without_unclassified", nrow(strict_without), n_distinct(strict_without$sample_name), paste(unique(strict_without$sample_name), collapse = ", "),
+  "Supplied phyloseq sample_data", nrow(phy_sample_data), n_distinct(phy_sample_data$sample_name), paste(unique(phy_sample_data$sample_name), collapse = ", ")
+)
+
+kable(export_inventory)
+```
+
+This is the first major data-quality observation:
+
+-   The metadata and AMR folder describe **four runs**.
+-   The supplied taxonomy exports and the supplied `phyloseq` directory retain only **one sample: `SRR1145846`**.
+-   That means the workshop export in `nejm_analysis/` is a **strict post-filter subset**, not the whole four-sample diagnostic panel.
+
+```{r supplied-export-details}
+supplied_phyloseq_status <- tibble(
+  file = c("sample_data.csv", "otu_table.csv", "tax_table.csv"),
+  rows = c(nrow(phy_sample_data), nrow(phy_otu_export), nrow(phy_tax_export)),
+  cols = c(ncol(phy_sample_data), ncol(phy_otu_export), ncol(phy_tax_export))
+)
+
+kable(supplied_phyloseq_status)
+
+strict_with %>%
+  select(sample_name, lineage, match_name, unweighted_fraction, f_weighted_at_rank, bp_match_at_rank, total_weighted_hashes)
+```
+
+**What the supplied strict export tells us**
+
+-   Only the **untreated CSF** sample survives the strict merged export.
+-   In that export, the only retained organism-level call is ***Leptospira santarosai***.
+-   Even in that sample, the supplied table still shows a large **unclassified component**, which immediately tells us not to over-simplify the interpretation.
+-   Because the supplied export collapses the dataset to one sample, it is **not sufficient** on its own for a four-sample diagnostic teaching notebook.
+
+# Reconstruct a four-sample exploratory taxonomy table from the underlying read-based outputs
+
+To preserve the full diagnostic set, we reconstruct a species-level table from the underlying per-sample taxonomic summaries in:
+
+`../materials/clinical-reasoning/Readbased_Analysis/Sourmash-YACHT/fastmultigather/single_sketches/taxmetagenome/`
+
+This is not identical to the supplied strict YACHT export. It is a broader exploratory view that helps explain why only one sample survived the stricter final filter.
+
+```{r raw-taxonomy}
+raw_tax_dir <- file.path(
+  readbased_dir, "Sourmash-YACHT",
+  "fastmultigather", "single_sketches", "taxmetagenome"
+)
+
+raw_tax_files <- sort(list.files(
+  raw_tax_dir,
+  pattern = "_51[.]gather[.]gtdb[+]euks[.]k51[.]sc10k[.]thresh10k[.]summarized[.]csv$",
+  full.names = TRUE
+))
+
+raw_tax <- bind_rows(lapply(raw_tax_files, read_csv_char)) %>%
+  mutate(
+    across(c(fraction, f_weighted_at_rank, bp_match_at_rank, query_ani_at_rank, total_weighted_hashes), as.numeric)
+  )
+
+raw_species_with <- raw_tax %>%
+  filter(rank == "species") %>%
+  transmute(
+    sample_name = query_name,
+    lineage,
+    query_md5,
+    query_filename,
+    match_name = extract_last_taxon(lineage),
+    unweighted_fraction = fraction,
+    f_weighted_at_rank,
+    bp_match_at_rank,
+    total_weighted_hashes,
+    query_ani_at_rank
+  ) %>%
+  parse_lineage() %>%
+  left_join(metadata %>% select(sample_name, sample_role, patient_status, approx_total_reads, clinical_use), by = "sample_name") %>%
+  mutate(
+    species_label = case_when(
+      lineage == "unclassified" ~ "unclassified",
+      !is.na(species) ~ species,
+      !is.na(genus) ~ paste(genus, "unresolved species"),
+      TRUE ~ extract_last_taxon(lineage)
+    ),
+    sample_role = factor(sample_role, levels = sample_role_levels)
+  )
+
+raw_species_without <- raw_species_with %>%
+  filter(lineage != "unclassified") %>%
+  group_by(sample_name) %>%
+  mutate(
+    f_weighted_classified = f_weighted_at_rank / sum(f_weighted_at_rank, na.rm = TRUE),
+    unweighted_fraction_classified = unweighted_fraction / sum(unweighted_fraction, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+raw_tax_inventory <- tibble::tribble(
+  ~source, ~n_rows, ~n_unique_samples, ~sample_ids,
+  "Reconstructed exploratory species table", nrow(raw_species_with), n_distinct(raw_species_with$sample_name), paste(sort(unique(raw_species_with$sample_name)), collapse = ", "),
+  "Classified-only exploratory species table", nrow(raw_species_without), n_distinct(raw_species_without$sample_name), paste(sort(unique(raw_species_without$sample_name)), collapse = ", ")
+)
+
+kable(raw_tax_inventory)
+```
+
+The reconstructed exploratory table restores the expected **four-sample** panel. This is the table used below for the whole-case interpretation, while the supplied strict export is still used as evidence that only one sample passed the stricter retained-hit filter.
+
+## Harmonize sample identifiers across metadata, taxonomy, AMR, and strict exports
+
+```{r sample-id-harmonization}
+amr_files <- list.files(file.path(data_dir, "nejm.amr"), pattern = "gene_mapping_data[.]txt$", full.names = TRUE)
+amr_sample_ids <- sub("[.]gene_mapping_data[.]txt$", "", basename(amr_files))
+
+harmonization_table <- tibble::tribble(
+  ~source, ~n_unique_samples, ~sample_ids,
+  "Metadata", n_distinct(metadata$sample_name), paste(sort(unique(metadata$sample_name)), collapse = ", "),
+  "Supplied strict taxonomy export", n_distinct(strict_with$sample_name), paste(sort(unique(strict_with$sample_name)), collapse = ", "),
+  "Reconstructed exploratory species table", n_distinct(raw_species_with$sample_name), paste(sort(unique(raw_species_with$sample_name)), collapse = ", "),
+  "Supplied phyloseq export", n_distinct(phy_sample_data$sample_name), paste(sort(unique(phy_sample_data$sample_name)), collapse = ", "),
+  "AMR files", length(unique(amr_sample_ids)), paste(sort(unique(amr_sample_ids)), collapse = ", ")
+)
+
+kable(harmonization_table)
+```
+
+**Identifier harmonization summary**
+
+-   Sample identifiers are consistent across metadata and AMR outputs.
+-   The mismatch is not an ID problem. It is a **retention/filtering problem** in the strict taxonomy export.
+-   The reconstructed exploratory table is therefore needed to analyze the four-sample diagnostic set end to end.
+
+# Inspect the YACHT threshold behavior
+
+The underlying YACHT outputs help explain why the merged strict export contains only one sample.
+
+```{r yacht-thresholds}
+yacht_dir <- file.path(
+  readbased_dir, "Sourmash-YACHT",
+  "yacht_results", "temp_yacht_results", "csv"
+)
+
+read_yacht_file <- function(path) {
+  dat <- read_csv_char(path)
+  sample_name <- sub("_min_coverage.*$", "", basename(path))
+  threshold <- sub("^.*_min_coverage", "", sub("[.]csv$", "", basename(path)))
+  if (nrow(dat) == 0) {
+    tibble(
+      sample_name = sample_name,
+      threshold = threshold,
+      organism_name = NA_character_,
+      in_sample_est = NA,
+      p_vals = NA_real_,
+      actual_confidence_with_coverage = NA_real_,
+      alt_confidence_mut_rate_with_coverage = NA_real_
+    )
+  } else {
+    dat %>%
+      transmute(
+        sample_name = WGS_ID,
+        threshold = threshold,
+        organism_name,
+        in_sample_est = as.logical(in_sample_est),
+        p_vals = as.numeric(p_vals),
+        actual_confidence_with_coverage = as.numeric(actual_confidence_with_coverage),
+        alt_confidence_mut_rate_with_coverage = as.numeric(alt_confidence_mut_rate_with_coverage)
+      )
+  }
+}
+
+yacht_thresholds <- bind_rows(lapply(
+  list.files(yacht_dir, pattern = "min_coverage(0[.]01|0[.]05)[.]csv$", full.names = TRUE),
+  read_yacht_file
+)) %>%
+  mutate(
+    threshold = factor(threshold, levels = c("0.01", "0.05")),
+    retained_hit = if_else(is.na(organism_name), "No retained hit", organism_name)
+  ) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name") %>%
+  arrange(sample_role, threshold)
+
+kable(
+  yacht_thresholds %>%
+    select(sample_name, sample_role, threshold, retained_hit, actual_confidence_with_coverage, alt_confidence_mut_rate_with_coverage),
+  digits = 3
+)
+```
+
+**Threshold interpretation**
+
+-   At the looser `min_coverage = 0.01` setting, three non-untreated-CSF samples retain a weak hit to **SAR11 cluster bacterium PRT-SC02**, which is not clinically coherent for this case.
+-   At the stricter `min_coverage = 0.05` setting, **only `SRR1145846`** retains a YACHT hit, and that hit is ***Leptospira santarosai***.
+-   This is the key reason the workshop export in `nejm_analysis/` collapses to one sample.
+
+::: {.callout-note collapse="true"}
+## Click to reveal: why "many aligned reads" can still mean no pathogen call
+
+A large number of nucleotide alignments is not the same thing as a true pathogen signal.
+
+For a clinically persuasive metagenomic result, we need more than "some reads aligned somewhere." We want a signal that is:
+
+-   enriched in the right specimen,
+-   concentrated in a biologically plausible organism,
+-   absent or much weaker in serum/control samples,
+-   robust enough to survive conservative thresholds,
+-   and coherent with the patient's syndrome.
+
+In the original paper, the untreated CSF had a dominant *Leptospira* signal among bacterial reads, while serum and control did not. In contrast, many other bacterial assignments were distributed across background-like genera and appeared in comparator or control libraries. Modern stricter workflows can reasonably remove those weak, distributed calls while retaining the untreated-CSF *Leptospira* signal.
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal: why DNase-treated samples can be confusing for bacterial interpretation
+
+DNase treatment was used to enrich for viral sequencing, not to optimize bacterial species calling. It can reduce free host DNA and shift the library composition, so the relative amount of "microbial-looking" material may increase.
+
+However, the original supplementary material also notes that DNase pretreatment can enrich conserved bacterial 16S rRNA material, which makes accurate species-level bacterial identification harder. Therefore, a DNase-treated library can have more bacterial-looking alignments but less reliable pathogen-level specificity.
+
+For this case, the practical interpretation is:
+
+-   untreated CSF = the strongest bacterial pathogen signal,
+-   DNase-treated CSF/serum = more prone to non-specific or hard-to-classify signal,
+-   serum/control = useful comparators but not diagnostic for the CNS pathogen in this recreated workflow.
+:::
+
+# Taxonomic result inspection
+
+## Unclassified signal is the central interpretive issue
+
+Before running the next chunk, predict which samples will be most difficult to interpret.
+
+Ask yourself:
+
+-   Which specimen is most likely to contain low microbial biomass?
+-   Which specimen might be dominated by host/background material?
+-   Which specimen should be most clinically meaningful if this is a CNS infection?
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+Do not only look for the organism name. First look at how much of each sample remains unresolved. A sample can contain a taxon label but still be too incomplete or unstable for a reliable conclusion.
+:::
+
+```{r unclassified-summary}
+unclassified_summary <- raw_species_with %>%
+  filter(lineage == "unclassified") %>%
+  select(
+    sample_name, sample_role, patient_status,
+    unweighted_fraction, f_weighted_at_rank,
+    bp_match_at_rank, total_weighted_hashes
+  ) %>%
+  arrange(sample_role)
+
+kable(unclassified_summary, digits = 3)
+```
+
+The unclassified burden is the single most important taxonomic warning sign in this recreated dataset:
+
+-   `SRR1145844` DNase-treated CSF: about **98.1% unweighted** and **99.6% weighted** unclassified.
+-   `SRR1145845` patient serum: about **98.4% unweighted** and **99.95% weighted** unclassified.
+-   `SRR1145846` untreated CSF: about **47.3% unweighted** but **92.5% weighted** unclassified in the broader species summary.
+-   `SRR1145847` negative-control serum: about **50.0% unweighted** and **21.0% weighted** unclassified, with the remaining classified portion split across multiple low-level taxa.
+
+This means several samples are **low-information or unstable at organism level**, even before we ask whether any taxon is clinically plausible.
+
+```{r unclassified-figure}
+unclassified_plot_data <- unclassified_summary %>%
+  mutate(sample_label = factor(sample_labels[sample_name], levels = sample_labels[metadata$sample_name])) %>%
+  pivot_longer(
+    cols = c(unweighted_fraction, f_weighted_at_rank),
+    names_to = "metric",
+    values_to = "fraction"
+  ) %>%
+  mutate(
+    metric = recode(
+      metric,
+      unweighted_fraction = "Unweighted fraction",
+      f_weighted_at_rank = "Weighted fraction"
+    ),
+    percent = 100 * fraction
+  )
+
+unclassified_segments <- unclassified_plot_data %>%
+  group_by(sample_name, sample_label, sample_role) %>%
+  summarise(
+    y_min = min(percent),
+    y_max = max(percent),
+    .groups = "drop"
+  )
+
+unclassified_plot <- ggplot(unclassified_plot_data, aes(x = sample_label, y = percent)) +
+  geom_segment(
+    data = unclassified_segments,
+    aes(x = sample_label, xend = sample_label, y = y_min, yend = y_max),
+    inherit.aes = FALSE,
+    linewidth = 0.8,
+    color = "grey55"
+  ) +
+  geom_point(aes(fill = metric, shape = metric), size = 3.2, color = "black", stroke = 0.35) +
+  scale_fill_manual(values = c("Unweighted fraction" = "#4e79a7", "Weighted fraction" = "#e15759")) +
+  scale_shape_manual(values = c("Unweighted fraction" = 21, "Weighted fraction" = 24)) +
+  scale_y_continuous(labels = label_percent(scale = 1), limits = c(0, 100), expand = expansion(mult = c(0, 0.02))) +
+  labs(
+    title = "Unclassified signal dominates most recreated samples",
+    subtitle = "Points compare the two abundance metrics within each specimen",
+    x = NULL,
+    y = "Unclassified fraction (%)",
+    fill = "Metric",
+    shape = "Metric"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(unclassified_plot, "taxonomy_unclassified_fraction", width = 9.5, height = 5.5)
+unclassified_plot
+```
+
+**Interpretation**
+
+-   High unclassified signal weakens confidence because much of the sample remains unresolved.
+-   When a specimen is dominated by unclassified sequence, the classified profile can become **incomplete, unstable, and overly sensitive to small numbers of assigned hashes**.
+-   In a low-biomass clinical specimen, this often means the sample is not robust enough for a trustworthy organism-level conclusion, even if a few taxa are nominally present.
+-   For this case, the untreated CSF is the only specimen that still retains a clinically coherent pathogen candidate after strict filtering. The others should be treated cautiously or regarded as **non-informative**.
+
+::: {.callout-note collapse="true"}
+## Click to reveal: why unclassified can remain high after host removal
+
+Removing the human genome is necessary, but it does not turn the remaining reads into a clean microbial dataset.
+
+After host depletion, the remaining reads may still include:
+
+-   low-quality or low-complexity fragments,
+-   short reads that lack taxonomic information,
+-   amplification artifacts,
+-   reagent or environmental background,
+-   host-associated reads that were not removed perfectly,
+-   and real biological sequences without close reference genomes in the database.
+
+This is especially common in low-biomass clinical specimens such as CSF. In the original paper, the untreated CSF had millions of raw reads, but only a small fraction were non-human, and an even smaller fraction carried the diagnostic *Leptospira* signal. The clinical question is therefore not "Can we classify everything?" but "Does the classified part contain a coherent, specimen-specific pathogen signal?"
+:::
+
+::: {.callout-note collapse="true"}
+## Click to reveal: when "no reliable conclusion" is the right answer
+
+A sample may be best interpreted as **non-informative** when:
+
+-   unclassified signal dominates,
+-   the classified taxa are scattered across many weak background-like organisms,
+-   the signal does not survive stricter thresholds,
+-   the same type of signal appears in serum or control samples,
+-   or the result does not fit the clinical syndrome or specimen type.
+
+In this recreated workflow, the DNase-treated CSF, patient serum, and negative-control serum do not provide evidence strong enough for a final organism-level conclusion. That is not a failure of learning. It is one of the core lessons of clinical metagenomics.
+:::
+
+## Compare strict retained-hit export versus broader exploratory species summaries
+
+```{r strict-vs-exploratory}
+strict_comparison <- strict_with %>%
+  select(sample_name, lineage, unweighted_fraction, f_weighted_at_rank) %>%
+  mutate(view = "Supplied strict merged export") %>%
+  bind_rows(
+    raw_species_with %>%
+      filter(sample_name %in% strict_with$sample_name) %>%
+      select(sample_name, lineage, unweighted_fraction, f_weighted_at_rank) %>%
+      mutate(view = "Reconstructed raw species summary")
+  ) %>%
+  arrange(sample_name, view, desc(f_weighted_at_rank))
+
+kable(strict_comparison, digits = 4)
+```
+
+For the untreated CSF, both views agree on the key teaching point: ***Leptospira santarosai*** **is the only clinically coherent signal**. However, the exact numeric fractions differ because these files come from **different summary layers** of the pipeline.
+
+That matters for interpretation:
+
+-   The supplied strict export reflects the final, more conservative retained-hit table.
+-   The reconstructed species table is broader and noisier, which is useful for teaching why the other samples did not survive stricter filtering.
+-   We should therefore compare the two views qualitatively, not pretend that they are numerically interchangeable.
+
+## Diagnostic composition of each sample
+
+```{r diagnostic-composition}
+diagnostic_mass <- raw_species_with %>%
+  mutate(
+    diagnostic_category = case_when(
+      lineage == "unclassified" ~ "Unclassified",
+      grepl("Leptospira santarosai$", lineage) ~ "Leptospira santarosai",
+      grepl("^Eukaryota", lineage) ~ "Eukaryotic/host-associated",
+      TRUE ~ "Other classified"
+    )
+  ) %>%
+  group_by(sample_name, sample_role, diagnostic_category) %>%
+  summarise(
+    unweighted_fraction = sum(unweighted_fraction, na.rm = TRUE),
+    f_weighted_at_rank = sum(f_weighted_at_rank, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  pivot_longer(
+    cols = c(unweighted_fraction, f_weighted_at_rank),
+    names_to = "metric",
+    values_to = "fraction"
+  ) %>%
+  mutate(
+    metric = recode(
+      metric,
+      unweighted_fraction = "Unweighted fraction",
+      f_weighted_at_rank = "Weighted fraction"
+    ),
+    diagnostic_category = factor(
+      diagnostic_category,
+      levels = c("Unclassified", "Leptospira santarosai", "Eukaryotic/host-associated", "Other classified")
+    ),
+    sample_label = factor(sample_labels[sample_name], levels = sample_labels[metadata$sample_name])
+  )
+
+diagnostic_mass_plot <- ggplot(diagnostic_mass, aes(x = sample_label, y = fraction, fill = diagnostic_category)) +
+  geom_col(width = 0.75, color = "white") +
+  facet_wrap(~metric, ncol = 1) +
+  scale_fill_manual(values = signal_palette) +
+  scale_y_continuous(labels = percent_format(accuracy = 1), expand = expansion(mult = c(0, 0.02))) +
+  labs(
+    title = "Only the untreated CSF carries a clinically coherent leptospiral signal",
+    subtitle = "The other samples are dominated by unclassified signal or diffuse low-level background",
+    x = NULL,
+    y = "Fraction of sample",
+    fill = "Signal category"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(diagnostic_mass_plot, "taxonomy_diagnostic_signal_vs_unclassified", width = 10, height = 7)
+diagnostic_mass_plot
+```
+
+**Interpretation**
+
+-   The **untreated CSF** is the only sample where leptospiral signal is large enough to remain central to the story.
+-   The **DNase-treated CSF** shows only a tiny leptospiral trace in the broader summary and no retained strict YACHT hit.
+-   The **patient serum** is overwhelmingly unclassified and does not support a bloodstream leptospiral signal in this recreated workflow.
+-   The **negative-control serum** is not cleanly blank in the broader summary, which argues for caution and supports a conservative interpretation of any low-level non-CSF hits.
+
+## Top classified taxa per sample
+
+```{r top-classified-table}
+top_classified_table <- raw_species_without %>%
+  group_by(sample_name, sample_role) %>%
+  slice_max(order_by = f_weighted_classified, n = 5, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(sample_name, sample_role, species_label, f_weighted_classified, unweighted_fraction, f_weighted_at_rank)
+
+kable(top_classified_table, digits = 4)
+```
+
+This table is useful, but it must be read carefully:
+
+-   `f_weighted_classified` describes **composition among the classified component only**.
+-   In samples that are nearly all unclassified, a taxon can look "dominant" **within the classified slice** while still being clinically trivial in the original specimen.
+-   That is why the top classified taxa in the DNase-treated CSF, serum, and control serum should **not** be treated as actionable pathogen calls.
+
+```{r species-heatmap}
+top_species <- raw_species_without %>%
+  group_by(species_label) %>%
+  summarise(max_classified = max(f_weighted_classified, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(max_classified), species_label) %>%
+  slice_head(n = 10) %>%
+  pull(species_label)
+
+heatmap_data <- raw_species_without %>%
+  filter(species_label %in% top_species) %>%
+  select(sample_name, sample_role, species_label, f_weighted_classified) %>%
+  complete(
+    sample_name = metadata$sample_name,
+    species_label = top_species,
+    fill = list(f_weighted_classified = 0)
+  ) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name") %>%
+  mutate(
+    sample_label = factor(sample_labels[sample_name], levels = sample_labels[metadata$sample_name]),
+    species_label = factor(species_label, levels = rev(top_species))
+  )
+
+species_heatmap <- ggplot(
+  heatmap_data,
+  aes(x = sample_label, y = species_label, fill = 100 * f_weighted_classified)
+) +
+  geom_tile(color = "grey80", linewidth = 0.3) +
+  scale_fill_gradientn(
+    colours = c("grey98", "#c7e9c0", "#41ab5d", "#005a32"),
+    labels = label_number(suffix = "%", accuracy = 1)
+  ) +
+  labs(
+    title = "Among classified signal, untreated CSF is dominated by Leptospira",
+    subtitle = "These are classified-only percentages and should not be mistaken for whole-sample dominance",
+    x = NULL,
+    y = "Species",
+    fill = "Classified-only\nabundance"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(species_heatmap, "taxonomy_species_heatmap", width = 10, height = 6)
+species_heatmap
+```
+
+**Interpretation**
+
+-   This view helps show why the untreated CSF is clinically different from the other specimens.
+-   Once we condition on the classified component, ***Leptospira santarosai*** becomes the dominant classified organism in untreated CSF.
+-   The other samples do not show a similarly coherent pathogen pattern. Their classified signal is fragmented across taxa that are either implausible, background-like, or too weak to trust.
+
+# Sample-level diagnostic interpretation
+
+```{r sample-level-diagnostic-table}
+strict_hits_05 <- yacht_thresholds %>%
+  filter(threshold == "0.05") %>%
+  transmute(
+    sample_name,
+    strict_retained_hit = !is.na(organism_name),
+    strict_hit_label = if_else(is.na(organism_name), "No retained hit", organism_name),
+    strict_confidence = actual_confidence_with_coverage
+  )
+
+top_classified <- raw_species_without %>%
+  group_by(sample_name) %>%
+  slice_max(order_by = f_weighted_classified, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  transmute(
+    sample_name,
+    top_classified_species = species_label,
+    top_classified_f_weighted_classified = f_weighted_classified
+  )
+
+sample_diagnostic_summary <- metadata %>%
+  select(sample_name, sample_role, patient_status, approx_total_reads, clinical_use) %>%
+  left_join(
+    raw_species_with %>%
+      filter(lineage == "unclassified") %>%
+      select(sample_name, unclassified_unweighted = unweighted_fraction, unclassified_weighted = f_weighted_at_rank, total_weighted_hashes),
+    by = "sample_name"
+  ) %>%
+  left_join(strict_hits_05, by = "sample_name") %>%
+  left_join(top_classified, by = "sample_name") %>%
+  mutate(
+    diagnostic_interpretation = case_when(
+      sample_role == "Untreated CSF" ~ "Most clinically meaningful sample. Retains a strict Leptospira hit, but still has substantial unresolved signal.",
+      unclassified_weighted >= 0.95 ~ "Essentially non-informative at organism level. Dominated by unclassified signal.",
+      sample_role == "Negative-control serum" ~ "Background/control sample with unstable mixed low-level signal. Useful mainly as a cautionary comparator.",
+      TRUE ~ "No persuasive pathogen-level evidence strong enough for a final conclusion."
+    )
+  ) %>%
+  arrange(sample_role)
+
+kable(sample_diagnostic_summary, digits = 3)
+```
+
+## Practical diagnostic conclusions from the four-sample set
+
+### 1. Untreated CSF (`SRR1145846`)
+
+-   This is the **only sample** that retains a confident strict YACHT hit at `min_coverage = 0.05`.
+-   That hit is ***Leptospira santarosai***.
+-   In the broader species summary, this sample still carries a heavy unclassified fraction, so the result should be treated as clinically meaningful but not artificially perfect.
+-   Even so, this is the **most clinically meaningful specimen** in the recreated workflow and the only sample that supports a plausible actionable diagnosis.
+
+### 2. DNase-treated CSF (`SRR1145844`)
+
+-   This sample is overwhelmingly unclassified.
+-   Only a tiny low-level leptospiral trace is visible in the broader species summary, and it disappears from the strict retained-hit table.
+-   The most appropriate interpretation is **no reliable organism-level conclusion from this sample**.
+-   This is also consistent with the teaching point that DNase treatment can be helpful for viral enrichment but may reduce useful bacterial signal.
+
+### 3. Patient serum (`SRR1145845`)
+
+-   This sample is also overwhelmingly unclassified and does not yield a coherent leptospiral result.
+-   The low-level classified taxa are not persuasive for a bloodstream explanation.
+-   Therefore, the recreated serum does **not** provide trustworthy evidence for a final pathogen-level conclusion.
+
+### 4. Negative-control serum (`SRR1145847`)
+
+-   The strict YACHT export retains no hit, which is reassuring.
+-   However, the broader species summary contains a diffuse mixture of low-level taxa rather than a perfectly clean blank.
+-   That does **not** support a real alternative pathogen. Instead, it shows why low-biomass/control samples can look unstable and why conservative filtering matters.
+
+# AMR inspection
+
+```{r amr-load}
+read_amr <- function(path) {
+  dat <- read_tsv_char(path)
+  dat %>%
+    mutate(
+      sample_name = sub("[.]gene_mapping_data[.]txt$", "", basename(path)),
+      `Completely Mapped Reads` = as.numeric(`Completely Mapped Reads`),
+      `Average Percent Coverage` = as.numeric(`Average Percent Coverage`),
+      `Reference Length` = as.numeric(`Reference Length`)
+    )
+}
+
+amr_data <- bind_rows(lapply(amr_files, read_amr)) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name") %>%
+  arrange(sample_role, desc(`Completely Mapped Reads`))
+
+amr_summary <- amr_data %>%
+  group_by(sample_name, sample_role) %>%
+  summarise(
+    n_hits = n(),
+    total_complete_reads = sum(`Completely Mapped Reads`, na.rm = TRUE),
+    max_coverage = max(`Average Percent Coverage`, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(sample_role)
+
+kable(amr_summary, digits = 2)
+```
+
+```{r amr-details}
+kable(
+  amr_data %>%
+    select(sample_name, sample_role, `ARO Term`, `Completely Mapped Reads`, `Average Percent Coverage`, `AMR Gene Family`, `Drug Class`),
+  digits = 2
+)
+```
+
+```{r amr-plot}
+amr_plot_data <- amr_data %>%
+  mutate(
+    sample_label = factor(sample_labels[sample_name], levels = sample_labels[metadata$sample_name]),
+    aro_label = factor(`ARO Term`, levels = rev(unique(`ARO Term`)))
+  )
+
+amr_plot <- ggplot(
+  amr_plot_data,
+  aes(x = sample_label, y = aro_label)
+) +
+  geom_point(
+    aes(size = `Completely Mapped Reads`, color = `Average Percent Coverage`),
+    alpha = 0.9
+  ) +
+  scale_color_gradientn(colours = c("#d9d9d9", "#fdae6b", "#e6550d", "#a63603")) +
+  scale_size_continuous(range = c(2.5, 10)) +
+  labs(
+    title = "AMR calls are sparse and not central to the diagnostic question",
+    x = NULL,
+    y = "ARO term",
+    size = "Completely\nmapped reads",
+    color = "Average %\ncoverage"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+save_fig(amr_plot, "amr_sparse_signal_summary", width = 10, height = 5.5)
+amr_plot
+```
+
+**AMR interpretation**
+
+-   The AMR output is **very sparse**.
+-   Only one putative AMR feature is associated with the untreated CSF leptospiral sample, and it is supported by only **2 completely mapped reads**.
+-   The higher-read AMR signal appears in the DNase-treated CSF, but that same specimen is taxonomically non-informative for the pathogen question.
+-   Coverage is low for most calls, and none of these results materially changes the diagnostic reasoning in this case.
+
+The most appropriate conclusion is that the AMR output is **illustrative rather than clinically informative** here.
+
+# Comparison with the original paper
+
+The original paper reported:
+
+-   **475 single-end CSF reads** mapping to *Leptospira* in untreated CSF,
+-   **263 single-end reads** in DNase-treated CSF,
+-   **0 leptospiral reads in serum**,
+-   **0 leptospiral reads in the negative control**,
+-   and eventual confirmation of ***Leptospira santarosai*** by targeted follow-up testing.
+
+Before opening the comparison table, propose two reasons why this recreated output might look different from the published report.
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+Think about what changed between the original study and this workshop re-analysis: preprocessing, host filtering, reference databases, classification algorithms, and thresholds.
+:::
+
+```{r paper-comparison}
+comparison_table <- tibble::tribble(
+  ~Specimen, ~Original_paper, ~Recreated_workflow, ~Teaching_interpretation,
+  "Untreated CSF",
+  "Clear actionable leptospiral signal; 475 single-end reads and 955 paired-end bacterial reads assigned to Leptospira.",
+  "Only specimen with a retained strict YACHT hit. Broad species summary still has heavy unclassified signal, but Leptospira remains the only coherent diagnosis-level candidate.",
+  "This is the one specimen that materially narrows the differential.",
+  "DNase-treated CSF",
+  "Leptospiral reads still present in the paper, though lower than untreated CSF.",
+  "No retained strict hit. Exploratory species summary is overwhelmingly unclassified, with only a tiny leptospiral trace.",
+  "Best interpreted as non-informative in the recreated workflow.",
+  "Patient serum",
+  "No leptospiral reads detected.",
+  "No retained strict hit. Serum is dominated by unclassified signal and weak background taxa.",
+  "Does not add trustworthy organism-level evidence.",
+  "Negative-control serum",
+  "No leptospiral reads detected and effectively clean for the key pathogen question.",
+  "No retained strict hit, but the broader species summary is noisier than expected, with mixed low-level taxa.",
+  "Useful as a cautionary control showing why low-level signal should not be over-called."
+)
+
+kable(comparison_table)
+```
+
+## Main similarities with the paper
+
+-   The **untreated CSF** remains the most important sample.
+-   The recreated workflow still points to ***Leptospira santarosai*** in that specimen.
+-   Serum does **not** provide stronger competing evidence for an alternative pathogen.
+-   The case still teaches the same major clinical lesson: unbiased CSF metagenomics can shorten the path to a treatable diagnosis when serial conventional testing is unrevealing.
+
+## Main differences from the paper
+
+-   The recreated dataset is **much noisier**, especially outside the untreated CSF.
+-   The recreated **DNase-treated CSF** is not cleanly supportive, whereas the paper still recovered leptospiral signal there.
+-   The recreated **negative-control serum** is not as clean as the paper's description would lead us to expect.
+-   The supplied strict workshop export collapses the dataset to **one retained sample**, which is a much more conservative picture than a simplified classroom result card might suggest.
+
+::: {.callout-note collapse="true"}
+## Click to reveal: how to interpret disagreement without calling either analysis wrong
+
+This comparison should not be read as "the paper was right and the re-analysis is wrong" or the reverse.
+
+The original paper used the tools and databases available in 2013-2014 and then confirmed the result with PCR, Sanger sequencing, phylogenetics, and clinical response. The recreated workflow uses modern sketch-based and threshold-sensitive tools that may prioritize specificity and may discard weak or distributed background calls.
+
+Both perspectives can be compatible:
+
+-   the clinical conclusion of the original paper remains strongly supported,
+-   the modern re-analysis may be stricter about what counts as a retained pathogen-level call,
+-   and samples with heavy unclassified/background signal may reasonably become non-informative.
+:::
+
+# Why the recreated results may differ so much from the original report
+
+Several factors could plausibly explain the mismatch:
+
+::: {.callout-tip collapse="true"}
+## Click to hint before reading the list
+
+Separate biological explanations from workflow explanations. In this case, many differences are likely workflow-related rather than evidence that the pathogen biology was different.
+:::
+
+1.  **Different sequencing depth or retained read volume**
+
+The local metadata suggest a much smaller re-analysis input than the original paper described for some specimens, especially untreated CSF and the negative control. Less data means less sensitivity and more instability.
+
+2.  **Different preprocessing and host-removal behavior**
+
+Modern host depletion and stricter preprocessing can reduce false positives, but they can also leave very sparse non-host signal in low-biomass samples.
+
+3.  **Different classification framework**
+
+The original paper used **SURPI** with nt/protein alignment. This notebook uses outputs from **Sourmash/YACHT and taxmetagenome summaries**, which are sketch-based and threshold-sensitive.
+
+4.  **Different databases**
+
+The modern database now contains ***Leptospira santarosai***, so direct species-level matching is easier than it was in 2014. At the same time, different databases can redistribute marginal reads into different taxa.
+
+5.  **Conservative thresholds**
+
+The strict YACHT export uses a `min_coverage = 0.05` retained-hit view. That improves specificity, but it also means borderline samples drop out completely.
+
+6.  **Low-biomass CSF and comparator samples**
+
+Low-biomass clinical metagenomics is especially vulnerable to instability, high host background, stochastic classification, and over-interpretation of tiny signal.
+
+7.  **Unclassified-heavy samples are inherently incomplete**
+
+When most of a sample is unclassified, the organism-level profile is only a partial summary of what remains after filtering and database matching. That is exactly why some recreated samples should be called **non-informative** rather than forced into a diagnosis.
+
+The important teaching message is that disagreement with the original paper does **not** automatically mean the recreated workflow is wrong. It may mean that the recreated workflow is being **more conservative** with weak or unstable samples.
+
+# Integrated clinical interpretation
+
+## Moving from broad differential to sequencing-based narrowing
+
+Before sequencing, the clinically plausible differential remains broad:
+
+-   tuberculous meningitis,
+-   viral meningoencephalitis,
+-   fungal CNS infection,
+-   partially treated bacterial meningitis,
+-   autoimmune/inflammatory disease,
+-   and less common zoonotic infection.
+
+The sequencing results change that differential unevenly:
+
+-   Most samples **do not** help enough to justify a pathogen-level conclusion.
+-   The **untreated CSF** is the exception. It provides the only coherent organism-level signal that survives strict filtering and fits the clinical story.
+
+## Most likely diagnosis
+
+**The most likely final diagnosis is neuroleptospirosis caused by pathogenic *Leptospira*, most consistent with *Leptospira santarosai* in this recreated workflow.**
+
+That conclusion is supported by the combination of:
+
+-   a difficult CNS infection syndrome with repeatedly unrevealing conventional testing,
+-   the clinical logic of the original case,
+-   the untreated CSF being the best bacterial specimen,
+-   a retained strict YACHT hit to ***Leptospira santarosai*** only in untreated CSF,
+-   and the lack of a comparably coherent alternative explanation from the other samples.
+
+## Would these recreated results change management?
+
+-   **Untreated CSF:** yes, this result would meaningfully narrow the diagnostic pathway and justify targeted confirmatory discussion.
+-   **DNase-treated CSF:** no, this specimen does not provide evidence strong enough for a final organism-level conclusion.
+-   **Patient serum:** no, this specimen does not return trustworthy evidence strong enough for a final conclusion.
+-   **Negative control:** no, it is informative only as a cautionary background comparator.
+
+# Why some samples may be non-informative
+
+This case is valuable precisely because **not every specimen helps equally**.
+
+In the recreated workflow, a sample should be considered non-informative when:
+
+-   it is dominated by unclassified signal,
+-   the classified component is small and fragmented,
+-   the top taxa are clinically implausible or inconsistent with the specimen type,
+-   the negative control is noisy enough to raise caution about low-level background,
+-   or the strict retained-hit step drops the sample completely.
+
+That is exactly what happens for the DNase-treated CSF, patient serum, and control serum here.
+
+In a workshop setting, this is an important lesson: a metagenomic workflow is useful not only when it finds the answer, but also when it shows that a specimen **does not contain sufficiently trustworthy evidence** for a conclusion.
+
+# Limitations
+
+-   This is a **teaching re-analysis**, not a full reproduction of the original study.
+-   The supplied strict workshop export retains only **one sample**, so a broader four-sample view had to be reconstructed from lower-level per-sample summaries.
+-   The dataset contains only **four runs**, one of which is a negative control.
+-   Heavy unclassified signal makes several sample profiles unstable.
+-   The abundance metrics differ across summary layers, so exact percentages should not be over-harmonized.
+-   The AMR workflow is present but sparse and not clinically central to this case.
+-   Diversity and ordination results are purely descriptive and should not be treated as formal microbiome statistics.
+
+# Suggested discussion points for learners
+
+1.  Why is the untreated CSF the most useful sample for this case?
+2.  Why does a large unclassified fraction weaken confidence in the DNase-treated CSF and serum results?
+3.  Why is a noisy negative control important even when it does not show the final pathogen?
+4.  Why can a recreated workflow disagree with a published paper without being obviously wrong?
+5.  How should clinicians balance an imperfect but coherent metagenomic result against ongoing diagnostic uncertainty in a deteriorating patient?
+
+# Suggested next steps and follow-up tests
+
+-   Re-review the exposure history for water and animal-associated leptospiral risk.
+-   Send targeted **CSF confirmatory molecular testing** for pathogenic *Leptospira* if available.
+-   Discuss disease-directed therapy in parallel with confirmatory testing if the full clinical picture is strongly compatible.
+-   If clinically appropriate, consider convalescent serology with the clear caveat that immune dysfunction or immunoglobulin replacement can complicate interpretation.
+-   Preserve the untreated CSF as the most important specimen for further confirmatory work.
+
+# Optional research-style add-on: ecological summaries
+
+This final add-on is not needed to reach the clinical diagnosis. It is included for learners who want to see how the same processed table can be adapted into a microbiome-style R workflow, similar to the previous Vietnamese healthy gut microbiome notebook.
+
+::: {.callout-warning collapse="false"}
+## Important
+
+These plots are descriptive only. With four runs, heavy unclassified signal, and clinical low-biomass specimens, alpha diversity and ordination should **not** be treated as formal microbiome evidence.
+:::
+
+## Build an exploratory phyloseq object
+
+The supplied `nejm.phyloseq/` export is too incomplete for four-sample comparisons, so we build a small exploratory object from the reconstructed classified-only species table.
+
+```{r phyloseq-rebuild}
+otu_export <- raw_species_without %>%
+  select(species_label, sample_name, f_weighted_classified) %>%
+  distinct() %>%
+  pivot_wider(names_from = sample_name, values_from = f_weighted_classified, values_fill = 0)
+
+tax_export <- raw_species_without %>%
+  select(species_label, domain, phylum, class, order, family, genus, species) %>%
+  distinct()
+
+sample_export <- metadata %>%
+  select(sample_name, sample_role, patient_status, approx_total_reads, clinical_use)
+
+otu_mat <- as.matrix(as.data.frame(otu_export[, -1]))
+rownames(otu_mat) <- otu_export$species_label
+
+tax_mat <- as.matrix(as.data.frame(tax_export[, -1]))
+rownames(tax_mat) <- tax_export$species_label
+
+sample_df <- as.data.frame(sample_export)
+rownames(sample_df) <- sample_df$sample_name
+sample_df$sample_name <- NULL
+
+phy_exploratory <- phyloseq(
+  otu_table(otu_mat, taxa_are_rows = TRUE),
+  tax_table(tax_mat),
+  sample_data(sample_df)
+)
+
+phy_exploratory
+```
+
+## Alpha diversity
+
+Before running this chunk, predict whether the most clinically informative sample should necessarily have the highest diversity.
+
+::: {.callout-tip collapse="true"}
+## Click to hint
+
+In low-biomass clinical metagenomics, higher diversity can mean diffuse background, not a better diagnostic specimen.
+:::
+
+```{r alpha-diversity}
+sample_matrix_alpha <- t(otu_mat)
+
+alpha_diversity <- tibble(
+  sample_name = rownames(sample_matrix_alpha),
+  Observed = specnumber(sample_matrix_alpha),
+  Shannon = diversity(sample_matrix_alpha, index = "shannon")
+) %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name") %>%
+  mutate(
+    sample_label = factor(sample_labels[sample_name], levels = sample_labels[metadata$sample_name])
+  )
+
+kable(alpha_diversity, digits = 3)
+```
+
+```{r alpha-plot}
+alpha_observed_plot <- ggplot(alpha_diversity, aes(x = sample_label, y = Observed, fill = sample_role)) +
+  geom_col(width = 0.75, color = "black") +
+  scale_fill_manual(values = sample_role_palette) +
+  labs(
+    title = "Observed classified species",
+    x = NULL,
+    y = "Observed species",
+    fill = "Sample role"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+alpha_shannon_plot <- ggplot(alpha_diversity, aes(x = sample_label, y = Shannon, fill = sample_role)) +
+  geom_col(width = 0.75, color = "black") +
+  scale_fill_manual(values = sample_role_palette) +
+  labs(
+    title = "Shannon diversity of classified-only signal",
+    x = NULL,
+    y = "Shannon index",
+    fill = "Sample role"
+  ) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+
+alpha_plot <- alpha_observed_plot / alpha_shannon_plot
+save_fig(alpha_plot, "taxonomy_alpha_diversity", width = 10, height = 8)
+alpha_plot
+```
+
+**Interpretation**
+
+-   These alpha diversity values are **descriptive only**.
+-   In a clinical low-biomass dataset, higher diversity does **not** automatically mean a more informative specimen. It can just mean "more diffuse background."
+-   The untreated CSF is actually **less diverse** than the noisier comparator specimens, which is compatible with a more coherent pathogen-dominated classified component.
+-   The DNase-treated CSF, patient serum, and control serum may look more diverse because their classified reads are split across many weak taxa, not because they are clinically richer samples.
+
+## Beta diversity and ordination
+
+```{r ordination}
+sample_matrix <- t(otu_mat)
+bray_dist <- vegdist(sample_matrix, method = "bray")
+ordination <- cmdscale(bray_dist, eig = TRUE, k = 2)
+
+ord_df <- as.data.frame(ordination$points)
+colnames(ord_df) <- c("Axis1", "Axis2")
+ord_df$sample_name <- rownames(ord_df)
+
+ord_df <- ord_df %>%
+  left_join(metadata %>% select(sample_name, sample_role), by = "sample_name") %>%
+  mutate(
+    sample_label = sample_labels[sample_name]
+  )
+
+ord_plot <- ggplot(ord_df, aes(x = Axis1, y = Axis2, color = sample_role, label = sample_label)) +
+  geom_hline(yintercept = 0, linewidth = 0.3, color = "grey80") +
+  geom_vline(xintercept = 0, linewidth = 0.3, color = "grey80") +
+  geom_point(size = 3.5) +
+  geom_text(nudge_y = 0.02, size = 3.2, show.legend = FALSE) +
+  scale_color_manual(values = sample_role_palette) +
+  labs(
+    title = "Bray-Curtis ordination of classified-only species profiles",
+    subtitle = "Useful as a descriptive picture only; not suitable for formal inference",
+    x = "PCoA 1",
+    y = "PCoA 2",
+    color = "Sample role"
+  )
+
+save_fig(ord_plot, "taxonomy_bray_curtis_ordination", width = 9, height = 5.5)
+ord_plot
+```
+
+**Interpretation**
+
+-   The ordination is best read as a visual summary of how different the classified-only profiles are.
+-   It reinforces that the untreated CSF behaves differently from the other samples.
+-   However, with only four runs and heavy unclassified signal, this plot is a **teaching visual**, not evidence of a stable ecological pattern.
+
+# Conclusion
+
+This recreated notebook preserves the main clinical-metagenomic lesson of the original NEJM case while being honest about the limits of the local data.
+
+The key conclusion is not that every sample yields a useful answer. It is that **only one sample, the untreated CSF, provides credible organism-level evidence strong enough to narrow the case toward neuroleptospirosis**, while the remaining recreated samples are dominated by unclassified signal or unstable background and should be treated as non-informative.
+
+That is exactly the kind of interpretation healthcare workers need in practice: not just how to spot a plausible pathogen, but also how to recognize when a specimen does **not** support a trustworthy conclusion.
+
+::: {.callout-tip}
+Return to the [Day 4 overview](index.qmd).
+:::

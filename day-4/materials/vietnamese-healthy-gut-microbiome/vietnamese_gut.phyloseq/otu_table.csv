@@ -1,0 +1,737 @@
+match_name,ERR9904447,ERR9904449,ERR9904450,ERR9904452,ERR9904458,ERR9904480
+GCA_000154345.1 [Clostridium] leptum DSM 753,0,139,0,0,0,143
+GCA_000431795.1 Clostridium sp. CAG:302,0,0,0,30634,0,305
+GCA_000431835.1 Succinatimonas sp. CAG:777,5128,0,0,0,0,0
+GCA_000432135.1 Firmicutes bacterium CAG:124,2818,0,0,1051,0,261
+GCA_000432335.1 Firmicutes bacterium CAG:646,0,1607,0,0,0,0
+GCA_000432435.1 Eubacterium sp. CAG:180,471,0,0,0,0,434
+GCA_000432595.1 Clostridium sp. CAG:710,1048,0,0,0,0,0
+GCA_000432835.1 Clostridium sp. CAG:417,0,0,0,0,0,3692
+GCA_000433035.1 Staphylococcus sp. CAG:324,0,0,0,2058,0,0
+GCA_000433115.1 Ruminococcus sp. CAG:382,0,0,0,227,0,0
+GCA_000433355.1 Alistipes sp. CAG:435,4780,0,0,0,0,0
+GCA_000433455.1 Mycoplasma sp. CAG:877,22540,0,0,0,0,0
+GCA_000433635.1 Ruminococcus sp. CAG:254,266,0,0,277,0,5216
+GCA_000433675.1 Clostridium sp. CAG:433,0,0,0,711,0,0
+GCA_000434035.1 Clostridium sp. CAG:452,14816,0,0,0,0,0
+GCA_000434055.1 Ruminococcus sp. CAG:488,812,0,0,5996,0,0
+GCA_000434175.1 Mycoplasma sp. CAG:611,0,0,0,8664,0,0
+GCA_000434335.1 Clostridium sp. CAG:492,285,0,0,0,0,2930
+GCA_000434475.1 Dialister sp. CAG:486,0,0,0,0,0,1628
+GCA_000434635.1 Firmicutes bacterium CAG:110,327,0,0,151,0,230
+GCA_000434775.1 Eggerthella sp. CAG:368,0,0,0,474,0,0
+GCA_000434835.1 Clostridium sp. CAG:594,894,0,0,0,0,0
+GCA_000434995.1 Firmicutes bacterium CAG:341,0,0,0,0,0,219
+GCA_000435055.1 Clostridium sp. CAG:138,890,0,0,0,0,0
+GCA_000435175.1 Clostridium sp. CAG:245,5516,0,0,0,0,0
+GCA_000435195.1 Clostridium sp. CAG:169,0,0,0,0,0,2516
+GCA_000435555.1 Firmicutes bacterium CAG:176,301,0,0,7264,0,168
+GCA_000435975.1 Oscillibacter sp. CAG:241,427,0,0,0,0,198
+GCA_000436075.1 Eggerthella sp. CAG:209,0,0,0,0,0,353
+GCA_000436475.1 Eubacterium sp. CAG:248,0,0,0,514,0,0
+GCA_000436735.1 Firmicutes bacterium CAG:170,641,0,0,404,0,0
+GCA_000436835.1 Eubacterium sp. CAG:251,1644,0,0,0,0,0
+GCA_000437215.1 Clostridium sp. CAG:440,0,0,0,5600,0,0
+GCA_000437515.1 Acidiphilium sp. CAG:727,229,0,0,0,0,0
+GCA_000437595.1 Faecalibacterium sp. CAG:74,0,0,0,2326,0,0
+GCA_000438155.1 Firmicutes bacterium CAG:95,656,0,0,278,0,0
+GCA_000613465.1 Bacteroides nordii WAL 11050 = JCM 12987,492,0,0,672,0,0
+GCA_000980705.1 Ruminococcus sp. UNK.MGS-30,0,0,0,9490,0,1195
+GCA_001312505.1 [Ruminococcus] faecis JCM 15917,3270,27392,106380,2654,0,4770
+GCA_001765415.1 Candidatus Melainabacteria bacterium MEL.A1,0,0,0,48642,0,0
+GCA_001916035.1 Clostridium sp. 27_14,168,0,0,0,0,659
+GCA_001916055.1 Clostridium sp. 28_12,0,0,0,0,0,152
+GCA_001916715.1 Firmicutes bacterium CAG:24053_14,0,0,0,118,0,0
+GCA_001940855.1 Christensenellaceae bacterium Phil1,171,0,0,0,0,0
+GCA_002320595.1 Christensenella sp. UBA1685,0,0,0,106,0,0
+GCA_002404795.1 Clostridiales bacterium UBA4696,138,0,0,94,0,0
+GCA_002431945.1 Ruminococcaceae bacterium UBA5891,384,0,0,0,0,0
+GCA_002438575.1 Oscillospiraceae bacterium UBA6409,0,0,0,688,0,0
+GCA_003112755.1 Lawsonibacter asaccharolyticus,0,0,0,307,0,388
+GCA_003150355.1 Clostridiales bacterium,263,0,0,0,0,0
+GCA_003150515.1 Selenomonadales bacterium,94,0,0,0,0,0
+GCA_003258735.1 Candidatus Melainabacteria bacterium,0,0,0,0,0,2306
+GCA_003343815.1 Clostridiales bacterium,138,0,0,0,0,0
+GCA_003463005.1 Segatella copri,1887,0,0,0,0,0
+GCA_003464165.1 Eubacterium sp. AM49-13BH,124,0,0,1421,784,202
+GCA_003471165.1 Ruminococcus sp. AM22-13,1382,0,0,610,0,1236
+GCA_003477405.1 Ruminococcaceae bacterium AM07-15,0,0,0,0,0,240
+GCA_003478035.1 Clostridium sp. OF03-18AA,451,0,465,0,0,482
+GCA_003478355.1 Lachnospiraceae bacterium AM48-27BH,594,0,0,421,0,3462
+GCA_003480435.1 Clostridium sp. AM30-24,149,0,0,94,0,135
+GCA_003481745.1 Firmicutes bacterium OM04-13BH,6300,0,0,8784,0,1416
+GCA_003481775.1 Clostridiaceae bacterium OM02-2AC,0,1629,0,0,0,0
+GCA_003521145.1 Streptococcus sp.,122,0,0,0,240,0
+GCA_003522105.1 Oscillibacter sp.,3884,0,0,176,0,0
+GCA_003522145.1 Clostridiales bacterium,763,0,0,0,0,0
+GCA_003522945.1 Clostridiales bacterium,424,0,0,1816,0,172
+GCA_003525075.1 Clostridiales bacterium,14580,0,0,0,0,0
+GCA_003531585.1 Oscillospiraceae bacterium,0,0,0,0,0,9045
+GCA_003538135.1 Oscillospiraceae bacterium,743,0,0,0,0,0
+GCA_003539495.1 Oscillibacter sp.,186,0,0,0,0,0
+GCA_003539625.1 Acholeplasmatales bacterium,223,0,0,0,0,0
+GCA_004000625.1 Candidatus Cibiobacter qucibialis,1047,0,0,0,0,858
+GCA_004553545.1 Clostridiales bacterium,722,0,0,0,0,0
+GCA_004556705.1 Ruminococcus sp.,0,0,0,0,0,38869
+GCA_004557245.1 Clostridiales bacterium,172,0,0,0,0,0
+GCA_004557855.1 Oscillospiraceae bacterium,4048,0,0,0,0,0
+GCA_008668795.1 Collinsella aerofaciens,0,0,0,0,0,123
+GCA_012317185.1 [Clostridium] innocuum,0,615,0,0,4674,0
+GCA_018223375.1 Clostridiaceae bacterium Marseille-Q3526,0,670,0,0,16992,345
+GCA_018363335.1 Haemophilus parainfluenzae,76,164,0,0,0,0
+GCA_018366195.1 Butyricicoccus pullicaecorum,0,115,0,0,0,0
+GCA_018374635.1 Clostridiales bacterium,0,909,0,0,0,0
+GCA_018378615.1 Haemophilus parainfluenzae,0,0,340,0,0,0
+GCA_018381885.1 Haemophilus parainfluenzae,0,456,0,0,0,0
+GCA_018382395.1 Haemophilus parainfluenzae,0,489,0,0,0,0
+GCA_018382475.1 Veillonella parvula,0,0,663,0,125,0
+GCA_018712515.1 Candidatus Aphodovivens avicola,211,0,0,0,0,0
+GCA_018712705.1 Candidatus Aphodousia faecalis,0,0,0,0,0,130
+GCA_019113085.1 Candidatus Mailhella excrementigallinarum,0,0,0,0,0,152
+GCA_019117135.1 Candidatus Duodenibacillus intestinavium,147,0,0,0,0,0
+GCA_019117555.1 Candidatus Bacteroides intestinigallinarum,0,0,0,1249,0,0
+GCA_019118845.1 Candidatus Anaeromassilibacillus stercoravium,0,0,0,208,0,0
+GCA_019412825.1 Bacteroides thetaiotaomicron,0,1084,0,0,2360,0
+GCA_019414665.1 Bacteroides sp.,0,2568,0,0,5040,0
+GCA_019414725.1 Bacteroides sp.,0,2349,0,189,5334,0
+GCA_019417325.1 Parabacteroides sp.,0,271,0,0,0,0
+GCA_019419725.1 Veillonella sp.,0,0,0,0,116,0
+GCA_019421015.1 Coriobacteriaceae bacterium,0,0,0,0,0,407
+GCA_019421265.1 Lachnospiraceae bacterium,690,305,0,0,2241,291
+GCA_019421285.1 Clostridiales bacterium,110,0,0,370,0,112
+GCA_019421725.1 Clostridiales bacterium,72,0,0,0,0,0
+GCA_019422065.1 Lachnospiraceae bacterium,201,0,0,0,0,0
+GCA_019423565.1 bacterium,0,0,0,2370,0,0
+GCA_019423795.1 Clostridiales bacterium,968,3328,0,1353,496,363
+GCA_019424245.1 Clostridiales bacterium,166,0,0,1465,1096,282
+GCA_020555865.1 bacterium 210917-DFI.7.65,107,0,0,0,0,236
+GCA_020687125.1 Hominicoprocola fusiformis,7038,0,0,722,0,14456
+GCA_020735665.1 Lachnospiraceae bacterium GAM79,0,0,0,344,0,0
+GCA_020743075.1 Butyricimonas virosa,114,0,0,0,0,0
+GCA_021531255.1 Fournierella massiliensis,0,0,0,0,0,98
+GCA_021628325.1 Segatella copri,1725,0,0,0,0,0
+GCA_021633965.1 Dialister sp.,0,0,0,0,0,605
+GCA_021635485.1 Segatella copri,793,0,0,0,0,1078
+GCA_021636625.1 Prevotella sp.,13156,0,0,0,0,4498
+GCA_022009675.1 Oscillospiraceae bacterium,133,0,0,88,0,0
+GCA_022009815.1 Bacteroidales bacterium,0,0,0,0,0,7945
+GCA_022009995.1 Clostridiales bacterium,84,0,0,0,0,0
+GCA_022713905.1 Collinsella sp.,0,3564,8856,0,434,0
+GCA_022737715.1 Veillonella sp.,0,0,0,0,5404,0
+GCA_022739095.1 Bifidobacterium sp.,0,5871,0,0,0,0
+GCA_022741625.1 Prevotella sp.,5024,0,0,0,0,2560
+GCA_022743185.1 Dialister sp.,0,0,0,0,0,9218
+GCA_022782605.1 Clostridium sp.,0,229,0,0,0,0
+GCA_025757645.1 Clostridiales bacterium,2810,0,0,2300,0,5385
+GCA_025757685.1 Oscillospiraceae bacterium,4440,0,0,7248,0,0
+GCA_025757845.1 Oscillospiraceae bacterium,3182,0,601,0,0,5400
+GCA_025757985.1 Oscillospiraceae bacterium,4011,0,0,0,0,432
+GCA_025758045.1 Oscillospiraceae bacterium,1230,0,0,3258,0,2346
+GCA_025758065.1 Lachnospiraceae bacterium,732,0,4220,0,0,666
+GCA_027676805.1 Coprobacillaceae bacterium UN01-12pH3A,0,289,0,0,0,0
+GCA_029983955.1 Faecalimonas sp.,0,186,0,0,483,0
+GCA_030295565.1 Bacteroides finegoldii DSM 17565,0,0,0,324,0,0
+GCA_032477695.1 Streptococcus parasanguinis,0,0,0,0,305,0
+GCA_032483415.1 Veillonella sp.,0,520,1962,0,0,0
+GCA_032620915.1 Oscillospiraceae bacterium NTUH-002-81,177,0,0,0,0,160
+GCA_036312945.1 Anaerostipes hadrus,1576,6169,0,1503,2072,522
+GCA_040095065.1 Hominicoprocola fusiformis,362,0,0,0,0,1736
+GCA_040096245.1 Waltera hominis,946,0,0,359,0,424
+GCA_041336395.1 Roseburia sp.,0,0,0,704,0,0
+GCA_900066355.1 uncultured Ruminococcus sp.,87,0,0,0,0,122
+GCA_900539375.1 uncultured Clostridium sp.,0,0,0,151,0,0
+GCA_900540635.1 uncultured Eubacteriales bacterium,493,0,0,0,0,0
+GCA_900540885.1 uncultured Prevotella sp.,15220,0,0,0,0,24288
+GCA_900541905.1 uncultured Oscillospiraceae bacterium,0,570,0,2580,265,0
+GCA_900541965.1 uncultured Parabacteroides sp.,0,658,0,0,0,0
+GCA_900542245.1 uncultured Eubacteriales bacterium,0,0,0,103,0,255
+GCA_900542375.1 uncultured Oscillospiraceae bacterium,274,0,0,0,0,0
+GCA_900542395.1 uncultured Eubacteriales bacterium,492,0,0,0,0,0
+GCA_900542495.1 uncultured Roseburia sp.,1060,0,0,308,0,360
+GCA_900542715.1 uncultured Collinsella sp.,0,0,0,0,0,112
+GCA_900542735.1 uncultured Mycoplasmatota bacterium,0,0,0,0,0,67
+GCA_900543105.1 uncultured Ruminococcus sp.,148,0,0,0,0,0
+GCA_900543275.1 uncultured Collinsella sp.,0,0,3776,0,0,0
+GCA_900543625.1 uncultured Eubacteriales bacterium,2856,0,0,0,0,0
+GCA_900543975.1 uncultured Prevotella sp.,2634,0,0,514,0,0
+GCA_900544105.1 uncultured Oscillibacter sp.,378,0,0,218,0,87
+GCA_900544195.1 uncultured Alistipes sp.,35036,0,0,0,0,0
+GCA_900544395.1 uncultured Ruminococcus sp.,0,236,0,0,0,0
+GCA_900544405.1 uncultured Eubacteriales bacterium,175,0,0,0,0,113
+GCA_900544455.1 uncultured Eggerthella sp.,80,0,0,0,0,0
+GCA_900544475.1 uncultured Butyricicoccus sp.,0,0,0,442,0,263
+GCA_900544615.1 uncultured Oscillibacter sp.,0,0,0,267,0,146
+GCA_900544625.1 uncultured Mycoplasmatota bacterium,6156,0,0,0,0,0
+GCA_900545225.1 uncultured Eubacteriales bacterium,0,0,0,0,0,259
+GCA_900545495.1 uncultured Eubacteriales bacterium,0,0,0,1138,0,0
+GCA_900545515.1 uncultured Eubacteriales bacterium,135,0,0,0,0,0
+GCA_900545585.1 uncultured Eubacteriales bacterium,418,0,0,0,0,125
+GCA_900545865.1 uncultured Eubacteriales bacterium,338,0,0,0,0,0
+GCA_900545925.1 uncultured Eubacteriales bacterium,256,0,0,175,0,0
+GCA_900545935.1 uncultured Eubacteriales bacterium,740,0,0,0,0,147
+GCA_900546245.1 uncultured Mycoplasmatota bacterium,0,0,0,265,0,0
+GCA_900547225.1 uncultured Mycoplasmatota bacterium,146,0,0,0,0,0
+GCA_900547385.1 uncultured Oscillospiraceae bacterium,180,0,0,1970,0,662
+GCA_900547405.1 uncultured Eubacteriales bacterium,122,0,0,0,0,0
+GCA_900547965.1 uncultured Eggerthella sp.,222,0,0,0,0,0
+GCA_900548125.1 uncultured Eubacteriales bacterium,143,0,0,0,0,138
+GCA_900548145.1 uncultured Eubacteriales bacterium,335,0,0,930,0,0
+GCA_900548615.1 uncultured Eubacteriales bacterium,84,0,0,0,0,0
+GCA_900548625.1 uncultured Eubacteriales bacterium,407,0,0,0,0,0
+GCA_900549055.1 uncultured Oscillospiraceae bacterium,0,0,0,404,0,0
+GCA_900549705.1 uncultured Eubacteriales bacterium,268,0,0,0,0,0
+GCA_900549755.1 uncultured Oscillospiraceae bacterium,245,0,0,0,0,0
+GCA_900549805.1 uncultured Veillonella sp.,0,0,0,0,53,0
+GCA_900550055.1 uncultured Coriobacteriaceae bacterium,0,0,0,0,0,214
+GCA_900550165.1 uncultured Eubacteriales bacterium,0,0,0,2712,0,0
+GCA_900550175.1 uncultured Veillonella sp.,0,305,269,0,136,0
+GCA_900550625.1 uncultured Eubacteriales bacterium,298,0,0,177,0,0
+GCA_900550635.1 uncultured Prevotella sp.,0,0,0,0,0,611
+GCA_900550685.1 uncultured Oscillibacter sp.,0,0,0,64,0,110
+GCA_900551295.1 uncultured Eubacteriales bacterium,175,0,0,0,0,0
+GCA_900551415.1 uncultured Eubacteriales bacterium,155,0,0,0,0,0
+GCA_900551715.1 uncultured Blautia sp.,465,0,0,0,0,0
+GCA_900551745.1 uncultured Phascolarctobacterium sp.,110,0,0,531,0,0
+GCA_900551945.1 uncultured Eubacterium sp.,0,0,0,735,0,0
+GCA_900552015.1 uncultured Eubacteriales bacterium,0,0,0,246,0,0
+GCA_900552225.1 uncultured Oscillospiraceae bacterium,0,0,0,399,0,0
+GCA_900552235.1 uncultured Mycoplasmatota bacterium,0,0,0,621,0,0
+GCA_900552285.1 uncultured Oscillospiraceae bacterium,832,0,0,0,0,93
+GCA_900552445.1 uncultured Veillonella sp.,208,0,115,0,92,0
+GCA_900552475.1 uncultured Eubacteriales bacterium,928,0,0,2552,0,2644
+GCA_900552715.1 uncultured Veillonella sp.,0,0,0,0,1050,0
+GCA_900553105.1 uncultured Sutterella sp.,229,0,0,0,0,0
+GCA_900553145.1 uncultured Desulfovibrio sp.,0,757,0,0,0,0
+GCA_900553315.1 uncultured Eubacteriales bacterium,129,0,0,0,0,0
+GCA_900554225.1 uncultured Eubacteriales bacterium,104,0,0,0,0,0
+GCA_900554775.1 uncultured Oscillospiraceae bacterium,0,0,0,0,0,413
+GCA_900555735.1 uncultured Eubacteriales bacterium,3897,0,0,0,0,0
+GCA_900556625.1 uncultured Bacteroides sp.,0,0,0,250,0,64
+GCA_900556795.1 uncultured Prevotella sp.,3220,0,0,0,0,0
+GCA_900557355.1 uncultured Bacteroides sp.,691,0,0,1821,0,439
+GCA_900557595.1 Candidatus Saccharibacteria bacterium,0,0,0,0,87,0
+GCA_900637705.1 Fusobacterium varium,0,0,0,0,307,0
+GCA_900755085.1 uncultured Streptococcus sp.,0,80,0,0,0,0
+GCA_900755095.1 uncultured Bacteroides sp.,148,165,0,90,1710,165
+GCA_900756575.1 uncultured Oscillospiraceae bacterium,321,0,0,0,0,0
+GCA_900756875.1 Pasteurellaceae bacterium,0,0,1416,0,0,0
+GCA_900757415.1 uncultured Oscillospiraceae bacterium,157,0,0,0,0,0
+GCA_900757485.1 Oscillospiraceae bacterium,0,0,0,0,0,159
+GCA_900757715.1 uncultured Veillonella sp.,68,1438,0,322,1230,0
+GCA_900757795.1 uncultured Phascolarctobacterium sp.,5640,0,0,0,0,0
+GCA_900759005.1 Clostridia bacterium,156,0,0,0,0,0
+GCA_900760795.1 Bacteroidaceae bacterium,0,5220,0,484,0,74
+GCA_900761475.1 Clostridia bacterium,546,0,0,0,0,0
+GCA_900763355.1 Clostridia bacterium,110,0,0,0,0,0
+GCA_900765165.1 Veillonellaceae bacterium,0,1153,0,0,0,0
+GCA_900765465.1 uncultured Prevotella sp.,0,0,0,104,0,650
+GCA_900765705.1 uncultured Faecalibacterium sp.,238,0,0,861,0,516
+GCA_900766125.1 uncultured Veillonella sp.,0,0,0,0,210,0
+GCA_900768815.1 Bacilli bacterium,3078,0,0,0,0,0
+GCA_900770265.1 uncultured Acidaminococcus sp.,0,2328,0,0,0,0
+GCA_900772675.1 Lachnospiraceae bacterium,152,0,1240,1120,0,315
+GCA_902363135.1 Lachnospiraceae bacterium,832,0,0,301,0,828
+GCA_902363665.1 Lachnospiraceae bacterium,782,0,0,209,0,240
+GCA_902364505.1 Coriobacteriaceae bacterium,0,0,5202,0,0,0
+GCA_902406135.1 uncultured Eubacteriales bacterium,0,0,0,105,0,0
+GCA_902463235.1 uncultured Faecalibacterium sp.,234,0,0,276,0,190
+GCA_902463905.1 uncultured Faecalibacterium sp.,230,0,0,0,0,280
+GCA_902464115.1 uncultured Ruminococcus sp.,2810,0,0,0,0,480
+GCA_902475955.1 uncultured Oscillibacter sp.,89,0,0,0,0,0
+GCA_902477915.1 uncultured Veillonella sp.,0,0,0,0,2036,0
+GCA_902478055.1 uncultured Veillonella sp.,0,0,0,0,168,0
+GCA_902481695.1 uncultured Haemophilus sp.,0,165,0,0,0,0
+GCA_902491835.1 uncultured Alistipes sp.,0,0,0,160,0,0
+GCA_902494945.1 uncultured Collinsella sp.,0,0,0,0,0,186
+GCA_902781225.1 uncultured Lachnospiraceae bacterium,288,0,0,133,0,206
+GCA_902786155.1 uncultured Lachnospiraceae bacterium,270,0,0,3432,0,4114
+GCA_904394705.1 Candidatus Avimicrobium caecorum,108,0,0,0,0,278
+GCA_904419295.1 Candidatus Pseudobutyricicoccus lothianensis,177,0,0,0,0,0
+GCA_905193415.1 uncultured Roseburia sp.,106,0,0,0,0,219
+GCA_905193635.1 Coriobacteriaceae bacterium,0,0,0,0,0,210
+GCA_905198295.1 uncultured Oscillospiraceae bacterium,1220,0,0,0,0,0
+GCA_905200645.1 uncultured Phascolarctobacterium sp.,585,0,0,0,0,0
+GCA_905205665.1 uncultured Firmicutes bacterium,0,0,0,0,0,484
+GCA_905206365.1 uncultured Sutterella sp.,0,0,0,0,0,352
+GCA_905206455.1 uncultured Eubacteriales bacterium,564,0,0,616,0,879
+GCA_905214155.1 uncultured bacterium,160,0,0,0,0,0
+GCA_905214495.1 uncultured bacterium,0,53,0,0,676,0
+GCA_905214525.1 uncultured bacterium,0,0,0,0,2556,0
+GCA_905214955.1 uncultured bacterium,471,0,0,0,0,470
+GCA_905215425.1 uncultured bacterium,88,0,0,0,0,0
+GCA_905215475.1 uncultured bacterium,540,0,0,0,0,0
+GCA_905215595.1 uncultured bacterium,284,904,0,0,0,1280
+GCA_905215775.1 uncultured bacterium,88,0,0,0,0,0
+GCA_905215855.1 uncultured bacterium,0,0,0,0,7176,0
+GCA_916988195.3 Oscillospiraceae bacterium,212,0,0,110,0,0
+GCA_934096035.1 uncultured Bacilli bacterium,900,0,0,0,0,0
+GCA_934131055.1 uncultured Clostridia bacterium,833,0,0,0,0,0
+GCA_934193095.1 uncultured Dialister sp.,0,0,0,0,0,924
+GCA_934230115.1 uncultured Prevotella sp.,0,0,0,0,0,20839
+GCA_934230685.1 uncultured Prevotella sp.,0,0,0,0,0,1520
+GCA_934277655.1 uncultured Clostridia bacterium,0,0,0,0,0,151
+GCA_934281605.1 uncultured Clostridia bacterium,0,0,0,0,0,158
+GCA_934292725.1 uncultured Lachnospiraceae bacterium,200,0,0,176,0,558
+GCA_934309195.1 uncultured Dorea sp.,213,0,0,0,0,204
+GCA_934320555.1 uncultured Roseburia sp.,0,0,0,151,0,0
+GCA_934320645.1 uncultured Bariatricus sp.,198,0,0,0,0,0
+GCA_934351765.1 uncultured Lachnospiraceae bacterium,112,0,0,0,0,0
+GCA_934365155.1 uncultured Eubacteriales bacterium,158,0,0,0,0,0
+GCA_934426285.1 uncultured Blautia sp.,114,0,0,150,0,0
+GCA_934435195.1 uncultured Schaedlerella sp.,0,0,0,553,0,101
+GCA_934436505.1 uncultured Eubacteriales bacterium,0,0,0,0,0,9310
+GCA_934503275.1 uncultured Faecalibacterium sp.,0,0,0,0,0,1000
+GCA_934514285.1 uncultured Faecalibacterium sp.,376,0,0,804,8946,454
+GCA_934524985.1 uncultured Faecalibacterium sp.,0,0,0,0,0,198
+GCA_934591815.1 uncultured Oscillospiraceae bacterium,0,0,0,326,0,0
+GCA_934591895.1 uncultured Oscillospiraceae bacterium,244,0,0,0,0,0
+GCA_934597345.1 uncultured Oscillospiraceae bacterium,172,0,0,0,0,0
+GCA_934643185.1 uncultured Eubacteriales bacterium,0,0,0,0,0,66
+GCA_934717555.1 uncultured Clostridium sp.,0,0,0,80,0,0
+GCA_934717855.1 uncultured Candidatus Melainabacteria bacterium,0,0,0,3429,0,0
+GCA_934875375.1 uncultured bacterium,0,0,0,0,0,103
+GCA_934876235.1 Collinsella sp. AF02-46-1,1105,0,16384,584,0,1800
+GCA_937922955.1 uncultured Peptococcaceae bacterium,0,0,0,0,0,2188
+GCA_937926875.1 uncultured Desulfovibrio sp.,3164,0,0,0,0,228
+GCA_937935345.1 uncultured Lachnobacterium sp.,525,0,0,5037,0,6364
+GCA_937944945.1 uncultured Clostridium sp.,148,0,0,0,0,0
+GCA_937950415.1 uncultured Collinsella sp.,189,0,0,0,0,0
+GCA_937967235.1 uncultured Clostridia bacterium,391,0,0,211,0,0
+GCA_938049125.1 uncultured Clostridia bacterium,97,0,0,0,0,0
+GCA_944386585.1 uncultured Clostridia bacterium,287,0,0,0,0,0
+GCA_945923775.1 uncultured Clostridia bacterium,0,0,0,0,0,590
+GCA_945929965.1 uncultured Lachnospiraceae bacterium,282,0,0,0,0,86
+GCA_945963595.1 uncultured Clostridia bacterium,72,0,0,0,0,0
+GCA_945965395.1 uncultured Bacteroides sp.,0,0,0,0,0,149
+GCA_947038155.1 uncultured Bacteroides sp.,0,240,0,0,0,0
+GCA_947096075.1 Veillonella parvula,0,100,0,0,51,0
+GCA_947646015.1 uncultured Bacteroides sp.,193,1359,0,117,4168,323
+GCA_948742525.1 Bacteroides caecimuris,0,0,0,0,486,0
+GCA_948847595.1 uncultured Bacteroides sp.,0,506,0,0,1206,53
+GCA_949290765.1 Oxalobacter formigenes,0,0,0,0,0,53
+GCA_958348475.1 uncultured Collinsella sp.,336,0,0,0,0,0
+GCA_958349165.1 uncultured Actinomyces sp.,0,0,425,0,0,0
+GCA_958351665.1 Veillonella infantium,0,0,0,0,387,0
+GCA_958432865.1 Bacteroides stercoris,600,4767,0,477,0,384
+GCA_958436995.1 uncultured Collinsella sp.,415,0,0,0,0,0
+GCA_958446555.1 uncultured Lachnospiraceae bacterium,138,0,0,0,0,284
+GCA_958454115.1 Blautia wexlerae,532,1312,464,704,0,1056
+GCA_958477305.1 uncultured Oscillospiraceae bacterium,0,0,0,232,0,0
+GCA_959596915.1 Segatella copri,5071,0,0,0,0,5040
+GCA_959600905.1 uncultured Eubacteriales bacterium,0,0,0,86,0,0
+GCA_959607825.1 uncultured Oscillospiraceae bacterium,0,0,0,373,0,986
+GCA_963531605.1 uncultured Actinomyces sp.,0,0,0,0,184,0
+GCA_963539855.1 uncultured Veillonella sp.,0,0,0,0,600,0
+GCA_963587495.1 Clostridia bacterium,880,0,0,3009,0,543
+GCA_963595255.1 bacterium,212,0,0,480,0,555
+GCA_963597545.1 Fusicatenibacter saccharivorans,0,0,0,0,0,3070
+GCA_963638105.1 Agathobacter rectalis,780,0,0,1080,0,0
+GCA_964259225.1 Catenibacterium mitsuokai DSM 15897,1762,0,0,0,0,633
+GCF_000010425.1 Bifidobacterium adolescentis ATCC 15703,2200,0,0,0,0,260
+GCF_000011065.1 Bacteroides thetaiotaomicron VPI-5482,1300,19188,0,1001,30616,2060
+GCF_000012545.1 Methanosphaera stadtmanae DSM 3091,2138,0,0,0,0,0
+GCF_000012845.1 Parabacteroides distasonis ATCC 8503,1316,0,0,1483,0,1321
+GCF_000016525.1 Methanobrevibacter smithii ATCC 35061,5960,0,0,0,0,0
+GCF_000020225.1 Akkermansia muciniphila ATCC BAA-835,678,0,0,0,0,0
+GCF_000020605.1 Agathobacter rectalis ATCC 33656,4746,0,0,33984,0,56630
+GCF_000024265.1 Eggerthella lenta DSM 2243,0,1589,0,171,1513,0
+GCF_000024945.1 Veillonella parvula DSM 2008,0,0,0,0,67,0
+GCF_000025565.1 Enterobacter cloacae subsp. cloacae ATCC 13047,0,0,0,0,0,368
+GCF_000025985.1 Bacteroides fragilis NCTC 9343,0,10311,0,0,156,194
+GCF_000146185.1 [Eubacterium] eligens ATCC 27750,346,0,0,522,472,374
+GCF_000153925.1 [Ruminococcus] torques ATCC 27756,0,3900,0,1402,0,0
+GCF_000154285.1 Amedibacillus dolichus DSM 3991,0,0,0,0,155,0
+GCF_000154445.1 Intestinibacter bartlettii DSM 16795,0,6639,813,331,3454,125
+GCF_000154465.1 Alistipes putredinis DSM 17216,704,0,0,7820,0,1054
+GCF_000154985.1 Streptococcus infantarius subsp. infantarius ATCC BAA-102,421,0,0,205,0,153
+GCF_000156375.1 Desulfovibrio piger ATCC 29098,0,0,0,0,0,5019
+GCF_000156655.1 Holdemanella biformis DSM 3989,7765,0,0,0,0,0
+GCF_000158195.2 Fusobacterium mortiferum ATCC 9817,181,0,0,0,0,354
+GCF_000160055.1 Dialister invisus DSM 15470,0,0,0,0,2028,0
+GCF_000160755.1 Proteus mirabilis ATCC 29906,0,0,911,0,0,0
+GCF_000164675.2 Streptococcus parasanguinis ATCC 15912,0,0,0,0,74,0
+GCF_000165735.1 Megasphaera micronuciformis F0359,0,0,317,0,2314,0
+GCF_000172175.1 Bacteroides intestinalis DSM 17393,307,0,0,16768,0,0
+GCF_000173975.1 Anaerobutyricum hallii DSM 3353,11330,0,0,8100,0,11130
+GCF_000174195.1 Roseburia inulinivorans DSM 16841,462,0,0,3770,0,3984
+GCF_000185505.1 Pseudoramibacter alactolyticus ATCC 23263,0,0,0,0,182,0
+GCF_000187895.1 Phocaeicola plebeius DSM 17135,0,0,0,0,0,228
+GCF_000188295.1 Streptococcus vestibularis ATCC 49124,98,0,0,0,130,0
+GCF_000190535.1 Odoribacter splanchnicus DSM 20712,6516,0,0,193,0,1542
+GCF_000193635.1 Weissella cibaria KACC 11862,0,0,0,0,0,113
+GCF_000196555.1 Bifidobacterium longum subsp. longum JCM 1217,2782,27885,97305,518,65559,146
+GCF_000205165.1 Paraprevotella xylaniphila YIT 11841,0,0,0,1146,0,560
+GCF_000210055.1 Gordonibacter pamelaeae 7-10-1-b,0,0,0,515,0,0
+GCF_000210075.1 Bacteroides xylanisolvens XB1A,1144,0,0,1781,21320,1567
+GCF_000225345.1 Roseburia hominis A2-183,3296,0,0,1063,0,1282
+GCF_000225705.1 Collinsella tanakaei YIT 12063,512,0,0,335,0,0
+GCF_000233955.1 Paraprevotella clara YIT 11840,617,0,0,12324,0,3636
+GCF_000235885.1 Leyella stercorea DSM 18206,833,0,0,0,0,27500
+GCF_000236865.1 Senegalimassilia anaerobia JC110,0,0,0,1660,0,0
+GCF_000239275.1 Anaeroglobus geminatus F0357,0,0,167,0,0,0
+GCF_000239295.1 Flavonifractor plautii ATCC 29863,0,3896,188,621,1426,400
+GCF_000265365.1 Alistipes finegoldii DSM 17242,456,0,0,0,0,0
+GCF_000269965.1 Bifidobacterium longum subsp. infantis ATCC 15697 = JCM 1222 = DSM 20088,0,138274,5311,0,8943,0
+GCF_000271405.2 Enterococcus hirae ATCC 9790,844,136,369,0,0,0
+GCF_000278725.1 Actinomyces sp. ICM47,0,0,0,0,858,0
+GCF_000296445.1 Slackia piriformis YIT 12062,243,0,0,0,0,0
+GCF_000296465.1 Barnesiella intestinihominis YIT 11860,5901,0,0,0,0,301
+GCF_000297775.1 Sutterella wadsworthensis 2_1_59BFAA,659,0,0,854,3126,2290
+GCF_000313565.1 Dielma fastidiosa,0,165,0,0,0,0
+GCF_000327285.1 Holdemania massiliensis AP2,0,0,0,172,0,0
+GCF_000382445.1 Phocaeicola massiliensis B84634 = Timone 84634 = DSM 17679 = JCM 13223,203,0,0,0,0,970
+GCF_000406965.1 Enterococcus avium ATCC 14025,0,4306,0,0,710,0
+GCF_000424345.1 Dorea longicatena AGR2136,1125,0,0,1336,0,5488
+GCF_000426485.1 Dysgonomonas capnocytophagoides DSM 22835,0,0,4040,0,0,0
+GCF_000429265.1 Actinomyces gerencseriae DSM 6844,0,0,0,0,202,0
+GCF_000435835.1 Clostridium sp. CAG:221,0,0,0,0,1579,206
+GCF_000468015.1 Ruminococcus callidus ATCC 27760,3240,0,0,0,0,0
+GCF_000469345.1 Eubacterium ramulus ATCC 29099,0,0,0,0,0,478
+GCF_000479335.1 Streptococcus ilei,0,0,0,0,0,158
+GCF_000577815.1 Clostridium saudiense,0,1503,0,0,9525,388
+GCF_000614125.1 Bacteroides rodentium JCM 16496,0,8512,0,0,4446,0
+GCF_000701705.1 Bilophila wadsworthia ATCC 49260,1635,0,0,1624,566,386
+GCF_000702905.1 Mitsuokella jalaludinii DSM 13811,398,0,0,0,0,0
+GCF_000742135.1 Klebsiella pneumoniae,926,1336,324,0,0,38048
+GCF_000785515.1 Streptococcus salivarius,9714,0,624,0,876,312
+GCF_000800455.1 Bifidobacterium catenulatum PV20-2,0,5530,0,890,0,0
+GCF_000821265.1 Collinsella bouchesdurhonensis,0,0,0,0,0,219
+GCF_000828055.2 Klebsiella variicola,0,0,0,0,0,647
+GCF_000949455.1 Ruthenibacterium lactatiformans,0,0,0,339,0,675
+GCF_000953675.1 Paraclostridium sordellii,0,0,0,0,363,0
+GCF_000969825.1 Parabacteroides gordonii MS-1 = DSM 23371,0,0,0,627,0,0
+GCF_000969835.1 Parabacteroides goldsteinii DSM 19448 = WAL 12034,0,452,0,0,0,0
+GCF_001025135.1 Bifidobacterium bifidum ATCC 29521 = JCM 1255 = DSM 20456,0,74475,265650,0,0,0
+GCF_001025175.1 Bifidobacterium breve DSM 20213 = JCM 1192,0,17740,13736,0,2258,0
+GCF_001025195.1 Bifidobacterium catenulatum DSM 16992 = JCM 1194 = LMG 11043,0,0,0,1104,0,0
+GCF_001025215.1 Bifidobacterium pseudocatenulatum DSM 20438 = JCM 1200 = LMG 10505,0,12632,111230,35300,704,234
+GCF_001042595.1 Bifidobacterium dentium JCM 1195 = DSM 20436,0,0,812,0,5325,0
+GCF_001053575.1 Haemophilus parainfluenzae,0,0,64,0,0,0
+GCF_001074805.1 Streptococcus parasanguinis,0,0,0,0,52,0
+GCF_001078375.1 Veillonella tobetsuensis,0,0,0,0,432,0
+GCF_001280875.1 Sellimonas intestinalis,0,17136,0,0,10872,0
+GCF_001314995.1 Bacteroides ovatus,2493,0,0,451,4914,2583
+GCF_001406815.1 Roseburia faecis,5334,5307,0,0,0,5082
+GCF_001434465.1 Limosilactobacillus oris DSM 4864,0,0,160,0,0,0
+GCF_001434535.1 Ligilactobacillus animalis KCTC 3501 = DSM 20602,0,0,0,0,0,2584
+GCF_001435955.1 Ligilactobacillus salivarius DSM 20555 = ATCC 11741,2054,0,757,0,0,0
+GCF_001436025.1 Limosilactobacillus mucosae DSM 13345,0,0,0,0,485,0
+GCF_001487105.1 Mediterraneibacter massiliensis,0,0,0,0,0,130
+GCF_001517625.2 Clostridium sp. AT4,0,0,0,0,9804,0
+GCF_001544095.1 Enterococcus casseliflavus NBRC 100478,0,0,767,0,0,0
+GCF_001544275.1 Enterococcus gallinarum NBRC 100675,0,0,2866,0,0,0
+GCF_001654985.1 Kluyvera georgiana ATCC 51603,0,0,0,0,0,752
+GCF_001679325.1 Haemophilus parainfluenzae,0,194,0,0,0,0
+GCF_001729785.1 Enterobacter hormaechei subsp. xiangfangensis,0,1126,0,0,0,1982
+GCF_001729805.1 Enterobacter roggenkampii,0,0,0,0,0,713
+GCF_001746855.1 Pauljensenia hongkongensis,0,268,0,0,0,0
+GCF_001754075.1 Merdimonas faecis,0,421,0,0,0,0
+GCF_001886185.1 Enterococcus raffinosus,0,484,0,0,0,0
+GCF_001956585.1 Actinomyces naeslundii,0,519,0,0,130,0
+GCF_002094975.1 Streptococcus salivarius,1312,0,124,0,47658,0
+GCF_002154895.1 Lactococcus petauri,0,0,0,0,0,171
+GCF_002222595.2 Blautia hansenii DSM 20583,0,0,0,0,573,0
+GCF_002222615.2 Bacteroides caccae,457,0,0,10548,25614,281
+GCF_002234575.2 Enterocloster bolteae,0,924,0,0,2428,0
+GCF_002265625.1 Prevotella sp. 885,24330,0,0,0,0,0
+GCF_002269255.1 Klebsiella quasivariicola,0,0,0,0,0,704
+GCF_002270465.1 Blautia hominis,0,0,0,0,1113,0
+GCF_002441855.2 Eubacterium maltosivorans,205,0,0,0,0,0
+GCF_002834225.1 Ruminococcus bromii,0,0,0,0,3969,0
+GCF_002902665.1 Macrococcoides caseolyticum,741,0,0,0,0,0
+GCF_002959755.1 Veillonella sp. T11011-6,0,0,0,0,6045,0
+GCF_002959775.1 Veillonella rogosae JCM 15642,555,0,0,0,0,0
+GCF_002959895.1 Veillonella infantium,0,0,0,0,3236,0
+GCF_002959915.1 Veillonella atypica KON,0,199,176,0,13940,0
+GCF_002965065.1 Escherichia sp. MOD1-EC7003,0,0,2349,0,0,0
+GCF_002998925.1 Mogibacterium diversum,0,0,0,0,237,0
+GCF_003024675.1 Faecalibacillus faecis,295,0,0,0,0,2234
+GCF_003024685.1 Faecalibacillus intestinalis,960,0,0,1113,0,553
+GCF_003024715.1 Clostridium fessum,3100,0,0,1299,0,6306
+GCF_003096415.1 Victivallis vadensis,0,0,0,338,0,0
+GCF_003096535.1 Agathobaculum butyriciproducens,3726,0,7590,528,0,1990
+GCF_003122485.1 Eubacterium ramulus,875,0,0,0,0,1036
+GCF_003201875.1 Hungatella effluvii,0,397,0,0,312,0
+GCF_003269275.1 Phascolarctobacterium faecium DSM 14760,5415,0,0,29265,0,152
+GCF_003287495.1 Faecalibacterium prausnitzii,0,0,0,4035,0,2034
+GCF_003315195.1 Sutterella wadsworthensis,0,0,0,0,0,563
+GCF_003324185.1 Faecalibacterium prausnitzii,3402,12501,0,0,0,15574
+GCF_003402575.1 Mesosutterella multiformis,0,1235,0,0,0,0
+GCF_003425665.1 Evtepia gabavorous,2828,958,0,1531,0,4252
+GCF_003434055.1 Enterocloster aldenensis,0,2640,0,0,0,0
+GCF_003437535.1 Phocaeicola plebeius,0,0,0,0,0,858
+GCF_003438075.1 Eubacterium sp. OM08-24,1296,0,0,665,0,0
+GCF_003458705.1 Eubacterium sp. AF22-9,214,0,0,888,1470,0
+GCF_003463065.1 Blautia sp. OF03-15BH,633,0,0,0,0,668
+GCF_003465495.1 Segatella copri,378,0,0,232,0,954
+GCF_003466125.1 Collinsella sp. TM10-22,327,0,0,0,0,0
+GCF_003473545.1 Clostridium sp. AM22-11AC,563,0,0,1586,0,1561
+GCF_003474385.1 Eggerthella sp. AM16-19,0,0,0,330,0,0
+GCF_003478335.1 Clostridium sp. AM49-4BH,0,0,0,1143,0,0
+GCF_003478505.1 Clostridium sp. AF27-2AA,0,0,0,0,0,230
+GCF_003481825.1 Clostridium sp. OM02-18AC,0,0,0,0,0,297
+GCF_003481985.1 Clostridium sp. OF09-36,242,0,0,0,0,183
+GCF_003574295.1 Mediterraneibacter butyricigenes,195,0,0,164,0,0
+GCF_003584685.1 Lactobacillus paragasseri,737,0,208,0,0,0
+GCF_003628755.1 Christensenella minuta,0,0,0,0,0,127
+GCF_003697165.2 Escherichia coli DSM 30083 = JCM 1649 = ATCC 11775,3916,3660,57488,0,2011,10116
+GCF_003725955.1 Slackia isoflavoniconvertens,0,0,0,0,0,502
+GCF_003818115.1 Citrobacter youngae,0,0,276,0,0,0
+GCF_003865035.1 Anaerotignum faecicola,560,0,0,0,0,1854
+GCF_003950315.1 Vagococcus bubulae,334,0,0,0,0,0
+GCF_003991565.1 Butyricimonas faecalis,0,0,0,2476,0,0
+GCF_004123145.1 Blautia faecicola,153,0,0,9132,0,0
+GCF_004135645.1 Senegalimassilia faecalis,0,0,0,0,0,431
+GCF_004211955.1 Escherichia sp. E1V33,0,0,7236,0,0,885
+GCF_004353185.1 Clostridium cuniculi,0,0,0,0,394,0
+GCF_004793765.1 Parabacteroides distasonis,143,0,0,152,0,158
+GCF_004843545.1 Streptococcus pasteurianus,0,0,70520,2644,814,0
+GCF_005121165.3 Dysosmobacter welbionis,450,0,0,1227,0,303
+GCF_005696695.1 Schaalia odontolytica,0,0,276,0,0,0
+GCF_005848555.1 Blautia sp. SC05B48,11045,806,0,36784,0,8636
+GCF_006385805.1 Streptococcus xiaochunlingii,0,0,161,0,0,0
+GCF_006542665.1 Alistipes communis,5481,0,0,8444,0,1170
+GCF_006739205.1 Streptococcus mutans,0,0,0,0,130,0
+GCF_007164725.1 Dialister hominis,8625,0,0,91,0,0
+GCF_007991875.1 Weissella confusa,0,0,0,0,0,216
+GCF_008121495.1 Mediterraneibacter gnavus ATCC 29149,201,13930,0,357,188565,0
+GCF_008831035.1 Ellagibacter isourolithinifaciens,0,0,0,0,0,210
+GCF_009193325.2 Bacteroides zhangwenhongii,395,0,0,5164,0,2327
+GCF_009494395.1 Segatella copri,49259,0,0,0,0,0
+GCF_009494485.1 Segatella copri,756,0,0,0,0,0
+GCF_009495355.1 Segatella copri,9108,0,0,25432,0,4401
+GCF_009677585.1 Lactonifactor sp. BIOML-A5,0,1358,0,0,0,0
+GCF_009680455.1 Lachnospira eligens,2372,0,0,14376,10885,4242
+GCF_009695995.1 Waltera intestinalis,5344,0,0,0,0,646
+GCF_009696065.1 Oliverpabstia intestinalis,562,0,0,704,0,0
+GCF_009738225.1 Streptococcus salivarius,792,0,90,0,3300,0
+GCF_009883055.1 Blautia sp. BIOML-A1,505,0,0,0,0,0
+GCF_010120595.1 Streptococcus thermophilus,0,6920,6620,0,0,0
+GCF_010509575.1 Faecalibacterium duncaniae,1560,5875,0,3336,0,3975
+GCF_010669225.1 Megamonas funiformis,27468,24160,0,6920,194404,5205
+GCF_012113595.1 Bacteroides faecium,0,5516,0,803,0,0
+GCF_012922555.1 Paraclostridium dentum,0,0,0,0,455,0
+GCF_013009555.1 Phocaeicola dorei,2084,8888,0,0,0,4362
+GCF_013046825.1 Turicibacter sanguinis,0,1167,0,0,0,468
+GCF_013282095.1 Enterocloster alcoholdehydrogenati,0,0,0,0,1907,0
+GCF_013300725.1 Coprococcus comes,783,0,0,495,0,663
+GCF_013300825.1 Blautia wexlerae,681,2618,1664,1345,0,1782
+GCF_013304445.1 Blautia hansenii,0,1618,0,0,0,0
+GCF_013393365.1 Veillonella nakazawae,0,0,0,0,864,0
+GCF_014131695.1 Thomasclavelia ramosa DSM 1402,0,4732,5030,0,7908,0
+GCF_014287335.1 Streptococcus hominis,0,0,129,0,0,0
+GCF_014287355.1 Ruminococcus hominis,429,0,0,4647,0,1052
+GCF_014287435.1 Roseburia lenta,0,0,0,460,0,0
+GCF_014287455.1 Butyricimonas hominis,639,0,0,0,0,0
+GCF_014287515.2 Roseburia rectibacter,3936,0,0,361,0,0
+GCF_014287585.1 Parabacteroides hominis,674,0,0,0,0,0
+GCF_014287615.1 Blautia celeris,0,1922,0,0,0,0
+GCF_014287635.1 Roseburia zhanii,0,0,0,0,0,252
+GCF_014287815.1 Clostridium lentum,0,0,0,0,96,0
+GCF_014287825.1 Clostridium hominis,0,0,0,0,341,0
+GCF_014288065.1 Ruminococcus intestinalis,11424,0,0,5628,0,0
+GCF_014297245.1 Blautia difficilis,897,0,0,1058,0,450
+GCF_014297285.1 Dysosmobacter segnis,3800,0,0,2676,0,616
+GCF_014297355.1 Blautia intestinalis,553,0,0,894,0,1466
+GCF_014306095.1 Lentihominibacter faecis,178,0,0,226,0,0
+GCF_014384965.1 Jutongia hominis,448,0,0,0,0,566
+GCF_014385065.1 Lentihominibacter hominis,0,0,0,521,0,89
+GCF_014467075.1 Anaerostipes caccae L1-92,0,300,0,0,878,0
+GCF_014931395.1 Haemophilus parainfluenzae,0,532,0,0,0,0
+GCF_014931415.1 Haemophilus parainfluenzae,0,1900,0,0,0,0
+GCF_015074785.1 Segatella copri,31317,0,0,1080,0,14630
+GCF_015751045.1 Enterococcus lactis,132,0,0,0,0,0
+GCF_016027375.1 Clostridium perfringens,184,0,0,0,4116,785
+GCF_016642265.1 Streptococcus lactarius,0,453,0,0,0,0
+GCF_016803255.1 Segatella copri,0,0,0,3496,0,0
+GCF_017873245.1 Clostridium tertium,0,0,0,0,190,0
+GCF_018381775.1 Veillonella sp.,0,0,0,0,228,0
+GCF_018408575.1 Vescimonas coprocola,0,0,0,703,0,251
+GCF_018408705.1 Pusillibacter faecalis,0,0,0,350,0,0
+GCF_018783925.1 Veillonella parvula,0,176,17072,0,684,0
+GCF_018784445.1 Gemmiger formicilis,304,0,0,0,0,0
+GCF_018918025.1 Oscillibacter sp. MSJ-31,777,0,0,5145,0,1798
+GCF_018918145.1 Anaerotignum sp. MSJ-24,0,0,0,0,0,258
+GCF_018982785.1 Enterococcus innesii,0,0,360,0,0,0
+GCF_019052365.1 Leyella stercorea,9387,0,0,0,0,0
+GCF_019127135.1 Segatella copri,3484,0,0,0,0,19600
+GCF_019243775.1 Morganella morganii,0,0,1844,0,0,0
+GCF_019249655.2 Segatella copri,0,0,0,836,0,0
+GCF_019249795.2 Segatella copri,0,0,0,560,0,0
+GCF_019583405.1 Bacteroides fragilis,532,0,0,0,0,0
+GCF_019734195.1 Clostridium sp. K13,0,0,0,0,1079,0
+GCF_019734885.1 Coprococcus catus,1457,0,0,436,0,392
+GCF_019967995.1 Faecalibacterium prausnitzii,4314,0,0,0,0,8958
+GCF_020525925.1 Klebsiella quasipneumoniae subsp. quasipneumoniae,0,0,631,0,0,2240
+GCF_020526085.1 Klebsiella africana,0,0,0,0,0,528
+GCF_020554845.1 Blautia faecis,1606,0,0,12076,0,1220
+GCF_020564355.1 Lachnospira pectinoschiza,125,0,0,0,0,271
+GCF_020686945.1 Fusicatenibacter faecihominis,510,0,0,558,0,803
+GCF_020686965.1 Hominiventricola filiformis,0,0,0,0,0,328
+GCF_020687045.1 Brotocaccenecus cirricatena,2502,0,0,0,0,2242
+GCF_020687165.1 Hominenteromicrobium mulieris,526,0,0,0,0,610
+GCF_020687205.1 Hominisplanchenecus faecis,974,0,0,0,0,1268
+GCF_020687245.1 Faecalibacterium longum CLA-AA-H243,1992,0,0,4860,51576,3231
+GCF_020687385.1 Hominilimicola fabiformis,2920,695,0,233,0,1085
+GCF_020687435.1 Blautia fusiformis,0,3320,0,700,0,400
+GCF_020687505.1 Coprococcus hominis (ex Arizal et al. 2022),713,0,0,15575,0,1348
+GCF_021044775.1 Paraeggerthella hominis,0,0,0,0,962,0
+GCF_021044795.1 Acidaminococcus hominis,0,1110,0,0,0,0
+GCF_021109255.1 Merdimmobilis hominis,0,198,0,0,0,170
+GCF_021531355.1 Leyella stercorea,0,0,0,191,0,0
+GCF_022655055.1 Vagococcus sp. CY52-2,710,0,0,0,0,0
+GCF_022809355.1 Parabacteroides faecalis,803,0,0,0,0,773
+GCF_023109335.1 Streptococcus salivarius,1134,0,217,0,1916,0
+GCF_023347295.1 Faecalibacterium sp. I3-3-33,519,0,0,0,0,1000
+GCF_023347535.1 Faecalibacterium sp. HTF-F,318,0,0,0,0,0
+GCF_023617305.1 Methanobrevibacter sp. TLL-48-HuF1,340,0,0,0,0,0
+GCF_024330295.1 Segatella copri,73242,0,0,130,0,15344
+GCF_024330485.1 Segatella copri,1897,0,0,0,0,1661
+GCF_024460475.1 Holdemanella sp. MSK.7.32,0,0,0,0,0,197
+GCF_024461875.1 Veillonella parvula,0,286,216,0,88,0
+GCF_024463135.1 Streptococcus parasanguinis,0,0,0,0,61,0
+GCF_024499055.1 Turicibacter bilis,0,220,0,0,850,0
+GCF_024622195.1 Murimonas intestini,0,250,0,0,0,0
+GCF_024622975.1 Blautia caecimuris,0,0,0,0,47540,0
+GCF_024637875.1 Vagococcus luciliae,162,0,0,0,0,0
+GCF_025144665.1 Alistipes ihumii AP11,0,0,0,2894,0,947
+GCF_025144995.1 Alistipes indistinctus YIT 12060,148,0,0,4094,0,1064
+GCF_025145285.1 Alistipes onderdonkii,0,0,0,12696,0,3362
+GCF_025145645.1 Alistipes senegalensis JC50,359,0,0,0,0,0
+GCF_025145845.1 Alistipes shahii WAL 8301,4078,0,0,35126,0,4182
+GCF_025146565.1 Bacteroides eggerthii,0,0,0,0,0,266
+GCF_025147325.1 Bacteroides stercoris ATCC 43183,6999,45288,0,521,0,1584
+GCF_025147485.1 Bacteroides uniformis,976,51810,0,135652,48510,11836
+GCF_025147765.1 Blautia obeum ATCC 29174,10480,0,0,4244,0,4650
+GCF_025148125.1 Blautia wexlerae DSM 19850,10868,22792,15888,22800,0,47505
+GCF_025148635.1 Butyricimonas virosa,2082,0,0,0,0,455
+GCF_025148785.1 Catenibacterium mitsuokai,244,0,0,0,0,213
+GCF_025149125.1 [Clostridium] asparagiforme DSM 15981,0,481,0,0,0,0
+GCF_025149285.1 Hungatella hathewayi,0,567,0,0,0,0
+GCF_025149465.1 Thomasclavelia spiroformis DSM 1552,0,135,0,0,0,0
+GCF_025149785.1 Coprococcus comes ATCC 27758,7736,0,0,4746,0,8048
+GCF_025150085.1 Dorea longicatena,6033,0,0,12390,0,14609
+GCF_025150245.1 Dorea formicigenerans,2610,0,8140,979,0,4491
+GCF_025150745.1 Eubacterium ventriosum,0,0,0,0,0,147
+GCF_025151215.1 Parabacteroides merdae ATCC 43184,5224,0,0,4670,24168,9030
+GCF_025152405.1 [Ruminococcus] lactaris ATCC 29176,0,0,0,9480,0,0
+GCF_025336545.1 Eubacterium album,0,0,0,0,425,0
+GCF_025566865.1 Blautia acetigignens,359,0,0,939,0,564
+GCF_025566965.1 Blautia ammoniilytica,228,0,0,0,0,280
+GCF_025567005.1 Muricoprocola aceti,0,0,0,0,0,202
+GCF_025567015.1 Waltera acetigignens,803,0,0,3912,0,6738
+GCF_025567095.1 Anthropogastromicrobium aceti,1302,0,0,1189,0,5514
+GCF_025567165.1 Laedolimicola ammoniilytica,0,0,0,0,0,159
+GCF_025567195.1 Alitiscatomonas aceti,298,0,0,0,0,0
+GCF_025567265.1 Dorea amylophila,4176,0,0,234,0,1448
+GCF_025567285.1 Coprococcus aceti,24752,0,0,8920,0,5733
+GCF_025567305.1 Brotomerdimonas butyrica,221,0,0,0,0,222
+GCF_025567315.1 Agathobaculum ammoniilyticum,0,0,0,287,0,178
+GCF_025567345.1 Coprococcus ammoniilyticus,0,0,0,3120,0,147
+GCF_025567415.1 Dorea ammoniilytica,445,0,0,0,0,488
+GCF_025567465.1 Roseburia amylophila,0,0,0,206,0,331
+GCF_025567495.1 Hominimerdicola aceti,0,0,0,754,0,677
+GCF_025567525.1 Gallintestinimicrobium propionicum,162,0,0,0,0,817
+GCF_025567565.1 Muriventricola aceti,0,0,0,160,0,0
+GCF_026015295.1 Segatella copri,693,0,0,2709,0,3094
+GCF_026015465.1 Segatella copri,621,0,0,26340,0,1800
+GCF_026095235.1 Segatella copri,10354,0,0,596,0,28536
+GCF_027667425.1 Fusicatenibacter saccharivorans,3484,0,20133,32903,0,8274
+GCF_027679495.1 Collinsella aerofaciens,0,0,0,0,0,93
+GCF_029023785.1 Enterococcus faecium,0,0,628,0,0,0
+GCF_029024465.1 Lactococcus garvieae subsp. garvieae,0,0,0,0,0,90
+GCF_029024925.1 Enterococcus faecalis,589,0,16857,0,0,0
+GCF_029218125.1 Neopoerus faecalis,154,0,0,122,0,108
+GCF_029581355.1 Parabacteroides chongii,267,0,0,0,0,0
+GCF_030284685.1 Streptococcus raffinosi,0,2026,0,0,210,0
+GCF_030296915.1 Anaerostipes hadrus ATCC 29173 = JCM 17467,15080,47580,0,16640,6825,5127
+GCF_030644365.1 Schaalia sp. HMT-172,0,0,95,0,0,0
+GCF_030825805.1 Streptococcus sp.,0,0,0,0,0,75
+GCF_031191205.1 Haemophilus parainfluenzae ATCC 33392,0,2694,113,0,271,0
+GCF_032490495.1 Pilosibacter fragilis,963,0,0,691,0,982
+GCF_032575955.1 Veillonella parvula,0,128,261,0,0,0
+GCF_032878955.1 Butyricimonas paravirosa,243,0,0,0,0,0
+GCF_033096445.1 Butyricimonas faecihominis,1417,0,0,0,0,1460
+GCF_034134805.1 Streptococcus sp. S5,0,0,82,0,0,0
+GCF_034291875.1 Bacteroides vicugnae,0,0,0,243,0,0
+GCF_034355335.1 Blautia coccoides,0,0,0,0,7104,0
+GCF_035544715.1 Streptococcus sp. S2(2023),88,0,0,0,0,0
+GCF_036456085.1 Veillonella parvula,0,2480,2890,0,2918,0
+GCF_036503815.1 Escherichia coli,768,960,14550,0,506,3252
+GCF_036550295.1 Terrisporobacter sp.,0,0,0,0,4470,0
+GCF_036632915.2 Faecalibacterium taiwanense,6228,0,0,9940,0,3204
+GCF_039521745.1 Faecalicatena contorta,0,615,0,0,0,0
+GCF_039753035.1 Collinsella aerofaciens,0,0,44992,1534,0,5332
+GCF_039753335.1 Clostridium disporicum,1389,14598,0,1243,1244,546
+GCF_039955095.1 Limosilactobacillus sp. WILCCON 0051,0,0,0,0,82,0
+GCF_040094025.1 Veillonella fallax,127,0,0,0,477,0
+GCF_040094755.1 Bacteroides hominis,5596,0,0,0,0,0
+GCF_040094895.1 Veillonella parvula,0,0,424,0,186,0
+GCF_040095255.1 Segatella sinensis,6330,0,0,0,0,984
+GCF_040095915.1 Bifidobacterium hominis,0,53800,6499,3276,118,116
+GCF_040096185.1 Faecousia intestinalis,400,0,0,201,0,206
+GCF_040096225.1 Hominiventricola aquisgranensis,332,0,0,594,0,502
+GCF_040096305.1 Ruminococcoides intestinale,0,0,0,0,48150,407
+GCF_040096355.1 Maccoya intestinihominis,420,0,0,0,0,0
+GCF_040096415.1 Megasphaera intestinihominis,0,35972,0,0,0,0
+GCF_040096455.1 [Lactobacillus] rogosae,0,0,976,0,0,2870
+GCF_040096515.1 Faecalibacterium tardum,783,2394,0,0,0,1298
+GCF_040096555.1 Coprococcus intestinihominis,647,0,0,2950,0,1004
+GCF_040096575.1 Faecalibacterium intestinale,264,0,0,0,0,438
+GCF_040096655.1 Blautia intestinihominis,0,0,0,0,0,1210
+GCF_040226555.1 Streptococcus parasanguinis,0,0,432,0,0,0
+GCF_040545455.1 Enterocloster citroniae,0,0,0,252,1309,0
+GCF_041431535.1 Veillonella sp. 27098_8_77,0,0,0,0,630,0
+GCF_900002575.1 Romboutsia hominis,0,0,0,0,600,0
+GCF_900015215.1 Romboutsia ilealis,0,0,0,0,0,103
+GCF_900086585.1 Emergencia timonensis,0,0,0,476,0,0
+GCF_900087055.1 Plesiomonas shigelloides,0,0,0,0,0,2768
+GCF_900095825.1 Acidaminococcus massiliensis,0,8795,0,0,0,0
+GCF_900103425.1 Allisonella histaminiformans,150,0,0,0,79,176
+GCF_900104635.1 Coprococcus phoceensis,0,4324,0,0,27951,0
+GCF_900106845.1 Romboutsia timonensis,3158,3046,0,305,868,1347
+GCF_900120195.1 Blautia sp. Marseille-P3087,1065,0,0,0,0,180
+GCF_900129655.1 Bacteroides clarus YIT 12056,0,0,0,0,0,152
+GCF_900142015.1 Bacteroides stercorirosoris,0,0,0,1270,0,0
+GCF_900148495.1 Negativibacillus massiliensis,845,0,0,0,0,0
+GCF_900155425.1 Parabacteroides massiliensis,458,0,0,0,0,0
+GCF_900155865.1 Bacteroides bouchesdurhonensis,1396,0,0,1416,0,484
+GCF_900167005.1 Butyricicoccus pullicaecorum DSM 23266,0,0,0,0,213,0
+GCF_900167555.1 Gemmiger formicilis,812,0,0,0,0,4353
+GCF_900186615.1 Parabacteroides bouchesdurhonensis,746,0,0,0,0,0
+GCF_900209925.1 Anaerobutyricum hallii,327,6008,0,2474,0,733
+GCF_900324475.1 Enterobacter bugandensis,0,0,0,0,0,314
+GCF_900475675.1 Streptococcus lutetiensis,0,0,86336,0,0,0
+GCF_900537995.1 Roseburia intestinalis L1-82,249,0,0,1334,0,926
+GCF_900538355.1 uncultured Veillonella sp.,0,0,0,0,342,0
+GCF_900540665.1 uncultured Catenibacterium sp.,51,0,0,0,0,71
+GCF_900545205.1 uncultured Veillonella sp.,0,238,0,0,687,0
+GCF_900683735.1 Fusobacterium ulcerans ATCC 49185,0,480,0,0,0,0
+GCF_900766215.1 uncultured Finegoldia sp.,0,0,621,0,0,0
+GCF_901875305.1 Rothia mucilaginosa,0,162,0,0,0,0
+GCF_901875555.1 Streptococcus parasanguinis,0,57,0,0,0,0
+GCF_902167715.1 Blautia luti,1160,214,0,3492,0,1096
+GCF_902463925.1 uncultured Streptococcus sp.,0,0,0,0,173,0
+GCF_902466845.1 uncultured Haemophilus sp.,0,145,0,0,0,0
+GCF_905197185.1 uncultured Megamonas sp.,2967,1524,0,0,6156,0
+GCF_905209685.1 uncultured Veillonella sp.,0,132,0,0,200,0
+GCF_934229725.1 uncultured Streptococcus sp.,0,258,0,0,0,0
+GCF_934230905.1 uncultured Veillonella sp.,0,0,0,0,243,0
+GCF_934309345.1 uncultured Mediterraneibacter sp.,422,2670,20610,336,0,501
+GCF_934330165.1 uncultured Mediterraneibacter sp.,0,0,0,605,0,0
+GCF_934424005.1 uncultured Blautia sp.,582,0,0,304,0,314
+GCF_937975875.1 Veillonella dispar,0,0,0,0,106,0
+GCF_938041965.1 uncultured Mogibacterium sp.,0,0,0,0,51,0
+GCF_943193075.1 Streptococcus caecimuris,50,0,0,0,745,0
+GCF_949820605.1 Segatella copri,1376,0,0,0,0,0
+GCF_951793255.1 Desulfovibrio piger,0,0,0,0,0,1284
+GCF_958387885.1 uncultured Bacteroides sp.,235,0,0,201,0,327
+GCF_959020145.1 uncultured Bifidobacterium sp.,380,560,10998,2220,108,2204
+GCF_959020155.1 uncultured Bifidobacterium sp.,464,5338,8064,0,1968,269
+GCF_959028125.1 uncultured Bifidobacterium sp.,0,770,11970,3128,79,874
+GCF_963522475.1 uncultured Veillonella sp.,0,145,0,0,0,0
+GCF_963524655.1 uncultured Veillonella sp.,65,0,0,0,0,0
+GCF_963534045.1 uncultured Veillonella sp.,0,0,0,0,2850,0
+GCF_964238185.1 Lachnoclostridium sp. Marseille-P6806,0,0,0,0,4170,0
+GCF_964246085.1 Lacrimispora indolis SR3,321,0,0,0,0,458
+GCF_964248265.1 Phocaeicola vulgatus ATCC 8482,941,114210,0,19535,149683,12129
