@@ -77,7 +77,10 @@ website:
               href: day-4/instructions/index.qmd
               contents:
                 - day-4/instructions/vietnamese-healthy-gut-microbiome.qmd
+                - day-4/instructions/vietnamese-healthy-gut-taxonomy.qmd
+                - day-4/instructions/vietnamese-healthy-gut-amr.qmd
                 - day-4/instructions/clinical-reasoning.qmd
+                - day-4/instructions/clinical-reasoning-analysis.qmd
 
 format:
   html:
