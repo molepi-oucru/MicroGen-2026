@@ -15,7 +15,7 @@ Over the next four days, we will journey from the basics of the Linux computing 
 - **Day 1**: Introduction to whole-genome sequencing and genome assembly.
 - **Day 2**: Assembly and gene-level analysis. Long-read sequencing.
 - **Day 3**: Core SNP and phylogenetic analysis.
-- **Day 4**: Metagenomics in pathogen detection.
+- **Day 4**: Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.
 
 ## Prerequisites
 
