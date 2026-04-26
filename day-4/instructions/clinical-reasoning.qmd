@@ -1,6 +1,6 @@
 ---
 title: "Actionable Diagnostics & Clinical Reasoning"
-subtitle: "Clinical case simulation and MetaFlow backup route"
+subtitle: "Clinical case simulation and metaflow backup route"
 author: "Minh-Quan Ton-Ngoc, Hao Chung The"
 date: "2026-05-15"
 format:

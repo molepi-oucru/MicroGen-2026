@@ -312,10 +312,6 @@ This notebook now implements that staged pedagogy directly as a self-guided exer
 ```{r paths}
 path_inventory <- tibble::tribble(
   ~object, ~path, ~type,
-  "Paper summary notes", file.path(data_dir, "nejm_summary.md"), "file",
-  "Vietnam-adapted hypotheses", file.path(data_dir, "nejm_vnmese_hypotheses.md"), "file",
-  "Original facilitator template used as source context", file.path(data_dir, "instructor_case_metagenomics_leptospira.qmd"), "file",
-  "Original learner template used as source context", file.path(data_dir, "student_case_metagenomics_leptospira.qmd"), "file",
   "Sample metadata", file.path(data_dir, "nejm_sampleinformation.csv"), "file",
   "Workshop taxonomy export (with unclassified)", file.path(data_dir, "nejm_with_unclassified.csv"), "file",
   "Workshop taxonomy export (without unclassified)", file.path(data_dir, "nejm_without_unclassified.csv"), "file",

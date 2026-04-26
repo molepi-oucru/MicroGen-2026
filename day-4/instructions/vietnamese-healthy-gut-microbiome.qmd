@@ -282,14 +282,16 @@ Focus on the difference between a teaching re-analysis and a definitive replicat
 </details>
 :::::
 
-# Metaflow overview
+# metaflow overview
 
 `metaflow` is a modular Nextflow pipeline for Illumina short-read metagenomics. In workshop terms, it gives learners one practical route from paired-end FASTQ files to read-based taxonomic profiling, host-removal outputs, and AMR screening results without forcing them to build every step from scratch.
 
 ::: {.callout-note}
 ## Workflow diagram
+<!-- This local image is intentionally not committed to the repository. Because this page uses embed-resources, local publication renders can embed it into the generated HTML when the source image is present. -->
 
-The source notebook included a local workflow diagram for `metaflow`. It is not embedded in the published repository because the Day 4 pages avoid committing local image assets. Use the `metaflow` wiki linked below for the current public workflow overview.
+![The diagram below summarizes the planned workflow for upcoming releases of metaflow. Some modules shown may not be available in the current version.](../../../22en_analysis/quarto_images/metaflow_currentbeta_cleaned_metromap_light.png){fig-alt="The diagram below summarizes the planned workflow for upcoming releases of metaflow. Some modules shown may not be available in the current version." width="100%"}
+
 :::
 
 ::: manual-note
@@ -773,7 +775,7 @@ The read-based result table is:
 
 The processing helper validated in the current workshop folder is:
 
--   `/day-4/materials/process_metaflow_daa_microgen2026_20260415.py`
+-   `/day-4/materials/process_metaflow_daa_microgen2026.py`
 
 If your teaching folder also provides a wrapper named `process_metagenomic_microgen2026.py`, you can substitute only the script filename; the command structure below stays the same.
 
@@ -789,7 +791,7 @@ Suggested workflow:
 conda activate microgen2026
 mkdir -p /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis
 
-python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+python /day-4/materials/process_metaflow_daa_microgen2026.py \
   --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
   --input_format raw_metaflow \
   --min_coverage 0.05 \
@@ -800,7 +802,7 @@ python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
 mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.processed_metaflow.csv \
    /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_without_unclassified.csv
 
-python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+python /day-4/materials/process_metaflow_daa_microgen2026.py \
   --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
   --input_format raw_metaflow \
   --min_coverage 0.05 \
@@ -810,7 +812,7 @@ python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
 mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.processed_metaflow.csv \
    /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut_with_unclassified.csv
 
-python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+python /day-4/materials/process_metaflow_daa_microgen2026.py \
   --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
   --input_format raw_metaflow \
   --min_coverage 0.05 \
@@ -820,7 +822,7 @@ python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
 mv /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/merged_sourmash_yacht.csv.taxburst \
    /day-4/materials/vietnamese-healthy-gut-microbiome/out/vietnamese_gut_analysis/vietnamese_gut.taxburst
 
-python /day-4/materials/process_metaflow_daa_microgen2026_20260415.py \
+python /day-4/materials/process_metaflow_daa_microgen2026.py \
   --input /day-4/materials/vietnamese-healthy-gut-microbiome/out/Readbased_Analysis/Sourmash-YACHT/final_results/final_results/merged_sourmash_yacht.csv \
   --input_format raw_metaflow \
   --min_coverage 0.05 \
