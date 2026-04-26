@@ -86,8 +86,6 @@ format:
   html:
     theme: cosmo
     css: website-assets/styles.css
-    extensions:
-      - quarto-ext/fontawesome
     link-external-newwindow: true
     toc: true
     code-copy: true

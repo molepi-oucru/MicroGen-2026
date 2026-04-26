@@ -58,9 +58,9 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 **Module 4.1: Clinical foundations & AMR surveillance: workflow setup**
 
-**Module 4.2: Clinical foundations & AMR surveillance: taxonomy analysis**
+**Module 4.2: Vietnamese healthy gut microbiome: taxonomy analysis**
 
-**Module 4.3: Clinical foundations & AMR surveillance: AMR analysis and summary**
+**Module 4.3: Vietnamese healthy gut microbiome: AMR analysis and summary**
 
 **Module 4.4: Actionable diagnostics & clinical reasoning: case simulation**
 
@@ -79,9 +79,9 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 Center for Tropical Medicine and Global Health, Nuffield Department of Clinical Medicine, Oxford University
 
 ::: {.organiser-links}
-[{{< fa globe >}}](https://your-site.com)
-[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
-[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+[Website](https://your-site.com)
+[LinkedIn](https://linkedin.com/in/username)
+[ORCID](https://orcid.org/0000-0000)
 :::
 :::
 
@@ -94,9 +94,9 @@ Saw Swee Hock School of Public Health, National University of Singapore
 
 ::: {.organiser-links}
 
-[{{< fa brands github >}}](https://github.com/username)
-[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
-[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+[GitHub](https://github.com/username)
+[LinkedIn](https://linkedin.com/in/username)
+[ORCID](https://orcid.org/0000-0000)
 :::
 :::
 
@@ -109,9 +109,9 @@ Oxford University Clinical Research Unit
 
 ::: {.organiser-links}
 
-[{{< fa brands github >}}](https://github.com/username)
-[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
-[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+[GitHub](https://github.com/username)
+[LinkedIn](https://linkedin.com/in/username)
+[ORCID](https://orcid.org/0000-0000)
 :::
 :::
 
@@ -124,9 +124,9 @@ Center for Tropical Medicine and Global Health, Nuffield Department of Clinical 
 
 ::: {.organiser-links}
 
-[{{< fa brands github >}}](https://github.com/username)
-[{{< fa brands linkedin >}}](https://linkedin.com/in/username)
-[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+[GitHub](https://github.com/username)
+[LinkedIn](https://linkedin.com/in/username)
+[ORCID](https://orcid.org/0000-0000)
 :::
 :::
 
@@ -139,9 +139,9 @@ Oxford University Clinical Research Unit
 
 ::: {.organiser-links}
 
-[{{< fa brands github >}}](https://github.com/tnmquann)
-[{{< fa brands linkedin >}}](https://www.linkedin.com/in/tnmquann/)
-[{{< fa brands orcid >}}](https://orcid.org/0000-0000)
+[GitHub](https://github.com/tnmquann)
+[LinkedIn](https://www.linkedin.com/in/tnmquann/)
+[ORCID](https://orcid.org/0000-0000)
 :::
 :::
 
