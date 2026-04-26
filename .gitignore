@@ -55,16 +55,6 @@ rsconnect/
 **/*.quarto_ipynb
 
 /website-assets/images/*
-!/website-assets/images/
-!/website-assets/images/DuyPT.png
-!/website-assets/images/HaoCT.png
-!/website-assets/images/KLEB-CASAVA.png
-!/website-assets/images/NguyenMTS.png
-!/website-assets/images/QuanTNM.png
-!/website-assets/images/QuynhNPN.png
-!/website-assets/images/UKRI.png
-!/website-assets/images/UOX-logo.jpg
-!/website-assets/images/wellcome-logo-black.png
 */instructions/images/
 day-4/instructions/figures/
 day-4/instructions/*_files/
