@@ -121,6 +121,32 @@ engine: knitr
   font-size: 0.95rem;
   color: #495057;
 }
+.protected-reveal {
+  border-left: 4px solid #0d6efd;
+  border-radius: 0.4rem;
+  background: #f8f9fa;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.protected-reveal button {
+  border: 1px solid #cfd4da;
+  border-radius: 0.35rem;
+  background: #ffffff;
+  color: #212529;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0.35rem 0.75rem;
+}
+.protected-reveal button:hover,
+.protected-reveal button:focus {
+  background: #eef1f4;
+  border-color: #adb5bd;
+}
+.protected-reveal-content {
+  display: none;
+  margin-top: 0.85rem;
+}
 summary {
   font-weight: 600;
 }
@@ -197,6 +223,21 @@ function resetMCQ(id) {
   feedback.style.display = 'none';
   feedback.innerHTML = '';
 }
+
+function revealProtectedSource(button) {
+  const box = button.closest('.protected-reveal');
+  const content = box.querySelector('.protected-reveal-content');
+  const armed = button.dataset.armed === 'true';
+  if (!armed) {
+    button.dataset.armed = 'true';
+    button.textContent = 'Reveal source on second click';
+    return;
+  }
+  const bytes = Uint8Array.from(atob(box.dataset.payload), char => char.charCodeAt(0));
+  content.innerHTML = new TextDecoder().decode(bytes);
+  content.style.display = 'block';
+  button.style.display = 'none';
+}
 </script>
 ```
 
@@ -237,13 +278,12 @@ This notebook is designed to feel like a clinical reasoning exercise first and a
 
 # Aim of this notebook
 
-::: {.callout-note icon=false collapse="true"}
-
-This notebook is a **workshop-oriented clinical metagenomics re-analysis** built around the landmark paper:
-
-> Wilson MR, et al. *Actionable diagnosis of neuroleptospirosis by next-generation sequencing*. *N Engl J Med* 2014;370:2408-2417.
-
-:::
+```{=html}
+<div class="protected-reveal" data-payload="PHA+VGhpcyBub3RlYm9vayBpcyBhIDxzdHJvbmc+d29ya3Nob3Atb3JpZW50ZWQgY2xpbmljYWwgbWV0YWdlbm9taWNzIHJlLWFuYWx5c2lzPC9zdHJvbmc+IGJ1aWx0IGFyb3VuZCB0aGUgbGFuZG1hcmsgcGFwZXI6PC9wPjxibG9ja3F1b3RlPjxwPldpbHNvbiBNUiwgZXQgYWwuIDxlbT5BY3Rpb25hYmxlIGRpYWdub3NpcyBvZiBuZXVyb2xlcHRvc3Bpcm9zaXMgYnkgbmV4dC1nZW5lcmF0aW9uIHNlcXVlbmNpbmc8L2VtPi4gPGVtPk4gRW5nbCBKIE1lZDwvZW0+IDIwMTQ7MzcwOjI0MDgtMjQxNy48L3A+PC9ibG9ja3F1b3RlPg==">
+  <button type="button" onclick="revealProtectedSource(this)">Reveal source</button>
+  <div class="protected-reveal-content" aria-live="polite"></div>
+</div>
+```
 
 This is **not** a full replication study. Instead, it is a guided self-study notebook for healthcare workers learning how clinical metagenomics can support difficult diagnostic decisions. The notebook:
 
