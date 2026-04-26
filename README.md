@@ -55,7 +55,7 @@ Within each day, there are three directories:
 - **4.4 Actionable diagnostics & clinical reasoning: case simulation** - Quan, Hao
 - **4.5 Actionable diagnostics & clinical reasoning: signal analysis** - Quan, Hao
 
-Day 4 introduces read-based metagenomic analysis for two teaching scenarios: a six-sample Vietnamese healthy gut microbiome / AMR surveillance re-analysis, and a clinical case study focused on actionable diagnosis. The web lessons are split into smaller pages to reduce load time. Backup analysis files are provided in `day-4/materials/` so participants can continue the interpretation exercises even if they cannot complete a live run during the workshop.
+Day 4 introduces read-based metagenomic analysis for two teaching scenarios: a six-sample Vietnamese healthy gut microbiome / AMR surveillance re-analysis, and a clinical case study focused on actionable diagnosis. Backup analysis files are provided in `day-4/materials/` so participants can continue the interpretation exercises even if they cannot complete a live run during the workshop.
 
 
 ## Datasets
