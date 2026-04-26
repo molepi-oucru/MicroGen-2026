@@ -1,6 +1,6 @@
 ---
 title: "Day 4: Metagenomics"
-author: "Hao CT, Quan TNM"
+author: "Minh-Quan Ton-Ngoc, Hao Chung The"
 date: "2026-05-15"
 ---
 
@@ -8,7 +8,7 @@ Day 4 introduces metagenomic sequencing as a practical tool for surveillance, di
 
 In [Clinical Foundations & AMR Surveillance](vietnamese-healthy-gut-microbiome.qmd), you will work with a six-sample demonstration re-analysis adapted from Pereira-Dias et al. The exercise uses a subset of a Vietnamese healthy gut microbiome and antimicrobial resistance surveillance dataset to show how shotgun metagenomic reads can be processed into taxonomic and AMR summaries. This is a teaching demonstration, not a full reproduction of the original paper.
 
-In [Actionable Diagnostics & Clinical Reasoning](clinical-reasoning.qmd), you will move from surveillance to a clinical metagenomics case based on neuroleptospirosis. The lesson focuses on when unbiased sequencing is useful, how CNS infection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.
+In [Actionable Diagnostics & Clinical Reasoning](clinical-reasoning.qmd), you will move from surveillance to a clinical metagenomics case. The lesson focuses on when unbiased sequencing is useful, how nfection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.
 
 ::: {.callout-note}
 ## Technical note
