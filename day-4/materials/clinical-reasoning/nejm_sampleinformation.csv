@@ -1,0 +1,5 @@
+run_accession,scientific_name,instrument_model,nominal_length,library_layout,library_strategy,library_source,library_selection,read_count,base_count,experiment_title
+SRR1145846,clinical metagenome,Illumina MiSeq,500,PAIRED,WGS,METAGENOMIC,RANDOM PCR,128119,40935208,Illumina MiSeq paired end sequencing: Child with meningoencephalitis: untreated CSF
+SRR1145847,clinical metagenome,Illumina MiSeq,500,PAIRED,WGS,METAGENOMIC,RANDOM PCR,44597,14775845,Illumina MiSeq paired end sequencing: Returning traveler with fever: serum (control)
+SRR1145844,clinical metagenome,Illumina MiSeq,500,PAIRED,WGS,METAGENOMIC,RANDOM PCR,1306348,648283539,"Illumina MiSeq paired end sequencing: Child with meningoencephalitis, DNase-treated CSF"
+SRR1145845,clinical metagenome,Illumina MiSeq,500,PAIRED,WGS,METAGENOMIC,RANDOM PCR,2813757,1406845619,"Illumina MiSeq paired end sequencing: Child with meningoencephalitis, serum"
