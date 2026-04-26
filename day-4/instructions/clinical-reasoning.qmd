@@ -237,9 +237,13 @@ This notebook is designed to feel like a clinical reasoning exercise first and a
 
 # Aim of this notebook
 
+::: {.callout-note icon=false collapse="true"}
+
 This notebook is a **workshop-oriented clinical metagenomics re-analysis** built around the landmark paper:
 
 > Wilson MR, et al. *Actionable diagnosis of neuroleptospirosis by next-generation sequencing*. *N Engl J Med* 2014;370:2408-2417.
+
+:::
 
 This is **not** a full replication study. Instead, it is a guided self-study notebook for healthcare workers learning how clinical metagenomics can support difficult diagnostic decisions. The notebook:
 
