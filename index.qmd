@@ -13,9 +13,8 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 ::: panel-tabset
 ## Day 0
 ### Pack your backpack
-*Setting up your computational environment and getting comfortable with the Linux environment and command lines.*
-
-[Slides]() | [Practical Guides](day-0/instructions/index.qmd) | [Data]()
+*Setting up your computational environment and getting comfortable with the Linux environment and command lines.* <br>
+[Slides]() | [Practical Guides](guides.qmd) | [Data]()
 
 **Module 0.1: Setup your workspace**
 
@@ -23,8 +22,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 ## Day 1
 ### Meet the genomes
-*Introduction to whole-genome sequencing and genome assembly.*
-
+*Introduction to whole-genome sequencing and genome assembly.* <br>
 [Slides]() | [Practical Guides](day-1/instructions/index.qmd) | [Data]()
 
 **Module 1.1: Whole-genome sequencing - What? & Why?** 
@@ -35,8 +33,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 ## Day 2
 ### Inspect the genomes
-*Assembly and gene-level analysis. Long-read sequencing.*
-
+*Assembly and gene-level analysis. Long-read sequencing.* <br>
 [Slides]() | [Practical Guides](day-2/instructions/index.qmd) | [Data]()
 
 **Module 2.1: Analyse the assemblies**
@@ -47,8 +44,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 ## Day 3
 ### Phylogenetics - Relationships between genomes
-*Core SNP and phylogenetic analysis.*
-
+*Core SNP and phylogenetic analysis.* <br>
 [Slides]() | [Practical Guides](day-3/instructions/index.qmd) | [Data]()
 
 **Module 3.1: Read mapping & SNP alignment**
@@ -57,8 +53,7 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 
 ## Day 4
 ### Metagenomics
-Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.
-
+*Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.* <br>
 [Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data](https://github.com/molepi-oucru/MicroGen-2026/tree/main/day-4/materials)
 
 **Module 4.1: Clinical foundations & AMR surveillance: workflow setup**

@@ -54,7 +54,9 @@ rsconnect/
 /_extensions/
 **/*.quarto_ipynb
 
-/website-assets/images/*
+/website-assets/images/
 */instructions/images/
 day-4/instructions/figures/
 day-4/instructions/*_files/
+
+/WGS/
