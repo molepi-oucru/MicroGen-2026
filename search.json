@@ -597,7 +597,7 @@
     "href": "day-0/instructions/linux-basics.html",
     "title": "0.2 Commands & Environments",
     "section": "",
-    "text": "Welcome to the command line! For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit. Most bioinformatics tools don’t have a graphical user interface (GUI) with buttons and menus; instead, they are controlled by typing commands.\n\n\nYou might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.\n\n\n\n\nThe Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.\n\n\n\n\nYou don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!\n\n\n\n\nThink of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).\n\n\n\nA command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
+    "text": "You might wonder why we aren’t using Windows or macOS for this. There are three main reasons:\n\nBig Data: Genomic datasets are often too large for Excel or standard text editors. And big data requires big computers, and big computers are usually Linux-based.\nAutomation: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.\nReproducibility: Our analyses are our commands to the Linux computer, and the Linux commands are just texts. This enables easy recording of exactly what we did, i.e. all the commands that we have run, making it easier to share and reproduce our analyses.\n\nThe interface for us to give commands to the Linux computer is called the Terminal. For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -620,8 +620,8 @@
     "objectID": "day-0/instructions/linux-basics.html#the-terminal",
     "href": "day-0/instructions/linux-basics.html#the-terminal",
     "title": "0.2 Commands & Environments",
-    "section": "",
-    "text": "The Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.",
+    "section": "The Terminal",
+    "text": "The Terminal\nThe Terminal (or console) is your window into the operating system. It provides a Shell, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is bash or zsh.\n\nThe Prompt: Usually looks like user@computer:~$. The $ indicates that the shell is waiting for your input.\nCase Sensitivity: Linux is case-sensitive. File.txt and file.txt are two different files.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -632,8 +632,8 @@
     "objectID": "day-0/instructions/linux-basics.html#getting-help",
     "href": "day-0/instructions/linux-basics.html#getting-help",
     "title": "0.2 Commands & Environments",
-    "section": "",
-    "text": "You don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!",
+    "section": "Getting Help",
+    "text": "Getting Help\nYou don’t need to memorize every command. Here is how to find out what a command does:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck!",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -644,8 +644,8 @@
     "objectID": "day-0/instructions/linux-basics.html#the-file-system",
     "href": "day-0/instructions/linux-basics.html#the-file-system",
     "title": "0.2 Commands & Environments",
-    "section": "",
-    "text": "Think of the Linux file system as a giant tree. - Root (/): The base of the entire system. - Home Directory (~): Your personal space where you have full control. - Path: The “address” of a file or folder. - Absolute Path: Starts from the root (e.g., /home/user/data/sample.fastq). - Relative Path: Starts from where you currently are (e.g., data/sample.fastq).",
+    "section": "The File System",
+    "text": "The File System\nThink of the Linux file system as a giant tree.\n\nRoot (/): The base of the entire system.\nHome Directory (~): Your personal space where you have full control.\nPath: The “address” of a file or folder.\n\nAbsolute Path: Starts from the root (e.g., /home/user/data/sample.fastq).\nRelative Path: Starts from where you currently are (e.g., data/sample.fastq).",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -656,8 +656,8 @@
     "objectID": "day-0/instructions/linux-basics.html#the-command-line",
     "href": "day-0/instructions/linux-basics.html#the-command-line",
     "title": "0.2 Commands & Environments",
-    "section": "",
-    "text": "A command usually follows this structure: command [options] [arguments]\nExample: ls -l Documents/ - ls is the command (list files). - -l is an option (long format). - Documents/ is the argument (the folder to look into).\n\n\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
+    "section": "The Command Line",
+    "text": "The Command Line\nA command usually follows this structure: command [options] [arguments]\nExamples:\n# show Linux OS name, version, and hardware architecture\nhostnamectl \n\n# list CPU information\nlscpu\necho \"Hello World\"\n\necho is the command (print text).\n\"Hello World\" is the argument (the text to print).\n\nls -l genomes/\n\nls is the command (list files).\n-l is an option (long format).\ngenomes/ is the argument (the folder to look into).",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -669,7 +669,7 @@
     "href": "day-0/instructions/linux-basics.html#anatomy-of-a-file-name",
     "title": "0.2 Commands & Environments",
     "section": "Anatomy of a File Name",
-    "text": "Anatomy of a File Name\nIn Windows, the file extension (.docx, .exe) tells the system what the file is. In Linux, extensions are mostly for humans. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.\nYou can name a file anything: - genome.fasta (Helpful) - lunch_list.banhmi (Valid) * data_source.nuocmam (Valid)\nHowever, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!",
+    "text": "Anatomy of a File Name\nIn Windows, the file extension (.docx, .exe) tells the system what the file is. In Linux, extensions are mostly for humans. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.\nYou can name a file anything:\n\ngenome.fasta (Helpful)\ningredients_list.banhmi (Valid)\ndata_source.nuocmam (Valid)\n\nHowever, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -680,8 +680,8 @@
     "objectID": "day-0/instructions/linux-basics.html#types-of-files-in-genomics",
     "href": "day-0/instructions/linux-basics.html#types-of-files-in-genomics",
     "title": "0.2 Commands & Environments",
-    "section": "Types of Files in Genomics",
-    "text": "Types of Files in Genomics\n\nText Files: Plain text you can read. Examples: .fasta, .fastq, .csv, .sh.\nCompressed Files: To save space, we often zip files. Common extensions: .gz, .zip, .tar.gz. Most Linux tools can “peek” inside .gz files without unzipping them.\nBinary Files: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, .bam or .bcf files).",
+    "section": "Types of Files (in Genomics)",
+    "text": "Types of Files (in Genomics)\n\nText Files: Plain text you can read. Examples: .fasta, .fastq, .csv, .sh.\nCompressed Files: To save space, we often zip files. Common extensions: .gz, .zip, .tar.gz. Most Linux tools can “peek” inside .gz files without unzipping them.\nBinary Files: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, .bam or .bcf files).\nExecutable Files: Files that can be run as programs. Examples: .sh, .py, .R.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -705,7 +705,7 @@
     "href": "day-0/instructions/linux-basics.html#peeking-into-file-contents",
     "title": "0.2 Commands & Environments",
     "section": "Peeking into File Contents",
-    "text": "Peeking into File Contents\nWe rarely open huge genomics files in editors. We use these instead:\n\ncat: Print the whole file (only for small files!).\nhead: Show the first few lines.\ntail: Show the last few lines.\nless: The “gold standard” for viewing large files. Use arrows to scroll, / to search, and q to quit.",
+    "text": "Peeking into File Contents\nWe rarely open huge genomics files in editors. We use these instead:\n\ncat: Print the whole file (only for small files!).\nhead: Show the first few lines.\ntail: Show the last few lines.\nless: The “gold standard” for viewing large files. Use arrows to scroll, / to search, and q to quit.\n\n\n\nPractice\n\n# Print the whole file\ncat README.txt\n\n# Show the first 10 lines\nhead -n 10 README.txt\n\n# Show the last 5 lines\ntail -n 5 README.txt\n\n# Less is More\nless README.txt",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -753,7 +753,7 @@
     "href": "day-0/instructions/linux-basics.html#pipes",
     "title": "0.2 Commands & Environments",
     "section": "Pipes (|)",
-    "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple tools.\nExample: Count how many sequences are in a FASTA file. FASTA headers start with &gt;. We can find all lines starting with &gt; and count them: grep \"^&gt;\" genome.fasta | wc -l",
+    "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.\nExample: Count how many sequences are in a FASTA file. FASTA headers start with &gt;. We can find all lines starting with &gt; and count them:\ngrep \"^&gt;\" genome.fasta | wc -l",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -765,7 +765,7 @@
     "href": "day-0/instructions/linux-basics.html#standard-input-output-and-error",
     "title": "0.2 Commands & Environments",
     "section": "Standard Input, Output, and Error",
-    "text": "Standard Input, Output, and Error\n\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\nRedirection:\n\n&gt;: Save output to a file (overwrites).\n&gt;&gt;: Append output to a file (adds to the end).\n2&gt;: Redirect error messages to a file.\n\n\nExample: Save the list of files to a text file. ls -lh &gt; file_list.txt",
+    "text": "Standard Input, Output, and Error\n\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\nRedirection:\n\ncommand &gt; file: Save output (stdout) to a file (overwrites).\ncommand &gt;&gt; file: Append output (stdout) to a file (adds to the end).\ncommand 2&gt; file: Redirect error messages (stderr) to a file.\ncommand &gt; file 2&gt;&1: Redirect both stdout and stderr to a single file.\n\n\nExample: Save the list of files to a text file.\nls -lh &gt; file_list.txt",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -777,7 +777,7 @@
     "href": "day-0/instructions/linux-basics.html#variables",
     "title": "0.2 Commands & Environments",
     "section": "Variables",
-    "text": "Variables\nVariables store information for later use. In scripts, we often store filenames in variables. MY_SAMPLE=\"Sample_A1\" echo $MY_SAMPLE",
+    "text": "Variables\nVariables store information for later use. In scripts, we often store filenames in variables.\nExample:\nMY_SAMPLE=\"Sample_A1\"\necho $MY_SAMPLE\n\n\n\n\n\n\nNoteChallenge 3: Extracting sample names\n\n\n\n\n\n\nExtract sample names in year “2024”\nSave results to a file called sample_2024.txt.\n\n\n\n\n\n\n\n\n\n\nNoteChallenge 4: Extracting sequences\n\n\n\n\n\n\nWe have a file called ebola_virus.fasta.\nFind the sequence of the record with accession number NC_045512.2\nFind the length of that sequence.\nExtract the above sequence to a file called NC_045512.2.fasta.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -825,7 +825,7 @@
     "href": "day-0/instructions/linux-basics.html#loops",
     "title": "0.2 Commands & Environments",
     "section": "Loops",
-    "text": "Loops\nAutomate tasks across hundreds of samples. for file in *.fastq; do echo \"Processing $file...\"; done",
+    "text": "Loops\nAutomate tasks across hundreds of samples.\nfor file in *.fastq; do \n    echo \"Processing $file...\"; \ndone",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -837,7 +837,7 @@
     "href": "day-0/instructions/linux-basics.html#find",
     "title": "0.2 Commands & Environments",
     "section": "find",
-    "text": "find\nFind files based on name, size, or modification date. find . -name \"*.vcf\" -size +10M",
+    "text": "find\nFind files based on name, size, or modification date.\nfind . -name \"*.vcf\" -size +10M",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -849,7 +849,7 @@
     "href": "day-0/instructions/linux-basics.html#gnu-parallel",
     "title": "0.2 Commands & Environments",
     "section": "GNU parallel",
-    "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.",
+    "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.\n# Example: Run fastqc on all samples parallelly on 4 CPU cores\nls *.fasta | parallel -j 4 grep -c '&gt;' {} \n\n# Do you remember how to know the number of CPU cores on your system?",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -861,7 +861,7 @@
     "href": "day-0/instructions/index.html",
     "title": "Day 0: Pack your backpack",
     "section": "",
-    "text": "The purpose of this pre-workshop day is to prepare you with the computing environment where we will practice genomic analysis and the essential skills to work effectively in this environment.\nOur environment is a cloud-based Linux system with a set of pre-installed tools for the workshop, so you won’t have to use your computer’s resource for the analyses.\nIn the sub-module 0.1: Setup your workspace, you will be guided to access to this system from your own laptop.\nIn the sub-module 0.2 Commands & Environments, we will learn about Linux operating system (OS) and the essential skills to run bioinformatic tools on it.\n\n\n\n Back to top",
+    "text": "The purpose of this pre-workshop day is to prepare you with the computing environment where we will practice genomic analysis and the essential skills to work effectively in this environment.\nOur environment is a cloud-based Linux system with a set of pre-installed tools for the workshop, so you won’t have to use your computer’s resource for the analyses.\nIn the sub-module 0.1: Setup your workspace, you will be guided to access to this system from your own laptop.\nIn the sub-module 0.2 Commands & Environments, we will learn about Linux operating system (OS) and the essential skills to run bioinformatic tools on it. After finishing this module, please take a quick Knowledge Check (10 mins) to test your Linux skills.\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop"
@@ -907,7 +907,7 @@
     "href": "day-1/instructions/raw2assembly.html#multiqc-report",
     "title": "1.3 From raw sequencing data to assemblies",
     "section": "MultiQC report",
-    "text": "MultiQC report\nNow you can open the file multiqc_shortread/multiqc_report.html in your browser to view the report. Or in the VSCode, right click on the file and select “Open Preview”.\nLet’s go through the report and answer the following questions:\n\nWhat was the coverage?\nWhat is the overall quality of the raw reads?\nAre there any adapter contamination?\nAre there any issues with the sequencing?\n\n\n\n\n\n\n\nMaking decision\n\n\n\n\n\nBased on the MultiQC report, do you want to improve the raw reads quality?\nIf yes, what specific modification to the raw reads would you like to perform? If no, then why?",
+    "text": "MultiQC report\nNow you can open the file multiqc_shortread/multiqc_report.html in your browser to view the report. Or in the VSCode, right click on the file and select “Open Preview”.\nLet’s go through the report and answer the following questions:\n\nWhat was the coverage?\nWhat is the overall quality of the raw reads?\nAre there any adapter contamination?\nAre there any issues with the sequencing?\n\n\n\n\n\n\n\nImportantMaking decision\n\n\n\n\n\nBased on the MultiQC report, do you want to improve the raw reads quality?\nIf yes, what specific modification to the raw reads would you like to perform? If no, then why?",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -1217,7 +1217,7 @@
     "href": "day-4/instructions/vietnamese-healthy-gut-microbiome.html",
     "title": "Clinical Foundations & AMR Surveillance",
     "section": "",
-    "text": "Learning objectives\n\n\n\n\n\nBy the end of this notebook, learners should be able to:\n\nexplain why the Vietnamese healthy gut microbiome exercise is framed as a 6-sample demonstration re-analysis rather than a full replication study,\nretrieve paired-end FASTQ files for the selected samples from ENA,\nprepare a simple sample CSV and configure metaflow for a workshop run,\nprocess the raw metaflow outputs into taxonomy, phyloseq, taxburst, and AMR-ready files,\nand interpret a compact R-based exploratory analysis with appropriate caution.\n\n\n\n\n\n\n\n\n\n\nSuggested workshop flow\n\n\n\n\n\n\nStart with the orientation and setup sections so learners understand the purpose of the exercise before any commands are run.\nWork through the pipeline steps in order: download reads, prepare the input CSV, run metaflow, and process the output files.\nOnly then move into the R analysis, where the emphasis shifts from file handling to interpretation.\nUse the reflection prompts and collapsible hints if some participants move more quickly than others.\n\n\n\n\n\n\n\n\n\n\nWhy this format works well for doctors and researchers\n\n\n\n\n\nThis notebook is designed to be self-guided and practical. It lets learners move from:\n\na clear study question,\nto reproducible data retrieval,\nto pipeline execution,\nto analysis-ready objects,\nand finally to biological interpretation.\n\nThat structure helps mixed-background groups stay oriented, even when some learners are new to command-line bioinformatics.",
+    "text": "NoteLearning objectives\n\n\n\n\n\nBy the end of this notebook, learners should be able to:\n\nexplain why the Vietnamese healthy gut microbiome exercise is framed as a 6-sample demonstration re-analysis rather than a full replication study,\nretrieve paired-end FASTQ files for the selected samples from ENA,\nprepare a simple sample CSV and configure metaflow for a workshop run,\nprocess the raw metaflow outputs into taxonomy, phyloseq, taxburst, and AMR-ready files,\nand interpret a compact R-based exploratory analysis with appropriate caution.\n\n\n\n\n\n\n\n\n\n\nImportantSuggested workshop flow\n\n\n\n\n\n\nStart with the orientation and setup sections so learners understand the purpose of the exercise before any commands are run.\nWork through the pipeline steps in order: download reads, prepare the input CSV, run metaflow, and process the output files.\nOnly then move into the R analysis, where the emphasis shifts from file handling to interpretation.\nUse the reflection prompts and collapsible hints if some participants move more quickly than others.\n\n\n\n\n\n\n\n\n\n\nTipWhy this format works well for doctors and researchers\n\n\n\n\n\nThis notebook is designed to be self-guided and practical. It lets learners move from:\n\na clear study question,\nto reproducible data retrieval,\nto pipeline execution,\nto analysis-ready objects,\nand finally to biological interpretation.\n\nThat structure helps mixed-background groups stay oriented, even when some learners are new to command-line bioinformatics.",
     "crumbs": [
       "Practical Guides",
       "Day 4",
@@ -1289,7 +1289,7 @@
     "href": "day-4/instructions/vietnamese-healthy-gut-microbiome.html#practical-cautions",
     "title": "Clinical Foundations & AMR Surveillance",
     "section": "4.6 Practical cautions",
-    "text": "4.6 Practical cautions\n\n\n\n\n\n\nRun-safety reminders\n\n\n\n\n\n\nIf you plan to run jobs overnight, keep the session inside screen or tmux.\nmetaflow writes cache files wherever the nextflow run command is launched, so start the run from a directory with enough storage.\nDo not reuse the same Nextflow cache folder or the same output folder for multiple active runs at the same time.",
+    "text": "4.6 Practical cautions\n\n\n\n\n\n\nWarningRun-safety reminders\n\n\n\n\n\n\nIf you plan to run jobs overnight, keep the session inside screen or tmux.\nmetaflow writes cache files wherever the nextflow run command is launched, so start the run from a directory with enough storage.\nDo not reuse the same Nextflow cache folder or the same output folder for multiple active runs at the same time.",
     "crumbs": [
       "Practical Guides",
       "Day 4",
@@ -1406,6 +1406,126 @@
     "text": "How to use this guide\nEach day is divided into several modules, each focusing on a specific topic. Each module includes:\n\nIntroduction: A brief overview of the topic.\nGuided analyses: Practical tasks to analyse specific real-world datasets.\nCode blocks: Commands and scripts to run the analyses.\nChallenges: Optional advanced tasks to sharpen your skills.\nSelf exploration: Suggestions for further exploration of more advanced analysis techniques and tools.\n\nWe encourage you to try the challenges and self exploration sections. Be confident to ask questions and help each other. The goal is to learn by doing!",
     "crumbs": [
       "Practical Guides"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/module-0-2-quiz.html",
+    "href": "day-0/instructions/module-0-2-quiz.html",
+    "title": "Module 0.2: Linux Basics Quiz",
+    "section": "",
+    "text": "Congratulations on finishing Module 0.2: Commands & Environments!\nThis 10-minute quiz focuses on the core Linux commands you will use throughout the workshop. To ensure you are ready for Day 1, you should aim for at least 8 out of 10 correct answers.\n\n\n\nWhich command should you run to find out your current location in the file system tree?\n\n\n\na) whereami\nb) ls\nc) pwd\nd) cd\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: c) pwd\npwd stands for Print Working Directory. It tells you exactly which folder you are currently in.\n\n\n\n\n\nYou want to go up one level to the ‘parent’ directory. Which command do you use?\n\n\n\na) cd .\nb) cd ..\nc) cd /\nd) cd ~\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: b) cd ..\nThe double dots .. always refer to the directory immediately above your current one.\n\n\n\n\n\nWhat is the fastest way to list all files in a directory with detailed info (size, permissions, date)?\n\n\n\na) ls -l\nb) ls -a\nc) head\nd) cat\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: a) ls -l\nThe -l (long format) flag provides a detailed list of file attributes.\n\n\n\n\n\nYou need to create a new folder named genomics_data. Which command do you type?\n\n\n\na) newdir genomics_data\nb) mkdir genomics_data\nc) cp genomics_data\nd) touch genomics_data\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: b) mkdir genomics_data\nmkdir stands for Make Directory.\n\n\n\n\n\nWhich command is used to move (or rename) a file?\n\n\n\na) cp\nb) rn\nc) mv\nd) shift\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: c) mv\nmv is used both for moving a file to a different directory and for renaming it.\n\n\n\n\n\nYou have a large genomic file (1GB). Which command is BEST for scrolling through its contents without crashing your terminal?\n\n\n\na) cat\nb) less\nc) ls\nd) grep\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: b) less\nless is a pager that loads the file in chunks as you scroll, making it ideal for large files. cat would try to print the entire 1GB at once!\n\n\n\n\n\nHow would you search for the word ‘Staphylococcus’ in a file called samples.txt?\n\n\n\na) find \"Staphylococcus\" samples.txt\nb) grep \"Staphylococcus\" samples.txt\nc) cat samples.txt | head\nd) ls samples.txt\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: b) grep \"Staphylococcus\" samples.txt\ngrep is the standard tool for searching text patterns within files.\n\n\n\n\n\nWhat does the pipe character (|) do in a Linux command?\n\n\n\na) It deletes the output of the first command.\nb) It takes the output of the first command and uses it as input for the second command.\nc) It creates a backup of the file.\nd) It prints a vertical lines on the screen.\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: b) It takes the output of the first command and uses it as input for the second command.\nPipes are essential for chaining simple tools together to perform complex tasks (e.g., grep \"ID\" file.txt | wc -l).\n\n\n\n\n\nYou want to save the output of the ls command into a file called file_list.txt, overwriting any existing content. Which one is correct?\n\n\n\na) ls &lt; file_list.txt\nb) ls | file_list.txt\nc) ls &gt; file_list.txt\nd) ls &gt;&gt; file_list.txt\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: c) ls &gt; file_list.txt\nThe single &gt; redirects output and overwrites the file. &gt;&gt; would append to the end of it.\n\n\n\n\n\nTo start using a specific toolset installed in a Conda environment called assembly_env, which command do you use?\n\n\n\na) mamba create assembly_env\nb) mamba start assembly_env\nc) mamba activate assembly_env\nd) mamba enter assembly_env\n\n\n\n\nCheck Solution\n\n\nCorrect Answer: c) mamba activate assembly_env\nactivate is the command to enter a specific software environment.\n\n\n\n\n\nResults\nIf you scored 8/10 or higher, you have a strong grasp of the Linux basics needed for this workshop!\nIf you struggled with some questions, don’t worry! These commands will become second nature as we practice them on real genomic data starting tomorrow.\nReturn to Day 0 Overview\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "Module 0.2: Linux Basics Quiz"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/final-quiz.html",
+    "href": "day-0/instructions/final-quiz.html",
+    "title": "Pre-Workshop Quiz",
+    "section": "",
+    "text": "Back to top",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "Pre-Workshop Quiz"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#navigation-in-the-file-system",
+    "href": "day-0/instructions/linux-basics.html#navigation-in-the-file-system",
+    "title": "0.2 Commands & Environments",
+    "section": "Navigation in the File System",
+    "text": "Navigation in the File System\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#creating-managing-files",
+    "href": "day-0/instructions/linux-basics.html#creating-managing-files",
+    "title": "0.2 Commands & Environments",
+    "section": "Creating & Managing Files",
+    "text": "Creating & Managing Files\n\nmkdir: Create a new directory (which is just a special type of file!).\n\nmkdir raw_reads\n\ncp: Copy files or directories.\n\ncp source.txt destination.txt\n\nmv: Move or rename files.\n\nmv old_name.txt new_name.txt\n\nrm: Remove (delete) files. Be careful! There is no “Trash”.\n\nrm -r folder_name: Recursively delete a directory.\n\n\n\n\n\n\n\n\nNoteChallenge 1: Exploring the Directory\n\n\n\n\n\n\nNavigate to the day-0/materials/ directory.\nList all files and find out which one is the largest.\nCreate a new directory called results.\nCopy file README.txt to results directory.\nRename README.txt to README_backup.txt.\nRemove README_backup.txt.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#grep-search-for-a-pattern",
+    "href": "day-0/instructions/linux-basics.html#grep-search-for-a-pattern",
+    "title": "0.2 Commands & Environments",
+    "section": "grep: Search for a pattern",
+    "text": "grep: Search for a pattern",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#wc-count-lines-words-and-characters",
+    "href": "day-0/instructions/linux-basics.html#wc-count-lines-words-and-characters",
+    "title": "0.2 Commands & Environments",
+    "section": "wc: Count lines, words, and characters",
+    "text": "wc: Count lines, words, and characters",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#cut-cut-out-sections-from-each-line-of-files",
+    "href": "day-0/instructions/linux-basics.html#cut-cut-out-sections-from-each-line-of-files",
+    "title": "0.2 Commands & Environments",
+    "section": "cut: Cut out sections from each line of files",
+    "text": "cut: Cut out sections from each line of files",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#paste-merge-lines-of-files",
+    "href": "day-0/instructions/linux-basics.html#paste-merge-lines-of-files",
+    "title": "0.2 Commands & Environments",
+    "section": "paste: Merge lines of files",
+    "text": "paste: Merge lines of files",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#tr-translate-or-delete-characters",
+    "href": "day-0/instructions/linux-basics.html#tr-translate-or-delete-characters",
+    "title": "0.2 Commands & Environments",
+    "section": "tr: Translate or delete characters",
+    "text": "tr: Translate or delete characters",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/linux-basics.html#sed-stream-editor-for-text-manipulation",
+    "href": "day-0/instructions/linux-basics.html#sed-stream-editor-for-text-manipulation",
+    "title": "0.2 Commands & Environments",
+    "section": "sed: Stream editor for text manipulation",
+    "text": "sed: Stream editor for text manipulation\n\n\n\n\n\n\nNoteChallenge 2: Extracting Information\n\n\n\n\n\n\nPrint the first 20 entries of metadata.csv.\nFind all entries in metadata.csv that belong to the year “2024”.\nGet all sample names.\nRemove _1 and _2 from the sample names.\nChange filenames from .fq.gz to .fastq.gz.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "0.2 Commands & Environments"
     ]
   }
 ]
