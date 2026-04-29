@@ -14,6 +14,9 @@ format:
     self-contained: true
     smooth-scroll: true
     embed-resources: true
+    css: 
+      - "../../website-assets/styles.css"
+      - "../../website-assets/quiz.css"
 execute:
   echo: true
   warning: false
@@ -22,157 +25,8 @@ engine: knitr
 ---
 
 ```{=html}
-<style>
-.case-note {
-  background: #f8f9fa;
-  border-left: 4px solid #0d6efd;
-  padding: 1rem 1.2rem;
-  border-radius: 0.4rem;
-  margin-bottom: 1rem;
-}
-.manual-note {
-  background: #fff8e1;
-  border-left: 4px solid #f0ad4e;
-  padding: 0.9rem 1rem;
-  border-radius: 0.4rem;
-  margin: 1rem 0;
-}
-.analysis-note {
-  background: #eef6ff;
-  border-left: 4px solid #1f78b4;
-  padding: 0.95rem 1.1rem;
-  border-radius: 0.4rem;
-  margin: 1rem 0;
-}
-.result-card {
-  background: #f6fff8;
-  border-left: 4px solid #198754;
-  padding: 1rem 1.2rem;
-  border-radius: 0.4rem;
-  margin: 1rem 0;
-}
-.debrief-box {
-  background: #f7f7fb;
-  border: 1px solid #d9dee3;
-  border-radius: 0.5rem;
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-}
-.mcq {
-  border: 1px solid #d9dee3;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin: 1rem 0 1.25rem 0;
-  background: #ffffff;
-}
-.mcq .question {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-.mcq label {
-  display: block;
-  margin: 0.35rem 0;
-}
-.mcq button {
-  margin-top: 0.75rem;
-  margin-right: 0.5rem;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid #cfd4da;
-  border-radius: 0.35rem;
-  background: #f8f9fa;
-  color: #212529;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  box-shadow: none;
-  cursor: pointer;
-}
-.mcq button:hover,
-.mcq button:focus {
-  background: #eef1f4;
-  border-color: #adb5bd;
-}
-.mcq .feedback {
-  margin-top: 0.75rem;
-  padding: 0.75rem;
-  border-radius: 0.35rem;
-  display: none;
-}
-.mcq .feedback.correct {
-  display: block;
-  background: #e8f5e9;
-  color: #1b5e20;
-}
-.mcq .feedback.incorrect {
-  display: block;
-  background: #fdecea;
-  color: #8a1c1c;
-}
-.next-step {
-  margin-top: 0.75rem;
-}
-.locked-box {
-  border: 2px dashed #adb5bd;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  margin: 1rem 0;
-}
-.small-text {
-  font-size: 0.95rem;
-  color: #495057;
-}
-.protected-reveal {
-  border-left: 4px solid #0d6efd;
-  border-radius: 0.4rem;
-  background: #f8f9fa;
-  padding: 1rem 1.2rem;
-  margin: 1rem 0;
-}
-.protected-reveal button {
-  border: 1px solid #cfd4da;
-  border-radius: 0.35rem;
-  background: #ffffff;
-  color: #212529;
-  cursor: pointer;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0.35rem 0.75rem;
-}
-.protected-reveal button:hover,
-.protected-reveal button:focus {
-  background: #eef1f4;
-  border-color: #adb5bd;
-}
-.protected-reveal-content {
-  display: none;
-  margin-top: 0.85rem;
-}
-summary {
-  font-weight: 600;
-}
-</style>
-
+<script src="../../website-assets/quiz.js"></script>
 <script>
-function checkMCQ(id, correctValue, explanation) {
-  const box = document.getElementById(id);
-  const selected = box.querySelector('input[type="radio"]:checked');
-  const feedback = box.querySelector('.feedback');
-  if (!selected) {
-    feedback.className = 'feedback incorrect';
-    feedback.style.display = 'block';
-    feedback.innerHTML = 'Please choose one answer before checking.';
-    return;
-  }
-  if (selected.value === correctValue) {
-    feedback.className = 'feedback correct';
-    feedback.innerHTML = '<strong>Good choice.</strong> ' + explanation;
-  } else {
-    feedback.className = 'feedback incorrect';
-    feedback.innerHTML = '<strong>Not the best answer.</strong> ' + explanation;
-  }
-  feedback.style.display = 'block';
-}
-
 const mcqFeedback = {
   mcq1: {
     A: "This would not explain the prominent altered mental status, neck stiffness, photophobia, and seizure. Mild transaminitis can occur in systemic infection but is not the dominant syndrome.",
@@ -199,45 +53,6 @@ const mcqFeedback = {
     D: "Clinical metagenomics is now used for sterile-site and hospital diagnostic problems, although interpretation is more demanding than in many environmental applications."
   }
 };
-
-function checkMCQDetailed(id, correctValue) {
-  const box = document.getElementById(id);
-  const selected = box.querySelector('input[type="radio"]:checked');
-  const feedback = box.querySelector('.feedback');
-  if (!selected) {
-    feedback.className = 'feedback incorrect';
-    feedback.style.display = 'block';
-    feedback.innerHTML = 'Please choose one answer before checking.';
-    return;
-  }
-  const isCorrect = selected.value === correctValue;
-  feedback.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
-  feedback.innerHTML = mcqFeedback[id][selected.value];
-  feedback.style.display = 'block';
-}
-
-function resetMCQ(id) {
-  const box = document.getElementById(id);
-  box.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
-  const feedback = box.querySelector('.feedback');
-  feedback.style.display = 'none';
-  feedback.innerHTML = '';
-}
-
-function revealProtectedSource(button) {
-  const box = button.closest('.protected-reveal');
-  const content = box.querySelector('.protected-reveal-content');
-  const armed = button.dataset.armed === 'true';
-  if (!armed) {
-    button.dataset.armed = 'true';
-    button.textContent = 'Reveal source on second click';
-    return;
-  }
-  const bytes = Uint8Array.from(atob(box.dataset.payload), char => char.charCodeAt(0));
-  content.innerHTML = new TextDecoder().decode(bytes);
-  content.style.display = 'block';
-  button.style.display = 'none';
-}
 </script>
 ```
 
