@@ -1881,7 +1881,7 @@
     "href": "day-3/instructions/phylotree.html#a-brief-look-at-variation-patterns",
     "title": "3.2 Phylogenetics",
     "section": "5. A brief look at variation patterns",
-    "text": "5. A brief look at variation patterns\nsnp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta\nOpen the vcf file in a text editor and look quickly through the position of SNPs. Do you see that some SNP positions are clustered quite close together (&lt; 20 - 50 bp apart)? And which gene is it on the chromosome?",
+    "text": "5. A brief look at variation patterns\n{..bash} snp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta\nOpen the vcf file in a text editor and look quickly through the position of SNPs. Do you see that some SNP positions are clustered quite close together (&lt; 20 - 50 bp apart)? And which gene is it on the chromosome?",
     "crumbs": [
       "Practical Guides",
       "Day 3",

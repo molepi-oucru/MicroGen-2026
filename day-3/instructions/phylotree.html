@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -437,16 +472,16 @@ ul.task-list li input[type="checkbox"] {
 <p>The first step in building a phylogenetic tree is to generate a multiple sequence alignment (MSA) [<em>you can refer to this as an extension of the gene alignment problem</em>]. Since we have already generated pseudogenome sequences for each of the samples in the morning, now we can use these to build an MSA file. Note that since the pseudogenome is already at the same length and in synteny with the reference, we can directly concatenate the pseudogenome fasta files without performing sequence alignment. This is a unique advantage of using pseudogenome sequences for phylogenetic analysis, as it allows us to bypass the computationally intensive step of sequence alignment and directly generate an MSA file that can be used for tree construction.</p>
 <section id="concatenating-pseudogenome-fasta-files" class="level2">
 <h2 class="anchored" data-anchor-id="concatenating-pseudogenome-fasta-files">1. Concatenating pseudogenome fasta files</h2>
-<pre class="{bash}"><code># concatenating fasta files into a multifasta file
-cat *_consensus.fasta &gt; ST147_12str_bwamem2AMB201Kp_cat.mfasta 
-grep '&gt;' ST147_12str_bwamem2AMB201Kp_cat.mfasta </code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># concatenating fasta files into a multifasta file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="pp">*</span>_consensus.fasta <span class="op">&gt;</span> ST147_12str_bwamem2AMB201Kp_cat.mfasta </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'&gt;'</span> ST147_12str_bwamem2AMB201Kp_cat.mfasta </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="observe-snp-distance-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="observe-snp-distance-matrix">2. Observe SNP distance matrix</h2>
 <p>We can roughly look at the SNP distance matrix and identify the genetic relatedness between the samples.</p>
-<pre class="{bash}"><code># creating a SNP distance matrix using snp-dists
-snp-dists ST147_12str_bwamem2AMB201Kp_cat.mfasta &gt; ST147_12str_bwamem2AMB201Kp_cat.snpdist
-more ST147_12str_bwamem2AMB201Kp_cat.snpdist</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a SNP distance matrix using snp-dists</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-dists</span> ST147_12str_bwamem2AMB201Kp_cat.mfasta <span class="op">&gt;</span> ST147_12str_bwamem2AMB201Kp_cat.snpdist</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">more</span> ST147_12str_bwamem2AMB201Kp_cat.snpdist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>At this point, you can see that 11/12 samples are very closely related (0-6 SNPs apart), while one sample (966Kp) is &gt;3000 SNPs apart from the rest.</p>
 <p>What would this suggest to us in terms of outbreak investigation?</p>
 </section>
@@ -455,7 +490,7 @@ more ST147_12str_bwamem2AMB201Kp_cat.snpdist</code></pre>
 <p>You can try visualising the SNP alignment of only the outbreak related strains on SEAVIEW.</p>
 <p><strong><em>Exercise</em></strong>: Use commands to create a new whole genome alignment of outbreak strains, named <code>ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta</code></p>
 <p>Whole genome alignment is quite big to visualise (&gt;5 Mbp), and you are only interested in the variation sites. So let’s shorten the alignment to SNP alignment only.</p>
-<pre class="{bash}"><code>snp-sites -o ST147_outbreak_11str_bwamem2AMB201Kp_cat.snp.mfasta ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-sites</span> <span class="at">-o</span> ST147_outbreak_11str_bwamem2AMB201Kp_cat.snp.mfasta ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Open SEAVIEW and load the SNP alignment file. You can build a simple tree using the built-in function of SEAVIEW, selecting <code>Trees &gt; Distance methods</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -468,17 +503,17 @@ more ST147_12str_bwamem2AMB201Kp_cat.snpdist</code></pre>
 <section id="combine-local-with-regional-data" class="level2">
 <h2 class="anchored" data-anchor-id="combine-local-with-regional-data">4. Combine local with regional data</h2>
 <p>There have been outbreaks/reports of <em>K. pneumoniae</em> ST147 in the country. It is of interest to inspect whether the outbreak strains from this hospital are similar to those ST147 reported previously. From the original paper, the authors have identified two other previous studies in North Italy (PRJNA787449) and Calabria region (PRJNA1193841). We have prepared an additional 6 genomes from these previous studies</p>
-<pre class="{bash}"><code>cat ST147_12str_bwamem2AMB201Kp_cat.mfasta ../regional_extra_data/ST147_6extra_bwamem2AMB201Kp_cat.mfasta &gt; ST147_18str_bwamem2AMB201Kp_cat.mfasta
-
-## calculating SNP distance matrix using snp-dists
-snp-dists ST147_18str_bwamem2AMB201Kp_cat.mfasta &gt; ST147_18str_bwamem2AMB201Kp_cat.snpdist 
-more ST147_18str_bwamem2AMB201Kp_cat.snpdist</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ST147_12str_bwamem2AMB201Kp_cat.mfasta ../regional_extra_data/ST147_6extra_bwamem2AMB201Kp_cat.mfasta <span class="op">&gt;</span> ST147_18str_bwamem2AMB201Kp_cat.mfasta</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## calculating SNP distance matrix using snp-dists</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-dists</span> ST147_18str_bwamem2AMB201Kp_cat.mfasta <span class="op">&gt;</span> ST147_18str_bwamem2AMB201Kp_cat.snpdist </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">more</span> ST147_18str_bwamem2AMB201Kp_cat.snpdist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong><em>Question</em></strong>: After looking at the snp distance matrix of these 18 strains. What is your conclusion?</p>
 <p><strong><em>Exercise at home</em></strong>: You can run mapping and variant calling script on 6 ST147 samples from the other hospitals, and to generate pseudogenome sequences for phylogenetic analyses. The necessary <code>fastq</code> input are found in <code>day-3/phylogenetics/additional_mapping</code></p>
 </section>
 <section id="a-brief-look-at-variation-patterns" class="level2">
 <h2 class="anchored" data-anchor-id="a-brief-look-at-variation-patterns">5. A brief look at variation patterns</h2>
-<pre class="{bash}"><code>snp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta</code></pre>
+<p><code>{..bash} snp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta</code></p>
 <p>Open the vcf file in a text editor and look quickly through the position of SNPs. Do you see that some SNP positions are clustered quite close together (&lt; 20 - 50 bp apart)? And which gene is it on the chromosome?</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
@@ -491,20 +526,20 @@ more ST147_18str_bwamem2AMB201Kp_cat.snpdist</code></pre>
 <h2 class="anchored" data-anchor-id="an-attempt-to-remove-recombination-regions">6. An attempt to remove recombination regions</h2>
 <p>Recombination is defined as the process by which a segment of DNA is replaced by a homologous segment from another closely related organism. Recombination can introduce a large number of SNPs in a short region (densely clustered SNPs) and can confound phylogenetics and create misleading interpretation. Besides actual recombination events, other horizontal gene transfer (HGT) processes can also introduce a large number of SNPs in a short region, and these also need to be removed. Such common regions with high SNP density are transposons, integrons, or clone-specific prophages and antigenic/capsular loci.</p>
 <p>For accurate estimation of phylogenetic relationship, these high SNP density regions need to be removed. A common tool used for this is <code>Gubbins</code> (Genealogies Unbiased By recomBinations In Nucleotide Sequences), which identifies regions that have undergone recombination by looking for clusters of SNPs in the alignment, and then removes these regions from the alignment before constructing the phylogenetic tree.</p>
-<pre class="{bash}"><code>## running Gubbins with 10 threads and 5 iterations
-conda activate microgen2026_gubbins
-run_gubbins.py --threads 10 -i 5 -m 3 ST147_18str_bwamem2AMB201Kp_cat.mfasta
-conda deactivate</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## running Gubbins with 10 threads and 5 iterations</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate microgen2026_gubbins</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">run_gubbins.py</span> <span class="at">--threads</span> 10 <span class="at">-i</span> 5 <span class="at">-m</span> 3 ST147_18str_bwamem2AMB201Kp_cat.mfasta</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>There are multiple outputs generated after running Gubbins, including:</p>
 <ul>
 <li><code>ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta</code>: the filtered alignment file with recombination regions removed, which can be used for tree construction.</li>
 <li><code>ST147_18str_bwamem2AMB201Kp_cat.recombination_predictions.gff</code>: the gff file with the predicted recombination regions, which can be used to visualise the recombination regions on the chromosome on ARTEMIS.</li>
 <li><code>ST147_18str_bwamem2AMB201Kp_cat.summary_of_snp_distribution.vcf</code>: the vcf file with the SNPs in the filtered alignment, which can be used to visualise the SNP positions after Gubbins.</li>
 </ul>
-<pre class="{bash}"><code># Let's reinspect the snp distance from these 18 strains after removing recombination
-conda activate microgen2026_mapping
-snp-dists ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta &gt; ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist
-more ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's reinspect the snp distance from these 18 strains after removing recombination</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate microgen2026_mapping</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">snp-dists</span> ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta <span class="op">&gt;</span> ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">more</span> ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>What is the difference that you see. Does running Gubbins change your overall interpretation?</p>
 <p><strong><em>Exercise</em></strong>: Load the <code>recombination_predictions.gff</code> file in ARTEMIS and visualise the predicted recombination regions on the chromosome. What regions are predicted as recombination regions? Do they correspond to the regions with high SNP density that you observed before?</p>
 </section>
@@ -514,9 +549,9 @@ more ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist</code></pre>
 <p><img src="images/phylo_4.jpg" class="img-fluid"></p>
 <p>From this alignment, we can see that 16/18 strains were more closely related to each other, while 2 strains (966Kp and S13) were much different. While we can use built-in <code>Trees</code> function in SEAVIEW to build phylogenies, it does not support more complex tree building methods such as maximum likelihood (ML).</p>
 <p>To build an ML tree, we resort to use RAxML, a widely used tool.</p>
-<pre class="{bash}"><code>conda activate microgen2026
-# building an ML tree with 100 bootstraps
-raxml-ng --all --msa ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta --model GTR+G+ASC_LEWIS --bs-trees 100 --threads 6</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate microgen2026</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># building an ML tree with 100 bootstraps</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">raxml-ng</span> <span class="at">--all</span> <span class="at">--msa</span> ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta <span class="at">--model</span> GTR+G+ASC_LEWIS <span class="at">--bs-trees</span> 100 <span class="at">--threads</span> 6</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In this command, we applied a general DNA substitution model (<code>GTR+G</code>), which is commonly used for bacterial genomic phylogenetics. <code>ASC_LEWIS</code> is a correction for ascertainment bias, used when building trees from SNP alignments, as it accounts for the fact nonvariable sites are excluded and not sampled. The <code>--all</code> option tells RAxML to perform all steps of tree inference, including tree search, and bootstrapping.</p>
 <p>The output from RAxML includes many files, including</p>
 <ul>
