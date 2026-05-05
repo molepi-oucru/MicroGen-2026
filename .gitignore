@@ -56,6 +56,8 @@ rsconnect/
 
 /website-assets/images/
 */instructions/images/
+!day-1/instructions/images/
+!day-3/instructions/images/
 day-4/instructions/figures/
 day-4/instructions/*_files/
 

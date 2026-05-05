@@ -28,12 +28,29 @@ We hope you will enjoy the *flow*. Now, let's begin!
 
 # Data directory
 
-If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven't, no worries, we’ve got you covered! The data is pre-loaded on your instance under these directories:
+If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven't, no worries, we’ve got you covered! The data is pre-loaded on your instance under the directory:
 
--   `/data/raw_shortread`: Short-read data from Illumina - our focus today.
--   `/data/raw_longread`: Long-read data (Oxford Nanopore) - we will study in module 2.2.
+`/microgen2026/PRJNA1260529/`
 
-We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file `PRJNA1260529.metadata.tsv`.
+This directory contains all the raw sequencing data files from the study, both from short-read sequencing (Illumina MiSeq) and long-read sequencing (Oxford Nanopore).
+
+All metadata information of the dataset, such as sample name and sequencing technique for each data file, are stored in the tab-delimited file:
+
+`/microgen2026/day-1/PRJNA1260529.metadata.tsv`.
+
+We will first learn and practice on the short-read data, while long-read sequencing will be introduced later in module [2.3](day-2/instructions/hybrid-assembly.qmd).
+
+We have already taken out the short-read data to a new directory for you: 
+
+`/microgen2026/day-1/raw_shortread/`
+
+As the `/microgen2026/` is a shared directory for the whole course, please copy it to your home directory:
+
+``` {.bash code-line-numbers="false"}
+cp -r /microgen2026/day-1/raw_shortread/ ~/
+```
+
+Now you can work on it without disrupting your classmates ✔️
 
 Let's take a look at the files in the `raw_shortread` directory:
 
@@ -151,7 +168,7 @@ multiqc_outdir="multiqc_shortread/" # directory for MultiQC output
 mkdir -p $multiqc_outdir
 
 # activate the environment with fastqc & multiqc installed
-conda activate multiqc 
+conda activate microgen2026 
 
 nthreads=5 # allows analysing 5 samples in parallel
 
@@ -208,24 +225,110 @@ while read -r sample; do
     echo -e ${sample}"\t"raw_shortread/${sample}_1.fastq.gz"\t"raw_shortread/${sample}_2.fastq.gz >> samples_shortread.tsv;
 done < <(grep "Illumina MiSeq" PRJNA1260529.metadata.tsv | cut -f28)
 
-# run unicycler on 6 samples at a time
-conda activate unicycler
-parallel -j 6 --colsep "\t" unicycler -1 {2} -2 {3} -o unicycler_shortread/{1} --threads 4 :::: samples_shortread.tsv
+# run unicycler on 3 samples at a time
+conda activate microgen2026
+parallel -j 3 --colsep "\t" unicycler -1 {2} -2 {3} -o unicycler_shortread/{1} --threads 2 :::: samples_shortread.tsv
 ```
 
 # Self-Exploration
 
 ## Improve reads quality for assembly
 
-Trimming and adapter removal can be done with FASTP or Trimmomatic
+In our practice dataset, the quality of the raw sequences were very good. However, in real-life scenarios, this is not always the case.
 
-Example command-lines:
+For example, the raw reads may contain adapter sequences, which are short DNA sequences that are added to the ends of the DNA fragments during the sequencing process. 
+
+OR, we may also often find many low-quality bases at the 3' ends of the reads. These low-quality bases can also interfere with the assembly process, so it is important to remove them before assembly.
+
+All these issues can interfere with the assembly process, and lead to a lower quality assembly. 
+
+Improving reads quality, therefore, is a crucial step before assembly.
+
+To do that, [FASTP](https://github.com/OpenGene/fastp) is a good choice of tool for us.
+
+You are encouraged to read the [FASTP manual](https://github.com/OpenGene/fastp/blob/master/README.md) to understand how it works and how to use it for different modifications on the raw reads.
+
+But to get you started, here is an example command-line:
+
+```bash
+fastp --in1 ugly_sample/ERR4244683_1.fastq.gz --in2 ugly_sample/ERR4244683_2.fastq.gz \
+    --out1 trimming_output/ERR4244683_1.trimmed.fastq.gz --out2 trimming_output/ERR4244683_2.trimmed.fastq.gz \
+    --trim_front1 15 --trim_front2 15 \
+    --trim_poly_x \
+    --cut_tail --cut_tail_window_size 4 --cut_tail_mean_quality 25 \
+    --length_required 50 > trimming_output/fastp_run.log 2>&1
+```
+
+The command above does the following things:
+
+- `--in1` and `--in2`: Modifies both the reverse & forward reads of the sample `ERR4244683` in the directory `ugly_sample/`. 
+- `--trim_front1` and `--trim_front2`: Trims the first 15 bp from front (5') end
+- `--cut_tail`: Moves a sliding window from tail (3') to front
+- `--cut_tail_window_size 4`: Sets the sliding window length = 4bp
+- `--cut_tail_mean_quality 25`: Drops the bases in the window if its mean quality is below 25. Otherwise, stop the sliding.
+- `--trim_poly_x`: Trims the polyX tail
+- `--length_required`: Discards all trimmed reads shorter than 50 bp
+- Adapter trimming was enabled by default
+- `> trimming_output/fastp_run.log 2>&1`: Redirects all messages from the run program to the file `trimming_output/fastp_run.log`
+
+Now,
+
+:::{style="font-size: 1.3em; color: #474747ff; margin-top: 1em; margin-left: 1.7em; margin-bottom: 1em;"} 
+How can we know if the trimming was successful, and that the reads quality was improved, but not worsened?
+:::
+
+There are 2 main ways to check that:
+
+1. Check the log file `trimming_output/fastp_run.log`, and find:
+   - The amount of reads that still remains after trimming and filtering
+   - The Q30 percentage of the trimmed reads
+2. Compare the MultiQC report of the raw reads and the trimmed reads - Is there any improvement?
+
+To give you a better sense of these, we have an example of a bad quality raw reads in the directory `day-1/ugly_sample/` and the corresponding trimming output in `day-1/trimming_output/`, with the same trimming parameters as above. 
+
+Your tasks will be to explore the files in those directories and answer the questions below:
+
+1. What is bad about the raw reads quality of sample `ERR4244683`?
+2. How many reads were removed during the trimming process?
+3. Are many reads still remaining after trimming and filtering?
+4. What is the Q30 percentage of the trimmed reads?
+5. What are the differences in the quality of the trimmed reads compared to the raw reads?
+6. Would you use the trimmed reads or the raw reads for assembly? Why?
+7. Does it make sense to perform the trimming as in the code above?
+8. If you were to change the trimming parameters, what would you change and why?
+
+:::{.callout-tip collapse="true"}
+## Run by yourself 🏃🏻‍♀️
+We did not ask you to perform this quality improvement step by yourself. <br>
+But if you want to, please go ahead and do it! <br>
+If you get stucked, you can always refer to the solution in the script: `day-1/script.1.3.sh` <br>
+Good luck! 🍀
+:::
 
 ## Is my isolate really a *K. pneumoniae*?
 
 Species check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.
 
+Here we introduce the tool named `sylph` that will returns the 'relative abundance' of reads that belonging to different species.
+
+In our case, we would expect to see a near-100% abundance of *Klebsiella pneumoniae* reads.
+
+But let's run the tool on the raw reads first.
+
 ``` bash
-SYLPH_DB="sylph-db/gtdb-r220-c200-dbv1.syldb"
+# path to the database of representative genomes of all microbial species
+SYLPH_DB="/databases/sylph/gtdb-r226-c200-dbv1.syldb"
+
+# activate the environment with sylph
+conda activate microgen2026
+
+# run sylph on all fastq files
 sylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv
 ```
+
+The program should run very fast.
+
+After getting the output file `sylph_shortread.tsv`, check the relative abundance of *Klebsiella pneumoniae*. Do you see any contamination or mis-identification?
+
+- How the result would look like if there is a co-infection of *Klebsiella pneumoniae* and *Acinetobacter baumannii*?
+- How it would be if the isolate was mis-identified as *Klebsiella quasipneumoniae*?
