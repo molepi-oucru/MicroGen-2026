@@ -19,7 +19,7 @@ The first step in building a phylogenetic tree is to generate a multiple sequenc
 
 ## 1. Concatenating pseudogenome fasta files
 
-```{bash}
+```{.bash}
 # concatenating fasta files into a multifasta file
 cat *_consensus.fasta > ST147_12str_bwamem2AMB201Kp_cat.mfasta 
 grep '>' ST147_12str_bwamem2AMB201Kp_cat.mfasta 
@@ -29,7 +29,7 @@ grep '>' ST147_12str_bwamem2AMB201Kp_cat.mfasta
 
 We can roughly look at the SNP distance matrix and identify the genetic relatedness between the samples.
 
-```{bash}
+```{.bash}
 # creating a SNP distance matrix using snp-dists
 snp-dists ST147_12str_bwamem2AMB201Kp_cat.mfasta > ST147_12str_bwamem2AMB201Kp_cat.snpdist
 more ST147_12str_bwamem2AMB201Kp_cat.snpdist
@@ -47,7 +47,7 @@ You can try visualising the SNP alignment of only the outbreak related strains o
 
 Whole genome alignment is quite big to visualise (\>5 Mbp), and you are only interested in the variation sites. So let's shorten the alignment to SNP alignment only.
 
-```{bash}
+```{.bash}
 snp-sites -o ST147_outbreak_11str_bwamem2AMB201Kp_cat.snp.mfasta ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta
 ```
 
@@ -61,7 +61,7 @@ Open SEAVIEW and load the SNP alignment file. You can build a simple tree using 
 
 There have been outbreaks/reports of *K. pneumoniae* ST147 in the country. It is of interest to inspect whether the outbreak strains from this hospital are similar to those ST147 reported previously. From the original paper, the authors have identified two other previous studies in North Italy (PRJNA787449) and Calabria region (PRJNA1193841). We have prepared an additional 6 genomes from these previous studies
 
-```{bash}
+```{.bash}
 cat ST147_12str_bwamem2AMB201Kp_cat.mfasta ../regional_extra_data/ST147_6extra_bwamem2AMB201Kp_cat.mfasta > ST147_18str_bwamem2AMB201Kp_cat.mfasta
 
 ## calculating SNP distance matrix using snp-dists
@@ -75,7 +75,7 @@ more ST147_18str_bwamem2AMB201Kp_cat.snpdist
 
 ## 5. A brief look at variation patterns
 
-```{bash}
+```{..bash}
 snp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta
 ```
 
@@ -91,7 +91,7 @@ Recombination is defined as the process by which a segment of DNA is replaced by
 
 For accurate estimation of phylogenetic relationship, these high SNP density regions need to be removed. A common tool used for this is `Gubbins` (Genealogies Unbiased By recomBinations In Nucleotide Sequences), which identifies regions that have undergone recombination by looking for clusters of SNPs in the alignment, and then removes these regions from the alignment before constructing the phylogenetic tree.
 
-```{bash}
+```{.bash}
 ## running Gubbins with 10 threads and 5 iterations
 conda activate microgen2026_gubbins
 run_gubbins.py --threads 10 -i 5 -m 3 ST147_18str_bwamem2AMB201Kp_cat.mfasta
@@ -104,7 +104,7 @@ There are multiple outputs generated after running Gubbins, including:
 - `ST147_18str_bwamem2AMB201Kp_cat.recombination_predictions.gff`: the gff file with the predicted recombination regions, which can be used to visualise the recombination regions on the chromosome on ARTEMIS.
 - `ST147_18str_bwamem2AMB201Kp_cat.summary_of_snp_distribution.vcf`: the vcf file with the SNPs in the filtered alignment, which can be used to visualise the SNP positions after Gubbins.
 
-```{bash}
+```{.bash}
 # Let's reinspect the snp distance from these 18 strains after removing recombination
 conda activate microgen2026_mapping
 snp-dists ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta > ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist
@@ -125,7 +125,7 @@ From this alignment, we can see that 16/18 strains were more closely related to 
 
 To build an ML tree, we resort to use RAxML, a widely used tool.
 
-```{bash}
+```{.bash}
 conda activate microgen2026
 # building an ML tree with 100 bootstraps
 raxml-ng --all --msa ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta --model GTR+G+ASC_LEWIS --bs-trees 100 --threads 6

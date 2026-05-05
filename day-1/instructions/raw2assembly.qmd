@@ -38,7 +38,7 @@ All metadata information of the dataset, such as sample name and sequencing tech
 
 `/microgen2026/day-1/PRJNA1260529.metadata.tsv`.
 
-We will first learn and practice on the short-read data, while long-read sequencing will be introduced later in module [2.3](day-2/instructions/hybrid-assembly.qmd).
+We will first learn and practice on the short-read data, while long-read sequencing will be introduced later in module [2.3](../../day-2/instructions/hybrid-assembly.qmd).
 
 We have already taken out the short-read data to a new directory for you: 
 
