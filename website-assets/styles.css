@@ -156,3 +156,28 @@ code.sourceCode {
 figcaption {
     text-align: right;
 }
+
+@media print {
+
+    /* Hide the navbar, sidebar, and footer */
+    .navbar,
+    .sidebar,
+    .footer,
+    .quarto-secondary-nav {
+        display: none !important;
+    }
+
+    /* Expand the main content to fill the page */
+    .quarto-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Force code blocks to wrap so they don't get cut off */
+    pre,
+    code {
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+    }
+}
