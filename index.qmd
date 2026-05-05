@@ -43,28 +43,29 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 **Module 2.3: Locate & compare genes** 
 
 ## Day 3
-### Phylogenetics - Relationships between genomes
+### Genomic variations and relationships
 *Core SNP and phylogenetic analysis.* <br>
 [Slides]() | [Practical Guides](day-3/instructions/index.qmd) | [Data]()
 
-**Module 3.1: Read mapping & SNP alignment**
+**Module 3.1: Read mapping**
 
-**Module 3.2: Phylogenetic tree inference**
+**Module 3.2: Phylogenetics**
 
 ## Day 4
-### Metagenomics
+### Next-generation Metagenomic sequencing (mNGS)
 *Read-based metagenomic analysis for AMR surveillance and actionable clinical diagnosis.* <br>
 [Slides]() | [Practical Guides](day-4/instructions/index.qmd) | [Data](https://github.com/molepi-oucru/MicroGen-2026/tree/main/day-4/materials)
 
-**Module 4.1: Clinical foundations & AMR surveillance: workflow setup**
+**Module: mNGS in clinical microbiology**
 
-**Module 4.2: Vietnamese healthy gut microbiome: taxonomy analysis**
+- **4.1: Workflow setup**
+- **4.2: Taxonomy analysis**
+- **4.3: AMR analysis and summary**
 
-**Module 4.3: Vietnamese healthy gut microbiome: AMR analysis and summary**
+**Module: mNGS in pathogen detection**
 
-**Module 4.4: Actionable diagnostics & clinical reasoning: case simulation**
-
-**Module 4.5: Actionable diagnostics & clinical reasoning: signal analysis**
+- **4.4: Clinical case**
+- **4.5: Signal analysis**
 :::
 
 # Instructors

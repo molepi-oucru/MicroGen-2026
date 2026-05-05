@@ -56,6 +56,7 @@ website:
               contents:
                 - day-0/instructions/setup-environment.qmd
                 - day-0/instructions/linux-basics.qmd
+                - day-0/instructions/final-quiz.qmd
             - section: "Day 1"
               href: day-1/instructions/index.qmd
               contents:
@@ -76,11 +77,20 @@ website:
             - section: "Day 4"
               href: day-4/instructions/index.qmd
               contents:
-                - day-4/instructions/vietnamese-healthy-gut-microbiome.qmd
-                - day-4/instructions/vietnamese-healthy-gut-taxonomy.qmd
-                - day-4/instructions/vietnamese-healthy-gut-amr.qmd
-                - day-4/instructions/clinical-reasoning.qmd
-                - day-4/instructions/clinical-reasoning-analysis.qmd
+                - section: "mNGS in clinical microbiology"
+                  contents:
+                    - text: "4.1 Workflow Setup" 
+                      href: day-4/instructions/vietnamese-healthy-gut-microbiome.qmd
+                    - text: "4.2 Taxonomy Analysis" 
+                      href: day-4/instructions/vietnamese-healthy-gut-taxonomy.qmd
+                    - text: "4.3 AMR Analysis & Summary" 
+                      href: day-4/instructions/vietnamese-healthy-gut-amr.qmd
+                - section: "mNGS in pathogen detection"
+                  contents:
+                    - text: "4.4 Clinical Case" 
+                      href: day-4/instructions/clinical-reasoning.qmd
+                    - text: "4.5 Signal Analysis" 
+                      href: day-4/instructions/clinical-reasoning-analysis.qmd
 
 format:
   html:
@@ -97,7 +107,34 @@ format:
     code-line-numbers: true
     smooth-scroll: true
     anchor-sections: true
-
+  # pdf: 
+  #   documentclass: report
+  #   geometry:
+  #     - top=20mm
+  #     - left=20mm
+  #     - heightrounded
+  #   # mainfont: "TeX Gyre Heros"
+  #   # sansfont: "TeX Gyre Heros"
+  #   code-overflow: wrap
+  #   colorlinks: true
+  #   code-line-numbers: true
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{fvextra}
+  #         \fvset{
+  #           breaklines=true,
+  #           breakanywhere=true,
+  #           breakbytokenanywhere=true
+  #         }
+  #         \AtBeginDocument{
+  #           \DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  #             breaklines,
+  #             breakanywhere,
+  #             breakbytokenanywhere,
+  #             commandchars=\\\{\}
+  #           }
+  #         }
+          
 
 
 

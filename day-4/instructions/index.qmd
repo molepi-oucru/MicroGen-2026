@@ -1,14 +1,14 @@
 ---
-title: "Day 4: Metagenomics"
+title: "Day 4: mNGS in Clinical Microbiology"
 author: "Minh-Quan Ton-Ngoc, Hao Chung The"
 date: "2026-05-15"
 ---
 
-Day 4 introduces metagenomic sequencing as a practical tool for surveillance, diagnosis, and clinical decision-making. The lessons use compact teaching re-analyses so that you can focus on the workflow, interpretation, and limitations without needing to reproduce full published studies during the workshop.
+Day 4 introduces Next-generation Metagenomic sequencing (mNGS) as a practical tool for surveillance, diagnosis, and clinical decision-making in clinical microbiology. The lessons use compact teaching re-analyses so that you can focus on the workflow and analysis results interpretation.
 
-In [Clinical Foundations & AMR Surveillance](vietnamese-healthy-gut-microbiome.qmd), you will work with a six-sample demonstration re-analysis adapted from Pereira-Dias et al. The exercise uses a subset of a Vietnamese healthy gut microbiome and antimicrobial resistance surveillance dataset to show how shotgun metagenomic reads can be processed into taxonomic and AMR summaries. This is a teaching demonstration, not a full reproduction of the original paper.
+In [mNGS in clinical microbiology](vietnamese-healthy-gut-microbiome.qmd), you will work with a six-sample demonstration re-analysis adapted from Pereira-Dias et al. The exercise uses a subset of a Vietnamese healthy gut microbiome and antimicrobial resistance surveillance dataset to show how shotgun metagenomic reads can be processed into taxonomic and AMR summaries. This is a teaching demonstration, not a full reproduction of the original paper.
 
-In [Actionable Diagnostics & Clinical Reasoning](clinical-reasoning.qmd), you will move from surveillance to a clinical metagenomics case. The lesson focuses on when unbiased sequencing is useful, how infection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.
+In [mNGS in pathogen detection](clinical-reasoning.qmd), you will move from surveillance to a clinical metagenomics case. The lesson focuses on when unbiased sequencing is useful, how infection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.
 
 ::: {.callout-note}
 ## Technical note
@@ -18,8 +18,13 @@ The Day 4 practical exercises use R 4.5.0 and Python 3.13. The Python examples a
 
 ## Lessons
 
-1. [Clinical Foundations & AMR Surveillance: Workflow Setup](vietnamese-healthy-gut-microbiome.qmd)
-2. [Clinical Foundations & AMR Surveillance: Taxonomy Analysis](vietnamese-healthy-gut-taxonomy.qmd)
-3. [Clinical Foundations & AMR Surveillance: AMR Analysis & Summary](vietnamese-healthy-gut-amr.qmd)
-4. [Actionable Diagnostics & Clinical Reasoning: Case Simulation](clinical-reasoning.qmd)
-5. [Actionable Diagnostics & Clinical Reasoning: Signal Analysis](clinical-reasoning-analysis.qmd)
+**mNGS in clinical microbiology:**
+
+1. [Workflow Setup](vietnamese-healthy-gut-microbiome.qmd)
+2. [Taxonomy Analysis](vietnamese-healthy-gut-taxonomy.qmd)
+3. [AMR Analysis & Summary](vietnamese-healthy-gut-amr.qmd)
+
+**mNGS in pathogen detection:**
+
+1. [Clinical Case](clinical-reasoning.qmd)
+2. [Signal Analysis](clinical-reasoning-analysis.qmd)

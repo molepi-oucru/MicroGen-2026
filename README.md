@@ -27,8 +27,8 @@ Within each day, there are three directories:
 
 ### Day 0: Pack your backpack (Pre-Workshop)
 
-- **0.1 Setup computing workspace - VSCode and SSH connection** - Quan
-- **0.2 Linux & command lines** - Nguyen
+- **0.1 Setup your workspace** - Quan
+- **0.2 Commands & Environments** - Nguyen
 
 ### Day 1: Meet the genomes
 
@@ -42,18 +42,23 @@ Within each day, there are three directories:
 - **2.2 Long-read sequencing & Hybrid assemblies** - Quynh
 - **2.3 Locate & compare genes** - Nguyen
 
-### Day 3: Phylogenetics - Relationships between genomes
+### Day 3: Genomic variations and relationships
 
-- **3.1 Read mapping & SNP alignment** - Hao
-- **3.2 Phylogenetic tree inference** - Hao
+- **3.1 Read mapping** - Hao
+- **3.2 Phylogenetics** - Hao
 
-### Day 4: Metagenomics
+### Day 4: Next-generation Metagenomic sequencing (mNGS)
 
-- **4.1 Clinical foundations & AMR surveillance: workflow setup** - Quan, Hao
-- **4.2 Clinical foundations & AMR surveillance: taxonomy analysis** - Hao, Quan
-- **4.3 Clinical foundations & AMR surveillance: AMR analysis and summary** - Hao, Quan
-- **4.4 Actionable diagnostics & clinical reasoning: case simulation** - Quan, Hao
-- **4.5 Actionable diagnostics & clinical reasoning: signal analysis** - Quan, Hao
+**Module: mNGS in clinical microbiology** - Hao & Quan
+
+- **4.1: Workflow setup**
+- **4.2: Taxonomy analysis**
+- **4.3: AMR analysis and summary**
+
+**Module: mNGS in pathogen detection** - Quan & Hao
+
+- **4.4: Clinical case**
+- **4.5: Signal analysis**
 
 Day 4 introduces read-based metagenomic analysis for two teaching scenarios: a six-sample Vietnamese healthy gut microbiome / AMR surveillance re-analysis, and a clinical case study focused on actionable diagnosis. Backup analysis files are provided in `day-4/materials/` so participants can continue the interpretation exercises even if they cannot complete a live run during the workshop.
 
