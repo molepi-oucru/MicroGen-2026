@@ -453,21 +453,21 @@
   {
     "objectID": "day-3/instructions/phylotree.html",
     "href": "day-3/instructions/phylotree.html",
-    "title": "3.2 Phylogenetic tree inference",
+    "title": "3.2 Phylogenetics",
     "section": "",
-    "text": "Back to top",
+    "text": "In contrast to mapping, the theory of phylogenetics is more nuanced and complex, but its practical steps are relatively straightforward. The practical steps herein will be used to build phylogenetic trees and understand their interpretations, using the Italian Klebsiella pneumoniae ST147 outbreak dataset.",
     "crumbs": [
       "Practical Guides",
       "Day 3",
-      "3.2 Phylogenetic tree inference"
+      "3.2 Phylogenetics"
     ]
   },
   {
     "objectID": "day-3/instructions/index.html",
     "href": "day-3/instructions/index.html",
-    "title": "Day 3: Phylogenetics - Relationships between genomes",
+    "title": "Day 3: Genomic variations and relationships",
     "section": "",
-    "text": "At this stage, we’re gonna learn how to compare and infer the evolutionary relationships between the outbreak’s isolates from their short-read sequencing data. These analyses will enable us to answer questions, such as:\n\nAre the outbreak isolates genomically related to each other?\nHow many transmission events occurred during the outbreak?\nWhat is the direction of transmission?\nHow does the outbreak spread in the hospital?\nHow does the pathogen evolve during the outbreak?\nWhat could be the origin of the outbreak?\n\nWe will journey through the following topics:\n\nGenome mapping: How to map sequencing reads of the outbreak’s isolates to a reference genome.\nSNP calling & alignment: How to identify single-nucleotide polymorphisms (SNPs) among the outbreak’s isolates.\nPhylogenetic tree inference: How to infer genomic relatedness between the outbreak’s isolates.\n\nNow, let’s begin!\n\n\n\n Back to top",
+    "text": "Following the previous two days, we have completed the genome assembly and annotation of our Klebsiella pneumoniae samples. Now, we will focus on analyzing their variation and relationship at genomic level. We will explore the following topics:\n\nRead mapping: Aligning your sample’s raw data to a reference genome\nVariant calling: Comparing the aligned reads to the reference to identify differences (variants)\nPhylogenetic analysis: Constructing a phylogenetic tree to understand the evolutionary relationships among the samples\n\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 3"
@@ -919,7 +919,7 @@
     "href": "day-1/instructions/raw2assembly.html#improve-reads-quality-for-assembly",
     "title": "1.3 From raw sequencing data to assemblies",
     "section": "Improve reads quality for assembly",
-    "text": "Improve reads quality for assembly\nTrimming and adapter removal can be done with FASTP or Trimmomatic\nExample command-lines:",
+    "text": "Improve reads quality for assembly\nIn our practice dataset, the quality of the raw sequences were very good. However, in real-life scenarios, this is not always the case.\nFor example, the raw reads may contain adapter sequences, which are short DNA sequences that are added to the ends of the DNA fragments during the sequencing process.\nOR, we may also often find many low-quality bases at the 3’ ends of the reads. These low-quality bases can also interfere with the assembly process, so it is important to remove them before assembly.\nAll these issues can interfere with the assembly process, and lead to a lower quality assembly.\nImproving reads quality, therefore, is a crucial step before assembly.\nTo do that, FASTP is a good choice of tool for us.\nYou are encouraged to read the FASTP manual to understand how it works and how to use it for different modifications on the raw reads.\nBut to get you started, here is an example command-line:\nfastp --in1 ugly_sample/ERR4244683_1.fastq.gz --in2 ugly_sample/ERR4244683_2.fastq.gz \\\n    --out1 trimming_output/ERR4244683_1.trimmed.fastq.gz --out2 trimming_output/ERR4244683_2.trimmed.fastq.gz \\\n    --trim_front1 15 --trim_front2 15 \\\n    --trim_poly_x \\\n    --cut_tail --cut_tail_window_size 4 --cut_tail_mean_quality 25 \\\n    --length_required 50 &gt; trimming_output/fastp_run.log 2&gt;&1\nThe command above does the following things:\n\n--in1 and --in2: Modifies both the reverse & forward reads of the sample ERR4244683 in the directory ugly_sample/.\n--trim_front1 and --trim_front2: Trims the first 15 bp from front (5’) end\n--cut_tail: Moves a sliding window from tail (3’) to front\n--cut_tail_window_size 4: Sets the sliding window length = 4bp\n--cut_tail_mean_quality 25: Drops the bases in the window if its mean quality is below 25. Otherwise, stop the sliding.\n--trim_poly_x: Trims the polyX tail\n--length_required: Discards all trimmed reads shorter than 50 bp\nAdapter trimming was enabled by default\n&gt; trimming_output/fastp_run.log 2&gt;&1: Redirects all messages from the run program to the file trimming_output/fastp_run.log\n\nNow,\n\nHow can we know if the trimming was successful, and that the reads quality was improved, but not worsened?\n\nThere are 2 main ways to check that:\n\nCheck the log file trimming_output/fastp_run.log, and find:\n\nThe amount of reads that still remains after trimming and filtering\nThe Q30 percentage of the trimmed reads\n\nCompare the MultiQC report of the raw reads and the trimmed reads - Is there any improvement?\n\nTo give you a better sense of these, we have an example of a bad quality raw reads in the directory day-1/ugly_sample/ and the corresponding trimming output in day-1/trimming_output/, with the same trimming parameters as above.\nYour tasks will be to explore the files in those directories and answer the questions below:\n\nWhat is bad about the raw reads quality of sample ERR4244683?\nHow many reads were removed during the trimming process?\nAre many reads still remaining after trimming and filtering?\nWhat is the Q30 percentage of the trimmed reads?\nWhat are the differences in the quality of the trimmed reads compared to the raw reads?\nWould you use the trimmed reads or the raw reads for assembly? Why?\nDoes it make sense to perform the trimming as in the code above?\nIf you were to change the trimming parameters, what would you change and why?\n\n\n\n\n\n\n\nTipRun by yourself 🏃🏻‍♀️\n\n\n\n\n\nWe did not ask you to perform this quality improvement step by yourself.  But if you want to, please go ahead and do it!  If you get stucked, you can always refer to the solution in the script: day-1/script.1.3.sh  Good luck! 🍀",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -931,7 +931,7 @@
     "href": "day-1/instructions/raw2assembly.html#is-my-isolate-really-a-k.-pneumoniae",
     "title": "1.3 From raw sequencing data to assemblies",
     "section": "Is my isolate really a K. pneumoniae?",
-    "text": "Is my isolate really a K. pneumoniae?\nSpecies check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.\nSYLPH_DB=\"/databases/sylph/gtdb-r226-c200-dbv1.syldb\"\nconda activate microgen2026\nsylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv",
+    "text": "Is my isolate really a K. pneumoniae?\nSpecies check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.\nHere we introduce the tool named sylph that will returns the ‘relative abundance’ of reads that belonging to different species.\nIn our case, we would expect to see a near-100% abundance of Klebsiella pneumoniae reads.\nBut let’s run the tool on the raw reads first.\n# path to the database of representative genomes of all microbial species\nSYLPH_DB=\"/databases/sylph/gtdb-r226-c200-dbv1.syldb\"\n\n# activate the environment with sylph\nconda activate microgen2026\n\n# run sylph on all fastq files\nsylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv\nThe program should run very fast.\nAfter getting the output file sylph_shortread.tsv, check the relative abundance of Klebsiella pneumoniae. Do you see any contamination or mis-identification?\n\nHow the result would look like if there is a co-infection of Klebsiella pneumoniae and Acinetobacter baumannii?\nHow it would be if the isolate was mis-identified as Klebsiella quasipneumoniae?",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -965,13 +965,13 @@
   {
     "objectID": "day-3/instructions/mapping.html",
     "href": "day-3/instructions/mapping.html",
-    "title": "3.1 Read mapping & SNP alignment",
+    "title": "3.1 Read mapping",
     "section": "",
-    "text": "Back to top",
+    "text": "Mapping, on theory, is a straightforward concept. However, in practice, mapping is a complex process with multiple steps and considerations. The most crucial step is not mapping per se, but on filtering mapped reads and variants to retain only high-quality ones. This is particularly important if you are working with potentially closely related genomes (e.g. in an outbreak), where the number of variants can be very low, and the impact of false positives variant detection (SNPs) can lead to misleading conclusion.",
     "crumbs": [
       "Practical Guides",
       "Day 3",
-      "3.1 Read mapping & SNP alignment"
+      "3.1 Read mapping"
     ]
   },
   {
@@ -1682,6 +1682,258 @@
       "Practical Guides",
       "Day 2",
       "2.1 Analyse the assemblies"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#all-the-previous-steps-can-be-captured-in-this-one-script",
+    "href": "day-3/instructions/mapping.html#all-the-previous-steps-can-be-captured-in-this-one-script",
+    "title": "3.1 Read mapping",
+    "section": "All the previous steps can be captured in this one script:",
+    "text": "All the previous steps can be captured in this one script:\n\nBut don’t run this code again\n./mapping_onesample.sh 925Kp_1.fastq.gz 925Kp_2.fastq.gz -r AMB201Kp_chrom.fa -o 925Kp_bwamem2AMB201Kp\nInstead, run this code for the next sample, 930Kp:\n./mapping_onesample.sh 930Kp_1.fastq.gz 930Kp_2.fastq.gz -r AMB201Kp_chrom.fa -o 930Kp_bwamem2AMB201Kp\nExercise: Run the mapping script for the remaining samples, and generate pseudogenome sequences for all samples.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#indexing-the-reference-genome",
+    "href": "day-3/instructions/mapping.html#indexing-the-reference-genome",
+    "title": "3.1 Read mapping",
+    "section": "1. Indexing the reference genome",
+    "text": "1. Indexing the reference genome\nThe goal of mapping is to align the sequencing reads to a reference genome. In this example, we will use the BWA-MEM2 algorithm for mapping. First, we need to index the reference genome using the bwa-mem2 index command. This step creates the necessary index files for efficient mapping.\nbwa-mem2 index AMB201Kp_chrom.fa # indexing the reference genome\nls -l",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#mapping-the-reads-to-the-reference-genome",
+    "href": "day-3/instructions/mapping.html#mapping-the-reads-to-the-reference-genome",
+    "title": "3.1 Read mapping",
+    "section": "2. Mapping the reads to the reference genome",
+    "text": "2. Mapping the reads to the reference genome\nFirst we will conduct mapping for one sample, 925Kp, which has paired-end reads (925Kp_1.fastq.gz and 925Kp_2.fastq.gz).\nWe will use the bwa-mem2 mem command to perform the mapping, with\n\n-t 8 option allows us to use 8 threads for faster processing\noutput will be saved in a SAM file named 925Kp_bwamem2AMB201Kp.sam. It is important to note that the output file name should reflect the reference genome used for mapping, in this case, AMB201Kp.\n\n# mapping forward and reverse reads to the reference genome, and saving the output in SAM format\nbwa-mem2 mem -t 8 AMB201Kp_chrom.fa 925Kp_1.fastq.gz 925Kp_2.fastq.gz &gt; 925Kp_bwamem2AMB201Kp.sam \nls -l",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#converting-sam-to-bam-format",
+    "href": "day-3/instructions/mapping.html#converting-sam-to-bam-format",
+    "title": "3.1 Read mapping",
+    "section": "3. Converting SAM to BAM format",
+    "text": "3. Converting SAM to BAM format\nAfter mapping, we will convert the SAM file to BAM format using samtools view, with - -bS option specifies that the input is in SAM format and the output should be in BAM format. - resulting BAM file will be named 925Kp_bwamem2AMB201Kp_tmp.bam. - -q 30 option filters the alignments to include only those with a mapping quality of at least 30, ensuring that we retain high-quality mappings.\n# converting the SAM file to BAM format\nsamtools view -t 8 -q 30 -bS 925Kp_bwamem2AMB201Kp.sam &gt; 925Kp_bwamem2AMB201Kp_tmp.bam",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#removing-reads-with-long-softhard-clipping-and-sort-bam-file",
+    "href": "day-3/instructions/mapping.html#removing-reads-with-long-softhard-clipping-and-sort-bam-file",
+    "title": "3.1 Read mapping",
+    "section": "4. Removing reads with long soft/hard clipping and sort bam file:",
+    "text": "4. Removing reads with long soft/hard clipping and sort bam file:\nReads can be poorly mapped to the reference, which can be indicated by long soft or hard clipping in the CIGAR string. Since most aligners, including BWA-MEM2, use local alignment, this means the ends of reads may not be part of the best alignment. This can be caused by:\n\nadapter sequences not cleanly filtered\nstructural variations in your sample compared to the reference\nmapping to repetitive regions of the genome\n\nIn the SAM file, Column 6 (CIGAR string) describes how the read aligns to the reference. The CIGAR string can contain various operations, including matches (M), insertions (I), deletions (D), soft clipping (S), and hard clipping (H). Soft clipping (S) indicates that a portion of the read is not aligned to the reference, while hard clipping (H) indicates that a portion of the read is not present in the alignment at all. Soft and hard clipping don’t mean biological differences, they just indicate whether a full read sequence is in the SAM file.\nTo remove reads with long soft/hard clipping, we can use samclip to allow the maximum soft/hard clipping length of xx bp (xx=10). This means that any read with more than 10 bp of soft or hard clipping will be filtered out. This strict setup is preferred to ensure mismapped reads are removed, allowing for more accurate variant calling in downstream analysis. This filter is particularly significant to infer differences in very closely related samples, such as in an outbreak.\nsamtools faidx AMB201Kp_chrom.fa # first need indexing the reference genome for samclip\n# removing reads with long soft/hard clipping and sorting the BAM file\nsamtools view -h 925Kp_bwamem2AMB201Kp_tmp.bam | samclip --max 10 --ref AMB201Kp_chrom.fa | samtools sort -t 8 &gt; 925Kp_bwamem2AMB201Kp_clip.bam\nWe combined the filtering of reads with long soft/hard clipping and sorting the BAM file into one command. The resulting BAM file after filtering will be named 925Kp_bwamem2AMB201Kp_clip.bam. Sorting the BAM file is important for downstream analysis, such as variant calling, as it allows for efficient access to the alignments based on their genomic coordinates.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#indexing-the-sorted-bam-file",
+    "href": "day-3/instructions/mapping.html#indexing-the-sorted-bam-file",
+    "title": "3.1 Read mapping",
+    "section": "5. Indexing the sorted BAM file",
+    "text": "5. Indexing the sorted BAM file\n# indexing the sorted BAM file for downstream analysis\nsamtools index 925Kp_bwamem2AMB201Kp_clip.bam",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#extra-visualizing-mapped-reads-on-reference",
+    "href": "day-3/instructions/mapping.html#extra-visualizing-mapped-reads-on-reference",
+    "title": "3.1 Read mapping",
+    "section": "Extra: Visualizing mapped reads on reference",
+    "text": "Extra: Visualizing mapped reads on reference\nExercise: Load the sorted clipped bam file onto reference using Artemis to visualize the coverage and depth of mapped reads.\nFollowing these steps:\n\nOpen Artemis and load the reference genome AMB201Kp_chrom.fa . Also read the annotation file AMB201Kp_fx.gbff\nLoad the sorted BAM file 925Kp_bwamem2AMB201Kp_clip.bam in File &gt; Read BAM/CRAM/VCF .... Make sure your index bam.bai file is in the same directory as the BAM file.\nVisualize the coverage and depth of mapped reads across the reference genome. Try right clicking in the bam window and select View &gt; Paired Stack to visualize paired-end reads. You can also visualize variants by select Show &gt; SNP marks to view TRUE SNPS. What should be the feature of a true SNP?\n\n\n\nMapping sample to reference AMB201Kp\n\n\n\nQuestion: Navigate to region 162400 - 167200; 464000 - 469000. What are the potential explanations for regions without mapped reads?\n\n\n\n\n\n\n\n\n\n\nYou can continue exploring the Artemis portal, but don’t close it down just now.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#variant-calling-using-freebayes",
+    "href": "day-3/instructions/mapping.html#variant-calling-using-freebayes",
+    "title": "3.1 Read mapping",
+    "section": "6. Variant calling using FreeBayes",
+    "text": "6. Variant calling using FreeBayes\nAfter obtaining the sorted and indexed BAM file, we can proceed with variant calling using FreeBayes. FreeBayes is a haplotype-based variant caller that can identify single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels) from the aligned reads.\n# calling variants using FreeBayes\nfreebayes -f AMB201Kp_chrom.fa -p 1 -C 4 925Kp_bwamem2AMB201Kp_clip.bam | bcftools filter -e 'QUAL &lt; 30 | (INFO/AO)/(INFO/DP) &lt;0.6'| vcfallelicprimitives -k &gt; 925Kp_bwamem2AMB201Kp_frb.vcf\n\n# creating a sequence dictionary for the reference genome, which is required for GATK tools\ngatk CreateSequenceDictionary -R AMB201Kp_chrom.fa\n# Improve accuracy of calling indels\ngatk LeftAlignAndTrimVariants -R AMB201Kp_chrom.fa -V 925Kp_bwamem2AMB201Kp_frb.vcf -O 925Kp_bwamem2AMB201Kp_frb_naive.vcf\nIn this command, we specify the reference genome using the -f option, set the ploidy to 1 using the -p option (bacterial genome is haploid), and set a minimum alternate allele count of 4 using the -C option. The output is then filtered using bcftools filter to retain (-e means excluding) only variants with a quality score of at least 30 and an allele frequency of at least 0.6. Finally, we use vcfallelicprimitives to decompose complex variants into simpler ones, and the resulting VCF file is named 925Kp_bwamem2AMB201Kp_frb.vcf.\nOne drawback of Freebayes is that it does not perform local realignment around indels, which can lead to misaligned reads and inaccurate variant calls. To address this issue, we can use GATK’s LeftAlignAndTrimVariants tool to left-align and trim the variants in the VCF file. This step helps to improve the accuracy of variant calls by ensuring that indels are properly aligned and represented in the VCF file. The output of this step is saved in a new VCF file named 925Kp_bwamem2AMB201Kp_frb_naive.vcf.\nmore 925Kp_bwamem2AMB201Kp_frb_naive.vcf ## inspecting the VCF file",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#filtering-variants-using-bcftools",
+    "href": "day-3/instructions/mapping.html#filtering-variants-using-bcftools",
+    "title": "3.1 Read mapping",
+    "section": "7. Filtering variants using bcftools",
+    "text": "7. Filtering variants using bcftools\nAfter variant calling, we can further filter the variants using bcftools filter to retain only high-quality variants. This is important to discern closely related genomes. Without controlling for this step, we can artificially inflate the number of variants between closely related samples, which can lead to inaccurate conclusions about their relatedness. By applying stringent filters, we can ensure that only reliable variants are retained for downstream analysis, such as phylogenetic inference.\n# First define the criteria for low quality variants and generate a VCF file with low-quality variants\nbcftools filter -i 'MQM &lt; 30 | (INFO/AO)/(INFO/DP) &lt; 0.9 | (SAF&lt;1 | SAR&lt;1)' 925Kp_bwamem2AMB201Kp_frb_naive.vcf &gt; 925Kp_bwamem2AMB201Kp_frb_lowqualsnp.vcf \n# filter -i means inclusion of variants matching the criteria to the outfile\n# generating a text file with the positions of low quality SNPs. These will be masked in the final pseudogenome file\ngrep '^AMB201Kp' 925Kp_bwamem2AMB201Kp_frb_lowqualsnp.vcf | grep \"TYPE=snp\" | awk '{print $1,'\\t',$2}' &gt; 925Kp_bwamem2AMB201Kp_frb_lowqualsnp_pos.txt \n\n# In contrast, use bcftools filter -e with the same criteria to output high-quality variants into a separate VCF file\nbcftools filter -e 'MQM &lt; 30 | (INFO/AO)/(INFO/DP) &lt; 0.9 | (SAF&lt;1 | SAR&lt;1)' 925Kp_bwamem2AMB201Kp_frb_naive.vcf &gt; 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf \n\n# compressing the high-quality VCF file\nbgzip 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf \n# indexing the compressed high-quality VCF file for downstream analysis\ntabix -p vcf 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz \nIn this command, we apply filters to retain only variants with a mapping quality (MQM) of at least 30, an allele frequency of at least 0.9, and sufficient support for both forward and reverse reads (SAF and SAR). This is stored in the highqualsnp.vcf file. We also extracted positions of low-quality SNPs into a separate file.\nExercise: loading the high-quality VCF file into Artemis and visualizing the variants in the context of the reference genome.\nFrom the already-open Artemis window, select File &gt; Read BAM / CRAM / VCF ... and open the 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz file. Note that the tabix file .tbi needs to be present in the same directory for this to work. Navigate to the only retained high-quality SNP in the file. What is it position?\nQuestions\n\nWhat is the character of SNP mark at this high-quality SNP position?\nDoes this variant fall into coding or non-coding sequence/\nIf coding sequence, what is the impact of this mutation on the protein function?\n\nExercise extra: Inspsect the naive vcf file before filtering 925Kp_bwamem2AMB201Kp_frb_naive.vcf to see where variants fall into low-quality category.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#generating-pseudogenome-sequences",
+    "href": "day-3/instructions/mapping.html#generating-pseudogenome-sequences",
+    "title": "3.1 Read mapping",
+    "section": "8. Generating pseudogenome sequences",
+    "text": "8. Generating pseudogenome sequences\nAfter variant filtering, we can generate pseudogenome sequences for phylogenetic inferences. A pseudogenome is a modified version of the reference genome (length identical to that of reference) that incorporates the variants identified in the sample. This allows us to create a consensus sequence that reflects the genetic makeup of the sample while maintaining the overall structure of the reference genome. Creating a pseudogenome alignments is a ‘get-away’ for whole-genome alignments, which can be computationally intensive and may not be suitable for closely related samples.\nElements of a pseudogenome sequence:\n\nReference sequence: providing overall structure and length\nHigh-quality variants: incorporated into the pseudogenome to reflect the genetic makeup of the sample\nMasked low-quality variants: positions of low-quality variants and poorly mapped regions are masked (e.g., replaced with ‘N’) to reflect uncertain regions of the genome.\n\nWe already had the reference and high-quality variant highqualsnp.vcf.gz files. The remaining step is to create a position file for masking.\n# generating a text file with the positions of regions with depth &lt;=4. These will be masked in the final pseudogenome file.\nsamtools depth -a -Q 30 925Kp_bwamem2AMB201Kp_clip.bam | awk '$3&lt;=4 {print $1,'\\t',$2}' &gt; 925Kp_bwamem2AMB201Kp_lowdepth_pos.txt \n\n# combining the positions of low-quality SNPs and low-depth regions into one file for masking\ncat 925Kp_bwamem2AMB201Kp_frb_lowqualsnp_pos.txt 925Kp_bwamem2AMB201Kp_lowdepth_pos.txt | sort -k2,2n | uniq &gt; 925Kp_bwamem2AMB201Kp_mask_pos.txt \nCreating the pseudogenome sequence using bcftools consensus:\nsamtools faidx AMB201Kp_chrom.fa AMB201Kp | bcftools consensus -H A -i 'TYPE=\"snp\"' -m 925Kp_bwamem2AMB201Kp_mask_pos.txt -o 925Kp_bwamem2AMB201Kp_temp.fasta 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz ##  pseudogenome construction\n\n## replace the reference ID with correct sample name in the header of the pseudogenome fasta file\nsed 's/&gt;AMB201Kp/&gt;925Kp/g' &lt; 925Kp_bwamem2AMB201Kp_temp.fasta &gt; 925Kp_bwamem2AMB201Kp_consensus.fasta",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#extra-remove-intermediate-files",
+    "href": "day-3/instructions/mapping.html#extra-remove-intermediate-files",
+    "title": "3.1 Read mapping",
+    "section": "Extra: Remove intermediate files",
+    "text": "Extra: Remove intermediate files\nrm 925Kp_bwamem2AMB201Kp.sam 925Kp_bwamem2AMB201Kp_tmp.bam 925Kp_bwamem2AMB201Kp_temp.fasta",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/mapping.html#extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping",
+    "href": "day-3/instructions/mapping.html#extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping",
+    "title": "3.1 Read mapping",
+    "section": "Extra: Getting statistics of coverage and depth for your sample mapping",
+    "text": "Extra: Getting statistics of coverage and depth for your sample mapping\nA custom script is provided to get a summary of mapping statistics, including percentage of genome covered by mapped reads, and mean depth of coverage. This is conducted via some samtools and bedtools commands.\n./bedtools_summary.sh AMB201Kp_chrom.fa 925Kp_bwamem2AMB201Kp_clip.bam\nThis will create a file named 925Kp_bwamem2AMB201Kp_clip_bedsum.txt with the following columns: input bam file \\t coverage \\t depth . So what is the mapping coverage and depth for this genome. What do these numbers tell you?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.1 Read mapping"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#concatenating-pseudogenome-fasta-files",
+    "href": "day-3/instructions/phylotree.html#concatenating-pseudogenome-fasta-files",
+    "title": "3.2 Phylogenetics",
+    "section": "1. Concatenating pseudogenome fasta files",
+    "text": "1. Concatenating pseudogenome fasta files\n# concatenating fasta files into a multifasta file\ncat *_consensus.fasta &gt; ST147_12str_bwamem2AMB201Kp_cat.mfasta \ngrep '&gt;' ST147_12str_bwamem2AMB201Kp_cat.mfasta",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#observe-snp-distance-matrix",
+    "href": "day-3/instructions/phylotree.html#observe-snp-distance-matrix",
+    "title": "3.2 Phylogenetics",
+    "section": "2. Observe SNP distance matrix",
+    "text": "2. Observe SNP distance matrix\nWe can roughly look at the SNP distance matrix and identify the genetic relatedness between the samples.\n# creating a SNP distance matrix using snp-dists\nsnp-dists ST147_12str_bwamem2AMB201Kp_cat.mfasta &gt; ST147_12str_bwamem2AMB201Kp_cat.snpdist\nmore ST147_12str_bwamem2AMB201Kp_cat.snpdist\nAt this point, you can see that 11/12 samples are very closely related (0-6 SNPs apart), while one sample (966Kp) is &gt;3000 SNPs apart from the rest.\nWhat would this suggest to us in terms of outbreak investigation?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#visualising-snp-alignment-and-simple-tree",
+    "href": "day-3/instructions/phylotree.html#visualising-snp-alignment-and-simple-tree",
+    "title": "3.2 Phylogenetics",
+    "section": "3. Visualising SNP alignment and simple tree",
+    "text": "3. Visualising SNP alignment and simple tree\nYou can try visualising the SNP alignment of only the outbreak related strains on SEAVIEW.\nExercise: Use commands to create a new whole genome alignment of outbreak strains, named ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta\nWhole genome alignment is quite big to visualise (&gt;5 Mbp), and you are only interested in the variation sites. So let’s shorten the alignment to SNP alignment only.\nsnp-sites -o ST147_outbreak_11str_bwamem2AMB201Kp_cat.snp.mfasta ST147_outbreak_11str_bwamem2AMB201Kp_cat.mfasta\nOpen SEAVIEW and load the SNP alignment file. You can build a simple tree using the built-in function of SEAVIEW, selecting Trees &gt; Distance methods.\n\n\n\nSEAVIEW dialog box for distance-based outbreak tree\n\n\nQuestion: Can you tell which strains were most closely related to each other, and which were most different? Does this help you to interpret the outbreak timeline better?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#combine-local-with-regional-data",
+    "href": "day-3/instructions/phylotree.html#combine-local-with-regional-data",
+    "title": "3.2 Phylogenetics",
+    "section": "4. Combine local with regional data",
+    "text": "4. Combine local with regional data\nThere have been outbreaks/reports of K. pneumoniae ST147 in the country. It is of interest to inspect whether the outbreak strains from this hospital are similar to those ST147 reported previously. From the original paper, the authors have identified two other previous studies in North Italy (PRJNA787449) and Calabria region (PRJNA1193841). We have prepared an additional 6 genomes from these previous studies\ncat ST147_12str_bwamem2AMB201Kp_cat.mfasta ../regional_extra_data/ST147_6extra_bwamem2AMB201Kp_cat.mfasta &gt; ST147_18str_bwamem2AMB201Kp_cat.mfasta\n\n## calculating SNP distance matrix using snp-dists\nsnp-dists ST147_18str_bwamem2AMB201Kp_cat.mfasta &gt; ST147_18str_bwamem2AMB201Kp_cat.snpdist \nmore ST147_18str_bwamem2AMB201Kp_cat.snpdist\nQuestion: After looking at the snp distance matrix of these 18 strains. What is your conclusion?\nExercise at home: You can run mapping and variant calling script on 6 ST147 samples from the other hospitals, and to generate pseudogenome sequences for phylogenetic analyses. The necessary fastq input are found in day-3/phylogenetics/additional_mapping",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#a-brief-look-at-variation-patterns",
+    "href": "day-3/instructions/phylotree.html#a-brief-look-at-variation-patterns",
+    "title": "3.2 Phylogenetics",
+    "section": "5. A brief look at variation patterns",
+    "text": "5. A brief look at variation patterns\nsnp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta\nOpen the vcf file in a text editor and look quickly through the position of SNPs. Do you see that some SNP positions are clustered quite close together (&lt; 20 - 50 bp apart)? And which gene is it on the chromosome?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#an-attempt-to-remove-recombination-regions",
+    "href": "day-3/instructions/phylotree.html#an-attempt-to-remove-recombination-regions",
+    "title": "3.2 Phylogenetics",
+    "section": "6. An attempt to remove recombination regions",
+    "text": "6. An attempt to remove recombination regions\nRecombination is defined as the process by which a segment of DNA is replaced by a homologous segment from another closely related organism. Recombination can introduce a large number of SNPs in a short region (densely clustered SNPs) and can confound phylogenetics and create misleading interpretation. Besides actual recombination events, other horizontal gene transfer (HGT) processes can also introduce a large number of SNPs in a short region, and these also need to be removed. Such common regions with high SNP density are transposons, integrons, or clone-specific prophages and antigenic/capsular loci.\nFor accurate estimation of phylogenetic relationship, these high SNP density regions need to be removed. A common tool used for this is Gubbins (Genealogies Unbiased By recomBinations In Nucleotide Sequences), which identifies regions that have undergone recombination by looking for clusters of SNPs in the alignment, and then removes these regions from the alignment before constructing the phylogenetic tree.\n## running Gubbins with 10 threads and 5 iterations\nconda activate microgen2026_gubbins\nrun_gubbins.py --threads 10 -i 5 -m 3 ST147_18str_bwamem2AMB201Kp_cat.mfasta\nconda deactivate\nThere are multiple outputs generated after running Gubbins, including:\n\nST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta: the filtered alignment file with recombination regions removed, which can be used for tree construction.\nST147_18str_bwamem2AMB201Kp_cat.recombination_predictions.gff: the gff file with the predicted recombination regions, which can be used to visualise the recombination regions on the chromosome on ARTEMIS.\nST147_18str_bwamem2AMB201Kp_cat.summary_of_snp_distribution.vcf: the vcf file with the SNPs in the filtered alignment, which can be used to visualise the SNP positions after Gubbins.\n\n# Let's reinspect the snp distance from these 18 strains after removing recombination\nconda activate microgen2026_mapping\nsnp-dists ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta &gt; ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist\nmore ST147_18str_bwamem2AMB201Kp_cat_gubbins.snpdist\nWhat is the difference that you see. Does running Gubbins change your overall interpretation?\nExercise: Load the recombination_predictions.gff file in ARTEMIS and visualise the predicted recombination regions on the chromosome. What regions are predicted as recombination regions? Do they correspond to the regions with high SNP density that you observed before?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#phylogenetic-tree-construction-1",
+    "href": "day-3/instructions/phylotree.html#phylogenetic-tree-construction-1",
+    "title": "3.2 Phylogenetics",
+    "section": "7. Phylogenetic tree construction",
+    "text": "7. Phylogenetic tree construction\nWe will proceed to use the filtered_polymorphic_sites.fasta file as input for phylogengetic tree construction. This is already an SNP alignment. You can start visualising it in SEAVIEW.\n\nFrom this alignment, we can see that 16/18 strains were more closely related to each other, while 2 strains (966Kp and S13) were much different. While we can use built-in Trees function in SEAVIEW to build phylogenies, it does not support more complex tree building methods such as maximum likelihood (ML).\nTo build an ML tree, we resort to use RAxML, a widely used tool.\nconda activate microgen2026\n# building an ML tree with 100 bootstraps\nraxml-ng --all --msa ST147_18str_bwamem2AMB201Kp_cat.filtered_polymorphic_sites.fasta --model GTR+G+ASC_LEWIS --bs-trees 100 --threads 6\nIn this command, we applied a general DNA substitution model (GTR+G), which is commonly used for bacterial genomic phylogenetics. ASC_LEWIS is a correction for ascertainment bias, used when building trees from SNP alignments, as it accounts for the fact nonvariable sites are excluded and not sampled. The --all option tells RAxML to perform all steps of tree inference, including tree search, and bootstrapping.\nThe output from RAxML includes many files, including\n\n.raxml.support: Tree in newick format with brach length information and bootstrap support Main output\n.raxml.bestTree: Tree in newick format with branch length information but without bootstrap support\n.raxml.bootstraps: 100 bootstrap trees in newick format\n.raxml.log: log file with the details of the tree building process",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#visualising-ml-tree",
+    "href": "day-3/instructions/phylotree.html#visualising-ml-tree",
+    "title": "3.2 Phylogenetics",
+    "section": "8. Visualising ML tree",
+    "text": "8. Visualising ML tree\nYou can visualise the ML tree output using FigTree. Select File &gt; Open and load the .raxml.support file.\n\nSince our main interest is to investigate the genetic relatedness between genomes, having a good outgroup is not as important in this scenario. We will proceed to root the tree using the two most distant strains (966Kp and S13). To do this, highlight the internal branch connecting 966Kp and S13, and click and Reroot button.\nA few steps to make your tree more interpretatable:\n\nIn the Trees panel, check the Order nodes and order by increasing. This creates a ladderised tree.\nCheck the Node Labels and select Display by label or bootstrap. This will show the bootstrap support for the node.\nCheck the Branch Labels and select Display by Branch lengths (raw). This will show the branch length on the tree, which is proportional to the number of SNPs between the nodes. Under the ASC_LEWIS correction model, inferring the number of SNPs from branch length is not possible. You can resort to calculate pairwise SNP directly from SNP distance.\n\nQuestion: What can you conclude from the tree? Which strains are closely related to the outbreak strain?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
+    ]
+  },
+  {
+    "objectID": "day-3/instructions/phylotree.html#appending-metadata-to-your-phylogeny",
+    "href": "day-3/instructions/phylotree.html#appending-metadata-to-your-phylogeny",
+    "title": "3.2 Phylogenetics",
+    "section": "9. Appending metadata to your phylogeny",
+    "text": "9. Appending metadata to your phylogeny\nPhylogenetic trees alone do not offer sufficient information for epidemiological understanding. It is common to combine phylogenetic tree with metadata. In this exercise, we will create a simple visualisation of such tree-metadata combination using a web-based tool called phandango.\nFirst, save your tree from Figtree in newick format, select File &gt; Export Trees. Select Newick format and save as currently displayed. Name the file ST147_18str_bwamem2AMB201Kp_cat_gubbins_raxml.support.newick.\nOpen browser and go to https://jameshadfield.github.io/phandango/#/. First drag and drop your newick tree file, then drag and drop and prepared metadata file ST147_18str_metadata_short.csv into the browser. You should see a window with this figure.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 3",
+      "3.2 Phylogenetics"
     ]
   }
 ]

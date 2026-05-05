@@ -9,7 +9,7 @@
 <meta name="author" content="Hao CT">
 <meta name="dcterms.date" content="2026-05-14">
 
-<title>Day 3: Phylogenetics - Relationships between genomes – MicroGen 2026</title>
+<title>Day 3: Genomic variations and relationships – MicroGen 2026</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -288,13 +288,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
+ <span class="menu-text">3.1 Read mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
+ <span class="menu-text">3.2 Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -377,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/index.html">Day 3</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Day 3: Phylogenetics - Relationships between genomes</h1>
+<h1 class="title">Day 3: Genomic variations and relationships</h1>
 </div>
 
 
@@ -406,22 +406,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>At this stage, we’re gonna learn how to compare and infer the evolutionary relationships between the outbreak’s isolates from their short-read sequencing data. These analyses will enable us to answer questions, such as:</p>
-<ul>
-<li>Are the outbreak isolates genomically related to each other?</li>
-<li>How many transmission events occurred during the outbreak?</li>
-<li>What is the direction of transmission?</li>
-<li>How does the outbreak spread in the hospital?</li>
-<li>How does the pathogen evolve during the outbreak?</li>
-<li>What could be the origin of the outbreak?</li>
-</ul>
-<p>We will journey through the following topics:</p>
+<p>Following the previous two days, we have completed the genome assembly and annotation of our <em>Klebsiella pneumoniae</em> samples. Now, we will focus on analyzing their variation and relationship at genomic level. We will explore the following topics:</p>
 <ol type="1">
-<li><strong>Genome mapping</strong>: How to map sequencing reads of the outbreak’s isolates to a reference genome.</li>
-<li><strong>SNP calling &amp; alignment</strong>: How to identify single-nucleotide polymorphisms (SNPs) among the outbreak’s isolates.</li>
-<li><strong>Phylogenetic tree inference</strong>: How to infer genomic relatedness between the outbreak’s isolates.</li>
+<li><strong>Read mapping</strong>: Aligning your sample’s raw data to a reference genome</li>
+<li><strong>Variant calling</strong>: Comparing the aligned reads to the reference to identify differences (variants)</li>
+<li><strong>Phylogenetic analysis</strong>: Constructing a phylogenetic tree to understand the evolutionary relationships among the samples</li>
 </ol>
-<p>Now, let’s begin!</p>
 
 
 
@@ -838,8 +828,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-3/instructions/mapping.html" class="pagination-link" aria-label="3.1 Read mapping &amp; SNP alignment">
-        <span class="nav-page-text">3.1 Read mapping &amp; SNP alignment</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-3/instructions/mapping.html" class="pagination-link" aria-label="3.1 Read mapping">
+        <span class="nav-page-text">3.1 Read mapping</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
