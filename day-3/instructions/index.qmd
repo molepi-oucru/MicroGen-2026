@@ -1,22 +1,12 @@
 ---
-title: "Day 3: Phylogenetics - Relationships between genomes"
+title: "Day 3: Genomic variations and relationships"
 author: "Hao CT"
 date: "2026-05-14"
+format: html
 ---
 
-At this stage, we're gonna learn how to compare and infer the evolutionary relationships between the outbreak's isolates from their short-read sequencing data. These analyses will enable us to answer questions, such as:
+Following the previous two days, we have completed the genome assembly and annotation of our *Klebsiella pneumoniae* samples. Now, we will focus on analyzing their variation and relationship at genomic level. We will explore the following topics:
 
-- Are the outbreak isolates genomically related to each other?
-- How many transmission events occurred during the outbreak?
-- What is the direction of transmission?
-- How does the outbreak spread in the hospital?
-- How does the pathogen evolve during the outbreak?
-- What could be the origin of the outbreak?
-
-We will journey through the following topics:
-
-1. **Genome mapping**: How to map sequencing reads of the outbreak's isolates to a reference genome.
-2. **SNP calling & alignment**: How to identify single-nucleotide polymorphisms (SNPs) among the outbreak's isolates.
-3. **Phylogenetic tree inference**: How to infer genomic relatedness between the outbreak's isolates.
-
-Now, let's begin!
+1.  **Read mapping**: Aligning your sample's raw data to a reference genome
+2.  **Variant calling**: Comparing the aligned reads to the reference to identify differences (variants)
+3.  **Phylogenetic analysis**: Constructing a phylogenetic tree to understand the evolutionary relationships among the samples
