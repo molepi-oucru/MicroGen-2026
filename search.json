@@ -585,7 +585,7 @@
     "href": "day-1/instructions/genome-view.html",
     "title": "1.2 A complete genome - How it look like?",
     "section": "",
-    "text": "To learn about how a complete genome looks like, we will use the following resources:\n\nNCBI Resources: NCBI\nArtemis Genome Browser: Artemis\n\n\nOpen the Artemis\n\n\n\n\n Back to top",
+    "text": "To learn about how a complete genome looks like, we will use the following resources:\nLet’s begin with the first and most powerful resource in bacterial genomics, the NCBI.",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -931,7 +931,7 @@
     "href": "day-1/instructions/raw2assembly.html#is-my-isolate-really-a-k.-pneumoniae",
     "title": "1.3 From raw sequencing data to assemblies",
     "section": "Is my isolate really a K. pneumoniae?",
-    "text": "Is my isolate really a K. pneumoniae?\nSpecies check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.\nSYLPH_DB=\"sylph-db/gtdb-r220-c200-dbv1.syldb\"\nsylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv",
+    "text": "Is my isolate really a K. pneumoniae?\nSpecies check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.\nSYLPH_DB=\"/databases/sylph/gtdb-r226-c200-dbv1.syldb\"\nconda activate microgen2026\nsylph profile $SYLPH_DB -1 raw_shortread/*_1.fastq.gz -2 raw_shortread/*_2.fastq.gz -o sylph_shortread.tsv",
     "crumbs": [
       "Practical Guides",
       "Day 1",
@@ -941,13 +941,13 @@
   {
     "objectID": "day-2/instructions/hybrid-assembly.html",
     "href": "day-2/instructions/hybrid-assembly.html",
-    "title": "2.2 Long-read sequencing & Hybrid assemblies",
+    "title": "2.2 Long-Read sequencing & Hybrid assembly",
     "section": "",
-    "text": "Back to top",
+    "text": "For this section, unicycler is used\nUnicycler is a genome assembler designed for bacteria that supports short-read, long-read, and hybrid assembly. It combines the accuracy of short reads with the long-range information of long reads to produce high-quality, often complete genomes, including circular chromosomes and plasmids",
     "crumbs": [
       "Practical Guides",
       "Day 2",
-      "2.2 Long-read sequencing & Hybrid assemblies"
+      "2.2 Long-Read sequencing & Hybrid assembly"
     ]
   },
   {
@@ -955,7 +955,7 @@
     "href": "day-2/instructions/post-assembly.html",
     "title": "2.1 Analyse the assemblies",
     "section": "",
-    "text": "Back to top",
+    "text": "Post-Assembly Profiling builds on the genome assembly step by focusing on how to evaluate the quality of assembled contigs and interpret their gene content. In this section, you will learn how to assess assembly reliability and then explore what genes are present within the genome. The workflow includes two main steps:\n\nQuality assessment of assemblies (e.g., completeness, contamination, N50, genome size)\nCharacterization of gene content (antimicrobial resistance (AMR) genes, virulence factors,…)",
     "crumbs": [
       "Practical Guides",
       "Day 2",
@@ -1193,9 +1193,9 @@
   {
     "objectID": "day-4/instructions/index.html",
     "href": "day-4/instructions/index.html",
-    "title": "Day 4: Metagenomics",
+    "title": "Day 4: mNGS in Clinical Microbiology",
     "section": "",
-    "text": "Day 4 introduces metagenomic sequencing as a practical tool for surveillance, diagnosis, and clinical decision-making. The lessons use compact teaching re-analyses so that you can focus on the workflow, interpretation, and limitations without needing to reproduce full published studies during the workshop.\nIn Clinical Foundations & AMR Surveillance, you will work with a six-sample demonstration re-analysis adapted from Pereira-Dias et al. The exercise uses a subset of a Vietnamese healthy gut microbiome and antimicrobial resistance surveillance dataset to show how shotgun metagenomic reads can be processed into taxonomic and AMR summaries. This is a teaching demonstration, not a full reproduction of the original paper.\nIn Actionable Diagnostics & Clinical Reasoning, you will move from surveillance to a clinical metagenomics case. The lesson focuses on when unbiased sequencing is useful, how infection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.",
+    "text": "Day 4 introduces Next-generation Metagenomic sequencing (mNGS) as a practical tool for surveillance, diagnosis, and clinical decision-making in clinical microbiology. The lessons use compact teaching re-analyses so that you can focus on the workflow and analysis results interpretation.\nIn mNGS in clinical microbiology, you will work with a six-sample demonstration re-analysis adapted from Pereira-Dias et al. The exercise uses a subset of a Vietnamese healthy gut microbiome and antimicrobial resistance surveillance dataset to show how shotgun metagenomic reads can be processed into taxonomic and AMR summaries. This is a teaching demonstration, not a full reproduction of the original paper.\nIn mNGS in pathogen detection, you will move from surveillance to a clinical metagenomics case. The lesson focuses on when unbiased sequencing is useful, how infection results should be interpreted, and how metagenomic evidence supports clinical reasoning rather than replacing it.",
     "crumbs": [
       "Practical Guides",
       "Day 4"
@@ -1204,9 +1204,9 @@
   {
     "objectID": "day-4/instructions/index.html#lessons",
     "href": "day-4/instructions/index.html#lessons",
-    "title": "Day 4: Metagenomics",
+    "title": "Day 4: mNGS in Clinical Microbiology",
     "section": "Lessons",
-    "text": "Lessons\n\nClinical Foundations & AMR Surveillance: Workflow Setup\nClinical Foundations & AMR Surveillance: Taxonomy Analysis\nClinical Foundations & AMR Surveillance: AMR Analysis & Summary\nActionable Diagnostics & Clinical Reasoning: Case Simulation\nActionable Diagnostics & Clinical Reasoning: Signal Analysis",
+    "text": "Lessons\nmNGS in clinical microbiology:\n\nWorkflow Setup\nTaxonomy Analysis\nAMR Analysis & Summary\n\nmNGS in pathogen detection:\n\nClinical Case\nSignal Analysis",
     "crumbs": [
       "Practical Guides",
       "Day 4"
@@ -1423,13 +1423,13 @@
   {
     "objectID": "day-0/instructions/final-quiz.html",
     "href": "day-0/instructions/final-quiz.html",
-    "title": "Pre-Workshop Quiz",
+    "title": "Quiz on Linux Foundations",
     "section": "",
-    "text": "Back to top",
+    "text": "Instructions: Answer all 20 questions below. When finished, click Submit Quiz at the bottom. You need at least 16 correct answers (80%) to pass.\n\n\n\n\n\n\nNoteQuiz Structure\n\n\n\n\nQuestions 1-5: Easy (Level 1)\nQuestions 6-15: Intermediate (Level 2 - Linking concepts)\nQuestions 16-20: Advanced (Level 3 - Complex logic & Open-book topics)\n\n\n\n\n\n\nWhich command reveals your current location in the file system?\n\n A. ls  B. pwd  C. cd  D. whereami\n\n\n\n\n\n\n\n\nIn the command ls -l genomes/, which part is the option?\n\n A. ls  B. -l  C. genomes/  D. The space after -l\n\n\n\n\n\n\n\n\nWhich character represents your Home directory?\n\n A. /  B. .  C. ~  D. ..\n\n\n\n\n\n\n\n\nHow do you find the manual page for the mkdir command?\n\n A. man mkdir  B. mkdir –help  C. help mkdir  D. mkdir man\n\n\n\n\n\n\n\n\nWhat command is used to copy a file?\n\n A. mv  B. cp  C. rm  D. ln\n\n\n\n\n\n\n\n\nHow do you list all files (including hidden ones) with human-readable sizes?\n\n A. ls -a  B. ls -lah  C. ls -S  D. ls -F\n\n\n\n\n\n\n\n\nWhich tool is best for viewing very large text files line-by-line?\n\n A. cat  B. head  C. less  D. nano\n\n\n\n\n\n\n\n\nWhich command would you use to search for the word “SARS” inside data.txt?\n\n A. find “SARS” data.txt  B. grep “SARS” data.txt  C. search “SARS” data.txt  D. wc -l “SARS” data.txt\n\n\n\n\n\n\n\n\nChaining: How do you count how many lines in metadata.csv contain “2024”?\n\n A. ls metadata.csv | wc -l  B. grep “2024” metadata.csv | wc -l  C. wc -l metadata.csv | grep “2024”  D. grep “2024” metadata.csv ; wc -l\n\n\n\n\n\n\n\n\nRedirection: How do you save the ls output to files.txt, overwriting the file?\n\n A. ls &gt;&gt; files.txt  B. ls &gt; files.txt  C. ls | files.txt  D. ls &lt; files.txt\n\n\n\n\n\n\n\n\nVariables: If PREFIX=“id_01”, how do you print “id_01_result”?\n\n A. echo $PREFIX_result  B. echo ${PREFIX}_result  C. echo \\((PREFIX)_result&lt;/code&gt;&lt;/label&gt;\n  &lt;label&gt;&lt;input type=\"radio\" name=\"mcq_i6\" value=\"D\"&gt; D. &lt;code&gt;echo '\\)PREFIX_result’\n\n\n\n\n\n\n\n\nPermissions: Which command makes a script executable?\n\n A. chown +x script.sh  B. chmod +x script.sh  C. chmod 777 script.sh  D. chmod +r script.sh\n\n\n\n\n\n\n\n\nEnvironments: How do you enter the “bubble” of an environment named qc?\n\n A. mamba activate qc  B. mamba install qc  C. mamba go qc  D. mamba init qc\n\n\n\n\n\n\n\n\nNavigation: What does the command cd .. do?\n\n A. Moves you up one directory level  B. Goes to your Home directory  C. Goes into a subfolder named ..  D. Deletes the folder and moves you back\n\n\n\n\n\n\n\n\nHardware: Which command lists technical details about your CPU?\n\n A. lscpu  B. top  C. df -h  D. free -m\n\n\n\n\n\n\n\n\nAdvanced Redirection: How do you save both standard output and errors to log.txt?\n\n A. command &gt; log.txt  B. command &gt; log.txt 2&gt;&1  C. command 2&gt; log.txt  D. command |& log.txt\n\n\n\n\n\n\n\n\nFile Discovery: Based on the “Self Exploration” section, how do you find all .fasta files larger than 10MB?\n\n A. grep “.fasta” -size +10M  B. find . -name “.fasta” -size +10M  C. ls -R .fasta –min-size 10M  D. locate”*.fasta” | filter 10MB\n\n\n\n\n\n\n\n\nScripting: What is the main purpose of the shebang (#!/bin/bash) at the start of a script?\n\n A. It describes what the script does for humans  B. It specifies the program (shell) to be used to interpret the script  C. It checks if you are running Linux or Windows  D. It serves as metadata for the file system database\n\n\n\n\n\n\n\n\nEfficiency: Which tool allows you to run many commands in parallel across multiple CPU cores?\n\n A. GNU parallel  B. wc  C. grep  D. mamba\n\n\n\n\n\n\n\n\nPersistence: Which tool keeps your processes running even if your remote connection (SSH) breaks?\n\n A. tmux or screen  B. exit  C. ssh  D. ping\n\n\n\n\n\n\nSubmit Quiz Reset Quiz\n\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
-      "Pre-Workshop Quiz"
+      "Quiz on Linux Foundations"
     ]
   },
   {
@@ -1449,7 +1449,7 @@
     "href": "day-0/instructions/linux-basics.html#creating-managing-files",
     "title": "0.2 Commands & Environments",
     "section": "Creating & Managing Files",
-    "text": "Creating & Managing Files\n\nmkdir: Create a new directory (which is just a special type of file!).\n\nmkdir raw_reads\n\ncp: Copy files or directories.\n\ncp source.txt destination.txt\n\nmv: Move or rename files.\n\nmv old_name.txt new_name.txt\n\nrm: Remove (delete) files. Be careful! There is no “Trash”.\n\nrm -r folder_name: Recursively delete a directory.\n\n\n\n\n\n\n\n\nNoteChallenge 1: Exploring the Directory\n\n\n\n\n\n\nNavigate to the day-0/materials/ directory.\nList all files and find out which one is the largest.\nCreate a new directory called results.\nCopy file README.txt to results directory.\nRename README.txt to README_backup.txt.\nRemove README_backup.txt.",
+    "text": "Creating & Managing Files\n\nmkdir: Create a new directory (which is just a special type of file!).\n\nmkdir raw_reads\n\ntouch: Create an empty file.\n\ntouch README.txt\n\nnano: Edit a file.\n\nnano README.txt\nCtrl + O to save\nCtrl + X to exit\n\ncp: Copy files or directories.\n\ncp source.txt destination.txt\n\nmv: Move or rename files.\n\nmv old_name.txt new_name.txt\n\nrm: Remove (delete) files. Be careful! There is no “Trash”.\n\nrm -r folder_name: Recursively delete a directory.\n\n\n\n\n\n\n\n\nNoteChallenge 1: Exploring the Directory\n\n\n\n\n\n\nNavigate to the day-0/materials/ directory.\nList all files and find out which one is the largest.\nCreate a new directory called results.\nCopy file README.txt to results directory.\nRename README.txt to README_backup.txt.\nRemove README_backup.txt.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1526,6 +1526,162 @@
       "Practical Guides",
       "Day 0 - Pre-Workshop",
       "0.2 Commands & Environments"
+    ]
+  },
+  {
+    "objectID": "day-0/instructions/final-quiz.html#linux-proficiency-exam",
+    "href": "day-0/instructions/final-quiz.html#linux-proficiency-exam",
+    "title": "Linux Foundations: Final Quiz",
+    "section": "",
+    "text": "Instructions: Answer all 20 questions below. When finished, click Submit Quiz at the bottom. You need at least 17 correct answers (85%) to pass.\n\n\n\n\n\n\nNoteQuiz Structure\n\n\n\n\nQuestions 1-5: Easy (Level 1)\nQuestions 6-15: Intermediate (Level 2 - Linking concepts)\nQuestions 16-20: Advanced (Level 3 - Complex logic & Open-book topics)\n\n\n\n\n\n\nWhich command reveals your current location in the file system?\n\n A. ls  B. pwd  C. cd  D. whereami\n\n\n\n\n\n\n\n\nIn the command ls -l genomes/, which part is the option?\n\n A. ls  B. -l  C. genomes/  D. The space after -l\n\n\n\n\n\n\n\n\nWhich character represents your Home directory?\n\n A. /  B. .  C. ~  D. ..\n\n\n\n\n\n\n\n\nHow do you find the manual page for the mkdir command?\n\n A. man mkdir  B. mkdir –help  C. help mkdir  D. mkdir man\n\n\n\n\n\n\n\n\nWhat command is used to copy a file?\n\n A. mv  B. cp  C. rm  D. ln\n\n\n\n\n\n\n\n\nHow do you list all files (including hidden ones) with human-readable sizes?\n\n A. ls -a  B. ls -lah  C. ls -S  D. ls -F\n\n\n\n\n\n\n\n\nWhich tool is best for viewing very large text files line-by-line?\n\n A. cat  B. head  C. less  D. nano\n\n\n\n\n\n\n\n\nWhich command would you use to search for the word “SARS” inside data.txt?\n\n A. find “SARS” data.txt  B. grep “SARS” data.txt  C. search “SARS” data.txt  D. wc -l “SARS” data.txt\n\n\n\n\n\n\n\n\nChaining: How do you count how many lines in metadata.csv contain “2024”?\n\n A. ls metadata.csv | wc -l  B. grep “2024” metadata.csv | wc -l  C. wc -l metadata.csv | grep “2024”  D. grep “2024” metadata.csv ; wc -l\n\n\n\n\n\n\n\n\nRedirection: How do you save the ls output to files.txt, overwriting the file?\n\n A. ls &gt;&gt; files.txt  B. ls &gt; files.txt  C. ls | files.txt  D. ls &lt; files.txt\n\n\n\n\n\n\n\n\nVariables: If PREFIX=“id_01”, how do you print “id_01_result”?\n\n A. echo $PREFIX_result  B. echo ${PREFIX}_result  C. echo \\((PREFIX)_result&lt;/code&gt;&lt;/label&gt;\n  &lt;label&gt;&lt;input type=\"radio\" name=\"mcq_i6\" value=\"D\"&gt; D. &lt;code&gt;echo '\\)PREFIX_result’\n\n\n\n\n\n\n\n\nPermissions: Which command makes a script executable?\n\n A. chown +x script.sh  B. chmod +x script.sh  C. chmod 777 script.sh  D. chmod +r script.sh\n\n\n\n\n\n\n\n\nEnvironments: How do you enter the “bubble” of an environment named qc?\n\n A. mamba activate qc  B. mamba install qc  C. mamba go qc  D. mamba init qc\n\n\n\n\n\n\n\n\nNavigation: What does the command cd .. do?\n\n A. Moves you up one directory level  B. Goes to your Home directory  C. Goes into a subfolder named ..  D. Deletes the folder and moves you back\n\n\n\n\n\n\n\n\nHardware: Which command lists technical details about your CPU?\n\n A. lscpu  B. top  C. df -h  D. free -m\n\n\n\n\n\n\n\n\nAdvanced Redirection: How do you save both standard output and errors to log.txt?\n\n A. command &gt; log.txt  B. command &gt; log.txt 2&gt;&1  C. command 2&gt; log.txt  D. command |& log.txt\n\n\n\n\n\n\n\n\nFile Discovery: Based on the “Self Exploration” section, how do you find all .fasta files larger than 10MB?\n\n A. grep “.fasta” -size +10M  B. find . -name “.fasta” -size +10M  C. ls -R .fasta –min-size 10M  D. locate”*.fasta” | filter 10MB\n\n\n\n\n\n\n\n\nScripting: What is the main purpose of the shebang (#!/bin/bash) at the start of a script?\n\n A. It describes what the script does for humans  B. It specifies the program (shell) to be used to interpret the script  C. It checks if you are running Linux or Windows  D. It serves as metadata for the file system database\n\n\n\n\n\n\n\n\nEfficiency: Which tool allows you to run many commands in parallel across multiple CPU cores?\n\n A. GNU parallel  B. wc  C. grep  D. mamba\n\n\n\n\n\n\n\n\nPersistence: Which tool keeps your processes running even if your remote connection (SSH) breaks?\n\n A. tmux or screen  B. exit  C. ssh  D. ping\n\n\n\n\n\n\nSubmit Quiz Reset Quiz",
+    "crumbs": [
+      "Practical Guides",
+      "Day 0 - Pre-Workshop",
+      "Linux Foundations: Final Quiz"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#practice-1",
+    "href": "day-1/instructions/genome-view.html#practice-1",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "Practice 1",
+    "text": "Practice 1\n\nObjectives\n\nUse BLAST to identify unknown DNA sequences\nInterpret E-value, query coverage, and % identity\nConstruct basic interpretations from sequence similarity\n\n\n\nBackground\nYour lab has identified a following DNA sequence from cerebrospinal fluid of a patient with meningoencephalitis:\nACTGGTTGTATTCCCTCTAAGTGCTCTCCTTTTATTTTCTACCCACTTTTTTATGTCTCTCTTTGTCGACTCAAGAGATACAAGACGGTCATTGACACTTAAGAAACTAGTACCCAACCAGCCTTCCTTCACTGACTTTGGGGAAACTTTATCACCCACCTTGAAGGCCAAGAGAATGATGGCATCAAAAATTAATAAGAGTTTCCTTCTCGTGTTTAAAATACGCAAAGACTTGACTTTATTTAAAAAAGACCGCCAACATTGCATCTGAGTAGTACCGTGACCTTCAGAAGAATTTAGTTCTTCTTCATTTAACTCAGAGTAGAGGAACTTCAAAATTGGAGAGGACTCTTTATAACAGTTCTCAAGGGTCTCTAGGTCATCATGGCCTTCTTTAATGATGTCTTTATACATGTCACAAAACCCGTCCAATAAAACCCCTTTATCAACTTTTATAAACTGTGCTTCAATTTCACCATTCCTAAACCTATTTCTAAAAATCTGATACTCTTCCTCTATTGTCATTTTAACCTCCTGTGTTGTCATTTTGTTGTTTATACCTTGATGGCAGATAGATATAATTTCATCAAAATGATCAGCTCTTTTGTCAGACAAAGTGTTCATATTCTCAATCCCTGACAATCTACTAGTGCTCATTGAAAGGGATTCACAAAGCCTTGAATACTCAGACTCCTCAAACAATGCATTGCTCTCCTGGGCATATTTCAGGAGAGAAAAAAGAGTGTCTCTGAGTTTATCATTAACCCAGTCTGGTATTTGCTCATTGTAGAATGATACTCTCCCGTCAATCAATGGAATTAGATTGATACCAATGGATTCTAAATCCATCTTCAGCTGTTCAAGCTTTTTTGCATCTTCAAGGTACTTCTGTTCAAAATTAGCTGGTGAACTCCTAACGAAGCACTCCAGAAGAATCAATACATTTCCATTTAACTTGTAACCATCAGGCACAACAAAACAGAGGGCAGGGCTCAGTATC\n\n\nTasks\n\nGo to NCBI\nOpen BLAST\nSelect Nucleotide BLAST\nPaste the provided sequence and run the search with default database and search parameters\nAnswer the following questions:\n\nWhat is the most likely organism?\nWhich species do the other matching sequences belong to?\nWhat is the gene?\nCompare the top hits using query coverage, E-value and Percentage identity?\n\nSelect “Distance tree of results” to view pairwise distances of your query sequence to the matched sequences. What do you find?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#practice-2",
+    "href": "day-1/instructions/genome-view.html#practice-2",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "Practice 2",
+    "text": "Practice 2\n\nObjectives\n\nUse NCBI to search and download protein sequences and annotations\nCompare the protein sequences and download the Results Table\n\n\n\nBackground\nYou will study the similarities of the HA (Hemagglutinin) protein from seasonal and avian influenza viruses. Influenza viruses are classified based on the antigenic characteristics of their surface glycoproteins—hemagglutinin (HA) and neuraminidase (NA). In Influenza A virus, 18 HA subtypes and 11 NA subtypes have been identified, and the HA subtypes are further grouped into two major evolutionary lineages: Group 1 (including H1, H2, H5, and others) and Group 2 (including H3, H4, H7, and others), based on phylogenetic analysis of the HA gene.\nNow, let’s download the HA protein sequences of H1N1, H3N2, H5N1 and H7N9 from NCBI.\n\n\nTasks\n\nGo to NCBI\nSelect “Protein Database”\nSearch with key words “influenza A H1N1 hemagglutinin”\nFilter to “RefSeq” and select a complete HA protein sequence from a representitive H1N1 strain\nRecord the accession number (i.e YP_009118626.1)\nDownload the protein sequence: “Send to” –&gt; “File” –&gt; “Format” –&gt; “FASTA” –&gt; “Create File”\n\n\n\n\nFig. 1\n\n\n\nCongratulations! 🎉 You have successfully downloaded the HA protein sequence of H1N1.\n\n\nRepeat step 3-6 with key words “influenza A H3N2 hemagglutinin”\nRepeat step 3-6 with key words “influenza A H5N1 hemagglutinin”\nRepeat step 3-6 with key words “influenza A H7N9 hemagglutinin”\n\n\nCongratulations! 🎉 You have now downloaded the HA protein sequences of H1N1, H3N2, H5N1 and H7N9.\n\nNow, let’s compare the protein sequences of H1N1, H3N2, H5N1 and H7N9 using BLAST.\n\nGo to NCBI and Select “Protein BLAST”\nSelect “Align two or more sequences”\nCompare the protein sequence of H1 (query) with H3, H5, H7 sequences (subject) by entering their assession numbers and running “BLAST”\n\n\n\n\nFig. 2\n\n\n\nAnswer the following questions:\n\nWhat is the closest sequence to H1, and what evidence supports this?\nWhat is the most distantly related sequence to H1?\nDo the results support the grouping of HA into Group 1 and Group 2?\nWhich sequences cluster together in the distance tree, and what does this suggest about their relationship?\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe BLAST results window contains multiple reports. Feel free to explore them.  You can switch between different alignment views; for example “Pairwise” and “Pairwise with dots for identity” to better visualize sequence similarities in NCBI BLAST. You can download or save the BLAST results!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#practice-3",
+    "href": "day-1/instructions/genome-view.html#practice-3",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "Practice 3",
+    "text": "Practice 3\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis is an independent application practice. You are expected to use the knowledge and skills gained in previous practices to complete the analysis without step-by-step instructions.\n\n\n\n\nObjectives\n\nUse NCBI BLAST (Protein BLAST) to identify the influenza subtype from an HA protein sequence.\nInterpret sequence similarity by comparing the unknown HA sequence with reference HA sequences from H1N1, H3N2, H5N1, and H7N9 (from Practice 2).\n\n\n\nBackground\nYour lab has identified the following HA protein sequence from unknown influenza virus\nMETISLITILLVVTASNADKICIGHQSTNSTETVDTLTETNVPVTHAKELLHTEHNGMLCATSLGHPLILDTCTIEGLVYGNPSCDLLLGGREWSYIVERSSAVNGTCYPGNVENLEELRTLFSSASSYQRIQIFPDTTWNVTYTGTSRACSGSFYRSMRWLTQKSGFYPVQDAQYTNNRGKSILFVWGIHHPPTYTEQTNLYIRNDTTTSVTTEDLNRTFKPVIGPRPLVNGLQGRIDYYWSVLKPGQTLRVRSNGNLIAPWYGHVLSGGSHGRILKTDLKGGNCVVQCQTEKGGLNSTLPFHNISKYAFGTCPKYVRVNSLKLAVGLRNVPARSSRGLFGAIAGFIEGGWPGLVAGWYGFQHSNDQGVGMAADRDSTQKAIDKITSKVNNIVDKMNKQYEIIDHEFSEVETRLNMINNKIDDQIQDVWAYNAELLVLLENQKTLDEHDANVNNLYNKVKRALGSNAMEDGKGCFELYHKCDDQCMETIRNGTYNRRKYREESRLERQKIEGVKLESEGTYKILTIYSTVASSLVLAMGFAAFLFWAMSNGSCRCNICI\n\n\nTasks\nAnswer the following questions:\n\nWhat is the best BLAST match for the unknown HA sequence, including subtype?\nWhich reference subtypes (H1, H3, H5, H7) appear among the top BLAST hits?\nBased on your results, is the unknown sequence more closely related to Group 1 or Group 2 HA viruses?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#ncbi-practice-1",
+    "href": "day-1/instructions/genome-view.html#ncbi-practice-1",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "1.1 NCBI Practice 1",
+    "text": "1.1 NCBI Practice 1\n\nObjectives\n\nUse BLAST to identify unknown DNA sequences\nInterpret E-value, query coverage, and % identity\nConstruct basic interpretations from sequence similarity\n\n\n\nBackground\nYour lab has identified a following DNA sequence from cerebrospinal fluid of a patient with meningoencephalitis:\nACTGGTTGTATTCCCTCTAAGTGCTCTCCTTTTATTTTCTACCCACTTTTTTATGTCTCTCTTTGTCGACTCAAGAGATACAAGACGGTCATTGACACTTAAGAAACTAGTACCCAACCAGCCTTCCTTCACTGACTTTGGGGAAACTTTATCACCCACCTTGAAGGCCAAGAGAATGATGGCATCAAAAATTAATAAGAGTTTCCTTCTCGTGTTTAAAATACGCAAAGACTTGACTTTATTTAAAAAAGACCGCCAACATTGCATCTGAGTAGTACCGTGACCTTCAGAAGAATTTAGTTCTTCTTCATTTAACTCAGAGTAGAGGAACTTCAAAATTGGAGAGGACTCTTTATAACAGTTCTCAAGGGTCTCTAGGTCATCATGGCCTTCTTTAATGATGTCTTTATACATGTCACAAAACCCGTCCAATAAAACCCCTTTATCAACTTTTATAAACTGTGCTTCAATTTCACCATTCCTAAACCTATTTCTAAAAATCTGATACTCTTCCTCTATTGTCATTTTAACCTCCTGTGTTGTCATTTTGTTGTTTATACCTTGATGGCAGATAGATATAATTTCATCAAAATGATCAGCTCTTTTGTCAGACAAAGTGTTCATATTCTCAATCCCTGACAATCTACTAGTGCTCATTGAAAGGGATTCACAAAGCCTTGAATACTCAGACTCCTCAAACAATGCATTGCTCTCCTGGGCATATTTCAGGAGAGAAAAAAGAGTGTCTCTGAGTTTATCATTAACCCAGTCTGGTATTTGCTCATTGTAGAATGATACTCTCCCGTCAATCAATGGAATTAGATTGATACCAATGGATTCTAAATCCATCTTCAGCTGTTCAAGCTTTTTTGCATCTTCAAGGTACTTCTGTTCAAAATTAGCTGGTGAACTCCTAACGAAGCACTCCAGAAGAATCAATACATTTCCATTTAACTTGTAACCATCAGGCACAACAAAACAGAGGGCAGGGCTCAGTATC\n\n\nTasks\n\nGo to NCBI\nOpen BLAST\nSelect Nucleotide BLAST\nPaste the provided sequence and run the search with default database and search parameters\nAnswer the following questions:\n\nWhat is the most likely organism?\nWhich species do the other matching sequences belong to?\nWhat is the gene?\nCompare the top hits using query coverage, E-value and Percentage identity?\n\nSelect “Distance tree of results” to view pairwise distances of your query sequence to the matched sequences. What do you find?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#ncbi-practice-2",
+    "href": "day-1/instructions/genome-view.html#ncbi-practice-2",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "1.2 NCBI Practice 2",
+    "text": "1.2 NCBI Practice 2\n\nObjectives\n\nUse NCBI to search and download protein sequences and annotations\nCompare the protein sequences and download the Results Table\n\n\n\nBackground\nYou will study the similarities of the HA (Hemagglutinin) protein from seasonal and avian influenza viruses. Influenza viruses are classified based on the antigenic characteristics of their surface glycoproteins—hemagglutinin (HA) and neuraminidase (NA). In Influenza A virus, 18 HA subtypes and 11 NA subtypes have been identified, and the HA subtypes are further grouped into two major evolutionary lineages: Group 1 (including H1, H2, H5, and others) and Group 2 (including H3, H4, H7, and others), based on phylogenetic analysis of the HA gene.\nNow, let’s download the HA protein sequences of H1N1, H3N2, H5N1 and H7N9 from NCBI.\n\n\nTasks\n\nGo to NCBI\nSelect “Protein Database”\nSearch with key words “influenza A H1N1 hemagglutinin”\nFilter to “RefSeq” and select a complete HA protein sequence from a representitive H1N1 strain\nRecord the accession number (i.e YP_009118626.1)\nDownload the protein sequence: “Send to” –&gt; “File” –&gt; “Format” –&gt; “FASTA” –&gt; “Create File”\n\n\n\n\nFig. 1\n\n\n\nCongratulations! 🎉 You have successfully downloaded the HA protein sequence of H1N1.\n\n\nRepeat step 3-6 with key words “influenza A H3N2 hemagglutinin”\nRepeat step 3-6 with key words “influenza A H5N1 hemagglutinin”\nRepeat step 3-6 with key words “influenza A H7N9 hemagglutinin”\n\n\nCongratulations! 🎉 You have now downloaded the HA protein sequences of H1N1, H3N2, H5N1 and H7N9.\n\nNow, let’s compare the protein sequences of H1N1, H3N2, H5N1 and H7N9 using BLAST.\n\nGo to NCBI and Select “Protein BLAST”\nSelect “Align two or more sequences”\nCompare the protein sequence of H1 (query) with H3, H5, H7 sequences (subject) by entering their assession numbers and running “BLAST”\n\n\n\n\nFig. 2\n\n\n\nAnswer the following questions:\n\nWhat is the closest sequence to H1, and what evidence supports this?\nWhat is the most distantly related sequence to H1?\nDo the results support the grouping of HA into Group 1 and Group 2?\nWhich sequences cluster together in the distance tree, and what does this suggest about their relationship?\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe BLAST results window contains multiple reports. Feel free to explore them.  You can switch between different alignment views; for example “Pairwise” and “Pairwise with dots for identity” to better visualize sequence similarities in NCBI BLAST. You can download or save the BLAST results!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#ncbi-practice-3",
+    "href": "day-1/instructions/genome-view.html#ncbi-practice-3",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "1.3 NCBI Practice 3",
+    "text": "1.3 NCBI Practice 3\n\n\n\n\n\n\nNote\n\n\n\n\n\nThis is an independent application practice. You are expected to use the knowledge and skills gained in previous practices to complete the analysis without step-by-step instructions.\n\n\n\n\nObjectives\n\nUse NCBI BLAST (Protein BLAST) to identify the influenza subtype from an HA protein sequence.\nInterpret sequence similarity by comparing the unknown HA sequence with reference HA sequences from H1N1, H3N2, H5N1, and H7N9 (from Practice 2).\n\n\n\nBackground\nYour lab has identified the following HA protein sequence from unknown influenza virus\nMETISLITILLVVTASNADKICIGHQSTNSTETVDTLTETNVPVTHAKELLHTEHNGMLCATSLGHPLILDTCTIEGLVYGNPSCDLLLGGREWSYIVERSSAVNGTCYPGNVENLEELRTLFSSASSYQRIQIFPDTTWNVTYTGTSRACSGSFYRSMRWLTQKSGFYPVQDAQYTNNRGKSILFVWGIHHPPTYTEQTNLYIRNDTTTSVTTEDLNRTFKPVIGPRPLVNGLQGRIDYYWSVLKPGQTLRVRSNGNLIAPWYGHVLSGGSHGRILKTDLKGGNCVVQCQTEKGGLNSTLPFHNISKYAFGTCPKYVRVNSLKLAVGLRNVPARSSRGLFGAIAGFIEGGWPGLVAGWYGFQHSNDQGVGMAADRDSTQKAIDKITSKVNNIVDKMNKQYEIIDHEFSEVETRLNMINNKIDDQIQDVWAYNAELLVLLENQKTLDEHDANVNNLYNKVKRALGSNAMEDGKGCFELYHKCDDQCMETIRNGTYNRRKYREESRLERQKIEGVKLESEGTYKILTIYSTVASSLVLAMGFAAFLFWAMSNGSCRCNICI\n\n\nTasks\nAnswer the following questions:\n\nWhat is the best BLAST match for the unknown HA sequence, including subtype?\nWhich reference subtypes (H1, H3, H5, H7) appear among the top BLAST hits?\nBased on your results, is the unknown sequence more closely related to Group 1 or Group 2 HA viruses?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#artemis-practice-1",
+    "href": "day-1/instructions/genome-view.html#artemis-practice-1",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "2.1 Artemis Practice 1",
+    "text": "2.1 Artemis Practice 1\n\n2.1.1 Starting up the Artemis software\nDouble click the Artemis icon on the desktop.\nA small start-up window will appear (see below). The directory contains all files you will need for this module. Now follow the sequence of numbers to load up the Klebsiella pneumoniae chromosome sequence (isolate KPNIH_USA_2013; sequence type ST258; carbapenem resistance).\n\n\n\n\n\n\nNoteAsk a demonstrator for help if you have any problems\n\n\n\n\n\n\n\n\n\nFig. 3\n\n\nHopefully you will now have an Artemis window like this! If not, ask a demonstrator for assistance.\n\n\n\nFig. 4\n\n\n\n\n2.1.2 Loading an annotation file (entry) into Artemis\nNow follow the instructions to load the annotation file for the Klebsiella pneumoniae chromosome.\n\n\n\nFig. 5\n\n\n\n\n2.1.3 The basics of Artemis\nNow you have an Artemis window open let’s look at what is in there.\n\n\n\nFig. 6\n\n\n\nDrop-down menus: There’s lots in there so don’t worry about all the details right now.\nEntry (top line): shows which entries are currently loaded with the default entry highlighted in yellow (this is the entry into which newly created features are created). Selected feature: the details of a selected feature are shown here; in this case gene asnA\nMain sequence view panel: The central 2 grey lines represent the forward (top) and reverse (bottom) DNA strands. Above and below those are the 3 forward and 3 reverse reading frames. Stop codons are marked on the reading frames as black vertical bars. Genes and other annotated features (eg. Pfam and Prosite matches) are displayed as coloured boxes. We often refer to predicted genes as coding sequences or CDSs.\nCodon translation panel: This panel has a similar layout to the main panel but is zoomed in to show nucleotides and amino acids. Double click on a CDS in the main view to see the zoomed view of the start of that CDS. Note that both this and the main panel can be scrolled left and right (7, below) zoomed in and out (6, below).\nFeature panel: This panel contains details of the various features, listed in the order that they occur on the DNA. Any selected features are highlighted. The list can be scrolled (8, below).\nSliders for zooming view panels.\nSliders for scrolling along the DNA.\nSlider for scrolling feature list.\n\n\n\n2.1.4 Getting around in Artemis\nThere are three main ways of getting to a particular DNA region in Artemis:\nA. the Goto drop-down menu  B. the Navigator  C. the Feature Selector (2.3 Artemis Practice 3)\nThe best method depends on what you’re trying to do. Knowing which one to use comes with practice.\n\nA. The ‘Goto’ menu\nThe functions on this menu (below the Navigator option) are shortcuts for getting to locations within a selected feature or for jumping to the start or end of the DNA sequence. This is really intuitive so give it a try!\n\n\n\nFig. 7\n\n\nIt may seem that ‘Goto’ &gt; ‘Start of Selection’, and ‘Goto’ &gt; ‘Feature Start’ do the same thing.  Well they do if you have a feature selected but ‘Goto’ &gt; ‘Start of Selection’ will also work for a region which you have selected by click-dragging in the main window. So yes, give it a try!\n\n\n\n\n\n\nImportantSuggested tasks\n\n\n\n\nZoom out, select/highlight a large region of sequence by clicking the left hand button and dragging the cursor then go to the start and end of this selected region.\nSelect a CDS then go to the start and end.\nGo to the start and end of the genome sequence.\nSelect a CDS. Within it, go to a base (nucleotide) and/or amino acid of your choice.\nHighlight a region then, from the right click menu, select ‘Zoom to Selection’.\n\n\n\n\n\nB. The Navigator\nBefore you start this function. What are Keys and Qualifiers?\nWell,  In genome annotation, “key” and “qualifier” play different roles.\n\n\n\n\n\n\n\nKey (Feature Key)\nQualifier\n\n\n\n\n\nDefines what the feature is\nIs a standardized label describing the biological feature\nExamples: gene, CDS, mRNA, tRNA, source\n\n\nProvides additional details about that feature\nAdds descriptive or functional information\nWritten as /name=value\n\n\n\n\nExample:\n    CDS 1..1700 &lt;------Key\n\n        /gene= \"HA\" &lt;------Qualifier\n        /product=\"hemagglutinin\" &lt;------Qualifier\n        /organism=\"Influenza A virus\" &lt;------Qualifier\n        /note=\"surface glycoprotein\" &lt;------Qualifier\nNow you are ready…!\nThe Navigator panel is fairly intuitive so open it up.\n\n\n\nFig. 8\n\n\n\n\n\n\n\n\nTipSuggestions for where-to-go\n\n\n\n\n‘Goto Base’: Think of a number between 1 and 5574202 and go to that base (notice how the cursors on the horizontal sliders move with you).\n‘Goto Feature with Gene Name’: Your favourite gene name (try ‘blaKPC’). How many blaKPC copies do you find?\nUse ‘Goto Feature With This Qualifier value’ to search the contents of all qualifiers for a particular term. For example using the word ‘beta-lactamase’ will take you to the next feature with the word ‘beta-lactamase’ in any of its qualifiers. Note how repeated clicking of the ‘Goto’ button takes you to the following beta-lactamase in the order that they occur on the chromosome.\ntRNA genes. Type ‘tRNA’ in the ‘Goto Feature With This Key’.\nTry ATGCGCGC in the ‘Find Base Pattern’.\nTry DINVG the ‘Find Amino acid String’. Note that it searches all six reading frames regardless of whether the amino acids are encoded or not.\n\n\n\nClearly there are many more features of Artemis which we will not have time to explain in detail. Before getting on with this next section it might be worth browsing the menus. Hopefully you will find most of them easy to understand.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#artemis-practice-2",
+    "href": "day-1/instructions/genome-view.html#artemis-practice-2",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "2.2 Artemis Practice 2",
+    "text": "2.2 Artemis Practice 2\nThere are many examples where anomalous regions of DNA within a genome have been shown to carry laterally acquired DNA. In this part of the exercise we are going to look at several of these regions in more detail.\nCommmon characteristics of those regions:\n\nOften inserted alongside stable RNAs\nAtypical G+C contents.\nCarry virulence-related functions\nOften carry genes encoding transposase or integrase-like proteins\nUnstable and self-mobilisable\nOf limited phylogenetic distribution\n\nFirst, we will open GC content (%) plot. Use “Graph” function –&gt; select GC content (%). You should see the graph like this:\n\n\n\nFig. 9\n\n\nNow, adjust the window size to 20000 by right click at the GC plot** –&gt; set the window size –&gt; enter 20000; after that, deselect “stop codon”**\nYou should see a graph like this:\n\n\n\nFig. 10\n\n\nIn Artemis, a window size of about 20,000 bp is used for GC content plots because smaller windows can make the graph look very uneven and hard to interpret due to natural small changes in DNA sequence. Using a larger window smooths out these short fluctuations and makes overall patterns easier to see. This is important because unusual DNA regions, such as those acquired from other organisms, are usually larger stretches of DNA and tend to show a consistent difference in GC content that becomes clearer at this scale. Feel free to adjust the GC content (%) window size by sliding the button up and down. The GC plot below shows the same genomic region at different GC content (%) window sizes: 20; 200; 2000; and 20000.\n\n\n\nFig. 11\n\n\nNow use the slider to zoom out and view the GC% plot of the full genome.\n\n\n\nFig. 12\n\n\n\n\n\n\n\n\nTipCan you spot any specific anomalous regions?\n\n\n\n\n\n\nLet’s zoom in this region: Region 1: 1785159..1835508.\n\n\n\nFig. 13\n\n\nTo do so, use the “Select” function –&gt; “Base Range” –&gt; “enter a range of bases” –&gt; input “1785159..1835508” –&gt; OK –&gt; Zoom in using the slider\nYou should see the region 1 zoomed in like this:\n\n\n\nFig. 14\n\n\n\n\n\n\n\n\nImportantPlese let us know if you can’t find the region 1!\n\n\n\n\n\n\n\n\n\n\n\n\nTipChallenge your curiosity\n\n\n\nWhat is interesting about this genomic region?\nWhy do you think its GC content is lower than the average genomic GC content?\n\n\nLet’s continute to investigate the second region: Region 2: 3429511..3739184.\n\n\n\nFig. 15\n\n\nFirst, we need to zoom in on this region. Again, use the “Select” function –&gt; “Base Range” –&gt; “enter a range of bases” –&gt; enter “3429511..3739184” –&gt; click OK –&gt; Zoom in using the slider.\nYou should see the region 2 zoomed in like this:\n\n\n\nFig. 16\n\n\nThis is a large genomic region.\n\n\n\n\n\n\nTipHow many interesting loci can you identify, and what are their functions?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-1/instructions/genome-view.html#artemis-practice-3",
+    "href": "day-1/instructions/genome-view.html#artemis-practice-3",
+    "title": "1.2 A complete genome - How it look like?",
+    "section": "2.3 Artemis Practice 3",
+    "text": "2.3 Artemis Practice 3\nNow we can move to gene annotation and selecting/extracting features using the Feature Selector.\nThis reference genome was annotated using Bakta, but genome annotations are not always complete or fully accurate. Automated tools rely on existing databases and prediction algorithms, which may miss genes, assign incorrect functions, or label proteins as “hypothetical” when no close match is available. In addition, scientific knowledge is constantly evolving, and new research may reveal updated or more precise functions for previously annotated genes. Therefore, genome annotation should be considered an ongoing process that can be improved by manual curation, comparison with new data, and updated literature.\n\n2.3.1 Add features\nIn this exercise, we will focus on the blaKPC-3 region to examine the genetic context of this gene.\nFirst, nagivate to this region using the “Select” function –&gt; “Goto”–&gt; “Goto Feature with Gene name” –&gt; enter “COCHID_07645” –&gt; click “Goto”.  This gene is located within the blaKPC-3 region and its annotation can be improved.\nNext, press “E” on your keyboard (a shortcut to edit the selected feature) to review the current annotation of COCHID_07645.  You can see that there is currently no “gene name”. We can fix it by adding /gene=ISKpn6 and /color=2 to the qualifiers to indicate that the gene is ISKpn6 and to highlight it in red color.\nYou should see a view similar to the figure shown below.\n\n\n\nFig. 17\n\n\nThis is how the annotation of the gene changes after editing.\n\n\n\nFig. 18\n\n\n\n\n\n\n\n\nTipCan you spot the difference?\n\n\n\n\n\n\nNow, continue to highlight the region by adding /color=2 (red) to the other genes in this region. Also, update locus_tag COCHID_07710 by adding /gene=ISKpn6 and /color=2, as this is also an ISKpn6 gene.\nAfter completing these steps, your view should look similar to the figure below.\n\n\n\nFig. 19\n\n\nThe blaKPC-3 gene is actually mobilized by the transposon Tn4401d in this strain. There are two identical copies of Tn4401d in this genomic region, and we will add annotations for both.\n\nFirst region: 1439982..1449512\nSecond region: 1450050..1459581\n\nTo add the 1st region to the annotation, use the “Select” function –&gt; “Base Range” –&gt; enter 1439982..1449512 –&gt; click OK –&gt; Zoom in using the slider –&gt; right-click –&gt; “Create” –&gt; “Feature from base range” to create a new feature for the region.\nYour view should look similar to the figure below.\n\n\n\nFig. 20\n\n\nNow, add an annotation by selecting “mobile_element” as the Key and entering the qualifiers /note=\"transposon Tn4401d\" and /color=7.\n\n\n\nFig. 21\n\n\nContinue to annotate the second region 1450050..1459581, following the above instructions.\n\n\n\nFig. 22\n\n\n\n\n\n\n\n\nWarningPlease let us know if you need help!!\n\n\n\n\n\n\n\n\n2.3.2 Extract features\nFeatures in the genome annotation also can be selected and extracted using the Feature Selector.\nThe region that we will extract both DNA sequence and annotation is from 1439982..1459581, containing the two Tn4401d copies that we just annotated above.\nFirst, use the “Select” function –&gt; “Base Range” –&gt; enter 1439982..1459581 –&gt; click OK.  The whole region should be highlighted.\nThen, chose “Select” –&gt; “Features within selection”.  This will highlighed all selected features within this region for extraction.\n\n\n\nFig. 23\n\n\nNext, chose “Edit” –&gt; Subsequence (and Features)\n\n\n\nFig. 24\n\n\nA new window will appear:\n\n\n\nFig. 25\n\n\nNote that the two entries on the grey ‘Entry’ line are now denoted “no name”. They represent the same information in the same order as the original Artemis window but simply have no assigned ‘Entry’ names. As the sub-sequence is now viewed in a new Artemis session, this prevents the original files (CP009771.dna and CP009771.gbk) from being over-written.\nBecause the two entries (“no name” and “no name”) contain different types of information: first entry with the DNA sequence and the second entry with annotations, we have two options: - Save them as two separate files (one for sequence, one for annotation), or - Merge them into a single file by copying all annotation features into the DNA sequence file, so that it contains both sequence and annotation information.\nThis is how we do the merging. First, select all features by using “Copy All” in the Feature Selection window.\n\n\n\nFig. 26\n\n\nNext, go to “Edit” –&gt; “Copy Selected Features To”, then select “No name” (first entry).\n\n\n\nFig. 27\n\n\nNow we are ready to save the “No name” entry into a file containing both the DNA sequence and its annotations.\nGo to “File” –&gt; “Save an entry as” –&gt; “GenBank format”, then select “No name” (first entry) (now containing both DNA sequence and annotation) and enter the file name “blaKPC_transposon_Tn4401d”.\n\n\n\nFig. 28\n\n\nNow, open the newly saved file in Artemis to verify it!!!\n\n\n\n\n\n\nNoteNotes for saving files\n\n\n\n\n\nYou can save the ARTEMIS working files using the same format:\n\n\n\nFig. 29\n\n\nOR save the files in different formats if you need a specific format for submissions or future uses:\n\n\n\nFig. 30\n\n\nTry different “Save As” options and reopen the saved files to verify them.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 1",
+      "1.2 A complete genome - How it look like?"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/hybrid-assembly.html#question",
+    "href": "day-2/instructions/hybrid-assembly.html#question",
+    "title": "2.2 Long-Read sequencing & Hybrid assembly",
+    "section": "Question:",
+    "text": "Question:\nHow many fastq files you have in your working environment?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.2 Long-Read sequencing & Hybrid assembly"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/hybrid-assembly.html#download-results-to-your-local-computer",
+    "href": "day-2/instructions/hybrid-assembly.html#download-results-to-your-local-computer",
+    "title": "2.2 Long-Read sequencing & Hybrid assembly",
+    "section": "Download results to your local computer",
+    "text": "Download results to your local computer\nOpen another New Terminal window and run these commands on your New Terminal window.\nRun this command to display your current directory (for MacOS/Linux users):\npwd\n-------------------------------\n# pwd: output your current directory\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\necho %cd%\n-------------------------------\n# echo %cd%: output your current directory\n\n\n\nThe printout screen should look like this:\n/Users/Downloads\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\nThe printout screen should look like this:\nC:\\Users\\Downloads\n\n\n\nDownload the day-2/hybrid-assembly/ folder from our learning server into your local computer:\nscp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ /Users/Downloads/\n-------------------------------\n# scp: secure copy (transfer files via SSH)\n# -r: enable copy directories\n# -i microgen2026.pem: key identity file (private key for authentication)\n# user: your server username\n# 132.112.198.45: your server ip adress\n# ~/microgen2026/day-2/hybrid-assembly/: result directory on learning server\n# /Users/Downloads/: destination on your local computer (as shown by \"pwd\" command)\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\nSimply replace /Users/Downloads/ into C:\\Users\\Downloads\\.\nscp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ C:\\Users\\Downloads\\",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.2 Long-Read sequencing & Hybrid assembly"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/post-assembly.html#download-results-to-your-local-computer",
+    "href": "day-2/instructions/post-assembly.html#download-results-to-your-local-computer",
+    "title": "2.1 Analyse the assemblies",
+    "section": "Download results to your local computer",
+    "text": "Download results to your local computer\nOpen another New Terminal window and run these commands on your New Terminal window.\nRun this command to display your current directory (for MacOS/Linux users):\npwd\n-------------------------------\n# pwd: output your current directory\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\necho %cd%\n-------------------------------\n# echo %cd%: output your current directory\n\n\n\nThe printout screen should look like this:\n/Users/Downloads\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\nThe printout screen should look like this:\nC:\\Users\\Downloads\n\n\n\nDownload the day-2/post-assembly/ folder from our learning server into your local computer:\nscp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/post-assembly/ /Users/Downloads/\n-------------------------------\n# scp: secure copy (transfer files via SSH)\n# -r: enable copy directories\n# -i microgen2026.pem: key identity file (private key for authentication)\n# user: your server username\n# 132.112.198.45: your server ip adress\n# ~/microgen2026/day-2/post-assembly/: result directory on learning server\n# /Users/Downloads/: destination on your local computer (as shown by \"pwd\" command)\n\n\n\n\n\n\nTipFor Windows users\n\n\n\n\n\nSimply replace /Users/Downloads/ into C:\\Users\\Downloads\\.\nscp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/post-assembly/ C:\\Users\\Downloads\\",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.1 Analyse the assemblies"
     ]
   }
 ]
