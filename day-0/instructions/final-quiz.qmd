@@ -1,0 +1,332 @@
+---
+title: "Quiz on Linux Foundations"
+author: "Nguyen MTS"
+date: "2026-05-11"
+format:
+  html:
+    css: "../../website-assets/quiz.css"
+---
+
+```{=html}
+<script src="../../website-assets/quiz.js"></script>
+<script>
+    const mcqFeedback = {
+        mcq_e1: {
+            A: "ls lists files, it doesn't show your current path.",
+            B: "Correct. 'pwd' stands for Print Working Directory.",
+            C: "cd is for changing directories, not printing the current one.",
+            D: "whereami is not a standard Linux command."
+        },
+        mcq_e2: {
+            A: "ls is the command.",
+            B: "Correct. Options (or flags) usually start with a dash.",
+            C: "genomes/ is the argument (the target directory).",
+            D: "The space is just a separator."
+        },
+        mcq_e3: {
+            A: "/ is the root directory, the very top of the tree.",
+            B: ". refers to the current directory.",
+            C: "Correct. The tilde (~) represents the user's home directory.",
+            D: ".. refers to the parent directory (one level up)."
+        },
+        mcq_e4: {
+            A: "Correct. 'man' opens the manual page for a command.",
+            B: "--help provides a short help menu, but 'man' is the full manual.",
+            C: "help mkdir is used for internal shell commands, not all programs.",
+            D: "mkdir man would try to create a directory named 'man'."
+        },
+        mcq_e5: {
+            A: "mv moves or renames a file.",
+            B: "Correct. 'cp' stands for copy.",
+            C: "rm removes/deletes a file.",
+            D: "ln creates links between files."
+        },
+        mcq_i1: {
+            A: "-a lists hidden files but doesn't make sizes human-readable.",
+            B: "Correct. -l is long format, -h is human-readable, and -a (or -la) includes hidden files.",
+            C: "-S sorts by size but doesn't show hidden files or human-readable units.",
+            D: "-F adds trailing slashes but doesn't show sizes."
+        },
+        mcq_i2: {
+            A: "cat prints the entire file to the screen at once, which is bad for large files.",
+            B: "head only shows the beginning of the file.",
+            C: "Correct. 'less' allows you to scroll through large files efficiently.",
+            D: "nano is a text editor, not just a viewer."
+        },
+        mcq_i3: {
+            A: "find is for finding files by name, not searching for text inside them.",
+            B: "Correct. 'grep' is the standard tool for searching text patterns.",
+            C: "search is not a standard command-line tool for this.",
+            D: "wc counts words/lines, it doesn't search for specific terms."
+        },
+        mcq_i4: {
+            A: "This would just count the letters in the filename.",
+            B: "Correct. This finds the lines with the string and then counts those lines.",
+            C: "This counts lines first, then looks for the string in the count (wrong order).",
+            D: "The semicolon runs them sequentially, not as a pipeline."
+        },
+        mcq_i5: {
+            A: ">> appends to the file instead of overwriting.",
+            B: "Correct. > redirects output and overwrites the destination file.",
+            C: "| sends output to another command, not a file.",
+            D: "< is for reading input from a file."
+        },
+        mcq_i6: {
+            A: "Linux will look for a variable named PREFIX_results, which doesn't exist.",
+            B: "Correct. Using curly braces ${} clearly separates the variable name from surrounding text.",
+            C: "Parentheses are for subshells, not variables.",
+            D: "Single quotes prevent variable expansion; it would print $PREFIX_results literally."
+        },
+        mcq_i7: {
+            A: "chown changes ownership, not permissions.",
+            B: "Correct. +x adds the executable (run) permission.",
+            C: "777 gives everyone full access, which is overkill and less specific.",
+            D: "chmod +r only makes it readable."
+        },
+        mcq_i8: {
+            A: "Correct. You must activate an environment to enter its 'bubble'.",
+            B: "mamba install is for adding new programs, not starting them.",
+            C: "mamba go is not a command.",
+            D: "mamba init is for setting up the mamba program itself."
+        },
+        mcq_i9: {
+            A: "Correct. .. refers to the parent folder.",
+            B: "cd ~ goes home.",
+            C: "This would be a relative path forward, not up.",
+            D: "Linux doesn't have a recycle bin in the CLI; rm deletes permanently."
+        },
+        mcq_i10: {
+            A: "Correct. 'lscpu' lists various CPU technical details.",
+            B: "top shows running processes, not just hardware info.",
+            C: "df shows disk space.",
+            D: "free shows RAM/memory usage."
+        },
+        mcq_a1: {
+            A: "This saves normal output but lets errors show on the screen.",
+            B: "Correct. 2>&1 merges error messages (stderr) into the same file as normal output (stdout).",
+            C: "2> only saves errors, not the normal results.",
+            D: "|& is a shortcut for both, but 2>&1 is the standard redirect syntax."
+        },
+        mcq_a2: {
+            A: "grep is for text, find is for files.",
+            B: "Correct. find searches the tree, -name matches files, and -size filters by size.",
+            C: "ls doesn't have a -size filter for finding files in subdirectories easily.",
+            D: "locate uses a database that might be out of date."
+        },
+        mcq_a3: {
+            A: "It's just a comment for the human reader.",
+            B: "Correct. It tells the kernel which program (shell) should interpret the following lines.",
+            C: "Bash is for Linux, but this line doesn't determine the OS.",
+            D: "Metadata is stored separately; the shebang is functional code."
+        },
+        mcq_a4: {
+            A: "Correct. GNU parallel is specifically designed to run tasks in parallel.",
+            B: "wc counts lines/words and doesn't run commands.",
+            C: "grep is a search tool.",
+            D: "mamba manages software environments."
+        },
+        mcq_a5: {
+            A: "Correct. tmux/screen allows sessions to persist in the background.",
+            B: "exit closes the connection and usually stops your jobs.",
+            C: "ssh is for connecting, but doesn't keep jobs alive if the connection drops.",
+            D: "ping checks if the server is up."
+        }
+    };
+</script>
+```
+
+**Instructions:** Answer all 20 questions below. When finished, click **Submit Quiz** at the bottom. You need at least **16 correct answers (80%)** to pass.
+
+::: {.callout-note}
+## Quiz Structure
+- **Questions 1-5**: Easy (Level 1)
+- **Questions 6-15**: Intermediate (Level 2 - Linking concepts)
+- **Questions 16-20**: Advanced (Level 3 - Complex logic & Open-book topics)
+:::
+
+<div class="mcq" id="mcq_e1" data-correct="B">
+  <div class="question">1. Which command reveals your current location in the file system?</div>
+  <label><input type="radio" name="mcq_e1" value="A"> A. <code>ls</code></label>
+  <label><input type="radio" name="mcq_e1" value="B"> B. <code>pwd</code></label>
+  <label><input type="radio" name="mcq_e1" value="C"> C. <code>cd</code></label>
+  <label><input type="radio" name="mcq_e1" value="D"> D. <code>whereami</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_e2" data-correct="B">
+  <div class="question">2. In the command <code>ls -l genomes/</code>, which part is the <strong>option</strong>?</div>
+  <label><input type="radio" name="mcq_e2" value="A"> A. <code>ls</code></label>
+  <label><input type="radio" name="mcq_e2" value="B"> B. <code>-l</code></label>
+  <label><input type="radio" name="mcq_e2" value="C"> C. <code>genomes/</code></label>
+  <label><input type="radio" name="mcq_e2" value="D"> D. The space after <code>-l</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_e3" data-correct="C">
+  <div class="question">3. Which character represents your <strong>Home</strong> directory?</div>
+  <label><input type="radio" name="mcq_e3" value="A"> A. <code>/</code></label>
+  <label><input type="radio" name="mcq_e3" value="B"> B. <code>.</code></label>
+  <label><input type="radio" name="mcq_e3" value="C"> C. <code>~</code></label>
+  <label><input type="radio" name="mcq_e3" value="D"> D. <code>..</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_e4" data-correct="A">
+  <div class="question">4. How do you find the manual page for the <code>mkdir</code> command?</div>
+  <label><input type="radio" name="mcq_e4" value="A"> A. <code>man mkdir</code></label>
+  <label><input type="radio" name="mcq_e4" value="B"> B. <code>mkdir --help</code></label>
+  <label><input type="radio" name="mcq_e4" value="C"> C. <code>help mkdir</code></label>
+  <label><input type="radio" name="mcq_e4" value="D"> D. <code>mkdir man</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_e5" data-correct="B">
+  <div class="question">5. What command is used to <strong>copy</strong> a file?</div>
+  <label><input type="radio" name="mcq_e5" value="A"> A. <code>mv</code></label>
+  <label><input type="radio" name="mcq_e5" value="B"> B. <code>cp</code></label>
+  <label><input type="radio" name="mcq_e5" value="C"> C. <code>rm</code></label>
+  <label><input type="radio" name="mcq_e5" value="D"> D. <code>ln</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i1" data-correct="B">
+  <div class="question">6. How do you list all files (including hidden ones) with <strong>human-readable</strong> sizes?</div>
+  <label><input type="radio" name="mcq_i1" value="A"> A. <code>ls -a</code></label>
+  <label><input type="radio" name="mcq_i1" value="B"> B. <code>ls -lah</code></label>
+  <label><input type="radio" name="mcq_i1" value="C"> C. <code>ls -S</code></label>
+  <label><input type="radio" name="mcq_i1" value="D"> D. <code>ls -F</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i2" data-correct="C">
+  <div class="question">7. Which tool is best for viewing very large text files line-by-line?</div>
+  <label><input type="radio" name="mcq_i2" value="A"> A. <code>cat</code></label>
+  <label><input type="radio" name="mcq_i2" value="B"> B. <code>head</code></label>
+  <label><input type="radio" name="mcq_i2" value="C"> C. <code>less</code></label>
+  <label><input type="radio" name="mcq_i2" value="D"> D. <code>nano</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i3" data-correct="B">
+  <div class="question">8. Which command would you use to search for the word "SARS" inside <code>data.txt</code>?</div>
+  <label><input type="radio" name="mcq_i3" value="A"> A. <code>find "SARS" data.txt</code></label>
+  <label><input type="radio" name="mcq_i3" value="B"> B. <code>grep "SARS" data.txt</code></label>
+  <label><input type="radio" name="mcq_i3" value="C"> C. <code>search "SARS" data.txt</code></label>
+  <label><input type="radio" name="mcq_i3" value="D"> D. <code>wc -l "SARS" data.txt</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i4" data-correct="B">
+  <div class="question">9. Chaining: How do you count how many lines in <code>metadata.csv</code> contain "2024"?</div>
+  <label><input type="radio" name="mcq_i4" value="A"> A. <code>ls metadata.csv | wc -l</code></label>
+  <label><input type="radio" name="mcq_i4" value="B"> B. <code>grep "2024" metadata.csv | wc -l</code></label>
+  <label><input type="radio" name="mcq_i4" value="C"> C. <code>wc -l metadata.csv | grep "2024"</code></label>
+  <label><input type="radio" name="mcq_i4" value="D"> D. <code>grep "2024" metadata.csv ; wc -l</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i5" data-correct="B">
+  <div class="question">10. Redirection: How do you save the <code>ls</code> output to <code>files.txt</code>, <strong>overwriting</strong> the file?</div>
+  <label><input type="radio" name="mcq_i5" value="A"> A. <code>ls >> files.txt</code></label>
+  <label><input type="radio" name="mcq_i5" value="B"> B. <code>ls > files.txt</code></label>
+  <label><input type="radio" name="mcq_i5" value="C"> C. <code>ls | files.txt</code></label>
+  <label><input type="radio" name="mcq_i5" value="D"> D. <code>ls < files.txt</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i6" data-correct="B">
+  <div class="question">11. Variables: If <code>PREFIX="id_01"</code>, how do you print "id_01_result"?</div>
+  <label><input type="radio" name="mcq_i6" value="A"> A. <code>echo $PREFIX_result</code></label>
+  <label><input type="radio" name="mcq_i6" value="B"> B. <code>echo ${PREFIX}_result</code></label>
+  <label><input type="radio" name="mcq_i6" value="C"> C. <code>echo $(PREFIX)_result</code></label>
+  <label><input type="radio" name="mcq_i6" value="D"> D. <code>echo '$PREFIX_result'</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i7" data-correct="B">
+  <div class="question">12. Permissions: Which command makes a script <strong>executable</strong>?</div>
+  <label><input type="radio" name="mcq_i7" value="A"> A. <code>chown +x script.sh</code></label>
+  <label><input type="radio" name="mcq_i7" value="B"> B. <code>chmod +x script.sh</code></label>
+  <label><input type="radio" name="mcq_i7" value="C"> C. <code>chmod 777 script.sh</code></label>
+  <label><input type="radio" name="mcq_i7" value="D"> D. <code>chmod +r script.sh</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i8" data-correct="A">
+  <div class="question">13. Environments: How do you enter the "bubble" of an environment named <code>qc</code>?</div>
+  <label><input type="radio" name="mcq_i8" value="A"> A. <code>mamba activate qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="B"> B. <code>mamba install qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="C"> C. <code>mamba go qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="D"> D. <code>mamba init qc</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i9" data-correct="A">
+  <div class="question">14. Navigation: What does the command <code>cd ..</code> do?</div>
+  <label><input type="radio" name="mcq_i9" value="A"> A. Moves you up one directory level</label>
+  <label><input type="radio" name="mcq_i9" value="B"> B. Goes to your Home directory</label>
+  <label><input type="radio" name="mcq_i9" value="C"> C. Goes into a subfolder named <code>..</code></label>
+  <label><input type="radio" name="mcq_i9" value="D"> D. Deletes the folder and moves you back</label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_i10" data-correct="A">
+  <div class="question">15. Hardware: Which command lists technical details about your <strong>CPU</strong>?</div>
+  <label><input type="radio" name="mcq_i10" value="A"> A. <code>lscpu</code></label>
+  <label><input type="radio" name="mcq_i10" value="B"> B. <code>top</code></label>
+  <label><input type="radio" name="mcq_i10" value="C"> C. <code>df -h</code></label>
+  <label><input type="radio" name="mcq_i10" value="D"> D. <code>free -m</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_a1" data-correct="B">
+  <div class="question">16. Advanced Redirection: How do you save <strong>both</strong> standard output and errors to <code>log.txt</code>?</div>
+  <label><input type="radio" name="mcq_a1" value="A"> A. <code>command > log.txt</code></label>
+  <label><input type="radio" name="mcq_a1" value="B"> B. <code>command > log.txt 2>&1</code></label>
+  <label><input type="radio" name="mcq_a1" value="C"> C. <code>command 2> log.txt</code></label>
+  <label><input type="radio" name="mcq_a1" value="D"> D. <code>command |& log.txt</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_a2" data-correct="B">
+  <div class="question">17. File Discovery: Based on the "Self Exploration" section, how do you find all <code>.fasta</code> files larger than 10MB?</div>
+  <label><input type="radio" name="mcq_a2" value="A"> A. <code>grep ".fasta" -size +10M</code></label>
+  <label><input type="radio" name="mcq_a2" value="B"> B. <code>find . -name "*.fasta" -size +10M</code></label>
+  <label><input type="radio" name="mcq_a2" value="C"> C. <code>ls -R *.fasta --min-size 10M</code></label>
+  <label><input type="radio" name="mcq_a2" value="D"> D. <code>locate "*.fasta" | filter 10MB</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_a3" data-correct="B">
+  <div class="question">18. Scripting: What is the main purpose of the <strong>shebang</strong> (<code>#!/bin/bash</code>) at the start of a script?</div>
+  <label><input type="radio" name="mcq_a3" value="A"> A. It describes what the script does for humans</label>
+  <label><input type="radio" name="mcq_a3" value="B"> B. It specifies the program (shell) to be used to interpret the script</label>
+  <label><input type="radio" name="mcq_a3" value="C"> C. It checks if you are running Linux or Windows</label>
+  <label><input type="radio" name="mcq_a3" value="D"> D. It serves as metadata for the file system database</label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_a4" data-correct="A">
+  <div class="question">19. Efficiency: Which tool allows you to run many commands in parallel across multiple CPU cores?</div>
+  <label><input type="radio" name="mcq_a4" value="A"> A. <code>GNU parallel</code></label>
+  <label><input type="radio" name="mcq_a4" value="B"> B. <code>wc</code></label>
+  <label><input type="radio" name="mcq_a4" value="C"> C. <code>grep</code></label>
+  <label><input type="radio" name="mcq_a4" value="D"> D. <code>mamba</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="mcq" id="mcq_a5" data-correct="A">
+  <div class="question">20. Persistence: Which tool keeps your processes running even if your remote connection (SSH) breaks?</div>
+  <label><input type="radio" name="mcq_a5" value="A"> A. <code>tmux</code> or <code>screen</code></label>
+  <label><input type="radio" name="mcq_a5" value="B"> B. <code>exit</code></label>
+  <label><input type="radio" name="mcq_a5" value="C"> C. <code>ssh</code></label>
+  <label><input type="radio" name="mcq_a5" value="D"> D. <code>ping</code></label>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-controls">
+  <button class="btn-submit" onclick="submitQuiz()">Submit Quiz</button>
+  <button class="btn-reset" onclick="resetQuiz()">Reset Quiz</button>
+</div>
+
+<div id="mcq-total-score-display" style="display:none;"></div>

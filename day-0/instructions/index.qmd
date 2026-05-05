@@ -6,6 +6,8 @@ date: "2026-05-11"
 
 The purpose of this pre-workshop day is to prepare you with the computing environment where we will practice genomic analysis and the essential skills to work effectively in this environment.
 
-Our environment is a cloud-based Linux system with a set of pre-installed tools for the workshop, so you won't have to use your computer's resource for the analyses. In the sub-module [0.1: Setup your workspace](setup-environment.qmd), you will be guided to access to this system from your own laptop. 
+Our environment is a cloud-based Linux system with a set of pre-installed tools for the workshop, so you won't have to use your computer's resource for the analyses. 
 
-In the sub-module [0.2 Commands & Environments](linux-basics.qmd), we will learn about Linux operating system (OS) and the essential skills to run bioinformatic tools on it.
+In the sub-module [0.1: Setup your workspace](setup-environment.qmd), you will be guided to access to this system from your own laptop. 
+
+In the sub-module [0.2 Commands & Environments](linux-basics.qmd), we will learn about Linux operating system (OS) and the essential skills to run bioinformatic tools on it. After finishing this module, please take a quick [Knowledge Check](final-quiz.qmd) (10 mins) to test your Linux skills.
