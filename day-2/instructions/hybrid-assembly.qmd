@@ -1,5 +1,216 @@
 ---
-title: "2.2 Long-read sequencing & Hybrid assemblies"
-author: "Quynh NPN"
+title: "2.2 Long-Read sequencing & Hybrid assembly"
+author: "Quynh Nguyen"
 date: "2026-05-13"
 ---
+
+# **Hybrid Assembly with Long and Short Reads**
+
+For this section, [**unicycler**]{.underline} is used
+
+[**Unicycler**]{.underline} is a genome assembler designed for bacteria that supports **short-read, long-read, and hybrid assembly**. It combines the accuracy of short reads with the long-range information of long reads to produce **high-quality, often complete genomes**, including circular chromosomes and plasmids
+
+# Access conda environment
+
+Activate the Conda environment containing the unicycler tool:
+
+``` {.bash code-line-numbers="false"}
+conda activate microgen2026
+-------------------------------
+# conda activate: activate working enviroment 
+# microgen2026: our enviroment name contains all required tools for this workshop
+```
+
+# Explore the materials available on the server
+
+Go to your `day-2/hybrid_assembly` directory using the following command:
+
+``` {.bash code-line-numbers="false"}
+cd /microgen2026/day-2/hybrid-assembly/
+```
+
+List all files in the `hybrid_assembly` directory:
+
+``` {.bash code-line-numbers="false"}
+ls
+```
+
+You should now see all the data needed for this module.
+
+``` {.bash code-line-numbers="false"}
+├── hybrid-assembly 
+│   ├── AMB201Kp_1.fastq.gz 
+│   ├── AMB201Kp_2.fastq.gz
+│   ├── AMB201Kp_long.fastq.gz 
+│   ├── ... 
+```
+
+Count fasta files that we have for post-assembly module:
+
+``` {.bash code-line-numbers="false"}
+ls *.fastq.gz | wc -l
+-------------------------------
+# ls: list files in your directory 
+# *.fastq.gz: select all files ending with .fastq.gz
+# | : pipe sending output from left to right
+# wc: word count tool
+# -l: count number of lines
+```
+
+## Question:
+
+How many fastq files you have in your working environment?
+
+# Run unicycler (version 0.5.1)
+
+Check the availability of your tool by typing its name:
+
+``` {.bash code-line-numbers="false" style="blue"}
+unicycler
+```
+
+The output should look like this:
+
+``` bash
+       __
+       \ \___
+        \ ___\
+        //
+   ____//      _    _         _                     _
+ //_  //\\    | |  | |       |_|                   | |
+//  \//  \\   | |  | | _ __   _   ___  _   _   ___ | |  ___  _ __
+||  (O)  ||   | |  | || '_ \ | | / __|| | | | / __|| | / _ \| '__|
+\\    \_ //   | |__| || | | || || (__ | |_| || (__ | ||  __/| |
+ \\_____//     \____/ |_| |_||_| \___| \__, | \___||_| \___||_|
+                                        __/ |
+                                       |___/
+```
+
+Hybrid assembly with unicycler:
+
+``` {.bash code-line-numbers="false" style="blue"}
+unicycler -1 AMB201Kp_1.fastq.gz -2 AMB201Kp_2.fastq.gz -l AMB201Kp_long.fastq.gz -t 15 -o hybrid_AMB201Kp
+-------------------------------
+# unicycler: run genome unicycler for genome assembly 
+# -1: forward short reads from paired-end reads (read 1) 
+# -2: reverse short reads from paired-end reads (read 2) input: input your assembly fasta files
+# -l: long read from nanopore sequencing 
+# -t: number of CPU cores for parallel running, high cores count speed up the analysis
+# -o: location and file name to save results
+```
+
+After unicycler finishes running, the output should contain the following files:
+
+``` {.bash style="blue"}
+... assembly.fasta  assembly.gfa  unicycler.log
+```
+
+::: {.callout-note collapse="false"}
+## Question:
+
+How can you list the unicycler output files in your working directory?
+:::
+
+::: {.callout-note collapse="false"}
+## Long Read Assembly Only
+
+You can perform **long-read–only** assembly using the following command. Ensure you **check read quality** before running the assembly:
+
+``` bash
+unicycler -l your_long_reads.fastq -o longread_only -t 10
+-------------------------------
+# unicycler: run genome unicycler for genome assembly 
+# -l: your long read file from nanopore sequencing 
+# -t: number of CPU cores for parallel running, high cores count speed up the analysis
+# -o: location and file name to save results
+```
+:::
+
+# View unicycler results
+
+View the assembly report using this following command:
+
+``` {.bash style="blue"}
+cat hybrid_AMB201Kp/unicycler.log
+-------------------------------
+# cat: display the entire content of your file 
+```
+
+The complete assembly should look like this:
+
+``` bash
+Assembly complete (2025-09-14 14:09:25)
+---------------------------------------
+Saving /Users/Downloads/hybrid_AMB201Kp/assembly.gfa
+Saving /Users/Downloads/hybrid_AMB201Kp/assembly.fasta
+```
+
+------------------------------------------------------------------------
+
+# Output Interpretation
+
+## Download results to your local computer
+
+Open another New Terminal window and run these commands on your New Terminal window.
+
+Run this command to display your current directory (for MacOS/Linux users):
+
+``` bash
+pwd
+-------------------------------
+# pwd: output your current directory
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+``` bash
+echo %cd%
+-------------------------------
+# echo %cd%: output your current directory
+```
+:::
+
+The printout screen should look like this:
+
+``` bash
+/Users/Downloads
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+The printout screen should look like this:
+
+``` bash
+C:\Users\Downloads
+```
+:::
+
+Download the `day-2/hybrid-assembly/` folder from our learning server into your local computer:
+
+``` bash
+scp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ /Users/Downloads/
+-------------------------------
+# scp: secure copy (transfer files via SSH)
+# -r: enable copy directories
+# -i microgen2026.pem: key identity file (private key for authentication)
+# user: your server username
+# 132.112.198.45: your server ip adress
+# ~/microgen2026/day-2/hybrid-assembly/: result directory on learning server
+# /Users/Downloads/: destination on your local computer (as shown by "pwd" command)
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+Simply replace `/Users/Downloads/` into `C:\Users\Downloads\`.
+
+``` bash
+scp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ C:\Users\Downloads\
+```
+:::
+
+------------------------------------------------------------------------
+
+# Let’s open the results and explore the assemblies with Bandage

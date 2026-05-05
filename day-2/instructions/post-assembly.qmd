@@ -1,5 +1,316 @@
 ---
 title: "2.1 Analyse the assemblies"
-author: "Quynh NPN"
+author: "Quynh Nguyen"
 date: "2026-05-13"
 ---
+
+# [**Command-line for Post-Assembly Profiling Module**]{.underline}
+
+**Post-Assembly Profiling** builds on the genome assembly step by focusing on how to **evaluate the quality of assembled contigs** and **interpret their gene content**. In this section, you will learn how to assess assembly reliability and then explore what genes are present within the genome. The workflow includes two main steps:
+
+1.  Quality assessment of assemblies (e.g., completeness, contamination, N50, genome size)
+2.  Characterization of gene content (antimicrobial resistance (AMR) genes, virulence factors,...)
+
+# [**Command-line Workflow**]{.underline}
+
+From now on we will work mainly on Terminal (for MacOS / Linux user) or Command Prompt (for Windows user) or Visual Studio Code application.
+
+# Access to the class server
+
+To begin, you need to access the class setup server. Open your Terminal and connect using the following command. This will log you into the server environment where all required tools and data for the session are prepared.
+
+``` {.bash code-line-numbers="false"}
+ssh -i microgen2026.pem user@136.112.198.45
+-------------------------------
+# microgen2026.pem: key identity file (private key for authentication) 
+# user: your server username
+# 132.112.198.45: your server ip adress
+```
+
+# Expore the materials available on the server
+
+Go to your `day-2/post_assembly` directory using the following command:
+
+``` {.bash code-line-numbers="false"}
+cd /microgen2026/day-2/post-assembly/
+```
+
+List all files in the `post_assembly` directory:
+
+``` {.bash code-line-numbers="false"}
+ls
+```
+
+You should now see all the data needed for this module.
+
+``` {.bash code-line-numbers="false"}
+├── post-assembly 
+│   ├── 925Kp_assembly.fasta 
+│   ├── 930Kp_assembly.fasta
+│   ├── 937Kp_assembly.fasta 
+│   ├── ... 
+```
+
+Count fasta files that we have for post-assembly module:
+
+``` {.bash code-line-numbers="false"}
+ls *.fasta | wc -l
+-------------------------------
+# ls: list files in your directory 
+# *.fasta: select all files ending with .fasta
+# | : pipe sending output from left to right
+# wc: word count tool
+# -l: count number of lines
+```
+
+::: {.callout-note collapse="false"}
+## Question:
+
+How many fasta files you have in your working environment?
+:::
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Quality Assessment of Assemblies
+
+For this section, [**checkm2**]{.underline} is used
+
+[**CheckM2**]{.underline} assesses the **quality of genome assemblies**. It estimates **completeness** (how much of the genome is recovered) and **contamination** (how much unwanted DNA is present) using a machine-learning approach based on gene content and genome features. This helps you determine whether your assembly is reliable before moving to downstream analysis.
+
+# Access conda environment 
+
+Activate the Conda environment containing the checkm2 tool:
+
+``` {.bash code-line-numbers="false"}
+conda activate microgen2026
+-------------------------------
+# conda activate: activate working enviroment 
+# microgen2026: our enviroment name contains all required tools for this workshop
+```
+
+# Run checkm2 (completeness & contamination)
+
+Check the availability of your tool by typing its name:
+
+``` {.bash code-line-numbers="false" style="blue"}
+checkm2
+```
+
+The output should look like this:
+
+``` bash
+                ...::: CheckM2 v1.1.0 :::...
+
+  General usage:
+    predict         -> Predict the completeness and contamination of genome bins in a folder. Example usage: 
+
+	checkm2 predict --threads 30 --input <folder_with_bins> --output-directory <output_folder>
+    testrun         -> Runs Checkm2 on internal test genomes to ensure it runs without errors. Example usage: 
+
+	 checkm2 testrun --threads 10
+    database        -> Download and set up required CheckM2 DIAMOND database for annotation
+
+  Use checkm2 <command> -h for command-specific help.
+```
+
+Quality assessment of assemblies with checkm2:
+
+``` {.bash code-line-numbers="false" style="blue"}
+checkm2 predict --threads 15 --input *.fasta --output-directory checkm2_output
+-------------------------------
+# checkm2 predict: run genome quality prediction 
+# --threads: number of CPU cores for parallel running, high cores count speed up the analysis 
+# --input: input your assembly fasta files
+# --output-directory: location and file name to save results
+```
+
+After checkm2 finishes running, the output should look like this:
+
+``` {.bash style="blue"}
+checkm2.log  diamond_output  protein_files  quality_report.tsv
+```
+
+::: {.callout-note collapse="false"}
+## Question:
+
+How can you list the checkm2 output files in your working directory?
+:::
+
+# View checkm2 results
+
+View the quality report using this following command:
+
+``` {.bash style="blue"}
+cat checkm2_output/quality_report.tsv
+-------------------------------
+# cat: display the entire content of your file 
+```
+
+The output should look like this:
+
+``` bash
+Name	Completeness	Contamination	Completeness_Model_Used	Translation_Table_Used	Coding_Density	Contig_N50	Average_Gene_Length	Genome_Size	GC_Content	Total_Coding_Sequences	Total_Contigs	Max_Contig_Length	Additional_Notes
+925Kp.assembly	100.0	0.19	Neural Network (Specific Model)	11	0.877	208194	308.6430039230338	5642876	0.57	5353	134	670397	None
+930Kp.assembly	100.0	0.2	Neural Network (Specific Model)	11	0.877	211821	308.6283846872082	5643929	0.57	5355	141	670397	None
+937Kp.assembly	100.0	0.19	Neural Network (Specific Model)	11	0.877	211826	308.5834889802017	5642843	0.57	5354	131	670397	None
+...
+```
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Characterization of Gene Content
+
+For this section, [**Kleborate**]{.underline} is used
+
+[**Kleborate**]{.underline} **characterizes *Klebsiella* and *Escherichia coli* genomes**. It performs **MLST typing** and identifies important features such as **antimicrobial resistance (AMR) genes** and **virulence factors**. This allows you to understand the clinical and epidemiological significance of your isolates.
+
+# Access conda environment 
+
+Activate the Conda environment containing the kleborate tool:
+
+``` {.bash code-line-numbers="false"}
+conda activate microgen2026
+-------------------------------
+# conda activate: activate working enviroment 
+# microgen2026: our enviroment name contains all required tools for this workshop
+```
+
+::: {.callout-note collapse="false"}
+## Optional
+
+If you are already in the conda environment *microgen2026*, please skip this step.
+:::
+
+# Run kleborate (version 3.1.3)
+
+Check the availability of your tool by typing its name:
+
+``` {.bash code-line-numbers="false" style="green"}
+kleborate
+```
+
+The output should look like this:
+
+``` {.bash style="green"}
+usage: kleborate [-a ASSEMBLIES [ASSEMBLIES ...]] [-o OUTDIR] [-r] [--trim_headers] [--list_modules] [-p PRESET] [-m MODULES] [-h] [--help_all] [--version]
+
+Kleborate: a tool for characterising virulence and resistance in pathogen assemblies
+```
+
+Check kleborate version:
+
+``` {.bash code-line-numbers="false" style="green"}
+kleborate --version
+```
+
+The output should look like this:
+
+``` {.bash style="green"}
+Kleborate v3.1.3
+```
+
+MLST typing and identification of AMR and Virulence genes using kleborate:
+
+``` {.bash code-line-numbers="false" style="green"}
+kleborate -p kpsc -o test_kleborate -a *.fasta -t 15
+-------------------------------
+# -p kpsc: specify the species complex, kpsc = klebsiella pneumoniae species complex
+# -o: define the output file name
+# -a: input your assembly fasta files
+# -t: number of CPU cores for parallel running, high cores count speed up the analysis
+```
+
+After kleborate finishes running, the output should look like this:
+
+``` {.bash style="green"}
+klebsiella_pneumo_complex_output.txt
+```
+
+# View kleborate results
+
+View the kleborate output using this following command:
+
+``` {.bash style="green"}
+tail klebsiella_pneumo_complex_output.txt
+-------------------------------
+# tail: show the last part of your file
+```
+
+The output should look like this:
+
+``` bash
+925Kp.assembly	Klebsiella pneumoniae	strong	134	208194	670397	5642876	no	-	ST147	3	4	6	1	7	4	38	78-1LV	ybt 10; ICEKp4	3	12	4	11	3	21	18	3	10	16*	2	-	0	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	aadA2^;aph(3')-VI;armA	-	-	-	-	Mrx;mphA;mphE.v2^;msrE	-	-	sul1	tet(A).v1	-	dfrA12	-	-	-	-	NDM-1;OXA-48	SHV-11^	35Q	OmpK36GD	-	GyrA-83Y;GyrA-87A;ParC-80I	CTX-M-15?-0%	-	2	7	12	wzi420	KL10	K10	Typeable	?10	98.94%	-	OL3α/β	O3αβ	Typeable	?11	99.64%	-
+930Kp.assembly	Klebsiella pneumoniae	strong	141	211821	670397	5643929	no	-	ST147	3	4	6	1	7	4	38	78-1LV	ybt 10; ICEKp4	3	12	4	11	3	21	18	3	10	16*	2	-	0	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	
+
+...	
+```
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Output Interpretation
+
+## Download results to your local computer
+
+Open another New Terminal window and run these commands on your New Terminal window.
+
+Run this command to display your current directory (for MacOS/Linux users):
+
+``` bash
+pwd
+-------------------------------
+# pwd: output your current directory
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+``` bash
+echo %cd%
+-------------------------------
+# echo %cd%: output your current directory
+```
+:::
+
+The printout screen should look like this:
+
+``` bash
+/Users/Downloads
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+The printout screen should look like this:
+
+``` bash
+C:\Users\Downloads
+```
+:::
+
+Download the `day-2/post-assembly/` folder from our learning server into your local computer:
+
+``` bash
+scp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/post-assembly/ /Users/Downloads/
+-------------------------------
+# scp: secure copy (transfer files via SSH)
+# -r: enable copy directories
+# -i microgen2026.pem: key identity file (private key for authentication)
+# user: your server username
+# 132.112.198.45: your server ip adress
+# ~/microgen2026/day-2/post-assembly/: result directory on learning server
+# /Users/Downloads/: destination on your local computer (as shown by "pwd" command)
+```
+
+::: {.callout-tip collapse="false"}
+## For Windows users
+
+Simply replace `/Users/Downloads/` into `C:\Users\Downloads\`.
+
+``` bash
+scp -r -i microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/post-assembly/ C:\Users\Downloads\
+```
+:::
+
+--------------------------------------------------------------------------------------------------------------------------
+
+# Let’s open the results and review them together
