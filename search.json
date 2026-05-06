@@ -1935,5 +1935,65 @@
       "Day 3",
       "3.2 Phylogenetics"
     ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html",
+    "href": "day-2/instructions/gene-alignment.html",
+    "title": "2.3 Locate & compare genes",
+    "section": "",
+    "text": "Gene alignment, or sequence alignment, is a fundamental technique in bioinformatics used to arrange DNA, RNA, or protein sequences to identify regions of similarity, and dissimilarity.  These similarities and dissimilarities often indicate functional, structural, or evolutionary relationships between the sequences.\nIn bacterial genomics, alignment allows researchers to pinpoint mutations — such as Single Nucleotide Polymorphisms (SNPs) — and understand how pathogens evolve and spread.",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#multiple-sequences-on-seaview",
+    "href": "day-2/instructions/gene-alignment.html#multiple-sequences-on-seaview",
+    "title": "2.3 Locate & compare genes",
+    "section": "Multiple sequences on Seaview",
+    "text": "Multiple sequences on Seaview\nThe gyrA sequences of all samples were extracted and concatenated into the file gyrA.sequences.ffn under the directory /microgen2026/day-2/.\nTo view them, we will use a graphical software called Seaview. You can let it run directly on the Google Cloud instance and access to it remotely, either via X11 forwarding or VNC virtual desktop. This is guided in more detail on day-0. \nThe below command opens the file with Seaview from a terminal:\n\n\nPractice\n\nseaview /microgen2026/day-2/gyrA.sequences.ffn\n\nand the below figure shows it was done on a VNC virtual desktop of the Google Cloud instance:\n\n\n\nSeaview on VNC\n\n\nOnce successful, you shall see the sequences on Seaview like below:\n\n\n\ngyrA sequences on Seaview\n\n\n\n\n\n\n\n\nImportantPlease reach us if you get any issue opening Seaview!\n\n\n\n\n\n\n\n\n\n\n\n\nNoteChallenge\n\n\n\n\n\nDo you know how to identify & extract the sequence of gyrA from an assembly .assembly.fasta file?  Hint: You should not use BLAST on Bandage. It’s too manual. We’re doing this for a reason.\nThis is a group exercise in the class. Discuss with your peers about the steps you would take to solve this challenge. You don’t need to come up with command-lines or codes, just the logical steps. We will then go through the solutions together.\n\n\nSolution\n\n\n\n\nScan me!",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#dna-sequence-alignment",
+    "href": "day-2/instructions/gene-alignment.html#dna-sequence-alignment",
+    "title": "2.3 Locate & compare genes",
+    "section": "DNA sequence alignment",
+    "text": "DNA sequence alignment\nTo align the DNA sequences, choose the “Align” menu, then “Align all”.\n\n\n\nAligning function\n\n\nAfter that, we will need to find the positions where the sequences differ, e.g. the Single-Nucleotide Polymorphisms (SNPs).\nYou can do this through the “Sites” menu, then “Create set”.\n\n\n\nCreate sites set\n\n\nName the set as “snp” and choose the set type “Variable sites”, then click “OK”.\n\n\n\n\n\n\nName set\n\n\n\n\n\n\n\nChoose set type\n\n\n\n\n\nWhen done, you should see a new line under the sequences with name “Variable sites”. In this “sequence”, the positions with different nucleotides will be annotated as “X” and un-variable sites will be “-”.\nYou can click to a site, especially one with the “X” mark, to see the position number of the SNP in the alignment. For example, clicking to the first “X” site shows that it is the 699th position in the alignment.\n\n\n\n\n\n\nVariable sites “sequence”\n\n\n\n\n\n\n\n“X” site is a SNP\n\n\n\n\n\n\nExercise\n\nHow many SNPs are there in the gyrA sequences of our K. pneumoniae ST147 isolates?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#protein-sequence-alignment",
+    "href": "day-2/instructions/gene-alignment.html#protein-sequence-alignment",
+    "title": "2.3 Locate & compare genes",
+    "section": "Protein sequence alignment",
+    "text": "Protein sequence alignment\nAs we all know, changes in DNA sequence may not lead to changes in phenotype. To see if there are any changes in the protein sequences, we can translate the DNA sequences to amino acid sequences and align them directly on Seaview.\nLet’s first translate the DNA sequences to amino acid sequences. You can do this through the “Props” menu, then “View as proteins”.\n\n\n\nTranslate DNA to protein\n\n\nOnce done, you should see the amino acid sequences like below.\n\n\n\nProtein sequences\n\n\nNow, to find the amino acid positions that differ, we just need to repeat the same steps as before, to create a new set of variable sites for the protein sequences.  But, before that, we need to delete the previous set of variable sites, which was created for the DNA sequences. You can do this through the “Sites” menu, then “Delete set”.\n\n\n\nDelete set\n\n\n\nExercise\n\nHow many amino acid positions differ among the gyrA sequences of our K. pneumoniae ST147 isolates?\nWhat are they? Are they related to fluoroquinolone resistance (e.g. findings from Kleborate analysis)?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
+  },
+  {
+    "objectID": "day-2/instructions/gene-alignment.html#compare-with-a-reference-wild-type-sequence",
+    "href": "day-2/instructions/gene-alignment.html#compare-with-a-reference-wild-type-sequence",
+    "title": "2.3 Locate & compare genes",
+    "section": "Compare with a reference wild-type sequence",
+    "text": "Compare with a reference wild-type sequence\nIf all sequences in our samples have a same resistant mutation, we probably cannot spot it from the alignment of only our samples, as it will not be marked as a variable site.  Therefore, we will also need to add a “wild-type” sequence to the alignment to compare with.\nIn the same directory /microgen2026/day-2/, you can find a reference sequence of gyrA that was used by Kleborate as a wild-type for identifying fluoroquinolone resistance mutations: gyrA-reference-kleborate.fasta.\nYour tasks are as follows:\n\nAdd this reference sequence to the alignment in a new file named gyrA.sequences.plusRef.ffn.\nOpen the new file with Seaview and find the amino acid mutations that correspond to fluoroquinolone resistance in our K. pneumoniae ST147 isolates.\nCheck your results with the findings from Kleborate analysis in module 2.1.\nDid you see that the reference sequence from Kleborate is shorter than the gyrA sequences of samples? Can you guess why?",
+    "crumbs": [
+      "Practical Guides",
+      "Day 2",
+      "2.3 Locate & compare genes"
+    ]
   }
 ]

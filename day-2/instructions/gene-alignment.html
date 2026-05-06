@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -374,16 +409,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" id="toc-gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" class="nav-link active" data-scroll-target="#gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae"><em>gyrA</em> mutations in fluoroquinolone-resistant <em>K. pneumoniae</em></a></li>
-  <li><a href="#gene-alignment" id="toc-gene-alignment" class="nav-link" data-scroll-target="#gene-alignment">Gene alignment</a>
+  <li><a href="#gene-alignment" id="toc-gene-alignment" class="nav-link active" data-scroll-target="#gene-alignment">Gene alignment</a></li>
+  <li><a href="#gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" id="toc-gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" class="nav-link" data-scroll-target="#gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae"><em>gyrA</em> mutations in fluoroquinolone-resistant <em>K. pneumoniae</em></a>
   <ul class="collapse">
-  <li><a href="#why-align-genes" id="toc-why-align-genes" class="nav-link" data-scroll-target="#why-align-genes">Why align genes?</a></li>
-  <li><a href="#aligning-gyra-genes" id="toc-aligning-gyra-genes" class="nav-link" data-scroll-target="#aligning-gyra-genes">Aligning <em>gyrA</em> genes</a></li>
-  <li><a href="#visualizing-alignments-with-seaview" id="toc-visualizing-alignments-with-seaview" class="nav-link" data-scroll-target="#visualizing-alignments-with-seaview">Visualizing alignments with Seaview</a>
+  <li><a href="#multiple-sequences-on-seaview" id="toc-multiple-sequences-on-seaview" class="nav-link" data-scroll-target="#multiple-sequences-on-seaview">Multiple sequences on Seaview</a></li>
+  <li><a href="#dna-sequence-alignment" id="toc-dna-sequence-alignment" class="nav-link" data-scroll-target="#dna-sequence-alignment">DNA sequence alignment</a>
   <ul class="collapse">
-  <li><a href="#dna-sequence-alignment" id="toc-dna-sequence-alignment" class="nav-link" data-scroll-target="#dna-sequence-alignment">DNA sequence alignment</a></li>
-  <li><a href="#protein-sequence-alignment" id="toc-protein-sequence-alignment" class="nav-link" data-scroll-target="#protein-sequence-alignment">Protein sequence alignment</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul></li>
+  <li><a href="#protein-sequence-alignment" id="toc-protein-sequence-alignment" class="nav-link" data-scroll-target="#protein-sequence-alignment">Protein sequence alignment</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise</a></li>
+  </ul></li>
+  <li><a href="#compare-with-a-reference-wild-type-sequence" id="toc-compare-with-a-reference-wild-type-sequence" class="nav-link" data-scroll-target="#compare-with-a-reference-wild-type-sequence">Compare with a reference wild-type sequence</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -422,27 +460,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" class="level1">
-<h1><em>gyrA</em> mutations in fluoroquinolone-resistant <em>K. pneumoniae</em></h1>
-</section>
 <section id="gene-alignment" class="level1">
 <h1>Gene alignment</h1>
-<section id="why-align-genes" class="level2">
-<h2 class="anchored" data-anchor-id="why-align-genes">Why align genes?</h2>
+<p>Gene alignment, or sequence alignment, is a fundamental technique in bioinformatics used to arrange DNA, RNA, or protein sequences to identify regions of similarity, and dissimilarity. <br> These similarities and dissimilarities often indicate functional, structural, or evolutionary relationships between the sequences.</p>
+<p>In bacterial genomics, alignment allows researchers to pinpoint mutations — such as Single Nucleotide Polymorphisms (SNPs) — and understand how pathogens evolve and spread.</p>
 </section>
-<section id="aligning-gyra-genes" class="level2">
-<h2 class="anchored" data-anchor-id="aligning-gyra-genes">Aligning <em>gyrA</em> genes</h2>
+<section id="gyra-mutations-in-fluoroquinolone-resistant-k.-pneumoniae" class="level1">
+<h1><em>gyrA</em> mutations in fluoroquinolone-resistant <em>K. pneumoniae</em></h1>
+<p>Fluoroquinolones are broad-spectrum antibiotics that target bacterial DNA gyrase and topoisomerase IV, enzymes essential for DNA replication. The <em>gyrA</em> gene encodes the A subunit of DNA gyrase. Mutations within the Quinolone Resistance-Determining Regions (QRDR) of <em>gyrA</em> are the primary drivers of fluoroquinolone resistance in <em>Klebsiella pneumoniae</em>.</p>
+<p>High-risk clones like ST147 often harbor these chromosomal mutations alongside other resistance genes, making them challenging to treat in clinical settings.</p>
+<p>In this module, we will focus on the <em>gyrA</em> gene to learn about gene alignment and how to identify variations among sequences.</p>
+<p>Now, let’s compare!</p>
+<section id="multiple-sequences-on-seaview" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-sequences-on-seaview">Multiple sequences on Seaview</h2>
+<p>The <em>gyrA</em> sequences of all samples were extracted and concatenated into the file <code>gyrA.sequences.ffn</code> under the directory <code>/microgen2026/day-2/</code>.</p>
+<p>To view them, we will use a graphical software called <strong>Seaview</strong>. You can let it run directly on the Google Cloud instance and access to it remotely, either via X11 forwarding or VNC virtual desktop. This is guided in more detail on <a href="../../day-0/instructions/setup-environment.html">day-0</a>. <br></p>
+<p>The below command opens the file with Seaview from a terminal:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">seaview</span> /microgen2026/day-2/gyrA.sequences.ffn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>and the below figure shows it was done on a VNC virtual desktop of the Google Cloud instance:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-open.png" class="img-fluid figure-img"></p>
+<figcaption>Seaview on VNC</figcaption>
+</figure>
+</div>
+<p>Once successful, you shall see the sequences on Seaview like below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-dna.png" class="img-fluid figure-img"></p>
+<figcaption><em>gyrA</em> sequences on Seaview</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled" title="Please reach us if you get any issue opening Seaview!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Please reach us if you get any issue opening Seaview!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Do you know how to identify &amp; extract the sequence of <em>gyrA</em> from an assembly <code>.assembly.fasta</code> file? <br> <em>Hint: You should not use BLAST on Bandage. It’s too manual. We’re doing this for a reason.</em></p>
+<p>This is a group exercise in the class. Discuss with your peers about the steps you would take to solve this challenge. You don’t need to come up with command-lines or codes, just the logical steps. We will then go through the solutions together.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gene-alignment-solution.png" class="img-fluid figure-img"></p>
+<figcaption>Scan me!</figcaption>
+</figure>
+</div>
+</details>
+</div>
+</div>
+</div>
 </section>
-<section id="visualizing-alignments-with-seaview" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-alignments-with-seaview">Visualizing alignments with Seaview</h2>
-<section id="dna-sequence-alignment" class="level3">
-<h3 class="anchored" data-anchor-id="dna-sequence-alignment">DNA sequence alignment</h3>
+<section id="dna-sequence-alignment" class="level2">
+<h2 class="anchored" data-anchor-id="dna-sequence-alignment">DNA sequence alignment</h2>
+<p>To align the DNA sequences, choose the <strong>“Align”</strong> menu, then <strong>“Align all”</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-align.png" class="img-fluid figure-img"></p>
+<figcaption>Aligning function</figcaption>
+</figure>
+</div>
+<p>After that, we will need to find the positions where the sequences differ, e.g.&nbsp;the Single-Nucleotide Polymorphisms (SNPs).</p>
+<p>You can do this through the <strong>“Sites”</strong> menu, then <strong>“Create set”</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-createset.png" class="img-fluid figure-img"></p>
+<figcaption>Create sites set</figcaption>
+</figure>
+</div>
+<p>Name the set as <em>“snp”</em> and choose the set type <strong>“Variable sites”</strong>, then click <strong>“OK”</strong>.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-nameset.png" class="img-fluid figure-img"></p>
+<figcaption>Name set</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-variablesite.png" class="img-fluid figure-img"></p>
+<figcaption>Choose set type</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>When done, you should see a new line under the sequences with name <em>“Variable sites”</em>. In this “sequence”, the positions with different nucleotides will be annotated as <strong>“X”</strong> and un-variable sites will be <strong>“-”</strong>.</p>
+<p>You can click to a site, especially one with the <strong>“X”</strong> mark, to see the position number of the SNP in the alignment. For example, clicking to the first <strong>“X”</strong> site shows that it is the 699th position in the alignment.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-var.png" class="img-fluid figure-img"></p>
+<figcaption>Variable sites “sequence”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-varX.png" class="img-fluid figure-img"></p>
+<figcaption>“X” site is a SNP</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<ul>
+<li>How many SNPs are there in the <em>gyrA</em> sequences of our <em>K. pneumoniae</em> ST147 isolates?</li>
+</ul>
 </section>
-<section id="protein-sequence-alignment" class="level3">
-<h3 class="anchored" data-anchor-id="protein-sequence-alignment">Protein sequence alignment</h3>
+</section>
+<section id="protein-sequence-alignment" class="level2">
+<h2 class="anchored" data-anchor-id="protein-sequence-alignment">Protein sequence alignment</h2>
+<p>As we all know, changes in DNA sequence may not lead to changes in phenotype. To see if there are any changes in the protein sequences, we can translate the DNA sequences to amino acid sequences and align them directly on Seaview.</p>
+<p>Let’s first translate the DNA sequences to amino acid sequences. You can do this through the <strong>“Props”</strong> menu, then <strong>“View as proteins”</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-viewasprotein.png" class="img-fluid figure-img"></p>
+<figcaption>Translate DNA to protein</figcaption>
+</figure>
+</div>
+<p>Once done, you should see the amino acid sequences like below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-protein.png" class="img-fluid figure-img"></p>
+<figcaption>Protein sequences</figcaption>
+</figure>
+</div>
+<p>Now, to find the amino acid positions that differ, we just need to repeat the same steps as before, to create a new set of variable sites for the protein sequences. <br> But, before that, we need to delete the previous set of variable sites, which was created for the DNA sequences. You can do this through the <strong>“Sites”</strong> menu, then <strong>“Delete set”</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seaview-deleteset.png" class="img-fluid figure-img"></p>
+<figcaption>Delete set</figcaption>
+</figure>
+</div>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise</h3>
+<ul>
+<li>How many amino acid positions differ among the <em>gyrA</em> sequences of our <em>K. pneumoniae</em> ST147 isolates?</li>
+<li>What are they? Are they related to fluoroquinolone resistance (e.g.&nbsp;findings from Kleborate analysis)?</li>
+</ul>
+</section>
+</section>
+<section id="compare-with-a-reference-wild-type-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="compare-with-a-reference-wild-type-sequence">Compare with a reference wild-type sequence</h2>
+<p>If all sequences in our samples have a same resistant mutation, we probably cannot spot it from the alignment of only our samples, as it will not be marked as a variable site. <br> Therefore, we will also need to add a “wild-type” sequence to the alignment to compare with.</p>
+<p>In the same directory <code>/microgen2026/day-2/</code>, you can find a reference sequence of <em>gyrA</em> that was used by Kleborate as a wild-type for identifying fluoroquinolone resistance mutations: <code>gyrA-reference-kleborate.fasta</code>.</p>
+<p>Your tasks are as follows:</p>
+<ol type="1">
+<li>Add this reference sequence to the alignment in a new file named <code>gyrA.sequences.plusRef.ffn</code>.</li>
+<li>Open the new file with Seaview and find the amino acid mutations that correspond to fluoroquinolone resistance in our <em>K. pneumoniae</em> ST147 isolates.</li>
+<li>Check your results with the findings from Kleborate analysis in module 2.1.</li>
+<li>Did you see that the reference sequence from Kleborate is shorter than the <em>gyrA</em> sequences of samples? Can you guess why?</li>
+</ol>
 
 
-</section>
 </section>
 </section>
 
