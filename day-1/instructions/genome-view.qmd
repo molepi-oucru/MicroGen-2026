@@ -145,16 +145,44 @@ Like all the Modules in this workshop, please remember: **IF YOU DON’T UNDERST
 
 ### 2.1.1 Starting up the Artemis software
 
-Double click the Artemis icon on the desktop.
+Once installed on the computer, Artemis can be opened via Terminal with the command:
 
-A small start-up window will appear (see below). The directory contains all files you will need for this module. Now follow the sequence of numbers to load up the *Klebsiella pneumoniae* chromosome sequence (isolate KPNIH_USA_2013; sequence type ST258; carbapenem resistance).
+``` {.bash code-line-numbers="false"}
+art &
+```
 
-::: {.callout-note title="Ask a demonstrator for help if you have any problems"}
+For the workshop, we have installed Artemis on the Google Cloud instance. You can access its graphical interface from your laptop via X11 forwarding or VNC virtual desktop. In either way, you should be able to open Artemis by typing `art` in the terminal. 
+
+::: {.callout-important title="Ask a demonstrator for help if you have problem with starting the software"}
 :::
+
+::: {.callout-note title="X11 forwarding issue" collapse="true"}
+
+When you open Artemis via X11 forwarding, you may get the software opened in black background. To fix this issue, add the following option to the start-up command:
+
+``` {.bash code-line-numbers="false"}
+art -Dsun.java2d.xrender=false &
+```
+
+:::
+
+A small start-up window will appear (see below). The directory `/microgen2026/day-1/Artemis/` contains all files you will need for this module. Now follow the sequence of numbers to load up the *Klebsiella pneumoniae* chromosome sequence (isolate KPNIH_USA_2013; sequence type ST258; carbapenem resistance).
 
 ![Fig. 3](images/figure3_open_fasta_Artemis.png)
 
-Hopefully you will now have an Artemis window like this! If not, ask a demonstrator for assistance.
+::: {.callout-tip title="Tip"}
+We could also open the file directly with the command:
+
+```{.bash code-line-numbers="false"}
+art /microgen2026/day-1/Artemis/CP009771.dna &
+
+#OR IF X11 FORWARDING
+art /microgen2026/day-1/Artemis/CP009771.dna -Dsun.java2d.xrender=false &
+```
+
+:::
+
+Hopefully you will now have an Artemis window like this!
 
 ![Fig. 4](images/figure4_fasta_view_Artemis.png)
 
