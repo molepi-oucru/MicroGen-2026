@@ -55,6 +55,13 @@ rsconnect/
 **/*.quarto_ipynb
 
 /website-assets/images/
+/day-0/software-setup-images/
+/site_libs/
+/day-0/instructions/*.html
+/day-1/instructions/*.html
+/day-2/instructions/*.html
+/day-3/instructions/*.html
+/day-4/instructions/*.html
 */instructions/images/
 !day-1/instructions/images/
 !day-3/instructions/images/
