@@ -654,28 +654,64 @@ Note
 <h2 class="anchored" data-anchor-id="artemis-practice-1">2.1 Artemis Practice 1</h2>
 <section id="starting-up-the-artemis-software" class="level3">
 <h3 class="anchored" data-anchor-id="starting-up-the-artemis-software">2.1.1 Starting up the Artemis software</h3>
-<p>Double click the Artemis icon on the desktop.</p>
-<p>A small start-up window will appear (see below). The directory contains all files you will need for this module. Now follow the sequence of numbers to load up the <em>Klebsiella pneumoniae</em> chromosome sequence (isolate KPNIH_USA_2013; sequence type ST258; carbapenem resistance).</p>
-<div class="callout callout-style-default callout-note callout-empty-content callout-titled" title="Ask a demonstrator for help if you have any problems">
+<p>Once installed on the computer, Artemis can be opened via Terminal with the command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">art</span> <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For the workshop, we have installed Artemis on the Google Cloud instance. You can access its graphical interface from your laptop via X11 forwarding or VNC virtual desktop. In either way, you should be able to open Artemis by typing <code>art</code> in the terminal.</p>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled" title="Ask a demonstrator for help if you have problem with starting the software">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Ask a demonstrator for help if you have any problems
+<span class="screen-reader-only">Important</span>Ask a demonstrator for help if you have problem with starting the software
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled" title="X11 forwarding issue">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>X11 forwarding issue
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When you open Artemis via X11 forwarding, you may get the software opened in black background. To fix this issue, add the following option to the start-up command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">art</span> <span class="at">-Dsun.java2d.xrender</span><span class="op">=</span>false <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>A small start-up window will appear (see below). The directory <code>/microgen2026/day-1/Artemis/</code> contains all files you will need for this module. Now follow the sequence of numbers to load up the <em>Klebsiella pneumoniae</em> chromosome sequence (isolate KPNIH_USA_2013; sequence type ST258; carbapenem resistance).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/figure3_open_fasta_Artemis.png" class="img-fluid figure-img"></p>
 <figcaption>Fig. 3</figcaption>
 </figure>
 </div>
-<p>Hopefully you will now have an Artemis window like this! If not, ask a demonstrator for assistance.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We could also open the file directly with the command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">art</span> /microgen2026/day-1/Artemis/CP009771.dna <span class="kw">&amp;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#OR IF X11 FORWARDING</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">art</span> /microgen2026/day-1/Artemis/CP009771.dna <span class="at">-Dsun.java2d.xrender</span><span class="op">=</span>false <span class="kw">&amp;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>Hopefully you will now have an Artemis window like this!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/figure4_fasta_view_Artemis.png" class="img-fluid figure-img"></p>
@@ -1080,7 +1116,7 @@ Note
 </div>
 <p>Now, open the newly saved file in Artemis to verify it!!!</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Notes for saving files">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1089,7 +1125,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can save the ARTEMIS working files using the same format:</p>
 <div class="quarto-figure quarto-figure-center">
