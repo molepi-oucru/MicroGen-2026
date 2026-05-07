@@ -1,0 +1,6 @@
+sample-name,date,r1,r2,status
+sample-1,2023-01-01,sample_1_R1.fq,sample_1_R2.fq,PASS
+sample-2,2023-01-02,sample_2_L1.fq,sample_2_L2.fq,FAIL
+sample-3,2023-01-03,sample_3_R1.fq,sample_3_R2.fq,PASS
+sample-4,2023-01-04,sample_4_R1.fq,sample_4_R2.fq,PASS
+sample-5,2023-01-05,sample_5_L1.fq,sample_5_L2.fq,FAIL

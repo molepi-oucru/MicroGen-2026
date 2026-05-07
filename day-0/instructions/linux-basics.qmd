@@ -20,7 +20,11 @@ The interface for us to give commands to the Linux computer is called the **Term
 
 The **Terminal** (or console) is your window into the operating system. It provides a **Shell**, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is `bash` or `zsh`.
 
-- **The Prompt**: Usually looks like `user@computer:~$`. The `$` indicates that the shell is waiting for your input.
+- **The Prompt**: Usually looks like `user@computer:~$`, where:
+  - `user` is your username.
+  - `computer` is the hostname of the computer.
+  - `~` is the current directory you are in. In this example & by default, it's your home directory, encoded as `~`, which is a shortcut for `/home/user`. No worries if your head spins now, you will understand this better later.
+  - `$` indicates that the shell is waiting for your input.
 - **Case Sensitivity**: Linux is case-sensitive. `File.txt` and `file.txt` are two different files.
 
 ## The Command Line
@@ -45,22 +49,47 @@ echo "Hello World"
 - `"Hello World"` is the argument (the text to print).
 
 ``` bash
-ls -l genomes/
+ls -l microgen2026/
 ```
 
 - `ls` is the command (list files).
 
 - `-l` is an option (long format).
 
-- `genomes/` is the argument (the folder to look into).
+- `microgen2026/` is the argument (the folder to look into).
 
 ## Getting Help
 
-You don't need to memorize every command. Here is how to find out what a command does:
+> How can I know what a command does?
+
+> How to know what options a command has?, and what arguments it can take?
+
+> What are all the commands available on Linux?
+
+> Do I need to memorize all of them?
+
+If you wonder about these questions, you are on the right track! 
+
+And the answer is: Yes & No. ☯️ 
+
+Memorizing some common commands will definitely save you a lot of time, but memorizing all of them is unnecessary (and also un-wise). <br>
+The key is to know what is possible to do on Linux, and how to find that out. 
+
+If you forget the options or arguments of a command, or you just want to check again all of its capabilities, you can find out with the following commands:
 
 - `command --help`: Most tools have a built-in help menu (e.g., `ls --help`).
 - `man command`: Opens the "manual" page (e.g., `man ls`). Press `q` to exit.
-- **Search & AI**: Google, Stack Overflow, and AI tools are your friends when you get stuck!
+- `info command`: Opens the "info" page (e.g., `info ls`). Press `q` to exit.
+  
+and, last but not least:
+- **Search & AI**: Google, Stack Overflow, and AI tools are your friends when you get stuck! Lots of time there are no "manual" or "info" pages locally on the computer, or they are not user-friendly enough, so to check the online resources is a must!
+
+:::{.callout-tip}
+## Hundreds to Thousands
+Do you know that, there are up to 150–300 commands in the core utilities of Linux, depending on the OS distribution? And if we count all executable files that are later installed, the number can be in the thousands! 
+
+The key, therefore, is actually our imagination and creativity. Just exploit the **Search & AI** tools out there to find the right commands for your needs. 
+:::
 
 ## The File System
 
@@ -68,7 +97,7 @@ Think of the Linux file system as a giant tree.
 
 - **Root (`/`)**: The base of the entire system.
 
-- **Home Directory (`~`)**: Your personal space where you have full control.
+- **Home Directory (`~`, or `$HOME`)**: Your personal space where you have full control.
 
 - **Path**: The "address" of a file or folder.
 
@@ -86,6 +115,50 @@ Think of the Linux file system as a giant tree.
 - `cd`: "Go somewhere else."
   - `cd ..`: Move up one level.
   - `cd ~`: Go back home.
+
+Conventions:
+- `.` and `$PWD`: refer to the current "working" directory.
+- `..`: refers to the parent directory of the current directory.
+- `~` and `$HOME`: refer to the home directory.
+
+```{.bash filename="Practice"}
+# Check where you are
+pwd
+# other way
+echo $PWD
+
+# See what files are in the current directory
+ls
+
+# Go to the data directory for the workshop
+cd /microgen2026/
+
+# List all files in the current directory, including hidden files
+ls -a
+
+# Go to day-0 directory
+cd day-0
+
+# List files in the current directory in long format with human-readable sizes and show hidden files
+ls -lah
+
+# Go to home directory
+cd ~
+
+# Go back to the day-0 directory
+cd -
+
+# Go back to the parent directory `microgen2026`
+cd ..
+```
+
+:::{.callout-tip collapse="false"}
+## Tips
+When you move around, i.e. changing the current directory, did you notice any change to the prompt, particularly the part following the `user@computer:`? 
+
+*Tab-completion is your best friend!* <br> 
+When you start typing a command, file, or directory name, press the `Tab` key to auto-complete it. If there are multiple possibilities, press `Tab` twice to see all of them.
+:::
 
 # Files in Linux
 
@@ -119,99 +192,33 @@ We rarely open huge genomics files in editors. We use these instead:
 
 ```{.bash filename="Practice"}
 # Print the whole file
-cat README.txt
+cat README.md
 
 # Show the first 10 lines
-head -n 10 README.txt
+head -n 10 README.md
 
 # Show the last 5 lines
-tail -n 5 README.txt
+tail -n 5 README.md
 
 # Less is More
-less README.txt
-```
-
-## Creating & Managing Files
-
-- `mkdir`: Create a new directory (which is just a special type of file!).
-  - `mkdir raw_reads`
-- `touch`: Create an empty file.
-  - `touch README.txt`
-- `nano`: Edit a file.
-  - `nano README.txt`
-  - `Ctrl + O` to save
-  - `Ctrl + X` to exit
-  
-- `cp`: Copy files or directories.
-  - `cp source.txt destination.txt`
-- `mv`: Move or rename files.
-  - `mv old_name.txt new_name.txt`
-- `rm`: Remove (delete) files. **Be careful! There is no "Trash".**
-  - `rm -r folder_name`: Recursively delete a directory.
-
-::: {.callout-note collapse="false"}
-## Challenge 1: Exploring the Directory
-
-1.  Navigate to the `day-0/materials/` directory.
-2.  List all files and find out which one is the largest.
-3.  Create a new directory called `results`.
-4.  Copy file `README.txt` to `results` directory.
-5.  Rename `README.txt` to `README_backup.txt`.
-6.  Remove `README_backup.txt`.
-:::
-
-# Text Analysis & Manipulation
-
-## `grep`: Search for a pattern
-
-
-
-## `wc`: Count lines, words, and characters
-
-
-## `cut`: Cut out sections from each line of files
-
-
-## `paste`: Merge lines of files
-
-
-## `tr`: Translate or delete characters
-
-
-## `sed`: Stream editor for text manipulation
-
-::: {.callout-note collapse="false"}
-## Challenge 2: Extracting Information
-
-1.  Print the first 20 entries of `metadata.csv`.
-2.  Find all entries in `metadata.csv` that belong to the year "2024".
-3.  Get all sample names.
-4.  Remove `_1` and `_2` from the sample names.
-5.  Change filenames from `.fq.gz` to `.fastq.gz`.
-
-:::
-
-# Building Complexity from Simple Operations
-
-## Pipes (`|`)
-
-The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.
-
-**Example**: Count how many sequences are in a FASTA file. FASTA headers start with `>`. We can find all lines starting with `>` and count them:
-
-``` bash
-grep "^>" genome.fasta | wc -l
+less README.md
 ```
 
 ## Standard Input, Output, and Error
 
+- **Standard In (stdin)**: Where the command receives its input (the keyboard or redirection).
 - **Standard Out (stdout)**: Where the command sends its regular results (the screen).
 - **Standard Error (stderr)**: Where the command sends error messages.
-- **Redirection**:
-  - `command > file`: Save output (stdout) to a file (overwrites).
-  - `command >> file`: Append output (stdout) to a file (adds to the end).
-  - `command 2> file`: Redirect error messages (stderr) to a file.
-  - `command > file 2>&1`: Redirect both stdout and stderr to a single file.
+
+### Redirection
+
+Redirection allows you to change where a command gets its input or sends its output.
+
+- `command < file`: Redirect contents of a file as input to a command.
+- `command > file`: Save output (stdout) to a file (overwrites).
+- `command >> file`: Append output (stdout) to a file (adds to the end).
+- `command 2> file`: Redirect error messages (stderr) to a file.
+- `command > file 2>&1`: Redirect both stdout and stderr to a single file.
 
 **Example**: Save the list of files to a text file. 
 
@@ -219,64 +226,292 @@ grep "^>" genome.fasta | wc -l
 ls -lh > file_list.txt
 ```
 
-## Variables
+## Creating & Managing Files
 
-Variables store information for later use. In scripts, we often store filenames in variables.
+- `mkdir`: Create a new directory (which is just a special type of file!).
+  - `mkdir linux_basics_practice`
+- `touch`: Create an empty file.
+  - `touch learning_notes.txt`
+- `nano`: Edit a file.
+  - `nano learning_notes.txt`
+  - `Ctrl + O` to save
+  - `Ctrl + X` to exit
+  
+- `cp`: Copy files or directories.
+  - `cp source.txt destination.txt`
+  - `cp -r source_dir destination_dir`
+- `mv`: Move or rename files & directories.
+  - `mv old_name.txt new_name.txt`
+  - `mv source_dir destination_dir`
 
-**Example**:
-```bash
-MY_SAMPLE="Sample_A1"
-echo $MY_SAMPLE
+:::{.callout-note collapse="false"}
+## Tip
+
+Referring to files by patterns:
+- `*`: matches any sequence of characters
+- `?`: matches any single character
+- `[abc]`: matches any one of the characters a, b, or c
+- `[a-z]`: matches any one of the characters from a to z
+
+```{.bash filename="Try me!"}
+ls day-0/*
+ls day-0/*/*
+ls day-0/*.fasta
+ls day-0/sample_*.fasta
+ls day-0/sample_?.fasta
+ls day-0/sample_[ACD].fasta
+
+ls PRJEB22032/
+ls PRJEB22032/ERR[1-9]*_1.fastq.gz
+ls PRJEB22032/ERR[1-9]*_?.fastq.gz
 ```
+:::
 
-::: {.callout-note collapse="false"}
-## Challenge 3: Extracting sample names
+:::{.callout-caution collapse="true"}
+## There is no "Trash"!
 
-1.  Extract sample names in year "2024"
-2.  Save results to a file called `sample_2024.txt`.
+Files & directories can be deleted by the command `rm`. <br>
+But, all the removals are permanent! Recovery will be daunting. So, be careful!
 :::
 
 ::: {.callout-note collapse="false"}
-## Challenge 4: Extracting sequences
+## Challenge 1: Own Your File System
 
-1.  We have a file called `ebola_virus.fasta`.
-2.  Find the sequence of the record with accession number `NC_045512.2`
-3.  Find the length of that sequence.
-4.  Extract the above sequence to a file called `NC_045512.2.fasta`.
+1.  Copy the `/microgen2026/day-0/` directory to your HOME directory.
+2.  Go to the copied directory.
+3.  Find out the largest file in this directory.
+4.  Create a new directory called `backup`.
+5.  Copy the largest file to `backup` directory.
+6.  Rename the largest file **in the `backup` directory** to `largest_file_backup.txt`.
+7.  Remove the *original* largest file.
+8.  Go back to the parent directory.
+9.  Create a file name `note.txt` and add the below content to it.
+
+```{.text filename="note.txt"}
+[DATE]
+[Your name]
+Largest file in day-0 directory: [NAME]
+- was copied to `backup` directory
+- was renamed to `largest_file_backup.txt`
+- was removed
+```
+
+At the end, you should have the file structure as below:
+
+```{.text filename="Expected Outcome"}
+.
+├── day-0
+│   ├── backup
+│   │   └── largest_file_backup.txt
+│   └── ...
+└── note.txt
+└── ...
+```
+If you reach here, congrats 🎉! You're now comfortable with the Linux file system! 
+:::
+
+:::{.callout-important}
+After the Challenge 1, you should have the directory `/microgen2026/day-0` copied to your home directory.
+
+Go to that copied directory, and from now on, we will practice in this directory.
+:::
+
+# Text Analysis & Manipulation
+
+## `grep`: Search for a pattern
+
+Search for strings or patterns within files.
+
+- `-i`: Ignore case (search for both `DNA` and `dna`).
+- `-v`: Invert match (show lines that **do not** contain the pattern).
+- `-c`: Count the number of matching lines.
+- `-n`: Show line numbers.
+- `-w`: Match whole words only.
+
+```bash
+# Search for "Human Microbiome Project (HMP)" in the metadata file
+grep "Human Microbiome Project (HMP)" crAssphage_in_public.csv
+
+# Count how many lines contain "PASS" in the VCF file
+grep -c "PASS" 965Kp.vcf
+```
+## `wc`: Count lines, words, and characters
+
+- `-l`: Count lines.
+- `-w`: Count words.
+- `-c`: Count characters (bytes).
+
+```bash
+# Count how many lines are in the VCF file
+wc -l 965Kp.vcf
+```
+## `cut`: Cut out sections from each line of files
+
+Used to extract specific columns from text files.
+
+- `-f`: Select fields (columns).
+- `-d`: Define the delimiter (the default is tab).
+
+```bash
+# Extract the 2nd and 4th column from a tab-delimited file
+cut -f 2,4 metadata_carbResist.tsv
+
+# Extract the 5th column from a CSV file (comma delimited)
+cut -f 5 -d "," crAssphage_in_public.csv
+```
+
+## `sort`: Sort lines of text files
+
+- `-n`: Numeric sort.
+- `-r`: Reverse order.
+- `-k`: Sort by a specific column (key).
+- `-t`: Specify the delimiter (the default is tab).
+- `-u`: Unique (remove duplicates).
+
+```bash
+# Sort the metadata by the 3rd column (Gbp) numerically in reverse
+sort -k 2 -n -r genome_sizes.tsv
+```
+
+::: {.callout-note collapse="false"}
+## Challenge 2: Extracting Information
+The CSV file `crAssphage_in_public.csv` contains information about public shotgun metagenomes that may contain crAssphage and the abundance of the virus in the samples. Use your learned commands to find:
+
+1.  How many metagenomes with crAssphage are there in the file? (*Hint: `wc -l` includes the header line. How can you exclude it?*)
+2.  How many samples are "virome" samples? (*Correct answer = 40. Hint: Does the header line also contain this word?*)
+3.  Extract only these information: sample id, genome project id, percentage reads crAssphage, and Material.
+4.  Sort the metagenomes by the percentage of reads crAssphage in descending order.
+:::
+
+## `tr`: Translate or delete characters
+
+```bash
+# first, let see the original messy file
+cat messy_data.csv
+
+# Convert a CSV to a TSV (comma to tab)
+tr ',' '\t' < messy_data.csv
+
+# Convert all text to uppercase
+tr '[:lower:]' '[:upper:]' < messy_data.csv
+```
+## `sed`: Stream editor for text manipulation
+
+A powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: `sed 's/old/new/g'`.
+
+```bash
+# Change all filenames starting with 'sample_' to 'sample-' in our messy file
+sed 's/sample_/sample-/g' messy_data.csv
+
+# Put the change to a new file
+sed 's/sample_/sample-/g' messy_data.csv > pretty_data.csv
+
+# or, to make the changes permanent on the file, use -i option
+```
+
+::: {.callout-note collapse="false"}
+## Challenge 3: Text Manipulation
+
+Continue cleaning the `pretty_data.csv` file. <br>
+*Note:* Apply all the steps below directly on the `pretty_data.csv` file.
+
+1.  Change `r1` and `r2` conventions in the header line to `forward` and `reverse`.
+2.  Make the annotations for forward reads and reverse reads consistent: change `R1` or `L1` to `_1` and `R2` or `L2` to `_2`.
+3.  Change the file extension from `.fq` to `.fastq.gz`.
+:::
+
+# Building Up Complexity 
+
+## Pipes (`|`)
+
+The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.
+
+**Example**: Ignore all the header lines that starts with `#` and extract the 2nd, 4th, 5th, and 7th columns from `965Kp.vcf`:
+
+``` bash
+grep -v "^#" 965Kp.vcf | cut -f2,4,5,7
+
+# then count the number of lines
+grep -v "^#" 965Kp.vcf | cut -f2,4,5,7 | wc -l
+```
+
+## Variables
+
+Variables store information (text, numbers, filenames, etc.) for later use.
+
+***Example***:
+
+```bash
+MY_SAMPLE="SRR24679994"
+
+# Print the value of the variable
+echo $MY_SAMPLE
+
+# Use the variable in a command - Find the sample in the metadata file
+grep -w "$MY_SAMPLE" metadata_carbResist.tsv
+```
+
+Types of variables:
+
+- **Local variables**: Most of the variables you set in your shell session only exist in that session, which means you cannot find them in new terminal sessions. These are **local**. If you want to reuse them, you will have to specify them every time you open a new terminal session.
+- **Global variables**: These are variables that exist "everywhere". Examples of global variables at the heart of a Linux system are: `$HOME`, `$PWD`, `$USER`, etc. 
+
+::: {.callout-note collapse="false"}
+## Challenge 4: Pipe Master
+
+The tab-delimited file `metadata_carbResist.tsv` contains information about the Carbapenem non-susceptible Enterobacterales collected at the pharmacy research laboratory at Singapore General Hospital, whose whole-genome sequencing data have been published on NCBI. 
+
+Your tasks will be to extract the following information:
+
+1.  Find what information is contained in the file, by printing the first header line.
+2.  Find how many isolates are there.
+3.  Find how many isolates that belong to the year "2013". (*The correct answer is 202 isolates*)
+   
+  Then, for all isolates collected in 2013, 
+4.  Extract the sample names and save them to a file called `2013_samples.txt`.
+5.  Find what the species are in the 2013 isolates
+  *Hint: Species name is in the 8th column. `uniq` will omit identical adjacent lines. You may need to sort the species names first.*
+6.  How many species were collected in 2013? (*Hint: continue to extend your pipes!*)
+7.  Find how many isolates are there for each species (*Hint: `man uniq` to learn more about its power!*)
+8.  Congrats! You're now a pipe master! 🎉
+
 :::
 
 # Bash Script - A Flow of Commands
 
-An example script below will download the SARS-CoV-2 reference genome from NCBI.
+An example script below will download the ***crAssphage*** reference genome from NCBI.
 
 ``` bash
 # View the content of the script
-cat download_covid_genome.sh
+cat download_crAssphage_genome.sh
 ```
 
-``` {.bash filename="download_covid_genome.sh"}
+``` {.bash filename="download_crAssphage_genome.sh"}
 #!/bin/bash
-# Download the SARS-CoV-2 reference genome from NCBI
+# Download the crAssphage - Carjivirus communis - reference genome from NCBI
 
 # Create a directory to store the genome
-mkdir -p sars-cov-2
+mkdir -p crAssphage 
 
-# Download the genome
-wget https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3/fasta -O sars-cov-2/MN908947.3.fasta
+# Download the genome sequence in FASTA format
+wget "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=NC_067194.1&rettype=fasta&retmode=text" -O crAssphage/NC_067194.1.fasta
 
-# List the downloaded file
-ls -lh sars-cov-2/MN908947.3.fasta
+# Download the genome annotation in GenBank format
+wget "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=NC_067194.1&rettype=gb&retmode=text" -O crAssphage/NC_067194.1.gbk
+
+# List the downloaded files
+ls -lh crAssphage/
 ```
 
 ```bash
 # Run the script by calling the bash interpreter
-bash download_covid_genome.sh
+bash download_crAssphage_genome.sh
 
 # Make the script executable
-chmod +x download_covid_genome.sh
+chmod +x download_crAssphage_genome.sh
 
 # Run the script by calling the script directly
-./download_covid_genome.sh
+./download_crAssphage_genome.sh
 ```
 
 ::: {.callout-note collapse="false"}
@@ -284,16 +519,20 @@ chmod +x download_covid_genome.sh
 
 Write a script named `download_dataset.sh` that will download the raw sequencing data for the BioProject PRJNA1260529.
 
-Downloadable links are provided in file named `PRJNA1260529_links.txt`.
+- Downloadable links are provided in file named `PRJNA1260529_links.txt`.
+- Download all files into a directory named `PRJNA1260529_raw` in your HOME directory
 
-Download all files into a directory named `PRJNA1260529_raw`
+*Hint: Use `wget` command to download files. Use `man` to read the manual of `wget` and find the option to download multiple links in a file.*
+
+**Check your results**: Compare your directory `PRJNA1260529_raw/` with the directory `/microgen2026/PRJNA1260529/`
+
 :::
 
 # Software Environments: Conda & Mamba
 
 Different bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use [**Mamba**](https://github.com/mamba-org/mamba) (the faster version of [**Conda**](https://github.com/conda/conda)) to create isolated "bubbles" or environments for each tool.
 
-Example: Installing [Kingfisher](https://wwood.github.io/kingfisher-download/) - a fast downloading tool for public sequence files and their metadata annotations.
+***Example***: Installing [Kingfisher](https://wwood.github.io/kingfisher-download/) - a fast downloading tool for public sequence files and their metadata annotations.
 
 ``` bash
 # Create an environment for the kingfisher program
@@ -311,19 +550,39 @@ mamba deactivate
 
 # Self Exploration
 
-Once you are comfortable with the basics, these tools will make your life much easier:
+Once you are comfortable with the basics, you can further power up your Linux skills with these four more *"magical spells"* 🪄:
 
 ## `tmux` & `screen`
 
-Bioinformatics jobs often take hours or days to run. If your internet disconnects, the job might die. `tmux` allows you to run "sessions" that keep going even if you log out.
+Bioinformatics jobs are often computationally heavy and can take hours or days to run. 
+If your internet suddenly disconnects, the job on the big remote computer might die, and you will lose all your progress. Also, you cannot let your laptop open for days on end. <br>
+
+So when running on remote computers, like our Google Cloud instance, `tmux` & `screen` are handy tools that allow you to run "sessions" that keep going even if you log out.
+
+Some useful tips for using those tools:
+
+- **`tmux`**: The modern standard for terminal multiplexing.
+  - `tmux new -s <name>`: Start a new session.
+  - `Ctrl+b` then `d`: Detach from the session.
+  - `tmux ls`: List active sessions.
+  - `tmux attach -t <name>`: Reattach to a session.
+  - [Manual Page](https://man7.org/linux/man-pages/man1/tmux.1.html)
+
+- **`screen`**: A classic alternative available on most systems.
+  - `screen -S <name>`: Start a new session.
+  - `Ctrl+a` then `d`: Detach from the session.
+  - `screen -ls`: List active sessions.
+  - `screen -r <name>`: Reattach to a session.
+  - [Manual Page](https://man7.org/linux/man-pages/man1/screen.1.html)
 
 ## Loops
 
 Automate tasks across hundreds of samples.
 
 ``` bash
-for file in *.fastq; do 
+for file in /microgen2026/day-0/*.fasta; do 
     echo "Processing $file..."; 
+    grep -c '>' $file;
 done
 ```
 
@@ -332,16 +591,17 @@ done
 Find files based on name, size, or modification date.
 
 ``` bash
-find . -name "*.vcf" -size +10M
+find . -name "/microgen2026/PRJNA234452/*.fastq.gz" -size +100M
 ```
 
 ## GNU parallel
 
 Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.
 
+***Example***:
 ``` bash
-# Example: Run fastqc on all samples parallelly on 4 CPU cores
-ls *.fasta | parallel -j 4 grep -c '>' {} 
+# Get the number of contigs in all samples parallelly on 4 CPU cores
+ls day-0/*.fasta | parallel -j 4 grep -c '>' {} 
 
 # Do you remember how to know the number of CPU cores on your system?
 ```

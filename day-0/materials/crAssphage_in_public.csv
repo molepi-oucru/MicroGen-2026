@@ -1,0 +1,941 @@
+﻿MG-RAST id,order of rows in Figure 5,virome/total_comm,project,sample id,genome project id,Pubmed id,percentage reads crAssphage,crAssphage reads,total reads,Biome,Feature,Material,Environmental Package
+4547026.3,135,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3T1.1,SRP002840,20631792,90.07428141,16734,18578,animal-associated habitat,human-associated habitat,feces,human-gut
+4547023.3,141,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3T1.3,SRP002840,20631792,87.52012089,26642,30441,animal-associated habitat,human-associated habitat,feces,human-gut
+4547019.3,56,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1M.2,SRP002840,20631792,86.37439791,21160,24498,animal-associated habitat,human-associated habitat,feces,human-gut
+4547044.3,137,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3T1.2,SRP002840,20631792,81.50609081,16192,19866,animal-associated habitat,human-associated habitat,feces,human-gut
+4547015.3,49,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T1.2,SRP002840,20631792,71.13623992,28749,40414,animal-associated habitat,human-associated habitat,feces,human-gut
+4547047.3,50,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T1.1(R),SRP002840,20631792,64.26227827,12535,19506,animal-associated habitat,human-associated habitat,feces,human-gut
+4547038.3,52,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T1.1,SRP002840,20631792,56.02391085,40019,71432,animal-associated habitat,human-associated habitat,feces,human-gut
+4547049.3,117,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4T2.1,SRP002840,20631792,51.50517235,14389,27937,animal-associated habitat,human-associated habitat,feces,human-gut
+4547039.3,119,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4M.2,SRP002840,20631792,47.83616367,11352,23731,animal-associated habitat,human-associated habitat,feces,human-gut
+4547017.3,94,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1M.1,SRP002840,20631792,47.47483032,23153,48769,animal-associated habitat,human-associated habitat,feces,human-gut
+4547037.3,54,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T1.3,SRP002840,20631792,41.66103477,11096,26634,animal-associated habitat,human-associated habitat,feces,human-gut
+4547051.3,51,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T2.2,SRP002840,20631792,33.56645282,12191,36319,animal-associated habitat,human-associated habitat,feces,human-gut
+4547046.3,83,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3T2.3,SRP002840,20631792,28.32791646,8193,28922,animal-associated habitat,human-associated habitat,feces,human-gut
+4547021.3,120,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4M.1,SRP002840,20631792,24.79183347,6193,24980,animal-associated habitat,human-associated habitat,feces,human-gut
+4449582.3,67,virome,Diversity and abundance of single-stranded DNA viruses in human feces,F-C,,21948823,24.03171985,12819,53342,-,-,-,human-gut
+4473699.3,60,total_community,Human Microbiome Project (HMP),SRR063921,,19819907,22.709595,15205054,66954316,terrestrial biome,human-associated habitat,feces,human-gut
+4473693.3,59,total_community,Human Microbiome Project (HMP),SRR063915,,19819907,22.69693198,15143031,66718405,terrestrial biome,human-associated habitat,feces,human-gut
+4547027.3,55,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2M.3,SRP002840,20631792,21.23393605,7551,35561,animal-associated habitat,human-associated habitat,feces,human-gut
+4473371.3,91,total_community,Human Microbiome Project (HMP),SRR062395,,19819907,19.903655,12370572,62152263,terrestrial biome,human-associated habitat,feces,human-gut
+4473399.3,92,total_community,Human Microbiome Project (HMP),SRR062423,,19819907,19.88610475,12327350,61989767,terrestrial biome,human-associated habitat,feces,human-gut
+4547041.3,64,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2M.2,SRP002840,20631792,19.70919087,5449,27647,animal-associated habitat,human-associated habitat,feces,human-gut
+4473362.3,96,total_community,Human Microbiome Project (HMP),SRR062386,,19819907,16.44691161,7838092,47656923,terrestrial biome,human-associated habitat,feces,human-gut
+4478533.3,95,total_community,Human Microbiome Project (HMP),SRR062388,,19819907,16.27494687,7795023,47895843,terrestrial biome,human-associated habitat,feces,human-gut
+4547029.3,228,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4M.3(R),SRP002840,20631792,13.41334494,2157,16081,animal-associated habitat,human-associated habitat,feces,human-gut
+4449584.3,123,virome,Diversity and abundance of single-stranded DNA viruses in human feces,F-D,,21948823,12.45333778,11943,95902,-,-,-,human-gut
+4547030.3,224,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4M.3,SRP002840,20631792,11.16959645,3374,30207,animal-associated habitat,human-associated habitat,feces,human-gut
+4472518.3,204,total_community,Human Microbiome Project (HMP),SRR060410,,19819907,10.55625557,8040228,76165530,terrestrial biome,human-associated habitat,feces,human-gut
+4472519.3,205,total_community,Human Microbiome Project (HMP),SRR060411,,19819907,10.51833118,8074167,76762814,terrestrial biome,human-associated habitat,feces,human-gut
+4472413.3,148,total_community,Human Microbiome Project (HMP),SRR060026,,19819907,9.900434423,6410033,64744967,terrestrial biome,human-associated habitat,feces,human-gut
+4547034.3,68,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2M.1(R),SRP002840,20631792,9.796542397,3332,34012,animal-associated habitat,human-associated habitat,feces,human-gut
+4473086.3,63,total_community,Human Microbiome Project (HMP),SRR061931,,19819907,9.697101817,6821816,70349019,terrestrial biome,human-associated habitat,feces,human-gut
+4472412.3,151,total_community,Human Microbiome Project (HMP),SRR060025,,19819907,9.695857298,6337921,65367309,terrestrial biome,human-associated habitat,feces,human-gut
+4473087.3,62,total_community,Human Microbiome Project (HMP),SRR061932,,19819907,9.633048441,6797740,70566862,terrestrial biome,human-associated habitat,feces,human-gut
+4472602.3,111,total_community,Human Microbiome Project (HMP),SRR061156,,19819907,8.492950504,4866134,57296154,terrestrial biome,human-associated habitat,feces,human-gut
+4472595.3,114,total_community,Human Microbiome Project (HMP),SRR061149,,19819907,8.467226509,4794345,56622378,terrestrial biome,human-associated habitat,feces,human-gut
+4547028.3,70,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2M.1,SRP002840,20631792,6.957981466,4062,58379,animal-associated habitat,human-associated habitat,feces,human-gut
+4473402.3,208,total_community,Human Microbiome Project (HMP),SRR062426,,19819907,6.842048224,2019017,29508956,terrestrial biome,human-associated habitat,feces,human-gut
+4449580.3,108,virome,Diversity and abundance of single-stranded DNA viruses in human feces,F-A,,21948823,6.776112459,6117,90273,-,-,-,human-gut
+4478546.3,206,total_community,Human Microbiome Project (HMP),SRR062428,,19819907,6.768353246,1973607,29159338,terrestrial biome,human-associated habitat,feces,human-gut
+4472580.3,131,total_community,Human Microbiome Project (HMP),SRR061134,,19819907,6.282664342,4626045,73631898,terrestrial biome,human-associated habitat,feces,human-gut
+4472575.3,146,total_community,Human Microbiome Project (HMP),SRR061129,,19819907,6.263241177,4672121,74595898,terrestrial biome,human-associated habitat,feces,human-gut
+4547042.3,53,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T2.1(R),SRP002840,20631792,5.922960761,2471,41719,animal-associated habitat,human-associated habitat,feces,human-gut
+4472090.3,143,total_community,Human Microbiome Project (HMP),SRR038746,,19819907,5.922854849,2439069,41180631,terrestrial biome,human-associated habitat,feces,human-gut
+4472560.3,142,total_community,Human Microbiome Project (HMP),SRR061111,,19819907,5.922854849,2439069,41180631,terrestrial biome,human-associated habitat,feces,human-gut
+4478442.3,147,total_community,Human Microbiome Project (HMP),SRR061933,,19819907,5.774575194,4176826,72331312,terrestrial biome,human-associated habitat,feces,human-gut
+4472101.3,192,total_community,Human Microbiome Project (HMP),SRR042181,,19819907,5.766675018,2401974,41652668,terrestrial biome,human-associated habitat,feces,human-gut
+4472561.3,191,total_community,Human Microbiome Project (HMP),SRR061112,,19819907,5.766671881,2401975,41652708,terrestrial biome,human-associated habitat,feces,human-gut
+4472104.3,161,total_community,Human Microbiome Project (HMP),SRR042184,,19819907,5.735806847,2346318,40906503,terrestrial biome,human-associated habitat,feces,human-gut
+4472563.3,162,total_community,Human Microbiome Project (HMP),SRR061114,,19819907,5.735798995,2346318,40906559,terrestrial biome,human-associated habitat,feces,human-gut
+4472100.3,156,total_community,Human Microbiome Project (HMP),SRR042027,,19819907,5.707928372,2339382,40984782,terrestrial biome,human-associated habitat,feces,human-gut
+4472562.3,157,total_community,Human Microbiome Project (HMP),SRR061113,,19819907,5.70792406,2339384,40984848,terrestrial biome,human-associated habitat,feces,human-gut
+4473089.3,149,total_community,Human Microbiome Project (HMP),SRR061934,,19819907,5.29624152,4147445,78309212,terrestrial biome,human-associated habitat,feces,human-gut
+4472116.3,140,total_community,Human Microbiome Project (HMP),SRR059330,,19819907,5.258532868,3794739,72163455,terrestrial biome,human-associated habitat,feces,human-gut
+4472117.3,130,total_community,Human Microbiome Project (HMP),SRR059331,,19819907,5.248682793,3762479,71684252,terrestrial biome,human-associated habitat,feces,human-gut
+4547022.3,237,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3M.1,SRP002840,20631792,4.689616703,1177,25098,animal-associated habitat,human-associated habitat,feces,human-gut
+4472597.3,219,total_community,Human Microbiome Project (HMP),SRR061151,,19819907,4.001757204,2521020,62997825,terrestrial biome,human-associated habitat,feces,human-gut
+4472604.3,209,total_community,Human Microbiome Project (HMP),SRR061158,,19819907,3.932158709,2400725,61053614,terrestrial biome,human-associated habitat,feces,human-gut
+4472165.3,202,total_community,Human Microbiome Project (HMP),SRR059379,,19819907,3.873336398,2378682,61411707,terrestrial biome,human-associated habitat,feces,human-gut
+4472164.3,203,total_community,Human Microbiome Project (HMP),SRR059378,,19819907,3.871325427,2416312,62415626,terrestrial biome,human-associated habitat,feces,human-gut
+4440610.3,136,total_community,Twin Gut Microflora Study,TS19,-,,3.714003963,20526,552665,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4472610.3,61,total_community,Human Microbiome Project (HMP),SRR061164,,19819907,3.574336661,2482258,69446676,terrestrial biome,human-associated habitat,feces,human-gut
+4472612.3,58,total_community,Human Microbiome Project (HMP),SRR061166,,19819907,3.325967993,2377833,71492961,terrestrial biome,human-associated habitat,feces,human-gut
+4547025.3,110,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F2T2.1,SRP002840,20631792,3.300596111,1351,40932,animal-associated habitat,human-associated habitat,feces,human-gut
+4472574.3,168,total_community,Human Microbiome Project (HMP),SRR061128,,19819907,3.078350881,2176337,70698146,terrestrial biome,human-associated habitat,feces,human-gut
+4472576.3,184,total_community,Human Microbiome Project (HMP),SRR061130,,19819907,3.066257146,2154094,70251577,terrestrial biome,human-associated habitat,feces,human-gut
+4472094.3,176,total_community,Human Microbiome Project (HMP),SRR041657,,19819907,3.005153172,1196376,39810816,terrestrial biome,human-associated habitat,feces,human-gut
+4472566.3,175,total_community,Human Microbiome Project (HMP),SRR061118,,19819907,3.005153172,1196376,39810816,terrestrial biome,human-associated habitat,feces,human-gut
+4472093.3,189,total_community,Human Microbiome Project (HMP),SRR041656,,19819907,3.002858599,1228771,40920042,terrestrial biome,human-associated habitat,feces,human-gut
+4472565.3,188,total_community,Human Microbiome Project (HMP),SRR061117,,19819907,3.002858599,1228771,40920042,terrestrial biome,human-associated habitat,feces,human-gut
+4472091.3,186,total_community,Human Microbiome Project (HMP),SRR041654,,19819907,2.971163484,1199678,40377381,terrestrial biome,human-associated habitat,feces,human-gut
+4472564.3,187,total_community,Human Microbiome Project (HMP),SRR061115,,19819907,2.971163484,1199678,40377381,terrestrial biome,human-associated habitat,feces,human-gut
+4472092.3,196,total_community,Human Microbiome Project (HMP),SRR041655,,19819907,2.969533014,1203235,40519334,terrestrial biome,human-associated habitat,feces,human-gut
+4472141.3,113,total_community,Human Microbiome Project (HMP),SRR059355,,19819907,2.836497971,1926313,67911665,terrestrial biome,human-associated habitat,feces,human-gut
+4472140.3,105,total_community,Human Microbiome Project (HMP),SRR059354,,19819907,2.777707203,1902316,68485116,terrestrial biome,human-associated habitat,feces,human-gut
+4473677.3,121,total_community,Human Microbiome Project (HMP),SRR063899,,19819907,2.267576284,15898,701101,terrestrial biome,human-associated habitat,feces,human-gut
+4472598.3,93,total_community,Human Microbiome Project (HMP),SRR061152,,19819907,2.235818859,1479740,66183358,terrestrial biome,human-associated habitat,feces,human-gut
+4472613.3,107,total_community,Human Microbiome Project (HMP),SRR061167,,19819907,2.232498529,1449980,64948755,terrestrial biome,human-associated habitat,feces,human-gut
+4473678.3,122,total_community,Human Microbiome Project (HMP),SRR063900,,19819907,2.190264779,14376,656359,terrestrial biome,human-associated habitat,feces,human-gut
+4547050.3,254,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4T2.3,SRP002840,20631792,2.079099057,624,30013,animal-associated habitat,human-associated habitat,feces,human-gut
+4472395.3,174,total_community,Human Microbiome Project (HMP),SRR059993,,19819907,1.98081805,908469,45863324,terrestrial biome,human-associated habitat,feces,human-gut
+4472394.3,152,total_community,Human Microbiome Project (HMP),SRR059992,,19819907,1.930687389,1166279,60407449,terrestrial biome,human-associated habitat,feces,human-gut
+4440613.3,103,total_community,Twin Gut Microflora Study,TS28,-,,1.897238258,5932,312665,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4472158.3,144,total_community,Human Microbiome Project (HMP),SRR059372,,19819907,1.87915382,1432487,76230428,terrestrial biome,human-associated habitat,feces,human-gut
+4472159.3,145,total_community,Human Microbiome Project (HMP),SRR059373,,19819907,1.872235893,1424680,76095112,terrestrial biome,human-associated habitat,feces,human-gut
+4473012.3,106,total_community,Human Microbiome Project (HMP),SRR061572,,19819907,1.761404859,1142311,64852268,terrestrial biome,human-associated habitat,feces,human-gut
+4473023.3,102,total_community,Human Microbiome Project (HMP),SRR061583,,19819907,1.760476793,1142803,64914403,terrestrial biome,human-associated habitat,feces,human-gut
+4472393.3,177,total_community,Human Microbiome Project (HMP),SRR059991,,19819907,1.721998842,993583,57699400,terrestrial biome,human-associated habitat,feces,human-gut
+4472464.3,90,total_community,Human Microbiome Project (HMP),SRR060356,,19819907,1.69266736,1236543,73052924,terrestrial biome,human-associated habitat,feces,human-gut
+4472465.3,86,total_community,Human Microbiome Project (HMP),SRR060357,,19819907,1.69047467,1278000,75600068,terrestrial biome,human-associated habitat,feces,human-gut
+4473048.3,150,total_community,Human Microbiome Project (HMP),SRR061730,,19819907,1.649548471,12980,786882,terrestrial biome,human-associated habitat,feces,human-gut
+4472392.3,181,total_community,Human Microbiome Project (HMP),SRR059990,,19819907,1.645031052,805946,48992753,terrestrial biome,human-associated habitat,feces,human-gut
+4547036.3,257,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3T2.2,SRP002840,20631792,1.638713876,554,33807,animal-associated habitat,human-associated habitat,feces,human-gut
+4472654.3,85,total_community,Human Microbiome Project (HMP),SRR061208,,19819907,1.633785606,928114,56807576,terrestrial biome,human-associated habitat,feces,human-gut
+4472629.3,84,total_community,Human Microbiome Project (HMP),SRR061183,,19819907,1.628883356,921978,56601843,terrestrial biome,human-associated habitat,feces,human-gut
+4472195.3,65,total_community,Human Microbiome Project (HMP),SRR059421,,19819907,1.610052074,969175,60195258,terrestrial biome,human-associated habitat,feces,human-gut
+4472194.3,66,total_community,Human Microbiome Project (HMP),SRR059420,,19819907,1.607026748,967736,60219035,terrestrial biome,human-associated habitat,feces,human-gut
+4478429.3,200,total_community,Human Microbiome Project (HMP),SRR061731,,19819907,1.589914688,10865,683370,terrestrial biome,human-associated habitat,feces,human-gut
+4473648.3,154,total_community,Human Microbiome Project (HMP),SRR063577,,19819907,1.529547113,5451,356380,terrestrial biome,human-associated habitat,feces,human-gut
+4440826.3,221,total_community,A core gut microbiome in obese and lean twins,TS9,32089,19043404,1.522525571,7605,499499,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4461228.3,918,,Human gut microbiome viewed across age and geography (WGS),TS7,,,1.516460422,6653,438719,feces,feces,feces,plant-associated
+4472223.3,57,total_community,Human Microbiome Project (HMP),SRR059461,,19819907,1.492983754,875530,58642969,terrestrial biome,human-associated habitat,feces,human-gut
+4473636.3,153,total_community,Human Microbiome Project (HMP),SRR063565,,19819907,1.326850454,5829,439311,terrestrial biome,human-associated habitat,feces,human-gut
+4473630.3,173,total_community,Human Microbiome Project (HMP),SRR063559,,19819907,1.320738277,5457,413178,terrestrial biome,human-associated habitat,feces,human-gut
+4478624.3,158,total_community,Human Microbiome Project (HMP),SRR063584,,19819907,1.300602512,5375,413270,terrestrial biome,human-associated habitat,feces,human-gut
+4473653.3,180,total_community,Human Microbiome Project (HMP),SRR063582,,19819907,1.299848343,5254,404201,terrestrial biome,human-associated habitat,feces,human-gut
+4472448.3,179,total_community,Human Microbiome Project (HMP),SRR060138,,19819907,1.293203471,769334,59490561,terrestrial biome,human-associated habitat,feces,human-gut
+4473645.3,170,total_community,Human Microbiome Project (HMP),SRR063574,,19819907,1.290558008,5022,389134,terrestrial biome,human-associated habitat,feces,human-gut
+4472447.3,185,total_community,Human Microbiome Project (HMP),SRR060137,,19819907,1.289497807,769291,59658186,terrestrial biome,human-associated habitat,feces,human-gut
+4478623.3,155,total_community,Human Microbiome Project (HMP),SRR063581,,19819907,1.288723131,5349,415062,terrestrial biome,human-associated habitat,feces,human-gut
+4478620.3,165,total_community,Human Microbiome Project (HMP),SRR063572,,19819907,1.288511785,5183,402247,terrestrial biome,human-associated habitat,feces,human-gut
+4461225.3,916,,Human gut microbiome viewed across age and geography (WGS),TS4,,,1.281696187,3702,288836,feces,feces,feces,plant-associated
+4478619.3,159,total_community,Human Microbiome Project (HMP),SRR063569,,19819907,1.27796259,5021,392891,terrestrial biome,human-associated habitat,feces,human-gut
+4473654.3,164,total_community,Human Microbiome Project (HMP),SRR063583,,19819907,1.273882004,4850,380726,terrestrial biome,human-associated habitat,feces,human-gut
+4478622.3,160,total_community,Human Microbiome Project (HMP),SRR063578,,19819907,1.269714012,5353,421591,terrestrial biome,human-associated habitat,feces,human-gut
+4473644.3,166,total_community,Human Microbiome Project (HMP),SRR063573,,19819907,1.268265937,4580,361123,terrestrial biome,human-associated habitat,feces,human-gut
+4478618.3,183,total_community,Human Microbiome Project (HMP),SRR063566,,19819907,1.266112402,4261,336542,terrestrial biome,human-associated habitat,feces,human-gut
+4473651.3,171,total_community,Human Microbiome Project (HMP),SRR063580,,19819907,1.260534393,4912,389676,terrestrial biome,human-associated habitat,feces,human-gut
+4478621.3,182,total_community,Human Microbiome Project (HMP),SRR063575,,19819907,1.25134804,4769,381109,terrestrial biome,human-associated habitat,feces,human-gut
+4473639.3,169,total_community,Human Microbiome Project (HMP),SRR063568,,19819907,1.2351807,4952,400913,terrestrial biome,human-associated habitat,feces,human-gut
+4473656.3,178,total_community,Human Microbiome Project (HMP),SRR063585,,19819907,1.235027279,5211,421934,terrestrial biome,human-associated habitat,feces,human-gut
+4473638.3,163,total_community,Human Microbiome Project (HMP),SRR063567,,19819907,1.220406216,4578,375121,terrestrial biome,human-associated habitat,feces,human-gut
+4440460.5,48,total_community,Twin Gut Microflora Study,TS4,-,,1.13492372,5168,455361,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4449581.3,230,virome,Diversity and abundance of single-stranded DNA viruses in human feces,F-B,,21948823,1.123747326,998,88810,-,-,-,human-gut
+4472586.3,190,total_community,Human Microbiome Project (HMP),SRR061140,,19819907,1.077867706,680288,63114239,terrestrial biome,human-associated habitat,feces,human-gut
+4478512.3,197,total_community,Human Microbiome Project (HMP),SRR062322,,19819907,1.030016627,400518,38884615,terrestrial biome,human-associated habitat,feces,human-gut
+4472878.3,89,total_community,Human Microbiome Project (HMP),SRR061438,,19819907,0.942213347,458237,48634102,terrestrial biome,human-associated habitat,feces,human-gut
+4472872.3,87,total_community,Human Microbiome Project (HMP),SRR061432,,19819907,0.940855601,468981,49846225,terrestrial biome,human-associated habitat,feces,human-gut
+4491415.3,232,,Gut microbiota in the Irish Elderly and its links to health and diet,EM242_LS_DG3_2B,,,0.852163395,155,18189,-,-,-,human-gut
+4472332.3,215,total_community,Human Microbiome Project (HMP),SRR059886,,19819907,0.851743202,535979,62927300,terrestrial biome,human-associated habitat,feces,human-gut
+4472998.3,128,total_community,Human Microbiome Project (HMP),SRR061558,,19819907,0.848949392,468564,55193396,terrestrial biome,human-associated habitat,feces,human-gut
+4472333.3,218,total_community,Human Microbiome Project (HMP),SRR059887,,19819907,0.846341924,524598,61984168,terrestrial biome,human-associated habitat,feces,human-gut
+4472997.3,129,total_community,Human Microbiome Project (HMP),SRR061557,,19819907,0.844195537,462056,54733291,terrestrial biome,human-associated habitat,feces,human-gut
+4461221.3,917,,Human gut microbiome viewed across age and geography (WGS),TS3,,,0.841088952,2657,315900,feces,feces,feces,plant-associated
+4472899.3,116,total_community,Human Microbiome Project (HMP),SRR061459,,19819907,0.831066769,506280,60919293,terrestrial biome,human-associated habitat,feces,human-gut
+4472896.3,118,total_community,Human Microbiome Project (HMP),SRR061456,,19819907,0.82513627,484042,58662068,terrestrial biome,human-associated habitat,feces,human-gut
+4440595.4,104,total_community,Twin Gut Microflora Study,TS3,-,,0.811447782,4562,562205,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4472668.3,69,total_community,Human Microbiome Project (HMP),SRR061222,,19819907,0.799724971,506141,63289383,terrestrial biome,human-associated habitat,feces,human-gut
+4472783.3,227,total_community,Human Microbiome Project (HMP),SRR061343,,19819907,0.798005832,396245,49654399,terrestrial biome,human-associated habitat,feces,human-gut
+4472677.3,71,total_community,Human Microbiome Project (HMP),SRR061231,,19819907,0.796834862,505213,63402472,terrestrial biome,human-associated habitat,feces,human-gut
+4472770.3,226,total_community,Human Microbiome Project (HMP),SRR061330,,19819907,0.791913245,393495,49689155,terrestrial biome,human-associated habitat,feces,human-gut
+4547024.3,282,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4T1.1,SRP002840,20631792,0.728738346,179,24563,animal-associated habitat,human-associated habitat,feces,human-gut
+4472559.3,199,total_community,Human Microbiome Project (HMP),SRR061044,,19819907,0.694114495,270325,38945304,terrestrial biome,human-associated habitat,feces,human-gut
+4472581.3,193,total_community,Human Microbiome Project (HMP),SRR061135,,19819907,0.689678554,393432,57045706,terrestrial biome,human-associated habitat,feces,human-gut
+4461290.3,859,,muegge_mammals_paper_human_samples_MG,CRBM.08.MG,-,,0.644306975,326,50597,feces,feces,feces,human-vaginal
+4440640.3,127,total_community,Twin Gut Microflora Study,TS51,-,,0.558154146,3056,547519,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4547032.3,284,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1T2.3,SRP002840,20631792,0.506347169,142,28044,animal-associated habitat,human-associated habitat,feces,human-gut
+4440824.3,229,total_community,A core gut microbiome in obese and lean twins,TS8,32089,19043404,0.499400478,2070,414497,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4461224.3,919,,Human gut microbiome viewed across age and geography (WGS),TS6,,,0.472704374,1704,360479,feces,feces,feces,plant-associated
+4472453.3,112,total_community,Human Microbiome Project (HMP),SRR060152,,19819907,0.456662015,577718,126508880,terrestrial biome,human-associated habitat,feces,human-gut
+4472478.3,212,total_community,Human Microbiome Project (HMP),SRR060370,,19819907,0.435232092,333123,76539163,terrestrial biome,human-associated habitat,feces,human-gut
+4472479.3,213,total_community,Human Microbiome Project (HMP),SRR060371,,19819907,0.432551227,330082,76310499,terrestrial biome,human-associated habitat,feces,human-gut
+4491406.3,248,,Gut microbiota in the Irish Elderly and its links to health and diet,EM308_LS_DG4_3A,,,0.42510192,122,28699,-,-,-,human-gut
+4472377.3,207,total_community,Human Microbiome Project (HMP),SRR059953,,19819907,0.390252612,209996,53810274,terrestrial biome,human-associated habitat,feces,human-gut
+4472376.3,211,total_community,Human Microbiome Project (HMP),SRR059952,,19819907,0.386094556,142684,36955714,terrestrial biome,human-associated habitat,feces,human-gut
+4491419.3,242,,Gut microbiota in the Irish Elderly and its links to health and diet,EM221_LS_DG3_3B,,,0.33800454,137,40532,-,-,-,human-gut
+4472477.3,217,total_community,Human Microbiome Project (HMP),SRR060369,,19819907,0.309622556,237914,76840009,terrestrial biome,human-associated habitat,feces,human-gut
+4472720.3,172,total_community,Human Microbiome Project (HMP),SRR061280,,19819907,0.303225481,150114,49505734,terrestrial biome,human-associated habitat,feces,human-gut
+4472724.3,167,total_community,Human Microbiome Project (HMP),SRR061284,,19819907,0.301584426,147043,48756828,terrestrial biome,human-associated habitat,feces,human-gut
+4472277.3,222,total_community,Human Microbiome Project (HMP),SRR059830,,19819907,0.295568396,196684,66544327,terrestrial biome,human-associated habitat,feces,human-gut
+4472278.3,220,total_community,Human Microbiome Project (HMP),SRR059831,,19819907,0.29475937,194628,66029453,terrestrial biome,human-associated habitat,feces,human-gut
+4472476.3,216,total_community,Human Microbiome Project (HMP),SRR060368,,19819907,0.294576833,225947,76702230,terrestrial biome,human-associated habitat,feces,human-gut
+4491409.3,244,,Gut microbiota in the Irish Elderly and its links to health and diet,EM291_LS_DG3_3A,,,0.285152129,100,35069,-,-,-,human-gut
+4467109.3,101,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,1342,,,0.268859523,230288,85653652,terrestrial biome,human-associated habitat,feces,human-gut
+4491488.3,261,,Gut microbiota in the Irish Elderly and its links to health and diet,EM166_LS_DG3_4B,,,0.261389096,49,18746,-,-,-,human-gut
+4472625.3,857,total_community,Human Microbiome Project (HMP),SRR061179,,19819907,0.249051838,1905,764901,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472947.3,134,total_community,Human Microbiome Project (HMP),SRR061507,,19819907,0.246458153,158638,64367114,terrestrial biome,human-associated habitat,feces,human-gut
+4472430.3,132,total_community,Human Microbiome Project (HMP),SRR060044,,19819907,0.244858907,265283,108341168,terrestrial biome,human-associated habitat,feces,human-gut
+4472939.3,133,total_community,Human Microbiome Project (HMP),SRR061499,,19819907,0.243999629,155942,63910753,terrestrial biome,human-associated habitat,feces,human-gut
+4461229.3,920,,Human gut microbiome viewed across age and geography (WGS),TS8,,,0.223252934,851,381182,feces,feces,feces,plant-associated
+4473684.3,201,total_community,Human Microbiome Project (HMP),SRR063906,,19819907,0.206031418,1422,690186,terrestrial biome,human-associated habitat,feces,human-gut
+4473683.3,223,total_community,Human Microbiome Project (HMP),SRR063905,,19819907,0.204963124,1332,649873,terrestrial biome,human-associated habitat,feces,human-gut
+4440462.5,231,total_community,Twin Gut Microflora Study,TS6,-,,0.201906441,1237,612660,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4547016.3,297,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4T1.3,SRP002840,20631792,0.186425464,27,14483,animal-associated habitat,human-associated habitat,feces,human-gut
+4440946.3,278,total_community,Comparative metagenomics revealed commonly enriched gene sets in human gut microbiomes,human In-A,28117,17916580,0.182932859,37,20226,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4472626.3,858,total_community,Human Microbiome Project (HMP),SRR061180,,19819907,0.18018631,1324,734795,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4491487.3,225,,Gut microbiota in the Irish Elderly and its links to health and diet,EM172_C_DG2_1A,,,0.14778987,176,119088,-,-,-,human-gut
+4473026.3,125,total_community,Human Microbiome Project (HMP),SRR061586,,19819907,0.133877427,77981,58248057,terrestrial biome,human-associated habitat,feces,human-gut
+4473021.3,124,total_community,Human Microbiome Project (HMP),SRR061581,,19819907,0.131550962,74971,56990081,terrestrial biome,human-associated habitat,feces,human-gut
+4478583.3,862,total_community,Human Microbiome Project (HMP),SRR062542,,19819907,0.12768176,360,281951,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4440948.3,258,total_community,Comparative metagenomics revealed commonly enriched gene sets in human gut microbiomes,human In-D,28117,17916580,0.123337623,46,37296,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4491420.3,264,,Gut microbiota in the Irish Elderly and its links to health and diet,EM219_R_DG3_4B,,,0.117566376,48,40828,-,-,-,human-gut
+4466163.3,88,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,1195,,,0.114832435,118675,103346237,terrestrial biome,human-associated habitat,feces,human-gut
+4491412.3,245,,Gut microbiota in the Irish Elderly and its links to health and diet,EM272_DH_DG2_3A,,,0.11322579,89,78604,-,-,-,human-gut
+4491418.3,280,,Gut microbiota in the Irish Elderly and its links to health and diet,EM227_LS_DG4_3A,,,0.103400735,27,26112,-,-,-,human-gut
+4491408.3,279,,Gut microbiota in the Irish Elderly and its links to health and diet,EM293_LS_DG2_4B,,,0.101260696,20,19751,-,-,-,human-gut
+4473351.3,138,total_community,Human Microbiome Project (HMP),SRR062375,,19819907,0.100603025,47811,47524416,terrestrial biome,human-associated habitat,feces,human-gut
+4473433.3,139,total_community,Human Microbiome Project (HMP),SRR062457,,19819907,0.100224266,47760,47653130,terrestrial biome,human-associated habitat,feces,human-gut
+4461173.3,923,,Human gut microbiome viewed across age and geography (WGS),USBldChld8,,,0.095728348,159,166095,feces,feces,feces,plant-associated
+4461176.3,921,,Human gut microbiome viewed across age and geography (WGS),USchp33ChildA,,,0.088679998,160,180424,feces,feces,feces,plant-associated
+4472557.3,398,total_community,Human Microbiome Project (HMP),SRR060449,,19819907,0.087061228,3558,4086779,terrestrial biome,human-associated habitat,mucus,human-oral
+4472556.3,399,total_community,Human Microbiome Project (HMP),SRR060448,,19819907,0.08546532,3495,4089378,terrestrial biome,human-associated habitat,mucus,human-oral
+4473042.3,194,total_community,Human Microbiome Project (HMP),SRR061691,,19819907,0.085439538,53519,62639618,terrestrial biome,human-associated habitat,feces,human-gut
+4491490.3,263,,Gut microbiota in the Irish Elderly and its links to health and diet,EM148_R_NA_NA,,,0.08231495,13,15793,-,-,-,human-gut
+4472619.3,234,total_community,Human Microbiome Project (HMP),SRR061173,,19819907,0.078566431,56448,71847479,terrestrial biome,human-associated habitat,feces,human-gut
+4473096.3,761,total_community,Human Microbiome Project (HMP),SRR061941,,19819907,0.078358464,8630,11013488,terrestrial biome,human-associated habitat,organic material,human-skin
+4478445.3,762,total_community,Human Microbiome Project (HMP),SRR061942,,19819907,0.077742897,8374,10771402,terrestrial biome,human-associated habitat,organic material,human-skin
+4472599.3,233,total_community,Human Microbiome Project (HMP),SRR061153,,19819907,0.077108758,55796,72360133,terrestrial biome,human-associated habitat,feces,human-gut
+4473041.3,198,total_community,Human Microbiome Project (HMP),SRR061690,,19819907,0.07266024,33162,45639816,terrestrial biome,human-associated habitat,feces,human-gut
+4478426.3,195,total_community,Human Microbiome Project (HMP),SRR061689,,19819907,0.07233863,32144,44435456,terrestrial biome,human-associated habitat,feces,human-gut
+4517734.3,1,,Mice Frailty,Mouse_4.1E-Aug16_R1,,,0.070214099,6964,9918236,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517710.3,4,,Mice Frailty,Mouse_14.Y7-Aug14_R1,,,0.069560048,7956,11437600,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517735.3,2,,Mice Frailty,Mouse_4.1E-Aug16_R2,,,0.068923546,6836,9918236,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4478639.3,397,total_community,Human Microbiome Project (HMP),SRR063922,,19819907,0.068231501,5871,8604530,terrestrial biome,human-associated habitat,mucus,human-oral
+4517711.3,3,,Mice Frailty,Mouse_14.Y7-Aug14_R2,,,0.068134923,7793,11437600,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4478637.3,396,total_community,Human Microbiome Project (HMP),SRR063916,,19819907,0.065875716,5765,8751328,terrestrial biome,human-associated habitat,mucus,human-oral
+4461164.3,924,,Human gut microbiome viewed across age and geography (WGS),h47B.1,,,0.064545524,119,184366,feces,feces,feces,plant-associated
+4466296.3,72,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,2234,,,0.058745136,71685,122027124,terrestrial biome,human-associated habitat,feces,human-gut
+4472646.3,100,total_community,Human Microbiome Project (HMP),SRR061200,,19819907,0.058337998,28247,48419557,terrestrial biome,human-associated habitat,feces,human-gut
+4472644.3,109,total_community,Human Microbiome Project (HMP),SRR061198,,19819907,0.05735305,27022,47115193,terrestrial biome,human-associated habitat,feces,human-gut
+4547045.3,305,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F3M.2,SRP002840,20631792,0.055707351,21,37697,animal-associated habitat,human-associated habitat,feces,human-gut
+4478548.3,867,total_community,Human Microbiome Project (HMP),SRR062434,,19819907,0.053015554,180,339523,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4478614.3,265,total_community,Human Microbiome Project (HMP),SRR063554,,19819907,0.052936625,234,442038,terrestrial biome,human-associated habitat,feces,human-gut
+4466257.3,73,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,1234,,,0.051237546,44594,87033832,terrestrial biome,human-associated habitat,feces,human-gut
+4547040.3,294,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F5T2.1(R),SRP002840,20631792,0.050611441,37,73106,animal-associated habitat,human-associated habitat,feces,human-gut
+4517712.3,5,,Mice Frailty,Mouse_15.Y7-Aug15_R1,,,0.049857655,6822,13682954,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4443754.3,932,,Project for: MID2_EF_assembly,MID2_EF_assembly,,,0.049683498,27,54344,waste water,waste water,waste water,wastewater|sludge
+4517713.3,6,,Mice Frailty,Mouse_15.Y7-Aug15_R2,,,0.048805251,6678,13682954,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473626.3,268,total_community,Human Microbiome Project (HMP),SRR063555,,19819907,0.048785152,199,407911,terrestrial biome,human-associated habitat,feces,human-gut
+4473624.3,270,total_community,Human Microbiome Project (HMP),SRR063553,,19819907,0.047146641,191,405119,terrestrial biome,human-associated habitat,feces,human-gut
+4472631.3,214,total_community,Human Microbiome Project (HMP),SRR061185,,19819907,0.047088097,29791,63266520,terrestrial biome,human-associated habitat,feces,human-gut
+4472641.3,210,total_community,Human Microbiome Project (HMP),SRR061195,,19819907,0.046891959,30158,64313798,terrestrial biome,human-associated habitat,feces,human-gut
+4478610.3,287,total_community,Human Microbiome Project (HMP),SRR063542,,19819907,0.046864016,156,332878,terrestrial biome,human-associated habitat,feces,human-gut
+4440941.3,288,total_community,Comparative metagenomics revealed commonly enriched gene sets in human gut microbiomes,human F1-T,28117,17916580,0.046798436,17,36326,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4478613.3,266,total_community,Human Microbiome Project (HMP),SRR063551,,19819907,0.046153708,205,444168,terrestrial biome,human-associated habitat,feces,human-gut
+4440615.3,275,total_community,Twin Gut Microflora Study,TS50,-,,0.045779161,285,622554,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4478455.3,98,total_community,Human Microbiome Project (HMP),SRR061973,,19819907,0.045669206,30844,67537851,terrestrial biome,human-associated habitat,feces,human-gut
+4461163.3,922,,Human gut microbiome viewed across age and geography (WGS),h47A.1,,,0.045604117,116,254363,feces,feces,feces,plant-associated
+4450219.3,931,,Baculovirus,MID2-IF-dereplicated-consensus,,,0.044393853,78,175700,-,-,-,wastewater|sludge
+4478564.3,868,total_community,Human Microbiome Project (HMP),SRR062483,,19819907,0.044379303,152,342502,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472579.3,74,total_community,Human Microbiome Project (HMP),SRR061133,,19819907,0.044256795,29955,67684521,terrestrial biome,human-associated habitat,feces,human-gut
+4472577.3,77,total_community,Human Microbiome Project (HMP),SRR061131,,19819907,0.043751956,30261,69164907,terrestrial biome,human-associated habitat,feces,human-gut
+4473129.3,97,total_community,Human Microbiome Project (HMP),SRR061974,,19819907,0.043232405,30857,71374701,terrestrial biome,human-associated habitat,feces,human-gut
+4472103.3,81,total_community,Human Microbiome Project (HMP),SRR042183,,19819907,0.042494811,17211,40501416,terrestrial biome,human-associated habitat,feces,human-gut
+4472572.3,80,total_community,Human Microbiome Project (HMP),SRR061125,,19819907,0.042493556,17211,40502612,terrestrial biome,human-associated habitat,feces,human-gut
+4472105.3,82,total_community,Human Microbiome Project (HMP),SRR042491,,19819907,0.042418485,17028,40142876,terrestrial biome,human-associated habitat,feces,human-gut
+4472099.3,76,total_community,Human Microbiome Project (HMP),SRR041662,,19819907,0.042093947,16845,40017630,terrestrial biome,human-associated habitat,feces,human-gut
+4472570.3,75,total_community,Human Microbiome Project (HMP),SRR061123,,19819907,0.042092563,16845,40018946,terrestrial biome,human-associated habitat,feces,human-gut
+4472102.3,78,total_community,Human Microbiome Project (HMP),SRR042182,,19819907,0.041901598,16751,39976996,terrestrial biome,human-associated habitat,feces,human-gut
+4472571.3,79,total_community,Human Microbiome Project (HMP),SRR061124,,19819907,0.041900589,16751,39977958,terrestrial biome,human-associated habitat,feces,human-gut
+4547035.3,302,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F5T2.1,SRP002840,20631792,0.041295012,20,48432,animal-associated habitat,human-associated habitat,feces,human-gut
+4472970.3,773,total_community,Human Microbiome Project (HMP),SRR061530,,19819907,0.039984289,170,425167,terrestrial biome,human-associated habitat,organic material,human-skin
+4473612.3,281,total_community,Human Microbiome Project (HMP),SRR063541,,19819907,0.039971535,132,330235,terrestrial biome,human-associated habitat,feces,human-gut
+4478635.3,395,total_community,Human Microbiome Project (HMP),SRR063910,,19819907,0.039356667,5013,12737359,terrestrial biome,human-associated habitat,mucus,human-oral
+4473623.3,276,total_community,Human Microbiome Project (HMP),SRR063552,,19819907,0.037630651,147,390639,terrestrial biome,human-associated habitat,feces,human-gut
+4508404.3,934,,120723 Kobe WWTO AS,primaryeffluent_S1_L001_R1_001_paired_de_novo_assembly,,,0.037171957,10,26902,Large lake biome,biofilm,contaminated water,wastewater|sludge
+4473621.3,272,total_community,Human Microbiome Project (HMP),SRR063550,,19819907,0.036047537,157,435536,terrestrial biome,human-associated habitat,feces,human-gut
+4473617.3,283,total_community,Human Microbiome Project (HMP),SRR063546,,19819907,0.03575555,121,338409,terrestrial biome,human-associated habitat,feces,human-gut
+4473509.3,864,total_community,Human Microbiome Project (HMP),SRR062535,,19819907,0.03474389,206,592910,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4491404.3,289,,Gut microbiota in the Irish Elderly and its links to health and diet,EM334_DH_DG2_1B,,,0.03386352,33,97450,-,-,-,human-gut
+4478636.3,391,total_community,Human Microbiome Project (HMP),SRR063913,,19819907,0.033283295,20496,61580441,terrestrial biome,human-associated habitat,mucus,human-oral
+4473706.3,392,total_community,Human Microbiome Project (HMP),SRR063928,,19819907,0.033250811,16819,50582225,terrestrial biome,human-associated habitat,mucus,human-oral
+4473692.3,390,total_community,Human Microbiome Project (HMP),SRR063914,,19819907,0.032971463,16427,49821872,terrestrial biome,human-associated habitat,mucus,human-oral
+4491477.3,293,,Gut microbiota in the Irish Elderly and its links to health and diet,EM203_C_DG1_3A,,,0.032809595,27,82293,-,-,-,human-gut
+4473611.3,291,total_community,Human Microbiome Project (HMP),SRR063540,,19819907,0.031013498,82,264401,terrestrial biome,human-associated habitat,feces,human-gut
+4473072.3,860,total_community,Human Microbiome Project (HMP),SRR061917,,19819907,0.031001085,979,3157954,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472710.3,865,total_community,Human Microbiome Project (HMP),SRR061264,,19819907,0.030105067,170,564689,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472555.3,393,total_community,Human Microbiome Project (HMP),SRR060447,,19819907,0.02888953,14129,48906992,terrestrial biome,human-associated habitat,mucus,human-oral
+4472554.3,394,total_community,Human Microbiome Project (HMP),SRR060446,,19819907,0.028379165,13970,49226254,terrestrial biome,human-associated habitat,mucus,human-oral
+4472952.3,776,total_community,Human Microbiome Project (HMP),SRR061512,,19819907,0.02829648,118,417013,terrestrial biome,human-associated habitat,organic material,human-skin
+4478437.3,861,total_community,Human Microbiome Project (HMP),SRR061918,,19819907,0.026736404,818,3059499,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4478436.3,400,total_community,Human Microbiome Project (HMP),SRR061915,,19819907,0.025714553,3272,12724312,terrestrial biome,human-associated habitat,mucus,human-oral
+4478574.3,765,total_community,Human Microbiome Project (HMP),SRR062514,,19819907,0.024953241,3510,14066309,terrestrial biome,human-associated habitat,organic material,human-skin
+4461300.3,874,,muegge_mammals_paper_human_samples_MG,CRBM.20.MG,-,,0.024138763,14,57998,feces,feces,feces,human-vaginal
+4473487.3,766,total_community,Human Microbiome Project (HMP),SRR062513,,19819907,0.023997919,3367,14030383,terrestrial biome,human-associated habitat,organic material,human-skin
+4491417.3,286,,Gut microbiota in the Irish Elderly and its links to health and diet,EM232_R_DG1_2A,,,0.021069424,14,66447,-,-,-,human-gut
+4461194.3,925,,Human gut microbiome viewed across age and geography (WGS),USinfTw16.2,,,0.020926901,13,62121,feces,feces,feces,plant-associated
+4472406.3,402,total_community,Human Microbiome Project (HMP),SRR060004,,19819907,0.020824721,6883,33052063,terrestrial biome,human-associated habitat,mucus,human-oral
+4517726.3,9,,Mice Frailty,Mouse_22.14_R1,,,0.020187881,2086,10332932,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517727.3,10,,Mice Frailty,Mouse_22.14_R2,,,0.019974969,2064,10332932,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472761.3,799,total_community,Human Microbiome Project (HMP),SRR061321,,19819907,0.019402551,26,134003,terrestrial biome,human-associated habitat,organic material,human-skin
+4547020.3,323,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F4T1.2,SRP002840,20631792,0.019347973,4,20674,animal-associated habitat,human-associated habitat,feces,human-gut
+4461287.3,870,,muegge_mammals_paper_human_samples_MG,CRBM.05.MG,-,,0.018354999,28,152547,feces,feces,feces,human-vaginal
+4517736.3,8,,Mice Frailty,Mouse_5.2E-May24_R1,,,0.018153717,2129,11727626,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517737.3,7,,Mice Frailty,Mouse_5.2E-May24_R2,,,0.017676212,2073,11727626,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4491422.3,345,,Gut microbiota in the Irish Elderly and its links to health and diet,EM208_LS_DG4_4B,,,0.016175995,1,6182,-,-,-,human-gut
+4491407.3,332,,Gut microbiota in the Irish Elderly and its links to health and diet,EM305_R_DG2_2A,,,0.014752526,2,13557,-,-,-,human-gut
+4472718.3,807,total_community,Human Microbiome Project (HMP),SRR061278,,19819907,0.014641824,8,54638,terrestrial biome,human-associated habitat,organic material,human-skin
+4491413.3,271,,Gut microbiota in the Irish Elderly and its links to health and diet,EM268_C_DG2_1B,,,0.014147673,10,70683,-,-,-,human-gut
+4440943.3,300,total_community,Comparative metagenomics revealed commonly enriched gene sets in human gut microbiomes,human F2-W,28117,17916580,0.01324591,4,30198,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4491562.3,274,,Gut microbiota in the Irish Elderly and its links to health and diet,EM039_C_NA_NA,,,0.013231389,14,105809,-,-,-,human-gut
+4472522.3,769,total_community,Human Microbiome Project (HMP),SRR060414,,19819907,0.01298976,511,3933868,terrestrial biome,human-associated habitat,organic material,human-skin
+4547048.3,318,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1T2.2,SRP002840,20631792,0.012884522,4,31045,animal-associated habitat,human-associated habitat,feces,human-gut
+4473377.3,419,total_community,Human Microbiome Project (HMP),SRR062401,,19819907,0.012456713,445,3572371,terrestrial biome,human-associated habitat,mucus,human-oral
+4473398.3,417,total_community,Human Microbiome Project (HMP),SRR062422,,19819907,0.012332035,442,3584161,terrestrial biome,human-associated habitat,mucus,human-oral
+4491411.3,285,,Gut microbiota in the Irish Elderly and its links to health and diet,EM275_LS_DG3_2A,,,0.012156577,2,16452,-,-,-,human-gut
+4473078.3,764,total_community,Human Microbiome Project (HMP),SRR061923,,19819907,0.011955133,5611,46933814,terrestrial biome,human-associated habitat,organic material,human-skin
+4472523.3,770,total_community,Human Microbiome Project (HMP),SRR060415,,19819907,0.011866628,496,4179789,terrestrial biome,human-associated habitat,organic material,human-skin
+4478439.3,763,total_community,Human Microbiome Project (HMP),SRR061924,,19819907,0.011797977,5551,47050441,terrestrial biome,human-associated habitat,organic material,human-skin
+4547052.3,317,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1T1.3,SRP002840,20631792,0.011465523,5,43609,animal-associated habitat,human-associated habitat,feces,human-gut
+4517744.3,14,,Mice Frailty,Mouse_9.5_R1,,,0.010703705,962,8987542,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517745.3,13,,Mice Frailty,Mouse_9.5_R2,,,0.010514554,945,8987542,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517742.3,12,,Mice Frailty,Mouse_8.4_R1,,,0.010129101,958,9457898,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517743.3,11,,Mice Frailty,Mouse_8.4_R2,,,0.009949357,941,9457898,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4440616.3,290,total_community,Twin Gut Microflora Study,TS29,-,,0.009843915,50,507928,animal-associated habitat,human-associated habitat,human-associated habitat & animal-associated habitat,human-gut
+4517728.3,15,,Mice Frailty,Mouse_23.15_R1,,,0.009798125,824,8409772,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517729.3,16,,Mice Frailty,Mouse_23.15_R2,,,0.009738671,819,8409772,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473071.3,401,total_community,Human Microbiome Project (HMP),SRR061916,,19819907,0.009416584,3103,32952503,terrestrial biome,human-associated habitat,mucus,human-oral
+4473521.3,779,total_community,Human Microbiome Project (HMP),SRR063464,,19819907,0.008729119,89,1019576,terrestrial biome,human-associated habitat,organic material,human-skin
+4448044.3,99,,Human Gut Microbial Metagenome,BGIgutGeneSet,,,0.008333783,275,3299822,-,-,-,human-gut
+4473480.3,784,total_community,Human Microbiome Project (HMP),SRR062506,,19819907,0.00797819,76,952597,terrestrial biome,human-associated habitat,organic material,human-skin
+4472617.3,403,total_community,Human Microbiome Project (HMP),SRR061171,,19819907,0.007487873,2525,33721191,terrestrial biome,human-associated habitat,mucus,human-oral
+4472622.3,404,total_community,Human Microbiome Project (HMP),SRR061176,,19819907,0.007254084,2552,35180183,terrestrial biome,human-associated habitat,mucus,human-oral
+4472573.3,115,total_community,Human Microbiome Project (HMP),SRR061127,,19819907,0.007025797,4928,70141506,terrestrial biome,human-associated habitat,feces,human-gut
+4472095.3,235,total_community,Human Microbiome Project (HMP),SRR041658,,19819907,0.006891219,2679,38875562,terrestrial biome,human-associated habitat,feces,human-gut
+4472567.3,236,total_community,Human Microbiome Project (HMP),SRR061119,,19819907,0.006891131,2679,38876057,terrestrial biome,human-associated habitat,feces,human-gut
+4472578.3,126,total_community,Human Microbiome Project (HMP),SRR061132,,19819907,0.006884087,4862,70626649,terrestrial biome,human-associated habitat,feces,human-gut
+4472363.3,249,total_community,Human Microbiome Project (HMP),SRR059917,,19819907,0.006797095,3811,56068072,terrestrial biome,human-associated habitat,feces,human-gut
+4472096.3,239,total_community,Human Microbiome Project (HMP),SRR041659,,19819907,0.006695956,2633,39322239,terrestrial biome,human-associated habitat,feces,human-gut
+4472568.3,238,total_community,Human Microbiome Project (HMP),SRR061120,,19819907,0.006695874,2633,39322726,terrestrial biome,human-associated habitat,feces,human-gut
+4472097.3,240,total_community,Human Microbiome Project (HMP),SRR041660,,19819907,0.006424887,2530,39378124,terrestrial biome,human-associated habitat,feces,human-gut
+4472569.3,241,total_community,Human Microbiome Project (HMP),SRR061121,,19819907,0.006424772,2530,39378827,terrestrial biome,human-associated habitat,feces,human-gut
+4472098.3,243,total_community,Human Microbiome Project (HMP),SRR041661,,19819907,0.006378856,2508,39317397,terrestrial biome,human-associated habitat,feces,human-gut
+4478589.3,443,total_community,Human Microbiome Project (HMP),SRR063478,,19819907,0.006070412,104,1713228,terrestrial biome,human-associated habitat,mucus,human-oral
+4517724.3,17,,Mice Frailty,Mouse_21.13_R1,,,0.00606214,534,8808771,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473550.3,445,total_community,Human Microbiome Project (HMP),SRR063479,,19819907,0.006047502,105,1736254,terrestrial biome,human-associated habitat,mucus,human-oral
+4472362.3,250,total_community,Human Microbiome Project (HMP),SRR059916,,19819907,0.005854147,3974,67883504,terrestrial biome,human-associated habitat,feces,human-gut
+4517725.3,18,,Mice Frailty,Mouse_21.13_R2,,,0.005732922,505,8808771,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473329.3,878,total_community,Human Microbiome Project (HMP),SRR062353,,19819907,0.005678553,25,440253,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472441.3,873,total_community,Human Microbiome Project (HMP),SRR060086,,19819907,0.005628981,123,2185120,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4460190.3,936,,Puget Sound,WWTP effluent,,,0.005461923,7,128160,freshwater biome,anthropogenic habitat,water,wastewater|sludge
+4472513.3,408,total_community,Human Microbiome Project (HMP),SRR060405,,19819907,0.005267955,1755,33314634,terrestrial biome,human-associated habitat,mucus,human-oral
+4478550.3,777,total_community,Human Microbiome Project (HMP),SRR062440,,19819907,0.005068011,188,3709542,terrestrial biome,human-associated habitat,organic material,human-skin
+4478585.3,787,total_community,Human Microbiome Project (HMP),SRR063465,,19819907,0.004889366,51,1043080,terrestrial biome,human-associated habitat,organic material,human-skin
+4473489.3,792,total_community,Human Microbiome Project (HMP),SRR062515,,19819907,0.004838233,47,971429,terrestrial biome,human-associated habitat,organic material,human-skin
+4473333.3,882,total_community,Human Microbiome Project (HMP),SRR062357,,19819907,0.004791611,21,438266,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472723.3,810,total_community,Human Microbiome Project (HMP),SRR061283,,19819907,0.004664547,104,2229584,terrestrial biome,human-associated habitat,organic material,human-skin
+4547018.3,335,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1T2.1,SRP002840,20631792,0.00461361,2,43350,animal-associated habitat,human-associated habitat,feces,human-gut
+4473466.3,772,total_community,Human Microbiome Project (HMP),SRR062492,,19819907,0.004572344,1012,22133067,terrestrial biome,human-associated habitat,organic material,human-skin
+4473412.3,778,total_community,Human Microbiome Project (HMP),SRR062436,,19819907,0.004451884,164,3683834,terrestrial biome,human-associated habitat,organic material,human-skin
+4517722.3,19,,Mice Frailty,Mouse_20.8_R1,,,0.004409419,432,9797208,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517723.3,20,,Mice Frailty,Mouse_20.8_R2,,,0.00430735,422,9797208,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4547031.3,355,virome,Viruses in the faecal microbiota of monozygotic twins and their mothers,F1T1.1,SRP002840,20631792,0.004294795,1,23284,animal-associated habitat,human-associated habitat,feces,human-gut
+4473418.3,771,total_community,Human Microbiome Project (HMP),SRR062442,,19819907,0.004159508,910,21877590,terrestrial biome,human-associated habitat,organic material,human-skin
+4472623.3,406,total_community,Human Microbiome Project (HMP),SRR061177,,19819907,0.003997117,2082,52087545,terrestrial biome,human-associated habitat,mucus,human-oral
+4472618.3,246,total_community,Human Microbiome Project (HMP),SRR061172,,19819907,0.003951352,2443,61826944,terrestrial biome,human-associated habitat,feces,human-gut
+4472615.3,247,total_community,Human Microbiome Project (HMP),SRR061169,,19819907,0.003935432,2356,59866364,terrestrial biome,human-associated habitat,feces,human-gut
+4472512.3,407,total_community,Human Microbiome Project (HMP),SRR060404,,19819907,0.003882495,1836,47289176,terrestrial biome,human-associated habitat,mucus,human-oral
+4472624.3,405,total_community,Human Microbiome Project (HMP),SRR061178,,19819907,0.003848228,2025,52621623,terrestrial biome,human-associated habitat,mucus,human-oral
+4463936.3,935,,Danish wastewater treatment plants,WWTP_EBPR_Aalborg_East,,,0.003712159,10,269385,waste water,waste water,waste water,wastewater|sludge
+4472320.3,426,total_community,Human Microbiome Project (HMP),SRR059874,,19819907,0.003638653,304,8354740,terrestrial biome,human-associated habitat,mucus,human-oral
+4508805.3,940,,120723 Kobe WWTO AS,120723-01_S1_L001_R1_001_paired_trimmed_paired_.fa,,,0.003298371,2,60636,Large lake biome,biofilm,contaminated water,wastewater|sludge
+4472415.3,806,total_community,Human Microbiome Project (HMP),SRR060028,,19819907,0.003275359,9,274779,terrestrial biome,human-associated habitat,organic material,human-skin
+4508402.3,937,,120723 Kobe WWTO AS,hospitalA_S2_L001_R1_001_paired_de_novo_assembly,,,0.003231227,1,30948,Large lake biome,biofilm,contaminated water,wastewater|sludge
+4473701.3,409,total_community,Human Microbiome Project (HMP),SRR063923,,19819907,0.003216814,1051,32672075,terrestrial biome,human-associated habitat,mucus,human-oral
+4472607.3,251,total_community,Human Microbiome Project (HMP),SRR061161,,19819907,0.003146244,2189,69575016,terrestrial biome,human-associated habitat,feces,human-gut
+4472321.3,431,total_community,Human Microbiome Project (HMP),SRR059875,,19819907,0.0031319,262,8365530,terrestrial biome,human-associated habitat,mucus,human-oral
+4472603.3,252,total_community,Human Microbiome Project (HMP),SRR061157,,19819907,0.003129377,2075,66307134,terrestrial biome,human-associated habitat,feces,human-gut
+4472303.3,255,total_community,Human Microbiome Project (HMP),SRR059855,,19819907,0.003112602,2465,79194185,terrestrial biome,human-associated habitat,feces,human-gut
+4472325.3,780,total_community,Human Microbiome Project (HMP),SRR059879,,19819907,0.00307174,82,2669497,terrestrial biome,human-associated habitat,organic material,human-skin
+4472324.3,781,total_community,Human Microbiome Project (HMP),SRR059878,,19819907,0.003053274,87,2849400,terrestrial biome,human-associated habitat,organic material,human-skin
+4472302.3,259,total_community,Human Microbiome Project (HMP),SRR059854,,19819907,0.003031717,2420,79822745,terrestrial biome,human-associated habitat,feces,human-gut
+4472317.3,418,total_community,Human Microbiome Project (HMP),SRR059870,,19819907,0.002836805,459,16180173,terrestrial biome,human-associated habitat,mucus,human-oral
+4472620.3,253,total_community,Human Microbiome Project (HMP),SRR061174,,19819907,0.002784212,1906,68457430,terrestrial biome,human-associated habitat,feces,human-gut
+4478640.3,411,total_community,Human Microbiome Project (HMP),SRR063926,,19819907,0.002777318,914,32909452,terrestrial biome,human-associated habitat,mucus,human-oral
+4473414.3,782,total_community,Human Microbiome Project (HMP),SRR062438,,19819907,0.002759858,214,7754022,terrestrial biome,human-associated habitat,organic material,human-skin
+4478638.3,410,total_community,Human Microbiome Project (HMP),SRR063919,,19819907,0.002685923,1061,39502254,terrestrial biome,human-associated habitat,mucus,human-oral
+4491405.3,357,,Gut microbiota in the Irish Elderly and its links to health and diet,EM326_R_DG2_2A,,,0.00266269,1,37556,-,-,-,human-gut
+4472388.3,892,total_community,Human Microbiome Project (HMP),SRR059986,,19819907,0.002648235,8,302088,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472611.3,256,total_community,Human Microbiome Project (HMP),SRR061165,,19819907,0.002631096,1750,66512207,terrestrial biome,human-associated habitat,feces,human-gut
+4478549.3,785,total_community,Human Microbiome Project (HMP),SRR062437,,19819907,0.002610635,204,7814192,terrestrial biome,human-associated habitat,organic material,human-skin
+4472271.3,884,total_community,Human Microbiome Project (HMP),SRR059824,,19819907,0.002590476,17,656250,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473696.3,412,total_community,Human Microbiome Project (HMP),SRR063918,,19819907,0.002584092,842,32583977,terrestrial biome,human-associated habitat,mucus,human-oral
+4473081.3,767,total_community,Human Microbiome Project (HMP),SRR061926,,19819907,0.002487396,987,39680058,terrestrial biome,human-associated habitat,organic material,human-skin
+4472749.3,802,total_community,Human Microbiome Project (HMP),SRR061309,,19819907,0.002462916,859,34877358,terrestrial biome,human-associated habitat,organic material,human-skin
+4472747.3,805,total_community,Human Microbiome Project (HMP),SRR061307,,19819907,0.002461875,83,3371414,terrestrial biome,human-associated habitat,organic material,human-skin
+4461363.3,44,,muegge_mammals_paper_mammal_samples_MG,HyraxSD.MG,-,,0.002373042,1,42140,feces & animal-associated habitat,feces & animal-associated habitat,feces & animal-associated habitat,host-associated
+4461140.3,926,,Human gut microbiome viewed across age and geography (WGS),AmzC5chldM,,,0.00234537,5,213186,feces,feces,feces,plant-associated
+4473080.3,768,total_community,Human Microbiome Project (HMP),SRR061925,,19819907,0.002293589,905,39457813,terrestrial biome,human-associated habitat,organic material,human-skin
+4472658.3,262,total_community,Human Microbiome Project (HMP),SRR061212,,19819907,0.002223211,1222,54965538,terrestrial biome,human-associated habitat,feces,human-gut
+4472630.3,260,total_community,Human Microbiome Project (HMP),SRR061184,,19819907,0.002170613,1359,62609042,terrestrial biome,human-associated habitat,feces,human-gut
+4472800.3,822,total_community,Human Microbiome Project (HMP),SRR061360,,19819907,0.002130387,6,281639,terrestrial biome,human-associated habitat,organic material,human-skin
+4517705.3,23,,Mice Frailty,Mouse_1.1_R2,,,0.00212128,171,8061172,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473496.3,453,total_community,Human Microbiome Project (HMP),SRR062522,,19819907,0.002097461,924,44053265,terrestrial biome,human-associated habitat,mucus,human-oral
+4517704.3,24,,Mice Frailty,Mouse_1.1_R1,,,0.002096469,169,8061172,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4461142.3,928,,Human gut microbiome viewed across age and geography (WGS),F3T2pre4,,,0.002016292,1,49596,feces,feces,feces,plant-associated
+4478577.3,451,total_community,Human Microbiome Project (HMP),SRR062523,,19819907,0.002004551,878,43800329,terrestrial biome,human-associated habitat,mucus,human-oral
+4472795.3,413,total_community,Human Microbiome Project (HMP),SRR061355,,19819907,0.001876472,532,28351082,terrestrial biome,human-associated habitat,mucus,human-oral
+4517740.3,21,,Mice Frailty,Mouse_7.2E-Aug15_R1,,,0.0018124,233,12855883,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472273.3,482,total_community,Human Microbiome Project (HMP),SRR059826,,19819907,0.001799106,46,2556826,terrestrial biome,human-associated habitat,mucus,human-oral
+4517741.3,22,,Mice Frailty,Mouse_7.2E-Aug15_R2,,,0.001796843,231,12855883,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472272.3,891,total_community,Human Microbiome Project (HMP),SRR059825,,19819907,0.001670164,11,658618,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472905.3,796,total_community,Human Microbiome Project (HMP),SRR061465,,19819907,0.001662547,40,2405947,terrestrial biome,human-associated habitat,organic material,human-skin
+4472169.3,441,total_community,Human Microbiome Project (HMP),SRR059383,,19819907,0.001611792,128,7941473,terrestrial biome,human-associated habitat,mucus,human-oral
+4472910.3,795,total_community,Human Microbiome Project (HMP),SRR061470,,19819907,0.001584834,38,2397727,terrestrial biome,human-associated habitat,organic material,human-skin
+4473321.3,783,total_community,Human Microbiome Project (HMP),SRR062345,,19819907,0.001567511,63,4019111,terrestrial biome,human-associated habitat,organic material,human-skin
+4473411.3,461,total_community,Human Microbiome Project (HMP),SRR062435,,19819907,0.001525311,80,5244831,terrestrial biome,human-associated habitat,saliva,human-oral
+4473709.3,879,total_community,Human Microbiome Project (HMP),SRR064531,,19819907,0.001517526,24,1581521,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472786.3,415,total_community,Human Microbiome Project (HMP),SRR061346,,19819907,0.001499894,523,34869126,terrestrial biome,human-associated habitat,mucus,human-oral
+4472456.3,448,total_community,Human Microbiome Project (HMP),SRR060155,,19819907,0.001496711,91,6079998,terrestrial biome,human-associated habitat,mucus,human-oral
+4472292.3,427,total_community,Human Microbiome Project (HMP),SRR059845,,19819907,0.001484673,297,20004400,terrestrial biome,human-associated habitat,mucus,human-oral
+4478536.3,786,total_community,Human Microbiome Project (HMP),SRR062397,,19819907,0.001463961,57,3893547,terrestrial biome,human-associated habitat,organic material,human-skin
+4473417.3,467,total_community,Human Microbiome Project (HMP),SRR062441,,19819907,0.001453184,76,5229895,terrestrial biome,human-associated habitat,saliva,human-oral
+4473342.3,559,total_community,Human Microbiome Project (HMP),SRR062366,,19819907,0.001446942,16,1105780,terrestrial biome,human-associated habitat,mucus,human-oral
+4478526.3,558,total_community,Human Microbiome Project (HMP),SRR062367,,19819907,0.001442895,16,1108882,terrestrial biome,human-associated habitat,mucus,human-oral
+4472168.3,450,total_community,Human Microbiome Project (HMP),SRR059382,,19819907,0.001390276,111,7984028,terrestrial biome,human-associated habitat,mucus,human-oral
+4472274.3,488,total_community,Human Microbiome Project (HMP),SRR059827,,19819907,0.001353952,37,2732741,terrestrial biome,human-associated habitat,mucus,human-oral
+4472414.3,820,total_community,Human Microbiome Project (HMP),SRR060027,,19819907,0.001253054,4,319220,terrestrial biome,human-associated habitat,organic material,human-skin
+4472461.3,267,total_community,Human Microbiome Project (HMP),SRR060353,,19819907,0.00124589,871,69909859,terrestrial biome,human-associated habitat,feces,human-gut
+4472635.3,906,total_community,Human Microbiome Project (HMP),SRR061189,,19819907,0.001140602,2,175346,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472455.3,421,total_community,Human Microbiome Project (HMP),SRR060154,,19819907,0.001139262,408,35812672,terrestrial biome,human-associated habitat,mucus,human-oral
+4472460.3,269,total_community,Human Microbiome Project (HMP),SRR060352,,19819907,0.001133636,801,70657609,terrestrial biome,human-associated habitat,feces,human-gut
+4473044.3,416,total_community,Human Microbiome Project (HMP),SRR061693,,19819907,0.001117672,510,45630543,terrestrial biome,human-associated habitat,mucus,human-oral
+4473420.3,790,total_community,Human Microbiome Project (HMP),SRR062444,,19819907,0.001084251,82,7562826,terrestrial biome,human-associated habitat,organic material,human-skin
+4472600.3,273,total_community,Human Microbiome Project (HMP),SRR061154,,19819907,0.001061206,713,67187703,terrestrial biome,human-associated habitat,feces,human-gut
+4472769.3,825,total_community,Human Microbiome Project (HMP),SRR061329,,19819907,0.001053337,3,284809,terrestrial biome,human-associated habitat,organic material,human-skin
+4473665.3,489,total_community,Human Microbiome Project (HMP),SRR063710,,19819907,0.00103656,45,4341281,terrestrial biome,human-associated habitat,mucus,human-oral
+4473068.3,793,total_community,Human Microbiome Project (HMP),SRR061913,,19819907,0.001030432,47,4561195,terrestrial biome,human-associated habitat,organic material,human-skin
+4472596.3,277,total_community,Human Microbiome Project (HMP),SRR061150,,19819907,0.001027529,669,65107641,terrestrial biome,human-associated habitat,feces,human-gut
+4461227.3,927,,Human gut microbiome viewed across age and geography (WGS),TS9,,,0.001011937,5,494102,feces,feces,feces,plant-associated
+4473069.3,788,total_community,Human Microbiome Project (HMP),SRR061914,,19819907,0.001009135,47,4657454,terrestrial biome,human-associated habitat,organic material,human-skin
+4478463.3,791,total_community,Human Microbiome Project (HMP),SRR062007,,19819907,0.001009108,46,4558482,terrestrial biome,human-associated habitat,organic material,human-skin
+4491401.3,347,,Gut microbiota in the Irish Elderly and its links to health and diet,EM338_DH_DG2_3A,,,0.000998941,1,100106,-,-,-,human-gut
+4491421.3,354,,Gut microbiota in the Irish Elderly and its links to health and diet,EM209_R_NA_NA,,,0.00097925,1,102119,-,-,-,human-gut
+4472173.3,414,total_community,Human Microbiome Project (HMP),SRR059403,,19819907,0.000951286,528,55503827,terrestrial biome,human-associated habitat,mucus,human-oral
+4473372.3,460,total_community,Human Microbiome Project (HMP),SRR062396,,19819907,0.000948403,79,8329793,terrestrial biome,human-associated habitat,saliva,human-oral
+4478551.3,789,total_community,Human Microbiome Project (HMP),SRR062443,,19819907,0.000925886,69,7452320,terrestrial biome,human-associated habitat,organic material,human-skin
+4478427.3,425,total_community,Human Microbiome Project (HMP),SRR061692,,19819907,0.000917171,396,43176244,terrestrial biome,human-associated habitat,mucus,human-oral
+4473563.3,845,total_community,Human Microbiome Project (HMP),SRR063492,,19819907,0.000900305,2,222147,terrestrial biome,human-associated habitat,organic material,human-skin
+4440823.3,312,total_community,A core gut microbiome in obese and lean twins,TS7,32089,19043404,0.000899518,5,555853,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4472383.3,899,total_community,Human Microbiome Project (HMP),SRR059963,,19819907,0.000887402,4,450754,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472509.3,437,total_community,Human Microbiome Project (HMP),SRR060401,,19819907,0.000878313,168,19127580,terrestrial biome,human-associated habitat,mucus,human-oral
+4472695.3,420,total_community,Human Microbiome Project (HMP),SRR061249,,19819907,0.000874839,417,47665932,terrestrial biome,human-associated habitat,mucus,human-oral
+4472920.3,846,total_community,Human Microbiome Project (HMP),SRR061480,,19819907,0.000856278,2,233569,terrestrial biome,human-associated habitat,organic material,human-skin
+4473345.3,901,total_community,Human Microbiome Project (HMP),SRR062369,,19819907,0.000848877,3,353408,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472693.3,863,total_community,Human Microbiome Project (HMP),SRR061247,,19819907,0.000840606,347,41279752,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473378.3,463,total_community,Human Microbiome Project (HMP),SRR062402,,19819907,0.000826175,69,8351741,terrestrial biome,human-associated habitat,saliva,human-oral
+4473148.3,422,total_community,Human Microbiome Project (HMP),SRR062003,,19819907,0.000810096,455,56166189,terrestrial biome,human-associated habitat,mucus,human-oral
+4472134.3,871,total_community,Human Microbiome Project (HMP),SRR059348,,19819907,0.000808502,71,8781671,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472135.3,872,total_community,Human Microbiome Project (HMP),SRR059349,,19819907,0.000797282,73,9156110,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472696.3,430,total_community,Human Microbiome Project (HMP),SRR061250,,19819907,0.000787506,295,37460022,terrestrial biome,human-associated habitat,mucus,human-oral
+4473495.3,866,total_community,Human Microbiome Project (HMP),SRR062521,,19819907,0.000776746,193,24847240,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472340.3,440,total_community,Human Microbiome Project (HMP),SRR059894,,19819907,0.000761203,118,15501775,terrestrial biome,human-associated habitat,mucus,human-oral
+4472727.3,485,total_community,Human Microbiome Project (HMP),SRR061287,,19819907,0.000759859,41,5395738,terrestrial biome,human-associated habitat,mucus,human-oral
+4517738.3,25,,Mice Frailty,Mouse_6.2E-Aug14_R1,,,0.000739676,98,13249051,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4467420.3,933,,Stanley WWTP activated sludge sample,Stanley AS DNA -2,,,0.00073212,122,16663946,aquatic biome,wastewater treatment plant,waste water,wastewater|sludge
+4473490.3,837,total_community,Human Microbiome Project (HMP),SRR062516,,19819907,0.000726633,2,275242,terrestrial biome,human-associated habitat,organic material,human-skin
+4478462.3,424,total_community,Human Microbiome Project (HMP),SRR062004,,19819907,0.000724051,417,57592662,terrestrial biome,human-associated habitat,mucus,human-oral
+4517732.3,27,,Mice Frailty,Mouse_3.3_R1,,,0.000711476,65,9135939,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517733.3,28,,Mice Frailty,Mouse_3.3_R2,,,0.000711476,65,9135939,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472163.3,798,total_community,Human Microbiome Project (HMP),SRR059377,,19819907,0.000709539,18,2536859,terrestrial biome,human-associated habitat,organic material,human-skin
+4517739.3,26,,Mice Frailty,Mouse_6.2E-Aug14_R2,,,0.000709485,94,13249051,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473365.3,586,total_community,Human Microbiome Project (HMP),SRR062389,,19819907,0.000704893,11,1560520,terrestrial biome,human-associated habitat,saliva,human-oral
+4440614.3,320,total_community,Twin Gut Microflora Study,TS49,-,,0.000703114,4,568898,animal-associated habitat,human-associated habitat,animal-associated habitat,human-gut
+4472389.3,909,total_community,Human Microbiome Project (HMP),SRR059987,,19819907,0.000690012,2,289850,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472291.3,423,total_community,Human Microbiome Project (HMP),SRR059844,,19819907,0.000686436,379,55212701,terrestrial biome,human-associated habitat,mucus,human-oral
+4472632.3,869,total_community,Human Microbiome Project (HMP),SRR061186,,19819907,0.000678201,144,21232655,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473153.3,794,total_community,Human Microbiome Project (HMP),SRR062008,,19819907,0.000656578,30,4569148,terrestrial biome,human-associated habitat,organic material,human-skin
+4472508.3,439,total_community,Human Microbiome Project (HMP),SRR060400,,19819907,0.000656419,125,19042722,terrestrial biome,human-associated habitat,mucus,human-oral
+4473115.3,462,total_community,Human Microbiome Project (HMP),SRR061960,,19819907,0.000655391,65,9917748,terrestrial biome,human-associated habitat,mucus,human-oral
+4472621.3,893,total_community,Human Microbiome Project (HMP),SRR061175,,19819907,0.000655201,6,915750,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472738.3,492,total_community,Human Microbiome Project (HMP),SRR061298,,19819907,0.000654251,36,5502476,terrestrial biome,human-associated habitat,mucus,human-oral
+4472209.3,883,total_community,Human Microbiome Project (HMP),SRR059435,,19819907,0.000651775,18,2761688,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472166.3,429,total_community,Human Microbiome Project (HMP),SRR059380,,19819907,0.000640705,322,50257120,terrestrial biome,human-associated habitat,mucus,human-oral
+4473389.3,588,total_community,Human Microbiome Project (HMP),SRR062413,,19819907,0.000640091,10,1562278,terrestrial biome,human-associated habitat,saliva,human-oral
+4472341.3,454,total_community,Human Microbiome Project (HMP),SRR059895,,19819907,0.000624792,96,15365102,terrestrial biome,human-associated habitat,mucus,human-oral
+4478557.3,824,total_community,Human Microbiome Project (HMP),SRR062461,,19819907,0.000599055,3,500789,terrestrial biome,human-associated habitat,organic material,human-skin
+4478440.3,775,total_community,Human Microbiome Project (HMP),SRR061927,,19819907,0.000597086,193,32323644,terrestrial biome,human-associated habitat,organic material,human-skin
+4478642.3,880,total_community,Human Microbiome Project (HMP),SRR064532,,19819907,0.0005879,27,4592617,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473114.3,472,total_community,Human Microbiome Project (HMP),SRR061959,,19819907,0.000585778,57,9730643,terrestrial biome,human-associated habitat,mucus,human-oral
+4478488.3,433,total_community,Human Microbiome Project (HMP),SRR062083,,19819907,0.000576524,245,42496071,terrestrial biome,human-associated habitat,mucus,human-oral
+4473083.3,774,total_community,Human Microbiome Project (HMP),SRR061928,,19819907,0.000574622,188,32717184,terrestrial biome,human-associated habitat,organic material,human-skin
+4472397.3,428,total_community,Human Microbiome Project (HMP),SRR059995,,19819907,0.000565038,324,57341282,terrestrial biome,human-associated habitat,mucus,human-oral
+4473227.3,436,total_community,Human Microbiome Project (HMP),SRR062082,,19819907,0.000562172,230,40912723,terrestrial biome,human-associated habitat,mucus,human-oral
+4478578.3,849,total_community,Human Microbiome Project (HMP),SRR062526,,19819907,0.000559198,2,357655,terrestrial biome,human-associated habitat,organic material,human-skin
+4472119.3,493,total_community,Human Microbiome Project (HMP),SRR059333,,19819907,0.000550775,40,7262496,terrestrial biome,human-associated habitat,mucus,human-oral
+4473544.3,580,total_community,Human Microbiome Project (HMP),SRR063473,,19819907,0.00054245,10,1843488,terrestrial biome,human-associated habitat,mucus,human-oral
+4473232.3,808,total_community,Human Microbiome Project (HMP),SRR062087,,19819907,0.000534567,11,2057741,terrestrial biome,human-associated habitat,organic material,human-skin
+4472167.3,434,total_community,Human Microbiome Project (HMP),SRR059381,,19819907,0.000534474,270,50517001,terrestrial biome,human-associated habitat,mucus,human-oral
+4472118.3,498,total_community,Human Microbiome Project (HMP),SRR059332,,19819907,0.000533843,38,7118200,terrestrial biome,human-associated habitat,mucus,human-oral
+4517707.3,29,,Mice Frailty,Mouse_10.6_R2,,,0.000530645,41,7726453,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473384.3,797,total_community,Human Microbiome Project (HMP),SRR062408,,19819907,0.000513352,17,3311571,terrestrial biome,human-associated habitat,organic material,human-skin
+4492976.3,43,,NEPRC African green,NEPRC_AGM_pos_03,,,0.000513136,1,194880,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4478556.3,513,total_community,Human Microbiome Project (HMP),SRR062458,,19819907,0.000501111,22,4390246,terrestrial biome,human-associated habitat,mucus,human-oral
+4517706.3,30,,Mice Frailty,Mouse_10.6_R1,,,0.000491817,38,7726453,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473435.3,522,total_community,Human Microbiome Project (HMP),SRR062459,,19819907,0.000452171,20,4423104,terrestrial biome,human-associated habitat,mucus,human-oral
+4472396.3,432,total_community,Human Microbiome Project (HMP),SRR059994,,19819907,0.000451373,262,58045120,terrestrial biome,human-associated habitat,mucus,human-oral
+4472601.3,895,total_community,Human Microbiome Project (HMP),SRR061155,,19819907,0.000437748,4,913768,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472547.3,800,total_community,Human Microbiome Project (HMP),SRR060439,,19819907,0.000421061,15,3562431,terrestrial biome,human-associated habitat,organic material,human-skin
+4472208.3,885,total_community,Human Microbiome Project (HMP),SRR059434,,19819907,0.000417533,12,2874025,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473344.3,640,total_community,Human Microbiome Project (HMP),SRR062368,,19819907,0.000405094,4,987424,terrestrial biome,human-associated habitat,mucus,human-oral
+4473338.3,458,total_community,Human Microbiome Project (HMP),SRR062362,,19819907,0.000397212,82,20643901,terrestrial biome,human-associated habitat,mucus,human-oral
+4472162.3,804,total_community,Human Microbiome Project (HMP),SRR059376,,19819907,0.000386126,10,2589825,terrestrial biome,human-associated habitat,organic material,human-skin
+4473492.3,459,total_community,Human Microbiome Project (HMP),SRR062518,,19819907,0.000373879,59,15780509,terrestrial biome,human-associated habitat,mucus,human-oral
+4478485.3,877,total_community,Human Microbiome Project (HMP),SRR062074,,19819907,0.000373599,28,7494671,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4478496.3,457,total_community,Human Microbiome Project (HMP),SRR062107,,19819907,0.000367631,76,20672893,terrestrial biome,human-associated habitat,mucus,human-oral
+4472114.3,455,total_community,Human Microbiome Project (HMP),SRR059328,,19819907,0.000365242,91,24915019,terrestrial biome,human-associated habitat,mucus,human-oral
+4472369.3,446,total_community,Human Microbiome Project (HMP),SRR059923,,19819907,0.000363825,111,30509175,terrestrial biome,human-associated habitat,mucus,human-oral
+4473348.3,547,total_community,Human Microbiome Project (HMP),SRR062372,,19819907,0.000357456,18,5035579,terrestrial biome,human-associated habitat,saliva,human-oral
+4472772.3,833,total_community,Human Microbiome Project (HMP),SRR061332,,19819907,0.000349368,2,572462,terrestrial biome,human-associated habitat,organic material,human-skin
+4472834.3,832,total_community,Human Microbiome Project (HMP),SRR061394,,19819907,0.000349252,2,572652,terrestrial biome,human-associated habitat,organic material,human-skin
+4478448.3,514,total_community,Human Microbiome Project (HMP),SRR061952,,19819907,0.000346783,25,7209115,terrestrial biome,human-associated habitat,mucus,human-oral
+4472400.3,606,total_community,Human Microbiome Project (HMP),SRR059998,,19819907,0.000345639,8,2314555,terrestrial biome,human-associated habitat,mucus,human-oral
+4472552.3,888,total_community,Human Microbiome Project (HMP),SRR060444,,19819907,0.000345271,14,4054784,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472160.3,435,total_community,Human Microbiome Project (HMP),SRR059374,,19819907,0.000342954,241,70271780,terrestrial biome,human-associated habitat,mucus,human-oral
+4478547.3,476,total_community,Human Microbiome Project (HMP),SRR062431,,19819907,0.000340192,45,13227832,terrestrial biome,human-associated habitat,mucus,human-oral
+4450224.3,939,,Baculovirus,MID4-AD-dereplicated-consensus,,,0.000332402,1,300841,-,-,-,wastewater|sludge
+4478575.3,471,total_community,Human Microbiome Project (HMP),SRR062517,,19819907,0.000321488,51,15863751,terrestrial biome,human-associated habitat,mucus,human-oral
+4472368.3,447,total_community,Human Microbiome Project (HMP),SRR059922,,19819907,0.000316584,105,33166527,terrestrial biome,human-associated habitat,mucus,human-oral
+4478545.3,509,total_community,Human Microbiome Project (HMP),SRR062424,,19819907,0.000309403,49,15836933,terrestrial biome,human-associated habitat,mucus,human-oral
+4473339.3,464,total_community,Human Microbiome Project (HMP),SRR062363,,19819907,0.000308093,63,20448383,terrestrial biome,human-associated habitat,mucus,human-oral
+4472434.3,593,total_community,Human Microbiome Project (HMP),SRR060078,,19819907,0.000307484,8,2601762,terrestrial biome,human-associated habitat,mucus,human-oral
+4473226.3,438,total_community,Human Microbiome Project (HMP),SRR062081,,19819907,0.000304082,163,53604002,terrestrial biome,human-associated habitat,mucus,human-oral
+4478544.3,506,total_community,Human Microbiome Project (HMP),SRR062421,,19819907,0.000303256,48,15828218,terrestrial biome,human-associated habitat,mucus,human-oral
+4478541.3,801,total_community,Human Microbiome Project (HMP),SRR062412,,19819907,0.000302604,10,3304653,terrestrial biome,human-associated habitat,organic material,human-skin
+4472145.3,479,total_community,Human Microbiome Project (HMP),SRR059359,,19819907,0.00030132,45,14934278,terrestrial biome,human-associated habitat,mucus,human-oral
+4472280.3,500,total_community,Human Microbiome Project (HMP),SRR059833,,19819907,0.000295426,33,11170292,terrestrial biome,human-associated habitat,mucus,human-oral
+4473475.3,478,total_community,Human Microbiome Project (HMP),SRR062501,,19819907,0.000292692,46,15716173,terrestrial biome,human-associated habitat,mucus,human-oral
+4472279.3,497,total_community,Human Microbiome Project (HMP),SRR059832,,19819907,0.000281887,32,11352061,terrestrial biome,human-associated habitat,mucus,human-oral
+4472144.3,483,total_community,Human Microbiome Project (HMP),SRR059358,,19819907,0.000279393,42,15032580,terrestrial biome,human-associated habitat,mucus,human-oral
+4473405.3,487,total_community,Human Microbiome Project (HMP),SRR062429,,19819907,0.000278918,37,13265551,terrestrial biome,human-associated habitat,mucus,human-oral
+4472553.3,890,total_community,Human Microbiome Project (HMP),SRR060445,,19819907,0.000274853,12,4365965,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473199.3,444,total_community,Human Microbiome Project (HMP),SRR062054,,19819907,0.000273125,133,48695591,terrestrial biome,human-associated habitat,mucus,human-oral
+4473386.3,578,total_community,Human Microbiome Project (HMP),SRR062410,,19819907,0.000262207,31,11822708,terrestrial biome,human-associated habitat,mucus,human-oral
+4472401.3,618,total_community,Human Microbiome Project (HMP),SRR059999,,19819907,0.000260597,6,2302408,terrestrial biome,human-associated habitat,mucus,human-oral
+4473363.3,622,total_community,Human Microbiome Project (HMP),SRR062387,,19819907,0.00026047,6,2303531,terrestrial biome,human-associated habitat,mucus,human-oral
+4472503.3,876,total_community,Human Microbiome Project (HMP),SRR060395,,19819907,0.000253137,33,13036431,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473251.3,469,total_community,Human Microbiome Project (HMP),SRR062106,,19819907,0.00024885,52,20896097,terrestrial biome,human-associated habitat,mucus,human-oral
+4472583.3,315,total_community,Human Microbiome Project (HMP),SRR061137,,19819907,0.000248821,158,63499479,terrestrial biome,human-associated habitat,feces,human-gut
+4473347.3,570,total_community,Human Microbiome Project (HMP),SRR062371,,19819907,0.000239731,12,5005604,terrestrial biome,human-associated habitat,saliva,human-oral
+4473311.3,504,total_community,Human Microbiome Project (HMP),SRR062333,,19819907,0.000235596,37,15704834,terrestrial biome,human-associated habitat,mucus,human-oral
+4478487.3,442,total_community,Human Microbiome Project (HMP),SRR062080,,19819907,0.000235002,121,51488870,terrestrial biome,human-associated habitat,mucus,human-oral
+4473301.3,329,total_community,Human Microbiome Project (HMP),SRR062323,,19819907,0.000234241,97,41410297,terrestrial biome,human-associated habitat,feces,human-gut
+4472276.3,292,total_community,Human Microbiome Project (HMP),SRR059829,,19819907,0.00023302,104,44631275,terrestrial biome,human-associated habitat,feces,human-gut
+4478489.3,819,total_community,Human Microbiome Project (HMP),SRR062086,,19819907,0.000232268,4,1722149,terrestrial biome,human-associated habitat,organic material,human-skin
+4473198.3,449,total_community,Human Microbiome Project (HMP),SRR062053,,19819907,0.000223962,111,49561888,terrestrial biome,human-associated habitat,mucus,human-oral
+4472858.3,831,total_community,Human Microbiome Project (HMP),SRR061418,,19819907,0.000218814,12,5484106,terrestrial biome,human-associated habitat,organic material,human-skin
+4472115.3,468,total_community,Human Microbiome Project (HMP),SRR059329,,19819907,0.000217808,54,24792515,terrestrial biome,human-associated habitat,mucus,human-oral
+4472123.3,474,total_community,Human Microbiome Project (HMP),SRR059337,,19819907,0.000216281,49,22655687,terrestrial biome,human-associated habitat,mucus,human-oral
+4472537.3,809,total_community,Human Microbiome Project (HMP),SRR060429,,19819907,0.000215632,6,2782512,terrestrial biome,human-associated habitat,organic material,human-skin
+4472275.3,295,total_community,Human Microbiome Project (HMP),SRR059828,,19819907,0.000215013,93,43253150,terrestrial biome,human-associated habitat,feces,human-gut
+4478587.3,668,total_community,Human Microbiome Project (HMP),SRR063472,,19819907,0.000212907,4,1878754,terrestrial biome,human-associated habitat,mucus,human-oral
+4472953.3,834,total_community,Human Microbiome Project (HMP),SRR061513,,19819907,0.000211141,2,947236,terrestrial biome,human-associated habitat,organic material,human-skin
+4478517.3,897,total_community,Human Microbiome Project (HMP),SRR062340,,19819907,0.000206248,4,1939416,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473327.3,561,total_community,Human Microbiome Project (HMP),SRR062351,,19819907,0.000204927,14,6831702,terrestrial biome,human-associated habitat,mucus,human-oral
+4440825.3,384,total_community,A core gut microbiome in obese and lean twins,TS30,32089,19043404,0.000201668,1,495865,animal-associated habitat,animal-associated habitat,animal-associated habitat,human-gut
+4473220.3,886,total_community,Human Microbiome Project (HMP),SRR062075,,19819907,0.000200276,15,7489648,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472122.3,490,total_community,Human Microbiome Project (HMP),SRR059336,,19819907,0.00020006,45,22493234,terrestrial biome,human-associated habitat,mucus,human-oral
+4473175.3,629,total_community,Human Microbiome Project (HMP),SRR062030,,19819907,0.00019669,6,3050488,terrestrial biome,human-associated habitat,mucus,human-oral
+4478474.3,518,total_community,Human Microbiome Project (HMP),SRR062040,,19819907,0.000195166,25,12809611,terrestrial biome,human-associated habitat,mucus,human-oral
+4472521.3,889,total_community,Human Microbiome Project (HMP),SRR060413,,19819907,0.000193741,10,5161520,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473184.3,517,total_community,Human Microbiome Project (HMP),SRR062039,,19819907,0.000193285,25,12934295,terrestrial biome,human-associated habitat,mucus,human-oral
+4466602.3,296,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,2342,,,0.000191266,225,117637342,terrestrial biome,human-associated habitat,feces,human-gut
+4478626.3,484,total_community,Human Microbiome Project (HMP),SRR063675,,19819907,0.000190562,42,22040049,terrestrial biome,human-associated habitat,mucus,human-oral
+4473309.3,496,total_community,Human Microbiome Project (HMP),SRR062331,,19819907,0.000190024,44,23154976,terrestrial biome,human-associated habitat,mucus,human-oral
+4472502.3,881,total_community,Human Microbiome Project (HMP),SRR060394,,19819907,0.000187076,24,12829024,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472480.3,452,total_community,Human Microbiome Project (HMP),SRR060372,,19819907,0.000185632,90,48483069,terrestrial biome,human-associated habitat,mucus,human-oral
+4473595.3,848,total_community,Human Microbiome Project (HMP),SRR063524,,19819907,0.000185602,4,2155147,terrestrial biome,human-associated habitat,organic material,human-skin
+4478515.3,507,total_community,Human Microbiome Project (HMP),SRR062332,,19819907,0.000184481,29,15719758,terrestrial biome,human-associated habitat,mucus,human-oral
+4478537.3,548,total_community,Human Microbiome Project (HMP),SRR062400,,19819907,0.000184418,22,11929393,terrestrial biome,human-associated habitat,mucus,human-oral
+4472608.3,617,total_community,Human Microbiome Project (HMP),SRR061162,,19819907,0.000182767,8,4377150,terrestrial biome,human-associated habitat,mucus,human-oral
+4473390.3,645,total_community,Human Microbiome Project (HMP),SRR062414,,19819907,0.000177605,4,2252190,terrestrial biome,human-associated habitat,mucus,human-oral
+4472481.3,456,total_community,Human Microbiome Project (HMP),SRR060373,,19819907,0.000171455,83,48409319,terrestrial biome,human-associated habitat,mucus,human-oral
+4472546.3,813,total_community,Human Microbiome Project (HMP),SRR060438,,19819907,0.000167443,6,3583306,terrestrial biome,human-associated habitat,organic material,human-skin
+4473453.3,536,total_community,Human Microbiome Project (HMP),SRR062477,,19819907,0.000166733,17,10195953,terrestrial biome,human-associated habitat,mucus,human-oral
+4473596.3,697,total_community,Human Microbiome Project (HMP),SRR063525,,19819907,0.000166713,4,2399329,terrestrial biome,human-associated habitat,mucus,human-oral
+4472804.3,470,total_community,Human Microbiome Project (HMP),SRR061364,,19819907,0.000163143,66,40455217,terrestrial biome,human-associated habitat,saliva,human-oral
+4472433.3,652,total_community,Human Microbiome Project (HMP),SRR060077,,19819907,0.000163015,4,2453761,terrestrial biome,human-associated habitat,mucus,human-oral
+4472435.3,900,total_community,Human Microbiome Project (HMP),SRR060079,,19819907,0.000160579,3,1868238,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4478632.3,333,total_community,Human Microbiome Project (HMP),SRR063901,,19819907,0.000155114,1,644686,terrestrial biome,human-associated habitat,feces,human-gut
+4473268.3,633,total_community,Human Microbiome Project (HMP),SRR062290,,19819907,0.000154262,6,3889486,terrestrial biome,human-associated habitat,mucus,human-oral
+4473387.3,528,total_community,Human Microbiome Project (HMP),SRR062411,,19819907,0.000151699,23,15161574,terrestrial biome,human-associated habitat,mucus,human-oral
+4478482.3,515,total_community,Human Microbiome Project (HMP),SRR062065,,19819907,0.000151144,33,21833485,terrestrial biome,human-associated habitat,mucus,human-oral
+4473456.3,624,total_community,Human Microbiome Project (HMP),SRR062481,,19819907,0.000150862,7,4640003,terrestrial biome,human-associated habitat,mucus,human-oral
+4472928.3,501,total_community,Human Microbiome Project (HMP),SRR061488,,19819907,0.000145356,41,28206681,terrestrial biome,human-associated habitat,mucus,human-oral
+4473439.3,526,total_community,Human Microbiome Project (HMP),SRR062463,,19819907,0.000145267,22,15144550,terrestrial biome,human-associated habitat,mucus,human-oral
+4472756.3,466,total_community,Human Microbiome Project (HMP),SRR061316,,19819907,0.000143859,56,38926908,terrestrial biome,human-associated habitat,mucus,human-oral
+4472821.3,473,total_community,Human Microbiome Project (HMP),SRR061381,,19819907,0.000142889,58,40591041,terrestrial biome,human-associated habitat,saliva,human-oral
+4472550.3,352,total_community,Human Microbiome Project (HMP),SRR060442,,19819907,0.000138328,106,76629288,terrestrial biome,human-associated habitat,feces,human-gut
+4472663.3,552,total_community,Human Microbiome Project (HMP),SRR061217,,19819907,0.000136482,12,8792388,terrestrial biome,human-associated habitat,mucus,human-oral
+4478502.3,636,total_community,Human Microbiome Project (HMP),SRR062292,,19819907,0.000127574,6,4703155,terrestrial biome,human-associated habitat,mucus,human-oral
+4478542.3,614,total_community,Human Microbiome Project (HMP),SRR062415,,19819907,0.000127194,6,4717202,terrestrial biome,human-associated habitat,saliva,human-oral
+4472925.3,519,total_community,Human Microbiome Project (HMP),SRR061485,,19819907,0.000127071,36,28330565,terrestrial biome,human-associated habitat,mucus,human-oral
+4473271.3,623,total_community,Human Microbiome Project (HMP),SRR062293,,19819907,0.000126689,5,3946688,terrestrial biome,human-associated habitat,mucus,human-oral
+4473209.3,521,total_community,Human Microbiome Project (HMP),SRR062064,,19819907,0.000125421,27,21527486,terrestrial biome,human-associated habitat,mucus,human-oral
+4473106.3,589,total_community,Human Microbiome Project (HMP),SRR061951,,19819907,0.000124807,9,7211155,terrestrial biome,human-associated habitat,mucus,human-oral
+4472417.3,572,total_community,Human Microbiome Project (HMP),SRR060031,,19819907,0.000124715,10,8018288,terrestrial biome,human-associated habitat,mucus,human-oral
+4472540.3,817,total_community,Human Microbiome Project (HMP),SRR060432,,19819907,0.000123829,4,3230270,terrestrial biome,human-associated habitat,organic material,human-skin
+4472192.3,665,total_community,Human Microbiome Project (HMP),SRR059418,,19819907,0.000122141,3,2456187,terrestrial biome,human-associated habitat,mucus,human-oral
+4473357.3,557,total_community,Human Microbiome Project (HMP),SRR062381,,19819907,0.000121948,11,9020257,terrestrial biome,human-associated habitat,mucus,human-oral
+4473406.3,582,total_community,Human Microbiome Project (HMP),SRR062430,,19819907,0.000121864,11,9026458,terrestrial biome,human-associated habitat,mucus,human-oral
+4472247.3,827,total_community,Human Microbiome Project (HMP),SRR059503,,19819907,0.000119676,3,2506764,terrestrial biome,human-associated habitat,organic material,human-skin
+4473662.3,510,total_community,Human Microbiome Project (HMP),SRR063692,,19819907,0.000118973,23,19332102,terrestrial biome,human-associated habitat,mucus,human-oral
+4473454.3,563,total_community,Human Microbiome Project (HMP),SRR062478,,19819907,0.000118523,12,10124597,terrestrial biome,human-associated habitat,mucus,human-oral
+4478538.3,604,total_community,Human Microbiome Project (HMP),SRR062403,,19819907,0.000118492,8,6751488,terrestrial biome,human-associated habitat,mucus,human-oral
+4473001.3,898,total_community,Human Microbiome Project (HMP),SRR061561,,19819907,0.000116437,4,3435344,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472726.3,481,total_community,Human Microbiome Project (HMP),SRR061286,,19819907,0.000116213,46,39582455,terrestrial biome,human-associated habitat,mucus,human-oral
+4472999.3,896,total_community,Human Microbiome Project (HMP),SRR061559,,19819907,0.000116159,4,3443566,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472585.3,342,total_community,Human Microbiome Project (HMP),SRR061139,,19819907,0.000115476,80,69278430,terrestrial biome,human-associated habitat,feces,human-gut
+4472551.3,340,total_community,Human Microbiome Project (HMP),SRR060443,,19819907,0.000114556,88,76818189,terrestrial biome,human-associated habitat,feces,human-gut
+4472975.3,856,total_community,Human Microbiome Project (HMP),SRR061535,,19819907,0.00011168,1,895416,terrestrial biome,human-associated habitat,organic material,human-skin
+4472931.3,914,total_community,Human Microbiome Project (HMP),SRR061491,,19819907,0.00010989,1,909997,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472436.3,913,total_community,Human Microbiome Project (HMP),SRR060080,,19819907,0.000107644,2,1857979,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472991.3,649,total_community,Human Microbiome Project (HMP),SRR061551,,19819907,0.000107583,4,3718066,terrestrial biome,human-associated habitat,mucus,human-oral
+4517714.3,31,,Mice Frailty,Mouse_16.M11-Jul13_R1,,,0.000106207,13,12240211,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473302.3,338,total_community,Human Microbiome Project (HMP),SRR062324,,19819907,0.000104191,45,43190101,terrestrial biome,human-associated habitat,feces,human-gut
+4478516.3,911,total_community,Human Microbiome Project (HMP),SRR062335,,19819907,0.000102747,2,1946531,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472766.3,303,total_community,Human Microbiome Project (HMP),SRR061326,,19819907,0.00010177,63,61904538,terrestrial biome,human-associated habitat,feces,human-gut
+4473312.3,524,total_community,Human Microbiome Project (HMP),SRR062334,,19819907,0.000100138,23,22968324,terrestrial biome,human-associated habitat,mucus,human-oral
+4472161.3,575,total_community,Human Microbiome Project (HMP),SRR059375,,19819907,0.00010003,8,7997569,terrestrial biome,human-associated habitat,mucus,human-oral
+4472541.3,821,total_community,Human Microbiome Project (HMP),SRR060433,,19819907,9.94305E-05,4,4022909,terrestrial biome,human-associated habitat,organic material,human-skin
+4517715.3,32,,Mice Frailty,Mouse_16.M11-Jul13_R2,,,9.80375E-05,12,12240211,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472744.3,905,total_community,Human Microbiome Project (HMP),SRR061304,,19819907,9.69345E-05,2,2063248,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472520.3,894,total_community,Human Microbiome Project (HMP),SRR060412,,19819907,9.63498E-05,5,5189422,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472466.3,306,total_community,Human Microbiome Project (HMP),SRR060358,,19819907,9.59819E-05,52,54176893,terrestrial biome,human-associated habitat,feces,human-gut
+4472808.3,301,total_community,Human Microbiome Project (HMP),SRR061368,,19819907,9.52257E-05,59,61958070,terrestrial biome,human-associated habitat,feces,human-gut
+4478573.3,543,total_community,Human Microbiome Project (HMP),SRR062511,,19819907,9.48901E-05,15,15807756,terrestrial biome,human-associated habitat,mucus,human-oral
+4473066.3,486,total_community,Human Microbiome Project (HMP),SRR061911,,19819907,9.47697E-05,44,46428337,terrestrial biome,human-associated habitat,mucus,human-oral
+4472437.3,499,total_community,Human Microbiome Project (HMP),SRR060081,,19819907,9.24866E-05,36,38924564,terrestrial biome,human-associated habitat,mucus,human-oral
+4478580.3,574,total_community,Human Microbiome Project (HMP),SRR062533,,19819907,9.24013E-05,8,8657886,terrestrial biome,human-associated habitat,mucus,human-oral
+4517730.3,33,,Mice Frailty,Mouse_25.21_R1,,,8.97895E-05,8,8909723,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472525.3,465,total_community,Human Microbiome Project (HMP),SRR060417,,19819907,8.94538E-05,51,57012693,terrestrial biome,human-associated habitat,mucus,human-oral
+4473375.3,619,total_community,Human Microbiome Project (HMP),SRR062399,,19819907,8.88873E-05,6,6750122,terrestrial biome,human-associated habitat,mucus,human-oral
+4473320.3,639,total_community,Human Microbiome Project (HMP),SRR062344,,19819907,8.86617E-05,6,6767298,terrestrial biome,human-associated habitat,mucus,human-oral
+4478420.3,491,total_community,Human Microbiome Project (HMP),SRR061582,,19819907,8.76619E-05,38,43348387,terrestrial biome,human-associated habitat,mucus,human-oral
+4472451.3,551,total_community,Human Microbiome Project (HMP),SRR060141,,19819907,8.64056E-05,13,15045315,terrestrial biome,human-associated habitat,mucus,human-oral
+4478435.3,494,total_community,Human Microbiome Project (HMP),SRR061912,,19819907,8.57858E-05,40,46627753,terrestrial biome,human-associated habitat,mucus,human-oral
+4472193.3,710,total_community,Human Microbiome Project (HMP),SRR059419,,19819907,8.22858E-05,2,2430552,terrestrial biome,human-associated habitat,mucus,human-oral
+4473702.3,903,total_community,Human Microbiome Project (HMP),SRR063924,,19819907,8.1386E-05,2,2457425,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473572.3,707,total_community,Human Microbiome Project (HMP),SRR063501,,19819907,8.09313E-05,2,2471232,terrestrial biome,human-associated habitat,mucus,human-oral
+4472977.3,610,total_community,Human Microbiome Project (HMP),SRR061537,,19819907,7.93641E-05,6,7560092,terrestrial biome,human-associated habitat,mucus,human-oral
+4478477.3,565,total_community,Human Microbiome Project (HMP),SRR062049,,19819907,7.9213E-05,11,13886602,terrestrial biome,human-associated habitat,mucus,human-oral
+4473668.3,538,total_community,Human Microbiome Project (HMP),SRR063748,,19819907,7.87342E-05,16,20321540,terrestrial biome,human-associated habitat,mucus,human-oral
+4472467.3,304,total_community,Human Microbiome Project (HMP),SRR060359,,19819907,7.83075E-05,54,68958882,terrestrial biome,human-associated habitat,feces,human-gut
+4472535.3,904,total_community,Human Microbiome Project (HMP),SRR060427,,19819907,7.71061E-05,2,2593830,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472978.3,613,total_community,Human Microbiome Project (HMP),SRR061538,,19819907,7.71028E-05,6,7781816,terrestrial biome,human-associated habitat,mucus,human-oral
+4472536.3,836,total_community,Human Microbiome Project (HMP),SRR060428,,19819907,7.69479E-05,2,2599161,terrestrial biome,human-associated habitat,organic material,human-skin
+4472849.3,838,total_community,Human Microbiome Project (HMP),SRR061409,,19819907,7.41704E-05,4,5392984,terrestrial biome,human-associated habitat,organic material,human-skin
+4472944.3,712,total_community,Human Microbiome Project (HMP),SRR061504,,19819907,7.36844E-05,16,21714228,terrestrial biome,human-associated habitat,mucus,human-oral
+4473099.3,814,total_community,Human Microbiome Project (HMP),SRR061944,,19819907,7.30581E-05,6,8212641,terrestrial biome,human-associated habitat,organic material,human-skin
+4472438.3,503,total_community,Human Microbiome Project (HMP),SRR060082,,19819907,7.18622E-05,28,38963482,terrestrial biome,human-associated habitat,mucus,human-oral
+4473206.3,815,total_community,Human Microbiome Project (HMP),SRR062061,,19819907,6.97345E-05,4,5736044,terrestrial biome,human-associated habitat,organic material,human-skin
+4478534.3,525,total_community,Human Microbiome Project (HMP),SRR062391,,19819907,6.97289E-05,18,25814261,terrestrial biome,human-associated habitat,mucus,human-oral
+4478629.3,541,total_community,Human Microbiome Project (HMP),SRR063788,,19819907,6.95092E-05,16,23018535,terrestrial biome,human-associated habitat,mucus,human-oral
+4472110.3,607,total_community,Human Microbiome Project (HMP),SRR059324,,19819907,6.90594E-05,6,8688179,terrestrial biome,human-associated habitat,mucus,human-oral
+4472439.3,726,total_community,Human Microbiome Project (HMP),SRR060083,,19819907,6.89019E-05,2,2902679,terrestrial biome,human-associated habitat,mucus,human-oral
+4472517.3,475,total_community,Human Microbiome Project (HMP),SRR060409,,19819907,6.84953E-05,44,64238030,terrestrial biome,human-associated habitat,mucus,human-oral
+4472111.3,608,total_community,Human Microbiome Project (HMP),SRR059325,,19819907,6.8233E-05,6,8793393,terrestrial biome,human-associated habitat,mucus,human-oral
+4472516.3,477,total_community,Human Microbiome Project (HMP),SRR060408,,19819907,6.8225E-05,45,65958248,terrestrial biome,human-associated habitat,mucus,human-oral
+4473174.3,713,total_community,Human Microbiome Project (HMP),SRR062029,,19819907,6.80776E-05,2,2937825,terrestrial biome,human-associated habitat,mucus,human-oral
+4472730.3,910,total_community,Human Microbiome Project (HMP),SRR061290,,19819907,6.76529E-05,2,2956265,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473663.3,480,total_community,Human Microbiome Project (HMP),SRR063708,,19819907,6.74602E-05,42,62258936,terrestrial biome,human-associated habitat,mucus,human-oral
+4517731.3,34,,Mice Frailty,Mouse_25.21_R2,,,6.73422E-05,6,8909723,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472524.3,495,total_community,Human Microbiome Project (HMP),SRR060416,,19819907,6.70296E-05,38,56691404,terrestrial biome,human-associated habitat,mucus,human-oral
+4473381.3,592,total_community,Human Microbiome Project (HMP),SRR062405,,19819907,6.65713E-05,8,12017184,terrestrial biome,human-associated habitat,mucus,human-oral
+4472198.3,371,total_community,Human Microbiome Project (HMP),SRR059424,,19819907,6.63584E-05,39,58771752,terrestrial biome,human-associated habitat,feces,human-gut
+4473403.3,308,total_community,Human Microbiome Project (HMP),SRR062427,,19819907,6.49984E-05,37,56924497,terrestrial biome,human-associated habitat,feces,human-gut
+4472226.3,655,total_community,Human Microbiome Project (HMP),SRR059482,,19819907,6.46805E-05,4,6184240,terrestrial biome,human-associated habitat,mucus,human-oral
+4466149.3,309,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,1264,,,6.45701E-05,36,55753402,terrestrial biome,human-associated habitat,feces,human-gut
+4466194.3,307,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,2303,,,6.37204E-05,53,83175902,terrestrial biome,human-associated habitat,feces,human-gut
+4472941.3,502,total_community,Human Microbiome Project (HMP),SRR061501,,19819907,6.2078E-05,30,48326280,terrestrial biome,human-associated habitat,mucus,human-oral
+4473553.3,641,total_community,Human Microbiome Project (HMP),SRR063482,,19819907,6.1054E-05,4,6551576,terrestrial biome,human-associated habitat,mucus,human-oral
+4473556.3,644,total_community,Human Microbiome Project (HMP),SRR063485,,19819907,6.0229E-05,4,6641322,terrestrial biome,human-associated habitat,mucus,human-oral
+4472284.3,829,total_community,Human Microbiome Project (HMP),SRR059837,,19819907,6.00965E-05,2,3327980,terrestrial biome,human-associated habitat,organic material,human-skin
+4473472.3,508,total_community,Human Microbiome Project (HMP),SRR062498,,19819907,5.97626E-05,24,40158909,terrestrial biome,human-associated habitat,mucus,human-oral
+4472733.3,840,total_community,Human Microbiome Project (HMP),SRR061293,,19819907,5.856E-05,6,10245907,terrestrial biome,human-associated habitat,organic material,human-skin
+4472606.3,511,total_community,Human Microbiome Project (HMP),SRR061160,,19819907,5.78641E-05,26,44932902,terrestrial biome,human-associated habitat,mucus,human-oral
+4478468.3,823,total_community,Human Microbiome Project (HMP),SRR062022,,19819907,5.76438E-05,4,6939166,terrestrial biome,human-associated habitat,organic material,human-skin
+4473429.3,646,total_community,Human Microbiome Project (HMP),SRR062453,,19819907,5.75707E-05,4,6947983,terrestrial biome,human-associated habitat,mucus,human-oral
+4473195.3,577,total_community,Human Microbiome Project (HMP),SRR062050,,19819907,5.75343E-05,8,13904738,terrestrial biome,human-associated habitat,mucus,human-oral
+4472199.3,389,total_community,Human Microbiome Project (HMP),SRR059425,,19819907,5.685E-05,33,58047472,terrestrial biome,human-associated habitat,feces,human-gut
+4473392.3,599,total_community,Human Microbiome Project (HMP),SRR062416,,19819907,5.66533E-05,10,17651235,terrestrial biome,human-associated habitat,mucus,human-oral
+4473341.3,907,total_community,Human Microbiome Project (HMP),SRR062365,,19819907,5.65137E-05,4,7077924,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472605.3,505,total_community,Human Microbiome Project (HMP),SRR061159,,19819907,5.58631E-05,25,44752238,terrestrial biome,human-associated habitat,mucus,human-oral
+4478571.3,520,total_community,Human Microbiome Project (HMP),SRR062505,,19819907,5.5564E-05,22,39593974,terrestrial biome,human-associated habitat,mucus,human-oral
+4478428.3,535,total_community,Human Microbiome Project (HMP),SRR061695,,19819907,5.5473E-05,18,32448230,terrestrial biome,human-associated habitat,mucus,human-oral
+4473047.3,537,total_community,Human Microbiome Project (HMP),SRR061696,,19819907,5.48462E-05,16,29172491,terrestrial biome,human-associated habitat,mucus,human-oral
+4472831.3,853,total_community,Human Microbiome Project (HMP),SRR061391,,19819907,5.41126E-05,2,3695994,terrestrial biome,human-associated habitat,organic material,human-skin
+4466188.3,298,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,2195,,,5.40609E-05,61,112835636,terrestrial biome,human-associated habitat,feces,human-gut
+4472989.3,716,total_community,Human Microbiome Project (HMP),SRR061549,,19819907,5.38376E-05,2,3714875,terrestrial biome,human-associated habitat,mucus,human-oral
+4473589.3,550,total_community,Human Microbiome Project (HMP),SRR063518,,19819907,5.24233E-05,17,32428298,terrestrial biome,human-associated habitat,mucus,human-oral
+4472121.3,564,total_community,Human Microbiome Project (HMP),SRR059335,,19819907,5.20925E-05,14,26875254,terrestrial biome,human-associated habitat,mucus,human-oral
+4474351.3,353,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,3123,,,5.17068E-05,12,23207774,terrestrial biome,human-associated habitat,feces,human-gut
+4473396.3,562,total_community,Human Microbiome Project (HMP),SRR062420,,19819907,5.03995E-05,13,25793883,terrestrial biome,human-associated habitat,mucus,human-oral
+4494863.3,938,,Metagenomics data,M10_META,,,5.01702E-05,6,11959298,aquatic biome,wastewater treatment plant,activated sludge,wastewater|sludge
+4466148.3,299,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,1303,,,5.01674E-05,60,119599474,terrestrial biome,human-associated habitat,feces,human-gut
+4478529.3,310,total_community,Human Microbiome Project (HMP),SRR062376,,19819907,4.88511E-05,28,57317084,terrestrial biome,human-associated habitat,feces,human-gut
+4517708.3,37,,Mice Frailty,Mouse_11.7_R1,,,4.87723E-05,4,8201382,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472265.3,311,total_community,Human Microbiome Project (HMP),SRR059813,,19819907,4.87342E-05,29,59506524,terrestrial biome,human-associated habitat,feces,human-gut
+4472791.3,844,total_community,Human Microbiome Project (HMP),SRR061351,,19819907,4.78953E-05,6,12527328,terrestrial biome,human-associated habitat,organic material,human-skin
+4472816.3,835,total_community,Human Microbiome Project (HMP),SRR061376,,19819907,4.78573E-05,17,35522242,terrestrial biome,human-associated habitat,organic material,human-skin
+4472364.3,542,total_community,Human Microbiome Project (HMP),SRR059918,,19819907,4.77798E-05,14,29301098,terrestrial biome,human-associated habitat,mucus,human-oral
+4472942.3,530,total_community,Human Microbiome Project (HMP),SRR061502,,19819907,4.76436E-05,23,48275133,terrestrial biome,human-associated habitat,mucus,human-oral
+4472938.3,512,total_community,Human Microbiome Project (HMP),SRR061498,,19819907,4.75868E-05,23,48332742,terrestrial biome,human-associated habitat,mucus,human-oral
+4478607.3,812,total_community,Human Microbiome Project (HMP),SRR063533,,19819907,4.71571E-05,8,16964576,terrestrial biome,human-associated habitat,organic material,human-skin
+4517720.3,36,,Mice Frailty,Mouse_2.M13-Jul13_R1,,,4.58277E-05,4,8728351,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473474.3,516,total_community,Human Microbiome Project (HMP),SRR062500,,19819907,4.57962E-05,24,52406072,terrestrial biome,human-associated habitat,mucus,human-oral
+4473368.3,585,total_community,Human Microbiome Project (HMP),SRR062392,,19819907,4.53156E-05,8,17653966,terrestrial biome,human-associated habitat,mucus,human-oral
+4473359.3,531,total_community,Human Microbiome Project (HMP),SRR062383,,19819907,4.52042E-05,21,46455812,terrestrial biome,human-associated habitat,mucus,human-oral
+4473045.3,549,total_community,Human Microbiome Project (HMP),SRR061694,,19819907,4.36466E-05,14,32075808,terrestrial biome,human-associated habitat,mucus,human-oral
+4473263.3,657,total_community,Human Microbiome Project (HMP),SRR062285,,19819907,4.34496E-05,3,6904548,terrestrial biome,human-associated habitat,mucus,human-oral
+4472496.3,671,total_community,Human Microbiome Project (HMP),SRR060388,,19819907,4.24321E-05,2,4713411,terrestrial biome,human-associated habitat,mucus,human-oral
+4473229.3,720,total_community,Human Microbiome Project (HMP),SRR062084,,19819907,4.23003E-05,2,4728104,terrestrial biome,human-associated habitat,mucus,human-oral
+4478601.3,747,total_community,Human Microbiome Project (HMP),SRR063514,,19819907,4.16612E-05,1,2400317,terrestrial biome,human-associated habitat,mucus,human-oral
+4472964.3,603,total_community,Human Microbiome Project (HMP),SRR061524,,19819907,4.15061E-05,8,19274275,terrestrial biome,human-associated habitat,mucus,human-oral
+4508939.3,929,,EarlhamMetagenomes2012,002004_Nocton_Corn_GTTTCG_filtered_merged.fastq,,,4.13614E-05,7,16923988,Temperate broadleaf and mixed forest biome,farm,agricultural soil,soil
+4472845.3,842,total_community,Human Microbiome Project (HMP),SRR061405,,19819907,4.00275E-05,6,14989697,terrestrial biome,human-associated habitat,organic material,human-skin
+4473033.3,912,total_community,Human Microbiome Project (HMP),SRR061593,,19819907,3.9125E-05,2,5111827,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472911.3,852,total_community,Human Microbiome Project (HMP),SRR061471,,19819907,3.87923E-05,1,2577828,terrestrial biome,human-associated habitat,organic material,human-skin
+4473350.3,529,total_community,Human Microbiome Project (HMP),SRR062374,,19819907,3.8655E-05,18,46565772,terrestrial biome,human-associated habitat,mucus,human-oral
+4473077.3,803,total_community,Human Microbiome Project (HMP),SRR061922,,19819907,3.85299E-05,12,31144605,terrestrial biome,human-associated habitat,organic material,human-skin
+4473602.3,811,total_community,Human Microbiome Project (HMP),SRR063531,,19819907,3.83738E-05,7,18241612,terrestrial biome,human-associated habitat,organic material,human-skin
+4472372.3,533,total_community,Human Microbiome Project (HMP),SRR059926,,19819907,3.81013E-05,18,47242525,terrestrial biome,human-associated habitat,mucus,human-oral
+4472359.3,851,total_community,Human Microbiome Project (HMP),SRR059913,,19819907,3.7888E-05,1,2639356,terrestrial biome,human-associated habitat,organic material,human-skin
+4472443.3,532,total_community,Human Microbiome Project (HMP),SRR060120,,19819907,3.75343E-05,20,53284656,terrestrial biome,human-associated habitat,mucus,human-oral
+4517709.3,42,,Mice Frailty,Mouse_11.7_R2,,,3.65792E-05,3,8201382,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472120.3,584,total_community,Human Microbiome Project (HMP),SRR059334,,19819907,3.64811E-05,10,27411453,terrestrial biome,human-associated habitat,mucus,human-oral
+4472515.3,571,total_community,Human Microbiome Project (HMP),SRR060407,,19819907,3.598E-05,9,25013874,terrestrial biome,human-associated habitat,mucus,human-oral
+4478584.3,693,total_community,Human Microbiome Project (HMP),SRR063462,,19819907,3.5969E-05,2,5560350,terrestrial biome,human-associated habitat,mucus,human-oral
+4517721.3,41,,Mice Frailty,Mouse_2.M13-Jul13_R2,,,3.43708E-05,3,8728351,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472442.3,527,total_community,Human Microbiome Project (HMP),SRR060119,,19819907,3.43492E-05,18,52402951,terrestrial biome,human-associated habitat,mucus,human-oral
+4479944.3,35,,Sao Paulo Zoo Composting,Zoo Compost 2 (ZC2),,,3.37125E-05,1,2966260,Subtropical and temperate rainforests or woodlands,Zoological garden,compost,host-associated
+4473223.3,672,total_community,Human Microbiome Project (HMP),SRR062078,,19819907,3.34694E-05,2,5975614,terrestrial biome,human-associated habitat,mucus,human-oral
+4472530.3,673,total_community,Human Microbiome Project (HMP),SRR060422,,19819907,3.34204E-05,2,5984369,terrestrial biome,human-associated habitat,mucus,human-oral
+4473224.3,694,total_community,Human Microbiome Project (HMP),SRR062079,,19819907,3.27472E-05,2,6107384,terrestrial biome,human-associated habitat,mucus,human-oral
+4478481.3,724,total_community,Human Microbiome Project (HMP),SRR062062,,19819907,3.2191E-05,2,6212917,terrestrial biome,human-associated habitat,mucus,human-oral
+4472457.3,534,total_community,Human Microbiome Project (HMP),SRR060156,,19819907,3.20781E-05,18,56112966,terrestrial biome,human-associated habitat,mucus,human-oral
+4517716.3,38,,Mice Frailty,Mouse_18.M11-Aug14_R1,,,3.17056E-05,4,12616066,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4517718.3,39,,Mice Frailty,Mouse_19.M11-Aug15_R1,,,3.0779E-05,3,9746920,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472365.3,598,total_community,Human Microbiome Project (HMP),SRR059919,,19819907,3.05152E-05,9,29493482,terrestrial biome,human-associated habitat,mucus,human-oral
+4473305.3,703,total_community,Human Microbiome Project (HMP),SRR062327,,19819907,3.04399E-05,4,13140667,terrestrial biome,human-associated habitat,mucus,human-oral
+4473172.3,656,total_community,Human Microbiome Project (HMP),SRR062027,,19819907,3.03896E-05,4,13162416,terrestrial biome,human-associated habitat,mucus,human-oral
+4478513.3,705,total_community,Human Microbiome Project (HMP),SRR062326,,19819907,3.03413E-05,4,13183352,terrestrial biome,human-associated habitat,mucus,human-oral
+4473308.3,587,total_community,Human Microbiome Project (HMP),SRR062330,,19819907,3.01243E-05,10,33195760,terrestrial biome,human-associated habitat,mucus,human-oral
+4473323.3,540,total_community,Human Microbiome Project (HMP),SRR062347,,19819907,2.90038E-05,18,62060903,terrestrial biome,human-associated habitat,mucus,human-oral
+4473374.3,539,total_community,Human Microbiome Project (HMP),SRR062398,,19819907,2.88857E-05,18,62314532,terrestrial biome,human-associated habitat,mucus,human-oral
+4473424.3,691,total_community,Human Microbiome Project (HMP),SRR062448,,19819907,2.87804E-05,2,6949175,terrestrial biome,human-associated habitat,mucus,human-oral
+4473292.3,695,total_community,Human Microbiome Project (HMP),SRR062314,,19819907,2.87178E-05,2,6964311,terrestrial biome,human-associated habitat,mucus,human-oral
+4472380.3,648,total_community,Human Microbiome Project (HMP),SRR059956,,19819907,2.86848E-05,4,13944689,terrestrial biome,human-associated habitat,mucus,human-oral
+4474355.3,351,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,3121,,,2.83573E-05,7,24684997,terrestrial biome,human-associated habitat,feces,human-gut
+4473708.3,875,total_community,Human Microbiome Project (HMP),SRR064530,,19819907,2.79379E-05,47,168230029,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473102.3,828,total_community,Human Microbiome Project (HMP),SRR061947,,19819907,2.77677E-05,3,10803920,terrestrial biome,human-associated habitat,organic material,human-skin
+4478525.3,908,total_community,Human Microbiome Project (HMP),SRR062364,,19819907,2.77199E-05,2,7215030,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472810.3,854,total_community,Human Microbiome Project (HMP),SRR061370,,19819907,2.73718E-05,1,3653390,terrestrial biome,human-associated habitat,organic material,human-skin
+4472373.3,544,total_community,Human Microbiome Project (HMP),SRR059927,,19819907,2.7332E-05,13,47563321,terrestrial biome,human-associated habitat,mucus,human-oral
+4472713.3,915,total_community,Human Microbiome Project (HMP),SRR061273,,19819907,2.73302E-05,1,3658956,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4472514.3,595,total_community,Human Microbiome Project (HMP),SRR060406,,19819907,2.73221E-05,7,25620245,terrestrial biome,human-associated habitat,mucus,human-oral
+4472374.3,523,total_community,Human Microbiome Project (HMP),SRR059928,,19819907,2.72731E-05,19,69665685,terrestrial biome,human-associated habitat,mucus,human-oral
+4478530.3,596,total_community,Human Microbiome Project (HMP),SRR062379,,19819907,2.61734E-05,8,30565363,terrestrial biome,human-associated habitat,mucus,human-oral
+4473483.3,553,total_community,Human Microbiome Project (HMP),SRR062509,,19819907,2.48057E-05,13,52407234,terrestrial biome,human-associated habitat,mucus,human-oral
+4473714.3,344,total_community,Human Microbiome Project (HMP),SRR066418,,19819907,2.46637E-05,6,24327256,terrestrial biome,human-associated habitat,feces,human-gut
+4478532.3,569,total_community,Human Microbiome Project (HMP),SRR062385,,19819907,2.45576E-05,12,48864659,terrestrial biome,human-associated habitat,mucus,human-oral
+4472444.3,602,total_community,Human Microbiome Project (HMP),SRR060121,,19819907,2.45252E-05,8,32619487,terrestrial biome,human-associated habitat,mucus,human-oral
+4478602.3,611,total_community,Human Microbiome Project (HMP),SRR063517,,19819907,2.42988E-05,8,32923466,terrestrial biome,human-associated habitat,mucus,human-oral
+4473401.3,600,total_community,Human Microbiome Project (HMP),SRR062425,,19819907,2.42062E-05,8,33049426,terrestrial biome,human-associated habitat,mucus,human-oral
+4472207.3,554,total_community,Human Microbiome Project (HMP),SRR059433,,19819907,2.39108E-05,13,54368744,terrestrial biome,human-associated habitat,mucus,human-oral
+4472431.3,546,total_community,Human Microbiome Project (HMP),SRR060075,,19819907,2.37943E-05,14,58837566,terrestrial biome,human-associated habitat,mucus,human-oral
+4517717.3,40,,Mice Frailty,Mouse_18.M11-Aug14_R2,,,2.37792E-05,3,12616066,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4473481.3,555,total_community,Human Microbiome Project (HMP),SRR062507,,19819907,2.32276E-05,13,55967985,terrestrial biome,human-associated habitat,mucus,human-oral
+4472171.3,704,total_community,Human Microbiome Project (HMP),SRR059385,,19819907,2.31134E-05,2,8652993,terrestrial biome,human-associated habitat,mucus,human-oral
+4472385.3,605,total_community,Human Microbiome Project (HMP),SRR059965,,19819907,2.30624E-05,8,34688551,terrestrial biome,human-associated habitat,mucus,human-oral
+4473450.3,567,total_community,Human Microbiome Project (HMP),SRR062474,,19819907,2.304E-05,10,43402737,terrestrial biome,human-associated habitat,mucus,human-oral
+4472940.3,556,total_community,Human Microbiome Project (HMP),SRR061500,,19819907,2.28614E-05,11,48115937,terrestrial biome,human-associated habitat,mucus,human-oral
+4472346.3,383,total_community,Human Microbiome Project (HMP),SRR059900,,19819907,2.27101E-05,17,74856711,terrestrial biome,human-associated habitat,feces,human-gut
+4472378.3,568,total_community,Human Microbiome Project (HMP),SRR059954,,19819907,2.2633E-05,12,53019962,terrestrial biome,human-associated habitat,mucus,human-oral
+4473136.3,722,total_community,Human Microbiome Project (HMP),SRR061981,,19819907,2.23737E-05,2,8939058,terrestrial biome,human-associated habitat,mucus,human-oral
+4472492.3,591,total_community,Human Microbiome Project (HMP),SRR060384,,19819907,2.16671E-05,10,46152947,terrestrial biome,human-associated habitat,mucus,human-oral
+4478518.3,692,total_community,Human Microbiome Project (HMP),SRR062343,,19819907,2.16279E-05,2,9247334,terrestrial biome,human-associated habitat,mucus,human-oral
+4473235.3,818,total_community,Human Microbiome Project (HMP),SRR062090,,19819907,2.11707E-05,5,23617528,terrestrial biome,human-associated habitat,organic material,human-skin
+4473011.3,590,total_community,Human Microbiome Project (HMP),SRR061571,,19819907,2.10521E-05,9,42750981,terrestrial biome,human-associated habitat,mucus,human-oral
+4472445.3,630,total_community,Human Microbiome Project (HMP),SRR060122,,19819907,2.09178E-05,7,33464351,terrestrial biome,human-associated habitat,mucus,human-oral
+4472154.3,738,total_community,Human Microbiome Project (HMP),SRR059368,,19819907,2.05661E-05,2,9724763,terrestrial biome,human-associated habitat,mucus,human-oral
+4472731.3,841,total_community,Human Microbiome Project (HMP),SRR061291,,19819907,2.02435E-05,2,9879716,terrestrial biome,human-associated habitat,organic material,human-skin
+4472375.3,545,total_community,Human Microbiome Project (HMP),SRR059929,,19819907,1.97923E-05,14,70734403,terrestrial biome,human-associated habitat,mucus,human-oral
+4473332.3,597,total_community,Human Microbiome Project (HMP),SRR062356,,19819907,1.96532E-05,8,40705848,terrestrial biome,human-associated habitat,mucus,human-oral
+4473436.3,336,total_community,Human Microbiome Project (HMP),SRR062460,,19819907,1.95785E-05,9,45968724,terrestrial biome,human-associated habitat,feces,human-gut
+4472590.3,313,total_community,Human Microbiome Project (HMP),SRR061144,,19819907,1.94407E-05,14,72014034,terrestrial biome,human-associated habitat,feces,human-gut
+4472501.3,902,total_community,Human Microbiome Project (HMP),SRR060393,,19819907,1.93158E-05,2,10354193,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4473330.3,616,total_community,Human Microbiome Project (HMP),SRR062354,,19819907,1.91642E-05,6,31308445,terrestrial biome,human-associated habitat,mucus,human-oral
+4478438.3,816,total_community,Human Microbiome Project (HMP),SRR061921,,19819907,1.90748E-05,6,31455165,terrestrial biome,human-associated habitat,organic material,human-skin
+4473477.3,725,total_community,Human Microbiome Project (HMP),SRR062503,,19819907,1.89002E-05,8,42327702,terrestrial biome,human-associated habitat,mucus,human-oral
+4478503.3,620,total_community,Human Microbiome Project (HMP),SRR062295,,19819907,1.88983E-05,8,42331883,terrestrial biome,human-associated habitat,mucus,human-oral
+4478454.3,670,total_community,Human Microbiome Project (HMP),SRR061970,,19819907,1.81118E-05,2,11042518,terrestrial biome,human-associated habitat,mucus,human-oral
+4473366.3,330,total_community,Human Microbiome Project (HMP),SRR062390,,19819907,1.7996E-05,8,44454274,terrestrial biome,human-associated habitat,feces,human-gut
+4473027.3,666,total_community,Human Microbiome Project (HMP),SRR061587,,19819907,1.79527E-05,10,55701863,terrestrial biome,human-associated habitat,mucus,human-oral
+4472329.3,566,total_community,Human Microbiome Project (HMP),SRR059883,,19819907,1.75631E-05,10,56937653,terrestrial biome,human-associated habitat,mucus,human-oral
+4472347.3,331,total_community,Human Microbiome Project (HMP),SRR059901,,19819907,1.75082E-05,13,74250819,terrestrial biome,human-associated habitat,feces,human-gut
+4473253.3,830,total_community,Human Microbiome Project (HMP),SRR062108,,19819907,1.75068E-05,2,11424149,terrestrial biome,human-associated habitat,organic material,human-skin
+4472295.3,573,total_community,Human Microbiome Project (HMP),SRR059847,,19819907,1.73313E-05,10,57699081,terrestrial biome,human-associated habitat,mucus,human-oral
+4478446.3,659,total_community,Human Microbiome Project (HMP),SRR061945,,19819907,1.71932E-05,4,23264947,terrestrial biome,human-associated habitat,mucus,human-oral
+4472293.3,581,total_community,Human Microbiome Project (HMP),SRR059846,,19819907,1.71174E-05,10,58419961,terrestrial biome,human-associated habitat,mucus,human-oral
+4472645.3,325,total_community,Human Microbiome Project (HMP),SRR061199,,19819907,1.68301E-05,8,47533921,terrestrial biome,human-associated habitat,feces,human-gut
+4478568.3,627,total_community,Human Microbiome Project (HMP),SRR062496,,19819907,1.67266E-05,7,41849399,terrestrial biome,human-associated habitat,mucus,human-oral
+4478535.3,678,total_community,Human Microbiome Project (HMP),SRR062394,,19819907,1.66749E-05,2,11994106,terrestrial biome,human-associated habitat,mucus,human-oral
+4472591.3,319,total_community,Human Microbiome Project (HMP),SRR061145,,19819907,1.66014E-05,12,72283022,terrestrial biome,human-associated habitat,feces,human-gut
+4478441.3,321,total_community,Human Microbiome Project (HMP),SRR061930,,19819907,1.61075E-05,11,68291245,terrestrial biome,human-associated habitat,feces,human-gut
+4472425.3,314,total_community,Human Microbiome Project (HMP),SRR060039,,19819907,1.57217E-05,12,76327690,terrestrial biome,human-associated habitat,feces,human-gut
+4478522.3,322,total_community,Human Microbiome Project (HMP),SRR062355,,19819907,1.5529E-05,10,64395476,terrestrial biome,human-associated habitat,feces,human-gut
+4472990.3,560,total_community,Human Microbiome Project (HMP),SRR061550,,19819907,1.54837E-05,10,64584146,terrestrial biome,human-associated habitat,mucus,human-oral
+4472648.3,594,total_community,Human Microbiome Project (HMP),SRR061202,,19819907,1.52152E-05,8,52579088,terrestrial biome,human-associated habitat,mucus,human-oral
+4472381.3,715,total_community,Human Microbiome Project (HMP),SRR059957,,19819907,1.48345E-05,2,13482108,terrestrial biome,human-associated habitat,mucus,human-oral
+4472424.3,887,total_community,Human Microbiome Project (HMP),SRR060038,,19819907,1.40836E-05,14,99406538,terrestrial biome,human-associated habitat,mucus,human-vaginal
+4478570.3,612,total_community,Human Microbiome Project (HMP),SRR062502,,19819907,1.40394E-05,8,56982331,terrestrial biome,human-associated habitat,mucus,human-oral
+4472760.3,635,total_community,Human Microbiome Project (HMP),SRR061320,,19819907,1.36695E-05,4,29262173,terrestrial biome,human-associated habitat,mucus,human-oral
+4472734.3,728,total_community,Human Microbiome Project (HMP),SRR061294,,19819907,1.33906E-05,2,14935861,terrestrial biome,human-associated habitat,mucus,human-oral
+4473317.3,328,total_community,Human Microbiome Project (HMP),SRR062341,,19819907,1.32917E-05,6,45140940,terrestrial biome,human-associated habitat,feces,human-gut
+4472664.3,326,total_community,Human Microbiome Project (HMP),SRR061218,,19819907,1.32856E-05,8,60215512,terrestrial biome,human-associated habitat,feces,human-gut
+4473135.3,751,total_community,Human Microbiome Project (HMP),SRR061980,,19819907,1.31655E-05,4,30382513,terrestrial biome,human-associated habitat,mucus,human-oral
+4472742.3,734,total_community,Human Microbiome Project (HMP),SRR061302,,19819907,1.30822E-05,2,15287914,terrestrial biome,human-associated habitat,mucus,human-oral
+4472345.3,647,total_community,Human Microbiome Project (HMP),SRR059899,,19819907,1.30626E-05,4,30621848,terrestrial biome,human-associated habitat,mucus,human-oral
+4473408.3,650,total_community,Human Microbiome Project (HMP),SRR062432,,19819907,1.2854E-05,4,31118815,terrestrial biome,human-associated habitat,mucus,human-oral
+4472452.3,579,total_community,Human Microbiome Project (HMP),SRR060142,,19819907,1.25756E-05,10,79518980,terrestrial biome,human-associated habitat,mucus,human-oral
+4473326.3,324,total_community,Human Microbiome Project (HMP),SRR062350,,19819907,1.23527E-05,8,64763235,terrestrial biome,human-associated habitat,feces,human-gut
+4472409.3,583,total_community,Human Microbiome Project (HMP),SRR060007,,19819907,1.23099E-05,12,97482874,terrestrial biome,human-associated habitat,mucus,human-oral
+4472286.3,625,total_community,Human Microbiome Project (HMP),SRR059839,,19819907,1.21984E-05,6,49186919,terrestrial biome,human-associated habitat,mucus,human-oral
+4473098.3,855,total_community,Human Microbiome Project (HMP),SRR061943,,19819907,1.2157E-05,1,8225740,terrestrial biome,human-associated habitat,organic material,human-skin
+4472270.3,316,total_community,Human Microbiome Project (HMP),SRR059818,,19819907,1.20972E-05,12,99196410,terrestrial biome,human-associated habitat,feces,human-gut
+4472197.3,367,total_community,Human Microbiome Project (HMP),SRR059423,,19819907,1.19851E-05,7,58405786,terrestrial biome,human-associated habitat,feces,human-gut
+4472933.3,609,total_community,Human Microbiome Project (HMP),SRR061493,,19819907,1.17661E-05,6,50993844,terrestrial biome,human-associated habitat,mucus,human-oral
+4508940.3,930,,EarlhamMetagenomes2012,002005_Nocton_Soy_GAGTGG_filtered_merged.fastq,,,1.1466E-05,2,17442824,Temperate broadleaf and mixed forest biome,farm,agricultural soil,soil
+4478449.3,642,total_community,Human Microbiome Project (HMP),SRR061955,,19819907,1.14058E-05,4,35069779,terrestrial biome,human-associated habitat,mucus,human-oral
+4473111.3,651,total_community,Human Microbiome Project (HMP),SRR061956,,19819907,1.13255E-05,4,35318430,terrestrial biome,human-associated habitat,mucus,human-oral
+4473274.3,700,total_community,Human Microbiome Project (HMP),SRR062296,,19819907,1.1112E-05,4,35996992,terrestrial biome,human-associated habitat,mucus,human-oral
+4473006.3,658,total_community,Human Microbiome Project (HMP),SRR061566,,19819907,1.09076E-05,5,45839394,terrestrial biome,human-associated habitat,mucus,human-oral
+4472384.3,661,total_community,Human Microbiome Project (HMP),SRR059964,,19819907,1.088E-05,4,36764622,terrestrial biome,human-associated habitat,mucus,human-oral
+4473315.3,757,total_community,Human Microbiome Project (HMP),SRR062339,,19819907,1.0749E-05,1,9303190,terrestrial biome,human-associated habitat,mucus,human-oral
+4473103.3,847,total_community,Human Microbiome Project (HMP),SRR061948,,19819907,1.07193E-05,2,18657880,terrestrial biome,human-associated habitat,organic material,human-skin
+4473554.3,327,total_community,Human Microbiome Project (HMP),SRR063483,,19819907,1.06497E-05,6,56339738,terrestrial biome,human-associated habitat,feces,human-gut
+4472206.3,626,total_community,Human Microbiome Project (HMP),SRR059432,,19819907,1.06371E-05,6,56406231,terrestrial biome,human-associated habitat,mucus,human-oral
+4472155.3,744,total_community,Human Microbiome Project (HMP),SRR059369,,19819907,1.0595E-05,1,9438416,terrestrial biome,human-associated habitat,mucus,human-oral
+4517719.3,46,,Mice Frailty,Mouse_19.M11-Aug15_R2,,,1.02597E-05,1,9746920,terrestrial biome,mammalia-associated habitat,feces,host-associated
+4472698.3,664,total_community,Human Microbiome Project (HMP),SRR061252,,19819907,9.96992E-06,4,40120676,terrestrial biome,human-associated habitat,mucus,human-oral
+4473360.3,676,total_community,Human Microbiome Project (HMP),SRR062384,,19819907,9.7868E-06,4,40871365,terrestrial biome,human-associated habitat,mucus,human-oral
+4478521.3,660,total_community,Human Microbiome Project (HMP),SRR062352,,19819907,9.68439E-06,4,41303596,terrestrial biome,human-associated habitat,mucus,human-oral
+4472533.3,696,total_community,Human Microbiome Project (HMP),SRR060425,,19819907,9.48875E-06,4,42155191,terrestrial biome,human-associated habitat,mucus,human-oral
+4473163.3,826,total_community,Human Microbiome Project (HMP),SRR062018,,19819907,9.42319E-06,3,31836369,terrestrial biome,human-associated habitat,organic material,human-skin
+4472348.3,615,total_community,Human Microbiome Project (HMP),SRR059902,,19819907,9.41504E-06,6,63727820,terrestrial biome,human-associated habitat,mucus,human-oral
+4472305.3,628,total_community,Human Microbiome Project (HMP),SRR059857,,19819907,9.17337E-06,6,65406680,terrestrial biome,human-associated habitat,mucus,human-oral
+4472994.3,621,total_community,Human Microbiome Project (HMP),SRR061554,,19819907,9.00525E-06,5,55523143,terrestrial biome,human-associated habitat,mucus,human-oral
+4472996.3,339,total_community,Human Microbiome Project (HMP),SRR061556,,19819907,8.79878E-06,6,68191256,terrestrial biome,human-associated habitat,feces,human-gut
+4473236.3,843,total_community,Human Microbiome Project (HMP),SRR062091,,19819907,8.54603E-06,2,23402681,terrestrial biome,human-associated habitat,organic material,human-skin
+4472129.3,334,total_community,Human Microbiome Project (HMP),SRR059343,,19819907,8.5271E-06,6,70363917,terrestrial biome,human-associated habitat,feces,human-gut
+4473101.3,689,total_community,Human Microbiome Project (HMP),SRR061946,,19819907,8.51322E-06,2,23492862,terrestrial biome,human-associated habitat,mucus,human-oral
+4473380.3,364,total_community,Human Microbiome Project (HMP),SRR062404,,19819907,8.39473E-06,4,47648928,terrestrial biome,human-associated habitat,feces,human-gut
+4472627.3,348,total_community,Human Microbiome Project (HMP),SRR061181,,19819907,8.30411E-06,4,48168935,terrestrial biome,human-associated habitat,feces,human-gut
+4473284.3,634,total_community,Human Microbiome Project (HMP),SRR062306,,19819907,8.20635E-06,4,48742719,terrestrial biome,human-associated habitat,mucus,human-oral
+4469858.3,337,,Host Remodeling of the Gut Microbiome and Metabolic Changes during Pregnancy,2264_new,,,8.14516E-06,5,61386167,terrestrial biome,human-associated habitat,feces,human-gut
+4472764.3,662,total_community,Human Microbiome Project (HMP),SRR061324,,19819907,8.08614E-06,4,49467388,terrestrial biome,human-associated habitat,mucus,human-oral
+4473432.3,653,total_community,Human Microbiome Project (HMP),SRR062456,,19819907,7.94066E-06,4,50373667,terrestrial biome,human-associated habitat,mucus,human-oral
+4472304.3,637,total_community,Human Microbiome Project (HMP),SRR059856,,19819907,7.86473E-06,4,50860001,terrestrial biome,human-associated habitat,mucus,human-oral
+4474251.3,45,,Project for: Sample_P10,Sample_P10,,,7.43697E-06,2,26892656,organism-associated habitat & animal-associated habitat,organism-associated habitat & animal-associated habitat,organism-associated habitat & animal-associated habitat,host-associated
+4472657.3,632,total_community,Human Microbiome Project (HMP),SRR061211,,19819907,7.33509E-06,4,54532398,terrestrial biome,human-associated habitat,mucus,human-oral
+4472993.3,638,total_community,Human Microbiome Project (HMP),SRR061553,,19819907,7.15549E-06,4,55901121,terrestrial biome,human-associated habitat,mucus,human-oral
+4472328.3,643,total_community,Human Microbiome Project (HMP),SRR059882,,19819907,7.09819E-06,4,56352397,terrestrial biome,human-associated habitat,mucus,human-oral
+4472225.3,669,total_community,Human Microbiome Project (HMP),SRR059481,,19819907,7.05765E-06,4,56676119,terrestrial biome,human-associated habitat,mucus,human-oral
+4478591.3,343,total_community,Human Microbiome Project (HMP),SRR063484,,19819907,7.02325E-06,4,56953719,terrestrial biome,human-associated habitat,feces,human-gut
+4472196.3,358,total_community,Human Microbiome Project (HMP),SRR059422,,19819907,7.00421E-06,4,57108491,terrestrial biome,human-associated habitat,feces,human-gut
+4472428.3,576,total_community,Human Microbiome Project (HMP),SRR060042,,19819907,6.87033E-06,8,116442744,terrestrial biome,human-associated habitat,mucus,human-oral
+4478643.3,601,total_community,Human Microbiome Project (HMP),SRR066417,,19819907,6.74776E-06,8,118557946,terrestrial biome,human-associated habitat,mucus,human-oral
+4472722.3,685,total_community,Human Microbiome Project (HMP),SRR061282,,19819907,6.74726E-06,2,29641641,terrestrial biome,human-associated habitat,mucus,human-oral
+4473127.3,663,total_community,Human Microbiome Project (HMP),SRR061972,,19819907,6.50244E-06,4,61515387,terrestrial biome,human-associated habitat,mucus,human-oral
+4472493.3,667,total_community,Human Microbiome Project (HMP),SRR060385,,19819907,6.48567E-06,3,46255849,terrestrial biome,human-associated habitat,mucus,human-oral
+4472806.3,679,total_community,Human Microbiome Project (HMP),SRR061366,,19819907,6.41001E-06,2,31201180,terrestrial biome,human-associated habitat,mucus,human-oral
+4473162.3,850,total_community,Human Microbiome Project (HMP),SRR062017,,19819907,6.30511E-06,2,31720308,terrestrial biome,human-associated habitat,organic material,human-skin
+4478540.3,683,total_community,Human Microbiome Project (HMP),SRR062409,,19819907,6.30363E-06,2,31727727,terrestrial biome,human-associated habitat,mucus,human-oral
+4473574.3,341,total_community,Human Microbiome Project (HMP),SRR063503,,19819907,6.18223E-06,4,64701609,terrestrial biome,human-associated habitat,feces,human-gut
+4472633.3,363,total_community,Human Microbiome Project (HMP),SRR061187,,19819907,6.15712E-06,2,32482723,terrestrial biome,human-associated habitat,feces,human-gut
+4472988.3,631,total_community,Human Microbiome Project (HMP),SRR061548,,19819907,6.14786E-06,4,65063275,terrestrial biome,human-associated habitat,mucus,human-oral
+4472638.3,718,total_community,Human Microbiome Project (HMP),SRR061192,,19819907,6.12924E-06,2,32630461,terrestrial biome,human-associated habitat,mucus,human-oral
+4473502.3,681,total_community,Human Microbiome Project (HMP),SRR062528,,19819907,6.08635E-06,2,32860406,terrestrial biome,human-associated habitat,mucus,human-oral
+4472250.3,346,total_community,Human Microbiome Project (HMP),SRR059506,,19819907,5.95817E-06,4,67134699,terrestrial biome,human-associated habitat,feces,human-gut
+4472924.3,349,total_community,Human Microbiome Project (HMP),SRR061484,,19819907,5.89959E-06,3,50850965,terrestrial biome,human-associated habitat,feces,human-gut
+4472954.3,654,total_community,Human Microbiome Project (HMP),SRR061514,,19819907,5.86634E-06,3,51139252,terrestrial biome,human-associated habitat,mucus,human-oral
+4472128.3,356,total_community,Human Microbiome Project (HMP),SRR059342,,19819907,5.67825E-06,4,70444267,terrestrial biome,human-associated habitat,feces,human-gut
+4472809.3,839,total_community,Human Microbiome Project (HMP),SRR061369,,19819907,5.60102E-06,2,35707810,terrestrial biome,human-associated habitat,organic material,human-skin
+4472752.3,730,total_community,Human Microbiome Project (HMP),SRR061312,,19819907,5.42186E-06,2,36887739,terrestrial biome,human-associated habitat,mucus,human-oral
+4472458.3,702,total_community,Human Microbiome Project (HMP),SRR060350,,19819907,5.1192E-06,2,39068589,terrestrial biome,human-associated habitat,mucus,human-oral
+4472313.3,674,total_community,Human Microbiome Project (HMP),SRR059866,,19819907,4.88404E-06,2,40949677,terrestrial biome,human-associated habitat,mucus,human-oral
+4478524.3,682,total_community,Human Microbiome Project (HMP),SRR062361,,19819907,4.82608E-06,2,41441537,terrestrial biome,human-associated habitat,mucus,human-oral
+4472532.3,717,total_community,Human Microbiome Project (HMP),SRR060424,,19819907,4.80138E-06,2,41654711,terrestrial biome,human-associated habitat,mucus,human-oral
+4478569.3,727,total_community,Human Microbiome Project (HMP),SRR062499,,19819907,4.79139E-06,2,41741508,terrestrial biome,human-associated habitat,mucus,human-oral
+4478478.3,708,total_community,Human Microbiome Project (HMP),SRR062052,,19819907,4.78484E-06,2,41798715,terrestrial biome,human-associated habitat,mucus,human-oral
+4472886.3,740,total_community,Human Microbiome Project (HMP),SRR061446,,19819907,4.77591E-06,2,41876799,terrestrial biome,human-associated habitat,mucus,human-oral
+4472408.3,350,total_community,Human Microbiome Project (HMP),SRR060006,,19819907,4.75393E-06,4,84140950,terrestrial biome,human-associated habitat,feces,human-gut
+4473503.3,719,total_community,Human Microbiome Project (HMP),SRR062529,,19819907,4.70935E-06,2,42468746,terrestrial biome,human-associated habitat,mucus,human-oral
+4472759.3,739,total_community,Human Microbiome Project (HMP),SRR061319,,19819907,4.64769E-06,2,43032176,terrestrial biome,human-associated habitat,mucus,human-oral
+4473451.3,698,total_community,Human Microbiome Project (HMP),SRR062475,,19819907,4.56447E-06,2,43816658,terrestrial biome,human-associated habitat,mucus,human-oral
+4478509.3,688,total_community,Human Microbiome Project (HMP),SRR062313,,19819907,4.50688E-06,2,44376564,terrestrial biome,human-associated habitat,mucus,human-oral
+4472798.3,729,total_community,Human Microbiome Project (HMP),SRR061358,,19819907,4.48225E-06,2,44620495,terrestrial biome,human-associated habitat,mucus,human-oral
+4472767.3,706,total_community,Human Microbiome Project (HMP),SRR061327,,19819907,4.41559E-06,2,45294038,terrestrial biome,human-associated habitat,mucus,human-oral
+4473002.3,686,total_community,Human Microbiome Project (HMP),SRR061562,,19819907,4.38343E-06,2,45626338,terrestrial biome,human-associated habitat,mucus,human-oral
+4472229.3,721,total_community,Human Microbiome Project (HMP),SRR059485,,19819907,4.35215E-06,2,45954266,terrestrial biome,human-associated habitat,mucus,human-oral
+4472112.3,752,total_community,Human Microbiome Project (HMP),SRR059326,,19819907,4.3463E-06,1,23008058,terrestrial biome,human-associated habitat,mucus,human-oral
+4473409.3,714,total_community,Human Microbiome Project (HMP),SRR062433,,19819907,4.33856E-06,2,46098218,terrestrial biome,human-associated habitat,mucus,human-oral
+4472558.3,677,total_community,Human Microbiome Project (HMP),SRR060456,,19819907,4.3135E-06,2,46366062,terrestrial biome,human-associated habitat,mucus,human-oral
+4472113.3,746,total_community,Human Microbiome Project (HMP),SRR059327,,19819907,4.26748E-06,1,23433027,terrestrial biome,human-associated habitat,mucus,human-oral
+4472782.3,736,total_community,Human Microbiome Project (HMP),SRR061342,,19819907,4.26431E-06,2,46900870,terrestrial biome,human-associated habitat,mucus,human-oral
+4472336.3,368,total_community,Human Microbiome Project (HMP),SRR059890,,19819907,4.20241E-06,3,71387656,terrestrial biome,human-associated habitat,feces,human-gut
+4473286.3,687,total_community,Human Microbiome Project (HMP),SRR062308,,19819907,4.11563E-06,2,48595281,terrestrial biome,human-associated habitat,mucus,human-oral
+4472285.3,754,total_community,Human Microbiome Project (HMP),SRR059838,,19819907,4.05129E-06,2,49366985,terrestrial biome,human-associated habitat,mucus,human-oral
+4473095.3,737,total_community,Human Microbiome Project (HMP),SRR061940,,19819907,3.99521E-06,2,50059959,terrestrial biome,human-associated habitat,mucus,human-oral
+4473356.3,709,total_community,Human Microbiome Project (HMP),SRR062380,,19819907,3.95932E-06,2,50513713,terrestrial biome,human-associated habitat,mucus,human-oral
+4472926.3,380,total_community,Human Microbiome Project (HMP),SRR061486,,19819907,3.93727E-06,2,50796659,terrestrial biome,human-associated habitat,feces,human-gut
+4472927.3,680,total_community,Human Microbiome Project (HMP),SRR061487,,19819907,3.9359E-06,2,50814304,terrestrial biome,human-associated habitat,mucus,human-oral
+4454380.3,47,,Project for: LO_Seq,LO_Seq,,,3.88662E-06,1,25729279,animal-associated habitat,animal-associated habitat,animal-associated habitat,host-associated
+4472681.3,379,total_community,Human Microbiome Project (HMP),SRR061235,,19819907,3.68155E-06,2,54324907,terrestrial biome,human-associated habitat,feces,human-gut
+4472659.3,723,total_community,Human Microbiome Project (HMP),SRR061213,,19819907,3.61498E-06,2,55325292,terrestrial biome,human-associated habitat,mucus,human-oral
+4472660.3,690,total_community,Human Microbiome Project (HMP),SRR061214,,19819907,3.59353E-06,2,55655639,terrestrial biome,human-associated habitat,mucus,human-oral
+4478421.3,735,total_community,Human Microbiome Project (HMP),SRR061585,,19819907,3.56225E-06,2,56144216,terrestrial biome,human-associated habitat,mucus,human-oral
+4472689.3,684,total_community,Human Microbiome Project (HMP),SRR061243,,19819907,3.55624E-06,2,56239243,terrestrial biome,human-associated habitat,mucus,human-oral
+4472719.3,753,total_community,Human Microbiome Project (HMP),SRR061279,,19819907,3.53907E-06,2,56512027,terrestrial biome,human-associated habitat,mucus,human-oral
+4478422.3,733,total_community,Human Microbiome Project (HMP),SRR061588,,19819907,3.52594E-06,2,56722453,terrestrial biome,human-associated habitat,mucus,human-oral
+4472224.3,741,total_community,Human Microbiome Project (HMP),SRR059480,,19819907,3.49228E-06,2,57269172,terrestrial biome,human-associated habitat,mucus,human-oral
+4472651.3,365,total_community,Human Microbiome Project (HMP),SRR061205,,19819907,3.44909E-06,2,57986315,terrestrial biome,human-associated habitat,feces,human-gut
+4472221.3,732,total_community,Human Microbiome Project (HMP),SRR059447,,19819907,3.3734E-06,2,59287437,terrestrial biome,human-associated habitat,mucus,human-oral
+4473147.3,755,total_community,Human Microbiome Project (HMP),SRR062002,,19819907,3.34494E-06,2,59791730,terrestrial biome,human-associated habitat,mucus,human-oral
+4473126.3,731,total_community,Human Microbiome Project (HMP),SRR061971,,19819907,3.25317E-06,2,61478522,terrestrial biome,human-associated habitat,mucus,human-oral
+4472379.3,711,total_community,Human Microbiome Project (HMP),SRR059955,,19819907,3.25085E-06,2,61522300,terrestrial biome,human-associated habitat,mucus,human-oral
+4472665.3,378,total_community,Human Microbiome Project (HMP),SRR061219,,19819907,3.2178E-06,2,62154304,terrestrial biome,human-associated habitat,feces,human-gut
+4473260.3,699,total_community,Human Microbiome Project (HMP),SRR062282,,19819907,3.13919E-06,2,63710648,terrestrial biome,human-associated habitat,mucus,human-oral
+4472176.3,374,total_community,Human Microbiome Project (HMP),SRR059406,,19819907,3.05315E-06,2,65506071,terrestrial biome,human-associated habitat,feces,human-gut
+4472487.3,675,total_community,Human Microbiome Project (HMP),SRR060379,,19819907,3.03845E-06,2,65822998,terrestrial biome,human-associated habitat,mucus,human-oral
+4472188.3,743,total_community,Human Microbiome Project (HMP),SRR059414,,19819907,3.03561E-06,2,65884554,terrestrial biome,human-associated habitat,mucus,human-oral
+4473084.3,372,total_community,Human Microbiome Project (HMP),SRR061929,,19819907,3.01299E-06,2,66379331,terrestrial biome,human-associated habitat,feces,human-gut
+4472189.3,742,total_community,Human Microbiome Project (HMP),SRR059415,,19819907,3.00396E-06,2,66578814,terrestrial biome,human-associated habitat,mucus,human-oral
+4478543.3,375,total_community,Human Microbiome Project (HMP),SRR062418,,19819907,2.97995E-06,2,67115130,terrestrial biome,human-associated habitat,feces,human-gut
+4472251.3,388,total_community,Human Microbiome Project (HMP),SRR059507,,19819907,2.97642E-06,2,67194770,terrestrial biome,human-associated habitat,feces,human-gut
+4472143.3,361,total_community,Human Microbiome Project (HMP),SRR059357,,19819907,2.97484E-06,2,67230492,terrestrial biome,human-associated habitat,feces,human-gut
+4472298.3,701,total_community,Human Microbiome Project (HMP),SRR059850,,19819907,2.95789E-06,2,67615848,terrestrial biome,human-associated habitat,mucus,human-oral
+4472125.3,382,total_community,Human Microbiome Project (HMP),SRR059339,,19819907,2.93232E-06,2,68205306,terrestrial biome,human-associated habitat,feces,human-gut
+4472995.3,385,total_community,Human Microbiome Project (HMP),SRR061555,,19819907,2.93161E-06,2,68221875,terrestrial biome,human-associated habitat,feces,human-gut
+4473486.3,745,total_community,Human Microbiome Project (HMP),SRR062512,,19819907,2.90739E-06,1,34395056,terrestrial biome,human-associated habitat,mucus,human-oral
+4472473.3,376,total_community,Human Microbiome Project (HMP),SRR060365,,19819907,2.89416E-06,2,69104786,terrestrial biome,human-associated habitat,feces,human-gut
+4472138.3,360,total_community,Human Microbiome Project (HMP),SRR059352,,19819907,2.86544E-06,2,69797298,terrestrial biome,human-associated habitat,feces,human-gut
+4472337.3,359,total_community,Human Microbiome Project (HMP),SRR059891,,19819907,2.8361E-06,2,70519423,terrestrial biome,human-associated habitat,feces,human-gut
+4472614.3,369,total_community,Human Microbiome Project (HMP),SRR061168,,19819907,2.81632E-06,2,71014555,terrestrial biome,human-associated habitat,feces,human-gut
+4472471.3,370,total_community,Human Microbiome Project (HMP),SRR060363,,19819907,2.67907E-06,2,74652746,terrestrial biome,human-associated habitat,feces,human-gut
+4472356.3,377,total_community,Human Microbiome Project (HMP),SRR059910,,19819907,2.67495E-06,2,74767758,terrestrial biome,human-associated habitat,feces,human-gut
+4473156.3,381,total_community,Human Microbiome Project (HMP),SRR062011,,19819907,2.53946E-06,2,78756992,terrestrial biome,human-associated habitat,feces,human-gut
+4472131.3,362,total_community,Human Microbiome Project (HMP),SRR059345,,19819907,2.4142E-06,2,82843326,terrestrial biome,human-associated habitat,feces,human-gut
+4472879.3,758,total_community,Human Microbiome Project (HMP),SRR061439,,19819907,2.40544E-06,1,41572437,terrestrial biome,human-associated habitat,mucus,human-oral
+4472498.3,756,total_community,Human Microbiome Project (HMP),SRR060390,,19819907,2.1769E-06,1,45936972,terrestrial biome,human-associated habitat,mucus,human-oral
+4472391.3,749,total_community,Human Microbiome Project (HMP),SRR059989,,19819907,2.01992E-06,1,49506942,terrestrial biome,human-associated habitat,mucus,human-oral
+4472405.3,373,total_community,Human Microbiome Project (HMP),SRR060003,,19819907,1.74352E-06,2,114710773,terrestrial biome,human-associated habitat,feces,human-gut
+4473192.3,759,total_community,Human Microbiome Project (HMP),SRR062047,,19819907,1.73495E-06,1,57638590,terrestrial biome,human-associated habitat,mucus,human-oral
+4473423.3,386,total_community,Human Microbiome Project (HMP),SRR062447,,19819907,1.66174E-06,1,60178019,terrestrial biome,human-associated habitat,feces,human-gut
+4472432.3,750,total_community,Human Microbiome Project (HMP),SRR060076,,19819907,1.64758E-06,1,60695202,terrestrial biome,human-associated habitat,mucus,human-oral
+4473015.3,760,total_community,Human Microbiome Project (HMP),SRR061575,,19819907,1.60385E-06,1,62349846,terrestrial biome,human-associated habitat,mucus,human-oral
+4472190.3,387,total_community,Human Microbiome Project (HMP),SRR059416,,19819907,1.57193E-06,1,63616022,terrestrial biome,human-associated habitat,feces,human-gut
+4473717.3,366,total_community,Human Microbiome Project (HMP),SRR066421,,19819907,1.47589E-06,2,135511678,terrestrial biome,human-associated habitat,feces,human-gut
+4472485.3,748,total_community,Human Microbiome Project (HMP),SRR060377,,19819907,1.39362E-06,1,71755821,terrestrial biome,human-associated habitat,mucus,human-oral
