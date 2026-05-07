@@ -578,18 +578,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-command-line" class="level2">
 <h2 class="anchored" data-anchor-id="the-command-line">The Command Line</h2>
 <p>A command usually follows this structure: <code>command [options] [arguments]</code></p>
-<p><strong>Examples</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># show Linux OS name, version, and hardware architecture</span></span>
+<p><strong><em>Examples</em></strong>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># show Linux OS name, version, and hardware architecture</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="ex">hostnamectl</span> </span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co"># list CPU information</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="ex">lscpu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">echo</span> <span class="st">"Hello World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">echo</span> <span class="st">"Hello World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul>
 <li><code>echo</code> is the command (print text).</li>
 <li><code>"Hello World"</code> is the argument (the text to print).</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ls</span> <span class="at">-l</span> microgen2026/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ls</span> <span class="at">-l</span> microgen2026/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <ul>
 <li><p><code>ls</code> is the command (list files).</p></li>
 <li><p><code>-l</code> is an option (long format).</p></li>
@@ -786,7 +801,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>command &gt; file 2&gt;&amp;1</code>: Redirect both stdout and stderr to a single file.</li>
 </ul>
 <p><strong>Example</strong>: Save the list of files to a text file.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span> <span class="at">-lh</span> <span class="op">&gt;</span> file_list.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span> <span class="at">-lh</span> <span class="op">&gt;</span> file_list.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 </section>
 <section id="creating-managing-files" class="level2">
@@ -943,11 +963,16 @@ Important
 <li><code>-n</code>: Show line numbers.</li>
 <li><code>-w</code>: Match whole words only.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Search for "Human Microbiome Project (HMP)" in the metadata file</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Search for "Human Microbiome Project (HMP)" in the metadata file</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">grep</span> <span class="st">"Human Microbiome Project (HMP)"</span> crAssphage_in_public.csv</span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
 <span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Count how many lines contain "PASS" in the VCF file</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"PASS"</span> 965Kp.vcf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="wc-count-lines-words-and-characters" class="level2">
 <h2 class="anchored" data-anchor-id="wc-count-lines-words-and-characters"><code>wc</code>: Count lines, words, and characters</h2>
@@ -956,8 +981,13 @@ Important
 <li><code>-w</code>: Count words.</li>
 <li><code>-c</code>: Count characters (bytes).</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Count how many lines are in the VCF file</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Count how many lines are in the VCF file</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">wc</span> <span class="at">-l</span> 965Kp.vcf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="cut-cut-out-sections-from-each-line-of-files" class="level2">
 <h2 class="anchored" data-anchor-id="cut-cut-out-sections-from-each-line-of-files"><code>cut</code>: Cut out sections from each line of files</h2>
@@ -966,11 +996,16 @@ Important
 <li><code>-f</code>: Select fields (columns).</li>
 <li><code>-d</code>: Define the delimiter (the default is tab).</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Extract the 2nd and 4th column from a tab-delimited file</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Extract the 2nd and 4th column from a tab-delimited file</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="fu">cut</span> <span class="at">-f</span> 2,4 metadata_carbResist.tsv</span>
 <span id="cb12-3"><a href="#cb12-3"></a></span>
 <span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Extract the 5th column from a CSV file (comma delimited)</span></span>
 <span id="cb12-5"><a href="#cb12-5"></a><span class="fu">cut</span> <span class="at">-f</span> 5 <span class="at">-d</span> <span class="st">","</span> crAssphage_in_public.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="sort-sort-lines-of-text-files" class="level2">
 <h2 class="anchored" data-anchor-id="sort-sort-lines-of-text-files"><code>sort</code>: Sort lines of text files</h2>
@@ -981,8 +1016,13 @@ Important
 <li><code>-t</code>: Specify the delimiter (the default is tab).</li>
 <li><code>-u</code>: Unique (remove duplicates).</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Sort the metadata by the 3rd column (Gbp) numerically in reverse</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Sort the metadata by the 3rd column (Gbp) numerically in reverse</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sort</span> <span class="at">-k</span> 2 <span class="at">-n</span> <span class="at">-r</span> genome_sizes.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1008,7 +1048,11 @@ Important
 </section>
 <section id="tr-translate-or-delete-characters" class="level2">
 <h2 class="anchored" data-anchor-id="tr-translate-or-delete-characters"><code>tr</code>: Translate or delete characters</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># first, let see the original messy file</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># first, let see the original messy file</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="fu">cat</span> messy_data.csv</span>
 <span id="cb14-3"><a href="#cb14-3"></a></span>
 <span id="cb14-4"><a href="#cb14-4"></a><span class="co"># Convert a CSV to a TSV (comma to tab)</span></span>
@@ -1016,17 +1060,23 @@ Important
 <span id="cb14-6"><a href="#cb14-6"></a></span>
 <span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Convert all text to uppercase</span></span>
 <span id="cb14-8"><a href="#cb14-8"></a><span class="fu">tr</span> <span class="st">'[:lower:]'</span> <span class="st">'[:upper:]'</span> <span class="op">&lt;</span> messy_data.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="sed-stream-editor-for-text-manipulation" class="level2">
 <h2 class="anchored" data-anchor-id="sed-stream-editor-for-text-manipulation"><code>sed</code>: Stream editor for text manipulation</h2>
 <p>A powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: <code>sed 's/old/new/g'</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Change all filenames starting with 'sample_' to 'sample-' in our messy file</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Change all filenames starting with 'sample_' to 'sample-' in our messy file</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sed</span> <span class="st">'s/sample_/sample-/g'</span> messy_data.csv</span>
 <span id="cb15-3"><a href="#cb15-3"></a></span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Put the change to a new file</span></span>
 <span id="cb15-5"><a href="#cb15-5"></a><span class="fu">sed</span> <span class="st">'s/sample_/sample-/g'</span> messy_data.csv <span class="op">&gt;</span> pretty_data.csv</span>
 <span id="cb15-6"><a href="#cb15-6"></a></span>
 <span id="cb15-7"><a href="#cb15-7"></a><span class="co"># or, to make the changes permanent on the file, use -i option</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1055,23 +1105,32 @@ Important
 <section id="pipes" class="level2">
 <h2 class="anchored" data-anchor-id="pipes">Pipes (<code>|</code>)</h2>
 <p>The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.</p>
-<p><strong>Example</strong>: Ignore all the header lines that starts with <code>#</code> and extract the 2nd, 4th, 5th, and 7th columns from <code>965Kp.vcf</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> 965Kp.vcf <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f2,4,5,7</span></span>
+<p><strong><em>Example</em></strong>: Ignore all the header lines that starts with <code>#</code> and extract the 2nd, 4th, 5th, and 7th columns from <code>965Kp.vcf</code>:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> 965Kp.vcf <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f2,4,5,7</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="co"># then count the number of lines</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> 965Kp.vcf <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f2,4,5,7</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="variables" class="level2">
 <h2 class="anchored" data-anchor-id="variables">Variables</h2>
 <p>Variables store information (text, numbers, filenames, etc.) for later use.</p>
-<p><strong><em>Example</em></strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">MY_SAMPLE</span><span class="op">=</span><span class="st">"SRR24679994"</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">MY_SAMPLE</span><span class="op">=</span><span class="st">"SRR24679994"</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="co"># Print the value of the variable</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a><span class="bu">echo</span> <span class="va">$MY_SAMPLE</span></span>
 <span id="cb17-5"><a href="#cb17-5"></a></span>
 <span id="cb17-6"><a href="#cb17-6"></a><span class="co"># Use the variable in a command - Find the sample in the metadata file</span></span>
 <span id="cb17-7"><a href="#cb17-7"></a><span class="fu">grep</span> <span class="at">-w</span> <span class="st">"</span><span class="va">$MY_SAMPLE</span><span class="st">"</span> metadata_carbResist.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Types of variables:</p>
 <ul>
 <li><strong>Local variables</strong>: Most of the variables you set in your shell session only exist in that session, which means you cannot find them in new terminal sessions. These are <strong>local</strong>. If you want to reuse them, you will have to specify them every time you open a new terminal session.</li>
@@ -1168,7 +1227,11 @@ Important
 <h1>Software Environments: Conda &amp; Mamba</h1>
 <p>Different bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use <a href="https://github.com/mamba-org/mamba"><strong>Mamba</strong></a> (the faster version of <a href="https://github.com/conda/conda"><strong>Conda</strong></a>) to create isolated “bubbles” or environments for each tool.</p>
 <p><strong><em>Example</em></strong>: Installing <a href="https://wwood.github.io/kingfisher-download/">Kingfisher</a> - a fast downloading tool for public sequence files and their metadata annotations.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Create an environment for the kingfisher program</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Create an environment for the kingfisher program</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="ex">mamba</span> create <span class="at">-n</span> kingfisher <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda kingfisher</span>
 <span id="cb21-3"><a href="#cb21-3"></a></span>
 <span id="cb21-4"><a href="#cb21-4"></a><span class="co"># Enter the bubble</span></span>
@@ -1179,6 +1242,7 @@ Important
 <span id="cb21-9"><a href="#cb21-9"></a></span>
 <span id="cb21-10"><a href="#cb21-10"></a><span class="co"># Leave the bubble</span></span>
 <span id="cb21-11"><a href="#cb21-11"></a><span class="ex">mamba</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="self-exploration" class="level1">
 <h1>Self Exploration</h1>
@@ -1210,24 +1274,38 @@ Important
 <section id="loops" class="level2">
 <h2 class="anchored" data-anchor-id="loops">Loops</h2>
 <p>Automate tasks across hundreds of samples.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="cf">for</span> file <span class="kw">in</span> /microgen2026/day-0/<span class="pp">*</span>.fasta<span class="kw">;</span> <span class="cf">do</span> </span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="cf">for</span> file <span class="kw">in</span> /microgen2026/day-0/<span class="pp">*</span>.fasta<span class="kw">;</span> <span class="cf">do</span> </span>
 <span id="cb22-2"><a href="#cb22-2"></a>    <span class="bu">echo</span> <span class="st">"Processing </span><span class="va">$file</span><span class="st">..."</span><span class="kw">;</span> </span>
 <span id="cb22-3"><a href="#cb22-3"></a>    <span class="fu">grep</span> <span class="at">-c</span> <span class="st">'&gt;'</span> <span class="va">$file</span><span class="kw">;</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="find" class="level2">
 <h2 class="anchored" data-anchor-id="find"><code>find</code></h2>
 <p>Find files based on name, size, or modification date.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">"/microgen2026/PRJNA234452/*.fastq.gz"</span> <span class="at">-size</span> +100M</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">"/microgen2026/PRJNA234452/*.fastq.gz"</span> <span class="at">-size</span> +100M</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="gnu-parallel" class="level2">
 <h2 class="anchored" data-anchor-id="gnu-parallel">GNU parallel</h2>
 <p>Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.</p>
-<p><strong><em>Example</em></strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Get the number of contigs in all samples parallelly on 4 CPU cores</span></span>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Example</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Get the number of contigs in all samples parallelly on 4 CPU cores</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>.fasta <span class="kw">|</span> <span class="ex">parallel</span> <span class="at">-j</span> 4 grep <span class="at">-c</span> <span class="st">'&gt;'</span> {} </span>
 <span id="cb24-3"><a href="#cb24-3"></a></span>
 <span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Do you remember how to know the number of CPU cores on your system?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <hr>
 </section>
 </section>
