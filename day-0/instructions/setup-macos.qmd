@@ -1,0 +1,282 @@
+---
+title: "0.1.2 macOS setup"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# macOS setup: Intel and Apple Silicon
+
+## Check chip type
+
+1. Open the **Apple menu** in the top-left corner.
+2. Choose **About This Mac**.
+3. Look for **Chip** or **Processor**.
+
+Use this rule:
+
+- **Processor: Intel** means Intel Mac.
+- **Chip: Apple M1/M2/M3/M4** means Apple Silicon Mac.
+
+## Install Visual Studio Code
+
+1. Open the official VS Code download page: <https://code.visualstudio.com/download>
+2. Under **Mac**, choose:
+   - **Intel chip** for Intel Macs,
+   - **Apple silicon** for M1/M2/M3/M4 Macs,
+   - or **Universal** if you are unsure.
+3. Open the downloaded `.dmg` file.
+4. Drag **Visual Studio Code** to the **Applications** folder.
+5. Open VS Code from Applications.
+
+Install these VS Code extensions:
+
+- **Remote - SSH** by Microsoft
+- **Python** by Microsoft
+- **R** by REditorSupport
+- **Quarto** by Quarto
+
+::: {.callout-tip}
+## Recommended shortcut: import the MicroGen2026 VS Code profile
+
+After installing VS Code, you can download the workshop profile file: [Microgen2026.code-profile](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/Microgen2026.code-profile).
+
+To import it, open **VS Code** and choose **Manage** > **Profiles** > **Profiles** > **More Actions...** (dropdown icon) > **Import Profile...**, then select the downloaded `Microgen2026.code-profile` file.
+
+If the profile imports successfully, it replaces the manual VS Code extension setup above and adds workshop-specific settings/customizations. If the profile import does not work on your computer, install the extensions manually using the list above.
+
+![VS Code menu for importing a profile](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vscode-profile.png)
+:::
+## Install Python 3.13
+
+There are two acceptable routes. Use Route A if you are not comfortable with Terminal.
+
+### Route A: official Python installer
+
+1. Open the official Python 3.13 download page: <https://www.python.org/downloads/latest/python3.13/>
+2. Download the **macOS installer**.
+3. Open the `.pkg` installer.
+4. Follow the default installation steps.
+
+Open **Terminal** from Applications > Utilities and check Python:
+
+```bash
+python3 --version
+python3 -m pip --version
+```
+
+### Route B: Homebrew - optional
+
+Use this only if you already use Homebrew or are comfortable with Terminal.
+
+Install Python 3.13:
+
+```bash
+brew install python@3.13
+```
+
+This asks Homebrew to install Python 3.13.
+
+Check Python:
+
+```bash
+python3 --version
+python3 -m pip --version
+```
+
+Install Python packages:
+
+```bash
+python3 -m pip install --upgrade pip
+python3 -m pip install numpy pandas
+```
+
+The first command updates the Python package installer. The second installs `numpy` and `pandas`.
+
+Verify:
+
+```bash
+python3 -c "import numpy, pandas; print('Python packages OK')"
+```
+
+## Install R 4.5.0
+
+R 4.5.0 is now an older R release. CRAN still provides the official installers in architecture-specific macOS directories.
+
+### Intel Mac
+
+1. Open the CRAN Intel macOS base directory: <https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/>
+2. Download `R-4.5.0-x86_64.pkg`.
+3. Open the `.pkg` file and accept the default installation options.
+
+### Apple Silicon Mac
+
+1. Open the CRAN Apple Silicon macOS base directory: <https://cran.r-project.org/bin/macosx/big-sur-arm64/base/>
+2. Download `R-4.5.0-arm64.pkg`.
+3. Open the `.pkg` file and accept the default installation options.
+
+::: {.callout-note}
+## macOS version note
+
+The R 4.5.0 macOS packages were built for modern macOS versions. If your Mac is older or cannot install the package, ask an instructor before installing a different R version.
+:::
+
+Verify in Terminal:
+
+```bash
+R --version
+```
+
+Or open **R.app** and run:
+
+```r
+R.version.string
+```
+
+You should see R 4.5.0.
+
+## Install RStudio Desktop - optional
+
+1. Open the official Posit download page: <https://posit.co/downloads/>
+2. Download **RStudio Desktop** for macOS.
+3. Open the downloaded file.
+4. Drag RStudio to **Applications** if prompted.
+5. Open RStudio and confirm that it detects R.
+
+## Install R packages
+
+Open **R.app** or **RStudio Console**. Paste:
+
+```r
+install.packages(c(
+  "tidyverse",
+  "dplyr",
+  "tidyr",
+  "readr",
+  "ggplot2",
+  "ggrepel",
+  "vegan",
+  "patchwork",
+  "scales",
+  "data.table",
+  "broom",
+  "knitr"
+))
+```
+
+This installs the packages that come from CRAN.
+
+Now install `BiocManager` if it is not already installed:
+
+```r
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+```
+
+`BiocManager` is the installer used for Bioconductor packages. Many learners will not have it yet.
+
+Then install `phyloseq`:
+
+```r
+BiocManager::install("phyloseq", ask = FALSE, update = TRUE)
+```
+
+`phyloseq` comes from Bioconductor, so it is installed after `BiocManager` is available.
+
+Verify:
+
+```r
+packages <- c(
+  "dplyr", "tidyr", "readr", "ggplot2", "ggrepel",
+  "phyloseq", "vegan", "patchwork", "scales",
+  "data.table", "broom", "knitr"
+)
+
+sapply(packages, requireNamespace, quietly = TRUE)
+```
+
+If R asks whether to install from source, choose the **binary** option if it is available.
+
+::: {.callout-note}
+## Rtools is not used on macOS
+
+Rtools is for Windows only. On macOS, packages that need compilation use Apple's Command Line Tools instead.
+:::
+
+If compilation fails on macOS, install the Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+This opens an Apple installer for command-line build tools. After it finishes, reopen R or RStudio and try the package installation again.
+
+## Install Java - optional
+
+Java is optional. It is mainly needed for Artemis.
+
+Use **OpenJDK 17** unless an instructor gives you a different version. The recommended option for this guide is **Eclipse Temurin OpenJDK 17 LTS**.
+
+1. Open the Eclipse Temurin OpenJDK 17 installation page: <https://adoptium.net/installation/?variant=openjdk17>
+2. Choose **macOS**.
+3. Download the **Temurin 17 JDK** package for your Mac:
+   - Intel Mac: macOS `x64`
+   - Apple Silicon Mac: macOS `aarch64` or `Apple Silicon`
+4. Open the `.pkg` installer and follow the default steps.
+
+Other official OpenJDK 17 builds, such as Microsoft Build of OpenJDK 17, are acceptable if your institution already uses them.
+
+Verify in Terminal:
+
+```bash
+java -version
+```

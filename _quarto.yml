@@ -54,7 +54,27 @@ website:
             - section: "Day 0 - Pre-Workshop"
               href: day-0/instructions/index.qmd
               contents:
-                - day-0/instructions/setup-environment.qmd
+                - section: "0.1 Setup your workspace"
+                  href: day-0/instructions/setup-environment.qmd
+                  contents:
+                    - text: "Overview"
+                      href: day-0/instructions/setup-environment.qmd
+                    - text: "Windows 10/11 setup"
+                      href: day-0/instructions/setup-windows.qmd
+                    - text: "macOS setup"
+                      href: day-0/instructions/setup-macos.qmd
+                    - text: "Ubuntu setup"
+                      href: day-0/instructions/setup-ubuntu.qmd
+                    - text: "Bioinformatics apps"
+                      href: day-0/instructions/setup-bioinformatics-apps.qmd
+                    - text: "Server access"
+                      href: day-0/instructions/setup-server-access.qmd
+                    - text: "Verification checklist"
+                      href: day-0/instructions/setup-verification.qmd
+                    - text: "Troubleshooting and FAQs"
+                      href: day-0/instructions/setup-troubleshooting-faq.qmd
+                    - text: "Advanced R in VS Code"
+                      href: day-0/instructions/setup-r-vscode.qmd
                 - day-0/instructions/linux-basics.qmd
                 - day-0/instructions/final-quiz.qmd
             - section: "Day 1"

@@ -16,9 +16,9 @@ Aiming to enhance the local capacity in genomic epidemiology and surveillance, t
 *Setting up your computational environment and getting comfortable with the Linux environment and command lines.* <br>
 [Slides]() | [Practical Guides](guides.qmd) | [Data]()
 
-**Module 0.1: Setup your workspace**
+**Module 0.1: [Setup your workspace](day-0/instructions/setup-environment.qmd)**
 
-**Module 0.2: Commands & Environments**
+**Module 0.2: [Commands & Environments](day-0/instructions/linux-basics.qmd)**
 
 ## Day 1
 ### Meet the genomes

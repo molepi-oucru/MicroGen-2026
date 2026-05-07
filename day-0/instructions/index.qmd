@@ -8,6 +8,18 @@ The purpose of this pre-workshop day is to prepare you with the computing enviro
 
 Our environment is a cloud-based Linux system with a set of pre-installed tools for the workshop, so you won't have to use your computer's resource for the analyses. 
 
-In the sub-module [0.1: Setup your workspace](setup-environment.qmd), you will be guided to access to this system from your own laptop. 
+In the sub-module [0.1: Setup your workspace](setup-environment.qmd), you will be guided to prepare your laptop and access this system from your own computer.
+
+The setup guide is split into short pages so you can open only the section you need:
+
+- [Setup overview](setup-environment.qmd)
+- [Windows 10/11 setup](setup-windows.qmd)
+- [macOS setup](setup-macos.qmd)
+- [Ubuntu setup](setup-ubuntu.qmd)
+- [Optional graphical bioinformatics apps](setup-bioinformatics-apps.qmd)
+- [Workshop server access](setup-server-access.qmd)
+- [Verification checklist](setup-verification.qmd)
+- [Troubleshooting and FAQs](setup-troubleshooting-faq.qmd)
+- [Advanced R in VS Code](setup-r-vscode.qmd)
 
 In the sub-module [0.2 Commands & Environments](linux-basics.qmd), we will learn about Linux operating system (OS) and the essential skills to run bioinformatic tools on it. After finishing this module, please take a quick [Knowledge Check](final-quiz.qmd) (10 mins) to test your Linux skills.

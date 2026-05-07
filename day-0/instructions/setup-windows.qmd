@@ -1,0 +1,341 @@
+---
+title: "0.1.1 Windows 10/11 setup"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# Windows 10/11 setup
+
+## Install Visual Studio Code
+
+1. Open the official VS Code download page: <https://code.visualstudio.com/download>
+2. Under **Windows**, download either:
+   - **User Installer x64** if you are using your own laptop and do not have administrator rights, or
+   - **System Installer x64** if your administrator or IT team prefers system-wide installation.
+3. Run the installer.
+4. When the installer shows optional tasks, tick these options if available:
+   - **Add to PATH**
+   - **Add "Open with Code" action**
+   - **Register Code as an editor for supported file types**
+5. Finish the installation and open VS Code.
+
+In VS Code, open the Extensions view and install:
+
+- **Remote - SSH** by Microsoft
+- **Python** by Microsoft
+- **R** by REditorSupport
+- **Quarto** by Quarto
+
+![VS Code Extensions: Remote - SSH, Python, R, and Quarto](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vscode-extensions.png)
+
+::: {.callout-tip}
+## Recommended shortcut: import the MicroGen2026 VS Code profile
+
+After installing VS Code, you can download the workshop profile file: [Microgen2026.code-profile](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/Microgen2026.code-profile).
+
+To import it, open **VS Code** and choose **Manage** > **Profiles** > **Profiles** > **More Actions...** (dropdown icon) > **Import Profile...**, then select the downloaded `Microgen2026.code-profile` file.
+
+If the profile imports successfully, it replaces the manual VS Code extension setup above and adds workshop-specific settings/customizations. If the profile import does not work on your computer, install the extensions manually using the list above.
+
+![VS Code menu for importing a profile](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vscode-profile.png)
+:::
+
+::: {.callout-note}
+## What this does
+
+VS Code is the main editor for the workshop. The Remote - SSH extension lets VS Code open your assigned server workspace as if it were a local folder.
+:::
+
+## Install Python 3.13
+
+1. Open the official Python 3.13 download page: <https://www.python.org/downloads/latest/python3.13/>
+2. Download the **Windows installer (64-bit)**.
+3. Run the installer.
+4. On the first installer screen, tick **Add python.exe to PATH**.
+5. Choose **Install Now**.
+
+![Python installer screen showing Add python.exe to PATH](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/python-add-to-path.png)
+
+::: {.callout-warning}
+## Important Windows step
+
+The **Add python.exe to PATH** checkbox is important. It lets Windows find Python when you type `python` in PowerShell.
+:::
+
+Open **PowerShell** from the Start menu and check Python:
+
+```powershell
+python --version
+pip --version
+```
+
+You should see Python 3.13 and a `pip` version. `pip` is the tool Python uses to install Python packages.
+
+Update `pip`:
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+This asks Python to update its package installer.
+
+Install the required Python packages:
+
+```powershell
+python -m pip install numpy pandas
+```
+
+This installs `numpy` and `pandas`, which are common Python packages for numerical and table-based data work.
+
+Verify the packages:
+
+```powershell
+python -c "import numpy, pandas; print('Python packages OK')"
+```
+
+If the packages are installed correctly, PowerShell prints `Python packages OK`.
+
+## Install R 4.5.0
+
+R 4.5.0 is the R version used by the Day 4 practical materials. It is no longer the newest R release, so use the official CRAN old-release page for Windows.
+
+1. Open the official CRAN Windows R 4.5.0 page: <https://cran.r-project.org/bin/windows/base/old/4.5.0/>
+2. Download `R-4.5.0-win.exe`.
+3. Run the installer.
+4. Accept the default options unless your instructor tells you otherwise.
+
+Open **R** or **RGui** from the Start menu and run:
+
+```r
+R.version.string
+```
+
+You should see a line beginning with `R version 4.5.0`.
+
+## Install Rtools45 - only if needed
+
+Most Windows users do **not** need Rtools at the start. R normally installs pre-built Windows package binaries from CRAN and Bioconductor.
+
+Rtools is needed only when R says it must install a package **from source** or when an error mentions compilers, `make`, `gcc`, `g++`, `gfortran`, or `Rtools`.
+
+For R 4.5.0 on Windows, use **Rtools45**.
+
+::: {.callout-warning}
+## Do not install a different Rtools version
+
+Rtools must match your R version. For this workshop, Windows participants installing **R 4.5.0** should use **Rtools45**, not Rtools44, Rtools43, or older versions.
+:::
+
+1. Open the official CRAN Rtools page: <https://cran.r-project.org/bin/windows/Rtools/>
+2. Choose **RTools 4.5**.
+3. Download the Rtools45 installer.
+4. Run the installer.
+5. Keep the default installation location, usually:
+
+```text
+C:\rtools45
+```
+
+::: {.callout-note}
+## Beginner recommendation
+
+If your R package installation works, you can skip Rtools. If installation fails with a compiler-related message, install Rtools45 and then retry the R package command.
+:::
+
+After installing Rtools45, open a fresh R or RStudio session and run:
+
+```r
+install.packages("pkgbuild")
+pkgbuild::has_rtools(debug = TRUE)
+```
+
+If Rtools is detected, this should return `TRUE`.
+
+## Install RStudio Desktop - optional
+
+RStudio is optional. It is helpful if you prefer a graphical interface for R, but VS Code is enough for most workshop tasks.
+
+1. Open the official Posit download page: <https://posit.co/downloads/>
+2. Choose **RStudio Desktop**.
+3. Download the Windows installer.
+4. Run the installer with the default settings.
+5. Open RStudio and check that it starts an R console.
+
+::: {.callout-tip}
+## RStudio cannot replace R
+
+RStudio is an editor. R is the programming language. Install R first, then install RStudio.
+:::
+
+## Install R packages
+
+Open **R**, **RGui**, or the **RStudio Console**. Paste this code and press Enter:
+
+```r
+install.packages(c(
+  "tidyverse",
+  "dplyr",
+  "tidyr",
+  "readr",
+  "ggplot2",
+  "ggrepel",
+  "vegan",
+  "patchwork",
+  "scales",
+  "data.table",
+  "broom",
+  "knitr"
+))
+```
+
+This installs the packages that come from CRAN.
+
+Now install `BiocManager` if it is not already installed:
+
+```r
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager")
+}
+```
+
+`BiocManager` is the installer used for Bioconductor packages. Many learners will not have it yet.
+
+Then install `phyloseq`:
+
+```r
+BiocManager::install("phyloseq", ask = FALSE, update = TRUE)
+```
+
+`phyloseq` comes from Bioconductor, so it is installed after `BiocManager` is available.
+
+::: {.callout-note}
+## If R asks about a CRAN mirror
+
+Choose a mirror close to you, or choose the cloud mirror if it is listed. Any official CRAN mirror should work.
+:::
+
+Verify the R packages:
+
+```r
+packages <- c(
+  "dplyr", "tidyr", "readr", "ggplot2", "ggrepel",
+  "phyloseq", "vegan", "patchwork", "scales",
+  "data.table", "broom", "knitr"
+)
+
+sapply(packages, requireNamespace, quietly = TRUE)
+```
+
+Each package should return `TRUE`. If one returns `FALSE`, copy the package name and ask an instructor for help.
+
+::: {.callout-warning}
+## If R asks to install from source on Windows
+
+Choose the binary version if R offers one. If R says a package must be installed from source, you may need **Rtools45**. Install Rtools45 from the section above, restart R or RStudio, and run the package installation again.
+:::
+
+## Install MobaXterm portable
+
+MobaXterm is recommended for Windows participants who need SSH, X11 forwarding, SFTP file browsing, or VNC tunneling. The portable edition does not require administrator installation.
+
+1. Open the official MobaXterm Home Edition page: <https://mobaxterm.mobatek.net/download-home-edition.html>
+2. Download the **Portable edition**.
+3. Extract the ZIP file to a folder you can find later, such as `Downloads\MobaXterm`.
+4. Open the extracted folder.
+5. Run `MobaXterm_Personal_*.exe`.
+
+![MobaXterm portable folder showing MobaXterm_Personal executable](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/mobaxterm-portable-folder.png)
+
+### Create an SSH session in MobaXterm
+
+1. Open MobaXterm.
+2. Click **Session**.
+3. Choose **SSH**.
+4. In **Remote host**, enter the server IP address given by the admin.
+5. Tick **Specify username** and enter your username.
+6. Open **Advanced SSH settings**.
+7. Tick **Use private key** and select your `.pem` file.
+8. Make sure **X11-forwarding** is enabled.
+9. Click **OK** to connect.
+10. Save the session if MobaXterm asks.
+
+::: {.callout-warning}
+## Keep the key file path simple
+
+If possible, store your `.pem` key in a folder path without spaces, for example `C:\Users\YourName\Downloads\microgen2026.pem`. If the path contains spaces, keep quotation marks around it when using PowerShell.
+:::
+
+## Install Java - optional
+
+Java is optional for most participants. It is mainly needed for **Artemis**.
+
+Use **OpenJDK 17** unless an instructor gives you a different version. On Windows, the recommended option for this guide is **Eclipse Temurin OpenJDK 17 LTS**.
+
+1. Open the Eclipse Temurin OpenJDK 17 installation page: <https://adoptium.net/installation/?variant=openjdk17>
+2. Choose **Windows**.
+3. Download the **Temurin 17 JDK** MSI installer for your computer, usually `x64`.
+4. Run the installer.
+5. Keep the default options. If the installer offers PATH or `JAVA_HOME` options, enable them.
+
+::: {.callout-note}
+## Why OpenJDK 17?
+
+OpenJDK 17 is a long-term support Java version and is a good default for Java-based teaching tools such as Artemis. Other OpenJDK 17 builds, such as Microsoft Build of OpenJDK 17, are acceptable if your institution already uses them, but this guide mainly refers to Temurin OpenJDK 17.
+:::
+
+After installation, open PowerShell:
+
+```powershell
+java -version
+```
+
+You should see a Java version number.

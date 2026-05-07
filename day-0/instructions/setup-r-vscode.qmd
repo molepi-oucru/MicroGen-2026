@@ -1,0 +1,466 @@
+---
+title: "0.1.8 Advanced R in VS Code"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# Advanced: R in VS Code
+
+This section is optional. It is for participants who already feel comfortable with VS Code and want a richer R editing environment than the basic workshop setup.
+
+Use this only after you have already installed:
+
+- R 4.5.0,
+- Visual Studio Code,
+- and the **R** extension by **REditorSupport**.
+
+These steps apply to Windows, macOS, and Ubuntu. Ubuntu users should complete the [Ubuntu setup](setup-ubuntu.qmd) first so that `R`, VS Code, and the required R packages are available locally.
+
+Official VS Code reference:
+
+<https://code.visualstudio.com/docs/languages/r>
+
+::: {.callout-note}
+## Basic users can skip this
+
+You do not need this advanced setup to complete the workshop. The basic R installation and the VS Code R extension are enough for most learners.
+:::
+
+## Who should use this?
+
+Use this setup if you are comfortable editing VS Code settings and want:
+
+- R code completion and IntelliSense,
+- a better plot viewer inside VS Code,
+- R workspace, data, help, and plot viewers,
+- linting warnings while editing R code,
+- shortcuts for common R operators,
+- and optional debugging tools.
+
+If you are new to R or VS Code, skip this section for now. You can return to it later.
+
+## What the advanced setup adds
+
+The VS Code R extension can provide:
+
+- R syntax highlighting and code completion,
+- R terminals inside VS Code,
+- linting and formatting support,
+- plot, data, help, and workspace viewers,
+- R Markdown support,
+- and optional debugging through a separate R Debugger extension.
+
+## Step 1: Install R packages used by VS Code
+
+Open **R**, **RGui**, or the **RStudio Console**. Paste this code and press Enter:
+
+```r
+if (!require("languageserver")) {
+  install.packages("languageserver", repos = "https://packagemanager.posit.co/cran/latest")
+}
+
+if (!require("rmarkdown")) {
+  install.packages("rmarkdown", repos = "https://packagemanager.posit.co/cran/latest")
+}
+
+if (!require("httpgd")) {
+  install.packages("httpgd", repos = "https://packagemanager.posit.co/cran/latest")
+}
+```
+
+What they do:
+
+- `languageserver` enables R IntelliSense, code completion, function help, go-to-definition, and related language features.
+- `rmarkdown` supports `.Rmd` documents.
+- `httpgd` enables the interactive plot viewer used by the VS Code R extension.
+
+::: {.callout-note}
+## Personal R library prompt
+
+If R asks to create a personal library folder in your user directory, accept it. This usually happens when the system-wide R library is not writable without administrator permissions.
+:::
+
+## Step 2: Install the correct VS Code extension
+
+In VS Code:
+
+1. Open **Extensions**.
+2. Search for `R`.
+3. Install **R** by **REditorSupport**.
+
+Avoid installing several R extensions that do the same job. Multiple overlapping R extensions can cause duplicate commands, conflicting terminals, or confusing error messages.
+
+## Step 3: Create and use an R terminal
+
+The official VS Code workflow is to send R code to an R terminal.
+
+Open the Command Palette:
+
+- Windows: `Ctrl+Shift+P`
+- macOS: `Command+Shift+P`
+- Ubuntu/Linux: `Ctrl+Shift+P`
+
+Run:
+
+```text
+R: Create R terminal
+```
+
+Then open an `.R` file and press:
+
+```text
+Ctrl+Enter
+```
+
+This sends the current line or selected R code to the active R terminal.
+
+To source an entire R file, use:
+
+```text
+Ctrl+Shift+S
+```
+
+## Step 4: Add recommended VS Code settings
+
+Open VS Code settings JSON:
+
+1. Open the Command Palette.
+2. Run:
+
+```text
+Preferences: Open User Settings (JSON)
+```
+
+3. Add these settings, merging them with any settings already present:
+
+<details>
+<summary><strong>Click to open suggested VS Code settings for advanced R users</strong></summary>
+
+```json
+{
+  "editor.formatOnType": true,
+  "editor.minimap.enabled": false,
+  "r.plot.useHttpgd": true,
+  "editor.suggest.selectionMode": "whenQuickSuggestion",
+  "r.session.useWebServer": true,
+  "r.session.data.rowLimit": 50000,
+  "r.session.data.pageSize": 250
+}
+```
+
+These settings enable `httpgd`, R session viewer features, and a few useful editor preferences.
+
+Do not replace your whole settings file if it already contains other settings. Merge only the entries you need, and keep valid JSON syntax.
+
+</details>
+
+## Step 5: Optional keybindings
+
+These shortcuts are optional. Add them only if you want familiar R operator shortcuts in VS Code.
+
+Open keyboard shortcuts JSON:
+
+1. Open the Command Palette.
+2. Run:
+
+```text
+Preferences: Open Keyboard Shortcuts (JSON)
+```
+
+3. Add the bindings below.
+
+Useful shortcuts included:
+
+| Shortcut | Inserts |
+|---|---|
+| `Alt+-` | `<-` |
+| `Ctrl+Shift+M` | `%>%` |
+| `Ctrl+Shift+C` | Toggle line comment |
+| `Ctrl+Shift+F10` | Kill terminal |
+
+<details>
+<summary><strong>Click to open optional R keybindings</strong></summary>
+
+```json
+[
+  {
+    "key": "ctrl+shift+c",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "Ctrl+Shift+m",
+    "command": "type",
+    "args": { "text": " %>% " },
+    "when": "editorTextFocus && editorLangId == r"
+  },
+  {
+    "key": "Alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorTextFocus && editorLangId == r"
+  },
+  {
+    "key": "Ctrl+Shift+m",
+    "command": "type",
+    "args": { "text": " %>% " },
+    "when": "editorTextFocus && editorLangId == rmd"
+  },
+  {
+    "key": "Alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorTextFocus && editorLangId == rmd"
+  },
+  {
+    "key": "Ctrl+Shift+m",
+    "command": "type",
+    "args": { "text": " %>% " },
+    "when": "editorTextFocus && editorLangId == quarto"
+  },
+  {
+    "key": "Alt+-",
+    "command": "type",
+    "args": { "text": " <- " },
+    "when": "editorTextFocus && editorLangId == quarto"
+  },
+  {
+    "key": "Ctrl+Shift+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": " %>% " },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "Alt+-",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": " <- " },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+f10",
+    "command": "workbench.action.terminal.kill"
+  }
+]
+```
+
+</details>
+
+If these shortcuts conflict with shortcuts you already use, remove or edit the conflicting entries. The keybindings are not required for the workshop.
+
+## Step 6: Optional linting configuration
+
+The VS Code R extension can use the R package `lintr` for linting. Linting means showing style and code-quality warnings while you edit.
+
+Install `lintr` in R:
+
+```r
+install.packages("lintr")
+```
+
+To reduce distracting style warnings during workshop-style code, create a file named `.lintr` in your user home folder or project root.
+
+Example Windows location:
+
+```text
+C:\Users\YourName\.lintr
+```
+
+Example macOS location:
+
+```text
+/Users/YourName/.lintr
+```
+
+Paste this content into `.lintr`:
+
+```text
+linters: linters_with_defaults(
+  trailing_blank_lines_linter = NULL,
+  line_length_linter = NULL,
+  trailing_whitespace_linter = NULL,
+  commented_code_linter = NULL,
+  indentation_linter = NULL,
+  object_usage_linter = NULL,
+  object_name_linter = NULL
+  )
+```
+
+This turns off several warnings that are often distracting during short practical exercises.
+
+## Optional radian console
+
+The official VS Code R documentation recommends `radian` as an optional modern R console. It provides syntax highlighting and a better console experience than the default R terminal.
+
+This is optional. You do not need `radian` to complete the workshop.
+
+Install `radian` only if you are comfortable with Python package installation.
+
+Windows:
+
+```powershell
+python -m pip install radian
+```
+
+macOS:
+
+```bash
+python3 -m pip install radian
+```
+
+After installing, follow the R extension documentation if you want VS Code to use `radian` as the R terminal. Most workshop exercises do not require `radian`.
+
+### Optional alternative: arf
+
+`arf` is another optional R console/front-end. It is a separate project from `radian` and is also not required for the workshop.
+
+Project page:
+
+<https://github.com/eitsupi/arf>
+
+Use `arf` only if you already understand how to configure an alternative R terminal in VS Code. Beginners should stay with the default R terminal.
+
+## Optional R debugging
+
+R debugging in VS Code is provided by the separate **R Debugger** extension.
+
+Install it only if you need breakpoints and step-through debugging:
+
+<https://marketplace.visualstudio.com/items?itemName=RDebugger.r-debugger>
+
+Most learners do not need R debugging for the workshop.
+
+## Quick verification
+
+Create a file called `test-r-vscode.R`:
+
+```r
+x <- rnorm(100)
+summary(x)
+plot(x)
+```
+
+In VS Code:
+
+1. Run `R: Create R terminal`.
+2. Open `test-r-vscode.R`.
+3. Press `Ctrl+Enter` on each line.
+
+Expected result:
+
+- R code runs in the R terminal.
+- Completion appears while typing R functions.
+- The plot appears in the VS Code plot viewer if `httpgd` is installed and enabled.
+
+## Advanced R in VS Code troubleshooting
+
+### VS Code does not find R
+
+On Windows, reinstall R and make sure the installer saves the R version in the registry if that option appears. This helps the R extension find the R executable automatically.
+
+On macOS and Ubuntu, check that `R` works in a normal Terminal first:
+
+```bash
+R --version
+which R
+```
+
+If Ubuntu installed R in a non-standard location, add the full path to VS Code settings as `r.rterm.linux`.
+
+You can also start R manually in a normal VS Code terminal if the automatic `R: Create R terminal` command fails.
+
+### `languageserver` fails to install
+
+Likely cause: R needs to compile dependencies.
+
+On Windows, install **Rtools45** if the error mentions compilers or source packages. On macOS, install Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+On Ubuntu, install common build dependencies:
+
+```bash
+sudo apt update
+sudo apt install build-essential gfortran libcurl4-openssl-dev libssl-dev libxml2-dev
+```
+
+Then restart R and try again.
+
+### Plot viewer does not work
+
+Check that `httpgd` is installed:
+
+```r
+requireNamespace("httpgd", quietly = TRUE)
+```
+
+Check that VS Code settings include:
+
+```json
+"r.plot.useHttpgd": true
+```
+
+Restart VS Code after changing settings.
+
+### Too many lint warnings appear
+
+Use the `.lintr` configuration above, or temporarily disable linting in VS Code settings.
+
+### Keyboard shortcuts conflict with existing shortcuts
+
+Remove or edit the conflicting entries in your keyboard shortcuts JSON. The shortcuts are optional.

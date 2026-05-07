@@ -1,0 +1,107 @@
+---
+title: "0.1.6 Verification checklist"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# Verification checklist
+
+Run the checks for your operating system. It is fine if `java -version` fails when you have not installed Java.
+
+## Windows PowerShell
+
+```powershell
+python --version
+pip --version
+java -version
+ssh -V
+```
+
+## R console
+
+```r
+R.version.string
+sapply(c("dplyr", "ggplot2", "phyloseq", "vegan"), requireNamespace, quietly = TRUE)
+```
+
+## macOS Terminal
+
+```bash
+python3 --version
+R --version
+java -version
+ssh -V
+```
+
+## Ubuntu Terminal
+
+Use this on your own Ubuntu computer, VM, or WSL setup:
+
+```bash
+python3 --version
+python3 -m pip --version
+R --version
+java -version
+ssh -V
+```
+
+If you installed optional graphical tools locally, also check:
+
+```bash
+blastn -version
+makeblastdb -version
+seaview
+```
+
+<div class="check-card">
+If Python, R, SSH, and the R package check work, your laptop is ready for the core workshop activities.
+</div>

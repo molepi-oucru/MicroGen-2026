@@ -1,0 +1,301 @@
+---
+title: "0.1.4 Optional graphical bioinformatics apps"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# Optional graphical bioinformatics apps
+
+These apps are optional. Install them only if your instructor says they will be used in a local activity. Many workshop activities will use the cloud server instead.
+
+## Artemis
+
+Artemis is a Java-based genome browser and annotation tool. Install **OpenJDK 17** first, then run Artemis from its `.jar` file.
+
+Official pages:
+
+- Artemis website: <https://sanger-pathogens.github.io/Artemis/Artemis/>
+- Artemis GitHub releases: <https://github.com/sanger-pathogens/Artemis/releases>
+
+### Windows
+
+1. Install Temurin OpenJDK 17 LTS using the Windows instructions above.
+2. Download Artemis from the official Artemis page or GitHub releases.
+3. If you downloaded a ZIP file, extract it to a simple folder, for example:
+
+```text
+C:\Users\YourName\Downloads\Artemis
+```
+
+4. Open PowerShell.
+5. Move into the Artemis folder. Replace the path with the folder where you extracted Artemis:
+
+```powershell
+cd "C:\Users\YourName\Downloads\Artemis"
+```
+
+6. List the `.jar` files:
+
+```powershell
+dir *.jar
+```
+
+7. Run Artemis from the command line. Replace `filename.jar` with the real file name you see:
+
+```powershell
+java -jar filename.jar
+```
+
+For example, if the file is called `artemis.jar`, run:
+
+```powershell
+java -jar artemis.jar
+```
+
+::: {.callout-tip}
+## Why use the command line?
+
+Running Artemis with `java -jar filename.jar` makes Java errors visible in the terminal. This is easier to troubleshoot than double-clicking a `.jar` file.
+:::
+
+### macOS
+
+1. Install Temurin OpenJDK 17 LTS using the macOS instructions above.
+2. Download Artemis from the official Artemis page or GitHub releases.
+3. If the download is a ZIP file, double-click it to extract it.
+4. Open Terminal.
+5. Move into the Artemis folder. Replace the path with your real folder:
+
+```bash
+cd ~/Downloads/Artemis
+```
+
+6. List the `.jar` files:
+
+```bash
+ls *.jar
+```
+
+7. Run Artemis. Replace `filename.jar` with the real file name:
+
+```bash
+java -jar filename.jar
+```
+
+If macOS blocks the app or downloaded files, see the Gatekeeper troubleshooting section below.
+
+### Ubuntu
+
+Use this only on your own Ubuntu computer, VM, or WSL setup with graphical support. Do not install system packages on the shared workshop server unless an instructor asks you to.
+
+```bash
+sudo apt update
+sudo apt install openjdk-17-jdk artemis
+java -version
+art
+```
+
+If `art` does not start Artemis on your Ubuntu version, try:
+
+```bash
+artemis
+```
+
+If the Ubuntu package is unavailable or too old, install OpenJDK 17 and run the Artemis `.jar` file manually:
+
+```bash
+java -jar filename.jar
+```
+
+## BandageNG
+
+BandageNG is a graphical application for viewing de novo assembly graphs. This guide uses **BandageNG** instead of the older Bandage application.
+
+Official pages:
+
+- BandageNG GitHub: <https://github.com/asl/BandageNG>
+- BandageNG Bioconda package: <https://bioconda.github.io/recipes/bandage_ng/README.html>
+
+::: {.callout-warning}
+## BLAST+ may be needed for local BandageNG activities
+
+Install **NCBI BLAST+** if you plan to run BandageNG on your own computer during sessions that use BLAST-related BandageNG features. If you only view simple graph files without BLAST searches, BLAST+ may not be required.
+:::
+
+### Install BandageNG on Windows
+
+1. Open the BandageNG GitHub page: <https://github.com/asl/BandageNG>
+2. Open the **Releases** page.
+3. Download a Windows release if one is available for your workshop version.
+4. Extract the archive.
+5. Run the BandageNG executable from the extracted folder.
+
+If no Windows binary is available for the current BandageNG release, use the workshop server or the Ubuntu/conda option below.
+
+### Install BandageNG on macOS
+
+1. Open the BandageNG GitHub page: <https://github.com/asl/BandageNG>
+2. Open the **Releases** page.
+3. Download the macOS build for your chip if one is available:
+   - Intel Mac: `x86_64` or `x64`
+   - Apple Silicon Mac: `arm64` or `aarch64`
+4. Extract the archive and open BandageNG.
+
+If macOS blocks the app, see the Gatekeeper troubleshooting section below.
+
+### Install BandageNG on Ubuntu
+
+The recommended Ubuntu route is to use a conda-compatible package manager such as conda, mamba, micromamba, or pixi:
+
+```bash
+conda create -n bandageng -c conda-forge -c bioconda bandage_ng
+conda activate bandageng
+BandageNG
+```
+
+If the executable name differs in your environment, list matching commands:
+
+```bash
+compgen -c | grep -i bandage
+```
+
+### Install NCBI BLAST+ for BandageNG
+
+Official NCBI BLAST+ download page:
+
+<https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/>
+
+#### Windows
+
+1. Open the NCBI BLAST+ latest downloads page.
+2. Download the Windows 64-bit BLAST+ installer or archive. The filename usually contains `win64`.
+3. Run the installer or extract the archive.
+4. If you used an archive, add the BLAST+ `bin` folder to your Windows PATH.
+5. Open a new PowerShell window and check:
+
+```powershell
+blastn -version
+makeblastdb -version
+```
+
+#### macOS
+
+Option A: official NCBI archive:
+
+1. Open the NCBI BLAST+ latest downloads page.
+2. Download the macOS archive matching your system if available.
+3. Extract it.
+4. Add the extracted `bin` folder to your PATH.
+5. Check:
+
+```bash
+blastn -version
+makeblastdb -version
+```
+
+Option B: Homebrew, for users who already use Homebrew:
+
+```bash
+brew install blast
+blastn -version
+makeblastdb -version
+```
+
+#### Ubuntu
+
+Install the Ubuntu package:
+
+```bash
+sudo apt update
+sudo apt install ncbi-blast+
+blastn -version
+makeblastdb -version
+```
+
+## SeaView 5
+
+SeaView is a graphical tool for multiple sequence alignment and molecular phylogeny.
+
+Official page:
+
+<https://doua.prabi.fr/software/seaview/>
+
+### Windows
+
+1. Open the SeaView official page.
+2. Download the Windows `seaview5.exe` file.
+3. Run `seaview5.exe`.
+4. The file is a self-extracting archive. Choose where to create the `seaview5` folder.
+5. Open the new `seaview5` folder and run the SeaView program.
+
+The official SeaView page notes that the Windows download creates a folder containing SeaView, example data, help files, and helper programs such as `muscle`, `clustalo`, `phyml`, `Gblocks`, and `treerecs`.
+
+### macOS
+
+1. Open the SeaView official page.
+2. Download the macOS SeaView archive.
+3. Extract the ZIP file.
+4. If macOS blocks the app the first time, Control-click the SeaView icon and choose **Open**.
+
+If the app is still blocked, see the Gatekeeper troubleshooting section below.
+
+### Ubuntu
+
+Use the Ubuntu package on your own computer, VM, or WSL setup with graphical support:
+
+```bash
+sudo apt update
+sudo apt install seaview
+seaview
+```
+
+SeaView is graphical. If `seaview` starts but no window appears, check that you are using a normal Ubuntu desktop session, X11 forwarding, or VNC.

@@ -1,0 +1,494 @@
+---
+title: "0.1.5 Workshop server access"
+author: "Minh-Quan Ton-Ngoc"
+date: "2026-05-11"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+```{=html}
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+```
+
+# Server access setup
+
+This section is adapted from the MicroGen 2026 instructor access guide. Your exact server IP address, username, and key file will be provided by the workshop admin.
+
+## What information you will receive from the admin
+
+You should receive:
+
+- your username,
+- the server IP address,
+- a `.pem` private key file,
+- and, if relevant, your assigned instance name.
+
+::: {.callout-warning}
+## Private key safety
+
+Do not share the `.pem` key. Do not paste it into this notebook, a chat window, email, or a shared document.
+:::
+
+## SSH from Windows PowerShell
+
+Open PowerShell and replace `username`, `SERVER_IP`, and the key path with your real details:
+
+```powershell
+ssh username@SERVER_IP -i "C:\path\to\key.pem"
+```
+
+The quotation marks are important if the path contains spaces.
+
+After login, check your server location:
+
+```bash
+whoami
+pwd
+ls -lh /workspace/$USER /scratch/$USER
+```
+
+Use `/workspace/<username>` for exercises and outputs you want to keep. Use `/scratch/<username>` for large temporary files.
+
+## SSH from macOS Terminal
+
+Before your first login, fix the key file permissions:
+
+```bash
+chmod 600 /path/to/key.pem
+```
+
+This tells macOS that only you can read the key file.
+
+Connect:
+
+```bash
+ssh username@SERVER_IP -i /path/to/key.pem
+```
+
+After login:
+
+```bash
+whoami
+pwd
+ls -lh /workspace/$USER /scratch/$USER
+```
+
+## SSH from Ubuntu Terminal
+
+The Ubuntu command is the same as macOS. First, protect your key file:
+
+```bash
+chmod 600 /path/to/key.pem
+```
+
+Connect:
+
+```bash
+ssh username@SERVER_IP -i /path/to/key.pem
+```
+
+After login:
+
+```bash
+whoami
+pwd
+ls -lh /workspace/$USER /scratch/$USER
+```
+
+## VS Code Remote SSH
+
+![VS Code Remote SSH connection from laptop to server](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/remote-ssh-concept.png)
+
+1. Open VS Code.
+2. Install the **Remote - SSH** extension.
+3. Open the Command Palette:
+   - Windows: `Ctrl+Shift+P`
+   - macOS: `Command+Shift+P`
+   - Ubuntu/Linux: `Ctrl+Shift+P`
+4. Choose **Remote-SSH: Add New SSH Host**.
+5. Paste your SSH command, for example:
+
+```text
+ssh username@SERVER_IP -i /path/to/key.pem
+```
+
+6. Choose the SSH configuration file suggested by VS Code.
+7. Open the Command Palette again.
+8. Choose **Remote-SSH: Connect to Host**.
+9. Select your new host.
+10. Open your assigned workspace folder:
+
+```text
+/workspace/<username>
+```
+
+Do not use `/databases` as your main VS Code workspace. Shared database files are usually read-only.
+
+### Example SSH config
+
+Windows example:
+
+```text
+Host microgen2026
+    HostName SERVER_IP
+    User username
+    IdentityFile C:\path\to\key.pem
+```
+
+macOS example:
+
+```text
+Host microgen2026
+    HostName SERVER_IP
+    User username
+    IdentityFile /path/to/key.pem
+```
+
+Ubuntu example:
+
+```text
+Host microgen2026
+    HostName SERVER_IP
+    User username
+    IdentityFile /path/to/key.pem
+```
+
+::: {.callout-tip}
+## Long-running commands
+
+If you run a long analysis on the server, use `tmux` so the command can continue if your network drops:
+
+```bash
+tmux new -s microgen
+```
+
+Detach with `Ctrl-b`, then press `d`. Return later with:
+
+```bash
+tmux attach -t microgen
+```
+:::
+
+## X11 forwarding
+
+X11 opens a single graphical program from the server on your laptop. For example, the `fastqc` window can appear on your own screen while the program runs on the server.
+
+### Windows: MobaXterm recommended
+
+MobaXterm includes an X server.
+
+1. Open MobaXterm.
+2. Check that the X server is running.
+3. Create or open your SSH session.
+4. Make sure X11 forwarding is enabled in the SSH session settings.
+5. In the server terminal, run:
+
+```bash
+echo $DISPLAY
+xclock
+```
+
+If a clock window opens, X11 is working. You can then try:
+
+```bash
+fastqc
+```
+
+### Windows: VcXsrv alternative
+
+If you use VcXsrv instead of MobaXterm:
+
+1. Install VcXsrv.
+2. Open **XLaunch**.
+3. Choose:
+
+```text
+Multiple windows
+Start no client
+Clipboard enabled
+Disable access control
+```
+
+PowerShell uses this syntax:
+
+```powershell
+$env:DISPLAY = "127.0.0.1:0.0"
+echo $env:DISPLAY
+ssh -Y username@SERVER_IP -i "C:\path\to\key.pem"
+```
+
+Inside the SSH session:
+
+```bash
+echo $DISPLAY
+xclock
+fastqc
+```
+
+::: {.callout-warning}
+## PowerShell is not CMD
+
+Do not use `set DISPLAY=...` in PowerShell. Use `$env:DISPLAY = "127.0.0.1:0.0"`.
+:::
+
+### macOS: XQuartz
+
+macOS requires XQuartz for X11.
+
+1. Install XQuartz from <https://www.xquartz.org/>.
+2. Open XQuartz once.
+3. Close and reopen Terminal.
+4. Connect with trusted X11 forwarding:
+
+```bash
+ssh -Y username@SERVER_IP -i /path/to/key.pem
+```
+
+Test:
+
+```bash
+echo $DISPLAY
+xclock
+fastqc
+```
+
+If the window does not appear, make sure XQuartz is running. If X11 is slow, use VNC instead.
+
+### Ubuntu: native X11 desktop or VNC
+
+If you are using a normal Ubuntu desktop session, X11 is usually already available locally. Connect with trusted X11 forwarding:
+
+```bash
+ssh -Y username@SERVER_IP -i /path/to/key.pem
+```
+
+Test:
+
+```bash
+echo $DISPLAY
+xclock
+fastqc
+```
+
+If you are using WSL, a virtual machine, or a headless Ubuntu system, graphical windows may need extra configuration. In that case, VNC is usually easier than X11.
+
+## VNC access
+
+VNC opens a full remote desktop. It is often more stable than X11 for graphical tools.
+
+::: {.callout-warning}
+## Use VNC only through SSH tunnel
+
+Do not connect directly to a public VNC port. Start VNC on the server, create an SSH tunnel, then connect your VNC client to `localhost`.
+:::
+
+![VNC through SSH tunnel concept](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vnc-tunnel-concept.png)
+
+### Start VNC on the server
+
+First, SSH to the server. Then run:
+
+```bash
+start-vnc
+```
+
+The first time, it asks you to create a VNC password.
+
+Important:
+
+- this is a separate VNC password,
+- it is not your Linux password,
+- it is not your private key,
+- when asked for a view-only password, type `n`.
+
+The command prints something like:
+
+```text
+Display: :2
+VNC port: 5902
+```
+
+Write down the `VNC port`. The port may be `5901`, `5902`, `5903`, or another number.
+
+### Generic SSH tunnel
+
+Open a **new** terminal window on your laptop and keep your original SSH session open. Replace `5902` with the port printed by `start-vnc`:
+
+```bash
+ssh -L 5902:localhost:5902 username@SERVER_IP -i /path/to/key.pem
+```
+
+Keep this tunnel window open.
+
+Then connect your VNC client to:
+
+```text
+localhost:5902
+```
+
+If your VNC port is different, use that number instead.
+
+### Windows VNC with MobaXterm
+
+In MobaXterm:
+
+1. Start VNC on the server with `start-vnc`.
+2. Open **Tunneling > New SSH tunnel**.
+3. Choose local port forwarding.
+4. Fill in:
+
+```text
+Forwarded port: your VNC port
+Remote server: localhost
+Remote port: your VNC port
+SSH server: SERVER_IP
+SSH login: username
+SSH port: 22
+Use private key: key.pem
+```
+![VNC tunnel setup through MobaXterm](https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vnc-tunnel-mobaxterm.png)
+
+Example if `start-vnc` reports port `5902`:
+
+```text
+Forwarded port: 5902
+Remote server: localhost
+Remote port: 5902
+SSH server: SERVER_IP
+SSH login: username
+SSH port: 22
+Use private key: key.pem
+```
+
+Start the tunnel and keep it running.
+
+Then create a VNC session:
+
+```text
+Remote hostname: localhost
+Port: your VNC port
+```
+
+Enter the VNC password you created with `start-vnc`.
+
+### macOS VNC
+
+macOS includes Screen Sharing.
+
+1. Start VNC on the server with `start-vnc`.
+2. Open a new Terminal window and create the SSH tunnel:
+
+```bash
+ssh -L 5902:localhost:5902 username@SERVER_IP -i /path/to/key.pem
+```
+
+3. In Finder, choose:
+
+```text
+Go > Connect to Server
+```
+
+4. Enter:
+
+```text
+vnc://localhost:5902
+```
+
+5. Enter the VNC password you created with `start-vnc`.
+
+You can also use RealVNC Viewer or TigerVNC Viewer if Screen Sharing does not work well on your Mac.
+
+### Ubuntu VNC
+
+On Ubuntu, install a VNC client such as TigerVNC Viewer or Remmina:
+
+```bash
+sudo apt update
+sudo apt install tigervnc-viewer remmina
+```
+
+Start VNC on the server with `start-vnc`, then create the SSH tunnel from a new Ubuntu Terminal window:
+
+```bash
+ssh -L 5902:localhost:5902 username@SERVER_IP -i /path/to/key.pem
+```
+
+Open your VNC client and connect to:
+
+```text
+localhost:5902
+```
+
+Use the VNC password you created when running `start-vnc`.
+
+### Stop VNC when finished
+
+List your VNC sessions:
+
+```bash
+list-vnc
+```
+
+If the display is `:2`, stop it with:
+
+```bash
+stop-vnc 2
+```
+
+If the display is `:1`, stop it with:
+
+```bash
+stop-vnc 1
+```
+
+If the remote desktop is locked, run:
+
+```bash
+fix-vnc-lock
+list-vnc
+```
+
+Then restart your own VNC display.
