@@ -2,15 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hao CT">
 <meta name="dcterms.date" content="2026-05-14">
 
-<title>3.1 Read mapping &amp; SNP alignment – MicroGen 2026</title>
+<title>3.1 Read mapping – MicroGen 2026</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -40,10 +78,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bb05f5d0074da2129d766b238819cd35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d7227744020e952889926329a671a95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +124,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo light-content">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MicroGen 2026</span>
@@ -164,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/index.html">Day 3</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/mapping.html">3.1 Read mapping &amp; SNP alignment</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/index.html">Day 3</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/mapping.html">3.1 Read mapping</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -204,6 +243,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../day-0/instructions/linux-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0.2 Commands &amp; Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/final-quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on Linux Foundations</span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-2/instructions/hybrid-assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2 Long-read sequencing &amp; Hybrid assemblies</span></a>
+ <span class="menu-text">2.2 Long-Read sequencing &amp; Hybrid assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,13 +323,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
+ <span class="menu-text">3.1 Read mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
+ <span class="menu-text">3.2 Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -298,36 +343,58 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in clinical microbiology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance</span></a>
+ <span class="menu-text">4.1 Workflow Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: Taxonomy Analysis</span></a>
+ <span class="menu-text">4.2 Taxonomy Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-amr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: AMR Analysis &amp; Summary</span></a>
+ <span class="menu-text">4.3 AMR Analysis &amp; Summary</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in pathogen detection</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning</span></a>
+ <span class="menu-text">4.4 Clinical Case</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning: Signal Analysis</span></a>
+ <span class="menu-text">4.5 Signal Analysis</span></a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
       </ul>
@@ -337,15 +404,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-directory" id="toc-data-directory" class="nav-link" data-scroll-target="#data-directory">Data directory</a></li>
+  <li><a href="#mapping-command-step-by-step" id="toc-mapping-command-step-by-step" class="nav-link" data-scroll-target="#mapping-command-step-by-step">Mapping command step by step</a>
+  <ul class="collapse">
+  <li><a href="#indexing-the-reference-genome" id="toc-indexing-the-reference-genome" class="nav-link" data-scroll-target="#indexing-the-reference-genome">1. Indexing the reference genome</a></li>
+  <li><a href="#mapping-the-reads-to-the-reference-genome" id="toc-mapping-the-reads-to-the-reference-genome" class="nav-link" data-scroll-target="#mapping-the-reads-to-the-reference-genome">2. Mapping the reads to the reference genome</a></li>
+  <li><a href="#converting-sam-to-bam-format" id="toc-converting-sam-to-bam-format" class="nav-link" data-scroll-target="#converting-sam-to-bam-format">3. Converting SAM to BAM format</a></li>
+  <li><a href="#removing-reads-with-long-softhard-clipping-and-sort-bam-file" id="toc-removing-reads-with-long-softhard-clipping-and-sort-bam-file" class="nav-link" data-scroll-target="#removing-reads-with-long-softhard-clipping-and-sort-bam-file">4. Removing reads with long soft/hard clipping and sort bam file:</a></li>
+  <li><a href="#indexing-the-sorted-bam-file" id="toc-indexing-the-sorted-bam-file" class="nav-link" data-scroll-target="#indexing-the-sorted-bam-file">5. Indexing the sorted BAM file</a></li>
+  <li><a href="#extra-visualizing-mapped-reads-on-reference" id="toc-extra-visualizing-mapped-reads-on-reference" class="nav-link" data-scroll-target="#extra-visualizing-mapped-reads-on-reference">Extra: Visualizing mapped reads on reference</a></li>
+  <li><a href="#variant-calling-using-freebayes" id="toc-variant-calling-using-freebayes" class="nav-link" data-scroll-target="#variant-calling-using-freebayes">6. Variant calling using FreeBayes</a></li>
+  <li><a href="#filtering-variants-using-bcftools" id="toc-filtering-variants-using-bcftools" class="nav-link" data-scroll-target="#filtering-variants-using-bcftools">7. Filtering variants using bcftools</a></li>
+  <li><a href="#generating-pseudogenome-sequences" id="toc-generating-pseudogenome-sequences" class="nav-link" data-scroll-target="#generating-pseudogenome-sequences">8. Generating pseudogenome sequences</a></li>
+  <li><a href="#extra-remove-intermediate-files" id="toc-extra-remove-intermediate-files" class="nav-link" data-scroll-target="#extra-remove-intermediate-files">Extra: Remove intermediate files</a></li>
+  <li><a href="#extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping" id="toc-extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping" class="nav-link" data-scroll-target="#extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping">Extra: Getting statistics of coverage and depth for your sample mapping</a></li>
+  </ul></li>
+  <li><a href="#mapping-command-in-one-go-using-script" id="toc-mapping-command-in-one-go-using-script" class="nav-link" data-scroll-target="#mapping-command-in-one-go-using-script">Mapping command in one-go using script</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/index.html">Day 3</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/mapping.html">3.1 Read mapping &amp; SNP alignment</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/index.html">Day 3</a></li><li class="breadcrumb-item"><a href="../../day-3/instructions/mapping.html">3.1 Read mapping</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">3.1 Read mapping &amp; SNP alignment</h1>
+<h1 class="title">3.1 Read mapping</h1>
 </div>
 
 
@@ -374,8 +463,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Mapping, on theory, is a straightforward concept. However, in practice, mapping is a complex process with multiple steps and considerations. The most crucial step is not mapping <em>per se</em>, but on filtering mapped reads and variants to retain only high-quality ones. This is particularly important if you are working with potentially closely related genomes (e.g.&nbsp;in an outbreak), where the number of variants can be very low, and the impact of false positives variant detection (SNPs) can lead to misleading conclusion.</p>
+</section>
+<section id="data-directory" class="level1">
+<h1>Data directory</h1>
+<p>Input data are available in <code>day-3/mapping/input</code> directory. The reference genome is <code>AMB201Kp_chrom.fa</code>, and the paired-end read files for each sample are named in the format <code>sampleID_1.fastq.gz</code> and <code>sampleID_2.fastq.gz</code>.</p>
+<p>The reference genome for this exercise is taken from the previous <code>day-2</code> hybrid assembly step. Note that we only use the chromosomal sequence of <code>AMB201Kp</code></p>
+<p>Also first activate the main conda environment we will be working with</p>
+</section>
+<section id="mapping-command-step-by-step" class="level1">
+<h1>Mapping command step by step</h1>
+<p><strong><em>Disclaimer</em></strong>: There is no one universal best practice for read mapping. The process described herein is just one example of how mapping is performed for bacterial genomics.</p>
+<section id="indexing-the-reference-genome" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-the-reference-genome">1. Indexing the reference genome</h2>
+<p>The goal of mapping is to align the sequencing reads to a reference genome. In this example, we will use the BWA-MEM2 algorithm for mapping. First, we need to index the reference genome using the <code>bwa-mem2 index</code> command. This step creates the necessary index files for efficient mapping.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa-mem2</span> index AMB201Kp_chrom.fa <span class="co"># indexing the reference genome</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="mapping-the-reads-to-the-reference-genome" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-the-reads-to-the-reference-genome">2. Mapping the reads to the reference genome</h2>
+<p>First we will conduct mapping for one sample, 925Kp, which has paired-end reads (<code>925Kp_1.fastq.gz</code> and <code>925Kp_2.fastq.gz</code>).</p>
+<p>We will use the <code>bwa-mem2 mem</code> command to perform the mapping, with</p>
+<ul>
+<li><code>-t 8</code> option allows us to use 8 threads for faster processing</li>
+<li>output will be saved in a SAM file named <code>925Kp_bwamem2AMB201Kp.sam</code>. It is important to note that the output file name should reflect the reference genome used for mapping, in this case, AMB201Kp.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mapping forward and reverse reads to the reference genome, and saving the output in SAM format</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bwa-mem2</span> mem <span class="at">-t</span> 8 AMB201Kp_chrom.fa 925Kp_1.fastq.gz 925Kp_2.fastq.gz <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp.sam </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="converting-sam-to-bam-format" class="level2">
+<h2 class="anchored" data-anchor-id="converting-sam-to-bam-format">3. Converting SAM to BAM format</h2>
+<p>After mapping, we will convert the SAM file to BAM format using <code>samtools view</code>, with - <code>-bS</code> option specifies that the input is in SAM format and the output should be in BAM format. - resulting BAM file will be named <code>925Kp_bwamem2AMB201Kp_tmp.bam</code>. - <code>-q 30</code> option filters the alignments to include only those with a mapping quality of at least 30, ensuring that we retain high-quality mappings.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># converting the SAM file to BAM format</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-t</span> 8 <span class="at">-q</span> 30 <span class="at">-bS</span> 925Kp_bwamem2AMB201Kp.sam <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_tmp.bam </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="removing-reads-with-long-softhard-clipping-and-sort-bam-file" class="level2">
+<h2 class="anchored" data-anchor-id="removing-reads-with-long-softhard-clipping-and-sort-bam-file">4. Removing reads with long soft/hard clipping and sort bam file:</h2>
+<p>Reads can be poorly mapped to the reference, which can be indicated by long soft or hard clipping in the CIGAR string. Since most aligners, including BWA-MEM2, use local alignment, this means the <em>ends</em> of reads may not be part of the best alignment. This can be caused by:</p>
+<ul>
+<li>adapter sequences not cleanly filtered</li>
+<li>structural variations in your sample compared to the reference</li>
+<li>mapping to repetitive regions of the genome</li>
+</ul>
+<p>In the SAM file, Column 6 (CIGAR string) describes how the read aligns to the reference. The CIGAR string can contain various operations, including matches (M), insertions (I), deletions (D), soft clipping (S), and hard clipping (H). Soft clipping (S) indicates that a portion of the read is not aligned to the reference, while hard clipping (H) indicates that a portion of the read is not present in the alignment at all. Soft and hard clipping don’t mean biological differences, they just indicate whether a full read sequence is in the SAM file.</p>
+<p>To remove reads with long soft/hard clipping, we can use <code>samclip</code> to allow the maximum soft/hard clipping length of xx bp (xx=10). This means that any read with more than 10 bp of soft or hard clipping will be filtered out. This strict setup is preferred to ensure mismapped reads are removed, allowing for more accurate variant calling in downstream analysis. This filter is particularly significant to infer differences in very closely related samples, such as in an outbreak.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx AMB201Kp_chrom.fa <span class="co"># first need indexing the reference genome for samclip</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># removing reads with long soft/hard clipping and sorting the BAM file</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> view <span class="at">-h</span> 925Kp_bwamem2AMB201Kp_tmp.bam <span class="kw">|</span> <span class="ex">samclip</span> <span class="at">--max</span> 10 <span class="at">--ref</span> AMB201Kp_chrom.fa <span class="kw">|</span> <span class="ex">samtools</span> sort <span class="at">-t</span> 8 <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_clip.bam</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We combined the filtering of reads with long soft/hard clipping and sorting the BAM file into one command. The resulting BAM file after filtering will be named <code>925Kp_bwamem2AMB201Kp_clip.bam</code>. Sorting the BAM file is important for downstream analysis, such as variant calling, as it allows for efficient access to the alignments based on their genomic coordinates.</p>
+</section>
+<section id="indexing-the-sorted-bam-file" class="level2">
+<h2 class="anchored" data-anchor-id="indexing-the-sorted-bam-file">5. Indexing the sorted BAM file</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># indexing the sorted BAM file for downstream analysis</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> index 925Kp_bwamem2AMB201Kp_clip.bam </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="extra-visualizing-mapped-reads-on-reference" class="level2">
+<h2 class="anchored" data-anchor-id="extra-visualizing-mapped-reads-on-reference">Extra: Visualizing mapped reads on reference</h2>
+<p><strong><em>Exercise</em></strong>: Load the sorted clipped bam file onto reference using Artemis to visualize the coverage and depth of mapped reads.</p>
+<p>Following these steps:</p>
+<ul>
+<li><p>Open Artemis and load the reference genome <code>AMB201Kp_chrom.fa</code> . Also read the annotation file <code>AMB201Kp_fx.gbff</code></p></li>
+<li><p>Load the sorted BAM file <code>925Kp_bwamem2AMB201Kp_clip.bam</code> in <code>File &gt; Read BAM/CRAM/VCF ...</code>. Make sure your index <code>bam.bai</code> file is in the same directory as the BAM file.</p></li>
+<li><p>Visualize the coverage and depth of mapped reads across the reference genome. Try right clicking in the bam window and select <code>View &gt; Paired Stack</code> to visualize paired-end reads. You can also visualize variants by select <code>Show &gt; SNP marks</code> to view <em>TRUE SNPS</em>. What should be the feature of a true SNP?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mapping_1.jpg" class="img-fluid figure-img" width="758"></p>
+<figcaption>Mapping sample to reference AMB201Kp</figcaption>
+</figure>
+</div></li>
+</ul>
+<p><strong><em>Question</em></strong>: Navigate to region 162400 - 167200; 464000 - 469000. What are the potential explanations for regions without mapped reads?</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="images/mapping_2.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" width="402"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="images/mapping_3.jpg" class="img-fluid quarto-figure quarto-figure-right figure-img" width="550"></p>
+</figure>
+</div>
+<p>You can continue exploring the Artemis portal, but don’t close it down just now.</p>
+</section>
+<section id="variant-calling-using-freebayes" class="level2">
+<h2 class="anchored" data-anchor-id="variant-calling-using-freebayes">6. Variant calling using FreeBayes</h2>
+<p>After obtaining the sorted and indexed BAM file, we can proceed with variant calling using FreeBayes. FreeBayes is a haplotype-based variant caller that can identify single nucleotide polymorphisms (SNPs) and small insertions/deletions (indels) from the aligned reads.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calling variants using FreeBayes</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">freebayes</span> <span class="at">-f</span> AMB201Kp_chrom.fa <span class="at">-p</span> 1 <span class="at">-C</span> 4 925Kp_bwamem2AMB201Kp_clip.bam <span class="kw">|</span> <span class="ex">bcftools</span> filter <span class="at">-e</span> <span class="st">'QUAL &lt; 30 | (INFO/AO)/(INFO/DP) &lt;0.6'</span><span class="kw">|</span> <span class="ex">vcfallelicprimitives</span> <span class="at">-k</span> <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_frb.vcf</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a sequence dictionary for the reference genome, which is required for GATK tools</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">gatk</span> CreateSequenceDictionary <span class="at">-R</span> AMB201Kp_chrom.fa</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Improve accuracy of calling indels</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ex">gatk</span> LeftAlignAndTrimVariants <span class="at">-R</span> AMB201Kp_chrom.fa <span class="at">-V</span> 925Kp_bwamem2AMB201Kp_frb.vcf <span class="at">-O</span> 925Kp_bwamem2AMB201Kp_frb_naive.vcf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In this command, we specify the reference genome using the <code>-f</code> option, set the ploidy to 1 using the <code>-p</code> option (bacterial genome is haploid), and set a minimum alternate allele count of 4 using the <code>-C</code> option. The output is then filtered using <code>bcftools filter</code> to retain (-e means excluding) only variants with a quality score of at least 30 and an allele frequency of at least 0.6. Finally, we use <code>vcfallelicprimitives</code> to decompose complex variants into simpler ones, and the resulting VCF file is named <code>925Kp_bwamem2AMB201Kp_frb.vcf</code>.</p>
+<p>One drawback of Freebayes is that it does not perform local realignment around indels, which can lead to misaligned reads and inaccurate variant calls. To address this issue, we can use GATK’s <code>LeftAlignAndTrimVariants</code> tool to left-align and trim the variants in the VCF file. This step helps to improve the accuracy of variant calls by ensuring that indels are properly aligned and represented in the VCF file. The output of this step is saved in a new VCF file named <code>925Kp_bwamem2AMB201Kp_frb_naive.vcf</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">more</span> 925Kp_bwamem2AMB201Kp_frb_naive.vcf <span class="co">## inspecting the VCF file</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtering-variants-using-bcftools" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-variants-using-bcftools">7. Filtering variants using bcftools</h2>
+<p>After variant calling, we can further filter the variants using <code>bcftools filter</code> to retain only high-quality variants. This is important to discern closely related genomes. Without controlling for this step, we can artificially inflate the number of variants between closely related samples, which can lead to inaccurate conclusions about their relatedness. By applying stringent filters, we can ensure that only reliable variants are retained for downstream analysis, such as phylogenetic inference.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First define the criteria for low quality variants and generate a VCF file with low-quality variants</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-i</span> <span class="st">'MQM &lt; 30 | (INFO/AO)/(INFO/DP) &lt; 0.9 | (SAF&lt;1 | SAR&lt;1)'</span> 925Kp_bwamem2AMB201Kp_frb_naive.vcf <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_frb_lowqualsnp.vcf </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># filter -i means inclusion of variants matching the criteria to the outfile</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># generating a text file with the positions of low quality SNPs. These will be masked in the final pseudogenome file</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">'^AMB201Kp'</span> 925Kp_bwamem2AMB201Kp_frb_lowqualsnp.vcf <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"TYPE=snp"</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'{print $1,'</span><span class="dt">\t</span><span class="st">',$2}'</span> <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_frb_lowqualsnp_pos.txt </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># In contrast, use bcftools filter -e with the same criteria to output high-quality variants into a separate VCF file</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="ex">bcftools</span> filter <span class="at">-e</span> <span class="st">'MQM &lt; 30 | (INFO/AO)/(INFO/DP) &lt; 0.9 | (SAF&lt;1 | SAR&lt;1)'</span> 925Kp_bwamem2AMB201Kp_frb_naive.vcf <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># compressing the high-quality VCF file</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="ex">bgzip</span> 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># indexing the compressed high-quality VCF file for downstream analysis</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="ex">tabix</span> <span class="at">-p</span> vcf 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In this command, we apply filters to retain only variants with a mapping quality (MQM) of at least 30, an allele frequency of at least 0.9, and sufficient support for both forward and reverse reads (SAF and SAR). This is stored in the <code>highqualsnp.vcf</code> file. We also extracted positions of low-quality SNPs into a separate file.</p>
+<p><strong><em>Exercise</em></strong>: loading the high-quality VCF file into Artemis and visualizing the variants in the context of the reference genome.</p>
+<p>From the already-open Artemis window, select <code>File &gt; Read BAM / CRAM / VCF ...</code> and open the <code>925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz</code> file. Note that the tabix file <code>.tbi</code> needs to be present in the same directory for this to work. Navigate to the only retained high-quality SNP in the file. What is it position?</p>
+<p><strong><em>Questions</em></strong></p>
+<ul>
+<li><p>What is the character of SNP mark at this high-quality SNP position?</p></li>
+<li><p>Does this variant fall into coding or non-coding sequence/</p></li>
+<li><p>If coding sequence, what is the impact of this mutation on the protein function?</p></li>
+</ul>
+<p><strong><em>Exercise extra</em></strong>: Inspsect the naive vcf file before filtering <code>925Kp_bwamem2AMB201Kp_frb_naive.vcf</code> to see where variants fall into low-quality category.</p>
+</section>
+<section id="generating-pseudogenome-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="generating-pseudogenome-sequences">8. Generating pseudogenome sequences</h2>
+<p>After variant filtering, we can generate pseudogenome sequences for phylogenetic inferences. A pseudogenome is a modified version of the reference genome (length identical to that of reference) that incorporates the variants identified in the sample. This allows us to create a consensus sequence that reflects the genetic makeup of the sample while maintaining the overall structure of the reference genome. Creating a pseudogenome alignments is a ‘get-away’ for whole-genome alignments, which can be computationally intensive and may not be suitable for closely related samples.</p>
+<p>Elements of a pseudogenome sequence:</p>
+<ul>
+<li><p><em>Reference sequence</em>: providing overall structure and length</p></li>
+<li><p><em>High-quality variants</em>: incorporated into the pseudogenome to reflect the <em>genetic makeup of the sample</em></p></li>
+<li><p><em>Masked low-quality variants</em>: positions of low-quality variants and poorly mapped regions are masked (e.g., replaced with ‘N’) to reflect uncertain regions of the genome.</p></li>
+</ul>
+<p>We already had the reference and high-quality variant <code>highqualsnp.vcf.gz</code> files. The remaining step is to create a position file for masking.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generating a text file with the positions of regions with depth &lt;=4. These will be masked in the final pseudogenome file.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> depth <span class="at">-a</span> <span class="at">-Q</span> 30 925Kp_bwamem2AMB201Kp_clip.bam <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'$3&lt;=4 {print $1,'</span><span class="dt">\t</span><span class="st">',$2}'</span> <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_lowdepth_pos.txt </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># combining the positions of low-quality SNPs and low-depth regions into one file for masking</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> 925Kp_bwamem2AMB201Kp_frb_lowqualsnp_pos.txt 925Kp_bwamem2AMB201Kp_lowdepth_pos.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-k2,2n</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_mask_pos.txt </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Creating the pseudogenome sequence using <code>bcftools consensus</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">samtools</span> faidx AMB201Kp_chrom.fa AMB201Kp <span class="kw">|</span> <span class="ex">bcftools</span> consensus <span class="at">-H</span> A <span class="at">-i</span> <span class="st">'TYPE="snp"'</span> <span class="at">-m</span> 925Kp_bwamem2AMB201Kp_mask_pos.txt <span class="at">-o</span> 925Kp_bwamem2AMB201Kp_temp.fasta 925Kp_bwamem2AMB201Kp_frb_highqualsnp.vcf.gz <span class="co">##  pseudogenome construction</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">## replace the reference ID with correct sample name in the header of the pseudogenome fasta file</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">'s/&gt;AMB201Kp/&gt;925Kp/g'</span> <span class="op">&lt;</span> 925Kp_bwamem2AMB201Kp_temp.fasta <span class="op">&gt;</span> 925Kp_bwamem2AMB201Kp_consensus.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="extra-remove-intermediate-files" class="level2">
+<h2 class="anchored" data-anchor-id="extra-remove-intermediate-files">Extra: Remove intermediate files</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> 925Kp_bwamem2AMB201Kp.sam 925Kp_bwamem2AMB201Kp_tmp.bam 925Kp_bwamem2AMB201Kp_temp.fasta </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="extra-getting-statistics-of-coverage-and-depth-for-your-sample-mapping">Extra: Getting statistics of coverage and depth for your sample mapping</h2>
+<p>A custom script is provided to get a summary of mapping statistics, including percentage of genome covered by mapped reads, and mean depth of coverage. This is conducted via some <code>samtools</code> and <code>bedtools</code> commands.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./bedtools_summary.sh</span> AMB201Kp_chrom.fa 925Kp_bwamem2AMB201Kp_clip.bam</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will create a file named <code>925Kp_bwamem2AMB201Kp_clip_bedsum.txt</code> with the following columns: <code>input bam file \t coverage \t depth</code> . So what is the mapping coverage and depth for this genome. What do these numbers tell you?</p>
+</section>
+</section>
+<section id="mapping-command-in-one-go-using-script" class="level1">
+<h1>Mapping command in one-go using script</h1>
+<p>Since mapping is a multi-step process, we can compile the steps into one automatic script to process from raw fastq input to pseudogenome output. This can be particularly useful when we have multiple samples to process, as it allows for consistent and efficient processing across all samples. The script will take in the paired-end read files, reference genome, and output prefix as input parameters.</p>
+<div style="font-size: 1.25em; font-weight: bold; margin-top: 1em;">
+<p>All the previous steps can be captured in this one script: <code>mapping_onesample.sh</code>!</p>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./mapping_onesample.sh</span> 925Kp_1.fastq.gz 925Kp_2.fastq.gz <span class="at">-r</span> AMB201Kp_chrom.fa <span class="at">-o</span> 925Kp_bwamem2AMB201Kp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div style="font-size: 1.1em; font-weight: bold;">
+<p>⚠️ Though you don’t have to run this code again!</p>
+</div>
+<p>Instead, run this code for the next sample, 930Kp:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./mapping_onesample.sh</span> 930Kp_1.fastq.gz 930Kp_2.fastq.gz <span class="at">-r</span> AMB201Kp_chrom.fa <span class="at">-o</span> 930Kp_bwamem2AMB201Kp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong><em>Exercise</em></strong>: Run the mapping script for the remaining samples, and generate pseudogenome sequences for all samples.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -429,13 +690,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -789,8 +1051,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-3/instructions/phylotree.html" class="pagination-link" aria-label="3.2 Phylogenetic tree inference">
-        <span class="nav-page-text">3.2 Phylogenetic tree inference</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-3/instructions/phylotree.html" class="pagination-link" aria-label="3.2 Phylogenetics">
+        <span class="nav-page-text">3.2 Phylogenetics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

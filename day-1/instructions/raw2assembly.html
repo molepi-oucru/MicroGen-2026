@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>1.3 From raw sequencing data to assemblies – MicroGen 2026</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -75,10 +78,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bb05f5d0074da2129d766b238819cd35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d7227744020e952889926329a671a95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -121,7 +124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo light-content">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MicroGen 2026</span>
@@ -241,6 +245,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">0.2 Commands &amp; Environments</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/final-quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on Linux Foundations</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -290,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-2/instructions/hybrid-assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2 Long-read sequencing &amp; Hybrid assemblies</span></a>
+ <span class="menu-text">2.2 Long-Read sequencing &amp; Hybrid assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -313,13 +323,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
+ <span class="menu-text">3.1 Read mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
+ <span class="menu-text">3.2 Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -333,36 +343,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in clinical microbiology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance</span></a>
+ <span class="menu-text">4.1 Workflow Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: Taxonomy Analysis</span></a>
+ <span class="menu-text">4.2 Taxonomy Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-amr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: AMR Analysis &amp; Summary</span></a>
+ <span class="menu-text">4.3 AMR Analysis &amp; Summary</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in pathogen detection</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning</span></a>
+ <span class="menu-text">4.4 Clinical Case</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning: Signal Analysis</span></a>
+ <span class="menu-text">4.5 Signal Analysis</span></a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
       </ul>
@@ -447,21 +479,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-directory" class="level1">
 <h1>Data directory</h1>
-<p>If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven’t, no worries, we’ve got you covered! The data is pre-loaded on your instance under these directories:</p>
-<ul>
-<li><code>/data/raw_shortread</code>: Short-read data from Illumina - our focus today.</li>
-<li><code>/data/raw_longread</code>: Long-read data (Oxford Nanopore) - we will study in module 2.2.</li>
-</ul>
-<p>We will also need metadata information of the dataset, such as sample name and sequencing technique for each data file. These are stored in the tab-delimited file <code>PRJNA1260529.metadata.tsv</code>.</p>
+<p>If you have completed Day-0, you probably have downloaded the dataset in the last exercise. But if you haven’t, no worries, we’ve got you covered! The data is pre-loaded on your instance under the directory:</p>
+<p><code>/microgen2026/PRJNA1260529/</code></p>
+<p>This directory contains all the raw sequencing data files from the study, both from short-read sequencing (Illumina MiSeq) and long-read sequencing (Oxford Nanopore).</p>
+<p>All metadata information of the dataset, such as sample name and sequencing technique for each data file, are stored in the tab-delimited file:</p>
+<p><code>/microgen2026/day-1/PRJNA1260529.metadata.tsv</code>.</p>
+<p>We will first learn and practice on the short-read data, while long-read sequencing will be introduced later in module <a href="../../day-2/instructions/hybrid-assembly.html">2.3</a>.</p>
+<p>We have already taken out the short-read data to a new directory for you:</p>
+<p><code>/microgen2026/day-1/raw_shortread/</code></p>
+<p>As the <code>/microgen2026/</code> is a shared directory for the whole course, please copy it to your home directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> /microgen2026/day-1/raw_shortread/ ~/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now you can work on it without disrupting your classmates ✔️</p>
 <p>Let’s take a look at the files in the <code>raw_shortread</code> directory:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_shortread/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> raw_shortread/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You shall see a directory structure that looks like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> raw_shortread </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_1.fastq.gz </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_2.fastq.gz </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_1.fastq.gz </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_2.fastq.gz </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ... </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> raw_shortread </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_1.fastq.gz </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 925Kp_2.fastq.gz </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_1.fastq.gz </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── 930Kp_2.fastq.gz </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ... </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Try to answer the following questions:</p>
 <ul>
 <li>How many files are there?</li>
@@ -474,7 +511,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Challenge
+<span class="screen-reader-only">Note</span>Challenge
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -486,14 +523,14 @@ Challenge
 <summary>
 Code
 </summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">metadata</span><span class="op">=</span><span class="st">"path-to-metadata-file"</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>_1.fastq.gz<span class="kw">;</span> <span class="cf">do</span> <span class="co"># start of the loop</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">sample</span><span class="op">=</span><span class="va">${file</span><span class="op">%%</span>_<span class="pp">*</span><span class="va">}</span><span class="kw">;</span> <span class="co"># split the filename by the character "_" and get the first part - the sample name</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add your code to search for the sample and get its sequencing tech in the metadata file</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="co"># end of the loop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">metadata</span><span class="op">=</span><span class="st">"path-to-metadata-file"</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>_1.fastq.gz<span class="kw">;</span> <span class="cf">do</span> <span class="co"># start of the loop</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">sample</span><span class="op">=</span><span class="va">${file</span><span class="op">%%</span>_<span class="pp">*</span><span class="va">}</span><span class="kw">;</span> <span class="co"># split the filename by the character "_" and get the first part - the sample name</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add your code to search for the sample and get its sequencing tech in the metadata file</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="co"># end of the loop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -512,20 +549,20 @@ Code
 <li><strong>Quality Scores</strong>: Symbols representing how confident the sequencing machine is about each base (Phred scores).</li>
 </ul>
 <p>Let’s try printing out the first 12 lines of one of the FASTQ files:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> raw_shortread/925Kp_1.fastq.gz <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n12</span><span class="kw">;</span> <span class="co"># zcat is cat for gzipped files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> raw_shortread/925Kp_1.fastq.gz <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n12</span><span class="kw">;</span> <span class="co"># zcat is cat for gzipped files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The output should look like below:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">@SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">AAGTACCTCAACGGCCATTCCGATGTCGTCGCCGGCCTGGCGGTGGTTGGCGATAACTCCGGGCTCGCGGAAAAGCTTGGCTATCTGCAGAATGCGGTAGGCGGCGTGCTTGACCCGTTCAGCAGCTTCCTGACGCTGCGCGGCATCCGTACCCTGGCGCTGCGGATGGAGCGCCACAGCGCGAACGCGCTGCAGCTCGCCGAATGGCTGGAACAGCAGCCGGAAGTGGAGCGAGTCTGGTTTCCCTGGCTGGCCTCGCACCCGCATCATCAGCTGGCGCGCCAGCAAATGGCCCTGCCCG</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">+SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="ex">CCCCCC*CCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5C5CCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*CCCCCCCCCCC5CCCCCCCC5CCCCC5CCCCCCC5CCCCCCCCCCCCCCC*CCCCCCCCCCCCCC5*CCCC5CCCCCC5CCCC*CCCCCCCCCCCCCCCCCCCCCC*CCC*C5CCCCCCCCCCCC*CCCCCCCCCCCC5CCCCCCCCC*CC*CCC55*5CC55*5C*C555C5CCC5C**</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">@SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="ex">ATGTTGACCTGTAAGAACGAAAACACTGTTCTTTCCTGTGTGTCTTCCATTTCTTAGAACAACGTGCATATCTATTCTTGCATTTAAAGTCGCTTCGTCAATCCCCTATATTTCTAGGCGGGTATCTTTTAATGCAGATGGGAATACTCATCTCATAAACAGTGAATAATTATAAAGATGAAATCACACGGTTCTATTT</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="ex">+SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="ex">*CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCC*CCCCC5CCC*5CCCCCCC5CCCCCCC5CCC*C55CCCCC5</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="ex">@SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="ex">CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGGGTTCATGTGCAGCTCCATCAGCAAAAGGGGATGATAAGTTTATCACCACCGACTATTTGCAACAGTGCCCATCTCCGGGTTTATTATATTCGGGCGCATTTGCGCGCGGCAGCTGCTGACTGTTCAGTCTATGTACGCGGAGCCGTTCATGGAAATATTCGCGCAGGTGTTCAGGCTGTTCCCGTTCAACAAGTTCCGGCACGACGGGCTTGTTC</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="ex">+SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="ex">*CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">@SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">AAGTACCTCAACGGCCATTCCGATGTCGTCGCCGGCCTGGCGGTGGTTGGCGATAACTCCGGGCTCGCGGAAAAGCTTGGCTATCTGCAGAATGCGGTAGGCGGCGTGCTTGACCCGTTCAGCAGCTTCCTGACGCTGCGCGGCATCCGTACCCTGGCGCTGCGGATGGAGCGCCACAGCGCGAACGCGCTGCAGCTCGCCGAATGGCTGGAACAGCAGCCGGAAGTGGAGCGAGTCTGGTTTCCCTGGCTGGCCTCGCACCCGCATCATCAGCTGGCGCGCCAGCAAATGGCCCTGCCCG</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="ex">+SRR33475255.1</span> VH01637:40:AAGVVC2M5:1:1101:22246:1000 length=301</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">CCCCCC*CCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5C5CCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*CCCCCCCCCCC5CCCCCCCC5CCCCC5CCCCCCC5CCCCCCCCCCCCCCC*CCCCCCCCCCCCCC5*CCCC5CCCCCC5CCCC*CCCCCCCCCCCCCCCCCCCCCC*CCC*C5CCCCCCCCCCCC*CCCCCCCCCCCC5CCCCCCCCC*CC*CCC55*5CC55*5C*C555C5CCC5C**</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">@SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="ex">ATGTTGACCTGTAAGAACGAAAACACTGTTCTTTCCTGTGTGTCTTCCATTTCTTAGAACAACGTGCATATCTATTCTTGCATTTAAAGTCGCTTCGTCAATCCCCTATATTTCTAGGCGGGTATCTTTTAATGCAGATGGGAATACTCATCTCATAAACAGTGAATAATTATAAAGATGAAATCACACGGTTCTATTT</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="ex">+SRR33475255.2</span> VH01637:40:AAGVVC2M5:1:1101:28797:1000 length=199</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="ex">*CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCC*CCCCC5CCC*5CCCCCCC5CCCCCCC5CCC*C55CCCCC5</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="ex">@SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">CGGTAACTGATGCCGTATTTGCAGTACCAGCGTACGGCCCACAGAATGATGTCACGCTGAAAATGCCGGCCTTTGAATGGGTTCATGTGCAGCTCCATCAGCAAAAGGGGATGATAAGTTTATCACCACCGACTATTTGCAACAGTGCCCATCTCCGGGTTTATTATATTCGGGCGCATTTGCGCGCGGCAGCTGCTGACTGTTCAGTCTATGTACGCGGAGCCGTTCATGGAAATATTCGCGCAGGTGTTCAGGCTGTTCCCGTTCAACAAGTTCCGGCACGACGGGCTTGTTC</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="ex">+SRR33475255.3</span> VH01637:40:AAGVVC2M5:1:1101:32244:1000 length=295</span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="ex">*CCC5CCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCCCCCCCCCC5CCCCCCC5CCCCCCCCCCCCCC5CCCC*CCCC*CCCCC5CCC*CCCCC5CCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCCCCCCC*CCCCCCC5CCCCCCCCCCCCCCCCCCCCCCCCCCCC5CCCCCCCCCC5C5C5CCCCCCCCCCCCCC</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Can you tell how many reads are there in this example output? And what are their IDs, base sequences, and lengths?</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
@@ -533,7 +570,7 @@ Code
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Challenge
+<span class="screen-reader-only">Note</span>Challenge
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -551,24 +588,24 @@ Challenge
 <p>We shouldn’t trust our data blindly. We will use <strong>FastQC</strong> to generate a report on things like base quality and adapter contamination.</p>
 <p>Since we have many samples, we will then use <strong>MultiQC</strong> to summarize all outputs from <strong>FastQC</strong> into a single, interactive HTML report for all samples.</p>
 <p>The following command-lines call the two programs on our short-read data:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">in_dir</span><span class="op">=</span><span class="st">"raw_shortread/"</span> <span class="co"># directory for input FASTQ files</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="va">fastqc_outdir</span><span class="op">=</span><span class="st">"fastqc_shortread/"</span> <span class="co"># directory for FastQC outputs</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$fastqc_outdir</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="va">multiqc_outdir</span><span class="op">=</span><span class="st">"multiqc_shortread/"</span> <span class="co"># directory for MultiQC output</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$multiqc_outdir</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># activate the environment with fastqc &amp; multiqc installed</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="ex">conda</span> activate multiqc </span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="va">nthreads</span><span class="op">=</span>5 <span class="co"># allows analysing 5 samples in parallel</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="co"># run fastqc on all fastq files</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="ex">fastqc</span> <span class="at">-o</span> <span class="va">$fastqc_outdir</span> <span class="at">-t</span> <span class="va">$nthreads</span> <span class="va">$in_dir</span>/<span class="pp">*</span>.fastq.gz </span>
-<span id="cb6-16"><a href="#cb6-16"></a></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="co"># run multiqc on all fastqc outputs</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="ex">multiqc</span> <span class="at">--interactive</span> <span class="at">--force</span> <span class="at">-o</span> <span class="va">$multiqc_outdir</span> <span class="va">$fastqc_outdir</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="va">in_dir</span><span class="op">=</span><span class="st">"raw_shortread/"</span> <span class="co"># directory for input FASTQ files</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="va">fastqc_outdir</span><span class="op">=</span><span class="st">"fastqc_shortread/"</span> <span class="co"># directory for FastQC outputs</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$fastqc_outdir</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="va">multiqc_outdir</span><span class="op">=</span><span class="st">"multiqc_shortread/"</span> <span class="co"># directory for MultiQC output</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$multiqc_outdir</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co"># activate the environment with fastqc &amp; multiqc installed</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="ex">conda</span> activate microgen2026 </span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="va">nthreads</span><span class="op">=</span>5 <span class="co"># allows analysing 5 samples in parallel</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co"># run fastqc on all fastq files</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="ex">fastqc</span> <span class="at">-o</span> <span class="va">$fastqc_outdir</span> <span class="at">-t</span> <span class="va">$nthreads</span> <span class="va">$in_dir</span>/<span class="pp">*</span>.fastq.gz </span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co"># run multiqc on all fastqc outputs</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="ex">multiqc</span> <span class="at">--interactive</span> <span class="at">--force</span> <span class="at">-o</span> <span class="va">$multiqc_outdir</span> <span class="va">$fastqc_outdir</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="multiqc-report" class="level2">
 <h2 class="anchored" data-anchor-id="multiqc-report">MultiQC report</h2>
 <p>Now you can open the file <code>multiqc_shortread/multiqc_report.html</code> in your browser to view the report. Or in the VSCode, right click on the file and select “Open Preview”.</p>
@@ -585,7 +622,7 @@ Challenge
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Making decision
+<span class="screen-reader-only">Important</span>Making decision
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -602,7 +639,7 @@ Making decision
 <h1>Assembly</h1>
 <p>Assembly is the process of building the full genome by finding overlaps between short reads. We will use <strong>Unicycler</strong>, which is highly regarded for bacterial assembly because it acts as an optimizer for the <strong>SPAdes</strong> assembler.</p>
 <p>The syntax for a command that run <code>unicycler</code> on a single sample with paired-end reads is as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">unicycler</span> <span class="at">-1</span> <span class="va">$forward</span> <span class="at">-2</span> <span class="va">$reverse</span> <span class="at">-o</span> <span class="va">$outdir</span> <span class="at">--threads</span> 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">unicycler</span> <span class="at">-1</span> <span class="va">$forward</span> <span class="at">-2</span> <span class="va">$reverse</span> <span class="at">-o</span> <span class="va">$outdir</span> <span class="at">--threads</span> 4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>where</p>
 <ul>
 <li><code>-1</code> is the forward read file</li>
@@ -611,30 +648,110 @@ Making decision
 <li><code>--threads</code> is the number of threads to use, higher number of threads will speed up the assembly process but will also consume more computing resources.</li>
 </ul>
 <p>To do the assembly for our batch of 12 samples in a time-efficient manner, we will automate this using <code>GNU Parallel</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># create a directory for assembly output</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">mkdir</span> <span class="at">-p</span> unicycler_shortread</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># create a tsv file with sample names and their corresponding fastq files</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="cf">while</span> <span class="bu">read</span> <span class="at">-r</span> <span class="va">sample</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="va">${sample}</span><span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_1.fastq.gz<span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_2.fastq.gz <span class="op">&gt;&gt;</span> samples_shortread.tsv<span class="kw">;</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">grep</span> <span class="st">"Illumina MiSeq"</span> PRJNA1260529.metadata.tsv <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f28</span><span class="op">)</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="co"># run unicycler on 6 samples at a time</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="ex">conda</span> activate unicycler</span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="ex">parallel</span> <span class="at">-j</span> 6 <span class="at">--colsep</span> <span class="st">"\t"</span> unicycler <span class="at">-1</span> {2} <span class="at">-2</span> {3} <span class="at">-o</span> unicycler_shortread/{1} <span class="at">--threads</span> 4 :::: samples_shortread.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># create a directory for assembly output</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">mkdir</span> <span class="at">-p</span> unicycler_shortread</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># create a tsv file with sample names and their corresponding fastq files</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="cf">while</span> <span class="bu">read</span> <span class="at">-r</span> <span class="va">sample</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="bu">echo</span> <span class="at">-e</span> <span class="va">${sample}</span><span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_1.fastq.gz<span class="st">"\t"</span>raw_shortread/<span class="va">${sample}</span>_2.fastq.gz <span class="op">&gt;&gt;</span> samples_shortread.tsv<span class="kw">;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">grep</span> <span class="st">"Illumina MiSeq"</span> PRJNA1260529.metadata.tsv <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f28</span><span class="op">)</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># run unicycler on 3 samples at a time</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="ex">conda</span> activate microgen2026</span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="ex">parallel</span> <span class="at">-j</span> 3 <span class="at">--colsep</span> <span class="st">"\t"</span> unicycler <span class="at">-1</span> {2} <span class="at">-2</span> {3} <span class="at">-o</span> unicycler_shortread/{1} <span class="at">--threads</span> 2 :::: samples_shortread.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="self-exploration" class="level1">
 <h1>Self-Exploration</h1>
 <section id="improve-reads-quality-for-assembly" class="level2">
 <h2 class="anchored" data-anchor-id="improve-reads-quality-for-assembly">Improve reads quality for assembly</h2>
-<p>Trimming and adapter removal can be done with FASTP or Trimmomatic</p>
-<p>Example command-lines:</p>
+<p>In our practice dataset, the quality of the raw sequences were very good. However, in real-life scenarios, this is not always the case.</p>
+<p>For example, the raw reads may contain adapter sequences, which are short DNA sequences that are added to the ends of the DNA fragments during the sequencing process.</p>
+<p>OR, we may also often find many low-quality bases at the 3’ ends of the reads. These low-quality bases can also interfere with the assembly process, so it is important to remove them before assembly.</p>
+<p>All these issues can interfere with the assembly process, and lead to a lower quality assembly.</p>
+<p>Improving reads quality, therefore, is a crucial step before assembly.</p>
+<p>To do that, <a href="https://github.com/OpenGene/fastp">FASTP</a> is a good choice of tool for us.</p>
+<p>You are encouraged to read the <a href="https://github.com/OpenGene/fastp/blob/master/README.md">FASTP manual</a> to understand how it works and how to use it for different modifications on the raw reads.</p>
+<p>But to get you started, here is an example command-line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">fastp</span> <span class="at">--in1</span> ugly_sample/ERR4244683_1.fastq.gz <span class="at">--in2</span> ugly_sample/ERR4244683_2.fastq.gz <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="at">--out1</span> trimming_output/ERR4244683_1.trimmed.fastq.gz <span class="at">--out2</span> trimming_output/ERR4244683_2.trimmed.fastq.gz <span class="dt">\</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="at">--trim_front1</span> 15 <span class="at">--trim_front2</span> 15 <span class="dt">\</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="at">--trim_poly_x</span> <span class="dt">\</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="at">--cut_tail</span> <span class="at">--cut_tail_window_size</span> 4 <span class="at">--cut_tail_mean_quality</span> 25 <span class="dt">\</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="at">--length_required</span> 50 <span class="op">&gt;</span> trimming_output/fastp_run.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The command above does the following things:</p>
+<ul>
+<li><code>--in1</code> and <code>--in2</code>: Modifies both the reverse &amp; forward reads of the sample <code>ERR4244683</code> in the directory <code>ugly_sample/</code>.</li>
+<li><code>--trim_front1</code> and <code>--trim_front2</code>: Trims the first 15 bp from front (5’) end</li>
+<li><code>--cut_tail</code>: Moves a sliding window from tail (3’) to front</li>
+<li><code>--cut_tail_window_size 4</code>: Sets the sliding window length = 4bp</li>
+<li><code>--cut_tail_mean_quality 25</code>: Drops the bases in the window if its mean quality is below 25. Otherwise, stop the sliding.</li>
+<li><code>--trim_poly_x</code>: Trims the polyX tail</li>
+<li><code>--length_required</code>: Discards all trimmed reads shorter than 50 bp</li>
+<li>Adapter trimming was enabled by default</li>
+<li><code>&gt; trimming_output/fastp_run.log 2&gt;&amp;1</code>: Redirects all messages from the run program to the file <code>trimming_output/fastp_run.log</code></li>
+</ul>
+<p>Now,</p>
+<div style="font-size: 1.3em; color: #474747ff; margin-top: 1em; margin-left: 1.7em; margin-bottom: 1em;">
+<p>How can we know if the trimming was successful, and that the reads quality was improved, but not worsened?</p>
+</div>
+<p>There are 2 main ways to check that:</p>
+<ol type="1">
+<li>Check the log file <code>trimming_output/fastp_run.log</code>, and find:
+<ul>
+<li>The amount of reads that still remains after trimming and filtering</li>
+<li>The Q30 percentage of the trimmed reads</li>
+</ul></li>
+<li>Compare the MultiQC report of the raw reads and the trimmed reads - Is there any improvement?</li>
+</ol>
+<p>To give you a better sense of these, we have an example of a bad quality raw reads in the directory <code>day-1/ugly_sample/</code> and the corresponding trimming output in <code>day-1/trimming_output/</code>, with the same trimming parameters as above.</p>
+<p>Your tasks will be to explore the files in those directories and answer the questions below:</p>
+<ol type="1">
+<li>What is bad about the raw reads quality of sample <code>ERR4244683</code>?</li>
+<li>How many reads were removed during the trimming process?</li>
+<li>Are many reads still remaining after trimming and filtering?</li>
+<li>What is the Q30 percentage of the trimmed reads?</li>
+<li>What are the differences in the quality of the trimmed reads compared to the raw reads?</li>
+<li>Would you use the trimmed reads or the raw reads for assembly? Why?</li>
+<li>Does it make sense to perform the trimming as in the code above?</li>
+<li>If you were to change the trimming parameters, what would you change and why?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Run by yourself 🏃🏻‍♀️
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We did not ask you to perform this quality improvement step by yourself. <br> But if you want to, please go ahead and do it! <br> If you get stucked, you can always refer to the solution in the script: <code>day-1/script.1.3.sh</code> <br> Good luck! 🍀</p>
+</div>
+</div>
+</div>
 </section>
 <section id="is-my-isolate-really-a-k.-pneumoniae" class="level2">
 <h2 class="anchored" data-anchor-id="is-my-isolate-really-a-k.-pneumoniae">Is my isolate really a <em>K. pneumoniae</em>?</h2>
 <p>Species check can be done directly on the raw short-reads sequencing data, thanks to techniques from metagenomics.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="va">SYLPH_DB</span><span class="op">=</span><span class="st">"sylph-db/gtdb-r220-c200-dbv1.syldb"</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">sylph</span> profile <span class="va">$SYLPH_DB</span> <span class="at">-1</span> raw_shortread/<span class="pp">*</span>_1.fastq.gz <span class="at">-2</span> raw_shortread/<span class="pp">*</span>_2.fastq.gz <span class="at">-o</span> sylph_shortread.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here we introduce the tool named <code>sylph</code> that will returns the ‘relative abundance’ of reads that belonging to different species.</p>
+<p>In our case, we would expect to see a near-100% abundance of <em>Klebsiella pneumoniae</em> reads.</p>
+<p>But let’s run the tool on the raw reads first.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># path to the database of representative genomes of all microbial species</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="va">SYLPH_DB</span><span class="op">=</span><span class="st">"/databases/sylph/gtdb-r226-c200-dbv1.syldb"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># activate the environment with sylph</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="ex">conda</span> activate microgen2026</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># run sylph on all fastq files</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="ex">sylph</span> profile <span class="va">$SYLPH_DB</span> <span class="at">-1</span> raw_shortread/<span class="pp">*</span>_1.fastq.gz <span class="at">-2</span> raw_shortread/<span class="pp">*</span>_2.fastq.gz <span class="at">-o</span> sylph_shortread.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The program should run very fast.</p>
+<p>After getting the output file <code>sylph_shortread.tsv</code>, check the relative abundance of <em>Klebsiella pneumoniae</em>. Do you see any contamination or mis-identification?</p>
+<ul>
+<li>How the result would look like if there is a co-infection of <em>Klebsiella pneumoniae</em> and <em>Acinetobacter baumannii</em>?</li>
+<li>How it would be if the isolate was mis-identified as <em>Klebsiella quasipneumoniae</em>?</li>
+</ul>
 
 
 </section>
@@ -692,13 +809,14 @@ Making decision
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

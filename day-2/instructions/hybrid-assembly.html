@@ -2,15 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Quynh NPN">
+<meta name="author" content="Quynh Nguyen">
 <meta name="dcterms.date" content="2026-05-13">
 
-<title>2.2 Long-read sequencing &amp; Hybrid assemblies – MicroGen 2026</title>
+<title>2.2 Long-Read sequencing &amp; Hybrid assembly – MicroGen 2026</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -40,10 +78,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-bb05f5d0074da2129d766b238819cd35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7d7227744020e952889926329a671a95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +124,8 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo light-content">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MicroGen 2026</span>
@@ -164,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/index.html">Day 2</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/hybrid-assembly.html">2.2 Long-read sequencing &amp; Hybrid assemblies</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/index.html">Day 2</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/hybrid-assembly.html">2.2 Long-Read sequencing &amp; Hybrid assembly</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -204,6 +243,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../day-0/instructions/linux-basics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0.2 Commands &amp; Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/final-quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on Linux Foundations</span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-2/instructions/hybrid-assembly.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2.2 Long-read sequencing &amp; Hybrid assemblies</span></a>
+ <span class="menu-text">2.2 Long-Read sequencing &amp; Hybrid assembly</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,13 +323,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
+ <span class="menu-text">3.1 Read mapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
+ <span class="menu-text">3.2 Phylogenetics</span></a>
   </div>
 </li>
       </ul>
@@ -298,36 +343,58 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in clinical microbiology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance</span></a>
+ <span class="menu-text">4.1 Workflow Setup</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: Taxonomy Analysis</span></a>
+ <span class="menu-text">4.2 Taxonomy Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-amr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: AMR Analysis &amp; Summary</span></a>
+ <span class="menu-text">4.3 AMR Analysis &amp; Summary</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in pathogen detection</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning</span></a>
+ <span class="menu-text">4.4 Clinical Case</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning: Signal Analysis</span></a>
+ <span class="menu-text">4.5 Signal Analysis</span></a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
       </ul>
@@ -337,15 +404,33 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hybrid-assembly-with-long-and-short-reads" id="toc-hybrid-assembly-with-long-and-short-reads" class="nav-link active" data-scroll-target="#hybrid-assembly-with-long-and-short-reads"><strong>Hybrid Assembly with Long and Short Reads</strong></a></li>
+  <li><a href="#access-conda-environment" id="toc-access-conda-environment" class="nav-link" data-scroll-target="#access-conda-environment">Access conda environment</a></li>
+  <li><a href="#explore-the-materials-available-on-the-server" id="toc-explore-the-materials-available-on-the-server" class="nav-link" data-scroll-target="#explore-the-materials-available-on-the-server">Explore the materials available on the server</a>
+  <ul class="collapse">
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question:</a></li>
+  </ul></li>
+  <li><a href="#run-unicycler-version-0.5.1" id="toc-run-unicycler-version-0.5.1" class="nav-link" data-scroll-target="#run-unicycler-version-0.5.1">Run unicycler (version 0.5.1)</a></li>
+  <li><a href="#view-unicycler-results" id="toc-view-unicycler-results" class="nav-link" data-scroll-target="#view-unicycler-results">View unicycler results</a></li>
+  <li><a href="#output-interpretation" id="toc-output-interpretation" class="nav-link" data-scroll-target="#output-interpretation">Output Interpretation</a>
+  <ul class="collapse">
+  <li><a href="#download-results-to-your-local-computer" id="toc-download-results-to-your-local-computer" class="nav-link" data-scroll-target="#download-results-to-your-local-computer">Download results to your local computer</a></li>
+  </ul></li>
+  <li><a href="#lets-open-the-results-and-explore-the-assemblies-with-bandage" id="toc-lets-open-the-results-and-explore-the-assemblies-with-bandage" class="nav-link" data-scroll-target="#lets-open-the-results-and-explore-the-assemblies-with-bandage">Let’s open the results and explore the assemblies with Bandage</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/index.html">Day 2</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/hybrid-assembly.html">2.2 Long-read sequencing &amp; Hybrid assemblies</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/index.html">Day 2</a></li><li class="breadcrumb-item"><a href="../../day-2/instructions/hybrid-assembly.html">2.2 Long-Read sequencing &amp; Hybrid assembly</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">2.2 Long-read sequencing &amp; Hybrid assemblies</h1>
+<h1 class="title">2.2 Long-Read sequencing &amp; Hybrid assembly</h1>
 </div>
 
 
@@ -355,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Quynh NPN </p>
+             <p>Quynh Nguyen </p>
           </div>
   </div>
     
@@ -374,8 +459,205 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="hybrid-assembly-with-long-and-short-reads" class="level1">
+<h1><strong>Hybrid Assembly with Long and Short Reads</strong></h1>
+<p>For this section, <u><strong>unicycler</strong></u> is used</p>
+<p><u><strong>Unicycler</strong></u> is a genome assembler designed for bacteria that supports <strong>short-read, long-read, and hybrid assembly</strong>. It combines the accuracy of short reads with the long-range information of long reads to produce <strong>high-quality, often complete genomes</strong>, including circular chromosomes and plasmids</p>
+</section>
+<section id="access-conda-environment" class="level1">
+<h1>Access conda environment</h1>
+<p>Activate the Conda environment containing the unicycler tool:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate microgen2026</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-------------------------------</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># conda activate: activate working enviroment </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># microgen2026: our enviroment name contains all required tools for this workshop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="explore-the-materials-available-on-the-server" class="level1">
+<h1>Explore the materials available on the server</h1>
+<p>Go to your <code>day-2/hybrid_assembly</code> directory using the following command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /microgen2026/day-2/hybrid-assembly/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>List all files in the <code>hybrid_assembly</code> directory:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should now see all the data needed for this module.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> hybrid-assembly </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── AMB201Kp_1.fastq.gz </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── AMB201Kp_2.fastq.gz</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── AMB201Kp_long.fastq.gz </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ... </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Count fasta files that we have for post-assembly module:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.fastq.gz <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-------------------------------</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ls: list files in your directory </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># *.fastq.gz: select all files ending with .fastq.gz</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># | : pipe sending output from left to right</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># wc: word count tool</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -l: count number of lines</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question:</h2>
+<p>How many fastq files you have in your working environment?</p>
+</section>
+</section>
+<section id="run-unicycler-version-0.5.1" class="level1">
+<h1>Run unicycler (version 0.5.1)</h1>
+<p>Check the availability of your tool by typing its name:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="blue"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">unicycler</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The output should look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a>       <span class="ex">__</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>       <span class="ex">\ \___</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>        <span class="ex">\ ___</span><span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>        //</span>
+<span id="cb7-5"><a href="#cb7-5"></a>   <span class="ex">____//</span>      _    _         _                     _</span>
+<span id="cb7-6"><a href="#cb7-6"></a> <span class="ex">//_</span>  //\\    <span class="kw">|</span> <span class="kw">|</span>  <span class="kw">|</span> <span class="kw">|</span>       <span class="kw">|</span><span class="ex">_</span><span class="kw">|</span>                   <span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="ex">//</span>  <span class="dt">\/</span>/  <span class="dt">\\</span>   <span class="kw">|</span> <span class="kw">|</span>  <span class="kw">|</span> <span class="kw">|</span> <span class="ex">_</span> __   _   ___  _   _   ___ <span class="kw">|</span> <span class="kw">|</span>  <span class="ex">___</span>  _ __</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="kw">||</span>  <span class="kw">(</span><span class="ex">O</span><span class="kw">)</span>  <span class="kw">||</span>   <span class="kw">|</span> <span class="kw">|</span>  <span class="kw">|</span> <span class="kw">||</span> <span class="st">'_ \ | | / __|| | | | / __|| | / _ \| '</span><span class="ex">__</span><span class="kw">|</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="ex">\\</span>    <span class="dt">\_</span> //   <span class="kw">|</span> <span class="kw">|</span><span class="ex">__</span><span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span> <span class="kw">|</span> <span class="kw">||</span> <span class="kw">||</span> <span class="kw">(</span><span class="ex">__</span> <span class="kw">|</span> <span class="kw">|</span><span class="ex">_</span><span class="kw">|</span> <span class="kw">||</span> <span class="kw">(</span><span class="ex">__</span> <span class="kw">|</span> <span class="kw">||</span>  <span class="ex">__/</span><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a> <span class="ex">\\_____//</span>     <span class="dt">\_</span>___/ <span class="kw">|</span><span class="ex">_</span><span class="kw">|</span> <span class="kw">|</span><span class="ex">_</span><span class="kw">||</span><span class="ex">_</span><span class="kw">|</span> <span class="ex">\___</span><span class="kw">|</span> <span class="ex">\__,</span> <span class="kw">|</span> <span class="ex">\___</span><span class="kw">||</span><span class="ex">_</span><span class="kw">|</span> <span class="ex">\___</span><span class="kw">||</span><span class="ex">_</span><span class="kw">|</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>                                        <span class="ex">__/</span> <span class="kw">|</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>                                       <span class="kw">|</span><span class="ex">___/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Hybrid assembly with unicycler:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="blue"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">unicycler</span> <span class="at">-1</span> AMB201Kp_1.fastq.gz <span class="at">-2</span> AMB201Kp_2.fastq.gz <span class="at">-l</span> AMB201Kp_long.fastq.gz <span class="at">-t</span> 15 <span class="at">-o</span> hybrid_AMB201Kp</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-------------------------------</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># unicycler: run genome unicycler for genome assembly </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -1: forward short reads from paired-end reads (read 1) </span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -2: reverse short reads from paired-end reads (read 2) input: input your assembly fasta files</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -l: long read from nanopore sequencing </span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -t: number of CPU cores for parallel running, high cores count speed up the analysis</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -o: location and file name to save results</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After unicycler finishes running, the output should contain the following files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="blue"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">...</span> assembly.fasta  assembly.gfa  unicycler.log</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Question:
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>How can you list the unicycler output files in your working directory?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Long Read Assembly Only
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>You can perform <strong>long-read–only</strong> assembly using the following command. Ensure you <strong>check read quality</strong> before running the assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">unicycler</span> <span class="at">-l</span> your_long_reads.fastq <span class="at">-o</span> longread_only <span class="at">-t</span> 10</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">-------------------------------</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co"># unicycler: run genome unicycler for genome assembly </span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># -l: your long read file from nanopore sequencing </span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co"># -t: number of CPU cores for parallel running, high cores count speed up the analysis</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co"># -o: location and file name to save results</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="view-unicycler-results" class="level1">
+<h1>View unicycler results</h1>
+<p>View the assembly report using this following command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="blue"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">cat</span> hybrid_AMB201Kp/unicycler.log</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">-------------------------------</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="co"># cat: display the entire content of your file </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The complete assembly should look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">Assembly</span> complete <span class="er">(</span><span class="ex">2025-09-14</span> 14:09:25<span class="kw">)</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">---------------------------------------</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">Saving</span> /Users/Downloads/hybrid_AMB201Kp/assembly.gfa</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="ex">Saving</span> /Users/Downloads/hybrid_AMB201Kp/assembly.fasta</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="output-interpretation" class="level1">
+<h1>Output Interpretation</h1>
+<section id="download-results-to-your-local-computer" class="level2">
+<h2 class="anchored" data-anchor-id="download-results-to-your-local-computer">Download results to your local computer</h2>
+<p>Open another New Terminal window and run these commands on your New Terminal window.</p>
+<p>Run this command to display your current directory (for MacOS/Linux users):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">pwd</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">-------------------------------</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># pwd: output your current directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>For Windows users
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">echo</span> %cd%</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">-------------------------------</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># echo %cd%: output your current directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>The printout screen should look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">/Users/Downloads</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>For Windows users
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The printout screen should look like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">C:\Users\Downloads</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Download the <code>day-2/hybrid-assembly/</code> folder from our learning server into your local computer:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">scp</span> <span class="at">-r</span> <span class="at">-i</span> microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ /Users/Downloads/</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="ex">-------------------------------</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># scp: secure copy (transfer files via SSH)</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># -r: enable copy directories</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="co"># -i microgen2026.pem: key identity file (private key for authentication)</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="co"># user: your server username</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="co"># 132.112.198.45: your server ip adress</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="co"># ~/microgen2026/day-2/hybrid-assembly/: result directory on learning server</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="co"># /Users/Downloads/: destination on your local computer (as shown by "pwd" command)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>For Windows users
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Simply replace <code>/Users/Downloads/</code> into <code>C:\Users\Downloads\</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">scp</span> <span class="at">-r</span> <span class="at">-i</span> microgen2026.pem user@136.112.198.45:~/microgen2026/day-2/hybrid-assembly/ C:<span class="dt">\U</span>sers<span class="dt">\D</span>ownloads<span class="dt">\</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="lets-open-the-results-and-explore-the-assemblies-with-bandage" class="level1">
+<h1>Let’s open the results and explore the assemblies with Bandage</h1>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -429,13 +711,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
