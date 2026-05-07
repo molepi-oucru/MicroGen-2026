@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../day-0/instructions/final-quiz.html" rel="next">
-<link href="../../day-0/instructions/setup-environment.html" rel="prev">
+<link href="../../day-0/instructions/setup-r-vscode.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -198,12 +233,71 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.1 Setup your workspace</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">0.1 Setup your workspace</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-windows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Windows 10/11 setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-macos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">macOS setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ubuntu setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-bioinformatics-apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioinformatics apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-server-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-verification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verification checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-troubleshooting-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting and FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-r-vscode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R in VS Code</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-0/instructions/linux-basics.html" class="sidebar-item-text sidebar-link active">
@@ -222,11 +316,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../day-1/instructions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-1/instructions/introduction.html" class="sidebar-item-text sidebar-link">
@@ -251,11 +345,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../day-2/instructions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-2/instructions/post-assembly.html" class="sidebar-item-text sidebar-link">
@@ -280,11 +374,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../day-3/instructions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
@@ -303,20 +397,20 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../day-4/instructions/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">mNGS in clinical microbiology</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in clinical microbiology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
@@ -339,13 +433,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">mNGS in pathogen detection</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
@@ -369,8 +463,57 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-linux" id="toc-why-linux" class="nav-link active" data-scroll-target="#why-linux">Why Linux?</a></li>
+  <li><a href="#intro-to-linux" id="toc-intro-to-linux" class="nav-link" data-scroll-target="#intro-to-linux">Intro to Linux</a>
+  <ul class="collapse">
+  <li><a href="#the-terminal" id="toc-the-terminal" class="nav-link" data-scroll-target="#the-terminal">The Terminal</a></li>
+  <li><a href="#the-command-line" id="toc-the-command-line" class="nav-link" data-scroll-target="#the-command-line">The Command Line</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  <li><a href="#the-file-system" id="toc-the-file-system" class="nav-link" data-scroll-target="#the-file-system">The File System</a></li>
+  <li><a href="#navigation-in-the-file-system" id="toc-navigation-in-the-file-system" class="nav-link" data-scroll-target="#navigation-in-the-file-system">Navigation in the File System</a></li>
+  </ul></li>
+  <li><a href="#files-in-linux" id="toc-files-in-linux" class="nav-link" data-scroll-target="#files-in-linux">Files in Linux</a>
+  <ul class="collapse">
+  <li><a href="#anatomy-of-a-file-name" id="toc-anatomy-of-a-file-name" class="nav-link" data-scroll-target="#anatomy-of-a-file-name">Anatomy of a File Name</a></li>
+  <li><a href="#types-of-files-in-genomics" id="toc-types-of-files-in-genomics" class="nav-link" data-scroll-target="#types-of-files-in-genomics">Types of Files (in Genomics)</a></li>
+  <li><a href="#peeking-into-file-contents" id="toc-peeking-into-file-contents" class="nav-link" data-scroll-target="#peeking-into-file-contents">Peeking into File Contents</a></li>
+  <li><a href="#standard-input-output-and-error" id="toc-standard-input-output-and-error" class="nav-link" data-scroll-target="#standard-input-output-and-error">Standard Input, Output, and Error</a>
+  <ul class="collapse">
+  <li><a href="#redirection" id="toc-redirection" class="nav-link" data-scroll-target="#redirection">Redirection</a></li>
+  </ul></li>
+  <li><a href="#creating-managing-files" id="toc-creating-managing-files" class="nav-link" data-scroll-target="#creating-managing-files">Creating &amp; Managing Files</a></li>
+  </ul></li>
+  <li><a href="#text-analysis-manipulation" id="toc-text-analysis-manipulation" class="nav-link" data-scroll-target="#text-analysis-manipulation">Text Analysis &amp; Manipulation</a>
+  <ul class="collapse">
+  <li><a href="#grep-search-for-a-pattern" id="toc-grep-search-for-a-pattern" class="nav-link" data-scroll-target="#grep-search-for-a-pattern"><code>grep</code>: Search for a pattern</a></li>
+  <li><a href="#wc-count-lines-words-and-characters" id="toc-wc-count-lines-words-and-characters" class="nav-link" data-scroll-target="#wc-count-lines-words-and-characters"><code>wc</code>: Count lines, words, and characters</a></li>
+  <li><a href="#cut-cut-out-sections-from-each-line-of-files" id="toc-cut-cut-out-sections-from-each-line-of-files" class="nav-link" data-scroll-target="#cut-cut-out-sections-from-each-line-of-files"><code>cut</code>: Cut out sections from each line of files</a></li>
+  <li><a href="#sort-sort-lines-of-text-files" id="toc-sort-sort-lines-of-text-files" class="nav-link" data-scroll-target="#sort-sort-lines-of-text-files"><code>sort</code>: Sort lines of text files</a></li>
+  <li><a href="#tr-translate-or-delete-characters" id="toc-tr-translate-or-delete-characters" class="nav-link" data-scroll-target="#tr-translate-or-delete-characters"><code>tr</code>: Translate or delete characters</a></li>
+  <li><a href="#sed-stream-editor-for-text-manipulation" id="toc-sed-stream-editor-for-text-manipulation" class="nav-link" data-scroll-target="#sed-stream-editor-for-text-manipulation"><code>sed</code>: Stream editor for text manipulation</a></li>
+  </ul></li>
+  <li><a href="#building-up-complexity" id="toc-building-up-complexity" class="nav-link" data-scroll-target="#building-up-complexity">Building Up Complexity</a>
+  <ul class="collapse">
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes (<code>|</code>)</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  </ul></li>
+  <li><a href="#bash-script---a-flow-of-commands" id="toc-bash-script---a-flow-of-commands" class="nav-link" data-scroll-target="#bash-script---a-flow-of-commands">Bash Script - A Flow of Commands</a></li>
+  <li><a href="#software-environments-conda-mamba" id="toc-software-environments-conda-mamba" class="nav-link" data-scroll-target="#software-environments-conda-mamba">Software Environments: Conda &amp; Mamba</a></li>
+  <li><a href="#self-exploration" id="toc-self-exploration" class="nav-link" data-scroll-target="#self-exploration">Self Exploration</a>
+  <ul class="collapse">
+  <li><a href="#tmux-screen" id="toc-tmux-screen" class="nav-link" data-scroll-target="#tmux-screen"><code>tmux</code> &amp; <code>screen</code></a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
+  <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find"><code>find</code></a></li>
+  <li><a href="#gnu-parallel" id="toc-gnu-parallel" class="nav-link" data-scroll-target="#gnu-parallel">GNU parallel</a></li>
+  </ul></li>
+  <li><a href="#knowledge-check" id="toc-knowledge-check" class="nav-link" data-scroll-target="#knowledge-check">Knowledge Check</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -406,10 +549,684 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Chúng tôi đang hoàn thiện phần này. Bạn hãy quay lại vào ngày mai nhé.</p>
-<p>☕☕☕</p>
+<section id="why-linux" class="level1">
+<h1>Why Linux?</h1>
+<p>You might wonder why we aren’t using Windows or macOS for this. There are three main reasons:</p>
+<ol type="1">
+<li><strong>Big Data</strong>: Genomic datasets are often too large for Excel or standard text editors. And big data requires big computers, and big computers are usually Linux-based.</li>
+<li><strong>Automation</strong>: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.</li>
+<li><strong>Reproducibility</strong>: Our analyses are our commands to the Linux computer, and the Linux commands are just texts. This enables easy recording of exactly what we did, i.e.&nbsp;all the commands that we have run, making it easier to share and reproduce our analyses.</li>
+</ol>
+<p>The interface for us to give commands to the Linux computer is called the <strong>Terminal</strong>. For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit.</p>
+</section>
+<section id="intro-to-linux" class="level1">
+<h1>Intro to Linux</h1>
+<section id="the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="the-terminal">The Terminal</h2>
+<p>The <strong>Terminal</strong> (or console) is your window into the operating system. It provides a <strong>Shell</strong>, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is <code>bash</code> or <code>zsh</code>.</p>
+<ul>
+<li><strong>The Prompt</strong>: Usually looks like <code>user@computer:~$</code>, where:
+<ul>
+<li><code>user</code> is your username.</li>
+<li><code>computer</code> is the hostname of the computer.</li>
+<li><code>~</code> is the current directory you are in. In this example &amp; by default, it’s your home directory, encoded as <code>~</code>, which is a shortcut for <code>/home/user</code>. No worries if your head spins now, you will understand this better later.</li>
+<li><code>$</code> indicates that the shell is waiting for your input.</li>
+</ul></li>
+<li><strong>Case Sensitivity</strong>: Linux is case-sensitive. <code>File.txt</code> and <code>file.txt</code> are two different files.</li>
+</ul>
+</section>
+<section id="the-command-line" class="level2">
+<h2 class="anchored" data-anchor-id="the-command-line">The Command Line</h2>
+<p>A command usually follows this structure: <code>command [options] [arguments]</code></p>
+<p><strong>Examples</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># show Linux OS name, version, and hardware architecture</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">hostnamectl</span> </span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># list CPU information</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">lscpu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">echo</span> <span class="st">"Hello World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>echo</code> is the command (print text).</li>
+<li><code>"Hello World"</code> is the argument (the text to print).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ls</span> <span class="at">-l</span> microgen2026/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p><code>ls</code> is the command (list files).</p></li>
+<li><p><code>-l</code> is an option (long format).</p></li>
+<li><p><code>microgen2026/</code> is the argument (the folder to look into).</p></li>
+</ul>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<blockquote class="blockquote">
+<p>How can I know what a command does?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>How to know what options a command has?, and what arguments it can take?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What are all the commands available on Linux?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Do I need to memorize all of them?</p>
+</blockquote>
+<p>If you wonder about these questions, you are on the right track!</p>
+<p>And the answer is: Yes &amp; No.&nbsp;☯️</p>
+<p>Memorizing some common commands will definitely save you a lot of time, but memorizing all of them is unnecessary (and also un-wise). <br> The key is to know what is possible to do on Linux, and how to find that out.</p>
+<p>If you forget the options or arguments of a command, or you just want to check again all of its capabilities, you can find out with the following commands:</p>
+<ul>
+<li><code>command --help</code>: Most tools have a built-in help menu (e.g., <code>ls --help</code>).</li>
+<li><code>man command</code>: Opens the “manual” page (e.g., <code>man ls</code>). Press <code>q</code> to exit.</li>
+<li><code>info command</code>: Opens the “info” page (e.g., <code>info ls</code>). Press <code>q</code> to exit.</li>
+</ul>
+<p>and, last but not least: - <strong>Search &amp; AI</strong>: Google, Stack Overflow, and AI tools are your friends when you get stuck! Lots of time there are no “manual” or “info” pages locally on the computer, or they are not user-friendly enough, so to check the online resources is a must!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hundreds to Thousands
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do you know that, there are up to 150–300 commands in the core utilities of Linux, depending on the OS distribution? And if we count all executable files that are later installed, the number can be in the thousands!</p>
+<p>The key, therefore, is actually our imagination and creativity. Just exploit the <strong>Search &amp; AI</strong> tools out there to find the right commands for your needs.</p>
+</div>
+</div>
+</section>
+<section id="the-file-system" class="level2">
+<h2 class="anchored" data-anchor-id="the-file-system">The File System</h2>
+<p>Think of the Linux file system as a giant tree.</p>
+<ul>
+<li><p><strong>Root (<code>/</code>)</strong>: The base of the entire system.</p></li>
+<li><p><strong>Home Directory (<code>~</code>, or <code>$HOME</code>)</strong>: Your personal space where you have full control.</p></li>
+<li><p><strong>Path</strong>: The “address” of a file or folder.</p>
+<ul>
+<li><p><strong>Absolute Path</strong>: Starts from the root (e.g., <code>/home/user/data/sample.fastq</code>).</p></li>
+<li><p><strong>Relative Path</strong>: Starts from where you currently are (e.g., <code>data/sample.fastq</code>).</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="navigation-in-the-file-system" class="level2">
+<h2 class="anchored" data-anchor-id="navigation-in-the-file-system">Navigation in the File System</h2>
+<ul>
+<li><code>pwd</code> (Print Working Directory): “Where am I?”</li>
+<li><code>ls</code>: “What’s in here?”
+<ul>
+<li><code>ls -F</code>: Adds a <code>/</code> to directories.</li>
+<li><code>ls -l</code>: Shows detailed information (permissions, size, etc.).</li>
+<li><code>ls -h</code>: Human-readable sizes (KB, MB, GB).</li>
+</ul></li>
+<li><code>cd</code>: “Go somewhere else.”
+<ul>
+<li><code>cd ..</code>: Move up one level.</li>
+<li><code>cd ~</code>: Go back home.</li>
+</ul></li>
+</ul>
+<p>Conventions: - <code>.</code> and <code>$PWD</code>: refer to the current “working” directory. - <code>..</code>: refers to the parent directory of the current directory. - <code>~</code> and <code>$HOME</code>: refer to the home directory.</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Check where you are</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="bu">pwd</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># other way</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="bu">echo</span> <span class="va">$PWD</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># See what files are in the current directory</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">ls</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co"># Go to the data directory for the workshop</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="bu">cd</span> /microgen2026/</span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># List all files in the current directory, including hidden files</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="fu">ls</span> <span class="at">-a</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co"># Go to day-0 directory</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="bu">cd</span> day-0</span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co"># List files in the current directory in long format with human-readable sizes and show hidden files</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="fu">ls</span> <span class="at">-lah</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co"># Go to home directory</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="bu">cd</span> ~</span>
+<span id="cb4-23"><a href="#cb4-23"></a></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co"># Go back to the day-0 directory</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="bu">cd</span> <span class="at">-</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a></span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="co"># Go back to the parent directory `microgen2026`</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tips
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>When you move around, i.e.&nbsp;changing the current directory, did you notice any change to the prompt, particularly the part following the <code>user@computer:</code>?</p>
+<p><em>Tab-completion is your best friend!</em> <br> When you start typing a command, file, or directory name, press the <code>Tab</code> key to auto-complete it. If there are multiple possibilities, press <code>Tab</code> twice to see all of them.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="files-in-linux" class="level1">
+<h1>Files in Linux</h1>
+<section id="anatomy-of-a-file-name" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-file-name">Anatomy of a File Name</h2>
+<p>In Windows, the file extension (<code>.docx</code>, <code>.exe</code>) tells the system what the file is. In Linux, <strong>extensions are mostly for humans</strong>. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.</p>
+<p>You can name a file anything:</p>
+<ul>
+<li><code>genome.fasta</code> (Helpful)</li>
+<li><code>ingredients_list.banhmi</code> (Valid)</li>
+<li><code>data_source.nuocmam</code> (Valid)</li>
+</ul>
+<p>However, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!</p>
+</section>
+<section id="types-of-files-in-genomics" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-files-in-genomics">Types of Files (in Genomics)</h2>
+<ol type="1">
+<li><strong>Text Files</strong>: Plain text you can read. Examples: <code>.fasta</code>, <code>.fastq</code>, <code>.csv</code>, <code>.sh</code>.</li>
+<li><strong>Compressed Files</strong>: To save space, we often zip files. Common extensions: <code>.gz</code>, <code>.zip</code>, <code>.tar.gz</code>. Most Linux tools can “peek” inside <code>.gz</code> files without unzipping them.</li>
+<li><strong>Binary Files</strong>: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, <code>.bam</code> or <code>.bcf</code> files).</li>
+<li><strong>Executable Files</strong>: Files that can be run as programs. Examples: <code>.sh</code>, <code>.py</code>, <code>.R</code>.</li>
+</ol>
+</section>
+<section id="peeking-into-file-contents" class="level2">
+<h2 class="anchored" data-anchor-id="peeking-into-file-contents">Peeking into File Contents</h2>
+<p>We rarely open huge genomics files in editors. We use these instead:</p>
+<ul>
+<li><code>cat</code>: Print the whole file (only for small files!).</li>
+<li><code>head</code>: Show the first few lines.</li>
+<li><code>tail</code>: Show the last few lines.</li>
+<li><code>less</code>: The “gold standard” for viewing large files. Use arrows to scroll, <code>/</code> to search, and <code>q</code> to quit.</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Practice</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-filename="Practice"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Print the whole file</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">cat</span> README.md</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Show the first 10 lines</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">head</span> <span class="at">-n</span> 10 README.md</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Show the last 5 lines</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">tail</span> <span class="at">-n</span> 5 README.md</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co"># Less is More</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="fu">less</span> README.md</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="standard-input-output-and-error" class="level2">
+<h2 class="anchored" data-anchor-id="standard-input-output-and-error">Standard Input, Output, and Error</h2>
+<ul>
+<li><strong>Standard In (stdin)</strong>: Where the command receives its input (the keyboard or redirection).</li>
+<li><strong>Standard Out (stdout)</strong>: Where the command sends its regular results (the screen).</li>
+<li><strong>Standard Error (stderr)</strong>: Where the command sends error messages.</li>
+</ul>
+<section id="redirection" class="level3">
+<h3 class="anchored" data-anchor-id="redirection">Redirection</h3>
+<p>Redirection allows you to change where a command gets its input or sends its output.</p>
+<ul>
+<li><code>command &lt; file</code>: Redirect contents of a file as input to a command.</li>
+<li><code>command &gt; file</code>: Save output (stdout) to a file (overwrites).</li>
+<li><code>command &gt;&gt; file</code>: Append output (stdout) to a file (adds to the end).</li>
+<li><code>command 2&gt; file</code>: Redirect error messages (stderr) to a file.</li>
+<li><code>command &gt; file 2&gt;&amp;1</code>: Redirect both stdout and stderr to a single file.</li>
+</ul>
+<p><strong>Example</strong>: Save the list of files to a text file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ls</span> <span class="at">-lh</span> <span class="op">&gt;</span> file_list.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="creating-managing-files" class="level2">
+<h2 class="anchored" data-anchor-id="creating-managing-files">Creating &amp; Managing Files</h2>
+<ul>
+<li><code>mkdir</code>: Create a new directory (which is just a special type of file!).
+<ul>
+<li><code>mkdir linux_basics_practice</code></li>
+</ul></li>
+<li><code>touch</code>: Create an empty file.
+<ul>
+<li><code>touch learning_notes.txt</code></li>
+</ul></li>
+<li><code>nano</code>: Edit a file.
+<ul>
+<li><code>nano learning_notes.txt</code></li>
+<li><code>Ctrl + O</code> to save</li>
+<li><code>Ctrl + X</code> to exit</li>
+</ul></li>
+<li><code>cp</code>: Copy files or directories.
+<ul>
+<li><code>cp source.txt destination.txt</code></li>
+<li><code>cp -r source_dir destination_dir</code></li>
+</ul></li>
+<li><code>mv</code>: Move or rename files &amp; directories.
+<ul>
+<li><code>mv old_name.txt new_name.txt</code></li>
+<li><code>mv source_dir destination_dir</code></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Referring to files by patterns: - <code>*</code>: matches any sequence of characters - <code>?</code>: matches any single character - <code>[abc]</code>: matches any one of the characters a, b, or c - <code>[a-z]</code>: matches any one of the characters from a to z</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Try me!</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-filename="Try me!"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ls</span> day-0/<span class="pp">*</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>/<span class="pp">*</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>.fasta</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">ls</span> day-0/sample_<span class="pp">*</span>.fasta</span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="fu">ls</span> day-0/sample_<span class="pp">?</span>.fasta</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">ls</span> day-0/sample_<span class="pp">[</span><span class="ss">ACD</span><span class="pp">]</span>.fasta</span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="fu">ls</span> PRJEB22032/</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="fu">ls</span> PRJEB22032/ERR<span class="pp">[</span><span class="ss">1</span><span class="pp">-</span><span class="ss">9</span><span class="pp">]*</span>_1.fastq.gz</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="fu">ls</span> PRJEB22032/ERR<span class="pp">[</span><span class="ss">1</span><span class="pp">-</span><span class="ss">9</span><span class="pp">]*</span>_<span class="pp">?</span>.fastq.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>There is no “Trash”!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Files &amp; directories can be deleted by the command <code>rm</code>. <br> But, all the removals are permanent! Recovery will be daunting. So, be careful!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge 1: Own Your File System
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Copy the <code>/microgen2026/day-0/</code> directory to your HOME directory.</li>
+<li>Go to the copied directory.</li>
+<li>Find out the largest file in this directory.</li>
+<li>Create a new directory called <code>backup</code>.</li>
+<li>Copy the largest file to <code>backup</code> directory.</li>
+<li>Rename the largest file <strong>in the <code>backup</code> directory</strong> to <code>largest_file_backup.txt</code>.</li>
+<li>Remove the <em>original</em> largest file.</li>
+<li>Go back to the parent directory.</li>
+<li>Create a file name <code>note.txt</code> and add the below content to it.</li>
+</ol>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>note.txt</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" data-filename="note.txt"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>[DATE]</span>
+<span id="cb8-2"><a href="#cb8-2"></a>[Your name]</span>
+<span id="cb8-3"><a href="#cb8-3"></a>Largest file in day-0 directory: [NAME]</span>
+<span id="cb8-4"><a href="#cb8-4"></a>- was copied to `backup` directory</span>
+<span id="cb8-5"><a href="#cb8-5"></a>- was renamed to `largest_file_backup.txt`</span>
+<span id="cb8-6"><a href="#cb8-6"></a>- was removed</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>At the end, you should have the file structure as below:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Expected Outcome</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="Expected Outcome"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>.</span>
+<span id="cb9-2"><a href="#cb9-2"></a>├── day-0</span>
+<span id="cb9-3"><a href="#cb9-3"></a>│   ├── backup</span>
+<span id="cb9-4"><a href="#cb9-4"></a>│   │   └── largest_file_backup.txt</span>
+<span id="cb9-5"><a href="#cb9-5"></a>│   └── ...</span>
+<span id="cb9-6"><a href="#cb9-6"></a>└── note.txt</span>
+<span id="cb9-7"><a href="#cb9-7"></a>└── ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you reach here, congrats 🎉! You’re now comfortable with the Linux file system!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After the Challenge 1, you should have the directory <code>/microgen2026/day-0</code> copied to your home directory.</p>
+<p>Go to that copied directory, and from now on, we will practice in this directory.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="text-analysis-manipulation" class="level1">
+<h1>Text Analysis &amp; Manipulation</h1>
+<section id="grep-search-for-a-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="grep-search-for-a-pattern"><code>grep</code>: Search for a pattern</h2>
+<p>Search for strings or patterns within files.</p>
+<ul>
+<li><code>-i</code>: Ignore case (search for both <code>DNA</code> and <code>dna</code>).</li>
+<li><code>-v</code>: Invert match (show lines that <strong>do not</strong> contain the pattern).</li>
+<li><code>-c</code>: Count the number of matching lines.</li>
+<li><code>-n</code>: Show line numbers.</li>
+<li><code>-w</code>: Match whole words only.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Search for "Human Microbiome Project (HMP)" in the metadata file</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">grep</span> <span class="st">"Human Microbiome Project (HMP)"</span> crAssphage_in_public.csv</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Count how many lines contain "PASS" in the VCF file</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"PASS"</span> 965Kp.vcf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="wc-count-lines-words-and-characters" class="level2">
+<h2 class="anchored" data-anchor-id="wc-count-lines-words-and-characters"><code>wc</code>: Count lines, words, and characters</h2>
+<ul>
+<li><code>-l</code>: Count lines.</li>
+<li><code>-w</code>: Count words.</li>
+<li><code>-c</code>: Count characters (bytes).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Count how many lines are in the VCF file</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">wc</span> <span class="at">-l</span> 965Kp.vcf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cut-cut-out-sections-from-each-line-of-files" class="level2">
+<h2 class="anchored" data-anchor-id="cut-cut-out-sections-from-each-line-of-files"><code>cut</code>: Cut out sections from each line of files</h2>
+<p>Used to extract specific columns from text files.</p>
+<ul>
+<li><code>-f</code>: Select fields (columns).</li>
+<li><code>-d</code>: Define the delimiter (the default is tab).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Extract the 2nd and 4th column from a tab-delimited file</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">cut</span> <span class="at">-f</span> 2,4 metadata_carbResist.tsv</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Extract the 5th column from a CSV file (comma delimited)</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">cut</span> <span class="at">-f</span> 5 <span class="at">-d</span> <span class="st">","</span> crAssphage_in_public.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sort-sort-lines-of-text-files" class="level2">
+<h2 class="anchored" data-anchor-id="sort-sort-lines-of-text-files"><code>sort</code>: Sort lines of text files</h2>
+<ul>
+<li><code>-n</code>: Numeric sort.</li>
+<li><code>-r</code>: Reverse order.</li>
+<li><code>-k</code>: Sort by a specific column (key).</li>
+<li><code>-t</code>: Specify the delimiter (the default is tab).</li>
+<li><code>-u</code>: Unique (remove duplicates).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Sort the metadata by the 3rd column (Gbp) numerically in reverse</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sort</span> <span class="at">-k</span> 2 <span class="at">-n</span> <span class="at">-r</span> genome_sizes.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge 2: Extracting Information
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The CSV file <code>crAssphage_in_public.csv</code> contains information about public shotgun metagenomes that may contain crAssphage and the abundance of the virus in the samples. Use your learned commands to find:</p>
+<ol type="1">
+<li>How many metagenomes with crAssphage are there in the file? (<em>Hint: <code>wc -l</code> includes the header line. How can you exclude it?</em>)</li>
+<li>How many samples are “virome” samples? (<em>Correct answer = 40. Hint: Does the header line also contain this word?</em>)</li>
+<li>Extract only these information: sample id, genome project id, percentage reads crAssphage, and Material.</li>
+<li>Sort the metagenomes by the percentage of reads crAssphage in descending order.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="tr-translate-or-delete-characters" class="level2">
+<h2 class="anchored" data-anchor-id="tr-translate-or-delete-characters"><code>tr</code>: Translate or delete characters</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># first, let see the original messy file</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">cat</span> messy_data.csv</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># Convert a CSV to a TSV (comma to tab)</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="fu">tr</span> <span class="st">','</span> <span class="st">'\t'</span> <span class="op">&lt;</span> messy_data.csv</span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Convert all text to uppercase</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="fu">tr</span> <span class="st">'[:lower:]'</span> <span class="st">'[:upper:]'</span> <span class="op">&lt;</span> messy_data.csv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sed-stream-editor-for-text-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="sed-stream-editor-for-text-manipulation"><code>sed</code>: Stream editor for text manipulation</h2>
+<p>A powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: <code>sed 's/old/new/g'</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Change all filenames starting with 'sample_' to 'sample-' in our messy file</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sed</span> <span class="st">'s/sample_/sample-/g'</span> messy_data.csv</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># Put the change to a new file</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">sed</span> <span class="st">'s/sample_/sample-/g'</span> messy_data.csv <span class="op">&gt;</span> pretty_data.csv</span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="co"># or, to make the changes permanent on the file, use -i option</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge 3: Text Manipulation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Continue cleaning the <code>pretty_data.csv</code> file. <br> <em>Note:</em> Apply all the steps below directly on the <code>pretty_data.csv</code> file.</p>
+<ol type="1">
+<li>Change <code>r1</code> and <code>r2</code> conventions in the header line to <code>forward</code> and <code>reverse</code>.</li>
+<li>Make the annotations for forward reads and reverse reads consistent: change <code>R1</code> or <code>L1</code> to <code>_1</code> and <code>R2</code> or <code>L2</code> to <code>_2</code>.</li>
+<li>Change the file extension from <code>.fq</code> to <code>.fastq.gz</code>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="building-up-complexity" class="level1">
+<h1>Building Up Complexity</h1>
+<section id="pipes" class="level2">
+<h2 class="anchored" data-anchor-id="pipes">Pipes (<code>|</code>)</h2>
+<p>The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.</p>
+<p><strong>Example</strong>: Ignore all the header lines that starts with <code>#</code> and extract the 2nd, 4th, 5th, and 7th columns from <code>965Kp.vcf</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> 965Kp.vcf <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f2,4,5,7</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># then count the number of lines</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^#"</span> 965Kp.vcf <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f2,4,5,7</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>Variables store information (text, numbers, filenames, etc.) for later use.</p>
+<p><strong><em>Example</em></strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">MY_SAMPLE</span><span class="op">=</span><span class="st">"SRR24679994"</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># Print the value of the variable</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="bu">echo</span> <span class="va">$MY_SAMPLE</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="co"># Use the variable in a command - Find the sample in the metadata file</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="fu">grep</span> <span class="at">-w</span> <span class="st">"</span><span class="va">$MY_SAMPLE</span><span class="st">"</span> metadata_carbResist.tsv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Types of variables:</p>
+<ul>
+<li><strong>Local variables</strong>: Most of the variables you set in your shell session only exist in that session, which means you cannot find them in new terminal sessions. These are <strong>local</strong>. If you want to reuse them, you will have to specify them every time you open a new terminal session.</li>
+<li><strong>Global variables</strong>: These are variables that exist “everywhere”. Examples of global variables at the heart of a Linux system are: <code>$HOME</code>, <code>$PWD</code>, <code>$USER</code>, etc.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge 4: Pipe Master
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The tab-delimited file <code>metadata_carbResist.tsv</code> contains information about the Carbapenem non-susceptible Enterobacterales collected at the pharmacy research laboratory at Singapore General Hospital, whose whole-genome sequencing data have been published on NCBI.</p>
+<p>Your tasks will be to extract the following information:</p>
+<ol type="1">
+<li>Find what information is contained in the file, by printing the first header line.</li>
+<li>Find how many isolates are there.</li>
+<li>Find how many isolates that belong to the year “2013”. (<em>The correct answer is 202 isolates</em>)</li>
+</ol>
+<p>Then, for all isolates collected in 2013, 4. Extract the sample names and save them to a file called <code>2013_samples.txt</code>. 5. Find what the species are in the 2013 isolates <em>Hint: Species name is in the 8th column. <code>uniq</code> will omit identical adjacent lines. You may need to sort the species names first.</em> 6. How many species were collected in 2013? (<em>Hint: continue to extend your pipes!</em>) 7. Find how many isolates are there for each species (<em>Hint: <code>man uniq</code> to learn more about its power!</em>) 8. Congrats! You’re now a pipe master! 🎉</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bash-script---a-flow-of-commands" class="level1">
+<h1>Bash Script - A Flow of Commands</h1>
+<p>An example script below will download the <strong><em>crAssphage</em></strong> reference genome from NCBI.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># View the content of the script</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">cat</span> download_crAssphage_genome.sh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>download_crAssphage_genome.sh</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-filename="download_crAssphage_genome.sh"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># Download the crAssphage - Carjivirus communis - reference genome from NCBI</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># Create a directory to store the genome</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">mkdir</span> <span class="at">-p</span> crAssphage </span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># Download the genome sequence in FASTA format</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">wget</span> <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=NC_067194.1&amp;rettype=fasta&amp;retmode=text"</span> <span class="at">-O</span> crAssphage/NC_067194.1.fasta</span>
+<span id="cb19-9"><a href="#cb19-9"></a></span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="co"># Download the genome annotation in GenBank format</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a><span class="fu">wget</span> <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&amp;id=NC_067194.1&amp;rettype=gb&amp;retmode=text"</span> <span class="at">-O</span> crAssphage/NC_067194.1.gbk</span>
+<span id="cb19-12"><a href="#cb19-12"></a></span>
+<span id="cb19-13"><a href="#cb19-13"></a><span class="co"># List the downloaded files</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a><span class="fu">ls</span> <span class="at">-lh</span> crAssphage/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Run the script by calling the bash interpreter</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="fu">bash</span> download_crAssphage_genome.sh</span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># Make the script executable</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">chmod</span> +x download_crAssphage_genome.sh</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="co"># Run the script by calling the script directly</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="ex">./download_crAssphage_genome.sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Challenge 5: Downloading a BioProject dataset of raw sequencing data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Write a script named <code>download_dataset.sh</code> that will download the raw sequencing data for the BioProject PRJNA1260529.</p>
+<ul>
+<li>Downloadable links are provided in file named <code>PRJNA1260529_links.txt</code>.</li>
+<li>Download all files into a directory named <code>PRJNA1260529_raw</code> in your HOME directory</li>
+</ul>
+<p><em>Hint: Use <code>wget</code> command to download files. Use <code>man</code> to read the manual of <code>wget</code> and find the option to download multiple links in a file.</em></p>
+<p><strong>Check your results</strong>: Compare your directory <code>PRJNA1260529_raw/</code> with the directory <code>/microgen2026/PRJNA1260529/</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="software-environments-conda-mamba" class="level1">
+<h1>Software Environments: Conda &amp; Mamba</h1>
+<p>Different bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use <a href="https://github.com/mamba-org/mamba"><strong>Mamba</strong></a> (the faster version of <a href="https://github.com/conda/conda"><strong>Conda</strong></a>) to create isolated “bubbles” or environments for each tool.</p>
+<p><strong><em>Example</em></strong>: Installing <a href="https://wwood.github.io/kingfisher-download/">Kingfisher</a> - a fast downloading tool for public sequence files and their metadata annotations.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Create an environment for the kingfisher program</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="ex">mamba</span> create <span class="at">-n</span> kingfisher <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda kingfisher</span>
+<span id="cb21-3"><a href="#cb21-3"></a></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># Enter the bubble</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="ex">mamba</span> activate kingfisher</span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="co"># Get the program's help message</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="ex">kingfisher</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a></span>
+<span id="cb21-10"><a href="#cb21-10"></a><span class="co"># Leave the bubble</span></span>
+<span id="cb21-11"><a href="#cb21-11"></a><span class="ex">mamba</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="self-exploration" class="level1">
+<h1>Self Exploration</h1>
+<p>Once you are comfortable with the basics, you can further power up your Linux skills with these four more <em>“magical spells”</em> 🪄:</p>
+<section id="tmux-screen" class="level2">
+<h2 class="anchored" data-anchor-id="tmux-screen"><code>tmux</code> &amp; <code>screen</code></h2>
+<p>Bioinformatics jobs are often computationally heavy and can take hours or days to run. If your internet suddenly disconnects, the job on the big remote computer might die, and you will lose all your progress. Also, you cannot let your laptop open for days on end. <br></p>
+<p>So when running on remote computers, like our Google Cloud instance, <code>tmux</code> &amp; <code>screen</code> are handy tools that allow you to run “sessions” that keep going even if you log out.</p>
+<p>Some useful tips for using those tools:</p>
+<ul>
+<li><strong><code>tmux</code></strong>: The modern standard for terminal multiplexing.
+<ul>
+<li><code>tmux new -s &lt;name&gt;</code>: Start a new session.</li>
+<li><code>Ctrl+b</code> then <code>d</code>: Detach from the session.</li>
+<li><code>tmux ls</code>: List active sessions.</li>
+<li><code>tmux attach -t &lt;name&gt;</code>: Reattach to a session.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/tmux.1.html">Manual Page</a></li>
+</ul></li>
+<li><strong><code>screen</code></strong>: A classic alternative available on most systems.
+<ul>
+<li><code>screen -S &lt;name&gt;</code>: Start a new session.</li>
+<li><code>Ctrl+a</code> then <code>d</code>: Detach from the session.</li>
+<li><code>screen -ls</code>: List active sessions.</li>
+<li><code>screen -r &lt;name&gt;</code>: Reattach to a session.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/screen.1.html">Manual Page</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="loops" class="level2">
+<h2 class="anchored" data-anchor-id="loops">Loops</h2>
+<p>Automate tasks across hundreds of samples.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="cf">for</span> file <span class="kw">in</span> /microgen2026/day-0/<span class="pp">*</span>.fasta<span class="kw">;</span> <span class="cf">do</span> </span>
+<span id="cb22-2"><a href="#cb22-2"></a>    <span class="bu">echo</span> <span class="st">"Processing </span><span class="va">$file</span><span class="st">..."</span><span class="kw">;</span> </span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="fu">grep</span> <span class="at">-c</span> <span class="st">'&gt;'</span> <span class="va">$file</span><span class="kw">;</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="find" class="level2">
+<h2 class="anchored" data-anchor-id="find"><code>find</code></h2>
+<p>Find files based on name, size, or modification date.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">"/microgen2026/PRJNA234452/*.fastq.gz"</span> <span class="at">-size</span> +100M</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="gnu-parallel" class="level2">
+<h2 class="anchored" data-anchor-id="gnu-parallel">GNU parallel</h2>
+<p>Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.</p>
+<p><strong><em>Example</em></strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Get the number of contigs in all samples parallelly on 4 CPU cores</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>.fasta <span class="kw">|</span> <span class="ex">parallel</span> <span class="at">-j</span> 4 grep <span class="at">-c</span> <span class="st">'&gt;'</span> {} </span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Do you remember how to know the number of CPU cores on your system?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="knowledge-check" class="level1">
+<h1>Knowledge Check</h1>
+<p>Ready to test your Linux skills? Take the <a href="../../day-0/instructions/final-quiz.html">Final Quiz</a> (10 mins) to see how much you’ve learned!</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -819,8 +1636,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../day-0/instructions/setup-environment.html" class="pagination-link" aria-label="0.1 Setup your workspace">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">0.1 Setup your workspace</span>
+      <a href="../../day-0/instructions/setup-r-vscode.html" class="pagination-link" aria-label="Advanced R in VS Code">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Advanced R in VS Code</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
