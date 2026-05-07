@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder: VS Code extensions</title>
+  <desc id="desc">Placeholder image for installing VS Code extensions.</desc>
+  <rect width="960" height="540" fill="#f8f9fa"/>
+  <rect x="70" y="70" width="820" height="400" rx="10" fill="#ffffff" stroke="#cfd4da" stroke-width="3"/>
+  <rect x="90" y="70" width="150" height="400" fill="#eef6ff"/>
+  <text x="275" y="135" font-family="Arial, sans-serif" font-size="34" fill="#212529" font-weight="700">VS Code Extensions</text>
+  <text x="280" y="210" font-family="Arial, sans-serif" font-size="25" fill="#212529">Remote - SSH</text>
+  <text x="280" y="260" font-family="Arial, sans-serif" font-size="25" fill="#212529">Python</text>
+  <text x="280" y="310" font-family="Arial, sans-serif" font-size="25" fill="#212529">R</text>
+  <text x="280" y="360" font-family="Arial, sans-serif" font-size="25" fill="#212529">Quarto</text>
+  <text x="275" y="430" font-family="Arial, sans-serif" font-size="22" fill="#495057">Replace this placeholder with a workshop screenshot.</text>
+</svg>

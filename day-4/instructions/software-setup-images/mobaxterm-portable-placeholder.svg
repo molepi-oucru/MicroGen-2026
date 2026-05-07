@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder: MobaXterm portable</title>
+  <desc id="desc">Placeholder image for launching MobaXterm portable.</desc>
+  <rect width="960" height="540" fill="#f8f9fa"/>
+  <rect x="70" y="70" width="820" height="400" rx="10" fill="#ffffff" stroke="#cfd4da" stroke-width="3"/>
+  <text x="110" y="140" font-family="Arial, sans-serif" font-size="34" fill="#212529" font-weight="700">MobaXterm Portable</text>
+  <rect x="115" y="200" width="710" height="70" rx="8" fill="#eef6ff" stroke="#0d6efd"/>
+  <text x="145" y="246" font-family="Consolas, monospace" font-size="26" fill="#212529">MobaXterm_Personal_*.exe</text>
+  <text x="110" y="340" font-family="Arial, sans-serif" font-size="24" fill="#495057">Replace this placeholder with a workshop screenshot.</text>
+</svg>

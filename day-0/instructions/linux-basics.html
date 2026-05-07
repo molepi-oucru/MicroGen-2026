@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.35">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,9 +11,6 @@
 
 <title>0.2 Commands &amp; Environments – MicroGen 2026</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -35,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../day-0/instructions/final-quiz.html" rel="next">
+<link href="../../day-1/instructions/index.html" rel="next">
 <link href="../../day-0/instructions/setup-environment.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -43,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7d7227744020e952889926329a671a95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-bb05f5d0074da2129d766b238819cd35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,8 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo light-content">
-    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo dark-content">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">MicroGen 2026</span>
@@ -210,12 +206,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">0.2 Commands &amp; Environments</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/final-quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz on Linux Foundations</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -265,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-2/instructions/hybrid-assembly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2 Long-Read sequencing &amp; Hybrid assembly</span></a>
+ <span class="menu-text">2.2 Long-read sequencing &amp; Hybrid assemblies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -288,13 +278,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Read mapping</span></a>
+ <span class="menu-text">3.1 Read mapping &amp; SNP alignment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Phylogenetics</span></a>
+ <span class="menu-text">3.2 Phylogenetic tree inference</span></a>
   </div>
 </li>
       </ul>
@@ -308,58 +298,36 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
- <span class="menu-text">mNGS in clinical microbiology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Workflow Setup</span></a>
+ <span class="menu-text">Clinical Foundations &amp; AMR Surveillance</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-taxonomy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Taxonomy Analysis</span></a>
+ <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: Taxonomy Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/vietnamese-healthy-gut-amr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 AMR Analysis &amp; Summary</span></a>
+ <span class="menu-text">Clinical Foundations &amp; AMR Surveillance: AMR Analysis &amp; Summary</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
- <span class="menu-text">mNGS in pathogen detection</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.4 Clinical Case</span></a>
+ <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../day-4/instructions/clinical-reasoning-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Signal Analysis</span></a>
+ <span class="menu-text">Actionable Diagnostics &amp; Clinical Reasoning: Signal Analysis</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
       </ul>
@@ -369,8 +337,58 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#commanding-a-computer" id="toc-commanding-a-computer" class="nav-link active" data-scroll-target="#commanding-a-computer">Commanding a Computer</a>
+  <ul class="collapse">
+  <li><a href="#why-linux-for-genomics" id="toc-why-linux-for-genomics" class="nav-link" data-scroll-target="#why-linux-for-genomics">Why Linux for Genomics?</a></li>
+  <li><a href="#the-terminal" id="toc-the-terminal" class="nav-link" data-scroll-target="#the-terminal">The Terminal</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  <li><a href="#the-file-system" id="toc-the-file-system" class="nav-link" data-scroll-target="#the-file-system">The File System</a></li>
+  <li><a href="#the-command-line" id="toc-the-command-line" class="nav-link" data-scroll-target="#the-command-line">The Command Line</a>
+  <ul class="collapse">
+  <li><a href="#basic-navigational-commands" id="toc-basic-navigational-commands" class="nav-link" data-scroll-target="#basic-navigational-commands">Basic Navigational Commands</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#in-linux-everything-is-a-file" id="toc-in-linux-everything-is-a-file" class="nav-link" data-scroll-target="#in-linux-everything-is-a-file">In Linux, Everything is a File</a>
+  <ul class="collapse">
+  <li><a href="#anatomy-of-a-file-name" id="toc-anatomy-of-a-file-name" class="nav-link" data-scroll-target="#anatomy-of-a-file-name">Anatomy of a File Name</a></li>
+  <li><a href="#types-of-files-in-genomics" id="toc-types-of-files-in-genomics" class="nav-link" data-scroll-target="#types-of-files-in-genomics">Types of Files in Genomics</a></li>
+  <li><a href="#managing-files-and-directories" id="toc-managing-files-and-directories" class="nav-link" data-scroll-target="#managing-files-and-directories">Managing Files and Directories</a></li>
+  <li><a href="#peeking-into-file-contents" id="toc-peeking-into-file-contents" class="nav-link" data-scroll-target="#peeking-into-file-contents">Peeking into File Contents</a></li>
+  <li><a href="#searching-and-filtering" id="toc-searching-and-filtering" class="nav-link" data-scroll-target="#searching-and-filtering">Searching and Filtering</a></li>
+  <li><a href="#access-permissions" id="toc-access-permissions" class="nav-link" data-scroll-target="#access-permissions">Access Permissions</a></li>
+  <li><a href="#chmod-changing-permissions" id="toc-chmod-changing-permissions" class="nav-link" data-scroll-target="#chmod-changing-permissions"><code>chmod</code>: Changing Permissions</a></li>
+  </ul></li>
+  <li><a href="#the-power-of-connectivity" id="toc-the-power-of-connectivity" class="nav-link" data-scroll-target="#the-power-of-connectivity">The Power of Connectivity</a>
+  <ul class="collapse">
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes (<code>|</code>)</a></li>
+  <li><a href="#standard-input-output-and-error" id="toc-standard-input-output-and-error" class="nav-link" data-scroll-target="#standard-input-output-and-error">Standard Input, Output, and Error</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
+  </ul></li>
+  <li><a href="#working-in-different-environments" id="toc-working-in-different-environments" class="nav-link" data-scroll-target="#working-in-different-environments">Working in Different Environments</a>
+  <ul class="collapse">
+  <li><a href="#remote-computing-connecting-to-a-server" id="toc-remote-computing-connecting-to-a-server" class="nav-link" data-scroll-target="#remote-computing-connecting-to-a-server">Remote Computing: Connecting to a Server</a></li>
+  <li><a href="#software-environments-conda-mamba" id="toc-software-environments-conda-mamba" class="nav-link" data-scroll-target="#software-environments-conda-mamba">Software Environments: Conda &amp; Mamba</a></li>
+  </ul></li>
+  <li><a href="#practical-challenges" id="toc-practical-challenges" class="nav-link" data-scroll-target="#practical-challenges">Practical Challenges</a>
+  <ul class="collapse">
+  <li><a href="#challenge-1-exploring-the-directory" id="toc-challenge-1-exploring-the-directory" class="nav-link" data-scroll-target="#challenge-1-exploring-the-directory">Challenge 1: Exploring the Directory</a></li>
+  <li><a href="#challenge-2-counting-sequences" id="toc-challenge-2-counting-sequences" class="nav-link" data-scroll-target="#challenge-2-counting-sequences">Challenge 2: Counting Sequences</a></li>
+  <li><a href="#challenge-3-extracting-information" id="toc-challenge-3-extracting-information" class="nav-link" data-scroll-target="#challenge-3-extracting-information">Challenge 3: Extracting Information</a></li>
+  </ul></li>
+  <li><a href="#self-exploration" id="toc-self-exploration" class="nav-link" data-scroll-target="#self-exploration">Self Exploration</a>
+  <ul class="collapse">
+  <li><a href="#tmux-screen" id="toc-tmux-screen" class="nav-link" data-scroll-target="#tmux-screen"><code>tmux</code> &amp; <code>screen</code></a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
+  <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find"><code>find</code></a></li>
+  <li><a href="#gnu-parallel" id="toc-gnu-parallel" class="nav-link" data-scroll-target="#gnu-parallel">GNU parallel</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -406,10 +424,226 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Chúng tôi đang hoàn thiện phần này. Bạn hãy quay lại vào ngày mai nhé.</p>
-<p>☕☕☕</p>
+<section id="commanding-a-computer" class="level1">
+<h1>Commanding a Computer</h1>
+<p>Welcome to the command line! For many, the “black screen” of the terminal can be intimidating, but it is the most powerful tool in a bioinformatician’s toolkit. Most bioinformatics tools don’t have a graphical user interface (GUI) with buttons and menus; instead, they are controlled by typing commands.</p>
+<section id="why-linux-for-genomics" class="level2">
+<h2 class="anchored" data-anchor-id="why-linux-for-genomics">Why Linux for Genomics?</h2>
+<p>You might wonder why we aren’t using Windows or macOS “Apps” for this. There are three main reasons:</p>
+<ol type="1">
+<li><strong>Big Data</strong>: Genomic datasets are often too large for Excel or standard text editors. Linux tools are designed to stream data efficiently without crashing.</li>
+<li><strong>Automation</strong>: In genomics, we often need to run the same analysis on hundreds of samples. CLI (Command Line Interface) allows us to automate this with scripts.</li>
+<li><strong>Reproducibility</strong>: Typing commands creates a record of exactly what you did, making it easier to share and reproduce your research.</li>
+</ol>
+</section>
+<section id="the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="the-terminal">The Terminal</h2>
+<p>The <strong>Terminal</strong> (or console) is your window into the operating system. It provides a <strong>Shell</strong>, which is the program that interprets the commands you type and tells the computer what to do. On most modern systems, the default shell is <code>bash</code> or <code>zsh</code>.</p>
+<ul>
+<li><strong>The Prompt</strong>: Usually looks like <code>user@computer:~$</code>. The <code>$</code> indicates that the shell is waiting for your input.</li>
+<li><strong>Case Sensitivity</strong>: Linux is case-sensitive. <code>File.txt</code> and <code>file.txt</code> are two different files.</li>
+</ul>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<p>You don’t need to memorize every command. Here is how to find out what a command does:</p>
+<ul>
+<li><code>command --help</code>: Most tools have a built-in help menu (e.g., <code>ls --help</code>).</li>
+<li><code>man command</code>: Opens the “manual” page (e.g., <code>man ls</code>). Press <code>q</code> to exit.</li>
+<li><strong>Search &amp; AI</strong>: Google, Stack Overflow, and AI tools are your friends when you get stuck!</li>
+</ul>
+</section>
+<section id="the-file-system" class="level2">
+<h2 class="anchored" data-anchor-id="the-file-system">The File System</h2>
+<p>Think of the Linux file system as a giant tree. - <strong>Root (<code>/</code>)</strong>: The base of the entire system. - <strong>Home Directory (<code>~</code>)</strong>: Your personal space where you have full control. - <strong>Path</strong>: The “address” of a file or folder. - <strong>Absolute Path</strong>: Starts from the root (e.g., <code>/home/user/data/sample.fastq</code>). - <strong>Relative Path</strong>: Starts from where you currently are (e.g., <code>data/sample.fastq</code>).</p>
+</section>
+<section id="the-command-line" class="level2">
+<h2 class="anchored" data-anchor-id="the-command-line">The Command Line</h2>
+<p>A command usually follows this structure: <code>command [options] [arguments]</code></p>
+<p>Example: <code>ls -l Documents/</code> - <code>ls</code> is the command (list files). - <code>-l</code> is an option (long format). - <code>Documents/</code> is the argument (the folder to look into).</p>
+<section id="basic-navigational-commands" class="level3">
+<h3 class="anchored" data-anchor-id="basic-navigational-commands">Basic Navigational Commands</h3>
+<ul>
+<li><code>pwd</code> (Print Working Directory): “Where am I?”</li>
+<li><code>ls</code>: “What’s in here?”
+<ul>
+<li><code>ls -F</code>: Adds a <code>/</code> to directories.</li>
+<li><code>ls -l</code>: Shows detailed information (permissions, size, etc.).</li>
+<li><code>ls -h</code>: Human-readable sizes (KB, MB, GB).</li>
+</ul></li>
+<li><code>cd</code>: “Go somewhere else.”
+<ul>
+<li><code>cd ..</code>: Move up one level.</li>
+<li><code>cd ~</code>: Go back home.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="in-linux-everything-is-a-file" class="level1">
+<h1>In Linux, Everything is a File</h1>
+<p>One of the most powerful concepts in Linux is that <strong>everything is a file</strong>. Whether it’s a text document, a directory, a hardware device (like your mouse or hard drive), or even a process—Linux treats them all as files. This allows us to use the same set of tools to interact with almost everything in the system.</p>
+<section id="anatomy-of-a-file-name" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-file-name">Anatomy of a File Name</h2>
+<p>In Windows, the file extension (<code>.docx</code>, <code>.exe</code>) tells the system what the file is. In Linux, <strong>extensions are mostly for humans</strong>. Linux determines what a file is by looking at its content (specifically “magic bytes” at the beginning), not its name.</p>
+<p>You can name a file anything: - <code>genome.fasta</code> (Helpful) - <code>lunch_list.banhmi</code> (Valid) * <code>data_source.nuocmam</code> (Valid)</p>
+<p>However, we usually keep standard extensions so we don’t confuse ourselves or our colleagues!</p>
+</section>
+<section id="types-of-files-in-genomics" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-files-in-genomics">Types of Files in Genomics</h2>
+<ol type="1">
+<li><strong>Text Files</strong>: Plain text you can read. Examples: <code>.fasta</code>, <code>.fastq</code>, <code>.csv</code>, <code>.sh</code>.</li>
+<li><strong>Compressed Files</strong>: To save space, we often zip files. Common extensions: <code>.gz</code>, <code>.zip</code>, <code>.tar.gz</code>. Most Linux tools can “peek” inside <code>.gz</code> files without unzipping them.</li>
+<li><strong>Binary Files</strong>: Not human-readable. These are programs or optimized data formats (e.g., compiled tools, <code>.bam</code> or <code>.bcf</code> files).</li>
+</ol>
+</section>
+<section id="managing-files-and-directories" class="level2">
+<h2 class="anchored" data-anchor-id="managing-files-and-directories">Managing Files and Directories</h2>
+<ul>
+<li><code>mkdir</code>: Create a new directory (which is just a special type of file!).
+<ul>
+<li><code>mkdir raw_reads</code></li>
+</ul></li>
+<li><code>cp</code>: Copy files or directories.
+<ul>
+<li><code>cp source.txt destination.txt</code></li>
+</ul></li>
+<li><code>mv</code>: Move or rename files.
+<ul>
+<li><code>mv old_name.txt new_name.txt</code></li>
+</ul></li>
+<li><code>rm</code>: Remove (delete) files. <strong>Be careful! There is no “Trash”.</strong>
+<ul>
+<li><code>rm -r folder_name</code>: Recursively delete a directory.</li>
+</ul></li>
+</ul>
+</section>
+<section id="peeking-into-file-contents" class="level2">
+<h2 class="anchored" data-anchor-id="peeking-into-file-contents">Peeking into File Contents</h2>
+<p>We rarely open huge genomics files in editors. We use these instead:</p>
+<ul>
+<li><code>cat</code>: Print the whole file (only for small files!).</li>
+<li><code>head</code>: Show the first few lines.</li>
+<li><code>tail</code>: Show the last few lines.</li>
+<li><code>less</code>: The “gold standard” for viewing large files. Use arrows to scroll, <code>/</code> to search, and <code>q</code> to quit.</li>
+</ul>
+</section>
+<section id="searching-and-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="searching-and-filtering">Searching and Filtering</h2>
+<ul>
+<li><code>grep</code>: Search for a pattern (e.g., <code>grep "sequence_ABC" all_sequences.fasta</code>).</li>
+<li><code>wc -l</code>: Count the number of lines.</li>
+</ul>
+</section>
+<section id="access-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="access-permissions">Access Permissions</h2>
+<p>Every file has metadata that defines who can do what with it. Run <code>ls -l</code> to see these.</p>
+<ul>
+<li><code>r</code>: Read</li>
+<li><code>w</code>: Write</li>
+<li><code>x</code>: Execute (run as a program)</li>
+</ul>
+<p>These are divided into <strong>User</strong> (owner), <strong>Group</strong>, and <strong>Others</strong>.</p>
+</section>
+<section id="chmod-changing-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="chmod-changing-permissions"><code>chmod</code>: Changing Permissions</h2>
+<p>To make a script executable: <code>chmod +x my_analysis_script.sh</code></p>
+</section>
+</section>
+<section id="the-power-of-connectivity" class="level1">
+<h1>The Power of Connectivity</h1>
+<p>A file is rarely used in isolation. We often want to pass data between files and tools.</p>
+<section id="pipes" class="level2">
+<h2 class="anchored" data-anchor-id="pipes">Pipes (<code>|</code>)</h2>
+<p>The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple tools.</p>
+<p><strong>Example</strong>: Count how many sequences are in a FASTA file. FASTA headers start with <code>&gt;</code>. We can find all lines starting with <code>&gt;</code> and count them: <code>grep "^&gt;" genome.fasta | wc -l</code></p>
+</section>
+<section id="standard-input-output-and-error" class="level2">
+<h2 class="anchored" data-anchor-id="standard-input-output-and-error">Standard Input, Output, and Error</h2>
+<ul>
+<li><strong>Standard Out (stdout)</strong>: Where the command sends its regular results (the screen).</li>
+<li><strong>Standard Error (stderr)</strong>: Where the command sends error messages.</li>
+<li><strong>Redirection</strong>:
+<ul>
+<li><code>&gt;</code>: Save output to a file (overwrites).</li>
+<li><code>&gt;&gt;</code>: Append output to a file (adds to the end).</li>
+<li><code>2&gt;</code>: Redirect error messages to a file.</li>
+</ul></li>
+</ul>
+<p>Example: Save the list of files to a text file. <code>ls -lh &gt; file_list.txt</code></p>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>Variables store information for later use. In scripts, we often store filenames in variables. <code>MY_SAMPLE="Sample_A1"</code> <code>echo $MY_SAMPLE</code></p>
+</section>
+</section>
+<section id="working-in-different-environments" class="level1">
+<h1>Working in Different Environments</h1>
+<section id="remote-computing-connecting-to-a-server" class="level2">
+<h2 class="anchored" data-anchor-id="remote-computing-connecting-to-a-server">Remote Computing: Connecting to a Server</h2>
+<p>In bioinformatics, your laptop is often not powerful enough to process thousands of genomes. Instead, we use high-performance computers (HPC) or cloud servers. We connect to these using <strong>SSH</strong> (Secure Shell).</p>
+<p><code>ssh username@server-ip-address</code></p>
+<p>Once you are logged in, you are using the Linux environment of that remote computer!</p>
+</section>
+<section id="software-environments-conda-mamba" class="level2">
+<h2 class="anchored" data-anchor-id="software-environments-conda-mamba">Software Environments: Conda &amp; Mamba</h2>
+<p>Different bioinformatics tools often require different versions of the same software. If you install everything together, they might clash. We use <strong>Conda</strong> (or the faster version, <strong>Mamba</strong>) to create isolated “bubbles” or environments.</p>
+<ul>
+<li><code>mamba create -n assembly_env shovill spades</code>: Create an environment for assembly.</li>
+<li><code>mamba activate assembly_env</code>: Enter the bubble.</li>
+<li><code>mamba deactivate</code>: Leave the bubble.</li>
+</ul>
+</section>
+</section>
+<section id="practical-challenges" class="level1">
+<h1>Practical Challenges</h1>
+<p>Let’s put your skills to the test with some genomics-inspired tasks.</p>
+<section id="challenge-1-exploring-the-directory" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-1-exploring-the-directory">Challenge 1: Exploring the Directory</h3>
+<ol type="1">
+<li>Navigate to the <code>day-0/data/</code> directory.</li>
+<li>List all files and find out which one is the largest.</li>
+<li>Create a new directory called <code>results</code>.</li>
+</ol>
+</section>
+<section id="challenge-2-counting-sequences" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-2-counting-sequences">Challenge 2: Counting Sequences</h3>
+<ol type="1">
+<li>We have a file called <code>ebola_virus.fasta</code>.</li>
+<li>Use <code>grep</code> and <code>wc</code> to count how many sequences are in this file.</li>
+<li>Redirect the count into a new file called <code>sequence_count.txt</code>.</li>
+</ol>
+</section>
+<section id="challenge-3-extracting-information" class="level3">
+<h3 class="anchored" data-anchor-id="challenge-3-extracting-information">Challenge 3: Extracting Information</h3>
+<ol type="1">
+<li>Use <code>head</code> to look at the first 10 entries of <code>metadata.csv</code>.</li>
+<li>Find all entries in <code>metadata.csv</code> that belong to the year “2024”.</li>
+</ol>
+</section>
+</section>
+<section id="self-exploration" class="level1">
+<h1>Self Exploration</h1>
+<p>Once you are comfortable with the basics, these tools will make your life much easier:</p>
+<section id="tmux-screen" class="level2">
+<h2 class="anchored" data-anchor-id="tmux-screen"><code>tmux</code> &amp; <code>screen</code></h2>
+<p>Bioinformatics jobs often take hours or days to run. If your internet disconnects, the job might die. <code>tmux</code> allows you to run “sessions” that keep going even if you log out.</p>
+</section>
+<section id="loops" class="level2">
+<h2 class="anchored" data-anchor-id="loops">Loops</h2>
+<p>Automate tasks across hundreds of samples. <code>for file in *.fastq; do echo "Processing $file..."; done</code></p>
+</section>
+<section id="find" class="level2">
+<h2 class="anchored" data-anchor-id="find"><code>find</code></h2>
+<p>Find files based on name, size, or modification date. <code>find . -name "*.vcf" -size +10M</code></p>
+</section>
+<section id="gnu-parallel" class="level2">
+<h2 class="anchored" data-anchor-id="gnu-parallel">GNU parallel</h2>
+<p>Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.</p>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -463,14 +697,13 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -824,8 +1057,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-0/instructions/final-quiz.html" class="pagination-link" aria-label="Quiz on Linux Foundations">
-        <span class="nav-page-text">Quiz on Linux Foundations</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-1/instructions/index.html" class="pagination-link" aria-label="Day 1">
+        <span class="nav-page-text">Day 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

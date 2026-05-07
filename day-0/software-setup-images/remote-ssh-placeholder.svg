@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder: Remote SSH</title>
+  <desc id="desc">Placeholder image for connecting with VS Code Remote SSH.</desc>
+  <rect width="960" height="540" fill="#f8f9fa"/>
+  <rect x="70" y="70" width="820" height="400" rx="10" fill="#ffffff" stroke="#cfd4da" stroke-width="3"/>
+  <text x="110" y="140" font-family="Arial, sans-serif" font-size="34" fill="#212529" font-weight="700">Remote SSH connection</text>
+  <rect x="115" y="205" width="305" height="120" rx="8" fill="#eef6ff" stroke="#0d6efd"/>
+  <rect x="540" y="205" width="305" height="120" rx="8" fill="#f6fff8" stroke="#198754"/>
+  <path d="M430 265 H530" stroke="#495057" stroke-width="5"/>
+  <path d="M515 250 L535 265 L515 280" fill="none" stroke="#495057" stroke-width="5"/>
+  <text x="165" y="275" font-family="Arial, sans-serif" font-size="26" fill="#212529">Your laptop</text>
+  <text x="585" y="275" font-family="Arial, sans-serif" font-size="26" fill="#212529">Workshop server</text>
+  <text x="110" y="405" font-family="Arial, sans-serif" font-size="24" fill="#495057">Replace this placeholder with a workshop screenshot.</text>
+</svg>
