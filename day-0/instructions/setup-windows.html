@@ -9,7 +9,7 @@
 <meta name="author" content="Minh-Quan Ton-Ngoc">
 <meta name="dcterms.date" content="2026-05-11">
 
-<title>0.1 Setup your workspace – MicroGen 2026</title>
+<title>0.1.1 Windows 10/11 setup – MicroGen 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,8 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../day-0/instructions/setup-windows.html" rel="next">
-<link href="../../day-0/instructions/index.html" rel="prev">
+<link href="../../day-0/instructions/setup-macos.html" rel="next">
+<link href="../../day-0/instructions/setup-environment.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -164,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-windows.html">Windows 10/11 setup</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -196,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0.1 Setup your workspace</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -205,13 +240,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/setup-windows.html" class="sidebar-item-text sidebar-link">
+  <a href="../../day-0/instructions/setup-windows.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Windows 10/11 setup</span></a>
   </div>
 </li>
@@ -428,19 +463,30 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#windows-1011-setup" id="toc-windows-1011-setup" class="nav-link active" data-scroll-target="#windows-1011-setup"><span class="header-section-number">1</span> Windows 10/11 setup</a>
   <ul class="collapse">
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a></li>
-  <li><a href="#quick-checklist" id="toc-quick-checklist" class="nav-link" data-scroll-target="#quick-checklist"><span class="header-section-number">2</span> Quick checklist</a></li>
-  <li><a href="#which-instructions-should-i-follow" id="toc-which-instructions-should-i-follow" class="nav-link" data-scroll-target="#which-instructions-should-i-follow"><span class="header-section-number">3</span> Which instructions should I follow?</a></li>
+  <li><a href="#install-visual-studio-code" id="toc-install-visual-studio-code" class="nav-link" data-scroll-target="#install-visual-studio-code"><span class="header-section-number">1.1</span> Install Visual Studio Code</a></li>
+  <li><a href="#install-python-3.13" id="toc-install-python-3.13" class="nav-link" data-scroll-target="#install-python-3.13"><span class="header-section-number">1.2</span> Install Python 3.13</a></li>
+  <li><a href="#install-r-4.5.0" id="toc-install-r-4.5.0" class="nav-link" data-scroll-target="#install-r-4.5.0"><span class="header-section-number">1.3</span> Install R 4.5.0</a></li>
+  <li><a href="#install-rtools45---only-if-needed" id="toc-install-rtools45---only-if-needed" class="nav-link" data-scroll-target="#install-rtools45---only-if-needed"><span class="header-section-number">1.4</span> Install Rtools45 - only if needed</a></li>
+  <li><a href="#install-rstudio-desktop---optional" id="toc-install-rstudio-desktop---optional" class="nav-link" data-scroll-target="#install-rstudio-desktop---optional"><span class="header-section-number">1.5</span> Install RStudio Desktop - optional</a></li>
+  <li><a href="#install-r-packages" id="toc-install-r-packages" class="nav-link" data-scroll-target="#install-r-packages"><span class="header-section-number">1.6</span> Install R packages</a></li>
+  <li><a href="#install-mobaxterm-portable" id="toc-install-mobaxterm-portable" class="nav-link" data-scroll-target="#install-mobaxterm-portable"><span class="header-section-number">1.7</span> Install MobaXterm portable</a>
+  <ul class="collapse">
+  <li><a href="#create-an-ssh-session-in-mobaxterm" id="toc-create-an-ssh-session-in-mobaxterm" class="nav-link" data-scroll-target="#create-an-ssh-session-in-mobaxterm"><span class="header-section-number">1.7.1</span> Create an SSH session in MobaXterm</a></li>
+  </ul></li>
+  <li><a href="#install-java---optional" id="toc-install-java---optional" class="nav-link" data-scroll-target="#install-java---optional"><span class="header-section-number">1.8</span> Install Java - optional</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-windows.html">Windows 10/11 setup</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">0.1 Setup your workspace</h1>
+<h1 class="title">0.1.1 Windows 10/11 setup</h1>
 </div>
 
 
@@ -504,29 +550,88 @@ summary {
   font-weight: 600;
 }
 </style>
-<section id="purpose" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
-<p>This guide helps you prepare a Windows or macOS laptop for the MicroGen 2026 workshop. It covers the tools used for coding, data analysis, and connecting to the workshop cloud server.</p>
-<p>Most heavy bioinformatics workflows will run on the <strong>workshop server</strong>, not on your laptop. Your laptop mainly needs:</p>
+<section id="windows-1011-setup" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Windows 10/11 setup</h1>
+<section id="install-visual-studio-code" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="install-visual-studio-code"><span class="header-section-number">1.1</span> Install Visual Studio Code</h2>
+<ol type="1">
+<li>Open the official VS Code download page: <a href="https://code.visualstudio.com/download" class="uri">https://code.visualstudio.com/download</a></li>
+<li>Under <strong>Windows</strong>, download either:
 <ul>
-<li>a code editor,</li>
-<li>R and Python for small local exercises,</li>
-<li>SSH tools for connecting to the server,</li>
-<li>and optional graphical tools for users who prefer them.</li>
+<li><strong>User Installer x64</strong> if you are using your own laptop and do not have administrator rights, or</li>
+<li><strong>System Installer x64</strong> if your administrator or IT team prefers system-wide installation.</li>
+</ul></li>
+<li>Run the installer.</li>
+<li>When the installer shows optional tasks, tick these options if available:
+<ul>
+<li><strong>Add to PATH</strong></li>
+<li><strong>Add “Open with Code” action</strong></li>
+<li><strong>Register Code as an editor for supported file types</strong></li>
+</ul></li>
+<li>Finish the installation and open VS Code.</li>
+</ol>
+<p>In VS Code, open the Extensions view and install:</p>
+<ul>
+<li><strong>Remote - SSH</strong> by Microsoft</li>
+<li><strong>Python</strong> by Microsoft</li>
+<li><strong>R</strong> by REditorSupport</li>
+<li><strong>Quarto</strong> by Quarto</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vscode-extensions.png" class="img-fluid figure-img"></p>
+<figcaption>VS Code Extensions: Remote - SSH, Python, R, and Quarto</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recommended shortcut: import the MicroGen2026 VS Code profile
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After installing VS Code, you can download the workshop profile file: <a href="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/Microgen2026.code-profile">Microgen2026.code-profile</a>.</p>
+<p>To import it, open <strong>VS Code</strong> and choose <strong>Manage</strong> &gt; <strong>Profiles</strong> &gt; <strong>Profiles</strong> &gt; <strong>More Actions…</strong> (dropdown icon) &gt; <strong>Import Profile…</strong>, then select the downloaded <code>Microgen2026.code-profile</code> file.</p>
+<p>If the profile imports successfully, it replaces the manual VS Code extension setup above and adds workshop-specific settings/customizations. If the profile import does not work on your computer, install the extensions manually using the list above.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/vscode-profile.png" class="img-fluid figure-img"></p>
+<figcaption>VS Code menu for importing a profile</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Required and optional tools
+What this does
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Required for most participants:</strong> Python 3.13, R 4.5.0, Visual Studio Code, the VS Code Remote - SSH extension, and the listed Python/R packages.</p>
-<p><strong>Optional:</strong> RStudio Desktop, Java, Artemis, BandageNG, SeaView, and extra X11/VNC tools. Instructors may ask you to use these for specific graphical activities.</p>
+<p>VS Code is the main editor for the workshop. The Remote - SSH extension lets VS Code open your assigned server workspace as if it were a local folder.</p>
 </div>
+</div>
+</section>
+<section id="install-python-3.13" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="install-python-3.13"><span class="header-section-number">1.2</span> Install Python 3.13</h2>
+<ol type="1">
+<li>Open the official Python 3.13 download page: <a href="https://www.python.org/downloads/latest/python3.13/" class="uri">https://www.python.org/downloads/latest/python3.13/</a></li>
+<li>Download the <strong>Windows installer (64-bit)</strong>.</li>
+<li>Run the installer.</li>
+<li>On the first installer screen, tick <strong>Add python.exe to PATH</strong>.</li>
+<li>Choose <strong>Install Now</strong>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/python-add-to-path.png" class="img-fluid figure-img"></p>
+<figcaption>Python installer screen showing Add python.exe to PATH</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -534,249 +639,245 @@ Required and optional tools
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Do not share secrets
+Important Windows step
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you receive a <code>.pem</code> private key file, do not upload it, email it, paste it into chat, or share it with another participant. The key is your login credential for the server.</p>
+<p>The <strong>Add python.exe to PATH</strong> checkbox is important. It lets Windows find Python when you type <code>python</code> in PowerShell.</p>
 </div>
 </div>
+<p>Open <strong>PowerShell</strong> from the Start menu and check Python:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1"></a>python <span class="op">--</span>version</span>
+<span id="cb1-2"><a href="#cb1-2"></a>pip <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see Python 3.13 and a <code>pip</code> version. <code>pip</code> is the tool Python uses to install Python packages.</p>
+<p>Update <code>pip</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1"></a>python <span class="op">-</span>m pip install <span class="op">--</span>upgrade pip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This asks Python to update its package installer.</p>
+<p>Install the required Python packages:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1"></a>python <span class="op">-</span>m pip install numpy pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This installs <code>numpy</code> and <code>pandas</code>, which are common Python packages for numerical and table-based data work.</p>
+<p>Verify the packages:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1"></a>python <span class="op">-</span>c <span class="st">"import numpy, pandas; print('Python packages OK')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the packages are installed correctly, PowerShell prints <code>Python packages OK</code>.</p>
 </section>
-<section id="quick-checklist" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Quick checklist</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tool</th>
-<th style="text-align: right;">Required?</th>
-<th>Used for</th>
-<th>Windows 10/11</th>
-<th>macOS Intel</th>
-<th>macOS Apple Silicon</th>
-<th>Ubuntu personal computer</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>R 4.5.0</td>
-<td style="text-align: right;">Yes</td>
-<td>R analysis notebooks and packages</td>
-<td>CRAN Windows installer</td>
-<td>CRAN <code>x86_64</code> macOS package</td>
-<td>CRAN <code>arm64</code> macOS package</td>
-<td>CRAN Ubuntu repository</td>
-</tr>
-<tr class="even">
-<td>RStudio Desktop</td>
-<td style="text-align: right;">Optional</td>
-<td>Graphical R interface</td>
-<td>Posit installer</td>
-<td>Posit macOS app</td>
-<td>Posit macOS app</td>
-<td>Posit <code>.deb</code> package if needed</td>
-</tr>
-<tr class="odd">
-<td>Python 3.13</td>
-<td style="text-align: right;">Yes</td>
-<td>Python exercises and checks</td>
-<td>Python.org installer</td>
-<td>Python.org installer or Homebrew</td>
-<td>Python.org installer or Homebrew</td>
-<td>Ubuntu package if available, or Python.org source</td>
-</tr>
-<tr class="even">
-<td>Visual Studio Code</td>
-<td style="text-align: right;">Yes</td>
-<td>Editing files and remote server work</td>
-<td>Windows installer</td>
-<td>macOS Intel or Universal app</td>
-<td>macOS Apple Silicon or Universal app</td>
-<td>Official <code>.deb</code> package</td>
-</tr>
-<tr class="odd">
-<td>MobaXterm portable</td>
-<td style="text-align: right;">Windows only</td>
-<td>SSH, SFTP, X11, VNC tunnels</td>
-<td>Recommended</td>
-<td>Not used</td>
-<td>Not used</td>
-<td>Not used</td>
-</tr>
-<tr class="even">
-<td>Rtools45</td>
-<td style="text-align: right;">Sometimes</td>
-<td>Build R packages from source if Windows package binaries are unavailable</td>
-<td>Install only if needed</td>
-<td>Not used</td>
-<td>Not used</td>
-<td>Not used</td>
-</tr>
-<tr class="odd">
-<td>OpenJDK 17</td>
-<td style="text-align: right;">Optional</td>
-<td>Mainly Artemis; sometimes other graphical tools</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td><code>openjdk-17-jdk</code></td>
-</tr>
-<tr class="even">
-<td>Artemis</td>
-<td style="text-align: right;">Optional</td>
-<td>Genome browsing and annotation</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td><code>artemis</code> package or Java <code>.jar</code></td>
-</tr>
-<tr class="odd">
-<td>BandageNG</td>
-<td style="text-align: right;">Optional</td>
-<td>Assembly graph viewing</td>
-<td>Download release if available, or use Ubuntu/conda option</td>
-<td>Download release if available, or use conda option</td>
-<td>Download release if available, or use conda option</td>
-<td>Bioconda/conda option</td>
-</tr>
-<tr class="even">
-<td>NCBI BLAST+</td>
-<td style="text-align: right;">Sometimes</td>
-<td>Required for BandageNG BLAST-related features</td>
-<td>NCBI BLAST+ installer/archive</td>
-<td>NCBI BLAST+ archive or Homebrew</td>
-<td>NCBI BLAST+ archive or Homebrew</td>
-<td><code>ncbi-blast+</code></td>
-</tr>
-<tr class="odd">
-<td>SeaView 5</td>
-<td style="text-align: right;">Optional</td>
-<td>Sequence alignment and phylogeny GUI</td>
-<td>SeaView <code>seaview5.exe</code></td>
-<td>SeaView macOS download</td>
-<td>SeaView macOS download</td>
-<td><code>seaview</code></td>
-</tr>
-<tr class="even">
-<td>Remote - SSH extension</td>
-<td style="text-align: right;">Yes</td>
-<td>Open server folders in VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-</tr>
-<tr class="odd">
-<td>X11/VNC tools</td>
-<td style="text-align: right;">Optional</td>
-<td>Remote graphical applications such as FastQC</td>
-<td>MobaXterm; optionally VcXsrv or VNC viewer</td>
-<td>XQuartz and Screen Sharing/VNC viewer</td>
-<td>XQuartz and Screen Sharing/VNC viewer</td>
-<td>Native X11 desktop or VNC viewer</td>
-</tr>
-</tbody>
-</table>
-<details>
-<summary>
-<strong>Click to open official download links checked for this guide</strong>
-</summary>
-<p>These links were checked against official project pages while preparing this guide:</p>
-<ul>
-<li>R and R 4.5.0: <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://cran.r-project.org/bin/windows/base/old/4.5.0/">Windows R 4.5.0 old release</a>, <a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/">macOS Intel R 4.5.0</a>, <a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/">macOS Apple Silicon R 4.5.0</a></li>
-<li>RStudio Desktop: <a href="https://posit.co/downloads/">Posit downloads</a></li>
-<li>Python 3.13: <a href="https://www.python.org/downloads/latest/python3.13/">Python 3.13 latest maintenance release</a></li>
-<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">VS Code download page</a></li>
-<li>MobaXterm portable: <a href="https://mobaxterm.mobatek.net/download-home-edition.html">MobaXterm Home Edition</a></li>
-<li>Rtools for Windows: <a href="https://cran.r-project.org/bin/windows/Rtools/">CRAN Rtools</a></li>
-<li>OpenJDK 17: <a href="https://adoptium.net/installation/?variant=openjdk17">Eclipse Adoptium Temurin OpenJDK 17</a> or <a href="https://learn.microsoft.com/en-us/java/openjdk/download">Microsoft Build of OpenJDK 17</a></li>
-<li>Artemis: <a href="https://sanger-pathogens.github.io/Artemis/Artemis/">Artemis official page</a> and <a href="https://github.com/sanger-pathogens/Artemis/releases">GitHub releases</a></li>
-<li>BandageNG: <a href="https://github.com/asl/BandageNG">BandageNG GitHub</a> and <a href="https://bioconda.github.io/recipes/bandage_ng/README.html">Bioconda package</a></li>
-<li>NCBI BLAST+: <a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">NCBI BLAST+ latest downloads</a></li>
-<li>SeaView 5: <a href="https://doua.prabi.fr/software/seaview/">PRABI-Doua SeaView</a></li>
-<li>XQuartz: <a href="https://www.xquartz.org/">XQuartz</a></li>
-</ul>
-</details>
+<section id="install-r-4.5.0" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="install-r-4.5.0"><span class="header-section-number">1.3</span> Install R 4.5.0</h2>
+<p>R 4.5.0 is the R version used by the Day 4 practical materials. It is no longer the newest R release, so use the official CRAN old-release page for Windows.</p>
+<ol type="1">
+<li>Open the official CRAN Windows R 4.5.0 page: <a href="https://cran.r-project.org/bin/windows/base/old/4.5.0/" class="uri">https://cran.r-project.org/bin/windows/base/old/4.5.0/</a></li>
+<li>Download <code>R-4.5.0-win.exe</code>.</li>
+<li>Run the installer.</li>
+<li>Accept the default options unless your instructor tells you otherwise.</li>
+</ol>
+<p>Open <strong>R</strong> or <strong>RGui</strong> from the Start menu and run:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>R.version.string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see a line beginning with <code>R version 4.5.0</code>.</p>
 </section>
-<section id="which-instructions-should-i-follow" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Which instructions should I follow?</h1>
-<ul>
-<li>If you use <strong>Windows 10 or Windows 11</strong>, follow <a href="../../day-0/instructions/setup-windows.html">Windows 10/11 setup</a>.</li>
-<li>If you use an <strong>Intel Mac</strong>, follow <a href="../../day-0/instructions/setup-macos.html">macOS setup</a>, choosing the Intel options.</li>
-<li>If you use an <strong>Apple Silicon Mac</strong> with an M1, M2, M3, M4, or newer Apple chip, follow the Apple Silicon options.</li>
-<li>If you use <strong>Ubuntu on your own laptop, WSL with graphical support, or an Ubuntu virtual machine</strong>, follow <a href="../../day-0/instructions/setup-ubuntu.html">Ubuntu setup</a>.</li>
-</ul>
+<section id="install-rtools45---only-if-needed" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="install-rtools45---only-if-needed"><span class="header-section-number">1.4</span> Install Rtools45 - only if needed</h2>
+<p>Most Windows users do <strong>not</strong> need Rtools at the start. R normally installs pre-built Windows package binaries from CRAN and Bioconductor.</p>
+<p>Rtools is needed only when R says it must install a package <strong>from source</strong> or when an error mentions compilers, <code>make</code>, <code>gcc</code>, <code>g++</code>, <code>gfortran</code>, or <code>Rtools</code>.</p>
+<p>For R 4.5.0 on Windows, use <strong>Rtools45</strong>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do not install a different Rtools version
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Rtools must match your R version. For this workshop, Windows participants installing <strong>R 4.5.0</strong> should use <strong>Rtools45</strong>, not Rtools44, Rtools43, or older versions.</p>
+</div>
+</div>
+<ol type="1">
+<li>Open the official CRAN Rtools page: <a href="https://cran.r-project.org/bin/windows/Rtools/" class="uri">https://cran.r-project.org/bin/windows/Rtools/</a></li>
+<li>Choose <strong>RTools 4.5</strong>.</li>
+<li>Download the Rtools45 installer.</li>
+<li>Run the installer.</li>
+<li>Keep the default installation location, usually:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>C:\rtools45</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beginner recommendation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your R package installation works, you can skip Rtools. If installation fails with a compiler-related message, install Rtools45 and then retry the R package command.</p>
+</div>
+</div>
+<p>After installing Rtools45, open a fresh R or RStudio session and run:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"pkgbuild"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>pkgbuild<span class="sc">::</span><span class="fu">has_rtools</span>(<span class="at">debug =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If Rtools is detected, this should return <code>TRUE</code>.</p>
+</section>
+<section id="install-rstudio-desktop---optional" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="install-rstudio-desktop---optional"><span class="header-section-number">1.5</span> Install RStudio Desktop - optional</h2>
+<p>RStudio is optional. It is helpful if you prefer a graphical interface for R, but VS Code is enough for most workshop tasks.</p>
+<ol type="1">
+<li>Open the official Posit download page: <a href="https://posit.co/downloads/" class="uri">https://posit.co/downloads/</a></li>
+<li>Choose <strong>RStudio Desktop</strong>.</li>
+<li>Download the Windows installer.</li>
+<li>Run the installer with the default settings.</li>
+<li>Open RStudio and check that it starts an R console.</li>
+</ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How to check your Mac chip
+RStudio cannot replace R
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Open the <strong>Apple menu</strong> in the top-left corner, then choose <strong>About This Mac</strong>.</p>
-<ul>
-<li>If you see <strong>Processor: Intel</strong>, use the Intel Mac instructions.</li>
-<li>If you see <strong>Chip: Apple M1</strong>, <strong>M2</strong>, <strong>M3</strong>, <strong>M4</strong>, or similar, use the Apple Silicon instructions.</li>
-</ul>
+<p>RStudio is an editor. R is the programming language. Install R first, then install RStudio.</p>
 </div>
 </div>
-<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/macos-chip.png" class="img-fluid" alt="macOS About This Mac screen showing Chip or Processor"> # Setup sections</p>
-<p>Use these pages to continue the setup:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>Page</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Windows 10/11 setup</td>
-<td><a href="../../day-0/instructions/setup-windows.html">Open Windows setup</a></td>
-</tr>
-<tr class="even">
-<td>macOS setup</td>
-<td><a href="../../day-0/instructions/setup-macos.html">Open macOS setup</a></td>
-</tr>
-<tr class="odd">
-<td>Ubuntu setup</td>
-<td><a href="../../day-0/instructions/setup-ubuntu.html">Open Ubuntu setup</a></td>
-</tr>
-<tr class="even">
-<td>Optional graphical bioinformatics apps</td>
-<td><a href="../../day-0/instructions/setup-bioinformatics-apps.html">Open bioinformatics apps setup</a></td>
-</tr>
-<tr class="odd">
-<td>Workshop server access</td>
-<td><a href="../../day-0/instructions/setup-server-access.html">Open server access setup</a></td>
-</tr>
-<tr class="even">
-<td>Verification checklist</td>
-<td><a href="../../day-0/instructions/setup-verification.html">Open verification checklist</a></td>
-</tr>
-<tr class="odd">
-<td>Troubleshooting and FAQs</td>
-<td><a href="../../day-0/instructions/setup-troubleshooting-faq.html">Open troubleshooting and FAQs</a></td>
-</tr>
-<tr class="even">
-<td>Advanced R in VS Code</td>
-<td><a href="../../day-0/instructions/setup-r-vscode.html">Open advanced R in VS Code</a></td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="install-r-packages" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="install-r-packages"><span class="header-section-number">1.6</span> Install R packages</h2>
+<p>Open <strong>R</strong>, <strong>RGui</strong>, or the <strong>RStudio Console</strong>. Paste this code and press Enter:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="st">"tidyverse"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="st">"dplyr"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="st">"tidyr"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="st">"readr"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="st">"ggplot2"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="st">"ggrepel"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>  <span class="st">"vegan"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9"></a>  <span class="st">"patchwork"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="st">"scales"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="st">"data.table"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="st">"broom"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="st">"knitr"</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This installs the packages that come from CRAN.</p>
+<p>Now install <code>BiocManager</code> if it is not already installed:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>BiocManager</code> is the installer used for Bioconductor packages. Many learners will not have it yet.</p>
+<p>Then install <code>phyloseq</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"phyloseq"</span>, <span class="at">ask =</span> <span class="cn">FALSE</span>, <span class="at">update =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>phyloseq</code> comes from Bioconductor, so it is installed after <code>BiocManager</code> is available.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If R asks about a CRAN mirror
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Choose a mirror close to you, or choose the cloud mirror if it is listed. Any official CRAN mirror should work.</p>
+</div>
+</div>
+<p>Verify the R packages:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"readr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggrepel"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="st">"phyloseq"</span>, <span class="st">"vegan"</span>, <span class="st">"patchwork"</span>, <span class="st">"scales"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="st">"data.table"</span>, <span class="st">"broom"</span>, <span class="st">"knitr"</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="fu">sapply</span>(packages, requireNamespace, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each package should return <code>TRUE</code>. If one returns <code>FALSE</code>, copy the package name and ask an instructor for help.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If R asks to install from source on Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Choose the binary version if R offers one. If R says a package must be installed from source, you may need <strong>Rtools45</strong>. Install Rtools45 from the section above, restart R or RStudio, and run the package installation again.</p>
+</div>
+</div>
+</section>
+<section id="install-mobaxterm-portable" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="install-mobaxterm-portable"><span class="header-section-number">1.7</span> Install MobaXterm portable</h2>
+<p>MobaXterm is recommended for Windows participants who need SSH, X11 forwarding, SFTP file browsing, or VNC tunneling. The portable edition does not require administrator installation.</p>
+<ol type="1">
+<li>Open the official MobaXterm Home Edition page: <a href="https://mobaxterm.mobatek.net/download-home-edition.html" class="uri">https://mobaxterm.mobatek.net/download-home-edition.html</a></li>
+<li>Download the <strong>Portable edition</strong>.</li>
+<li>Extract the ZIP file to a folder you can find later, such as <code>Downloads\MobaXterm</code>.</li>
+<li>Open the extracted folder.</li>
+<li>Run <code>MobaXterm_Personal_*.exe</code>.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/mobaxterm-portable-folder.png" class="img-fluid figure-img"></p>
+<figcaption>MobaXterm portable folder showing MobaXterm_Personal executable</figcaption>
+</figure>
+</div>
+<section id="create-an-ssh-session-in-mobaxterm" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="create-an-ssh-session-in-mobaxterm"><span class="header-section-number">1.7.1</span> Create an SSH session in MobaXterm</h3>
+<ol type="1">
+<li>Open MobaXterm.</li>
+<li>Click <strong>Session</strong>.</li>
+<li>Choose <strong>SSH</strong>.</li>
+<li>In <strong>Remote host</strong>, enter the server IP address given by the admin.</li>
+<li>Tick <strong>Specify username</strong> and enter your username.</li>
+<li>Open <strong>Advanced SSH settings</strong>.</li>
+<li>Tick <strong>Use private key</strong> and select your <code>.pem</code> file.</li>
+<li>Make sure <strong>X11-forwarding</strong> is enabled.</li>
+<li>Click <strong>OK</strong> to connect.</li>
+<li>Save the session if MobaXterm asks.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Keep the key file path simple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If possible, store your <code>.pem</code> key in a folder path without spaces, for example <code>C:\Users\YourName\Downloads\microgen2026.pem</code>. If the path contains spaces, keep quotation marks around it when using PowerShell.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="install-java---optional" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="install-java---optional"><span class="header-section-number">1.8</span> Install Java - optional</h2>
+<p>Java is optional for most participants. It is mainly needed for <strong>Artemis</strong>.</p>
+<p>Use <strong>OpenJDK 17</strong> unless an instructor gives you a different version. On Windows, the recommended option for this guide is <strong>Eclipse Temurin OpenJDK 17 LTS</strong>.</p>
+<ol type="1">
+<li>Open the Eclipse Temurin OpenJDK 17 installation page: <a href="https://adoptium.net/installation/?variant=openjdk17" class="uri">https://adoptium.net/installation/?variant=openjdk17</a></li>
+<li>Choose <strong>Windows</strong>.</li>
+<li>Download the <strong>Temurin 17 JDK</strong> MSI installer for your computer, usually <code>x64</code>.</li>
+<li>Run the installer.</li>
+<li>Keep the default options. If the installer offers PATH or <code>JAVA_HOME</code> options, enable them.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why OpenJDK 17?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>OpenJDK 17 is a long-term support Java version and is a good default for Java-based teaching tools such as Artemis. Other OpenJDK 17 builds, such as Microsoft Build of OpenJDK 17, are acceptable if your institution already uses them, but this guide mainly refers to Temurin OpenJDK 17.</p>
+</div>
+</div>
+<p>After installation, open PowerShell:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1"></a>java <span class="op">-</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see a Java version number.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1186,13 +1287,13 @@ How to check your Mac chip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../day-0/instructions/index.html" class="pagination-link" aria-label="Day 0 - Pre-Workshop">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 0 - Pre-Workshop</span>
+      <a href="../../day-0/instructions/setup-environment.html" class="pagination-link" aria-label="0.1 Setup your workspace">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">0.1 Setup your workspace</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-0/instructions/setup-windows.html" class="pagination-link" aria-label="Windows 10/11 setup">
-        <span class="nav-page-text">Windows 10/11 setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-0/instructions/setup-macos.html" class="pagination-link" aria-label="macOS setup">
+        <span class="nav-page-text">macOS setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

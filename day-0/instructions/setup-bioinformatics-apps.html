@@ -9,7 +9,7 @@
 <meta name="author" content="Minh-Quan Ton-Ngoc">
 <meta name="dcterms.date" content="2026-05-11">
 
-<title>0.1 Setup your workspace – MicroGen 2026</title>
+<title>0.1.4 Optional graphical bioinformatics apps – MicroGen 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,8 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../day-0/instructions/setup-windows.html" rel="next">
-<link href="../../day-0/instructions/index.html" rel="prev">
+<link href="../../day-0/instructions/setup-server-access.html" rel="next">
+<link href="../../day-0/instructions/setup-ubuntu.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -164,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-bioinformatics-apps.html">Bioinformatics apps</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -196,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">0.1 Setup your workspace</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -205,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -229,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../day-0/instructions/setup-bioinformatics-apps.html" class="sidebar-item-text sidebar-link">
+  <a href="../../day-0/instructions/setup-bioinformatics-apps.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Bioinformatics apps</span></a>
   </div>
 </li>
@@ -428,19 +463,38 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#optional-graphical-bioinformatics-apps" id="toc-optional-graphical-bioinformatics-apps" class="nav-link active" data-scroll-target="#optional-graphical-bioinformatics-apps"><span class="header-section-number">1</span> Optional graphical bioinformatics apps</a>
   <ul class="collapse">
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a></li>
-  <li><a href="#quick-checklist" id="toc-quick-checklist" class="nav-link" data-scroll-target="#quick-checklist"><span class="header-section-number">2</span> Quick checklist</a></li>
-  <li><a href="#which-instructions-should-i-follow" id="toc-which-instructions-should-i-follow" class="nav-link" data-scroll-target="#which-instructions-should-i-follow"><span class="header-section-number">3</span> Which instructions should I follow?</a></li>
+  <li><a href="#artemis" id="toc-artemis" class="nav-link" data-scroll-target="#artemis"><span class="header-section-number">1.1</span> Artemis</a>
+  <ul class="collapse">
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">1.1.1</span> Windows</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos"><span class="header-section-number">1.1.2</span> macOS</a></li>
+  <li><a href="#ubuntu" id="toc-ubuntu" class="nav-link" data-scroll-target="#ubuntu"><span class="header-section-number">1.1.3</span> Ubuntu</a></li>
+  </ul></li>
+  <li><a href="#bandageng" id="toc-bandageng" class="nav-link" data-scroll-target="#bandageng"><span class="header-section-number">1.2</span> BandageNG</a>
+  <ul class="collapse">
+  <li><a href="#install-bandageng-on-windows" id="toc-install-bandageng-on-windows" class="nav-link" data-scroll-target="#install-bandageng-on-windows"><span class="header-section-number">1.2.1</span> Install BandageNG on Windows</a></li>
+  <li><a href="#install-bandageng-on-macos" id="toc-install-bandageng-on-macos" class="nav-link" data-scroll-target="#install-bandageng-on-macos"><span class="header-section-number">1.2.2</span> Install BandageNG on macOS</a></li>
+  <li><a href="#install-bandageng-on-ubuntu" id="toc-install-bandageng-on-ubuntu" class="nav-link" data-scroll-target="#install-bandageng-on-ubuntu"><span class="header-section-number">1.2.3</span> Install BandageNG on Ubuntu</a></li>
+  <li><a href="#install-ncbi-blast-for-bandageng" id="toc-install-ncbi-blast-for-bandageng" class="nav-link" data-scroll-target="#install-ncbi-blast-for-bandageng"><span class="header-section-number">1.2.4</span> Install NCBI BLAST+ for BandageNG</a></li>
+  </ul></li>
+  <li><a href="#seaview-5" id="toc-seaview-5" class="nav-link" data-scroll-target="#seaview-5"><span class="header-section-number">1.3</span> SeaView 5</a>
+  <ul class="collapse">
+  <li><a href="#windows-2" id="toc-windows-2" class="nav-link" data-scroll-target="#windows-2"><span class="header-section-number">1.3.1</span> Windows</a></li>
+  <li><a href="#macos-2" id="toc-macos-2" class="nav-link" data-scroll-target="#macos-2"><span class="header-section-number">1.3.2</span> macOS</a></li>
+  <li><a href="#ubuntu-2" id="toc-ubuntu-2" class="nav-link" data-scroll-target="#ubuntu-2"><span class="header-section-number">1.3.3</span> Ubuntu</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-bioinformatics-apps.html">Bioinformatics apps</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">0.1 Setup your workspace</h1>
+<h1 class="title">0.1.4 Optional graphical bioinformatics apps</h1>
 </div>
 
 
@@ -504,279 +558,222 @@ summary {
   font-weight: 600;
 }
 </style>
-<section id="purpose" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
-<p>This guide helps you prepare a Windows or macOS laptop for the MicroGen 2026 workshop. It covers the tools used for coding, data analysis, and connecting to the workshop cloud server.</p>
-<p>Most heavy bioinformatics workflows will run on the <strong>workshop server</strong>, not on your laptop. Your laptop mainly needs:</p>
+<section id="optional-graphical-bioinformatics-apps" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Optional graphical bioinformatics apps</h1>
+<p>These apps are optional. Install them only if your instructor says they will be used in a local activity. Many workshop activities will use the cloud server instead.</p>
+<section id="artemis" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="artemis"><span class="header-section-number">1.1</span> Artemis</h2>
+<p>Artemis is a Java-based genome browser and annotation tool. Install <strong>OpenJDK 17</strong> first, then run Artemis from its <code>.jar</code> file.</p>
+<p>Official pages:</p>
 <ul>
-<li>a code editor,</li>
-<li>R and Python for small local exercises,</li>
-<li>SSH tools for connecting to the server,</li>
-<li>and optional graphical tools for users who prefer them.</li>
+<li>Artemis website: <a href="https://sanger-pathogens.github.io/Artemis/Artemis/" class="uri">https://sanger-pathogens.github.io/Artemis/Artemis/</a></li>
+<li>Artemis GitHub releases: <a href="https://github.com/sanger-pathogens/Artemis/releases" class="uri">https://github.com/sanger-pathogens/Artemis/releases</a></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Required and optional tools
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Required for most participants:</strong> Python 3.13, R 4.5.0, Visual Studio Code, the VS Code Remote - SSH extension, and the listed Python/R packages.</p>
-<p><strong>Optional:</strong> RStudio Desktop, Java, Artemis, BandageNG, SeaView, and extra X11/VNC tools. Instructors may ask you to use these for specific graphical activities.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Do not share secrets
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you receive a <code>.pem</code> private key file, do not upload it, email it, paste it into chat, or share it with another participant. The key is your login credential for the server.</p>
-</div>
-</div>
-</section>
-<section id="quick-checklist" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Quick checklist</h1>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 13%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tool</th>
-<th style="text-align: right;">Required?</th>
-<th>Used for</th>
-<th>Windows 10/11</th>
-<th>macOS Intel</th>
-<th>macOS Apple Silicon</th>
-<th>Ubuntu personal computer</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>R 4.5.0</td>
-<td style="text-align: right;">Yes</td>
-<td>R analysis notebooks and packages</td>
-<td>CRAN Windows installer</td>
-<td>CRAN <code>x86_64</code> macOS package</td>
-<td>CRAN <code>arm64</code> macOS package</td>
-<td>CRAN Ubuntu repository</td>
-</tr>
-<tr class="even">
-<td>RStudio Desktop</td>
-<td style="text-align: right;">Optional</td>
-<td>Graphical R interface</td>
-<td>Posit installer</td>
-<td>Posit macOS app</td>
-<td>Posit macOS app</td>
-<td>Posit <code>.deb</code> package if needed</td>
-</tr>
-<tr class="odd">
-<td>Python 3.13</td>
-<td style="text-align: right;">Yes</td>
-<td>Python exercises and checks</td>
-<td>Python.org installer</td>
-<td>Python.org installer or Homebrew</td>
-<td>Python.org installer or Homebrew</td>
-<td>Ubuntu package if available, or Python.org source</td>
-</tr>
-<tr class="even">
-<td>Visual Studio Code</td>
-<td style="text-align: right;">Yes</td>
-<td>Editing files and remote server work</td>
-<td>Windows installer</td>
-<td>macOS Intel or Universal app</td>
-<td>macOS Apple Silicon or Universal app</td>
-<td>Official <code>.deb</code> package</td>
-</tr>
-<tr class="odd">
-<td>MobaXterm portable</td>
-<td style="text-align: right;">Windows only</td>
-<td>SSH, SFTP, X11, VNC tunnels</td>
-<td>Recommended</td>
-<td>Not used</td>
-<td>Not used</td>
-<td>Not used</td>
-</tr>
-<tr class="even">
-<td>Rtools45</td>
-<td style="text-align: right;">Sometimes</td>
-<td>Build R packages from source if Windows package binaries are unavailable</td>
-<td>Install only if needed</td>
-<td>Not used</td>
-<td>Not used</td>
-<td>Not used</td>
-</tr>
-<tr class="odd">
-<td>OpenJDK 17</td>
-<td style="text-align: right;">Optional</td>
-<td>Mainly Artemis; sometimes other graphical tools</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td>Temurin OpenJDK 17 LTS</td>
-<td><code>openjdk-17-jdk</code></td>
-</tr>
-<tr class="even">
-<td>Artemis</td>
-<td style="text-align: right;">Optional</td>
-<td>Genome browsing and annotation</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td>Java <code>.jar</code> with OpenJDK 17</td>
-<td><code>artemis</code> package or Java <code>.jar</code></td>
-</tr>
-<tr class="odd">
-<td>BandageNG</td>
-<td style="text-align: right;">Optional</td>
-<td>Assembly graph viewing</td>
-<td>Download release if available, or use Ubuntu/conda option</td>
-<td>Download release if available, or use conda option</td>
-<td>Download release if available, or use conda option</td>
-<td>Bioconda/conda option</td>
-</tr>
-<tr class="even">
-<td>NCBI BLAST+</td>
-<td style="text-align: right;">Sometimes</td>
-<td>Required for BandageNG BLAST-related features</td>
-<td>NCBI BLAST+ installer/archive</td>
-<td>NCBI BLAST+ archive or Homebrew</td>
-<td>NCBI BLAST+ archive or Homebrew</td>
-<td><code>ncbi-blast+</code></td>
-</tr>
-<tr class="odd">
-<td>SeaView 5</td>
-<td style="text-align: right;">Optional</td>
-<td>Sequence alignment and phylogeny GUI</td>
-<td>SeaView <code>seaview5.exe</code></td>
-<td>SeaView macOS download</td>
-<td>SeaView macOS download</td>
-<td><code>seaview</code></td>
-</tr>
-<tr class="even">
-<td>Remote - SSH extension</td>
-<td style="text-align: right;">Yes</td>
-<td>Open server folders in VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-<td>Install inside VS Code</td>
-</tr>
-<tr class="odd">
-<td>X11/VNC tools</td>
-<td style="text-align: right;">Optional</td>
-<td>Remote graphical applications such as FastQC</td>
-<td>MobaXterm; optionally VcXsrv or VNC viewer</td>
-<td>XQuartz and Screen Sharing/VNC viewer</td>
-<td>XQuartz and Screen Sharing/VNC viewer</td>
-<td>Native X11 desktop or VNC viewer</td>
-</tr>
-</tbody>
-</table>
-<details>
-<summary>
-<strong>Click to open official download links checked for this guide</strong>
-</summary>
-<p>These links were checked against official project pages while preparing this guide:</p>
-<ul>
-<li>R and R 4.5.0: <a href="https://cran.r-project.org/">CRAN</a>, <a href="https://cran.r-project.org/bin/windows/base/old/4.5.0/">Windows R 4.5.0 old release</a>, <a href="https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/">macOS Intel R 4.5.0</a>, <a href="https://cran.r-project.org/bin/macosx/big-sur-arm64/base/">macOS Apple Silicon R 4.5.0</a></li>
-<li>RStudio Desktop: <a href="https://posit.co/downloads/">Posit downloads</a></li>
-<li>Python 3.13: <a href="https://www.python.org/downloads/latest/python3.13/">Python 3.13 latest maintenance release</a></li>
-<li>Visual Studio Code: <a href="https://code.visualstudio.com/download">VS Code download page</a></li>
-<li>MobaXterm portable: <a href="https://mobaxterm.mobatek.net/download-home-edition.html">MobaXterm Home Edition</a></li>
-<li>Rtools for Windows: <a href="https://cran.r-project.org/bin/windows/Rtools/">CRAN Rtools</a></li>
-<li>OpenJDK 17: <a href="https://adoptium.net/installation/?variant=openjdk17">Eclipse Adoptium Temurin OpenJDK 17</a> or <a href="https://learn.microsoft.com/en-us/java/openjdk/download">Microsoft Build of OpenJDK 17</a></li>
-<li>Artemis: <a href="https://sanger-pathogens.github.io/Artemis/Artemis/">Artemis official page</a> and <a href="https://github.com/sanger-pathogens/Artemis/releases">GitHub releases</a></li>
-<li>BandageNG: <a href="https://github.com/asl/BandageNG">BandageNG GitHub</a> and <a href="https://bioconda.github.io/recipes/bandage_ng/README.html">Bioconda package</a></li>
-<li>NCBI BLAST+: <a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">NCBI BLAST+ latest downloads</a></li>
-<li>SeaView 5: <a href="https://doua.prabi.fr/software/seaview/">PRABI-Doua SeaView</a></li>
-<li>XQuartz: <a href="https://www.xquartz.org/">XQuartz</a></li>
-</ul>
-</details>
-</section>
-<section id="which-instructions-should-i-follow" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Which instructions should I follow?</h1>
-<ul>
-<li>If you use <strong>Windows 10 or Windows 11</strong>, follow <a href="../../day-0/instructions/setup-windows.html">Windows 10/11 setup</a>.</li>
-<li>If you use an <strong>Intel Mac</strong>, follow <a href="../../day-0/instructions/setup-macos.html">macOS setup</a>, choosing the Intel options.</li>
-<li>If you use an <strong>Apple Silicon Mac</strong> with an M1, M2, M3, M4, or newer Apple chip, follow the Apple Silicon options.</li>
-<li>If you use <strong>Ubuntu on your own laptop, WSL with graphical support, or an Ubuntu virtual machine</strong>, follow <a href="../../day-0/instructions/setup-ubuntu.html">Ubuntu setup</a>.</li>
-</ul>
+<section id="windows" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="windows"><span class="header-section-number">1.1.1</span> Windows</h3>
+<ol type="1">
+<li>Install Temurin OpenJDK 17 LTS using the Windows instructions above.</li>
+<li>Download Artemis from the official Artemis page or GitHub releases.</li>
+<li>If you downloaded a ZIP file, extract it to a simple folder, for example:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>C:\Users\YourName\Downloads\Artemis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Open PowerShell.</li>
+<li>Move into the Artemis folder. Replace the path with the folder where you extracted Artemis:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">cd</span> <span class="st">"C:\Users\YourName\Downloads\Artemis"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>List the <code>.jar</code> files:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">dir</span> <span class="op">*.</span><span class="fu">jar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Run Artemis from the command line. Replace <code>filename.jar</code> with the real file name you see:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1"></a>java <span class="op">-</span>jar filename<span class="op">.</span><span class="fu">jar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For example, if the file is called <code>artemis.jar</code>, run:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1"></a>java <span class="op">-</span>jar artemis<span class="op">.</span><span class="fu">jar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How to check your Mac chip
+Why use the command line?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Open the <strong>Apple menu</strong> in the top-left corner, then choose <strong>About This Mac</strong>.</p>
+<p>Running Artemis with <code>java -jar filename.jar</code> makes Java errors visible in the terminal. This is easier to troubleshoot than double-clicking a <code>.jar</code> file.</p>
+</div>
+</div>
+</section>
+<section id="macos" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="macos"><span class="header-section-number">1.1.2</span> macOS</h3>
+<ol type="1">
+<li>Install Temurin OpenJDK 17 LTS using the macOS instructions above.</li>
+<li>Download Artemis from the official Artemis page or GitHub releases.</li>
+<li>If the download is a ZIP file, double-click it to extract it.</li>
+<li>Open Terminal.</li>
+<li>Move into the Artemis folder. Replace the path with your real folder:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="bu">cd</span> ~/Downloads/Artemis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>List the <code>.jar</code> files:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ls</span> <span class="pp">*</span>.jar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Run Artemis. Replace <code>filename.jar</code> with the real file name:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">java</span> <span class="at">-jar</span> filename.jar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If macOS blocks the app or downloaded files, see the Gatekeeper troubleshooting section below.</p>
+</section>
+<section id="ubuntu" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="ubuntu"><span class="header-section-number">1.1.3</span> Ubuntu</h3>
+<p>Use this only on your own Ubuntu computer, VM, or WSL setup with graphical support. Do not install system packages on the shared workshop server unless an instructor asks you to.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">sudo</span> apt install openjdk-17-jdk artemis</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="ex">java</span> <span class="at">-version</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="ex">art</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If <code>art</code> does not start Artemis on your Ubuntu version, try:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">artemis</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the Ubuntu package is unavailable or too old, install OpenJDK 17 and run the Artemis <code>.jar</code> file manually:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">java</span> <span class="at">-jar</span> filename.jar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="bandageng" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="bandageng"><span class="header-section-number">1.2</span> BandageNG</h2>
+<p>BandageNG is a graphical application for viewing de novo assembly graphs. This guide uses <strong>BandageNG</strong> instead of the older Bandage application.</p>
+<p>Official pages:</p>
 <ul>
-<li>If you see <strong>Processor: Intel</strong>, use the Intel Mac instructions.</li>
-<li>If you see <strong>Chip: Apple M1</strong>, <strong>M2</strong>, <strong>M3</strong>, <strong>M4</strong>, or similar, use the Apple Silicon instructions.</li>
+<li>BandageNG GitHub: <a href="https://github.com/asl/BandageNG" class="uri">https://github.com/asl/BandageNG</a></li>
+<li>BandageNG Bioconda package: <a href="https://bioconda.github.io/recipes/bandage_ng/README.html" class="uri">https://bioconda.github.io/recipes/bandage_ng/README.html</a></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+BLAST+ may be needed for local BandageNG activities
 </div>
 </div>
-<p><img src="https://raw.githubusercontent.com/molepi-oucru/MicroGen-2026/main/day-0/materials/software-setup-images/macos-chip.png" class="img-fluid" alt="macOS About This Mac screen showing Chip or Processor"> # Setup sections</p>
-<p>Use these pages to continue the setup:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>Page</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Windows 10/11 setup</td>
-<td><a href="../../day-0/instructions/setup-windows.html">Open Windows setup</a></td>
-</tr>
-<tr class="even">
-<td>macOS setup</td>
-<td><a href="../../day-0/instructions/setup-macos.html">Open macOS setup</a></td>
-</tr>
-<tr class="odd">
-<td>Ubuntu setup</td>
-<td><a href="../../day-0/instructions/setup-ubuntu.html">Open Ubuntu setup</a></td>
-</tr>
-<tr class="even">
-<td>Optional graphical bioinformatics apps</td>
-<td><a href="../../day-0/instructions/setup-bioinformatics-apps.html">Open bioinformatics apps setup</a></td>
-</tr>
-<tr class="odd">
-<td>Workshop server access</td>
-<td><a href="../../day-0/instructions/setup-server-access.html">Open server access setup</a></td>
-</tr>
-<tr class="even">
-<td>Verification checklist</td>
-<td><a href="../../day-0/instructions/setup-verification.html">Open verification checklist</a></td>
-</tr>
-<tr class="odd">
-<td>Troubleshooting and FAQs</td>
-<td><a href="../../day-0/instructions/setup-troubleshooting-faq.html">Open troubleshooting and FAQs</a></td>
-</tr>
-<tr class="even">
-<td>Advanced R in VS Code</td>
-<td><a href="../../day-0/instructions/setup-r-vscode.html">Open advanced R in VS Code</a></td>
-</tr>
-</tbody>
-</table>
+<div class="callout-body-container callout-body">
+<p>Install <strong>NCBI BLAST+</strong> if you plan to run BandageNG on your own computer during sessions that use BLAST-related BandageNG features. If you only view simple graph files without BLAST searches, BLAST+ may not be required.</p>
+</div>
+</div>
+<section id="install-bandageng-on-windows" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="install-bandageng-on-windows"><span class="header-section-number">1.2.1</span> Install BandageNG on Windows</h3>
+<ol type="1">
+<li>Open the BandageNG GitHub page: <a href="https://github.com/asl/BandageNG" class="uri">https://github.com/asl/BandageNG</a></li>
+<li>Open the <strong>Releases</strong> page.</li>
+<li>Download a Windows release if one is available for your workshop version.</li>
+<li>Extract the archive.</li>
+<li>Run the BandageNG executable from the extracted folder.</li>
+</ol>
+<p>If no Windows binary is available for the current BandageNG release, use the workshop server or the Ubuntu/conda option below.</p>
+</section>
+<section id="install-bandageng-on-macos" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="install-bandageng-on-macos"><span class="header-section-number">1.2.2</span> Install BandageNG on macOS</h3>
+<ol type="1">
+<li>Open the BandageNG GitHub page: <a href="https://github.com/asl/BandageNG" class="uri">https://github.com/asl/BandageNG</a></li>
+<li>Open the <strong>Releases</strong> page.</li>
+<li>Download the macOS build for your chip if one is available:
+<ul>
+<li>Intel Mac: <code>x86_64</code> or <code>x64</code></li>
+<li>Apple Silicon Mac: <code>arm64</code> or <code>aarch64</code></li>
+</ul></li>
+<li>Extract the archive and open BandageNG.</li>
+</ol>
+<p>If macOS blocks the app, see the Gatekeeper troubleshooting section below.</p>
+</section>
+<section id="install-bandageng-on-ubuntu" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="install-bandageng-on-ubuntu"><span class="header-section-number">1.2.3</span> Install BandageNG on Ubuntu</h3>
+<p>The recommended Ubuntu route is to use a conda-compatible package manager such as conda, mamba, micromamba, or pixi:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="ex">conda</span> create <span class="at">-n</span> bandageng <span class="at">-c</span> conda-forge <span class="at">-c</span> bioconda bandage_ng</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ex">conda</span> activate bandageng</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ex">BandageNG</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the executable name differs in your environment, list matching commands:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="bu">compgen</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-i</span> bandage</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-ncbi-blast-for-bandageng" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="install-ncbi-blast-for-bandageng"><span class="header-section-number">1.2.4</span> Install NCBI BLAST+ for BandageNG</h3>
+<p>Official NCBI BLAST+ download page:</p>
+<p><a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/" class="uri">https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</a></p>
+<section id="windows-1" class="level4" data-number="1.2.4.1">
+<h4 data-number="1.2.4.1" class="anchored" data-anchor-id="windows-1"><span class="header-section-number">1.2.4.1</span> Windows</h4>
+<ol type="1">
+<li>Open the NCBI BLAST+ latest downloads page.</li>
+<li>Download the Windows 64-bit BLAST+ installer or archive. The filename usually contains <code>win64</code>.</li>
+<li>Run the installer or extract the archive.</li>
+<li>If you used an archive, add the BLAST+ <code>bin</code> folder to your Windows PATH.</li>
+<li>Open a new PowerShell window and check:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1"></a>blastn <span class="op">-</span>version</span>
+<span id="cb14-2"><a href="#cb14-2"></a>makeblastdb <span class="op">-</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="macos-1" class="level4" data-number="1.2.4.2">
+<h4 data-number="1.2.4.2" class="anchored" data-anchor-id="macos-1"><span class="header-section-number">1.2.4.2</span> macOS</h4>
+<p>Option A: official NCBI archive:</p>
+<ol type="1">
+<li>Open the NCBI BLAST+ latest downloads page.</li>
+<li>Download the macOS archive matching your system if available.</li>
+<li>Extract it.</li>
+<li>Add the extracted <code>bin</code> folder to your PATH.</li>
+<li>Check:</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">blastn</span> <span class="at">-version</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">makeblastdb</span> <span class="at">-version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Option B: Homebrew, for users who already use Homebrew:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">brew</span> install blast</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">blastn</span> <span class="at">-version</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="ex">makeblastdb</span> <span class="at">-version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ubuntu-1" class="level4" data-number="1.2.4.3">
+<h4 data-number="1.2.4.3" class="anchored" data-anchor-id="ubuntu-1"><span class="header-section-number">1.2.4.3</span> Ubuntu</h4>
+<p>Install the Ubuntu package:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sudo</span> apt install ncbi-blast+</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="ex">blastn</span> <span class="at">-version</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="ex">makeblastdb</span> <span class="at">-version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="seaview-5" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="seaview-5"><span class="header-section-number">1.3</span> SeaView 5</h2>
+<p>SeaView is a graphical tool for multiple sequence alignment and molecular phylogeny.</p>
+<p>Official page:</p>
+<p><a href="https://doua.prabi.fr/software/seaview/" class="uri">https://doua.prabi.fr/software/seaview/</a></p>
+<section id="windows-2" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="windows-2"><span class="header-section-number">1.3.1</span> Windows</h3>
+<ol type="1">
+<li>Open the SeaView official page.</li>
+<li>Download the Windows <code>seaview5.exe</code> file.</li>
+<li>Run <code>seaview5.exe</code>.</li>
+<li>The file is a self-extracting archive. Choose where to create the <code>seaview5</code> folder.</li>
+<li>Open the new <code>seaview5</code> folder and run the SeaView program.</li>
+</ol>
+<p>The official SeaView page notes that the Windows download creates a folder containing SeaView, example data, help files, and helper programs such as <code>muscle</code>, <code>clustalo</code>, <code>phyml</code>, <code>Gblocks</code>, and <code>treerecs</code>.</p>
+</section>
+<section id="macos-2" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="macos-2"><span class="header-section-number">1.3.2</span> macOS</h3>
+<ol type="1">
+<li>Open the SeaView official page.</li>
+<li>Download the macOS SeaView archive.</li>
+<li>Extract the ZIP file.</li>
+<li>If macOS blocks the app the first time, Control-click the SeaView icon and choose <strong>Open</strong>.</li>
+</ol>
+<p>If the app is still blocked, see the Gatekeeper troubleshooting section below.</p>
+</section>
+<section id="ubuntu-2" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="ubuntu-2"><span class="header-section-number">1.3.3</span> Ubuntu</h3>
+<p>Use the Ubuntu package on your own computer, VM, or WSL setup with graphical support:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">sudo</span> apt install seaview</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="ex">seaview</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>SeaView is graphical. If <code>seaview</code> starts but no window appears, check that you are using a normal Ubuntu desktop session, X11 forwarding, or VNC.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1186,13 +1183,13 @@ How to check your Mac chip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../day-0/instructions/index.html" class="pagination-link" aria-label="Day 0 - Pre-Workshop">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Day 0 - Pre-Workshop</span>
+      <a href="../../day-0/instructions/setup-ubuntu.html" class="pagination-link" aria-label="Ubuntu setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ubuntu setup</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../day-0/instructions/setup-windows.html" class="pagination-link" aria-label="Windows 10/11 setup">
-        <span class="nav-page-text">Windows 10/11 setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../day-0/instructions/setup-server-access.html" class="pagination-link" aria-label="Server access">
+        <span class="nav-page-text">Server access</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

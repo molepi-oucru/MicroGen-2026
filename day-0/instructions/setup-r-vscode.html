@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Minh-Quan Ton-Ngoc">
+<meta name="dcterms.date" content="2026-05-11">
+
+<title>0.1.8 Advanced R in VS Code – MicroGen 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../day-0/instructions/linux-basics.html" rel="next">
+<link href="../../day-0/instructions/setup-troubleshooting-faq.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-bb05f5d0074da2129d766b238819cd35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+<link rel="stylesheet" href="../../website-assets/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../website-assets/images/KLEB-CASAVA.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">MicroGen 2026</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practical-guides" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practical Guides</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-practical-guides">    
+        <li>
+    <a class="dropdown-item" href="../../guides.html">
+ <span class="dropdown-text">Day 0 - Pre-Workshop</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-1/instructions/index.html">
+ <span class="dropdown-text">Day 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-2/instructions/index.html">
+ <span class="dropdown-text">Day 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-3/instructions/index.html">
+ <span class="dropdown-text">Day 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-4/instructions/index.html">
+ <span class="dropdown-text">Day 4</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lecture-slides" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lecture Slides</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-lecture-slides">    
+        <li>
+    <a class="dropdown-item" href="../../day-0/slides/MicroGen2026_Day0.pdf" target="_blank">
+ <span class="dropdown-text">Day 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-1/slides/MicroGen2026_Day1.pdf" target="_blank">
+ <span class="dropdown-text">Day 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-2/slides/MicroGen2026_Day2.pdf" target="_blank">
+ <span class="dropdown-text">Day 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-3/slides/MicroGen2026_Day3.pdf" target="_blank">
+ <span class="dropdown-text">Day 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../day-4/slides/MicroGen2026_Day4.pdf" target="_blank">
+ <span class="dropdown-text">Day 4</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/molepi-oucru/MicroGen-2026" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-r-vscode.html">Advanced R in VS Code</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../guides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practical Guides</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-0/instructions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 0 - Pre-Workshop</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.1 Setup your workspace</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-windows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Windows 10/11 setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-macos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">macOS setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-ubuntu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ubuntu setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-bioinformatics-apps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bioinformatics apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-server-access.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Server access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-verification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verification checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-troubleshooting-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting and FAQs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/setup-r-vscode.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Advanced R in VS Code</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/linux-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0.2 Commands &amp; Environments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-0/instructions/final-quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on Linux Foundations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-1/instructions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-1/instructions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.1 Whole-genome sequencing - What &amp; Why</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-1/instructions/genome-view.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.2 A complete genome - How it look like?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-1/instructions/raw2assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1.3 From raw sequencing data to assemblies</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-2/instructions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-2/instructions/post-assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Analyse the assemblies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-2/instructions/hybrid-assembly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Long-Read sequencing &amp; Hybrid assembly</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-2/instructions/gene-alignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.3 Locate &amp; compare genes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-3/instructions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-3/instructions/mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Read mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-3/instructions/phylotree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Phylogenetics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../day-4/instructions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in clinical microbiology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-4/instructions/vietnamese-healthy-gut-microbiome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Workflow Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-4/instructions/vietnamese-healthy-gut-taxonomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Taxonomy Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-4/instructions/vietnamese-healthy-gut-amr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 AMR Analysis &amp; Summary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">mNGS in pathogen detection</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-4/instructions/clinical-reasoning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.4 Clinical Case</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../day-4/instructions/clinical-reasoning-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.5 Signal Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#advanced-r-in-vs-code" id="toc-advanced-r-in-vs-code" class="nav-link active" data-scroll-target="#advanced-r-in-vs-code"><span class="header-section-number">1</span> Advanced: R in VS Code</a>
+  <ul class="collapse">
+  <li><a href="#who-should-use-this" id="toc-who-should-use-this" class="nav-link" data-scroll-target="#who-should-use-this"><span class="header-section-number">1.1</span> Who should use this?</a></li>
+  <li><a href="#what-the-advanced-setup-adds" id="toc-what-the-advanced-setup-adds" class="nav-link" data-scroll-target="#what-the-advanced-setup-adds"><span class="header-section-number">1.2</span> What the advanced setup adds</a></li>
+  <li><a href="#step-1-install-r-packages-used-by-vs-code" id="toc-step-1-install-r-packages-used-by-vs-code" class="nav-link" data-scroll-target="#step-1-install-r-packages-used-by-vs-code"><span class="header-section-number">1.3</span> Step 1: Install R packages used by VS Code</a></li>
+  <li><a href="#step-2-install-the-correct-vs-code-extension" id="toc-step-2-install-the-correct-vs-code-extension" class="nav-link" data-scroll-target="#step-2-install-the-correct-vs-code-extension"><span class="header-section-number">1.4</span> Step 2: Install the correct VS Code extension</a></li>
+  <li><a href="#step-3-create-and-use-an-r-terminal" id="toc-step-3-create-and-use-an-r-terminal" class="nav-link" data-scroll-target="#step-3-create-and-use-an-r-terminal"><span class="header-section-number">1.5</span> Step 3: Create and use an R terminal</a></li>
+  <li><a href="#step-4-add-recommended-vs-code-settings" id="toc-step-4-add-recommended-vs-code-settings" class="nav-link" data-scroll-target="#step-4-add-recommended-vs-code-settings"><span class="header-section-number">1.6</span> Step 4: Add recommended VS Code settings</a></li>
+  <li><a href="#step-5-optional-keybindings" id="toc-step-5-optional-keybindings" class="nav-link" data-scroll-target="#step-5-optional-keybindings"><span class="header-section-number">1.7</span> Step 5: Optional keybindings</a></li>
+  <li><a href="#step-6-optional-linting-configuration" id="toc-step-6-optional-linting-configuration" class="nav-link" data-scroll-target="#step-6-optional-linting-configuration"><span class="header-section-number">1.8</span> Step 6: Optional linting configuration</a></li>
+  <li><a href="#optional-radian-console" id="toc-optional-radian-console" class="nav-link" data-scroll-target="#optional-radian-console"><span class="header-section-number">1.9</span> Optional radian console</a>
+  <ul class="collapse">
+  <li><a href="#optional-alternative-arf" id="toc-optional-alternative-arf" class="nav-link" data-scroll-target="#optional-alternative-arf"><span class="header-section-number">1.9.1</span> Optional alternative: arf</a></li>
+  </ul></li>
+  <li><a href="#optional-r-debugging" id="toc-optional-r-debugging" class="nav-link" data-scroll-target="#optional-r-debugging"><span class="header-section-number">1.10</span> Optional R debugging</a></li>
+  <li><a href="#quick-verification" id="toc-quick-verification" class="nav-link" data-scroll-target="#quick-verification"><span class="header-section-number">1.11</span> Quick verification</a></li>
+  <li><a href="#advanced-r-in-vs-code-troubleshooting" id="toc-advanced-r-in-vs-code-troubleshooting" class="nav-link" data-scroll-target="#advanced-r-in-vs-code-troubleshooting"><span class="header-section-number">1.12</span> Advanced R in VS Code troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#vs-code-does-not-find-r" id="toc-vs-code-does-not-find-r" class="nav-link" data-scroll-target="#vs-code-does-not-find-r"><span class="header-section-number">1.12.1</span> VS Code does not find R</a></li>
+  <li><a href="#languageserver-fails-to-install" id="toc-languageserver-fails-to-install" class="nav-link" data-scroll-target="#languageserver-fails-to-install"><span class="header-section-number">1.12.2</span> <code>languageserver</code> fails to install</a></li>
+  <li><a href="#plot-viewer-does-not-work" id="toc-plot-viewer-does-not-work" class="nav-link" data-scroll-target="#plot-viewer-does-not-work"><span class="header-section-number">1.12.3</span> Plot viewer does not work</a></li>
+  <li><a href="#too-many-lint-warnings-appear" id="toc-too-many-lint-warnings-appear" class="nav-link" data-scroll-target="#too-many-lint-warnings-appear"><span class="header-section-number">1.12.4</span> Too many lint warnings appear</a></li>
+  <li><a href="#keyboard-shortcuts-conflict-with-existing-shortcuts" id="toc-keyboard-shortcuts-conflict-with-existing-shortcuts" class="nav-link" data-scroll-target="#keyboard-shortcuts-conflict-with-existing-shortcuts"><span class="header-section-number">1.12.5</span> Keyboard shortcuts conflict with existing shortcuts</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../guides.html">Practical Guides</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/index.html">Day 0 - Pre-Workshop</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-environment.html">0.1 Setup your workspace</a></li><li class="breadcrumb-item"><a href="../../day-0/instructions/setup-r-vscode.html">Advanced R in VS Code</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">0.1.8 Advanced R in VS Code</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Minh-Quan Ton-Ngoc </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 11, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.setup-note {
+  background: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.check-card {
+  background: #f6fff8;
+  border-left: 4px solid #198754;
+  padding: 1rem 1.2rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.manual-note {
+  background: #fff8e1;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  margin: 1rem 0;
+}
+.small-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+figure figcaption,
+.figure-caption,
+p.caption {
+  text-align: center;
+}
+summary {
+  font-weight: 600;
+}
+</style>
+<section id="advanced-r-in-vs-code" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Advanced: R in VS Code</h1>
+<p>This section is optional. It is for participants who already feel comfortable with VS Code and want a richer R editing environment than the basic workshop setup.</p>
+<p>Use this only after you have already installed:</p>
+<ul>
+<li>R 4.5.0,</li>
+<li>Visual Studio Code,</li>
+<li>and the <strong>R</strong> extension by <strong>REditorSupport</strong>.</li>
+</ul>
+<p>These steps apply to Windows, macOS, and Ubuntu. Ubuntu users should complete the <a href="../../day-0/instructions/setup-ubuntu.html">Ubuntu setup</a> first so that <code>R</code>, VS Code, and the required R packages are available locally.</p>
+<p>Official VS Code reference:</p>
+<p><a href="https://code.visualstudio.com/docs/languages/r" class="uri">https://code.visualstudio.com/docs/languages/r</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Basic users can skip this
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You do not need this advanced setup to complete the workshop. The basic R installation and the VS Code R extension are enough for most learners.</p>
+</div>
+</div>
+<section id="who-should-use-this" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="who-should-use-this"><span class="header-section-number">1.1</span> Who should use this?</h2>
+<p>Use this setup if you are comfortable editing VS Code settings and want:</p>
+<ul>
+<li>R code completion and IntelliSense,</li>
+<li>a better plot viewer inside VS Code,</li>
+<li>R workspace, data, help, and plot viewers,</li>
+<li>linting warnings while editing R code,</li>
+<li>shortcuts for common R operators,</li>
+<li>and optional debugging tools.</li>
+</ul>
+<p>If you are new to R or VS Code, skip this section for now. You can return to it later.</p>
+</section>
+<section id="what-the-advanced-setup-adds" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-the-advanced-setup-adds"><span class="header-section-number">1.2</span> What the advanced setup adds</h2>
+<p>The VS Code R extension can provide:</p>
+<ul>
+<li>R syntax highlighting and code completion,</li>
+<li>R terminals inside VS Code,</li>
+<li>linting and formatting support,</li>
+<li>plot, data, help, and workspace viewers,</li>
+<li>R Markdown support,</li>
+<li>and optional debugging through a separate R Debugger extension.</li>
+</ul>
+</section>
+<section id="step-1-install-r-packages-used-by-vs-code" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="step-1-install-r-packages-used-by-vs-code"><span class="header-section-number">1.3</span> Step 1: Install R packages used by VS Code</h2>
+<p>Open <strong>R</strong>, <strong>RGui</strong>, or the <strong>RStudio Console</strong>. Paste this code and press Enter:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"languageserver"</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">install.packages</span>(<span class="st">"languageserver"</span>, <span class="at">repos =</span> <span class="st">"https://packagemanager.posit.co/cran/latest"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"rmarkdown"</span>)) {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>, <span class="at">repos =</span> <span class="st">"https://packagemanager.posit.co/cran/latest"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"httpgd"</span>)) {</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="fu">install.packages</span>(<span class="st">"httpgd"</span>, <span class="at">repos =</span> <span class="st">"https://packagemanager.posit.co/cran/latest"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What they do:</p>
+<ul>
+<li><code>languageserver</code> enables R IntelliSense, code completion, function help, go-to-definition, and related language features.</li>
+<li><code>rmarkdown</code> supports <code>.Rmd</code> documents.</li>
+<li><code>httpgd</code> enables the interactive plot viewer used by the VS Code R extension.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Personal R library prompt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If R asks to create a personal library folder in your user directory, accept it. This usually happens when the system-wide R library is not writable without administrator permissions.</p>
+</div>
+</div>
+</section>
+<section id="step-2-install-the-correct-vs-code-extension" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="step-2-install-the-correct-vs-code-extension"><span class="header-section-number">1.4</span> Step 2: Install the correct VS Code extension</h2>
+<p>In VS Code:</p>
+<ol type="1">
+<li>Open <strong>Extensions</strong>.</li>
+<li>Search for <code>R</code>.</li>
+<li>Install <strong>R</strong> by <strong>REditorSupport</strong>.</li>
+</ol>
+<p>Avoid installing several R extensions that do the same job. Multiple overlapping R extensions can cause duplicate commands, conflicting terminals, or confusing error messages.</p>
+</section>
+<section id="step-3-create-and-use-an-r-terminal" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="step-3-create-and-use-an-r-terminal"><span class="header-section-number">1.5</span> Step 3: Create and use an R terminal</h2>
+<p>The official VS Code workflow is to send R code to an R terminal.</p>
+<p>Open the Command Palette:</p>
+<ul>
+<li>Windows: <code>Ctrl+Shift+P</code></li>
+<li>macOS: <code>Command+Shift+P</code></li>
+<li>Ubuntu/Linux: <code>Ctrl+Shift+P</code></li>
+</ul>
+<p>Run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>R: Create R terminal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then open an <code>.R</code> file and press:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>Ctrl+Enter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This sends the current line or selected R code to the active R terminal.</p>
+<p>To source an entire R file, use:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>Ctrl+Shift+S</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-4-add-recommended-vs-code-settings" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="step-4-add-recommended-vs-code-settings"><span class="header-section-number">1.6</span> Step 4: Add recommended VS Code settings</h2>
+<p>Open VS Code settings JSON:</p>
+<ol type="1">
+<li>Open the Command Palette.</li>
+<li>Run:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>Preferences: Open User Settings (JSON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Add these settings, merging them with any settings already present:</li>
+</ol>
+<details>
+<summary>
+<strong>Click to open suggested VS Code settings for advanced R users</strong>
+</summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="dt">"editor.formatOnType"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="dt">"editor.minimap.enabled"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="dt">"r.plot.useHttpgd"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="dt">"editor.suggest.selectionMode"</span><span class="fu">:</span> <span class="st">"whenQuickSuggestion"</span><span class="fu">,</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="dt">"r.session.useWebServer"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="dt">"r.session.data.rowLimit"</span><span class="fu">:</span> <span class="dv">50000</span><span class="fu">,</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="dt">"r.session.data.pageSize"</span><span class="fu">:</span> <span class="dv">250</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These settings enable <code>httpgd</code>, R session viewer features, and a few useful editor preferences.</p>
+<p>Do not replace your whole settings file if it already contains other settings. Merge only the entries you need, and keep valid JSON syntax.</p>
+</details>
+</section>
+<section id="step-5-optional-keybindings" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="step-5-optional-keybindings"><span class="header-section-number">1.7</span> Step 5: Optional keybindings</h2>
+<p>These shortcuts are optional. Add them only if you want familiar R operator shortcuts in VS Code.</p>
+<p>Open keyboard shortcuts JSON:</p>
+<ol type="1">
+<li>Open the Command Palette.</li>
+<li>Run:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>Preferences: Open Keyboard Shortcuts (JSON)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Add the bindings below.</li>
+</ol>
+<p>Useful shortcuts included:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Shortcut</th>
+<th>Inserts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Alt+-</code></td>
+<td><code>&lt;-</code></td>
+</tr>
+<tr class="even">
+<td><code>Ctrl+Shift+M</code></td>
+<td><code>%&gt;%</code></td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl+Shift+C</code></td>
+<td>Toggle line comment</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl+Shift+F10</code></td>
+<td>Kill terminal</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+<strong>Click to open optional R keybindings</strong>
+</summary>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1"></a><span class="ot">[</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">{</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+c"</span><span class="fu">,</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.commentLine"</span><span class="fu">,</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; !editorReadonly"</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">{</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+/"</span><span class="fu">,</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"-editor.action.commentLine"</span><span class="fu">,</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; !editorReadonly"</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>  <span class="fu">{</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Ctrl+Shift+m"</span><span class="fu">,</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span> <span class="fu">},</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == r"</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>  <span class="fu">{</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Alt+-"</span><span class="fu">,</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span> <span class="fu">},</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == r"</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>  <span class="fu">{</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Ctrl+Shift+m"</span><span class="fu">,</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span> <span class="fu">},</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == rmd"</span></span>
+<span id="cb8-29"><a href="#cb8-29"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-30"><a href="#cb8-30"></a>  <span class="fu">{</span></span>
+<span id="cb8-31"><a href="#cb8-31"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Alt+-"</span><span class="fu">,</span></span>
+<span id="cb8-32"><a href="#cb8-32"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-33"><a href="#cb8-33"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span> <span class="fu">},</span></span>
+<span id="cb8-34"><a href="#cb8-34"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == rmd"</span></span>
+<span id="cb8-35"><a href="#cb8-35"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-36"><a href="#cb8-36"></a>  <span class="fu">{</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Ctrl+Shift+m"</span><span class="fu">,</span></span>
+<span id="cb8-38"><a href="#cb8-38"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-39"><a href="#cb8-39"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span> <span class="fu">},</span></span>
+<span id="cb8-40"><a href="#cb8-40"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == quarto"</span></span>
+<span id="cb8-41"><a href="#cb8-41"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-42"><a href="#cb8-42"></a>  <span class="fu">{</span></span>
+<span id="cb8-43"><a href="#cb8-43"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Alt+-"</span><span class="fu">,</span></span>
+<span id="cb8-44"><a href="#cb8-44"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"type"</span><span class="fu">,</span></span>
+<span id="cb8-45"><a href="#cb8-45"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span> <span class="fu">},</span></span>
+<span id="cb8-46"><a href="#cb8-46"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; editorLangId == quarto"</span></span>
+<span id="cb8-47"><a href="#cb8-47"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-48"><a href="#cb8-48"></a>  <span class="fu">{</span></span>
+<span id="cb8-49"><a href="#cb8-49"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Ctrl+Shift+m"</span><span class="fu">,</span></span>
+<span id="cb8-50"><a href="#cb8-50"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"workbench.action.terminal.sendSequence"</span><span class="fu">,</span></span>
+<span id="cb8-51"><a href="#cb8-51"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" %&gt;% "</span> <span class="fu">},</span></span>
+<span id="cb8-52"><a href="#cb8-52"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"terminalFocus"</span></span>
+<span id="cb8-53"><a href="#cb8-53"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-54"><a href="#cb8-54"></a>  <span class="fu">{</span></span>
+<span id="cb8-55"><a href="#cb8-55"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"Alt+-"</span><span class="fu">,</span></span>
+<span id="cb8-56"><a href="#cb8-56"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"workbench.action.terminal.sendSequence"</span><span class="fu">,</span></span>
+<span id="cb8-57"><a href="#cb8-57"></a>    <span class="dt">"args"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"text"</span><span class="fu">:</span> <span class="st">" &lt;- "</span> <span class="fu">},</span></span>
+<span id="cb8-58"><a href="#cb8-58"></a>    <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"terminalFocus"</span></span>
+<span id="cb8-59"><a href="#cb8-59"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb8-60"><a href="#cb8-60"></a>  <span class="fu">{</span></span>
+<span id="cb8-61"><a href="#cb8-61"></a>    <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+f10"</span><span class="fu">,</span></span>
+<span id="cb8-62"><a href="#cb8-62"></a>    <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"workbench.action.terminal.kill"</span></span>
+<span id="cb8-63"><a href="#cb8-63"></a>  <span class="fu">}</span></span>
+<span id="cb8-64"><a href="#cb8-64"></a><span class="ot">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<p>If these shortcuts conflict with shortcuts you already use, remove or edit the conflicting entries. The keybindings are not required for the workshop.</p>
+</section>
+<section id="step-6-optional-linting-configuration" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="step-6-optional-linting-configuration"><span class="header-section-number">1.8</span> Step 6: Optional linting configuration</h2>
+<p>The VS Code R extension can use the R package <code>lintr</code> for linting. Linting means showing style and code-quality warnings while you edit.</p>
+<p>Install <code>lintr</code> in R:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">install.packages</span>(<span class="st">"lintr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To reduce distracting style warnings during workshop-style code, create a file named <code>.lintr</code> in your user home folder or project root.</p>
+<p>Example Windows location:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>C:\Users\YourName\.lintr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Example macOS location:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>/Users/YourName/.lintr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Paste this content into <code>.lintr</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>linters: linters_with_defaults(</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  trailing_blank_lines_linter = NULL,</span>
+<span id="cb12-3"><a href="#cb12-3"></a>  line_length_linter = NULL,</span>
+<span id="cb12-4"><a href="#cb12-4"></a>  trailing_whitespace_linter = NULL,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>  commented_code_linter = NULL,</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  indentation_linter = NULL,</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  object_usage_linter = NULL,</span>
+<span id="cb12-8"><a href="#cb12-8"></a>  object_name_linter = NULL</span>
+<span id="cb12-9"><a href="#cb12-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This turns off several warnings that are often distracting during short practical exercises.</p>
+</section>
+<section id="optional-radian-console" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="optional-radian-console"><span class="header-section-number">1.9</span> Optional radian console</h2>
+<p>The official VS Code R documentation recommends <code>radian</code> as an optional modern R console. It provides syntax highlighting and a better console experience than the default R terminal.</p>
+<p>This is optional. You do not need <code>radian</code> to complete the workshop.</p>
+<p>Install <code>radian</code> only if you are comfortable with Python package installation.</p>
+<p>Windows:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1"></a>python <span class="op">-</span>m pip install radian</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>macOS:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">python3</span> <span class="at">-m</span> pip install radian</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After installing, follow the R extension documentation if you want VS Code to use <code>radian</code> as the R terminal. Most workshop exercises do not require <code>radian</code>.</p>
+<section id="optional-alternative-arf" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="optional-alternative-arf"><span class="header-section-number">1.9.1</span> Optional alternative: arf</h3>
+<p><code>arf</code> is another optional R console/front-end. It is a separate project from <code>radian</code> and is also not required for the workshop.</p>
+<p>Project page:</p>
+<p><a href="https://github.com/eitsupi/arf" class="uri">https://github.com/eitsupi/arf</a></p>
+<p>Use <code>arf</code> only if you already understand how to configure an alternative R terminal in VS Code. Beginners should stay with the default R terminal.</p>
+</section>
+</section>
+<section id="optional-r-debugging" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="optional-r-debugging"><span class="header-section-number">1.10</span> Optional R debugging</h2>
+<p>R debugging in VS Code is provided by the separate <strong>R Debugger</strong> extension.</p>
+<p>Install it only if you need breakpoints and step-through debugging:</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=RDebugger.r-debugger" class="uri">https://marketplace.visualstudio.com/items?itemName=RDebugger.r-debugger</a></p>
+<p>Most learners do not need R debugging for the workshop.</p>
+</section>
+<section id="quick-verification" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="quick-verification"><span class="header-section-number">1.11</span> Quick verification</h2>
+<p>Create a file called <code>test-r-vscode.R</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">summary</span>(x)</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">plot</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In VS Code:</p>
+<ol type="1">
+<li>Run <code>R: Create R terminal</code>.</li>
+<li>Open <code>test-r-vscode.R</code>.</li>
+<li>Press <code>Ctrl+Enter</code> on each line.</li>
+</ol>
+<p>Expected result:</p>
+<ul>
+<li>R code runs in the R terminal.</li>
+<li>Completion appears while typing R functions.</li>
+<li>The plot appears in the VS Code plot viewer if <code>httpgd</code> is installed and enabled.</li>
+</ul>
+</section>
+<section id="advanced-r-in-vs-code-troubleshooting" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="advanced-r-in-vs-code-troubleshooting"><span class="header-section-number">1.12</span> Advanced R in VS Code troubleshooting</h2>
+<section id="vs-code-does-not-find-r" class="level3" data-number="1.12.1">
+<h3 data-number="1.12.1" class="anchored" data-anchor-id="vs-code-does-not-find-r"><span class="header-section-number">1.12.1</span> VS Code does not find R</h3>
+<p>On Windows, reinstall R and make sure the installer saves the R version in the registry if that option appears. This helps the R extension find the R executable automatically.</p>
+<p>On macOS and Ubuntu, check that <code>R</code> works in a normal Terminal first:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">R</span> <span class="at">--version</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">which</span> R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If Ubuntu installed R in a non-standard location, add the full path to VS Code settings as <code>r.rterm.linux</code>.</p>
+<p>You can also start R manually in a normal VS Code terminal if the automatic <code>R: Create R terminal</code> command fails.</p>
+</section>
+<section id="languageserver-fails-to-install" class="level3" data-number="1.12.2">
+<h3 data-number="1.12.2" class="anchored" data-anchor-id="languageserver-fails-to-install"><span class="header-section-number">1.12.2</span> <code>languageserver</code> fails to install</h3>
+<p>Likely cause: R needs to compile dependencies.</p>
+<p>On Windows, install <strong>Rtools45</strong> if the error mentions compilers or source packages. On macOS, install Xcode Command Line Tools:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On Ubuntu, install common build dependencies:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">sudo</span> apt install build-essential gfortran libcurl4-openssl-dev libssl-dev libxml2-dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then restart R and try again.</p>
+</section>
+<section id="plot-viewer-does-not-work" class="level3" data-number="1.12.3">
+<h3 data-number="1.12.3" class="anchored" data-anchor-id="plot-viewer-does-not-work"><span class="header-section-number">1.12.3</span> Plot viewer does not work</h3>
+<p>Check that <code>httpgd</code> is installed:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">requireNamespace</span>(<span class="st">"httpgd"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check that VS Code settings include:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb20-1"><a href="#cb20-1"></a><span class="er">"r.plot.useHttpgd":</span> <span class="er">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Restart VS Code after changing settings.</p>
+</section>
+<section id="too-many-lint-warnings-appear" class="level3" data-number="1.12.4">
+<h3 data-number="1.12.4" class="anchored" data-anchor-id="too-many-lint-warnings-appear"><span class="header-section-number">1.12.4</span> Too many lint warnings appear</h3>
+<p>Use the <code>.lintr</code> configuration above, or temporarily disable linting in VS Code settings.</p>
+</section>
+<section id="keyboard-shortcuts-conflict-with-existing-shortcuts" class="level3" data-number="1.12.5">
+<h3 data-number="1.12.5" class="anchored" data-anchor-id="keyboard-shortcuts-conflict-with-existing-shortcuts"><span class="header-section-number">1.12.5</span> Keyboard shortcuts conflict with existing shortcuts</h3>
+<p>Remove or edit the conflicting entries in your keyboard shortcuts JSON. The shortcuts are optional.</p>
+
+
+</section>
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../day-0/instructions/setup-troubleshooting-faq.html" class="pagination-link" aria-label="Troubleshooting and FAQs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Troubleshooting and FAQs</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../day-0/instructions/linux-basics.html" class="pagination-link" aria-label="0.2 Commands &amp; Environments">
+        <span class="nav-page-text">0.2 Commands &amp; Environments</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
