@@ -508,7 +508,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#tmux-screen" id="toc-tmux-screen" class="nav-link" data-scroll-target="#tmux-screen"><code>tmux</code> &amp; <code>screen</code></a></li>
   <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
-  <li><a href="#find" id="toc-find" class="nav-link" data-scroll-target="#find"><code>find</code></a></li>
   <li><a href="#gnu-parallel" id="toc-gnu-parallel" class="nav-link" data-scroll-target="#gnu-parallel">GNU parallel</a></li>
   </ul></li>
   <li><a href="#knowledge-check" id="toc-knowledge-check" class="nav-link" data-scroll-target="#knowledge-check">Knowledge Check</a></li>
@@ -682,7 +681,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>cd ~</code>: Go back home.</li>
 </ul></li>
 </ul>
-<p>Conventions: - <code>.</code> and <code>$PWD</code>: refer to the current “working” directory. - <code>..</code>: refers to the parent directory of the current directory. - <code>~</code> and <code>$HOME</code>: refer to the home directory.</p>
+<p>Conventions:</p>
+<ul>
+<li><code>.</code> and <code>$PWD</code>: refer to the current “working” directory.</li>
+<li><code>..</code>: refers to the parent directory of the current directory.</li>
+<li><code>~</code> and <code>$HOME</code>: refer to the home directory.</li>
+</ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Practice</strong></pre>
@@ -1284,16 +1288,6 @@ Important
 <span id="cb22-4"><a href="#cb22-4"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="find" class="level2">
-<h2 class="anchored" data-anchor-id="find"><code>find</code></h2>
-<p>Find files based on name, size, or modification date.</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Example</strong></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">"/microgen2026/PRJNA234452/*.fastq.gz"</span> <span class="at">-size</span> +100M</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
 <section id="gnu-parallel" class="level2">
 <h2 class="anchored" data-anchor-id="gnu-parallel">GNU parallel</h2>
 <p>Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.</p>
@@ -1301,10 +1295,10 @@ Important
 <div class="code-with-filename-file">
 <pre><strong>Example</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Get the number of contigs in all samples parallelly on 4 CPU cores</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>.fasta <span class="kw">|</span> <span class="ex">parallel</span> <span class="at">-j</span> 4 grep <span class="at">-c</span> <span class="st">'&gt;'</span> {} </span>
-<span id="cb24-3"><a href="#cb24-3"></a></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Do you remember how to know the number of CPU cores on your system?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" data-filename="Example"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Get the number of contigs in all samples parallelly on 4 CPU cores</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">ls</span> day-0/<span class="pp">*</span>.fasta <span class="kw">|</span> <span class="ex">parallel</span> <span class="at">-j</span> 4 grep <span class="at">-c</span> <span class="st">'&gt;'</span> {} </span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="co"># Do you remember how to know the number of CPU cores on your system?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>

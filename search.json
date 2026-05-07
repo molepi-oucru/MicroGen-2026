@@ -1085,7 +1085,7 @@
     "href": "day-0/instructions/linux-basics.html#the-command-line",
     "title": "0.2 Commands & Environments",
     "section": "The Command Line",
-    "text": "The Command Line\nA command usually follows this structure: command [options] [arguments]\nExamples:\n# show Linux OS name, version, and hardware architecture\nhostnamectl \n\n# list CPU information\nlscpu\necho \"Hello World\"\n\necho is the command (print text).\n\"Hello World\" is the argument (the text to print).\n\nls -l microgen2026/\n\nls is the command (list files).\n-l is an option (long format).\nmicrogen2026/ is the argument (the folder to look into).",
+    "text": "The Command Line\nA command usually follows this structure: command [options] [arguments]\nExamples:\n\n\nPractice\n\n# show Linux OS name, version, and hardware architecture\nhostnamectl \n\n# list CPU information\nlscpu\n\n\n\nPractice\n\necho \"Hello World\"\n\n\necho is the command (print text).\n\"Hello World\" is the argument (the text to print).\n\n\n\nPractice\n\nls -l microgen2026/\n\n\nls is the command (list files).\n-l is an option (long format).\nmicrogen2026/ is the argument (the folder to look into).",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1097,7 +1097,7 @@
     "href": "day-0/instructions/linux-basics.html#getting-help",
     "title": "0.2 Commands & Environments",
     "section": "Getting Help",
-    "text": "Getting Help\n\nHow can I know what a command does?\n\n\nHow to know what options a command has?, and what arguments it can take?\n\n\nWhat are all the commands available on Linux?\n\n\nDo I need to memorize all of them?\n\nIf you wonder about these questions, you are on the right track!\nAnd the answer is: Yes & No. ☯️\nMemorizing some common commands will definitely save you a lot of time, but memorizing all of them is unnecessary (and also un-wise).  The key is to know what is possible to do on Linux, and how to find that out.\nIf you forget the options or arguments of a command, or you just want to check again all of its capabilities, you can find out with the following commands:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\ninfo command: Opens the “info” page (e.g., info ls). Press q to exit.\n\nand, last but not least: - Search & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck! Lots of time there are no “manual” or “info” pages locally on the computer, or they are not user-friendly enough, so to check the online resources is a must!\n\n\n\n\n\n\nTipHundreds to Thousands\n\n\n\nDo you know that, there are up to 150–300 commands in the core utilities of Linux, depending on the OS distribution? And if we count all executable files that are later installed, the number can be in the thousands!\nThe key, therefore, is actually our imagination and creativity. Just exploit the Search & AI tools out there to find the right commands for your needs.",
+    "text": "Getting Help\n\nHow can I know what a command does?\n\n\nHow to know what options a command has?, and what arguments it can take?\n\n\nWhat are all the commands available on Linux?\n\n\nDo I need to memorize all of them?\n\nIf you wonder about these questions, you are on the right track!\nAnd the answer is: Yes & No. ☯️\nMemorizing some common commands will definitely save you a lot of time, but memorizing all of them is unnecessary (and also un-wise).  The key is to know what is possible to do on Linux, and how to find that out.\nIf you forget the options or arguments of a command, or you just want to check again all of its capabilities, you can find out with the following commands:\n\ncommand --help: Most tools have a built-in help menu (e.g., ls --help).\nman command: Opens the “manual” page (e.g., man ls). Press q to exit.\ninfo command: Opens the “info” page (e.g., info ls). Press q to exit.\n\nand, last but not least:\n\nSearch & AI: Google, Stack Overflow, and AI tools are your friends when you get stuck! Lots of time there are no “manual” or “info” pages locally on the computer, or they are not user-friendly enough, so to check the online resources is a must!\n\n\n\n\n\n\n\nTipHundreds to Thousands\n\n\n\nDo you know that, there are up to 150–300 commands in the core utilities of Linux, depending on the OS distribution? And if we count all executable files that are later installed, the number can be in the thousands!\nThe key, therefore, is actually our imagination and creativity. Just exploit the Search & AI tools out there to find the right commands for your needs.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1121,7 +1121,7 @@
     "href": "day-0/instructions/linux-basics.html#navigation-in-the-file-system",
     "title": "0.2 Commands & Environments",
     "section": "Navigation in the File System",
-    "text": "Navigation in the File System\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.\n\n\nConventions: - . and $PWD: refer to the current “working” directory. - ..: refers to the parent directory of the current directory. - ~ and $HOME: refer to the home directory.\n\n\nPractice\n\n# Check where you are\npwd\n# other way\necho $PWD\n\n# See what files are in the current directory\nls\n\n# Go to the data directory for the workshop\ncd /microgen2026/\n\n# List all files in the current directory, including hidden files\nls -a\n\n# Go to day-0 directory\ncd day-0\n\n# List files in the current directory in long format with human-readable sizes and show hidden files\nls -lah\n\n# Go to home directory\ncd ~\n\n# Go back to the day-0 directory\ncd -\n\n# Go back to the parent directory `microgen2026`\ncd ..\n\n\n\n\n\n\n\nTipTips\n\n\n\n\n\nWhen you move around, i.e. changing the current directory, did you notice any change to the prompt, particularly the part following the user@computer:?\nTab-completion is your best friend!  When you start typing a command, file, or directory name, press the Tab key to auto-complete it. If there are multiple possibilities, press Tab twice to see all of them.",
+    "text": "Navigation in the File System\n\npwd (Print Working Directory): “Where am I?”\nls: “What’s in here?”\n\nls -F: Adds a / to directories.\nls -l: Shows detailed information (permissions, size, etc.).\nls -h: Human-readable sizes (KB, MB, GB).\n\ncd: “Go somewhere else.”\n\ncd ..: Move up one level.\ncd ~: Go back home.\n\n\nConventions:\n\n. and $PWD: refer to the current “working” directory.\n..: refers to the parent directory of the current directory.\n~ and $HOME: refer to the home directory.\n\n\n\nPractice\n\n# Check where you are\npwd\n# other way\necho $PWD\n\n# See what files are in the current directory\nls\n\n# Go to the data directory for the workshop\ncd /microgen2026/\n\n# List all files in the current directory, including hidden files\nls -a\n\n# Go to day-0 directory\ncd day-0\n\n# List files in the current directory in long format with human-readable sizes and show hidden files\nls -lah\n\n# Go to home directory\ncd ~\n\n# Go back to the day-0 directory\ncd -\n\n# Go back to the parent directory `microgen2026`\ncd ..\n\n\n\n\n\n\n\nTipTips\n\n\n\n\n\nWhen you move around, i.e. changing the current directory, did you notice any change to the prompt, particularly the part following the user@computer:?\nTab-completion is your best friend!  When you start typing a command, file, or directory name, press the Tab key to auto-complete it. If there are multiple possibilities, press Tab twice to see all of them.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1181,7 +1181,7 @@
     "href": "day-0/instructions/linux-basics.html#grep-search-for-a-pattern",
     "title": "0.2 Commands & Environments",
     "section": "grep: Search for a pattern",
-    "text": "grep: Search for a pattern\nSearch for strings or patterns within files.\n\n-i: Ignore case (search for both DNA and dna).\n-v: Invert match (show lines that do not contain the pattern).\n-c: Count the number of matching lines.\n-n: Show line numbers.\n-w: Match whole words only.\n\n# Search for \"Human Microbiome Project (HMP)\" in the metadata file\ngrep \"Human Microbiome Project (HMP)\" crAssphage_in_public.csv\n\n# Count how many lines contain \"PASS\" in the VCF file\ngrep -c \"PASS\" 965Kp.vcf",
+    "text": "grep: Search for a pattern\nSearch for strings or patterns within files.\n\n-i: Ignore case (search for both DNA and dna).\n-v: Invert match (show lines that do not contain the pattern).\n-c: Count the number of matching lines.\n-n: Show line numbers.\n-w: Match whole words only.\n\n\n\nPractice\n\n# Search for \"Human Microbiome Project (HMP)\" in the metadata file\ngrep \"Human Microbiome Project (HMP)\" crAssphage_in_public.csv\n\n# Count how many lines contain \"PASS\" in the VCF file\ngrep -c \"PASS\" 965Kp.vcf",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1193,7 +1193,7 @@
     "href": "day-0/instructions/linux-basics.html#wc-count-lines-words-and-characters",
     "title": "0.2 Commands & Environments",
     "section": "wc: Count lines, words, and characters",
-    "text": "wc: Count lines, words, and characters\n\n-l: Count lines.\n-w: Count words.\n-c: Count characters (bytes).\n\n# Count how many lines are in the VCF file\nwc -l 965Kp.vcf",
+    "text": "wc: Count lines, words, and characters\n\n-l: Count lines.\n-w: Count words.\n-c: Count characters (bytes).\n\n\n\nPractice\n\n# Count how many lines are in the VCF file\nwc -l 965Kp.vcf",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1205,7 +1205,7 @@
     "href": "day-0/instructions/linux-basics.html#cut-cut-out-sections-from-each-line-of-files",
     "title": "0.2 Commands & Environments",
     "section": "cut: Cut out sections from each line of files",
-    "text": "cut: Cut out sections from each line of files\nUsed to extract specific columns from text files.\n\n-f: Select fields (columns).\n-d: Define the delimiter (the default is tab).\n\n# Extract the 2nd and 4th column from a tab-delimited file\ncut -f 2,4 metadata_carbResist.tsv\n\n# Extract the 5th column from a CSV file (comma delimited)\ncut -f 5 -d \",\" crAssphage_in_public.csv",
+    "text": "cut: Cut out sections from each line of files\nUsed to extract specific columns from text files.\n\n-f: Select fields (columns).\n-d: Define the delimiter (the default is tab).\n\n\n\nPractice\n\n# Extract the 2nd and 4th column from a tab-delimited file\ncut -f 2,4 metadata_carbResist.tsv\n\n# Extract the 5th column from a CSV file (comma delimited)\ncut -f 5 -d \",\" crAssphage_in_public.csv",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1229,7 +1229,7 @@
     "href": "day-0/instructions/linux-basics.html#tr-translate-or-delete-characters",
     "title": "0.2 Commands & Environments",
     "section": "tr: Translate or delete characters",
-    "text": "tr: Translate or delete characters\n# first, let see the original messy file\ncat messy_data.csv\n\n# Convert a CSV to a TSV (comma to tab)\ntr ',' '\\t' &lt; messy_data.csv\n\n# Convert all text to uppercase\ntr '[:lower:]' '[:upper:]' &lt; messy_data.csv",
+    "text": "tr: Translate or delete characters\n\n\nPractice\n\n# first, let see the original messy file\ncat messy_data.csv\n\n# Convert a CSV to a TSV (comma to tab)\ntr ',' '\\t' &lt; messy_data.csv\n\n# Convert all text to uppercase\ntr '[:lower:]' '[:upper:]' &lt; messy_data.csv",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1241,7 +1241,7 @@
     "href": "day-0/instructions/linux-basics.html#sed-stream-editor-for-text-manipulation",
     "title": "0.2 Commands & Environments",
     "section": "sed: Stream editor for text manipulation",
-    "text": "sed: Stream editor for text manipulation\nA powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: sed 's/old/new/g'.\n# Change all filenames starting with 'sample_' to 'sample-' in our messy file\nsed 's/sample_/sample-/g' messy_data.csv\n\n# Put the change to a new file\nsed 's/sample_/sample-/g' messy_data.csv &gt; pretty_data.csv\n\n# or, to make the changes permanent on the file, use -i option\n\n\n\n\n\n\nNoteChallenge 3: Text Manipulation\n\n\n\n\n\nContinue cleaning the pretty_data.csv file.  Note: Apply all the steps below directly on the pretty_data.csv file.\n\nChange r1 and r2 conventions in the header line to forward and reverse.\nMake the annotations for forward reads and reverse reads consistent: change R1 or L1 to _1 and R2 or L2 to _2.\nChange the file extension from .fq to .fastq.gz.",
+    "text": "sed: Stream editor for text manipulation\nA powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: sed 's/old/new/g'.\n\n\nPractice\n\n# Change all filenames starting with 'sample_' to 'sample-' in our messy file\nsed 's/sample_/sample-/g' messy_data.csv\n\n# Put the change to a new file\nsed 's/sample_/sample-/g' messy_data.csv &gt; pretty_data.csv\n\n# or, to make the changes permanent on the file, use -i option\n\n\n\n\n\n\n\nNoteChallenge 3: Text Manipulation\n\n\n\n\n\nContinue cleaning the pretty_data.csv file.  Note: Apply all the steps below directly on the pretty_data.csv file.\n\nChange r1 and r2 conventions in the header line to forward and reverse.\nMake the annotations for forward reads and reverse reads consistent: change R1 or L1 to _1 and R2 or L2 to _2.\nChange the file extension from .fq to .fastq.gz.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1253,7 +1253,7 @@
     "href": "day-0/instructions/linux-basics.html#pipes",
     "title": "0.2 Commands & Environments",
     "section": "Pipes (|)",
-    "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.\nExample: Ignore all the header lines that starts with # and extract the 2nd, 4th, 5th, and 7th columns from 965Kp.vcf:\ngrep -v \"^#\" 965Kp.vcf | cut -f2,4,5,7\n\n# then count the number of lines\ngrep -v \"^#\" 965Kp.vcf | cut -f2,4,5,7 | wc -l",
+    "text": "Pipes (|)\nThe pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.\nExample: Ignore all the header lines that starts with # and extract the 2nd, 4th, 5th, and 7th columns from 965Kp.vcf:\n\n\nExample\n\ngrep -v \"^#\" 965Kp.vcf | cut -f2,4,5,7\n\n# then count the number of lines\ngrep -v \"^#\" 965Kp.vcf | cut -f2,4,5,7 | wc -l",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1265,7 +1265,7 @@
     "href": "day-0/instructions/linux-basics.html#standard-input-output-and-error",
     "title": "0.2 Commands & Environments",
     "section": "Standard Input, Output, and Error",
-    "text": "Standard Input, Output, and Error\n\nStandard In (stdin): Where the command receives its input (the keyboard or redirection).\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\n\n\nRedirection\nRedirection allows you to change where a command gets its input or sends its output.\n\ncommand &lt; file: Redirect contents of a file as input to a command.\ncommand &gt; file: Save output (stdout) to a file (overwrites).\ncommand &gt;&gt; file: Append output (stdout) to a file (adds to the end).\ncommand 2&gt; file: Redirect error messages (stderr) to a file.\ncommand &gt; file 2&gt;&1: Redirect both stdout and stderr to a single file.\n\nExample: Save the list of files to a text file.\nls -lh &gt; file_list.txt",
+    "text": "Standard Input, Output, and Error\n\nStandard In (stdin): Where the command receives its input (the keyboard or redirection).\nStandard Out (stdout): Where the command sends its regular results (the screen).\nStandard Error (stderr): Where the command sends error messages.\n\n\nRedirection\nRedirection allows you to change where a command gets its input or sends its output.\n\ncommand &lt; file: Redirect contents of a file as input to a command.\ncommand &gt; file: Save output (stdout) to a file (overwrites).\ncommand &gt;&gt; file: Append output (stdout) to a file (adds to the end).\ncommand 2&gt; file: Redirect error messages (stderr) to a file.\ncommand &gt; file 2&gt;&1: Redirect both stdout and stderr to a single file.\n\nExample: Save the list of files to a text file.\n\n\nPractice\n\nls -lh &gt; file_list.txt",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1277,7 +1277,7 @@
     "href": "day-0/instructions/linux-basics.html#variables",
     "title": "0.2 Commands & Environments",
     "section": "Variables",
-    "text": "Variables\nVariables store information (text, numbers, filenames, etc.) for later use.\nExample:\nMY_SAMPLE=\"SRR24679994\"\n\n# Print the value of the variable\necho $MY_SAMPLE\n\n# Use the variable in a command - Find the sample in the metadata file\ngrep -w \"$MY_SAMPLE\" metadata_carbResist.tsv\nTypes of variables:\n\nLocal variables: Most of the variables you set in your shell session only exist in that session, which means you cannot find them in new terminal sessions. These are local. If you want to reuse them, you will have to specify them every time you open a new terminal session.\nGlobal variables: These are variables that exist “everywhere”. Examples of global variables at the heart of a Linux system are: $HOME, $PWD, $USER, etc.\n\n\n\n\n\n\n\nNoteChallenge 4: Pipe Master\n\n\n\n\n\nThe tab-delimited file metadata_carbResist.tsv contains information about the Carbapenem non-susceptible Enterobacterales collected at the pharmacy research laboratory at Singapore General Hospital, whose whole-genome sequencing data have been published on NCBI.\nYour tasks will be to extract the following information:\n\nFind what information is contained in the file, by printing the first header line.\nFind how many isolates are there.\nFind how many isolates that belong to the year “2013”. (The correct answer is 202 isolates)\n\nThen, for all isolates collected in 2013, 4. Extract the sample names and save them to a file called 2013_samples.txt. 5. Find what the species are in the 2013 isolates Hint: Species name is in the 8th column. uniq will omit identical adjacent lines. You may need to sort the species names first. 6. How many species were collected in 2013? (Hint: continue to extend your pipes!) 7. Find how many isolates are there for each species (Hint: man uniq to learn more about its power!) 8. Congrats! You’re now a pipe master! 🎉",
+    "text": "Variables\nVariables store information (text, numbers, filenames, etc.) for later use.\n\n\nExample\n\nMY_SAMPLE=\"SRR24679994\"\n\n# Print the value of the variable\necho $MY_SAMPLE\n\n# Use the variable in a command - Find the sample in the metadata file\ngrep -w \"$MY_SAMPLE\" metadata_carbResist.tsv\n\nTypes of variables:\n\nLocal variables: Most of the variables you set in your shell session only exist in that session, which means you cannot find them in new terminal sessions. These are local. If you want to reuse them, you will have to specify them every time you open a new terminal session.\nGlobal variables: These are variables that exist “everywhere”. Examples of global variables at the heart of a Linux system are: $HOME, $PWD, $USER, etc.\n\n\n\n\n\n\n\nNoteChallenge 4: Pipe Master\n\n\n\n\n\nThe tab-delimited file metadata_carbResist.tsv contains information about the Carbapenem non-susceptible Enterobacterales collected at the pharmacy research laboratory at Singapore General Hospital, whose whole-genome sequencing data have been published on NCBI.\nYour tasks will be to extract the following information:\n\nFind what information is contained in the file, by printing the first header line.\nFind how many isolates are there.\nFind how many isolates that belong to the year “2013”. (The correct answer is 202 isolates)\n\nThen, for all isolates collected in 2013,\n\nExtract the sample names and save them to a file called 2013_samples.txt.\nFind what the species are in the 2013 isolates  Hint: Species name is in the 8th column. uniq will omit identical adjacent lines. You may need to sort the species names first.\nHow many species were collected in 2013?  Hint: continue to extend your pipes!\nFind how many isolates are there for each species  Hint: man uniq to learn more about its power!\nCongrats! You’re now a pipe master! 🎉",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1301,7 +1301,7 @@
     "href": "day-0/instructions/linux-basics.html#loops",
     "title": "0.2 Commands & Environments",
     "section": "Loops",
-    "text": "Loops\nAutomate tasks across hundreds of samples.\nfor file in /microgen2026/day-0/*.fasta; do \n    echo \"Processing $file...\"; \n    grep -c '&gt;' $file;\ndone",
+    "text": "Loops\nAutomate tasks across hundreds of samples.\n\n\nExample\n\nfor file in /microgen2026/day-0/*.fasta; do \n    echo \"Processing $file...\"; \n    grep -c '&gt;' $file;\ndone",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1313,7 +1313,7 @@
     "href": "day-0/instructions/linux-basics.html#find",
     "title": "0.2 Commands & Environments",
     "section": "find",
-    "text": "find\nFind files based on name, size, or modification date.\nfind . -name \"/microgen2026/PRJNA234452/*.fastq.gz\" -size +100M",
+    "text": "find\nFind files based on name, size, or modification date.\n\n\nExample\n\nfind . -name \"/microgen2026/PRJNA234452/*.fastq.gz\" -size +100M",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -1325,7 +1325,7 @@
     "href": "day-0/instructions/linux-basics.html#gnu-parallel",
     "title": "0.2 Commands & Environments",
     "section": "GNU parallel",
-    "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.\nExample:\n# Get the number of contigs in all samples parallelly on 4 CPU cores\nls day-0/*.fasta | parallel -j 4 grep -c '&gt;' {} \n\n# Do you remember how to know the number of CPU cores on your system?",
+    "text": "GNU parallel\nRun many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.\n\n\nExample\n\n# Get the number of contigs in all samples parallelly on 4 CPU cores\nls day-0/*.fasta | parallel -j 4 grep -c '&gt;' {} \n\n# Do you remember how to know the number of CPU cores on your system?",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
@@ -2530,7 +2530,7 @@
     "href": "day-0/instructions/linux-basics.html#sort-sort-lines-of-text-files",
     "title": "0.2 Commands & Environments",
     "section": "sort: Sort lines of text files",
-    "text": "sort: Sort lines of text files\n\n-n: Numeric sort.\n-r: Reverse order.\n-k: Sort by a specific column (key).\n-t: Specify the delimiter (the default is tab).\n-u: Unique (remove duplicates).\n\n# Sort the metadata by the 3rd column (Gbp) numerically in reverse\nsort -k 2 -n -r genome_sizes.tsv\n\n\n\n\n\n\nNoteChallenge 2: Extracting Information\n\n\n\n\n\nThe CSV file crAssphage_in_public.csv contains information about public shotgun metagenomes that may contain crAssphage and the abundance of the virus in the samples. Use your learned commands to find:\n\nHow many metagenomes with crAssphage are there in the file? (Hint: wc -l includes the header line. How can you exclude it?)\nHow many samples are “virome” samples? (Correct answer = 40. Hint: Does the header line also contain this word?)\nExtract only these information: sample id, genome project id, percentage reads crAssphage, and Material.\nSort the metagenomes by the percentage of reads crAssphage in descending order.",
+    "text": "sort: Sort lines of text files\n\n-n: Numeric sort.\n-r: Reverse order.\n-k: Sort by a specific column (key).\n-t: Specify the delimiter (the default is tab).\n-u: Unique (remove duplicates).\n\n\n\nPractice\n\n# Sort the metadata by the 3rd column (Gbp) numerically in reverse\nsort -k 2 -n -r genome_sizes.tsv\n\n\n\n\n\n\n\nNoteChallenge 2: Extracting Information\n\n\n\n\n\nThe CSV file crAssphage_in_public.csv contains information about public shotgun metagenomes that may contain crAssphage and the abundance of the virus in the samples. Use your learned commands to find:\n\nHow many metagenomes with crAssphage are there in the file? (Hint: wc -l includes the header line. How can you exclude it?)\nHow many samples are “virome” samples? (Correct answer = 40. Hint: Does the header line also contain this word?)\nExtract only these information: sample id, genome project id, percentage reads crAssphage, and Material.\nSort the metagenomes by the percentage of reads crAssphage in descending order.",
     "crumbs": [
       "Practical Guides",
       "Day 0 - Pre-Workshop",
