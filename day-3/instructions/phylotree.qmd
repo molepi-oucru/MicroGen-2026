@@ -75,7 +75,7 @@ more ST147_18str_bwamem2AMB201Kp_cat.snpdist
 
 ## 5. A brief look at variation patterns
 
-```{..bash}
+```{.bash}
 snp-sites -v -o ST147_18str_bwamem2AMB201Kp_cat.snp.vcf ST147_18str_bwamem2AMB201Kp_cat.mfasta
 ```
 

@@ -31,9 +31,9 @@ The **Terminal** (or console) is your window into the operating system. It provi
 
 A command usually follows this structure: `command [options] [arguments]`
 
-**Examples**:
+***Examples***:
 
-``` bash
+```{.bash filename="Practice"}
 # show Linux OS name, version, and hardware architecture
 hostnamectl 
 
@@ -41,14 +41,14 @@ hostnamectl
 lscpu
 ```
 
-``` bash
+```{.bash filename="Practice"}
 echo "Hello World"
 ```
 
 - `echo` is the command (print text).
 - `"Hello World"` is the argument (the text to print).
 
-``` bash
+```{.bash filename="Practice"}
 ls -l microgen2026/
 ```
 
@@ -82,6 +82,7 @@ If you forget the options or arguments of a command, or you just want to check a
 - `info command`: Opens the "info" page (e.g., `info ls`). Press `q` to exit.
   
 and, last but not least:
+
 - **Search & AI**: Google, Stack Overflow, and AI tools are your friends when you get stuck! Lots of time there are no "manual" or "info" pages locally on the computer, or they are not user-friendly enough, so to check the online resources is a must!
 
 :::{.callout-tip}
@@ -117,6 +118,7 @@ Think of the Linux file system as a giant tree.
   - `cd ~`: Go back home.
 
 Conventions:
+
 - `.` and `$PWD`: refer to the current "working" directory.
 - `..`: refers to the parent directory of the current directory.
 - `~` and `$HOME`: refer to the home directory.
@@ -222,7 +224,7 @@ Redirection allows you to change where a command gets its input or sends its out
 
 **Example**: Save the list of files to a text file. 
 
-```bash
+```{.bash filename="Practice"}
 ls -lh > file_list.txt
 ```
 
@@ -244,8 +246,8 @@ ls -lh > file_list.txt
   - `mv old_name.txt new_name.txt`
   - `mv source_dir destination_dir`
 
-:::{.callout-note collapse="false"}
-## Tip
+:::{.callout-tip collapse="false"}
+## Tips
 
 Referring to files by patterns:
 - `*`: matches any sequence of characters
@@ -328,7 +330,7 @@ Search for strings or patterns within files.
 - `-n`: Show line numbers.
 - `-w`: Match whole words only.
 
-```bash
+```{.bash filename="Practice"}
 # Search for "Human Microbiome Project (HMP)" in the metadata file
 grep "Human Microbiome Project (HMP)" crAssphage_in_public.csv
 
@@ -341,7 +343,7 @@ grep -c "PASS" 965Kp.vcf
 - `-w`: Count words.
 - `-c`: Count characters (bytes).
 
-```bash
+```{.bash filename="Practice"}
 # Count how many lines are in the VCF file
 wc -l 965Kp.vcf
 ```
@@ -352,7 +354,7 @@ Used to extract specific columns from text files.
 - `-f`: Select fields (columns).
 - `-d`: Define the delimiter (the default is tab).
 
-```bash
+```{.bash filename="Practice"}
 # Extract the 2nd and 4th column from a tab-delimited file
 cut -f 2,4 metadata_carbResist.tsv
 
@@ -368,7 +370,7 @@ cut -f 5 -d "," crAssphage_in_public.csv
 - `-t`: Specify the delimiter (the default is tab).
 - `-u`: Unique (remove duplicates).
 
-```bash
+```{.bash filename="Practice"}
 # Sort the metadata by the 3rd column (Gbp) numerically in reverse
 sort -k 2 -n -r genome_sizes.tsv
 ```
@@ -385,7 +387,7 @@ The CSV file `crAssphage_in_public.csv` contains information about public shotgu
 
 ## `tr`: Translate or delete characters
 
-```bash
+```{.bash filename="Practice"}
 # first, let see the original messy file
 cat messy_data.csv
 
@@ -399,7 +401,7 @@ tr '[:lower:]' '[:upper:]' < messy_data.csv
 
 A powerful stream editor for filtering and transforming text. Most commonly used for find-and-replace using the syntax: `sed 's/old/new/g'`.
 
-```bash
+```{.bash filename="Practice"}
 # Change all filenames starting with 'sample_' to 'sample-' in our messy file
 sed 's/sample_/sample-/g' messy_data.csv
 
@@ -426,9 +428,9 @@ Continue cleaning the `pretty_data.csv` file. <br>
 
 The pipe takes the output of one command and sends it as input to another. This allows you to build complex workflows by chaining simple commands.
 
-**Example**: Ignore all the header lines that starts with `#` and extract the 2nd, 4th, 5th, and 7th columns from `965Kp.vcf`:
+***Example***: Ignore all the header lines that starts with `#` and extract the 2nd, 4th, 5th, and 7th columns from `965Kp.vcf`:
 
-``` bash
+```{.bash filename="Example"}
 grep -v "^#" 965Kp.vcf | cut -f2,4,5,7
 
 # then count the number of lines
@@ -439,9 +441,7 @@ grep -v "^#" 965Kp.vcf | cut -f2,4,5,7 | wc -l
 
 Variables store information (text, numbers, filenames, etc.) for later use.
 
-***Example***:
-
-```bash
+```{.bash filename="Example"}
 MY_SAMPLE="SRR24679994"
 
 # Print the value of the variable
@@ -468,11 +468,14 @@ Your tasks will be to extract the following information:
 3.  Find how many isolates that belong to the year "2013". (*The correct answer is 202 isolates*)
    
   Then, for all isolates collected in 2013, 
+
 4.  Extract the sample names and save them to a file called `2013_samples.txt`.
-5.  Find what the species are in the 2013 isolates
+5.  Find what the species are in the 2013 isolates <br>
   *Hint: Species name is in the 8th column. `uniq` will omit identical adjacent lines. You may need to sort the species names first.*
-6.  How many species were collected in 2013? (*Hint: continue to extend your pipes!*)
-7.  Find how many isolates are there for each species (*Hint: `man uniq` to learn more about its power!*)
+6.  How many species were collected in 2013? <br>
+  *Hint: continue to extend your pipes!*
+7.  Find how many isolates are there for each species <br>
+  *Hint: `man uniq` to learn more about its power!*
 8.  Congrats! You're now a pipe master! 🎉
 
 :::
@@ -534,7 +537,7 @@ Different bioinformatics tools often require different versions of the same soft
 
 ***Example***: Installing [Kingfisher](https://wwood.github.io/kingfisher-download/) - a fast downloading tool for public sequence files and their metadata annotations.
 
-``` bash
+```{.bash filename="Example"}
 # Create an environment for the kingfisher program
 mamba create -n kingfisher -c conda-forge -c bioconda kingfisher
 
@@ -579,27 +582,18 @@ Some useful tips for using those tools:
 
 Automate tasks across hundreds of samples.
 
-``` bash
+```{.bash filename="Example"}
 for file in /microgen2026/day-0/*.fasta; do 
     echo "Processing $file..."; 
     grep -c '>' $file;
 done
 ```
 
-## `find`
-
-Find files based on name, size, or modification date.
-
-``` bash
-find . -name "/microgen2026/PRJNA234452/*.fastq.gz" -size +100M
-```
-
 ## GNU parallel
 
 Run many commands at once using multiple CPU cores. A true game-changer for processing large cohorts.
 
-***Example***:
-``` bash
+```{.bash filename="Example"}
 # Get the number of contigs in all samples parallelly on 4 CPU cores
 ls day-0/*.fasta | parallel -j 4 grep -c '>' {} 
 
