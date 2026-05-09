@@ -18,16 +18,16 @@ format:
             D: "whereami is not a standard Linux command."
         },
         mcq_e2: {
-            A: "ls is the command.",
-            B: "Correct. Options (or flags) usually start with a dash.",
-            C: "genomes/ is the argument (the target directory).",
-            D: "The space is just a separator."
-        },
-        mcq_e3: {
             A: "/ is the root directory, the very top of the tree.",
             B: ". refers to the current directory.",
             C: "Correct. The tilde (~) represents the user's home directory.",
             D: ".. refers to the parent directory (one level up)."
+        },
+        mcq_e3: {
+            A: "mv moves or renames a file.",
+            B: "Correct. 'cp' stands for copy.",
+            C: "rm removes/deletes a file.",
+            D: "ln creates links between files."
         },
         mcq_e4: {
             A: "Correct. 'man' opens the manual page for a command.",
@@ -36,100 +36,100 @@ format:
             D: "mkdir man would try to create a directory named 'man'."
         },
         mcq_e5: {
-            A: "mv moves or renames a file.",
-            B: "Correct. 'cp' stands for copy.",
-            C: "rm removes/deletes a file.",
-            D: "ln creates links between files."
+            A: "ls is the command.",
+            B: "microgen2026/ is the argument (the target directory).",
+            C: "Correct. Options (or flags) usually start with a dash and modify the command's behavior.",
+            D: "The target is the argument, not the option."
         },
         mcq_i1: {
-            A: "-a lists hidden files but doesn't make sizes human-readable.",
-            B: "Correct. -l is long format, -h is human-readable, and -a (or -la) includes hidden files.",
-            C: "-S sorts by size but doesn't show hidden files or human-readable units.",
-            D: "-F adds trailing slashes but doesn't show sizes."
+            A: "cp without -r will skip directories.",
+            B: "Correct. The -r (recursive) option is required to copy directories and their contents.",
+            C: "mv moves the directory instead of copying it.",
+            D: "This copies the files inside, but not necessarily hidden files or the folder itself."
         },
         mcq_i2: {
-            A: "cat prints the entire file to the screen at once, which is bad for large files.",
-            B: "head only shows the beginning of the file.",
-            C: "Correct. 'less' allows you to scroll through large files efficiently.",
-            D: "nano is a text editor, not just a viewer."
+            A: "The wildcard * matches any sequence of characters, including '10'.",
+            B: "Correct. The wildcard ? matches exactly one single character, matching A and B but skipping 10.",
+            C: "This matches only single digits 0-9.",
+            D: "This matches uppercase letters and any sequence after, but syntax is slightly off."
         },
         mcq_i3: {
-            A: "find is for finding files by name, not searching for text inside them.",
-            B: "Correct. 'grep' is the standard tool for searching text patterns.",
-            C: "search is not a standard command-line tool for this.",
-            D: "wc counts words/lines, it doesn't search for specific terms."
+            A: "-a lists hidden files but doesn't make sizes human-readable.",
+            B: "-lh makes sizes human-readable but misses hidden files.",
+            C: "Correct. -l is long format, -h is human-readable, and -a includes hidden files.",
+            D: "-H usually resolves symbolic links, it doesn't do human-readable."
         },
         mcq_i4: {
-            A: "This would just count the letters in the filename.",
-            B: "Correct. This finds the lines with the string and then counts those lines.",
-            C: "This counts lines first, then looks for the string in the count (wrong order).",
-            D: "The semicolon runs them sequentially, not as a pipeline."
+            A: "Correct. The -c flag counts the matching lines directly.",
+            B: "count is not a real command.",
+            C: "wc -l cannot take a search string argument like this.",
+            D: "find is for locating files by name in the filesystem, not text matching inside them."
         },
         mcq_i5: {
-            A: ">> appends to the file instead of overwriting.",
-            B: "Correct. > redirects output and overwrites the destination file.",
-            C: "| sends output to another command, not a file.",
-            D: "< is for reading input from a file."
+            A: "Both manage standard output by default.",
+            B: "Correct. > overwrites, destroying old data. >> appends, adding to existing data.",
+            C: "Both can create new files if they don't exist.",
+            D: "Both handle text streams."
         },
         mcq_i6: {
-            A: "Linux will look for a variable named PREFIX_results, which doesn't exist.",
-            B: "Correct. Using curly braces ${} clearly separates the variable name from surrounding text.",
-            C: "Parentheses are for subshells, not variables.",
-            D: "Single quotes prevent variable expansion; it would print $PREFIX_results literally."
+            A: "less is a viewer, not an editor.",
+            B: "Correct. less allows efficient scrolling by only loading the visible part of the file, saving RAM.",
+            C: "less doesn't automatically unzip, zless does.",
+            D: "less doesn't color-code DNA natively."
         },
         mcq_i7: {
-            A: "chown changes ownership, not permissions.",
-            B: "Correct. +x adds the executable (run) permission.",
-            C: "777 gives everyone full access, which is overkill and less specific.",
-            D: "chmod +r only makes it readable."
+            A: "wc will pipe to grep, it's just logically flawed for our goal.",
+            B: "Pipes pass output left-to-right, they are not reversible.",
+            C: "Correct. The left command counts the total lines and outputs a number. grep then searches that single number for '2024'.",
+            D: "No, wc just outputs line counts."
         },
         mcq_i8: {
-            A: "Correct. You must activate an environment to enter its 'bubble'.",
-            B: "mamba install is for adding new programs, not starting them.",
-            C: "mamba go is not a command.",
-            D: "mamba init is for setting up the mamba program itself."
+            A: "install adds new software to an environment.",
+            B: "Correct. You activate an environment to enter it.",
+            C: "go is not a Conda/Mamba command.",
+            D: "start is not a Conda/Mamba command."
         },
         mcq_i9: {
-            A: "Correct. .. refers to the parent folder.",
-            B: "cd ~ goes home.",
-            C: "This would be a relative path forward, not up.",
-            D: "Linux doesn't have a recycle bin in the CLI; rm deletes permanently."
+            A: "cut defaults to tab-delimited, so this fails on a CSV.",
+            B: "Correct. You must specify the comma delimiter with -d ','.",
+            C: "column is for formatting layout, not simple extraction.",
+            D: "grep doesn't have a -col flag for columns."
         },
         mcq_i10: {
-            A: "Correct. 'lscpu' lists various CPU technical details.",
-            B: "top shows running processes, not just hardware info.",
-            C: "df shows disk space.",
-            D: "free shows RAM/memory usage."
+            A: "This extracts ONLY the header lines, doing the exact opposite of what you want.",
+            B: "This cuts the columns first, then searches for '#', which may incorrectly exclude rows if the second column happens to start with `#`.",
+            C: "Correct. This filters out the headers using -v and passes the remaining lines directly to cut.",
+            D: "You must pipe `|` between commands; `>` is for writing to files, not passing data."
         },
         mcq_a1: {
-            A: "This saves normal output but lets errors show on the screen.",
-            B: "Correct. 2>&1 merges error messages (stderr) into the same file as normal output (stdout).",
-            C: "2> only saves errors, not the normal results.",
-            D: "|& is a shortcut for both, but 2>&1 is the standard redirect syntax."
+            A: "nohup helps, but tmux/screen is designed specifically to maintain active, attachable sessions.",
+            B: "Correct. tmux or screen hosts your shell session, keeping it alive continuously even if SSH drops.",
+            C: "A bash script alone stops running if the parent terminal is disconnected.",
+            D: "Running as root doesn't stop the connection from dropping."
         },
         mcq_a2: {
-            A: "grep is for text, find is for files.",
-            B: "Correct. find searches the tree, -name matches files, and -size filters by size.",
-            C: "ls doesn't have a -size filter for finding files in subdirectories easily.",
-            D: "locate uses a database that might be out of date."
+            A: "A for loop works, but only processes one file at a time sequentially.",
+            B: "cat merges everything, giving you one massive total but not file-level counts.",
+            C: "Correct. GNU parallel efficiently distributes the grep jobs across multiple CPU cores simultaneously.",
+            D: "This works but is incredibly manual and time consuming."
         },
         mcq_a3: {
-            A: "It's just a comment for the human reader.",
-            B: "Correct. It tells the kernel which program (shell) should interpret the following lines.",
-            C: "Bash is for Linux, but this line doesn't determine the OS.",
-            D: "Metadata is stored separately; the shebang is functional code."
+            A: "Correct. >> appends standard output, and 2>&1 merges standard error into the same output stream.",
+            B: "This separates the error and overwrites standard output.",
+            C: "You cannot pipe directly to a file name without commands like tee.",
+            D: "Invalid syntax for redirection."
         },
         mcq_a4: {
-            A: "Correct. GNU parallel is specifically designed to run tasks in parallel.",
-            B: "wc counts lines/words and doesn't run commands.",
-            C: "grep is a search tool.",
-            D: "mamba manages software environments."
+            A: "uniq only compares adjacent lines, so un-sorted identical lines are missed.",
+            B: "Correct. Sorting the file groups identical lines together so uniq can successfully filter them before counting.",
+            C: "grep doesn't have a -u unique flag.",
+            D: "wc counts lines, returning a single number, which uniq cannot process further."
         },
         mcq_a5: {
-            A: "Correct. tmux/screen allows sessions to persist in the background.",
-            B: "exit closes the connection and usually stops your jobs.",
-            C: "ssh is for connecting, but doesn't keep jobs alive if the connection drops.",
-            D: "ping checks if the server is up."
+            A: "This works but does not match exactly our specific sample. Sample like 'SRR24679994_1' would still be matched.",
+            B: "Variable interpolation inside variables does not work with spaces like $MY SAMPLE without braces or quotes, causing syntax errors.",
+            C: "You do not use $ on the left side of the equals sign when setting a variable in Bash.",
+            D: "Correct. This properly defines the local variable and securely protects the variable from word-splitting using double quotes in grep."
         }
     };
 </script>
@@ -139,9 +139,9 @@ format:
 
 ::: {.callout-note}
 ## Quiz Structure
-- **Questions 1-5**: Easy (Level 1)
-- **Questions 6-15**: Intermediate (Level 2 - Linking concepts)
-- **Questions 16-20**: Advanced (Level 3 - Complex logic & Open-book topics)
+- **Questions 1-5**: Level 1 (Remembering - Recalling facts and basic concepts)
+- **Questions 6-15**: Levels 2-4 (Understanding to Analyzing - Explaining ideas, applying knowledge, and drawing connections)
+- **Questions 16-20**: Levels 5-6 (Evaluating and Creating - Justifying decisions and producing pipelines)
 :::
 
 <div class="mcq" id="mcq_e1" data-correct="B">
@@ -153,21 +153,21 @@ format:
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_e2" data-correct="B">
-  <div class="question">2. In the command <code>ls -l genomes/</code>, which part is the <strong>option</strong>?</div>
-  <label><input type="radio" name="mcq_e2" value="A"> A. <code>ls</code></label>
-  <label><input type="radio" name="mcq_e2" value="B"> B. <code>-l</code></label>
-  <label><input type="radio" name="mcq_e2" value="C"> C. <code>genomes/</code></label>
-  <label><input type="radio" name="mcq_e2" value="D"> D. The space after <code>-l</code></label>
+<div class="mcq" id="mcq_e2" data-correct="C">
+  <div class="question">2. Which character represents your <strong>Home</strong> directory?</div>
+  <label><input type="radio" name="mcq_e2" value="A"> A. <code>/</code></label>
+  <label><input type="radio" name="mcq_e2" value="B"> B. <code>.</code></label>
+  <label><input type="radio" name="mcq_e2" value="C"> C. <code>~</code></label>
+  <label><input type="radio" name="mcq_e2" value="D"> D. <code>..</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_e3" data-correct="C">
-  <div class="question">3. Which character represents your <strong>Home</strong> directory?</div>
-  <label><input type="radio" name="mcq_e3" value="A"> A. <code>/</code></label>
-  <label><input type="radio" name="mcq_e3" value="B"> B. <code>.</code></label>
-  <label><input type="radio" name="mcq_e3" value="C"> C. <code>~</code></label>
-  <label><input type="radio" name="mcq_e3" value="D"> D. <code>..</code></label>
+<div class="mcq" id="mcq_e3" data-correct="B">
+  <div class="question">3. What command is used to <strong>copy</strong> a file?</div>
+  <label><input type="radio" name="mcq_e3" value="A"> A. <code>mv</code></label>
+  <label><input type="radio" name="mcq_e3" value="B"> B. <code>cp</code></label>
+  <label><input type="radio" name="mcq_e3" value="C"> C. <code>rm</code></label>
+  <label><input type="radio" name="mcq_e3" value="D"> D. <code>ln</code></label>
   <div class="feedback"></div>
 </div>
 
@@ -180,147 +180,147 @@ format:
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_e5" data-correct="B">
-  <div class="question">5. What command is used to <strong>copy</strong> a file?</div>
-  <label><input type="radio" name="mcq_e5" value="A"> A. <code>mv</code></label>
-  <label><input type="radio" name="mcq_e5" value="B"> B. <code>cp</code></label>
-  <label><input type="radio" name="mcq_e5" value="C"> C. <code>rm</code></label>
-  <label><input type="radio" name="mcq_e5" value="D"> D. <code>ln</code></label>
+<div class="mcq" id="mcq_e5" data-correct="C">
+  <div class="question">5. In the command <code>ls -l microgen2026/</code>, what do we call the <code>-l</code> part?</div>
+  <label><input type="radio" name="mcq_e5" value="A"> A. The command</label>
+  <label><input type="radio" name="mcq_e5" value="B"> B. The argument</label>
+  <label><input type="radio" name="mcq_e5" value="C"> C. The option (or flag)</label>
+  <label><input type="radio" name="mcq_e5" value="D"> D. The target</label>
   <div class="feedback"></div>
 </div>
 
 <div class="mcq" id="mcq_i1" data-correct="B">
-  <div class="question">6. How do you list all files (including hidden ones) with <strong>human-readable</strong> sizes?</div>
-  <label><input type="radio" name="mcq_i1" value="A"> A. <code>ls -a</code></label>
-  <label><input type="radio" name="mcq_i1" value="B"> B. <code>ls -lah</code></label>
-  <label><input type="radio" name="mcq_i1" value="C"> C. <code>ls -S</code></label>
-  <label><input type="radio" name="mcq_i1" value="D"> D. <code>ls -F</code></label>
+  <div class="question">6. How do you copy the directory <code>day-0/</code> AND all its contents to your <code>backup/</code> directory?</div>
+  <label><input type="radio" name="mcq_i1" value="A"> A. <code>cp day-0/ backup/</code></label>
+  <label><input type="radio" name="mcq_i1" value="B"> B. <code>cp -r day-0/ backup/</code></label>
+  <label><input type="radio" name="mcq_i1" value="C"> C. <code>mv day-0/ backup/</code></label>
+  <label><input type="radio" name="mcq_i1" value="D"> D. <code>cp day-0/\* backup/</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i2" data-correct="C">
-  <div class="question">7. Which tool is best for viewing very large text files line-by-line?</div>
-  <label><input type="radio" name="mcq_i2" value="A"> A. <code>cat</code></label>
-  <label><input type="radio" name="mcq_i2" value="B"> B. <code>head</code></label>
-  <label><input type="radio" name="mcq_i2" value="C"> C. <code>less</code></label>
-  <label><input type="radio" name="mcq_i2" value="D"> D. <code>nano</code></label>
+<div class="mcq" id="mcq_i2" data-correct="B">
+  <div class="question">7. Which file wildcard pattern matches <code>sample_A.fasta</code> and <code>sample_B.fasta</code>, but NOT <code>sample_10.fasta</code> ?</div>
+  <label><input type="radio" name="mcq_i2" value="A"> A. <code>sample_\*.fasta</code></label>
+  <label><input type="radio" name="mcq_i2" value="B"> B. <code>sample_?.fasta</code></label>
+  <label><input type="radio" name="mcq_i2" value="C"> C. <code>sample_[0-9].fasta</code></label>
+  <label><input type="radio" name="mcq_i2" value="D"> D. <code>sample_[A-Z]\*.fasta</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i3" data-correct="B">
-  <div class="question">8. Which command would you use to search for the word "SARS" inside <code>data.txt</code>?</div>
-  <label><input type="radio" name="mcq_i3" value="A"> A. <code>find "SARS" data.txt</code></label>
-  <label><input type="radio" name="mcq_i3" value="B"> B. <code>grep "SARS" data.txt</code></label>
-  <label><input type="radio" name="mcq_i3" value="C"> C. <code>search "SARS" data.txt</code></label>
-  <label><input type="radio" name="mcq_i3" value="D"> D. <code>wc -l "SARS" data.txt</code></label>
+<div class="mcq" id="mcq_i3" data-correct="C">
+  <div class="question">8. How do you display all files (including hidden ones) with <strong>human-readable</strong> sizes?</div>
+  <label><input type="radio" name="mcq_i3" value="A"> A. <code>ls -a</code></label>
+  <label><input type="radio" name="mcq_i3" value="B"> B. <code>ls -lh</code></label>
+  <label><input type="radio" name="mcq_i3" value="C"> C. <code>ls -lah</code></label>
+  <label><input type="radio" name="mcq_i3" value="D"> D. <code>ls -H</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i4" data-correct="B">
-  <div class="question">9. Chaining: How do you count how many lines in <code>metadata.csv</code> contain "2024"?</div>
-  <label><input type="radio" name="mcq_i4" value="A"> A. <code>ls metadata.csv | wc -l</code></label>
-  <label><input type="radio" name="mcq_i4" value="B"> B. <code>grep "2024" metadata.csv | wc -l</code></label>
-  <label><input type="radio" name="mcq_i4" value="C"> C. <code>wc -l metadata.csv | grep "2024"</code></label>
-  <label><input type="radio" name="mcq_i4" value="D"> D. <code>grep "2024" metadata.csv ; wc -l</code></label>
+<div class="mcq" id="mcq_i4" data-correct="A">
+  <div class="question">9. How do you search for the word "PASS" inside <code>val.vcf</code> and output only the <strong>count</strong> of matching lines?</div>
+  <label><input type="radio" name="mcq_i4" value="A"> A. <code>grep -c "PASS" val.vcf</code></label>
+  <label><input type="radio" name="mcq_i4" value="B"> B. <code>grep "PASS" val.vcf | count</code></label>
+  <label><input type="radio" name="mcq_i4" value="C"> C. <code>wc -l "PASS" val.vcf</code></label>
+  <label><input type="radio" name="mcq_i4" value="D"> D. <code>find "PASS" val.vcf</code></label>
   <div class="feedback"></div>
 </div>
 
 <div class="mcq" id="mcq_i5" data-correct="B">
-  <div class="question">10. Redirection: How do you save the <code>ls</code> output to <code>files.txt</code>, <strong>overwriting</strong> the file?</div>
-  <label><input type="radio" name="mcq_i5" value="A"> A. <code>ls >> files.txt</code></label>
-  <label><input type="radio" name="mcq_i5" value="B"> B. <code>ls > files.txt</code></label>
-  <label><input type="radio" name="mcq_i5" value="C"> C. <code>ls | files.txt</code></label>
-  <label><input type="radio" name="mcq_i5" value="D"> D. <code>ls < files.txt</code></label>
+  <div class="question">10. What is the critical difference between <code>></code> and <code>>></code> when redirecting output to a file?</div>
+  <label><input type="radio" name="mcq_i5" value="A"> A. <code>></code> redirects standard output, while <code>>></code> redirects errors.</label>
+  <label><input type="radio" name="mcq_i5" value="B"> B. <code>></code> overwrites the destination file, while <code>>></code> appends to it.</label>
+  <label><input type="radio" name="mcq_i5" value="C"> C. <code>></code> creates a new file, while <code>>></code> only works if the file exists.</label>
+  <label><input type="radio" name="mcq_i5" value="D"> D. <code>></code> is for text streams, while <code>>></code> is for binary data.</label>
   <div class="feedback"></div>
 </div>
 
 <div class="mcq" id="mcq_i6" data-correct="B">
-  <div class="question">11. Variables: If <code>PREFIX="id_01"</code>, how do you print "id_01_result"?</div>
-  <label><input type="radio" name="mcq_i6" value="A"> A. <code>echo $PREFIX_result</code></label>
-  <label><input type="radio" name="mcq_i6" value="B"> B. <code>echo ${PREFIX}_result</code></label>
-  <label><input type="radio" name="mcq_i6" value="C"> C. <code>echo $(PREFIX)_result</code></label>
-  <label><input type="radio" name="mcq_i6" value="D"> D. <code>echo '$PREFIX_result'</code></label>
+  <div class="question">11. Why is <code>less</code> generally preferred over <code>cat</code> or <code>nano</code> for viewing large genomic data files?</div>
+  <label><input type="radio" name="mcq_i6" value="A"> A. <code>less</code> can actively edit files line-by-line.</label>
+  <label><input type="radio" name="mcq_i6" value="B"> B. <code>less</code> allows efficient scrolling without loading the entire giant file into memory at once.</label>
+  <label><input type="radio" name="mcq_i6" value="C"> C. <code>less</code> automatically unzips compressed files.</label>
+  <label><input type="radio" name="mcq_i6" value="D"> D. <code>less</code> color-codes true DNA base pairs natively.</label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i7" data-correct="B">
-  <div class="question">12. Permissions: Which command makes a script <strong>executable</strong>?</div>
-  <label><input type="radio" name="mcq_i7" value="A"> A. <code>chown +x script.sh</code></label>
-  <label><input type="radio" name="mcq_i7" value="B"> B. <code>chmod +x script.sh</code></label>
-  <label><input type="radio" name="mcq_i7" value="C"> C. <code>chmod 777 script.sh</code></label>
-  <label><input type="radio" name="mcq_i7" value="D"> D. <code>chmod +r script.sh</code></label>
+<div class="mcq" id="mcq_i7" data-correct="C">
+  <div class="question">12. Consider the pipeline: <code>grep "2024" metadata.csv | wc -l</code>. What happens if you mistakenly reverse it to <code>wc -l metadata.csv | grep "2024"</code>?</div>
+  <label><input type="radio" name="mcq_i7" value="A"> A. The command fails entirely because <code>wc</code> cannot pipe to <code>grep</code>.</label>
+  <label><input type="radio" name="mcq_i7" value="B"> B. It successfully counts the lines since UNIX pipelines are reversible.</label>
+  <label><input type="radio" name="mcq_i7" value="C"> C. It outputs the total lines first, then <code>grep</code> searches that single number output for '2024', failing the intent.</label>
+  <label><input type="radio" name="mcq_i7" value="D"> D. It prints all lines from 2024 and then adds a total sum at the very end.</label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i8" data-correct="A">
-  <div class="question">13. Environments: How do you enter the "bubble" of an environment named <code>qc</code>?</div>
-  <label><input type="radio" name="mcq_i8" value="A"> A. <code>mamba activate qc</code></label>
-  <label><input type="radio" name="mcq_i8" value="B"> B. <code>mamba install qc</code></label>
-  <label><input type="radio" name="mcq_i8" value="C"> C. <code>mamba go qc</code></label>
-  <label><input type="radio" name="mcq_i8" value="D"> D. <code>mamba init qc</code></label>
+<div class="mcq" id="mcq_i8" data-correct="B">
+  <div class="question">13. How do you enter the isolated "bubble" of a Conda/Mamba environment named <code>qc</code>?</div>
+  <label><input type="radio" name="mcq_i8" value="A"> A. <code>mamba install qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="B"> B. <code>mamba activate qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="C"> C. <code>conda go qc</code></label>
+  <label><input type="radio" name="mcq_i8" value="D"> D. <code>mamba start qc</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i9" data-correct="A">
-  <div class="question">14. Navigation: What does the command <code>cd ..</code> do?</div>
-  <label><input type="radio" name="mcq_i9" value="A"> A. Moves you up one directory level</label>
-  <label><input type="radio" name="mcq_i9" value="B"> B. Goes to your Home directory</label>
-  <label><input type="radio" name="mcq_i9" value="C"> C. Goes into a subfolder named <code>..</code></label>
-  <label><input type="radio" name="mcq_i9" value="D"> D. Deletes the folder and moves you back</label>
+<div class="mcq" id="mcq_i9" data-correct="B">
+  <div class="question">14. How do you successfully extract only the 5th column from a comma-separated file named <code>data.csv</code>?</div>
+  <label><input type="radio" name="mcq_i9" value="A"> A. <code>cut -f 5 data.csv</code></label>
+  <label><input type="radio" name="mcq_i9" value="B"> B. <code>cut -f 5 -d "," data.csv</code></label>
+  <label><input type="radio" name="mcq_i9" value="C"> C. <code>column -5 data.csv</code></label>
+  <label><input type="radio" name="mcq_i9" value="D"> D. <code>grep -col 5 data.csv</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_i10" data-correct="A">
-  <div class="question">15. Hardware: Which command lists technical details about your <strong>CPU</strong>?</div>
-  <label><input type="radio" name="mcq_i10" value="A"> A. <code>lscpu</code></label>
-  <label><input type="radio" name="mcq_i10" value="B"> B. <code>top</code></label>
-  <label><input type="radio" name="mcq_i10" value="C"> C. <code>df -h</code></label>
-  <label><input type="radio" name="mcq_i10" value="D"> D. <code>free -m</code></label>
+<div class="mcq" id="mcq_i10" data-correct="C">
+  <div class="question">15. How do you successfully extract only the 2nd and 4th columns from <code>965Kp.vcf</code> while actively ignoring all header lines that start with <code>#</code>?</div>
+  <label><input type="radio" name="mcq_i10" value="A"> A. <code>grep "^#" 965Kp.vcf | cut -f 2,4</code></label>
+  <label><input type="radio" name="mcq_i10" value="B"> B. <code>cut -f 2,4 965Kp.vcf | grep -v "^#"</code></label>
+  <label><input type="radio" name="mcq_i10" value="C"> C. <code>grep -v "^#" 965Kp.vcf | cut -f 2,4</code></label>
+  <label><input type="radio" name="mcq_i10" value="D"> D. <code>cut -f 2,4 965Kp.vcf > grep -v "^#"</code></label>
   <div class="feedback"></div>
 </div>
 
 <div class="mcq" id="mcq_a1" data-correct="B">
-  <div class="question">16. Advanced Redirection: How do you save <strong>both</strong> standard output and errors to <code>log.txt</code>?</div>
-  <label><input type="radio" name="mcq_a1" value="A"> A. <code>command > log.txt</code></label>
-  <label><input type="radio" name="mcq_a1" value="B"> B. <code>command > log.txt 2>&1</code></label>
-  <label><input type="radio" name="mcq_a1" value="C"> C. <code>command 2> log.txt</code></label>
-  <label><input type="radio" name="mcq_a1" value="D"> D. <code>command |& log.txt</code></label>
+  <div class="question">16. You need to download large genome files, and your SSH connection is highly unstable. Which approach is the most robust to prevent job termination?</div>
+  <label><input type="radio" name="mcq_a1" value="A"> A. Use <code>nohup</code> on the <code>wget</code> command.</label>
+  <label><input type="radio" name="mcq_a1" value="B"> B. Run the download script inside a <code>tmux</code> or <code>screen</code> session.</label>
+  <label><input type="radio" name="mcq_a1" value="C"> C. Create a Bash script and add executable permissions.</label>
+  <label><input type="radio" name="mcq_a1" value="D"> D. Run the commands in a superuser (root) environment.</label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_a2" data-correct="B">
-  <div class="question">17. File Discovery: Based on the "Self Exploration" section, how do you find all <code>.fasta</code> files larger than 10MB?</div>
-  <label><input type="radio" name="mcq_a2" value="A"> A. <code>grep ".fasta" -size +10M</code></label>
-  <label><input type="radio" name="mcq_a2" value="B"> B. <code>find . -name "*.fasta" -size +10M</code></label>
-  <label><input type="radio" name="mcq_a2" value="C"> C. <code>ls -R *.fasta --min-size 10M</code></label>
-  <label><input type="radio" name="mcq_a2" value="D"> D. <code>locate "*.fasta" | filter 10MB</code></label>
+<div class="mcq" id="mcq_a2" data-correct="C">
+  <div class="question">17. You must count the number of FASTA sequences (<code>&gt;</code>) across 100 different files. Which method is the most efficient on a multi-core server?</div>
+  <label><input type="radio" name="mcq_a2" value="A"> A. Use a <code>for</code> loop to iterate through each file sequentially.</label>
+  <label><input type="radio" name="mcq_a2" value="B"> B. Use <code>cat \*.fasta | grep "&gt;" | wc -l</code>.</label>
+  <label><input type="radio" name="mcq_a2" value="C"> C. Use <code>ls \*.fasta | parallel -j 8 grep -c '&gt;' {}</code>.</label>
+  <label><input type="radio" name="mcq_a2" value="D"> D. Use <code>grep -c "&gt;"</code> separately in 100 different terminal windows.</label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_a3" data-correct="B">
-  <div class="question">18. Scripting: What is the main purpose of the <strong>shebang</strong> (<code>#!/bin/bash</code>) at the start of a script?</div>
-  <label><input type="radio" name="mcq_a3" value="A"> A. It describes what the script does for humans</label>
-  <label><input type="radio" name="mcq_a3" value="B"> B. It specifies the program (shell) to be used to interpret the script</label>
-  <label><input type="radio" name="mcq_a3" value="C"> C. It checks if you are running Linux or Windows</label>
-  <label><input type="radio" name="mcq_a3" value="D"> D. It serves as metadata for the file system database</label>
+<div class="mcq" id="mcq_a3" data-correct="A">
+  <div class="question">18. You are designing a script that appends its system hardware summary to <code>system_log.txt</code> and captures any identical stream errors to the same file. Synthesize the right command:</div>
+  <label><input type="radio" name="mcq_a3" value="A"> A. <code>lscpu >> system_log.txt 2>&1</code></label>
+  <label><input type="radio" name="mcq_a3" value="B"> B. <code>lscpu > system_log.txt 2> error.txt</code></label>
+  <label><input type="radio" name="mcq_a3" value="C"> C. <code>lscpu | system_log.txt 2>&1</code></label>
+  <label><input type="radio" name="mcq_a3" value="D"> D. <code>lscpu >> system_log.txt < 2</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_a4" data-correct="A">
-  <div class="question">19. Efficiency: Which tool allows you to run many commands in parallel across multiple CPU cores?</div>
-  <label><input type="radio" name="mcq_a4" value="A"> A. <code>GNU parallel</code></label>
-  <label><input type="radio" name="mcq_a4" value="B"> B. <code>wc</code></label>
-  <label><input type="radio" name="mcq_a4" value="C"> C. <code>grep</code></label>
-  <label><input type="radio" name="mcq_a4" value="D"> D. <code>mamba</code></label>
+<div class="mcq" id="mcq_a4" data-correct="B">
+  <div class="question">19. You need to find the number of <strong>unique</strong> species in <code>samples.txt</code> (one species name per line). Based on the properties of <code>uniq</code>, how would you construct this pipeline?</div>
+  <label><input type="radio" name="mcq_a4" value="A"> A. <code>uniq samples.txt | wc -l</code></label>
+  <label><input type="radio" name="mcq_a4" value="B"> B. <code>sort samples.txt | uniq | wc -l</code></label>
+  <label><input type="radio" name="mcq_a4" value="C"> C. <code>grep -u samples.txt | wc -l</code></label>
+  <label><input type="radio" name="mcq_a4" value="D"> D. <code>wc -l samples.txt | uniq</code></label>
   <div class="feedback"></div>
 </div>
 
-<div class="mcq" id="mcq_a5" data-correct="A">
-  <div class="question">20. Persistence: Which tool keeps your processes running even if your remote connection (SSH) breaks?</div>
-  <label><input type="radio" name="mcq_a5" value="A"> A. <code>tmux</code> or <code>screen</code></label>
-  <label><input type="radio" name="mcq_a5" value="B"> B. <code>exit</code></label>
-  <label><input type="radio" name="mcq_a5" value="C"> C. <code>ssh</code></label>
-  <label><input type="radio" name="mcq_a5" value="D"> D. <code>ping</code></label>
+<div class="mcq" id="mcq_a5" data-correct="D">
+  <div class="question">20. You are writing an automation script and need to store the sample name 'SRR24679994' as a variable to search for it inside <code>metadata_carbResist.tsv</code>. Which sequence perfectly creates and evaluates this variable?</div>
+  <label><input type="radio" name="mcq_a5" value="A"> A. <code>MY_SAMPLE="SRR24679994" ; grep "\$MY_SAMPLE" metadata_carbResist.tsv</code></label>
+  <label><input type="radio" name="mcq_a5" value="B"> B. <code>MY_SAMPLE="SRR24679994" ; grep -w \$MY SAMPLE metadata_carbResist.tsv</code></label>
+  <label><input type="radio" name="mcq_a5" value="C"> C. <code>\$MY_SAMPLE="SRR24679994" ; grep MY_SAMPLE metadata_carbResist.tsv</code></label>
+  <label><input type="radio" name="mcq_a5" value="D"> D. <code>MY_SAMPLE="SRR24679994" ; grep -w "\$MY_SAMPLE" metadata_carbResist.tsv</code></label>
   <div class="feedback"></div>
 </div>
 
