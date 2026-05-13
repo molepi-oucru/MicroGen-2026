@@ -1,0 +1,3 @@
+Module	Section	Sample Name	Source
+FastQC	all_sections	ERR4244683_1	/miscellaneous/day-1/ugly_sample/fastqc_raw/ERR4244683_1_fastqc.zip
+FastQC	all_sections	ERR4244683_2	/miscellaneous/day-1/ugly_sample/fastqc_raw/ERR4244683_2_fastqc.zip

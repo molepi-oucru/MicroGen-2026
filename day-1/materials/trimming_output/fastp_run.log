@@ -1,0 +1,48 @@
+Read1 before filtering:
+total reads: 508524
+total bases: 109137617
+Q20 bases: 100483655(92.0706%)
+Q30 bases: 95881628(87.8539%)
+Q40 bases: 2161(0.00198007%)
+
+Read2 before filtering:
+total reads: 508524
+total bases: 111843681
+Q20 bases: 88288829(78.9395%)
+Q30 bases: 77934470(69.6816%)
+Q40 bases: 1409(0.00125979%)
+
+Read1 after filtering:
+total reads: 486082
+total bases: 95468005
+Q20 bases: 89394470(93.6381%)
+Q30 bases: 85854167(89.9298%)
+Q40 bases: 2118(0.00221854%)
+
+Read2 after filtering:
+total reads: 486082
+total bases: 86955978
+Q20 bases: 75021948(86.2758%)
+Q30 bases: 68895853(79.2307%)
+Q40 bases: 1401(0.00161116%)
+
+Filtering result:
+reads passed filter: 972164
+reads failed due to low quality: 28574
+reads failed due to too many N: 0
+reads failed due to too short: 16310
+reads failed due to adapter dimer: 0
+reads with adapter trimmed: 438880
+bases trimmed due to adapters: 648763
+reads with polyX in 3' end: 9897
+bases trimmed in polyX tail: 129702
+
+Duplication rate: 0.118578%
+
+Insert size peak (evaluated by paired-end reads): 266
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp --in1 ugly_sample/ERR4244683_1.fastq.gz --in2 ugly_sample/ERR4244683_2.fastq.gz --out1 trimming_output/ERR4244683_1.trimmed.fastq.gz --out2 trimming_output/ERR4244683_2.trimmed.fastq.gz --trim_front1 15 --trim_front2 15 --trim_poly_x --cut_tail --cut_tail_window_size 4 --cut_tail_mean_quality 25 --length_required 50 
+fastp v1.3.3, time used: 5 seconds
