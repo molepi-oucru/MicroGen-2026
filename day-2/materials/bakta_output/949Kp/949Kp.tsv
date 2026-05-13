@@ -1,0 +1,68 @@
+#Annotated with Bakta (v1.6.1): https://github.com/oschwengers/bakta
+#Database (v4.0): https://doi.org/10.5281/zenodo.4247252
+#Sequence Id	Type	Start	Stop	Strand	Locus Tag	Gene	Product	DbXrefs
+contig_1	cds	23	1609	+	DPFGDO_00005		hypothetical protein	SO:0001217, UniParc:UPI0009CDB323, UniRef:UniRef100_A0A486W242, UniRef:UniRef50_A0A486W242, UniRef:UniRef90_A0A486W242
+contig_1	oriC	1565	3203	?			origin of replication	
+contig_1	cds	1578	1694	-	DPFGDO_00010		hypothetical protein	
+contig_1	cds	1736	2053	-	DPFGDO_00015		hypothetical protein	RefSeq:WP_012000837.1, SO:0001217, UniParc:UPI00015C63F7, UniRef:UniRef100_A0A7A6RD66, UniRef:UniRef50_A0A0E1CMW6, UniRef:UniRef90_A0A0E1CMW6
+contig_1	cds	2371	2475	-	DPFGDO_00020		hypothetical protein	
+contig_1	cds	2484	2684	-	DPFGDO_00025		hypothetical protein	
+contig_1	cds	2696	2851	+	DPFGDO_00030		hypothetical protein	
+contig_1	ncRNA	3041	3143	+	DPFGDO_00035	RNAI	RNAI	RFAM:RF00106, SO:0000655
+contig_1	cds	3204	3353	-	DPFGDO_00040		lysis protein	RefSeq:WP_004152552.1, SO:0001217, UniParc:UPI000067C15D, UniRef:UniRef100_Q2PWZ0, UniRef:UniRef50_P02987, UniRef:UniRef90_Q2PWZ0
+contig_1	cds	3438	3695	-	DPFGDO_00045		cloacin	RefSeq:WP_004152553.1, SO:0001217, UniParc:UPI000067C15E, UniRef:UniRef100_A0A2P9E858, UniRef:UniRef50_P13477, UniRef:UniRef90_A0A2P9E858
+contig_1	cds	3705	5009	-	DPFGDO_00050		colicin E3/pyocin S6 family cytotoxin	SO:0001217, UniRef:UniRef50_A0A2X1QIT2, UniRef:UniRef90_UPI000CF93672
+contig_1	cds	4994	5281	-	DPFGDO_00055		hypothetical protein	
+contig_1	cds	5306	5407	+	DPFGDO_00060		hypothetical protein	
+contig_1	cds	5512	5739	+	DPFGDO_00065		hypothetical protein	SO:0001217, UniParc:UPI00015C63FA, UniRef:UniRef100_A0A0E1CMX0, UniRef:UniRef50_A0A0E1CMX0, UniRef:UniRef90_A0A0E1CMX0
+contig_1	cds	5756	5854	-	DPFGDO_00070		hypothetical protein	
+contig_1	cds	5851	5961	-	DPFGDO_00075		hypothetical protein	
+contig_1	cds	5964	6212	+	DPFGDO_00080		Exc2 family lipoprotein	RefSeq:WP_004152550.1, SO:0001217, UniParc:UPI0001824659, UniRef:UniRef100_A0A740J012, UniRef:UniRef50_Q51623, UniRef:UniRef90_Q51623
+contig_1	cds	6412	6528	-	DPFGDO_00085		(pseudo) hypothetical protein	SO:0001217, UniRef:UniRef50_A0A064CXR9, UniRef:UniRef90_A0A064CXR9
+contig_1	cds	6485	6748	-	DPFGDO_00090		Cytosine-specific methyltransferase	SO:0001217, UniRef:UniRef50_G9G763, UniRef:UniRef90_G9G763
+contig_1	cds	6771	7070	+	DPFGDO_00095	parE	type II toxin-antitoxin system RelE/ParE family toxin	COG:COG3668, COG:X, RefSeq:WP_001146176.1, SO:0001217, UniParc:UPI00015C63FE, UniRef:UniRef100_A0A2P9E867, UniRef:UniRef50_A0A068QPF9, UniRef:UniRef90_A0A2P9E867
+contig_1	cds	7132	7509	-	DPFGDO_00100		entry exclusion protein 1	RefSeq:WP_000312627.1, SO:0001217, UniParc:UPI000182465A, UniRef:UniRef100_A0A2P9DUR3, UniRef:UniRef50_A0A4U7KB57, UniRef:UniRef90_A0A2P9DUR3
+contig_1	cds	7578	7757	+	DPFGDO_00105		Rop family plasmid primer RNA-binding protein	RefSeq:WP_000165971.1, SO:0001217, UniParc:UPI00015C63F4, UniRef:UniRef100_A0A2P9DUT6, UniRef:UniRef50_A0A2P9DUT6, UniRef:UniRef90_A0A2P9DUT6
+contig_1	cds	7785	8051	-	DPFGDO_00110		hypothetical protein	RefSeq:WP_020805352.1, SO:0001217, UniParc:UPI0003421E21, UniRef:UniRef100_A0A2P9E855, UniRef:UniRef50_A0A2P9E855, UniRef:UniRef90_A0A2P9E855
+contig_1	cds	8076	8741	+	DPFGDO_00115		(pseudo) hypothetical protein	SO:0001217, UniRef:UniRef50_J2DFK6, UniRef:UniRef90_J2DFK6
+contig_1	cds	8802	9059	+	DPFGDO_00120		hypothetical protein	
+contig_1	cds	9053	9268	-	DPFGDO_00125		hypothetical protein	SO:0001217, UniRef:UniRef50_UPI001F60DF70, UniRef:UniRef90_UPI0020238554
+contig_2	cds	203	397	-	DPFGDO_00130		hypothetical protein	SO:0001217, UniRef:UniRef50_UPI001D0E3BAE, UniRef:UniRef90_UPI001D0E3BAE
+contig_2	cds	671	790	-	DPFGDO_00135		hypothetical protein	SO:0001217, UniParc:UPI0002AADC07, UniRef:UniRef100_A0A6G7SNK0, UniRef:UniRef50_A0A6G7SNK0, UniRef:UniRef90_A0A6G7SNK0
+contig_2	cds	790	1008	-	DPFGDO_00140		hypothetical protein	
+contig_2	cds	1026	1736	-	DPFGDO_00145		(pseudo) Relaxase/Mobilisation nuclease domain-containing protein	SO:0001217, UniRef:UniRef50_H8YUP9, UniRef:UniRef90_A8ART7
+contig_2	cds	1770	2015	+	DPFGDO_00150		hypothetical protein	RefSeq:WP_032433971.1, SO:0001217, UniParc:UPI00050C1E01, UniRef:UniRef100_A0A8J3DRV3, UniRef:UniRef50_A0A380C7R3, UniRef:UniRef90_A0A8J3DRV3
+contig_2	cds	2023	2208	-	DPFGDO_00155		hypothetical protein	
+contig_2	cds	2198	2356	-	DPFGDO_00160		MobC family plasmid mobilization relaxosome protein	SO:0001217, UniRef:UniRef50_UPI0013C5C768, UniRef:UniRef90_UPI00133088B4
+contig_2	cds	2532	2648	-	DPFGDO_00165		hypothetical protein	
+contig_2	cds	2658	2870	+	DPFGDO_00170		hypothetical protein	
+contig_2	oriT	2799	2869	?			origin of transfer	
+contig_2	cds	3139	3438	-	DPFGDO_00175		hypothetical protein	SO:0001217, UniParc:UPI00092E5D95, UniRef:UniRef100_A0A483VZJ2, UniRef:UniRef50_A8ARU7, UniRef:UniRef90_A8ARU7
+contig_2	ncRNA	3527	3628	+	DPFGDO_00180	RNAI	RNAI	RFAM:RF00106, SO:0000655
+contig_2	cds	3811	4191	+	DPFGDO_00185		hypothetical protein	RefSeq:WP_048327638.1, SO:0001217, UniParc:UPI000650BA0B, UniRef:UniRef100_UPI001E5ECCF2, UniRef:UniRef50_A0A7T4NV32, UniRef:UniRef90_A0A7T4NV32
+contig_2	cds	4217	4762	+	DPFGDO_00190		hypothetical protein	RefSeq:WP_032433973.1, SO:0001217, UniParc:UPI00044B4FC0, UniRef:UniRef100_A0A483VZW6, UniRef:UniRef50_A0A7T4NV44, UniRef:UniRef90_A0A7T4NV44
+contig_2	cds	4798	5193	+	DPFGDO_00195		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A7X8YIZ1, UniRef:UniRef90_A0A7X8YIZ1
+contig_2	cds	5138	5290	-	DPFGDO_00200		(pseudo) hypothetical protein	SO:0001217, UniRef:UniRef50_A8ARU1, UniRef:UniRef50_UPI00195454DB, UniRef:UniRef90_A8ARU1, UniRef:UniRef90_UPI00195454DB
+contig_2	cds	5250	5516	-	DPFGDO_00205		type II toxin-antitoxin system mRNA interferase toxin, RelE/StbE family	RefSeq:WP_004197762.1, SO:0001217, UniParc:UPI0002AAB9AF, UniRef:UniRef100_A0A6A8YQJ5, UniRef:UniRef50_A0A378CIC1, UniRef:UniRef90_A0A378CIC1
+contig_3	cds	56	427	-	DPFGDO_00210		hypothetical protein	
+contig_3	cds	523	831	+	DPFGDO_00215		hypothetical protein	
+contig_3	cds	959	1282	+	DPFGDO_00220		hypothetical protein	
+contig_3	cds	1466	2419	-	DPFGDO_00225		CHANNEL-COLICIN domain-containing protein	SO:0001217, UniRef:UniRef50_A0A3K3DF49, UniRef:UniRef90_A0A3K3DF49
+contig_3	cds	2811	3278	-	DPFGDO_00230		hypothetical protein	SO:0001217, UniRef:UniRef50_R9R0P9, UniRef:UniRef90_A0A2Y0NUS5
+contig_3	cds	3253	3369	-	DPFGDO_00235		hypothetical protein	
+contig_3	cds	3347	4273	-	DPFGDO_00240		mobilization protein	RefSeq:WP_001736644.1, SO:0001217, UniParc:UPI0002B951D1, UniRef:UniRef100_A0A2Y0R389, UniRef:UniRef50_A0A068B9C6, UniRef:UniRef90_A0A068B9C6
+contig_3	cds	4348	4593	-	DPFGDO_00245		hypothetical protein	SO:0001217, UniRef:UniRef50_UPI00165685D9, UniRef:UniRef90_UPI001BB0A651
+contig_3	cds	5109	5384	-	DPFGDO_00250		helix-turn-helix domain-containing protein	SO:0001217, UniRef:UniRef50_UPI0015620985
+contig_4	cds	461	817	+	DPFGDO_00255		hypothetical protein	
+contig_4	oriC	683	1663	?			origin of replication	
+contig_4	cds	784	957	+	DPFGDO_00260		hypothetical protein	SO:0001217, UniRef:UniRef50_A0A3N2RME5, UniRef:UniRef90_A0A3N2RME5
+contig_4	oriT	790	862	?			origin of transfer	
+contig_4	cds	944	1243	-	DPFGDO_00265		hypothetical protein	SO:0001217, UniRef:UniRef50_UPI00093FD19C, UniRef:UniRef90_UPI001A91F084
+contig_4	ncRNA	1514	1618	+	DPFGDO_00270	RNAI	RNAI	RFAM:RF00106, SO:0000655
+contig_4	cds	1674	2348	-	DPFGDO_00275		NYN domain	RefSeq:WP_032419561.1, SO:0001217, UniParc:UPI000452EC64, UniRef:UniRef100_A0A483VZ52, UniRef:UniRef50_A0A483VZ52, UniRef:UniRef90_A0A483VZ52
+contig_4	cds	2696	3112	+	DPFGDO_00280		helix-turn-helix domain-containing protein	RefSeq:WP_032419562.1, SO:0001217, UniParc:UPI00050C3FC5, UniRef:UniRef100_A0A483VYT5, UniRef:UniRef50_A0A4S5I3E1, UniRef:UniRef90_A0A4S5I3E1
+contig_4	cds	3218	3367	-	DPFGDO_00285		hypothetical protein	
+contig_4	cds	3530	3793	+	DPFGDO_00290		Protein L	RefSeq:WP_054175658.1, SO:0001217, UniParc:UPI0006BA57B2, UniRef:UniRef100_A0A483W1A5, UniRef:UniRef50_P02989, UniRef:UniRef90_P02989
+contig_4	cds	3790	3954	+	DPFGDO_00295		hypothetical protein	SO:0001217, UniParc:UPI000E2B6FA9, UniRef:UniRef100_A0A8B4T784, UniRef:UniRef50_A0A8B4T784, UniRef:UniRef90_A0A8B4T784
+contig_4	cds	3970	4134	+	DPFGDO_00300		hypothetical protein	
+contig_4	cds	4224	5321	-	DPFGDO_00305		DNA relaxase mbeA	SO:0001217, UniRef:UniRef50_A0A509AEC3
