@@ -7,11 +7,11 @@ def main():
         navbar = f.read()
 
     # directory = "/data/MicroGen-2026/_site/day-0/instructions/"
-    directory = "/data/MicroGen-2026/_site/day-4/instructions/"
+    directory = "/data/MicroGen-2026/_site/day-0/instructions/"
     count = 0
 
     for file in os.listdir(directory):
-        if file.startswith("vietnamese-") and file.endswith(".html"):
+        if file.startswith("setup") and file.endswith(".html"):
             path = os.path.join(directory, file)
             with open(path, "r", encoding="utf-8") as f:
                 content = f.read()
