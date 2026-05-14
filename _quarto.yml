@@ -26,19 +26,34 @@ website:
             href: day-4/instructions/index.qmd  
       - text: "Lecture Slides"
         menu:
-          - text: 'Day 0'
+          - text: '0: Pre-Workshop'
             href: day-0/slides/MicroGen2026_Day0.pdf
             target: '_blank'
-          - text: 'Day 1'
-            href: day-1/slides/MicroGen2026_Day1.pdf
+          - text: '1.1: Intro to WGS'
+            href: day-1/slides/MicroGen2026_Day1_1.pdf
             target: '_blank'
-          - text: 'Day 2'
-            href: day-2/slides/MicroGen2026_Day2.pdf
+          - text: '1.2: BLAST & Artemis'
+            href: day-1/slides/MicroGen2026_Day1_2.pdf
             target: '_blank'
-          - text: 'Day 3'
-            href: day-3/slides/MicroGen2026_Day3.pdf
+          - text: '1.3: Raw to Assembly'
+            href: day-1/slides/MicroGen2026_Day1_3.pdf
             target: '_blank'
-          - text: 'Day 4'
+          - text: '2.1: Post-Assembly'
+            href: day-2/slides/MicroGen2026_Day2_1.pdf
+            target: '_blank'
+          - text: '2.2: Long-read Seq'
+            href: day-2/slides/MicroGen2026_Day2_2.pdf
+            target: '_blank'
+          - text: '2.3: Gene Alignment'
+            href: day-2/slides/MicroGen2026_Day2_3.pdf
+            target: '_blank'
+          - text: '3.1: Mapping'
+            href: day-3/slides/MicroGen2026_Day3_1.pdf
+            target: '_blank'
+          - text: '3.2: Phylogenetics'
+            href: day-3/slides/MicroGen2026_Day3_2.pdf
+            target: '_blank'
+          - text: '4: Metagenomics'
             href: day-4/slides/MicroGen2026_Day4.pdf
             target: '_blank'
     tools:
