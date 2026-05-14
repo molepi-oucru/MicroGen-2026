@@ -1,0 +1,111 @@
+DATASET_COLORSTRIP				
+SEPARATOR TAB				
+BORDER_WIDTH	0.5			
+COLOR	#a6cee3			
+DATASET_LABEL	Time			
+LEGEND_COLORS	#004972	#fcbb0e	#04a2ab	
+LEGEND_LABELS	2025	2023	2019	
+LEGEND_SHAPES	1	1	1	
+LEGEND_TITLE	Time			
+MARGIN	5			
+STRIP_WIDTH	25			
+DATA				
+925Kp	#004972		 	
+930Kp	#004972			
+937Kp	#004972			
+953Kp	#004972			
+954Kp	#004972			
+959Kp	#004972			
+964Kp	#004972			
+965Kp	#004972			
+966Kp	#004972			
+967Kp	#004972			
+975Kp	#004972			
+AMB201Kp	#004972			
+CS03	#fcbb0e			
+CS08	#fcbb0e			
+CS26	#fcbb0e			
+CS28	#fcbb0e			
+CZ08	#fcbb0e			
+S13	#04a2ab			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				 

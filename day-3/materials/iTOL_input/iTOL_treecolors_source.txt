@@ -1,0 +1,111 @@
+DATASET_COLORSTRIP						
+SEPARATOR TAB						
+BORDER_WIDTH	0.5					
+COLOR	#a6cee3					
+DATASET_LABEL	Source					
+LEGEND_COLORS	#ff9600	#f20b0b	#ffcb80	#009c92	#006d66	#b36900
+LEGEND_LABELS	BAL 	blood	environment	peritoneal fluid	rectal swab	TBA
+LEGEND_SHAPES	1	1	1	1	1	1
+LEGEND_TITLE	Source					
+MARGIN	5					
+STRIP_WIDTH	25					
+DATA						
+925Kp	#ff9600	BAL 	 			
+937Kp	#ff9600	BAL 				
+CZ08	#ff9600	BAL 				
+CS03	#f20b0b	blood				
+AMB201Kp	#ffcb80	environment				
+CS08	#009c92	peritoneal fluid				
+930Kp	#006d66	rectal swab				
+953Kp	#006d66	rectal swab				
+954Kp	#006d66	rectal swab				
+959Kp	#006d66	rectal swab				
+966Kp	#006d66	rectal swab				
+967Kp	#006d66	rectal swab				
+975Kp	#006d66	rectal swab				
+CS26	#006d66	rectal swab				
+CS28	#006d66	rectal swab				
+S13	#006d66	rectal swab				
+964Kp	#b36900	TBA				
+965Kp	#b36900	TBA				
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+				 		
