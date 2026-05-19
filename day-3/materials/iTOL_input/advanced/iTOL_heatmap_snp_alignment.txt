@@ -1,0 +1,75 @@
+DATASET_ALIGNMENT																					
+SEPARATOR TAB																					
+																					
+DATASET_LABEL	example alignment																				
+																					
+COLOR	#ff0000																				
+																					
+CUSTOM_COLOR_SCHEME	MY_SCHEME_1	A=#d2d0c9	M=#d2d0c9	I=#d2d0c9	L=#d2d0c9	V=#d2d0c9	P=#746f69	G=#746f69	C=#746f69	F=#d0ad16	Y=#d0ad16	W=#d0ad16	S=#34acfb	T=#34acfb	N=#34acfb	Q=#34acfb	R=#34fb54	K=#34fb54	H=#34fb54	D=#fb4034	E=#fb4034
+																					
+MARGIN	0																				
+																					
+SIZE_FACTOR	1																				
+																					
+COLOR_SCHEME	clustal																				
+																					
+START_POSITION	1																				
+END_POSITION	1568																				
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+DISPLAY_CONSENSUS	1																				
+																					
+																					
+CONSENSUS_THRESHOLD	50																				
+																					
+																					
+																					
+																					
+																					
+DISPLAY_CONSERVATION	1																				
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+																					
+DATA																					
+																					
+#Example alignment																					
+																					
+>925Kp																					
+CCCGGACAC																					
+>930Kp																					
+CCCGGCCAT																					
+>937Kp																					
+CCCGGACAC																					
+>953Kp																					
+CCCGGACAC																					
+>954Kp																					
+CTTGGACTC																					
+>959Kp																					
+CCCGGATAC																					
+>964Kp																					
+CCCGGACAC																					
+>965Kp																					
+ACCGGCCAT																					
+>967Kp																					
+CCCGGACAC																					
+>975Kp																					
+CCCTTACAC																					
+>AMB201Kp																					
+CCCGGACAC																					
